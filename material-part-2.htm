@@ -23,7 +23,7 @@
 
         <body>
 
-    <h1>Ohjelmoinnin jatkokurssi</h1>
+    <h1>Advanced programming course</h1>
 
 <p>Arto Vihavainen ja Matti Luukkainen</p>
 
@@ -32,117 +32,115 @@
 		  <div id="tehtavat_toc"></div>
 		</div>
 
-    <p><strong><big>Huomautus lukijalle</big></strong></p>
+    <p><strong><big>Note for the reader</big></strong></p>
 
-    <p>Tämä on suoraa jatkoa Ohjelmoinnin perusteet -kurssin <a href="../ohpe/index.html">materiaaliin.</a></p>
+    <p>This is direct continuation to the programming basics course <a href="../ohpe/index.html">material.</a></p>
 
-		<p>Tämä materiaali on tarkoitettu Helsingin Yliopiston Tietojenkäsittelytieteen laitoksen syksyn 2012 Ohjelmoinnin perusteet- ja jatkokurssille. 
-		  Materiaali pohjautuu keväiden 2012, 2011 ja 2010 kurssimateriaaleihin, joiden sisältöön ovat vaikuttaneet Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju, Martin Pärtel, Joel Kaasinen ja Mikael Nousiainen</p>
+		<p>This material is meant for the Helsinki University Department of Computer Science fall 2012 programming basics and advanced programming course. The material is based on springs of 2012, 2011 an 2010 course materials, of which content has been affected by Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju, Martin Pärtel, Joel Kaasinen ja Mikael Nousiainen.</p>
 
-    <p>Lue materiaalia siten, että teet samalla itse kaikki lukemasi esimerkit. Esimerkkeihin kannattaa tehdä pieniä muutoksia ja tarkkailla, miten muutokset vaikuttavat ohjelman toimintaan. Äkkiseltään voisi luulla, että esimerkkien tekeminen myös itse ja niiden muokkaaminen hidastaa opiskelua. Tämä ei kuitenkaan pidä ollenkaan paikkansa. Ohjelmoimaan ei ole vielä tietääksemme kukaan ihminen oppinut lukemalla (tai esim. luentoa kuuntelemalla). Oppiminen perustuu oleellisesti aktiiviseen tekemiseen ja rutiinin kasvattamiseen. Esimerkkien ja erityisesti erilaisten omien kokeilujen tekeminen on parhaita tapoja "sisäistää" luettua tekstiä. </p>
+    <p>Read the material so that you do all of the examples you read yourself. It's worth making small changes to the examples and observe how the changes affect the program. At first you might think that doing the examples yourself too and editing them would slow down your learning. However this isn't true at all. As far as we know, no one has yet learned to program by just reading (or by just listening to a lecture). Learning is based substantially on actively doing and growing a routine. The examples and especially doing your own  experiments are one of the best ways to truly internalize the read text.</p>
 
-    <p>Pyri tekemään tai ainakin yrittämään tehtäviä sitä mukaa kuin luet tekstiä. Jos et osaa heti tehdä jotain tehtävää, älä masennu, sillä saat ohjausta tehtävän tekemiseen pajassa.</p>
+    <p>Try to do assignments, or at least to try them out as you read the text. If you can't get an assignment pass right off the bat, don't get depressed, since you'll be always able to get help with the assignment at the workshop.</p>
 
-    <p>Tekstiä ei ole tarkoitettu vain kertaalleen luettavaksi. Joudut varmasti myöhemmin palaamaan jo aiemmin lukemiisi kohtiin tai aiemmin tekemiisi tehtäviin. Tämä teksti ei sisällä kaikkea oleellista ohjelmointiin liittyvää. Itse asiassa ei ole olemassa mitään kirjaa josta löytyisi kaikki oleellinen. Eli joudut joka tapauksessa ohjelmoijan urallasi etsimään tietoa myös omatoimisesti. Kurssin harjoitukset sisältävät jo jonkun verran ohjeita, mistä suunnista ja miten hyödyllistä tietoa on mahdollista löytää.</p>
+    <p>The text isn't meant to be just readen once. You'll most certainly have to return to parts you've already read, or to assignments you've already done. This text doesn't contain everything essential related to programming. As a matter of fact no book exists that would have everything essential. So you will in every case - on your programming career - have to find information on your own. The excersises of the course already hold some instructions on how and where you'd be able to find useful information.</p>
 
-    <p>Muutamiin kohtiin olemme myös liittäneet screencasteja joita katsomalla voi pelkän valmiin koodin lukemisen sijaan seurata miten ohjelma muodostuu.</p>
+    <p>To some parts we've also attached screencasts, by watching the videos you'll be able to see how the code is written instead of just reading ready-made code.</p>
 
     <p></p>
 
-    <p>Kurssi alkaa siitä mihin ohjelmoinnin perusteet loppui ja oikeastaan kaikki ohjelmoinnin perusteet -kurssilla opitut asiat oletetaan nyt osattavan. Kannattaa käydä aina silloin tällöin kertaamassa Ohjelmoinnin perusteet -kurssin  <a href="../ohpe/index.html">materiaalia.</a></p>
+    <p>The course picks up where the programming basics left off and actually everything learned on the programming basics course are now assumed to be known. It's a good idea to go and check the <a href="../ohpe/index.html">material</a> of the programming basics course.</p>
 
 
-    <p><em>Huom!</em> Käytämme tällä kurssilla <a href="http://netbeans.org/">NetBeans</a>-nimistä ohjelmointiympäristöä. Ohjeet NetBeansin ja kurssilla käytettävän tehtäväautomaatin käyttöön löydät <a href="netbeans.html">täältä</a>.</p>
+    <p><em>Note!</em> On this course we use a programming environment known as <a href="http://netbeans.org/">NetBeans</a>. The instructions for using NetBeans and the assignment server you can find <a href="netbeans.html">here</a>.</p>
 
 <div class="tyhja"></div>
 
-<div class="viikkoraja">Viikko 1</div>
+<div class="viikkoraja">Week 1</div>
 
 
 
-<h2>Ohjelmoinnin perusteiden kertausta</h2>
+<h2>Recapping the programming basics</h2>
 
-    <p>Tässä luvussa kerrataan pikaisesti muutamia ohjelmoinnin perusteissa tutuksi tulleita asioita. Ohjelmoinnin perusteet -kurssin materiaaliin pääsee tutustumaan tarkemmin <a href="../ohpe/index.html">tästä.</a></p>
+    <p>In this chapter we briefly recap a few concepts we became familiar with in the programming basics. The programming basics course material can be gotten more familiar with <a href="../ohpe/index.html">here</a>.</p>
 
 <p>
-Ruostunutta ohjelmointitaitoa voi myös verestää
-<a href="http://www.cs.helsinki.fi/group/java/s12/ohpe/materiaali-ohpekertaus.html">täältä</a> löytyvät tehtäväsarjan avulla.
+Rusty programming skills can also be refreshed with the help of the excersises found <a href="http://www.cs.helsinki.fi/group/java/s12/ohpe/materiaali-ohpekertaus.html">here</a>.
 </p>
 
-    <h3>Ohjelma, käskyt ja muuttujat</h3>
+    <h3>Program, commands and variables</h3>
 
-    <p>Tietokoneohjelma koostuu joukosta käskyjä, joita tietokone suorittaa yksi kerrallaan, ylhäältä alaspäin. Käskyillä on aina määrätty rakenne ja semantiikka. Javassa, eli kurssilla käyttämässämme ohjelmointikielessä, käskyjä luetaan ylhäältä alas vasemmalta oikealle. Ohjelmointikurssit aloitetaan usein esittelemällä ohjelma, joka tulostaa merkkijonon <code>Hei maailma!</code>. Alla on Java-kielellä kirjoitettu käsky <code>Hei maailma!</code> -merkkijonon tulostamiseksi.</p>
+    <p>A computer program consists of a serie of commands that a computer runs one at a time, from top to down. The commands always have a predefined structure and semantics. In Java - the programming language we use on the course - the commands are read from top to down, left to right. Programming courses are traditionally started by introducing a program that prints the string <code>Hello World!</code> . Below is a command written in Java that prints the <code>Hello World!</code> string.</p>
 
 <pre class="sh_java">
-        System.out.println("Hei maailma!");
+        System.out.println("Hello World!");
 </pre>
 
-    <p>Käskyssä kutsutaan <code>System</code>-luokkaan liittyvän muuttujan <code>println</code>-metodia, joka tulostaa ensin parametrina annetun merkkijonon ja sen jälkeen rivinvaihdon. Metodille annetaan parametrina merkkijono <code>Hei maailma!</code>, jolloin tulostus on <code>Hei maailma!</code> jota seuraa rivinvaihto.</p>
+    <p>In the command the method <code>println</code> - that is related to the variable of  the <code>System</code> class - gets called which prints the string passed in to it as a parameter, and after that a linebreak. The method is given the string <code>Hello World!</code> as a paramter, consequently the program prints out <code>Hello World!</code> followed by a linebreak.</p>
 
-    <p>Ohjelmaan voi liittyä muuttujia joita voi käyttää osana ohjelman toimintaa. Alla on ohjelma, joka ensin esittelee kokonaislukutyyppisen muuttujan <code>pituus</code> johon asetetaan seuraavalla rivillä arvo 179. Tämän jälkeen tulostetaan muuttujan <code>pituus</code> arvo eli <code>179</code>.</p>
+    <p>Variables can be related to the program that can be used as part of the functionality of the program. Below is a program which introduces the variable <code>length</code> of the interger type to which is set the value 197 on the next line. After this the value <code>179</code> of the variable <code>length</code> is printed.</p>
 
 <pre class="sh_java">
-        int pituus;
-        pituus = 179;
-        System.out.println(pituus);
+        int length;
+        length = 179;
+        System.out.println(length);
 </pre>
 
-    <p>Yllä ohjelman suoritus tapahtuisi rivi kerrallaan. Ensin suoritetaan rivi <code>int pituus;</code>, jossa esitellään muuttuja nimeltä <code>pituus</code>. Seuraavaksi suoritetaan rivi <code>pituus = 179;</code>, jossa asetetaan edellisellä rivillä esiteltyyn muuttujaan arvo <code>179</code>. Tämän jälkeen suoritetaan rivi <code>System.out.println(pituus);</code>, jossa kutsutaan aiemmin näkemäämme tulostusmetodia, jolle annetaan parametrina muuttuja pituus. Metodi tulostaa muuttujan <code>pituus</code> sisällön eli arvon <code>179</code>.</p>
+    <p>Above the execution of the program would happen a line at a time. First the line <code>int length;</code> is executed, in which the variable <code>length</code> is introduced. Next the line <code>length = 179;</code> is executed, in which we set the value <code>179</code> to the variable that was introduced on the previous line. After this the line <code>System.out.println(length);</code> is run, in which we call the print method we saw earlier, to this method we give the variable <code>length</code> as a parameter. The method prints the content - the value - of the variable <code>length</code>, which is <code>179</code>.</p>
 
-    <p>Yllä olevassa ohjelmassa ei oikeastaan ole tarvetta esitellä muuttujaa <code>pituus</code> ja asettaa siihen arvoa erillisillä riveillä. Muuttujan esittelyn ja siihen liittyvän arvon asetuksen voi tehdä myös samalla rivillä.</p>
+    <p>In the program above we really wouldn't have to introduce the variable <code>length</code> on one line and then set it's value on the next line. The introduction of a variable and setting it's value can be done on the same line.</p>
 
 <pre class="sh_java">
-        int pituus = 179;
+        int length = 179;
 </pre>
 
-    <p>Yllä olevaa riviä suoritettaessa esitellään ensin muuttuja <code>pituus</code>, johon asetetaan esittelyn yhteydessä arvo <code>179</code>.</p>
+    <p>When executing the line above the variable <code>length</code> is first introduced and as it is introduced the value <code>179</code> is set to it.</p>
 
-    <p>Kaikki tieto esiintyy oikeasti tietokoneen sisällä jonona bittejä, eli lukuja nolla ja yksi. Muuttujat ovat ohjelmointikielten tarjoama abstraktio, jolla voidaan käsitellä erilaisia arvoja helpommin. Muuttujia käytetään arvojen säilyttämiseen ja ohjelman tilan ylläpitoon. Javassa käytössämme on muun muassa alkeisarvoiset muuttujatyypit <code>int</code> (kokonaisluku), <code>double</code> (liukuluku), <code>boolean</code> (totuusarvo), <code>char</code> (merkki) sekä viitetyyppiset muuttujatyypit  <code>String</code> (merkkijono), <code>ArrayList</code> (taulukko) ja kaikki luokat. Palaamme alkeistyyppisiin ja viitetyyppisiin muuttujiin ja niiden eroihin tarkemmin myöhemmin.</p>
+    <p>In reality all information within a computer is represented as a series of bits - ones and zeroes. Variables are an abstraction offered by the programming language with which we can handle different values more easily. The variables are used to store values and to maintain the state of the program. In Java, we have the primitive variable types <code>int</code> (integer), <code>double</code> (floating-point), <code>boolean</code> (truth value), <code>char</code> (character), and the reference type variables <code>String</code> (character string), <code>ArrayList</code> (array) and all classes. We'll return to primitive data type variables and to reference type variables and their differences later.</p>
 
 
-<h3>Muuttujien vertaileminen ja syötteen lukeminen</h3>
+<h3>Comparing variables and reading input</h3>
 
-    <p>Ohjelmien toiminnallisuus rakennetaan kontrollirakenteiden avulla. Kontrollirakenteet mahdollistavat erilaiset toiminnot ohjelman muuttujien arvoista riippuen. Alla esimerkki <code>if-else if-else</code> -kontrollirakenteesta, jossa tehdään erilainen toiminto vertailun tuloksesta riippuen. Esimerkissä tulostetaan merkkijono <code>Kaasua</code> jos muuttujan <code>nopeus</code> arvo on pienempi kuin 110, merkkijono <code>Jarrua</code> jos muuttujan <code>nopeus</code> arvo on suurempi kuin 120 ja merkkijono <code>Kruisaillaan</code> muissa tapauksissa.</p>
+    <p>The functionality of programs is built with the help of control structures. Control structures make different functions possible depending on the variables of the program. Below an example of a <code>if-else if-else</code> control structure, in which a different function is made depending on result of the comparison. In the example a string <code>Accelerate</code> is printed if the value of the variable <code>speed</code> is smaller than 110 and the string <code>Break</code>, if the <code>speed</code> is greater than 120, and <code>Cruising</code> in other cases.</p>
 
 <pre class="sh_java">
-        int nopeus = 105;
+        int speed = 105;
 
         if(nopeus < 110) {
-            System.out.println("Kaasua");
-        } else if (nopeus > 120) {
-            System.out.println("Jarrua");
+            System.out.println("Accelerate");
+        } else if (speed > 120) {
+            System.out.println("Break");
         } else {
-            System.out.println("Kruisaillaan");
+            System.out.println("Cruising");
         }
 </pre>
 
-        <p>Koska yllä olevassa esimerkissä muuttujan <code>nopeus</code> arvo on 105, tulostaa ohjelma aina merkkijonon <code>Kaasua</code>. Muistathan että merkkijonojen yhtäsuuruusvertailu tapahtuu merkkijonoon liittyvällä <code>equals</code>-metodilla. Alla on esimerkki jossa käytetään Javan <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a>-luokasta luotua olioita käyttäjän kirjoittaman syötteen lukemiseen. Ohjelma tarkistaa ovatko käyttäjän syöttämät merkkijonot samat.</p>
+        <p>Because in the example above the value of the variable <code>speed</code> is 105, the program will always print the string <code>Accelerate</code>. Remember that the comparison of strings is done with the <code>equals</code> method that is related to the string. Below is an example in which an object created from Java's <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class is used to read the input of an user. The program checks if the strings entered by the user are equal.</p>
 
 <pre class="sh_java">
-        Scanner lukija = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in);
 
-        System.out.print("Syötä ensimmäinen merkkijono: ");
-        String ensimmainen = lukija.nextLine();
+        System.out.print("Enter the first string: ");
+        String first = reader.nextLine();
 
-        System.out.print("Syötä toinen merkkijono: ");
-        String toinen = lukija.nextLine();
+        System.out.print("Enter the second string: ");
+        String second = reader.nextLine();
 
         System.out.println();
 
-        if (ensimmainen.equals(toinen)) {
-            System.out.println("Kirjoittamasi merkkijonot ovat samat!");
+        if (first.equals(second)) {
+            System.out.println("The strings you entered are the same!");
         } else {
-            System.out.println("Kirjoittamasi merkkijonot eivät olleet samat!");
+            System.out.println("The strings you entered weren't the same!");
         }
 </pre>
 
-        <p>Ohjelman toiminta riippuu käyttäjän syötteestä. Alla esimerkki, punaisella värillä tarkoitetaan käyttäjän kirjoittamaa syötettä.</p>
+        <p>The functionality of the program depends on the user's input. Below an example, the red text is user input.</p>
 
 <pre>
-Syötä ensimmäinen merkkijono: <font color="red">porkkana</font>
-Syötä toinen merkkijono: <font color="red">salaatti</font>
+Enter the first string: <font color="red">carrot</font>
+Enter the second string: <font color="red">lettuce</font>
 
-Kirjoittamasi merkkijonot eivät olleet samat!
+The strings you entered weren't the same!
 </pre>
 
 <h3>Toistolausekkeet</h3>
@@ -7977,7 +7975,7 @@ Täydennä <code>Muutoshistoria</code>-luokkaa analyysimetodein:</p>
 <li><b>public double varianssi()</b> palauttaa muutoshistorian arvojen varianssin (käytetään otosvarianssin kaavaa). Jos historia on tyhjä tai yhden arvon mittainen, metodi palauttaa nollan.</li>
 </ul>
 
-<p>Ohjeen varianssin laskemiseksi voit katsoa esimerkiksi <a href="http://fi.wikipedia.org/wiki/Varianssi#Populaatio-_ja_otosvarianssi">Wikipediasta</a> kohdasta populaatio- ja otosvarianssi. Esimerkiksi lukujen 3, 2, 7, 2 keskiarvo on 3.5, joten otosvarianssi on ((3 - 3.5)² + (2 - 3.5)² + (7 - 3.5)² + (2 - 3.5)²)/(4 - 1) ≈ 5,666667.)</p>
+<p>Ohjeen varianssin laskemiseksi voit katsoa esimerkiksi <a href="http://fi.wikipedia.org/wiki/Varianssi#Populaatio-_ja_otosvarianssi">Wikipediasta</a> kohdasta populaatio- ja otosvarianssi. Esimerkiksi lukujen 3, 2, 7, 2 keskiarvo on 3.5, joten otosvarianssi on ((3 - 3.5)² + (2 - 3.5)² + (7 - 3.5)² + (2 - 3.5)²)/(4 - 1) ˜ 5,666667.)</p>
 
 
 

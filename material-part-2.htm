@@ -789,12 +789,12 @@ public class Book {
 
 <NEXTWEEK></NEXTWEEK>
 
-  <h3>Hymiöt</h3>
+   <h3>Smileys</h3>
 
-  <p>Laadi tehtavapohjan mukana tulevalle luokalle <code>Hymiot</code> apumetodi <code>private static void tulostaHymioityna(String characterString)</code>. Metodin tulee tulostaa annettu characterString hymiöillä ympyröitynä. Käytä hymiönä characterStringa <code>:)</code>.</p>
+  <p>Create the support method <code>private static void printWithSmileys(String characterString)</code> for the class <code>Smileys</code> which comes with the assignment template. The method is to print the given character string surrounded with smileys. Use the character string <code>:)</code> as the smiley.</p>
 
 <pre class="sh_java">
-tulostaHymioityna("\\:D/");
+printWithSmileys("\\:D/");
 </pre>
 
 <pre>
@@ -803,13 +803,13 @@ tulostaHymioityna("\\:D/");
 :):):):):)
 </pre>
 
-  <p>Huomaa, että characterStringon on kirjoitettava \\ jotta saadaan tulostumaan merkki \.</p>
+  <p>Note, that the character string must have \\ so we can print the symbol \.</p>
 
-  <p><em>Huom!</em> Jos characterStringn pituus on pariton, tulee ylimääräinen välilyönti lisätä annetun characterStringn oikealle puolelle.</p>
+  <p><em>Note!</em> if the length of the character string is an odd number, add an extra space on the right side of the given character string.</p>
 
 <pre class="sh_java">
-tulostaHymioityna("\\:D/");
-tulostaHymioityna("87.");
+printWithSmileys("\\:D/");
+printWithSmileys("87.");
 </pre>
 
 <pre>
@@ -821,112 +821,111 @@ tulostaHymioityna("87.");
 :):):):):)
 </pre>
 
-  <p>Kannattaa ensin miettiä montako hymiötä minkäkin pituiselle characterStringlle tulee tulostaa. characterStringn pituuden saa selville siihen liittyvällä <code>length</code>-metodilla. Ala- ja ylärivin hymiöiden tulostamiseen auttaa toistolause, keskimmäisellä rivillä selviät normaalilla tulostuskomennolla. Pituuden parittomuuden voit tarkistaa jakojäännöksen avulla <code>characterString.length() % 2 == 1</code>.</p>
+  <p>It's a good idea to first think how many smileys should be printed for a character string of a certain length. The length of a character string can be found out with the method <code>length</code> which belongs to it. A loop is helpful for printing the top and bottom smiley rows, the middle row can be handled with a normal print command. You can check if a length is an odd number with the help of a remainder <code>characterString.length() % 2 == 1</code>.</p>
 
-<h3>characterStringmuuntaja</h3>
+<h3>character string changer</h3>
 
-  <p>Tässä tehtävässä luodaan characterStringmuuntaja, joka koostuu kahdesta luokasta. Luokka Muunnos muuttaa yksittäiset merkit toiseksi, Muuntaja sisältää joukon Muunnoksia ja muuttaa characterStringja sisältämiensä Muunnos-olioiden avulla.</p>
+  <p>In this assignment we create a character string changer, which consists of two classes. The class <code>Changer</code> turns a single character to another one. The Changer holds a number of Changes and changes character strings with the help of Change objects it holds.</p>
 
-  <h4>Muunnos-luokka</h4>
+  <h4>Change-class</h4>
 
-  <p>Luo luokka <code>Muunnos</code>, jolla on seuraavat toiminnot:</p>
+  <p>Create a class <code>Change</code>, that has the following functionalities:</p>
 
   <ul>
-    <li> konstruktori <code>public Muunnos(char muunnettava, char muunnettu)</code> luo olion joka tekee muunnoksia merkiltä <code>muunnettava</code> merkille <code>muunnettu</code></li>
-    <li> metodi <code>public String muunna(String characterString)</code> palauttaa muunnetun version annetusta characterStringsta</li>
+    <li> constructor <code>public Change(char fromCharacter, char toCharacter)</code> that creates an object that makes changes from character <code>fromCharacter</code> to <code>toCharacter</code></li>
+    <li> method <code>public String change(String characterString)</code> returns the changed version of the given character string</li>
   </ul>
 
-  <p>Luokkaa käytetään seuraavalla tavalla:</p>
+  <p>The class is used in the following way:</p>
 
 <pre class="sh_java">
-  String sana = "porkkana";
-  Muunnos muunnos1 = new Muunnos('a', 'b');
-  sana = muunnos1.muunna(sana);
+  String word = "carrot";
+  Change change1 = new Change('a', 'b');
+  word = change1.change(word);
 
-  System.out.println(sana);
+  System.out.println(word);
 
-  Muunnos muunnos2 = new Muunnos('k', 'x');
-  sana = muunnos2.muunna(sana);
+  Change Change2 = new Change('k', 'x');
+  word = Change2.change(word);
 
-  System.out.println(sana);
+  System.out.println(word);
 </pre>
 
-<p>Yllä oleva esimerkki tulostaisi:</p>
+<p>The example above would print:</p>
 
 <pre>
   porkkbnb
   porxxbnb
 </pre>
 
-<p><strong>Vihje:</strong> voit tehdä merkkien korvaamisen kahdella tavalla, joko suoraan hyödyntäen luokan <code>String</code> metodia (etsi metodi itse!) tai käymällä characterStringn läpi merkki merkiltä ja samalla muodostaen muunnetun characterStringn.</p>
+<p><strong>Tip:</strong> you can handle replacing characters in two ways, either with the help of a method in the class <code>String</code> (look for it yourself!) or by going through the character string character by character while forming the changed character string.</p>
 
-<p>Jos et käytä Stringin valmista metodia, niin kannattaa muistaa, että vaikka characterStringja vertaillaankin komennolla <code>equals</code> yksittäisiä merkkejä vertaillaan operaattorin == avulla:
-</p>
+<p>If you don't use the ready-made method of String, it is good to remember that even though you compare character strings with the command <code>equals</code> you compare single characters with the == operator:</p>
 
 <pre class="sh_java">
-  String sana = "porkkana";
+  String word = "carrot";
 
-  String korvattuAat = ""; 
-  for ( int i=0; i &lt; sana.length(); i++) {
-     char merkki = sana.charAt(i);
-     if ( merkki == 'a' ) {  
-        korvattuAat += '*'
+  String replacedA = ""; 
+  for ( int i=0; i &lt; word.length(); i++) {
+     char character = word.charAt(i);
+     if ( character == 'a' ) {  
+        replacedA += '*'
      }  else {
-        korvattuAat += merkki;
+        replacedA += character;
      } 
   }
 
-  System.out.println(korvattuAat);  // tulostu porkk*n*
+  System.out.println(replacedA);  // prints c*rrot
 </pre>
 
-<h4>Muuntaja-luokka</h4>
+<h4>Changer-class</h4>
 
-  <p>Luo luokka <code>Muuntaja</code>, jolla on seuraavat toiminnot:</p>
+  <p>Create the class <code>Changer</code>, with the following functions:</p>
 
   <ul>
-    <li> konstruktori <code>public Muuntaja()</code> luo uuden muuntajan</li>
-    <li> metodi <code>public void lisaaMuunnos(Muunnos muunnos)</code> lisää uuden muunnoksen muuntajaan</li>
-    <li> metodi <code>public String muunna(String characterString)</code> suorittaa characterStringlle kaikki lisätyt muunnokset niiden lisäysjärjestyksessä ja palauttaa muunnetun characterStringn</li>
+    <li> constructor <code>public Changer()</code> creates a new changer</li>
+    <li> method <code>public void addChange(Change change)</code> adds a new Change to the Changer</li>
+    <li> method <code>public String change(String characterString)</code> executes all added Changes for the character string in the order of their adding and returns the changed character string</li>
   </ul>
 
-  <p>Luokkaa käytetään seuraavalla tavalla:</p>
+  <p>The class is used in the following way:</p>
 
 <pre class="sh_java">
-  Muuntaja skanditPois = new Muuntaja();
-  skanditPois.lisaaMuunnos(new Muunnos('ä', 'a'));
-  skanditPois.lisaaMuunnos(new Muunnos('ö', 'o'));
-  System.out.println(skanditPois.muunna("ääliö älä lyö, ööliä läikkyy"));
+  Changer scandiesAway = new Changer();
+  scandiesPois.addChange(new Change('ä', 'a'));
+  scandiesPois.addChange(new Change('ö', 'o'));
+  System.out.println(scandiesAway.change("ääliö älä lyö, ööliä läikkyy"));
 </pre>
 
-  <p>Yllä oleva esimerkki tulostaisi:</p>
+  <p>The above example would print:</p>
 
 <pre>
   aalio ala lyo, oolia laikkyy
 </pre>
 
-<p><strong>Vihje:</strong> Muunnokset kannattaa tallettaa Muuntajan oliomuuttujana olevalle listalle (samaan tyyliin kuin peruskurssilla talletettiin esim. pelaajat joukkueeseen, puhelinnumerot puhelinluetteloon tai kirjat kirjastoon). Muunnos suoritetaan siten, että muunnettavalle characterStringlle suoritetaan muunnokset yksi kerrallaan seuraavan esimerkin tapaan:</p>
+<p><strong>Tip:</strong> It's a good idea to store the Changes to a list object variable of Changer (in the same fashion as on the basics course we stored players to a team, phone numbers to a phone book or books to a library, for example) A Changer is executed so that the changes are done to the character string one at a time as in the following example:</p>
 
 <pre class="sh_java">
-    ArrayList&lt;Muunnos&gt; muunnokset = new ArrayList&lt;Muunnos&gt;();
+    ArrayList&lt;Change&gt; changes = new ArrayList&lt;Change&gt;();
 
-    muunnokset.add( new Muunnos('a', 'b') );
-    muunnokset.add( new Muunnos('k', 'x') );
-    muunnokset.add( new Muunnos('o', 'å') );
+    changes.add( new Change('a', 'b') );
+    changes.add( new Change('k', 'x') );
+    changes.add( new Change('o', 'å') );
 
-    String sana = "porkkana";
+    String word = "carrot";
 
-    for (Muunnos muunnos : muunnokset) {
-        sana = muunnos.muunna(sana);
+    for (Change Change : changes) {
+        word = Change.change(word);
     }
 
-    System.out.println(sana);  // tulostuu pårxxbnb
+    System.out.println(word);  // tulostuu pårxxbnb
 </pre>
 
-<p><strong>MUISTUTUS</strong> kun lisäät ohjelmaasi ArrayList:in, Scanner:in tai Random:in ei Java tunnista luokkaa ellet "importoi" sitä lisäämällä ohjelmatiedoston alkuun:</p>
+<p><strong>REMINDER</strong> when you add an ArrayList, a Scanner or a Random, Java doesn't recognize the class unless you "import" it by adding the following lines to the beginning:</p>
 
 <pre class="sh_java">
-import java.util.ArrayList;    // importoi ArrayListin
-import java.util.*;            // importoi kaikki java.util:sissa olevat työkalut, mm. ArrayListin, Scannerin ja Randomin
+import java.util.ArrayList;    // imports ArrayList
+import java.util.*;            // imports all tools from java.util, including ArrayList, Scanner ja Random
 </pre>
 
 <h3>Laskin</h3>

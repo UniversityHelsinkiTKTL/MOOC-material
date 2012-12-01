@@ -71,9 +71,9 @@
         System.out.println("Hello World!");
 </pre>
 
-    <p>In the command the method <code>println</code> - that is related to the variable of the <code>System</code> class - gets called, which prints the string passed in to it as a parameter, and after that a linebreak. The method is given the string <code>Hello World!</code> as a parameter; consequently the program prints out <code>Hello World!</code> followed by a linebreak.</p>
+    <p>In the command the method <code>println</code> - which belongs to the <code>System</code> class - gets called, which prints the string passed in to it as a parameter, and after that a linebreak. The method is given the string <code>Hello World!</code> as a parameter; consequently the program prints out <code>Hello World!</code> followed by a linebreak.</p>
 
-    <p>Variables can be related to the program that can be used as part of the functionality of the program. Below is a program which introduces the variable <code>length</code> of the integer type. The value 197 is set to this variable on the next line. After this the value <code>179</code> of the variable <code>length</code> is printed.</p>
+    <p>Variables can be used as part of the functionality of the program. Below is a program which introduces the variable <code>length</code> of the integer type. The value 197 is set to this variable on the next line. After this the value <code>179</code> of the variable <code>length</code> is printed.</p>
 
 <pre class="sh_java">
         int length;
@@ -110,7 +110,7 @@
         }
 </pre>
 
-        <p>Because in the example above the value of the variable <code>speed</code> is 105, the program will always print the string <code>Accelerate</code>. Remember that the comparison of strings is done with the <code>equals</code> method that is related to the string. Below is an example in which an object created from Java's <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class is used to read the input of a user. The program checks if the strings entered by the user are equal.</p>
+        <p>Because in the example above the value of the variable <code>speed</code> is 105, the program will always print the string <code>Accelerate</code>. Remember that the comparison of strings is done with the <code>equals</code> method that belongs to the string. Below is an example in which an object created from Java's <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class is used to read the input of a user. The program checks if the strings entered by the user are equal.</p>
 
 <pre class="sh_java">
         Scanner reader = new Scanner(System.in);
@@ -263,13 +263,13 @@ Hip!
 
 <h3>Methods</h3>
 
-    <p>Methods are a way of chopping up the functionality of a program into smaller entities. All Java programs start their execution from the <code>main</code> program method, which is defined with the statement <code>public static void main(String[] args)</code>. The statement defines a static method - that is a method related to the class - which receives a character string array as its parameter.</p>
+    <p>Methods are a way of chopping up the functionality of a program into smaller entities. All Java programs start their execution from the <code>main</code> program method, which is defined with the statement <code>public static void main(String[] args)</code>. The statement defines a static method - that is a method which belongs to the class - which receives a character string array as its parameter.</p>
 
     <p>The program defines methods to abstract the functionalities of the program. When programming, one should try to achieve a situation in which the program can be looked at from a <em>higher level</em>, in such a case the main method consists of calls to a group of self-defined, well-named methods. The methods then specify the functionality of the program and perhaps are based on calls to other methods.</p> 
 
-    <p>Methods that are defined using the keyword <code>static</code> are related to the <em>class</em> that holds the method, and work as so-called support methods. The methods that are defined without the keyword <code>static</code> are related to the instances - <em>the objects</em> - created from the class and can modify the state of that individual object.</p>
+    <p>Methods that are defined using the keyword <code>static</code> belong to the <em>class</em> that holds the method, and work as so-called support methods. The methods that are defined without the keyword <code>static</code> belong to the instances - <em>the objects</em> - created from the class and can modify the state of that individual object.</p>
 
-    <p>A method always has a visibility modifier (public, visible to 'everyone', or private, only visible within its class), a return type (void, returns nothing) and a name. In the following code we create a method related to a class, <code>public static void print(String characterString, int times)</code>. This method prints a character string the defined amount of times. This time we use the method <code>System.out.print</code>, which works just like <code>System.out.println</code>, but doesn't print a linebreak.</p>
+    <p>A method always has a visibility modifier (public, visible to 'everyone', or private, only visible within its class), a return type (void, returns nothing) and a name. In the following code we create a method which belongs to a class, <code>public static void print(String characterString, int times)</code>. This method prints a character string the defined amount of times. This time we use the method <code>System.out.print</code>, which works just like <code>System.out.println</code>, but doesn't print a linebreak.</p>
 
 <pre class="sh_java">
         public static void print(String characterString, int times) {
@@ -318,7 +318,7 @@ public class HelloWorld {
 }
 </pre>
 
-    <p>In a program, classes are used to define concepts and functionalities related to those concepts. Objects can be created from a class which are the embodiments of the class. Every object related to a certain class has the same structure, but the variables related to the objects can be different. The methods of objects handle the state of the object, that is, the variables of the object.</p>
+    <p>In a program, classes are used to define concepts and functionalities related to those concepts. Objects can be created from a class which are the embodiments of the class. Every object belongs to a certain class has the same structure, but the variables belonging to the objects can be different. The methods of objects handle the state of the object, that is, the variables of the object.</p>
 
     <p>Let's inspect the class <code>Book</code> below; the class has the object variables name (character string) and publishingYear (integer).</p>
 
@@ -344,13 +344,13 @@ public class HelloWorld {
 
     <p>The definition in the beginning, <code>public class Book</code>, tells the name of the class. This is followed by the definitions of object variables. Object variables are variables which for each of the objects created from the class are their own -- the object variables of one object are unrelated to the state of the same variables of another object. It's usually appropriate to hide the object variables from the users of the class, to define the visibility modifier <em>private</em> for them. If the visibility modifier is set to <em>public</em>, the user of the object will be able to directly access the object variables.</p>
 
-    <p>Objects are created from a class with a <em>constructor</em>. A constructor is a method that initializes an object (creates the variables related to the object) and executes the commands that are within the constructor. The constructor is always named the same as the class that has the constructor in it. In the constructor <code>public Book(String name, int publishingYear)</code> a new object is created from the class <code>Book</code> and it's variables are set to the values that were passed in as parameters.</p>
+    <p>Objects are created from a class with a <em>constructor</em>. A constructor is a method that initializes an object (creates the variables belonging to the object) and executes the commands that are within the constructor. The constructor is always named the same as the class that has the constructor in it. In the constructor <code>public Book(String name, int publishingYear)</code> a new object is created from the class <code>Book</code> and it's variables are set to the values that were passed in as parameters.</p>
 
     <p>Two methods that handle the information in the object are also defined for the class above. The method <code>public String getName()</code> returns the name of the object in question. The method <code>public int getPublishingYear()</code> returns the publishing year of the object in question.</p>
 
     <h3>Object</h3>
 
-    <p>Objects are created with the help of the constructor that is defined within a class. In the program code the costructor is called with the <code>new</code> command, which returns a reference to the new object. Objects are instances created from classes. Let's inspect a program that creates two different books, after which it prints the values returned by the <code>getName</code> methods related to the objects.</p>
+    <p>Objects are created with the help of the constructor that is defined within a class. In the program code the costructor is called with the <code>new</code> command, which returns a reference to the new object. Objects are instances created from classes. Let's inspect a program that creates two different books, after which it prints the values returned by the <code>getName</code> methods beloning to the objects.</p>
 
 <pre class="sh_java">
         Book senseAndSensibility = new Book("Sense and Sensibility", 1811);
@@ -365,7 +365,7 @@ Sense and Sensibility
 Pride and Prejudice
 </pre>
 
-    <p>So, each object has it's own internal state. The state is formed from object variables that are related to the object. Object variables can be both primitive type variables and reference type variables. If reference type variables are related to the objects, it is possible that other objects also refer to the same referenced objects! Let's visualize this with the bank example, in which there's accounts and persons.</p>
+    <p>So, each object has it's own internal state. The state is formed from object variables that belong to the object. Object variables can be both primitive type variables and reference type variables. If reference type variables belong to the objects, it is possible that other objects also refer to the same referenced objects! Let's visualize this with the bank example, in which there's accounts and persons.</p>
 
 <pre class="sh_java">
         public class Account {

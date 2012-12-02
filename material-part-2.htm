@@ -753,9 +753,9 @@ public class UserInterface {
 
         <h3>Visibility</h3>
 
-	<p>Until now, we have been using two different keywords to define the <em>visibility</em> of methods and fields. <code>public</code> makes the method or field visible and accessable to everyone. Methods and constructors are usually marked as public, so that they can be called from outside the class.</p>
+	<p>Until now, we have been using two different keywords to define the <em>visibility</em> of methods and instance variables. <code>public</code> makes the method or instance variable visible and accessable to everyone. Methods and constructors are usually marked as public, so that they can be called from outside the class.</p>
 
-	<p>Declaring a method or field <code>private</code> hides it from the outside, making it only accessible from inside the same class.</p>
+	<p>Declaring a method or instance variable <code>private</code> hides it from the outside, making it only accessible from inside the same class.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -779,7 +779,7 @@ public class Book {
 }
 </pre>
 
-	<p>The fields in the Book class above can only be accessed with the public methods <code>getName</code> and <code>getContents</code>. Fields declared as private are only accessible in code inside the class. Methods can also be declared as private, which prevents them from being called outside the class.</p>
+	<p>The instance variables in the Book class above can only be accessed with the public methods <code>getName</code> and <code>getContents</code>. Fields declared as private are only accessible in code inside the class. Methods can also be declared as private, which prevents them from being called outside the class.</p>
 
 
         <p>Now it's time to start practicing!</p>

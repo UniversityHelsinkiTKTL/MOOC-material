@@ -2,56 +2,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
-        <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-          <title>Ohjelmoinnin perusteet ja jatkokurssi, kevät 2012</title>
-                <link rel="stylesheet" href="stylesheets/common.css" type="text/css" media="screen, print" />
-                <link rel="stylesheet" href="stylesheets/menu.css" type="text/css" media="screen" />
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Programming Basics Continuation Course, Spring 2012</title>
+    <link rel="stylesheet" href="stylesheets/common.css" type="text/css" media="screen, print" />
+    <link rel="stylesheet" href="stylesheets/menu.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="stylesheets/shjs/sh_style.css" type="text/css" media="screen, print" />
+    <link rel="stylesheet" href="stylesheets/exercises.css" type="text/css" media="screen, print" />
 
-                <script type="text/javascript" src="javascripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-1.7.1.min.js"></script>
 
-					<script type="text/javascript" src="javascripts/exercises-test.js"></script>
-					<script type="text/javascript" src="javascripts/common-new.js"></script>
+    <script type="text/javascript" src="javascripts/exercises-test.js"></script>
+    <script type="text/javascript" src="javascripts/common-new.js"></script>
 
-                <script type="text/javascript" src="javascripts/jquery.easing.js"></script>
-                <script type="text/javascript" src="javascripts/shjs/sh_main.min.js"></script>
-                <script type="text/javascript" src="javascripts/shjs/sh_java.min.js"></script>
-                <link rel="stylesheet" href="stylesheets/shjs/sh_style.css" type="text/css" media="screen, print" />
-                <link rel="stylesheet" href="stylesheets/exercises.css" type="text/css" media="screen, print" />
-        </head>
-
-        <body>
-
+    <script type="text/javascript" src="javascripts/jquery.easing.js"></script>
+    <script type="text/javascript" src="javascripts/shjs/sh_main.min.js"></script>
+    <script type="text/javascript" src="javascripts/shjs/sh_java.min.js"></script>
+</head>
+<body>
     <h1>Advanced programming course</h1>
 
-<p>Arto Vihavainen ja Matti Luukkainen</p>
+    <p>Arto Vihavainen and Matti Luukkainen</p>
 
-		<div id="toc" class="menu" data-first-chapter-index="1" data-first-exercise-index="109">
-		  <div id="materiaali_toc"></div>
-		  <div id="tehtavat_toc"></div>
-		</div>
+    <div id="toc" class="menu" data-first-chapter-index="1" data-first-exercise-index="109">
+      <div id="materiaali_toc"></div>
+      <div id="tehtavat_toc"></div>
+    </div>
 
     <p><strong><big>Note for the reader</big></strong></p>
 
-    <p>This is direct continuation to the programming basics course <a href="../ohpe/index.html">material.</a></p>
+    <p>This is direct continuation to the programming basics course <a href="../ohpe/index.html">material</a>.</p>
 
-		<p>This material is meant for the Helsinki University Department of Computer Science fall 2012 programming basics and advanced programming course. The material is based on springs of 2012, 2011 an 2010 course materials, of which content has been affected by Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju, Martin Pärtel, Joel Kaasinen ja Mikael Nousiainen.</p>
+    <p>This material is meant for the Helsinki University Department of Computer Science fall 2012 programming basics and advanced programming course. The material is based on springs of 2012, 2011, and 2010 course materials, of which content has been affected by Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju, Martin Pärtel, Joel Kaasinen  and Mikael Nousiainen.</p>
 
-    <p>Read the material so that you do all of the examples you read yourself. It's worth making small changes to the examples and observe how the changes affect the program. At first you might think that doing the examples yourself too and editing them would slow down your learning. However this isn't true at all. As far as we know, no one has yet learned to program by just reading (or by just listening to a lecture). Learning is based substantially on actively doing and growing a routine. The examples and especially doing your own  experiments are one of the best ways to truly internalize the read text.</p>
+    <p>Read the material so that you do all of the examples you read yourself. It's worth making small changes to the examples and observe how the changes affect the program. At first you might think that doing the examples yourself and editing them too would slow down your learning. However, this isn't true at all. As far as we know, no one has yet learned to program by just reading (or by just listening to a lecture). Learning is based substantially on actively doing and growing a routine. The examples, and especially doing your own experiments, are one of the best ways to truly internalize the read text.</p>
 
     <p>Try to do assignments, or at least to try them out as you read the text. If you can't get an assignment pass right off the bat, don't get depressed, since you'll be always able to get help with the assignment at the workshop.</p>
 
-    <p>The text isn't meant to be just readen once. You'll most certainly have to return to parts you've already read, or to assignments you've already done. This text doesn't contain everything essential related to programming. As a matter of fact no book exists that would have everything essential. So you will in every case - on your programming career - have to find information on your own. The excersises of the course already hold some instructions on how and where you'd be able to find useful information.</p>
+    <p>The text isn't meant to be just read once. You'll most certainly have to return to parts you've already read, or to assignments you've already done. This text doesn't contain everything essential related to programming. As a matter of fact, no book exists that would have everything essential. So you will in every case - on your programming career - have to find information on your own. The excersises of the course already hold some instructions on how and where you'd be able to find useful information.</p>
 
-    <p>To some parts we've also attached screencasts, by watching the videos you'll be able to see how the code is written instead of just reading ready-made code.</p>
+    <p>To some parts we've also attached screencasts; by watching the videos you'll be able to see how the code is written instead of just reading ready-made code.</p>
 
     <p></p>
 
-    <p>The course picks up where the programming basics left off and actually everything learned on the programming basics course are now assumed to be known. It's a good idea to go and check the <a href="../ohpe/index.html">material</a> of the programming basics course.</p>
+    <p>The course picks up where the programming basics left off, and everything learned in the programming basics course is now assumed to be known. It's a good idea to go and check the <a href="../ohpe/index.html">material</a> of the programming basics course.</p>
 
 
-    <p><em>Note!</em> On this course we use a programming environment known as <a href="http://netbeans.org/">NetBeans</a>. The instructions for using NetBeans and the assignment server you can find <a href="netbeans.html">here</a>.</p>
+    <p><em>Note!</em> On this course we use a programming environment known as <a href="http://netbeans.org/">NetBeans</a>. The instructions for using NetBeans and the assignment server can be found <a href="netbeans.html">here</a>.</p>
 
 <div class="tyhja"></div>
 
@@ -61,23 +59,21 @@
 
 <h2>Recapping the programming basics</h2>
 
-    <p>In this chapter we briefly recap a few concepts we became familiar with in the programming basics. The programming basics course material can be gotten more familiar with <a href="../ohpe/index.html">here</a>.</p>
+    <p>In this chapter we briefly recap a few concepts we became familiar with in the programming basics. You can familiarize yourself with the programming basics course material <a href="../ohpe/index.html">here</a>.</p>
 
-<p>
-Rusty programming skills can also be refreshed with the help of the excersises found <a href="http://www.cs.helsinki.fi/group/java/s12/ohpe/materiaali-ohpekertaus.html">here</a>.
-</p>
+    <p>Rusty programming skills can also be refreshed with the help of the excersises found <a href="http://www.cs.helsinki.fi/group/java/s12/ohpe/materiaali-ohpekertaus.html">here</a>.</p>
 
     <h3>Program, commands and variables</h3>
 
-    <p>A computer program consists of a serie of commands that a computer runs one at a time, from top to down. The commands always have a predefined structure and semantics. In Java - the programming language we use on the course - the commands are read from top to down, left to right. Programming courses are traditionally started by introducing a program that prints the string <code>Hello World!</code> . Below is a command written in Java that prints the <code>Hello World!</code> string.</p>
+    <p>A computer program consists of a series of commands that a computer runs one at a time, from top to bottom. The commands always have a predefined structure and semantics. In Java - the programming language we use on the course - the commands are read from top to down, left to right. Programming courses are traditionally started by introducing a program that prints the string <code>Hello World!</code>. Below is a command written in Java that prints the <code>Hello World!</code> string.</p>
 
 <pre class="sh_java">
         System.out.println("Hello World!");
 </pre>
 
-    <p>In the command the method <code>println</code> - that is related to the variable of  the <code>System</code> class - gets called which prints the string passed in to it as a parameter, and after that a linebreak. The method is given the string <code>Hello World!</code> as a paramter, consequently the program prints out <code>Hello World!</code> followed by a linebreak.</p>
+    <p>In the command the method <code>println</code> - which belongs to the <code>System</code> class - gets called, which prints the string passed in to it as a parameter, and after that a linebreak. The method is given the string <code>Hello World!</code> as a parameter; consequently the program prints out <code>Hello World!</code> followed by a linebreak.</p>
 
-    <p>Variables can be related to the program that can be used as part of the functionality of the program. Below is a program which introduces the variable <code>length</code> of the interger type to which is set the value 197 on the next line. After this the value <code>179</code> of the variable <code>length</code> is printed.</p>
+    <p>Variables can be used as part of the functionality of the program. Below is a program which introduces the variable <code>length</code> of the integer type. The value 197 is set to this variable on the next line. After this the value <code>179</code> of the variable <code>length</code> is printed.</p>
 
 <pre class="sh_java">
         int length;
@@ -85,27 +81,27 @@ Rusty programming skills can also be refreshed with the help of the excersises f
         System.out.println(length);
 </pre>
 
-    <p>Above the execution of the program would happen a line at a time. First the line <code>int length;</code> is executed, in which the variable <code>length</code> is introduced. Next the line <code>length = 179;</code> is executed, in which we set the value <code>179</code> to the variable that was introduced on the previous line. After this the line <code>System.out.println(length);</code> is run, in which we call the print method we saw earlier, to this method we give the variable <code>length</code> as a parameter. The method prints the content - the value - of the variable <code>length</code>, which is <code>179</code>.</p>
+    <p>The execution of the program above would happen one line at a time. First the line <code>int length;</code> is executed, in which the variable <code>length</code> is introduced. Next the line <code>length = 179;</code> is executed, in which we set the value <code>179</code> to the variable that was introduced on the previous line. After this the line <code>System.out.println(length);</code> is run, in which we call the print method we saw earlier. To this method we give the variable <code>length</code> as a parameter. The method prints the content - the value - of the variable <code>length</code>, which is <code>179</code>.</p>
 
-    <p>In the program above we really wouldn't have to introduce the variable <code>length</code> on one line and then set it's value on the next line. The introduction of a variable and setting it's value can be done on the same line.</p>
+    <p>In the program above we really wouldn't have to introduce the variable <code>length</code> on one line and then set it's value on the next. The introduction of a variable and setting it's value can be done on the same line.</p>
 
 <pre class="sh_java">
         int length = 179;
 </pre>
 
-    <p>When executing the line above the variable <code>length</code> is first introduced and as it is introduced the value <code>179</code> is set to it.</p>
+    <p>When executing the line above, the variable <code>length</code> is introduced and as it is introduced the value <code>179</code> is set to it.</p>
 
-    <p>In reality all information within a computer is represented as a series of bits - ones and zeroes. Variables are an abstraction offered by the programming language with which we can handle different values more easily. The variables are used to store values and to maintain the state of the program. In Java, we have the primitive variable types <code>int</code> (integer), <code>double</code> (floating-point), <code>boolean</code> (truth value), <code>char</code> (character), and the reference type variables <code>String</code> (character string), <code>ArrayList</code> (array) and all classes. We'll return to primitive data type variables and to reference type variables and their differences later.</p>
+    <p>In reality all information within a computer is represented as a series of bits - ones and zeros. Variables are an abstraction offered by the programming language with which we can handle different values more easily. The variables are used to store values and to maintain the state of the program. In Java, we have the primitive variable types <code>int</code> (integer), <code>double</code> (floating-point), <code>boolean</code> (truth value), <code>char</code> (character), and the reference variable types <code>String</code> (character string), <code>ArrayList</code> (array), and all classes. We'll return to primitive data type variables and to reference type variables and their differences later.</p>
 
 
 <h3>Comparing variables and reading input</h3>
 
-    <p>The functionality of programs is built with the help of control structures. Control structures make different functions possible depending on the variables of the program. Below an example of a <code>if-else if-else</code> control structure, in which a different function is made depending on result of the comparison. In the example a string <code>Accelerate</code> is printed if the value of the variable <code>speed</code> is smaller than 110 and the string <code>Break</code>, if the <code>speed</code> is greater than 120, and <code>Cruising</code> in other cases.</p>
+    <p>The functionality of programs is built with the help of control structures. Control structures make different functions possible depending on the variables of the program. Below, an example of an <code>if - else if - else</code> control structure, in which a different function is made depending on result of the comparison. In the example a string <code>Accelerate</code> is printed if the value of the variable <code>speed</code> is smaller than 110, the string <code>Break</code> if the <code>speed</code> is greater than 120, and the string <code>Cruising</code> in other cases.</p>
 
 <pre class="sh_java">
         int speed = 105;
 
-        if(nopeus < 110) {
+        if (speed < 110) {
             System.out.println("Accelerate");
         } else if (speed > 120) {
             System.out.println("Break");
@@ -114,7 +110,7 @@ Rusty programming skills can also be refreshed with the help of the excersises f
         }
 </pre>
 
-        <p>Because in the example above the value of the variable <code>speed</code> is 105, the program will always print the string <code>Accelerate</code>. Remember that the comparison of strings is done with the <code>equals</code> method that is related to the string. Below is an example in which an object created from Java's <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class is used to read the input of an user. The program checks if the strings entered by the user are equal.</p>
+        <p>Because in the example above the value of the variable <code>speed</code> is 105, the program will always print the string <code>Accelerate</code>. Remember that the comparison of strings is done with the <code>equals</code> method that belongs to the string. Below is an example in which an object created from Java's <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class is used to read the input of a user. The program checks if the strings entered by the user are equal.</p>
 
 <pre class="sh_java">
         Scanner reader = new Scanner(System.in);
@@ -134,7 +130,7 @@ Rusty programming skills can also be refreshed with the help of the excersises f
         }
 </pre>
 
-        <p>The functionality of the program depends on the user's input. Below an example, the red text is user input.</p>
+        <p>The functionality of the program depends on the user's input. Below is an example; the red text is user input.</p>
 
 <pre>
 Enter the first string: <font color="red">carrot</font>
@@ -145,16 +141,16 @@ The strings you entered weren't the same!
 
 <h3>Loops</h3>
 
-        <p>Repetition is often required in programs. First we make a so called while-true-break -loop, which we run until the user inputs the string <code>password</code>. The sentence <code>while(true)</code> begins the loop, which then will be repeated until it runs in to the keyword <code>break</code>.</p>
+        <p>Repetition is often required in programs. First we make a so-called while-true-break loop, which we run until the user inputs the string <code>password</code>. The statement <code>while(true)</code> begins the loop, which will then be repeated until it runs into the keyword <code>break</code>.</p>
 
 <pre class="sh_java">
         Scanner reader = new Scanner(System.in);
 
-        while(true) {
+        while (true) {
             System.out.print("Enter password: ");
             String password = reader.nextLine();
 
-            if(password.equals("password")) {
+            if (password.equals("password")) {
                 break;
             }
         }
@@ -170,7 +166,7 @@ Thanks!
 </pre>
 
 
-        <p>You can also set a comparison to a while loop instead of the boolean <code>true</code>. Below the user input is printed so that there's stars above and belwo it.</p>
+        <p>You can also pass a comparison to a while loop instead of the boolean <code>true</code>. Below, the user input is printed so that there's stars above and below it.</p>
 
 <pre class="sh_java">
         Scanner reader = new Scanner(System.in);
@@ -179,7 +175,7 @@ Thanks!
         String characterString = reader.nextLine();
 
         int starNumber = 0;
-        while(starNumber &lt; characterString.length()) {
+        while (starNumber &lt; characterString.length()) {
             System.out.print("*");
             starNumber = starNumber + 1;
         }
@@ -188,7 +184,7 @@ Thanks!
         System.out.println(characterString);
 
         starNumber = 0;
-        while(starNumber &lt; characterString.length()) {
+        while (starNumber &lt; characterString.length()) {
             System.out.print("*");
             starNumber = starNumber + 1;
         }
@@ -203,7 +199,7 @@ carrot
 ******
 </pre>
 
-        <p>The example above should make you feel a little bad inside. The bad feels hopefully are because you see that the example violates the rules learned in the programming basics. The example has unneccessary repetition and should be removed with the help of methods.</p>
+        <p>The example above should make you feel a little bad inside. The bad feelings are hopefully because you see that the example violates the rules learned in the programming basics. The example has unneccessary repetition which should be removed with the help of methods.</p>
 
         <p>In addition to the while-loop we also have two versions of the for-loop at our disposal. The newer for-loop is used for going through lists.</p>
 
@@ -213,7 +209,7 @@ carrot
         greets.add("Hallo");
         greets.add("Hi");
 
-        for(String greet: greets) {
+        for (String greet: greets) {
             System.out.println(greet);
         }
 </pre>
@@ -224,7 +220,7 @@ Hallo
 Hi
 </pre>
 
-        <p>The more traditional for-loop is used in situations similiar to where you would use a <code>while</code>-loop. It can, for example, be used to go through arrays. In the following example all values in the array <code>values</code> will be multiplied by two and then finally printed using the newer for-loop.</p>
+        <p>The more traditional for-loop is used in situations similiar to where you would use a while-loop. It can, for example, be used to go through arrays. In the following example all values in the array <code>values</code> will be multiplied by two and then finally printed using the newer for-loop.</p>
 
 <pre class="sh_java">
         int[] values = new int[] {1, 2, 3, 4, 5, 6};
@@ -233,7 +229,7 @@ Hi
             values[i] = values[i] * 2;
         }
 
-        for (int value : values) {
+        for (int value: values) {
             System.out.println(value);
         }
 </pre>
@@ -247,7 +243,7 @@ Hi
 12
 </pre>
 
-        <p>The traditional for-loop is very useful in cases where we go through indexes one at a time. The loop below will go through the characters of a character string one by one and prints the character string <code>Hip!</code> every time we encounter the character <code>a</code>.</p>
+        <p>The traditional for-loop is very useful in cases where we go through indices one at a time. The loop below will go through the characters of a character string one by one, and prints the character string <code>Hip!</code> every time we encounter the character <code>a</code>.</p>
 
 <pre class="sh_java">
         String characterString = "saippuakauppias";
@@ -267,33 +263,33 @@ Hip!
 
 <h3>Methods</h3>
 
-    <p>Methods are a way of chopping up the functionality of a program in to smaller entireties. All Java programs start their execution from the main program method, which is defined with the sentence <code>public static void main(String[] args)</code>. The sentence defines a static method - that is a method related to the class - which receives a character string array as it's parameter.</p>
+    <p>Methods are a way of chopping up the functionality of a program into smaller entities. All Java programs start their execution from the <code>main</code> program method, which is defined with the statement <code>public static void main(String[] args)</code>. The statement defines a static method - that is a method which belongs to the class - which receives a character string array as its parameter.</p>
 
-    <p>The programmed defines methods to abstractify the functionalities of the program. When programming, one should try to achieve a situation, in which the program can be looked at from a <em>higher level</em>, in such a case the main program consists of calls to a group of self-defined, well named methods. The methods then specify the functionality of the program and perhaps are based on calls to other methods.</p> 
+    <p>The program defines methods to abstract the functionalities of the program. When programming, one should try to achieve a situation in which the program can be looked at from a <em>higher level</em>, in such a case the main method consists of calls to a group of self-defined, well-named methods. The methods then specify the functionality of the program and perhaps are based on calls to other methods.</p> 
 
-<p>Methods that are defined using the keyword <code>static</code>, are related to the <em>class</em> that holds the method and work as so called support methods. The methods that are defined without the keyword <code>static</code> are related to the instances - <em>the objects</em> - created from the class and can modify the state of that individual object.</p>
+    <p>Methods that are defined using the keyword <code>static</code> belong to the <em>class</em> that holds the method, and work as so-called support methods. The methods that are defined without the keyword <code>static</code> belong to the instances - <em>the objects</em> - created from the class and can modify the state of that individual object.</p>
 
-    <p>A method always has a visibility modifier (public, visible to 'everyone', private, only visible within it's class), a return type (void, returns nothing) and a name. In the following we create a method related to a class <code>public static void print(String characterString, int times)</code>, that prints a character string the defined amount of times. This time we use the method <code>System.out.print</code>, which works just like <code>System.out.println</code>, but doesn't print a linebreak.</p>
+    <p>A method always has a visibility modifier (public, visible to 'everyone', or private, only visible within its class), a return type (void, returns nothing) and a name. In the following code we create a method which belongs to a class, <code>public static void print(String characterString, int times)</code>. This method prints a character string the defined amount of times. This time we use the method <code>System.out.print</code>, which works just like <code>System.out.println</code>, but doesn't print a linebreak.</p>
 
 <pre class="sh_java">
-    public static void print(String characterString, int times) {
-        for (int i = 0; i &lt; times; i++) {
-            System.out.print(characterString);
+        public static void print(String characterString, int times) {
+            for (int i = 0; i &lt; times; i++) {
+                System.out.print(characterString);
+            }
         }
-    }
 </pre>
 
-    <p>The method above prints the character string it receives as a parameter the amount of times the integer - that was also passed in as a parameter - says.</p>
+    <p>The method above prints the character string it receives as a parameter, the amount of times the integer - which was also passed in as a parameter - says.</p>
 
-    <p>In the chapter related to loops we noticed that the code had some nasty copy-paste stuff in it. With the help of methods we can move the printing of stars to a separate method. We create a method <code>public static void printStars(int times)</code>, which prints the amount of stars it receives as a parameter. The method uses a <code>for</code> loop instead of a <code>while</code>.</p>
+    <p>In the chapter on loops we noticed that the code had some nasty copy-paste stuff in it. With the help of methods, we can move the printing of stars to a separate method. We create a method <code>public static void printStars(int times)</code>, which prints the amount of stars it receives as a parameter. The method uses a <code>for</code> loop instead of a <code>while</code>.</p>
 
 <pre class="sh_java">
-    public static void printStars(int times) {
-        for(int i = 0; i < kertaa; i++) {
-            System.out.print("*");
+        public static void printStars(int times) {
+            for (int i = 0; i < kertaa; i++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
-        System.out.println();
-    }
 </pre>
 
         <p>Metodia hyödyntäessä aiemmin kauhistusta aihettanut esimerkkimme näyttää seuraavalta.</p>
@@ -310,9 +306,9 @@ Hip!
 </pre>
 
 
-    <h3>Class</h3>
+<h3>Class</h3>
 
-    <p>Methods can abstract a program up to a certain point, but as the program becomes larger it's sensible to chop down the program even further in to smaller and more logical entirities. With the help of classes we can define higher level concepts of a program and functionalities related to those concepts. Every Java program requires a a class in order to work, so the <code>Hello World!</code> example wouldn't work without the class definition. A class is defined with the keywords <code>public class nameOfTheClass</code>.</p>
+    <p>Methods can abstract a program up to a certain point, but as the program becomes larger it's sensible to chop down the program even further into smaller and more logical entities. With the help of classes, we can define higher level concepts of a program and functionalities related to those concepts. Every Java program requires a class in order to work, so the <code>Hello World!</code> example wouldn't work without the class definition. A class is defined with the keywords <code>public class nameOfTheClass</code>.</p>
 
 <pre class="sh_java">
 public class HelloWorld {
@@ -322,39 +318,39 @@ public class HelloWorld {
 }
 </pre>
 
-    <p>So in a program classes are used to define concepts and functionalities related to those concepts. Objects can be created from classes which are the embodiments of the classes. Every object related to a certain class has the same structure, but the variables related to the objects can be different. The methods of objects handle the state of the object, that is the variables of the object.</p>
+    <p>In a program, classes are used to define concepts and functionalities related to those concepts. Objects can be created from a class which are the embodiments of the class. Every object belongs to a certain class has the same structure, but the variables belonging to the objects can be different. The methods of objects handle the state of the object, that is, the variables of the object.</p>
 
-    <p>Lets inspect the class <code>Book</code> below, the class has the object variables name (character string) and publishingYear (integer).</p>
+    <p>Let's inspect the class <code>Book</code> below; the class has the object variables name (character string) and publishingYear (integer).</p>
 
 <pre class="sh_java">
-public class Book {
-    private String name;
-    private int publishingYear;
+        public class Book {
+            private String name;
+            private int publishingYear;
 
-    public Book(String name, int publishingYear) {
-        this.name = name;
-        this.publishingYear = publishingYear;
-    }
+            public Book(String name, int publishingYear) {
+                this.name = name;
+                this.publishingYear = publishingYear;
+            }
 
-    public String getName() {
-        return this.name;
-    }
+            public String getName() {
+                return this.name;
+            }
 
-    public int getPublishingYear() {
-        return this.publishingYear;
-    }
-}
+            public int getPublishingYear() {
+                return this.publishingYear;
+            }
+        }
 </pre>
 
-    <p>The definition in the beginning <code>public class Book</code> tells the name of the class. This is followed by the definitions of object variables. Object variables are variables which for each of the objects created from the class are their own -- the object variable of one object are unrelated to the state of the same variable of another object. It's usually approperiate to hide the object variables from the users of the class, to define the visibility modifier <em>private</em> for them. If the visibility modifier is set to <em>public</em> the user of the object will be able to directly access the object variables.</p>
+    <p>The definition in the beginning, <code>public class Book</code>, tells the name of the class. This is followed by the definitions of object variables. Object variables are variables which for each of the objects created from the class are their own -- the object variables of one object are unrelated to the state of the same variables of another object. It's usually appropriate to hide the object variables from the users of the class, to define the visibility modifier <em>private</em> for them. If the visibility modifier is set to <em>public</em>, the user of the object will be able to directly access the object variables.</p>
 
-<p>Objects are created from a class with a <em>constructor</em>. Constructor is a method taht formats an object (creates the variables related to the object) and executes the commands that are within the constructor. The constructor is always named the same as the class that has the constructor in it. In the constructor <code>public Book(String name, int publishingYear)</code> a new object is created from the class <code>Book</code> and in to it's variables is set the values that were passed in as parameters.</p>
+    <p>Objects are created from a class with a <em>constructor</em>. A constructor is a method that initializes an object (creates the variables belonging to the object) and executes the commands that are within the constructor. The constructor is always named the same as the class that has the constructor in it. In the constructor <code>public Book(String name, int publishingYear)</code> a new object is created from the class <code>Book</code> and it's variables are set to the values that were passed in as parameters.</p>
 
     <p>Two methods that handle the information in the object are also defined for the class above. The method <code>public String getName()</code> returns the name of the object in question. The method <code>public int getPublishingYear()</code> returns the publishing year of the object in question.</p>
 
     <h3>Object</h3>
 
-    <p>Objects are created with the help of the constructor that is defined within a class. In the program code the costrucrtor is called with the <code>new</code> command, which returns a reference to the new object. Objects are instances created from classes. Lets inspect the program that creates two different books, after which it prints the values returned by the <code>getName</code> methods related to the objects.</p>
+    <p>Objects are created with the help of the constructor that is defined within a class. In the program code the costructor is called with the <code>new</code> command, which returns a reference to the new object. Objects are instances created from classes. Let's inspect a program that creates two different books, after which it prints the values returned by the <code>getName</code> methods beloning to the objects.</p>
 
 <pre class="sh_java">
         Book senseAndSensibility = new Book("Sense and Sensibility", 1811);
@@ -369,60 +365,60 @@ Sense and Sensibility
 Pride and Prejudice
 </pre>
 
-    <p>So each object has it's own internal state. The state is formed from object variables that are related to the object. Object variables can be both primitive type variables and reference type variables. If reference type variables are related to the objects it is possible that other objects also refers to the same objects! Lets visualize this with the bank example, in which there's accounts and persons.</p>
+    <p>So, each object has it's own internal state. The state is formed from object variables that belong to the object. Object variables can be both primitive type variables and reference type variables. If reference type variables belong to the objects, it is possible that other objects also refer to the same referenced objects! Let's visualize this with the bank example, in which there's accounts and persons.</p>
 
 <pre class="sh_java">
-public class Account {
-    private String accountID;
-    private int balanceAsCents;
+        public class Account {
+            private String accountID;
+            private int balanceAsCents;
 
-    public Account(String accountID) {
-        this.accountID = accountID;
-        this.balanceAsCents = 0;
-    }
+            public Account(String accountID) {
+                this.accountID = accountID;
+                this.balanceAsCents = 0;
+            }
 
-    public void deposit(int sum) {
-        this.balanceAsCents += sum;
-    }
+            public void deposit(int sum) {
+                this.balanceAsCents += sum;
+            }
 
-    public int getBalanceAsCents() {
-        return this.balanceAsCents;
-    }
+            public int getBalanceAsCents() {
+                return this.balanceAsCents;
+            }
 
-    // .. other methods related to an account
-}
-</pre>
-
-<pre class="sh_java">
-import java.util.ArrayList;
-
-public class Person {
-    private String name;
-    private ArrayList&lt;Account&gt; accounts;
-
-    public Person(String name) {
-        this.name = name;
-        this.accounts = new ArrayList&lt;Account&gt;();
-    }
-
-    public void addAccount(Account account) {
-        this.accounts.add(account);
-    }
-
-    public int moneyTotal() {
-        int total = 0;
-        for (Account account: this.accounts) {
-            total += account.getBalanceAsCents();
+            // .. other methods related to an account
         }
-
-        return total;
-    }
-
-    // ... other methods related to a person
-}
 </pre>
 
-    <p>Each object created from the <code>Person</code> class has it's own name and it's own list of accounts. Next, lets create two persons and two accounts. One of the accounts is owned by only one person and the other one is shared.</p>
+<pre class="sh_java">
+        import java.util.ArrayList;
+
+        public class Person {
+            private String name;
+            private ArrayList&lt;Account&gt; accounts;
+
+            public Person(String name) {
+                this.name = name;
+                this.accounts = new ArrayList&lt;Account&gt;();
+            }
+
+            public void addAccount(Account account) {
+                this.accounts.add(account);
+            }
+
+            public int moneyTotal() {
+                int total = 0;
+                for (Account account: this.accounts) {
+                    total += account.getBalanceAsCents();
+                }
+
+                return total;
+            }
+
+            // ... other methods related to a person
+        }
+</pre>
+
+    <p>Each object created from the <code>Person</code> class has it's own name and it's own list of accounts. Next, let's create two persons and two accounts. One of the accounts is owned by only one person and the other one is shared.</p>
 
 <pre class="sh_java">
         Person matti = new Person("Matti");
@@ -463,7 +459,7 @@ Money on Matti's accounts: 160000
 Money on Maija's accounts: 10000
 </pre>
 
-        <p>First the accounts of both persons are empty. When money is added to the salaryAccount - to which <code>matti</code> has a reference to - the amount of money on Matti's accounts grows. When money is added to the householdAccount <em>the amount of money each person has grows</em>. This is because both Matti and Maija have the "access" to the householdAccount, so in each of the persons' object variable <code>accounts</code> there's a reference to the householdAccount.</p>
+    <p>Initially, the accounts of both persons are empty. When money is added to the salaryAccount - which <code>matti</code> has a reference to - the amount of money on Matti's accounts grows. When money is added to the householdAccount <em>the amount of money each person has grows</em>. This is because both Matti and Maija have "access" to the householdAccount, so in each of the persons' object variable <code>accounts</code>, there's a reference to the householdAccount.</p>
 
 
 <h3>The structure of a program</h3>

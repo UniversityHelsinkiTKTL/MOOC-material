@@ -466,324 +466,323 @@ Money on Maija's accounts: 10000
         <p>First the accounts of both persons are empty. When money is added to the salaryAccount - to which <code>matti</code> has a reference to - the amount of money on Matti's accounts grows. When money is added to the householdAccount <em>the amount of money each person has grows</em>. This is because both Matti and Maija have the "access" to the householdAccount, so in each of the persons' object variable <code>accounts</code> there's a reference to the householdAccount.</p>
 
 
-<h3>Ohjelmien rakenteesta</h3>
+<h3>The structure of a program</h3>
 
-        <p>Ohjelmista tulee olla selkeitä niin ohjelmoijalle kuin muille ohjelmaa tarkasteleville. Selkeys saadaan aikaan sopivalla luokkarakenteella ja hyvien nimeämiskäytänteiden seuraamisella. Jokaisella luokalla tulee olla selkeä vastuu, johon liittyviä tehtäviä luokka hoitaa. Metodeja käytetään toiston vähentämiseen ja luokkien sisäisten toimintojen jäsentämiseen. Myös metodilla tulee olla selkeä vastuu eli metodien ei tule olla liian pitkiä ja liian montaa asiaa tekeviä. Liian montaa asiaa tekevät monimutkaiset metodit tuleekin pilkkoa useiksi pienemmiksi apumetodeiksi joita alkuperäinen metodi kutsuu Hyvät ohjelmoijat ohjelmoivat koodia, jota he ja heidän työkaverinsa ymmärtävät myös viikkoja koodin kirjoittamisen jälkeenkin.</p>
+	<p>A program should be clear and easy to understand for both the original writer and others. The most important aspects of a clear program are class structure and good naming conventions. Each class should have a single, clearly defined responsibility. Methods are used to reduce repetition and to create a structure for the internal functionality of the class. A method should also have a clear responsibility to ensure it stays short and simple. Methods that do many things should be divided into smaller helper methods, which are called by the original method. A good programmer writes code that can be understood even weeks after it was originally written.</p>
 
-        <p>Ymmärrettävään koodiin liittyy niin kuvaava muuttujien, metodien ja luokkien nimentä kuin ohjelmakoodin ilmavuus ja johdonmukainen sisentäminen. Tutkitaan seuraavaa esimerkkiä käyttöliittymästä, jossa käyttäjä voi ostaa ja myydä esineitä. Vaikka esimerkissä ainoat ostettavat ja myytävät asiat ovat porkkanoita, eikä niistä pidetä kirjaa, voisi käyttöliittymää laajentaa esimerkiksi siten että sille annettaisiin myytävien tavaroiden varasto konstruktorin parametrina.</p>
+	<p>Good, understandable code uses descriptive naming of variables, methods and classes, and consistent indentation. Let's look at the example below, a small program for buying and selling goods. Even though the only thing available is carrots, with no bookkeeping, the user interface could be extended to use a storage class to keep track of items.
 
 <pre class="sh_java">
-public class Kayttoliittyma {
-    private Scanner lukija;
+public class UserInterface {
+    private Scanner reader;
 
-    public Kayttoliittyma(Scanner lukija) {
-        this.lukija = lukija;
+    public UserInterface(Scanner reader) {
+        this.reader = reader;
     }
 
-    public void kaynnista() {
+    public void start() {
         while (true) {
-            String komento = reader.nextLine();
+            String command = reader.nextLine();
 
-            if (komento.equals("lopeta")) {
+            if (command.equals("end")) {
                 break;
-            } else if (komento.equals("osta")) {
-                String luettu = null;
+            } else if (command.equals("buy")) {
+                String line = null;
                 while(true) {
-                    System.out.print("Mitä ostetaan: ");
-                    luettu = reader.nextLine();
-                    if(luettu.equals("porkkana") {
+                    System.out.print("What to buy: ");
+                    line = reader.nextLine();
+                    if(line.equals("carrot")) {
                         break;
                     } else {
-                        System.out.println("Ei löydy!");
+                        System.out.println("Item not found!");
                     }
                 }
 
-                System.out.println("Ostettu!");
-            } else if (komento.equals("myy")) {
-                String luettu = null;
+                System.out.println("Bought!");
+            } else if (command.equals("sell")) {
+                String line = null;
                 while(true) {
-                    System.out.print("Mitä myydään: ");
-                    luettu = reader.nextLine();
-                    if(luettu.equals("porkkana") {
+                    System.out.print("What to sell: ");
+                    line = reader.nextLine();
+                    if(line.equals("carrot")) {
                         break;
                     } else {
-                        System.out.println("Ei löydy!");
+                        System.out.println("Item not found!");
                     }
                 }
 
-                System.out.println("Myyty!");
+                System.out.println("Sold!");
             }
         }
     }
 }
 </pre>
 
-        <p>Huomaamme esimerkissä heti monta ongelmakohtaa. Ensimmäinen pulma liittyy <code>kaynnista</code>-metodin sisällön suuruuteen. Huomaamme että metodia voi pienentää siirtämällä muiden komentojen kuin <code>lopeta</code>-komennon käsittelyn erilliseen metodiin.</p>
+	<p>This example has numerous problems. The first problem is the long <code>start</code> method. It can be shortened by moving most of the command handling to a separate method.</p>
 
 <pre class="sh_java">
-public class Kayttoliittyma {
-    private Scanner lukija;
+public class UserInterface {
+    private Scanner reader;
 
-    public Kayttoliittyma(Scanner lukija) {
-        this.lukija = lukija;
+    public UserInterface(Scanner reader) {
+        this.reader = reader;
     }
 
-    public void kaynnista() {
+    public void start() {
         while (true) {
-            String komento = reader.nextLine();
+            String command = reader.nextLine();
 
-            if (komento.equals("lopeta")) {
+            if (command.equals("end")) {
                 break;
             } else {
-                hoidaKomento(komento);
+                handleCommand(command);
             }
         }
     }
 
-    public void hoidaKomento(String komento) {
-        if (komento.equals("osta")) {
-            String luettu = null;
+    public void handleCommand(String command) {
+        if (command.equals("buy")) {
+            String line = null;
             while(true) {
-                System.out.print("Mitä ostetaan: ");
-                luettu = reader.nextLine();
-                if(luettu.equals("porkkana") {
+                System.out.print("What to buy: ");
+                line = reader.nextLine();
+                if(line.equals("carrot")) {
                     break;
                 } else {
-                    System.out.println("Ei löydy!");
+                    System.out.println("Item not found!");
                 }
             }
 
-            System.out.println("Ostettu!");
-        } else if (komento.equals("myy")) {
-            String luettu = null;
+            System.out.println("Bought!");
+        } else if (command.equals("sell")) {
+            String line = null;
             while(true) {
-                System.out.print("Mitä myydään: ");
-                luettu = reader.nextLine();
-                if(luettu.equals("porkkana") {
+                System.out.print("What to sell: ");
+                line = reader.nextLine();
+                if(line.equals("carrot")) {
                     break;
                 } else {
-                    System.out.println("Ei löydy!");
+                    System.out.println("Item not found!");
                 }
             }
 
-            System.out.println("Myyty!");
+            System.out.println("Sold!");
         }
     }
 }
 </pre>
 
-        <p>Metodissa <code>hoidaKomento</code> on vielä toisteisuutta syötteen lukemiseen liittyen. Huomaamme että lukemisessa toistuu aina muutama characterString. Kun ostetaan kysytään "Mitä ostetaan: ", kun myydään kysytään "Mitä myydään: ". Molemmat lukemiskohdat odottavat characterStringa "porkkana" ja tulostavat "Ei löydy!" jos käyttäjä ei syötä characterStringa "Porkkana". Luodaan tätä varten erillinen metodi <code>public String lueKayttajalta(String kysymys)</code>, joka kysyy käyttäjältä haluttua characterStringa. Huomaa että jos käyttöliittymässämme olisi käytössä jonkinlainen varastonhallintaolio, vertaisimme sen sisältämiä esineitä käyttäjän syötteeseen porkkanan sijasta. </p>
-
+	<p><code>handleCommand</code> still has some repetition for reading the user input. Both buying and selling first print a character string with the question, then take input from the user. If the input is incorrect (other than "carrot"), "Item not found!" is printed. We will create a new method, <code>public String readInput(String question)</code>, to handle this. Note that if the program used some other object to keep track of inventory, we would compare user input to the inventory's contents instead.</p>
 
 <pre class="sh_java">
-public class Kayttoliittyma {
-    private Scanner lukija;
+public class UserInterface {
+    private Scanner reader;
 
-    public Kayttoliittyma(Scanner lukija) {
-        this.lukija = lukija;
+    public UserInterface(Scanner reader) {
+        this.reader = reader;
     }
 
-    public void kaynnista() {
+    public void start() {
         while (true) {
-            String komento = reader.nextLine();
+            String command = reader.nextLine();
 
-            if (komento.equals("lopeta")) {
+            if (command.equals("end")) {
                 break;
             } else {
-                hoidaKomento(komento);
+                handleCommand(command);
             }
         }
     }
 
-    public void hoidaKomento(String komento) {
-        if (komento.equals("osta")) {
-            String luettu = lueKayttajalta("Mitä ostetaan: ");
-            System.out.println("Ostettu!");
-        } else if (komento.equals("myy")) {
-            String luettu = lueKayttajalta("Mitä myydään: ");
-            System.out.println("Myyty!");
+    public void handleCommand(String command) {
+        if (command.equals("buy")) {
+            String input = readInput("What to buy: ");
+            System.out.println("Bought!");
+        } else if (command.equals("sell")) {
+            String input = readInput("What to sell: ");
+            System.out.println("Sold!");
         }
     }
 
-    public String lueKayttajalta(String kysymys) {
-        while(true) {
-            System.out.print(kysymys);
-            String luettu = reader.nextLine();
+    public String readInput(String question) {
+        while (true) {
+            System.out.print(question);
+            String line = reader.nextLine();
 
-            if(luettu.equals("porkkana") {
-                return luettu;
+            if (line.equals("carrot")) {
+                return line;
             } else {
-                System.out.println("Ei löydy!");
+                System.out.println("Item not found!");
             }
         }
     }
 }
 </pre>
 
-        <p>Ohjelma on nyt pilkottu sopiviksi osiksi. Huomaamme kuitenkin että <code>kaynnista</code>-metodin yhteydessä on turha <code>else</code>-haara. Jos ohjelman suoritus päätyy <code>if</code>-haaraan, suoritetaan komento <code>break</code> ja poistutaan toistolauseesta. Voimme siis poistaa <code>else</code>-haaran jolloin <code>hoidaKomento</code>-metodin suorittaminen on omalla rivillään. Samanlainen tilanne on myös metodissa <code>lueKayttajalta</code>. Siistitään se myös samalla.</p>
+	<p>The program is now divided into appropriate parts. There are still a few things, other than implementing more methods, we can do to improve readability. The <code>start</code> method has an <code>if</code> branch that ends in <code>break</code>, which exits the loop. We can remove the unnecessary <code>else</code> branch, simply moving the <code>handleCommand</code> method to be called after the if statement. The program still works exactly as before, but the method is now shorter and easier to read. A similar situation exists in the <code>readInput</code> method, so we will clean it up too.</p>
 
 <pre class="sh_java">
-public class Kayttoliittyma {
-    private Scanner lukija;
+public class UserInterface {
+    private Scanner reader;
 
-    public Kayttoliittyma(Scanner lukija) {
-        this.lukija = lukija;
+    public UserInterface(Scanner reader) {
+        this.reader = reader;
     }
 
-    public void kaynnista() {
+    public void start() {
         while (true) {
-            String komento = reader.nextLine();
+            String command = reader.nextLine();
 
-            if (komento.equals("lopeta")) {
+            if (command.equals("end")) {
                 break;
             }
-
-            hoidaKomento(komento);
+            
+            handleCommand(command);
         }
     }
 
-    public void hoidaKomento(String komento) {
-        if (komento.equals("osta")) {
-            String luettu = lueKayttajalta("Mitä ostetaan: ");
-            System.out.println("Ostettu!");
-        } else if (komento.equals("myy")) {
-            String luettu = lueKayttajalta("Mitä myydään: ");
-            System.out.println("Myyty!");
+    public void handleCommand(String command) {
+        if (command.equals("buy")) {
+            String input = readInput("What to buy: ");
+            System.out.println("Bought!");
+        } else if (command.equals("sell")) {
+            String input = readInput("What to sell: ");
+            System.out.println("Sold!");
         }
     }
 
-    public String lueKayttajalta(String kysymys) {
-        while(true) {
-            System.out.print(kysymys);
-            String luettu = reader.nextLine();
+    public String readInput(String question) {
+        while (true) {
+            System.out.print(question);
+            String line = reader.nextLine();
 
-            if(luettu.equals("porkkana") {
-                return luettu;
+            if (line.equals("carrot")) {
+                return line;
             }
 
-            System.out.println("Ei löydy!");
+            System.out.println("Item not found!");
         }
     }
 }
 </pre>
 
 
-        <p>Yllä kuvaavaamme ohjelman pilkkomista pienempiin osiin kutsutaan <em>refaktoroinniksi</em>. Refaktoroinnissa ohjelman toiminta pysyy samana, mutta sisäinen rakenne muuttuu selkeämmäksi ja ylläpidettävämmäksi. Nykyinen versiomme on huomattavasti selkeämpi alkuperäiseen ohjelmaan verrattuna. Ohjelmassa on toki vieläkin parannettavaa. Esimerkiksi metodin <code>hoidaKomento</code> voi pilkkoa ostamis- ja myymistoiminnallisuutta hoitaviin metodeihin.</p>
+	<p>Dividing a program into smaller parts, like we did above, is called <em>refactoring</em>. It does not change how the program works, but the internal structure is changed to be more clear and easier to maintain. The current version is much more clear than the original one, but it can be improved further. For example, <code>handleCommand</code> can be further divided into two different methods, one for handling buying and the other for selling.</p>
 
 <pre class="sh_java">
-public class Kayttoliittyma {
-    private Scanner lukija;
+public class UserInterface {
+    private Scanner reader;
 
-    public Kayttoliittyma(Scanner lukija) {
-        this.lukija = lukija;
+    public UserInterface(Scanner reader) {
+        this.reader = reader;
     }
 
-    public void kaynnista() {
+    public void start() {
         while (true) {
-            String komento = reader.nextLine();
+            String command = reader.nextLine();
 
-            if (komento.equals("lopeta")) {
+            if (command.equals("end")) {
                 break;
             }
-
-            hoidaKomento(komento);
+            
+            handleCommand(command);
         }
     }
 
-    public void hoidaKomento(String komento) {
-        if (komento.equals("osta")) {
-            komentoOsta();
-        } else if (komento.equals("myy")) {
-            komentoMyy();
+    public void handleCommand(String command) {
+        if (command.equals("buy")) {
+            commandBuy();
+        } else if (command.equals("sell")) {
+            commandSell();
         }
     }
 
-    public void komentoOsta() {
-        String luettu = lueKayttajalta("Mitä ostetaan: ");
-        System.out.println("Ostettu!");
+    public void commandBuy() {
+        String input = readInput("What to buy: ");
+        System.out.println("Bought!");
     }
 
-    public void komentoMyy() {
-        String luettu = lueKayttajalta("Mitä myydään: ");
-        System.out.println("Myyty!");
+    public void commandSell() {
+        String input = readInput("What to sell: ");
+        System.out.println("Sold!");
     }
 
-    public String lueKayttajalta(String kysymys) {
-        while(true) {
-            System.out.print(kysymys);
-            String luettu = reader.nextLine();
+    public String readInput(String question) {
+        while (true) {
+            System.out.print(question);
+            String line = reader.nextLine();
 
-            if(luettu.equals("porkkana") {
-                return luettu;
+            if (line.equals("carrot")) {
+                return line;
+            } else {
+                System.out.println("Item not found!");
             }
-
-            System.out.println("Ei löydy!");
         }
     }
 }
 </pre>
 
-        <p> Nyt ohjelma on rakenteeltaan riittävän selkeä, metodit ovat kuvaavasti nimettyjä ja jokaisella metodilla on oma pieni tehtävä, josta metodi huolehtii. Huomaa että emme lisänneet refaktoroidessa ohjelmaan uutta toiminnallisuutta, muokkasimme vain rakennetta selkeämmäksi.</p>
+	<p>The program now has a clear structure with descriptively named methods. Every method is short and has a small task to handle. Note that refactoring the code did not add any new functionality, it merely changed the way the program works internally.</p>
 
-        <h3>Ohjelmoinnista ja ennenkaikkea harjoittelun tärkeydestä</h3>
+        <h3>Programming and the importance of practicing</h3>
 
-        <p>Tietääksemme kukaan ei ole oppinut ohjelmoimaan luentoja kuuntelemalla. Ohjelmointitaidon kehittymisen kannalta harjoittelu ja kertaaminen on tärkeää. Ohjelmointitaitoa on verrattu niin kielten puhumiseen kuin instrumentin soittamiseen, kummassakin kehittyy vain harjoittelemalla. Oikeastaan, esimerkiksi hyvät viulistit eivät ole hyviä <em>vain</em> sen takia, että he ovat harjoitelleet paljon. Harjoittelua motivoi myös se, että se on hauskaa. Samaa voi sanoa ohjelmoijista.</p>
+	<p>As far as we know, nobody has yet learned programming by listening to lectures. To develop the skill required in programming, it is essential to practice both what you have learned earlier and things that are new to you. Programming can be compared to speaking languages or playing an instrument, both of which can only be learned by doing. Master violinists are probably not good at playing <em>only</em> because they practice a lot. Playing an instrument is fun, which makes one more motivated to practice. The same applies to programming.</p>
 
-        <p>Linus Torvaldsin sanoin <em>"Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program."</em>.</p>
+        <p>As Linus Torvalds said, <em>"Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program"</em>.</p>
 
-        <p>Tohtori Luukkainen on kirjoittanut listan jota kannattaa seurata ohjelmoidessa ja siinä kehittyessä. Seuraa listan neuvoja kunnes osaat ne unissasikin.</p>
+	<p>Dr. Luukkainen has written a list of instructions for new programmers to follow when learning to program. Follow this advice to become a great programmer!</p>
 
         <ul>
-          <li> Etene pieni askel kerrallaan
+          <li> Take small steps
             <ul>
-              <li> Yritä pilkkoa ongelma osaongelmiin ja <strong>ratkaise vain yksi osaongelma kerrallaan</strong> </li>
-              <li> Testaa aina että ohjelma on etenemässä oikeaan suuntaan eli että osaongelman ratkaisu meni oikein</li>
+	      <li> Divide the problem you are trying to solve into smaller parts and solve them <strong>one at a time</strong> </li>
+              <li> Keep testing that your solution is moving in the right direction, ensuring that you have solved the current part correctly</li>
           </ul></li>
-          <li> Kirjoita mahdollisimman "siistiä" koodia
+          <li> Keep the code as clean as you can
             <ul>
-              <li> sisennä koodi </li>
-              <li> käytä kuvaavia muuttujien ja metodien nimiä</li>
-              <li> älä tee liian pitkiä metodeja, edes mainia</li>
-              <li> tee yhdessä metodissa vaan yksi asia</li>
-              <li> <strong>poista koodistasi kaikki copy-paste</strong></li>
-              <li> korvaa koodisi "huonot" ja epäsiistit osat siistillä koodilla</li>
+              <li> use proper indentation </li>
+              <li> use descriptive names for variables, methods, classes, everything</li>
+	      <li> keep all methods short, including <code>main</code> </li>
+              <li> write methods that only do one thing </li>
+              <li> <strong>remove all copy-paste code by refactoring (or don't copy and paste code in the first place!)</strong></li>
+              <li> replace "bad" and unclear code with clean, easy to read code </li>
           </ul></li>
         </ul>
 
 
 
-        <h3>Näkyvyysmääreet</h3>
+        <h3>Visibility</h3>
 
-        <p>Olemme tähän mennessä käyttäneet kahta erilaista <em>näkyvyyteen</em> liittyvää avainsanaa metodien ja oliomuuttujien määrittelyssä. Avainsana <code>public</code> asettaa metodit ja muuttujat kaikille näkyviksi. Esimerkiksi luokan metodit ja konstruktorit merkitään usein määreellä public, jolloin niitä voi kutsua luokan ulkopuolelta.</p>
+	<p>Until now, we have been using two different keywords to define the <em>visibility</em> of methods and instance variables. <code>public</code> makes the method or instance variable visible and accessable to everyone. Methods and constructors are usually marked as public, so that they can be called from outside the class.</p>
 
-        <p>Avainsana <code>private</code> taas piilottaa metodit ja muuttujat luokan sisälle. Metodia, jolla on määre <code>private</code>, ei pysty kutsumaan luokan ulkopuolelta.</p>
+	<p>Declaring a method or instance variable <code>private</code> hides it from the outside, making it only accessible from inside the same class.</p>
 
 <pre class="sh_java">
 public class Book {
     private String name;
-    private String sisalto;
+    private String contents;
 
-    public Book(String name, String sisalto) {
-        this.name = nimi;
-        this.sisalto = sisalto;
+    public Book(String name, String contents) {
+        this.name = name;
+        this.contents = contents;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public String getSisalto() {
-        return this.sisalto;
+    public String getContents() {
+        return this.contents;
     }
 
     // ...
 }
 </pre>
 
-        <p>Yllä olevasta Book-luokasta luotujen olioiden tietoihin pääsee käsiksi vain kirjan julkisten metodien kautta. Private-määreellä merkityt oliomuuttujat ovat näkyvillä ja käsiteltävissä vain luokan sisäisessä koodissa. Jos kirjalla olisi private-määreellinen metodi, ei sitäkään voisi käyttää muualta kuin Book-luokan sisältä.</p>
+	<p>The instance variables in the Book class above can only be accessed with the public methods <code>getName</code> and <code>getContents</code>. Fields declared as private are only accessible in code inside the class. Methods can also be declared as private, which prevents them from being called outside the class.</p>
 
 
-        <p>Sitten itse asiaan, eli harjoitteluun!</p>
+        <p>Now it's time to start practicing!</p>
 
 <div class="tehtavat" id="viikko7">
 

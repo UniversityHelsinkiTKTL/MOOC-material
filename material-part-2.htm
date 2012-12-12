@@ -923,175 +923,175 @@ import java.util.ArrayList;    // imports ArrayList
 import java.util.*;            // imports all tools from java.util, including ArrayList, Scanner ja Random
 </pre>
 
-<h3>Laskin</h3>
+<h3>Calculator</h3>
 
-  <p>Teemme tässä tehtävässä samantyylisen yksinkertaisen laskimen, joka oli jo ohjelmoinnin perusteiden viikon 1 materiaalissa. Tällä kertaa kiinnitämme kuitenkin huomiota ohjelman rakenteeseen. Erityisesti teemme <em>main</em>-metodista eli pääohjelmasta hyvin kevyen. Pääohjelmametodi ei tee oikeastaan mitään muuta kun käynistää ohjelman:</p>
+  <p>In this assignment, we make a similiar simple calculator that we already had in the material of programming basics' week 1. This time however, we pay attention to the structure of the program. Especially we will make the <em>main</em>-method (the main program) very light. The main program method doesn't actually do anything else than just start the program:</p>
 
 <pre class="sh_java">
-public class Paaohjelma {
+public class MainProgram {
     public static void main(String[] args) {
-        Laskin laskin = new Laskin();
-        laskin.kaynnista();
+        Calculator calculator = new Calculator();
+        calculator.start();
     }
 }
 </pre>
 
-  <p>Pääohjelma siis ainoastaan luo varsinaisen sovelluslogiikan toteuttavan olion ja käynnistää sen. Tämä on oikea tyyli tehdä ohjelmia ja tulemme jatkossa usein pyrkimään tähän rakenteeseen.</p>
+  <p>What the main program here does is it just creates the object that implements the actual application logic and then starts it. This is the proper way of creating programs and from now on we'll try to achieve this structure.</p>
 
-  <h4>Lukija</h4>
+  <h4>Reader</h4>
 
-  <p>Kommunikoidakseen käyttäjän kanssa laskin tarvitsee Scanner-olion. Kuten olemme huomanneet, on kokonaislukujen lukeminen scannerilla hieman työlästä. Teemme nyt erillisen luokan <code>Lukija</code> joka kapseloi sisälleen Scanner-olion. </p>
+  <p>In order to communicate with the user, the calculator needs a Scanner-object. As we've seen, reading integers with a Scanner is a little laborious. We now create a separate class <code>Reader</code> that encapsulates a Scanner-object.</p>
 
-  <p>Toteuta luokka <code>Lukija</code> ja lisää sille metodit</p>
+  <p>Implement the class <code>Reader</code> and add the following methods to it</p>
 
   <ul>
-    <li><code>public String luecharacterString()</code></li>
-    <li><code>public int lueKokonaisluku()</code></li>
+    <li><code>public String readString()</code></li>
+    <li><code>public int readInteger()</code></li>
   </ul>
 
-  <p>Lukijan sisällä tulee olla oliomuuttujana Scanner-olio jota metodit käyttävät ohjelmoinnin perusteista tuttuun tyyliin. Muistathan että kokonaislukujen lukemisessa kannattaa ensin lukea koko rivi, jonka jälkeen rivi tulee muuttaa kokonaisluvuksi. Tässä on hyödyksi <code>Integer</code>-luokan metodi <code>parseInt</code>.</p>
+  <p>Within the Reader there should be a Scanner-object as an instance variable, which the methods use in the old familiar way we know from programming basics. Remember that when reading integers, it's good to first read the entire line and then turn that in to an integer. Here we can utilize the method <code>parseInt</code> of the <code>Integer</code>-class.</p>
 
-  <h4>Sovellusrunko</h4>
+  <h4>Application body</h4>
 
-  <p>Laskin toimii seuraavan esimerkin mukaan:</p>
+  <p>The calculator works like this:</p>
 
 <pre>
-komento: <font color="red">summa</font>
-luku1: <font color="red">4</font>
-luku2: <font color="red">6</font>
-lukujen summa 10
+command: <font color="red">sum</font>
+value1: <font color="red">4</font>
+value2: <font color="red">6</font>
+sum of the values 10
 
-komento: <font color="red">tulo</font>
-luku1: <font color="red">3</font>
-luku2: <font color="red">2</font>
-lukujen tulo 6
+command: <font color="red">product</font>
+value1: <font color="red">3</font>
+value2: <font color="red">2</font>
+product of the values 6
 
-komento: <font color="red">lopetus</font>
+command: <font color="red">end</font>
 </pre>
 
-  <p>Tee ohjelmaasi sovelluslogiikasta huolehtiva luokka <code>Laskin</code> ja sille metodi <code>public void kaynnista()</code> jonka sisältö on <strong>täsmälleen</strong> seuraava:</p>
+  <p>Implement the class <code>Calculator</code> to take care of the application logic of your program, and for that class a method <code>public void start()</code> which looks exactly like this:</p>
 
 <pre class="sh_java">
-    public void kaynnista() {
+    public void start() {
         while (true) {
-            System.out.print("komento: ");
-            String komento = reader.luecharacterString();
-            if (komento.equals("lopetus")) {
+            System.out.print("command: ");
+            String command = reader.readString();
+            if (command.equals("end")) {
                 break;
             }
 
-            if (komento.equals("summa")) {
-                summa();
-            } else if (komento.equals("erotus")) {
-                erotus();
-            } else if (komento.equals("tulo")) {
-                tulo();
+            if (command.equals("sum")) {
+                sum();
+            } else if (command.equals("difference")) {
+                difference();
+            } else if (command.equals("product")) {
+                product();
             }
         }
 
-        statistiikka();
+        statistics();
     }
 </pre>
 
-  <p>Laskimellamme on operaatiot <code>summa, erotus, tulo</code>.</p>
+  <p>The calculator has the operations <code>sum, difference, product</code>.</p>
 
-  <p>Tee valmiiksi rungot metodeille <code>summa</code>, <code>erotus</code>, <code>tulo</code> ja <code>statistiikka</code>. Kaikkien tulee olla tyyppiä <code>private void</code>, eli metodit ovat vain laskimen sisäisessä käytössä.</p>
+  <p>Finish the bodies for the methods <code>sum</code>, <code>difference</code>, <code>product</code> and <code>stasistics</code>. All of them are to be of the type <code>private void</code> which means that the methods are available only for internal use in the calculator.</p>
 
-  <p>Lisää laskimelle oliomuuttuja jonka tyyppi on <code>Lukija</code>, ja luo lukija konstruktorissa. <em>Laskimessa ei saa olla erikseen Scanner-tyyppistä muuttujaa!</em></p>
+  <p>Add an instance variable of the type <code>Reader</code> for the calculator and create the reader in the constructor. <em>The calculator may not have a separate Scanner-type variable!</em></p>
 
-  <h4>Sovelluslogiikan toteutus</h4>
+  <h4>Implementation of the application logic</h4>
 
-  <p>Toteuta nyt metodit <code>summa</code>, <code>erotus</code> ja <code>tulo</code> siten, että ne toimivat yllä olevan esimerkin mukaan. Esimerkissä kysytään aina ensin komento, jonka jälkeen kysytään 2 lukua käyttäjältä, suoritetaan haluttu operaatio, ja tulostetaan operaation arvo. Huomaa, että lukujen kysyminen tapahtuu metodien<code>summa</code>, <code>erotus</code> ja <code>tulo</code> sisällä! Metodit käyttävät lukujen kysymiseen lukija-olioa. Metodien runko on siis seuraavanlainen:</p>
+  <p>Now implement the methods <code>sum</code>, <code>difference</code> and <code>product</code> so that they work according to the example above. In the example first a command is asked from the user and then two values, then the desired operation is executed and the value of the operation is printed. Notice that asking the user for the values happens within the methods <code>sum</code>, <code>difference</code> and <code>product</code>! The methods use the Reader-object to ask the values, so the body of the methods is as follows:</p>
 
 <pre class="sh_java">
-    private void summa() {
-       System.out.print("luku1: ");   
-       int luku1 = // luetaan luku käyttäen lukija-olioa
-       System.out.print("luku2: "); 
-       int luku2 = // luetaan luku käyttäen lukija-olioa
-       // tulostetaan tulos ylläolevan esimerkin tapaan
+    private void sum() {
+       System.out.print("value1: ");   
+       int value1 = // read the value using the Reader-object
+       System.out.print("value2: "); 
+       int value2 = // read the value using the Reader-object
+       // print the value according to the example above
     }
 </pre>
 
-<h4>Statistiikka</h4>
+<h4>Statistics</h4>
 
-  <p>Metodissa <code>kaynnista</code> olevan <code>while</code>-silmukan jälkeen kutsutaan metodia <code>statistiikka</code>. Metodin on tarkoitus tulostaa kuinka montaa kertaa laskinoliolla suoritettiin joku laskutoimenpide. Esim:</p>
-
-<pre>
-komento: <font color="red">summa</font>
-luku1: <font color="red">4</font>
-luku2: <font color="red">6</font>
-lukujen summa 10
-
-komento: <font color="red">tulo</font>
-luku1: <font color="red">3</font>
-luku2: <font color="red">2</font>
-lukujen tulo 6
-
-komento: <font color="red">lopetus</font>
-Laskuja laskettiin 2
-</pre>
-
-  <p>Toteuta metodi <code>private void statistiikka()</code>, ja tee statistiikan keräämiseen tarvittavat muutokset muualle Laskin-luokan koodiin. </p>
-
-  <p>Huom: jos ohjelmalle annetaan virheellinen komento (eli joku muu kuin summa, erotus, tulo, tai lopetus), ei laskin reagoi komentoon millään tavalla vaan jatkaa kysymällä seuraavaa komentoa. Statistiikka ei saa laskea virheellistä komentoa laskutoimenpiteeksi.</p>
+  <p>After the <code>while</code>-loop in the <code>start</code>-method, the method <code>statistics</code> is called. The method is meant to print the amount of operations done with the Calculator-object:</p>
 
 <pre>
-komento: <font color="red">integraali</font>
-komento: <font color="red">erotus</font>
+command: <font color="red">sum</font>
+value1: <font color="red">4</font>
+value2: <font color="red">6</font>
+sum of the values 10
+
+command: <font color="red">product</font>
 luku1: <font color="red">3</font>
 luku2: <font color="red">2</font>
-lukujen erotus 1
+product of the values 6
 
-komento: <font color="red">lopetus</font>
-Laskuja laskettiin 1
+command: <font color="red">end</font>
+Calculations done 2
 </pre>
 
-<p><strong>Bonustehtävä (ei testata):</strong> Syötteen lukeminen toistuu samanlaisena kaikissa kolmessa laskuoperaation suorittavassa metodissa. Posta koodistasi toisteisuus sopivan apumetodin avulla. Metodi voi palauttaa käyttäjältä luetut 2 lukua esim. taulukossa. </p>
+  <p>Implement the method <code>private void statistics()</code>, and make the required changes to the code of the Calculator-class in order to collect the statistics.</p>
+
+  <p>Note: if an invalid command is given to the program (something other than sum, difference, product or end), the calculator will not react to the command in any way, but instead continues by asking the next command. Statistics is not to count an invalid command as a completed calculation.</p>
+
+<pre>
+command: <font color="red">integral</font>
+command: <font color="red">difference</font>
+value1: <font color="red">3</font>
+value2: <font color="red">2</font>
+difference of the values 1
+
+command: <font color="red">end</font>
+Calculations done 1
+</pre>
+
+<p><strong>Bonus assignment (not tested):</strong> Reading the user input is repeated in the same way in all three operation implementing methods. Remove the repetition from your code with the help of a support method. The method can return the two values asked from the user in an array, for example.</p>
 
 </div>
 
 
-<h2>Alkeis- ja viitetyyppiset muuttujat</h2>
+<h2>Primitive- and reference-type variables</h2>
 
-        <p>Java on vahvasti tyypitetty kieli, eli kaikilla sen muuttujilla on <em>tyyppi</em>. Muuttujien tyypit voidaan jakaa kahteen kategoriaan: <strong>alkeis- ja viitetyyppisiin muuttujiin</strong>. Kummankin kategorian tyypisillä muuttujilla on oma "lokero", joka sisältää niihin liittyvän tiedon. Alkeistyyppisillä muuttujilla lokeroon talletetaan muuttujien konkreettinen <em>arvo</em>, kun taas viitetyyppisten muuttujien lokero sisältää <em>viitteen</em> muuttujaan liittyvään konkreettiseen <em>olioon</em>.</p>
+        <p>Java is a strongly typed language, what this means is that all of it's variables have a <em>type</em>. The types of the variables can be divided in to two categories: <strong>primitive-type and reference-type variables</strong>. Both types of variables have their own "slot", which holds the information belonging to them. Primitive-type variables hold the concrete <em>value</em> in their slot, while the reference-type variables hold a <em>reference</em> to a concrete <em>object</em>.</p>
 
-        <h3>Alkeistyyppiset muuttujat</h3>
+        <h3>Primitive-type variables</h3>
 
-        <p>Alkeistyyppisen muuttujan arvo tallennetaan muuttujaa varten luotuun lokeroon. Jokaisella alkeistyyppisellä muuttujalla on oma lokero ja oma arvo. Muuttujalle luodaan uusi lokero silloin kun se esitellään (esim. <code>int numero;</code>). Lokeroon asetetaan arvo sijoitusoperaatiolla <code>=</code>. Alla on esimerkki alkeistyyppisen int (kokonaisluku) -muuttujan esittelemisestä ja arvon asettamisesta samassa lausekkeessa.</p>
-
-<pre class="sh_java">
-int numero = 42;
-</pre>
-
-        <p>Alkeistyyppisiä muuttujia ovat muun muassa <code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code> sekä harvemmin käyttämämme <code>short</code>, <code>float</code>, <code>byte</code> ja <code>long</code>. Myös <code>void</code> on alkeistyyppi, mutta sillä ei ole omaa lokeroa tai arvoa. Void-tyyppiä käytetään silloin kun halutaan ilmaista että metodi ei palauta mitään arvoa.</p>
-
-    <p>Esitellään seuraavaksi kaksi alkeistyyppistä muuttujaa ja asetetaan niihin arvot.</p>
+        <p>The value of a primitive type variable is saved in a slot created for the variable. Each primitive-type variable has it's own slot and it's own value. A variable's slot is created when it is introduced (<code>int number;</code>, for example). A value is set to a slot with the assignment operation <code>=</code>. Below is an example of the introduction of a primitive-type int (integer) variable and setting of it's value in the same expression.</p>
 
 <pre class="sh_java">
-int vitonen = 5;
-int kutonen = 6;
+int number = 42;
 </pre>
 
-        <p>Yllä esiteltyjen alkeistyyppisten muuttujien nimet ovat <code>vitonen</code> ja <code>kutonen</code>. Muuttujaa <code>vitonen</code> luodessa sitä varten luotuun <em>lokeroon</em> asetetaan arvo 5 (<code>int vitonen = 5;</code>). Muuttujaa <code>kutonen</code> luodessa sitä varten luotuun lokeroon asetetaan arvo 6 (<code>int kutonen = 6;</code>). Muuttujat <code>vitonen</code> ja <code>kutonen</code> ovat kumpikin <code>int</code>-tyyppisiä, eli kokonaislukuja.</p>
+        <p>Primtive type variables, among others, are <code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code> and more rarely used <code>short</code>, <code>float</code>, <code>byte</code> and <code>long</code>. Also <code>void</code> is a primitive-type, but it doesn't have it's own slot or value. The void-type is used when we want to express that a method doesn't return a value.</p>
 
-        <p>Alkeistyyppiset muuttujat voi visualisoida laatikkoina joiden sisälle kuhunkin muuttujaan liittyvä arvo on tallennettu:</p>
+    <p>Next we introduce two primitive-type variables and set values to them.</p>
+
+<pre class="sh_java">
+int five = 5;
+int six = 6;
+</pre>
+
+        <p>The primitive-type variables introduced above are named <code>five</code> and <code>six</code>. When introducing the variable <code>five</code> the value 5 is set to the <em>slot</em> that was created for it (<code>int five = 5;</code>).  When introducing the variable <code>six</code> the value 6 is set to the <em>slot</em> that was created for it (<code>int six = 6;</code>). The variables <code>five</code> and <code>six</code> are both of the type <code>int</code>, or integers.</p>
+
+        <p>Primitive-type variables can be visualized as boxes that both have the values belonging to them saved in to them:</p>
 
         <p><img src="img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen.png" /></p>
 
-        <p>Tarkastellaan seuraavaksi alkeistyyppisten muuttujien arvojen kopioitumista.</p>
+        <p>Next lets inspect how the values of primitive-type variables get copied.</p>
 
 <pre class="sh_java">
-int vitonen = 5;
-int kutonen = 6;
+int five = 5;
+int six = 6;
 
-vitonen = kutonen; // muuttuja vitonen sisältää nyt arvon 6, eli arvon joka oli muuttujassa kutonen
-kutonen = 64; // muuttuja kutonen sisältää nyt arvon 64
+five = six; // the variable 'five' now holds the value 6 - the value that was in the variable 'six'.
+six = 64; // the variable 'six' now holds the value 64
 
-// muuttuja vitonen sisältää vieläkin arvon 6
+// the variable 'five' still holds the value 6
 </pre>
 
-        <p>Yllä esitellään muuttujat <code>vitonen</code> ja <code>kutonen</code> ja asetetaan niihin arvot. Tämän jälkeen muuttujan <code>vitonen</code> lokeroon kopioidaan muuttujan <code>kutonen</code> lokeron sisältämä arvo (<code>vitonen = kutonen;</code>). Tässä vaiheessa muuttujan <code>vitonen</code> lokeroon kopioituu muuttujan <code>kutonen</code> sisältämä arvo. Jos muuttujan <code>kutonen</code> arvoa muutetaan tämän jälkeen, ei muuttujan <code>vitonen</code> sisältämä arvo muutu: muuttujan <code>vitonen</code> arvo on sen omassa lokerossa eikä liity muuttujan <code>kutonen</code> lokerossa olevaan arvoon millään tavalla. Lopputilanne kuvana.</p>
+        <p>Above we introduce the variables <code>five</code> and <code>six</code> and we set values to them. After this the value held in the slot of the variable <code>six</code> is copied to the slot of the variable <code>five</code> (<code>five = six;</code>). If the value of the variable <code>six</code> is changed after this point the value in the variable <code>five</code> remains unaffected: the value of the variable <code>five</code> is in it's own slot and is not related to the value in the slot of the variable <code>six</code> in any way. The end situation as a picture.</p>
 
         <p><img src="img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen-64.png" /></p>
 
@@ -2356,7 +2356,7 @@ cembalo = harpsichord
   <p>Harjoitellaan tässäkin tehtävässä erillisen tekstikäyttöliittymän tekemistä. Luo luokka <code>Tekstikayttoliittyma</code>, jolla on seuraavat metodit
     <ul>
       <li> konstruktori <code>public Tekstikayttoliittyma(Scanner lukija, Sanakirja sanakirja)</code></li>
-      <li> metodi <code>public void kaynnista()</code>, joka käynnistää tekstikäyttöliittymän.</li>
+      <li> metodi <code>public void start()</code>, joka käynnistää tekstikäyttöliittymän.</li>
     </ul>
   </p>
 
@@ -2375,7 +2375,7 @@ Käyttäjän syötteen lukeminen tulee hoitaa konstruktorin parametrina saatua l
     Sanakirja sanakirja = new Sanakirja();
 
     Tekstikayttoliittyma kayttoliittyma = new Tekstikayttoliittyma(lukija, sanakirja);
-    kayttoliittyma.kaynnista();
+    kayttoliittyma.start();
 </pre>
 
 <pre>
@@ -2398,7 +2398,7 @@ Hei hei!
     Sanakirja sanakirja = new Sanakirja();
 
     Tekstikayttoliittyma kayttoliittyma = new Tekstikayttoliittyma(lukija, sanakirja);
-    kayttoliittyma.kaynnista();
+    kayttoliittyma.start();
 </pre>
 
 <pre>
@@ -2437,7 +2437,7 @@ Hei hei!
     Sanakirja sanakirja = new Sanakirja();
 
     Tekstikayttoliittyma kayttoliittyma = new Tekstikayttoliittyma(lukija, sanakirja);
-    kayttoliittyma.kaynnista();
+    kayttoliittyma.start();
 </pre>
 
   <p>Ohjelma tulostus näyttää vain ohjelman antaman tulostuksen, ei käyttäjän tekemiä komentoja.</p>
@@ -3705,7 +3705,7 @@ public class Julkaisupalvelu {
         this.uutispalvelu = new Uutispalvelu();
     }
 
-    public void kaynnista() {
+    public void start() {
         while (true) {
             Uutinen uutinen = uutispalvelu.haeViimeisinUutinen();
             System.out.println(uutinen.lue());
@@ -3785,7 +3785,7 @@ public class Julkaisupalvelu {
         this.uutispalvelu = new Uutispalvelu();
     }
 
-    public void kaynnista() {
+    public void start() {
         while (true) {
             Luettava luettava = uutispalvelu.haeViimeisinUutinen();
             System.out.println(luettava.lue());
@@ -5015,7 +5015,7 @@ public class Kayttoliittyma {
         this.lukija = lukija;
     }
 
-    public void kaynnista() {
+    public void start() {
         tulostaOtsikko();
 
         // muu toiminnallisuus
@@ -5029,7 +5029,7 @@ public class Kayttoliittyma {
 }
 </pre>
 
-    <p>Yllä olevasta <code>Kayttoliittyma</code>-luokasta tehdyn olion konstruktori ja <code>kaynnista</code>-metodi on kutsuttavissa mistä tahansa ohjelmasta. Metodi <code>tulostaOtsikko</code> ja <code>lukija</code>-muuttuja on käytössä vain luokan sisällä.</p>
+    <p>Yllä olevasta <code>Kayttoliittyma</code>-luokasta tehdyn olion konstruktori ja <code>start</code>-metodi on kutsuttavissa mistä tahansa ohjelmasta. Metodi <code>tulostaOtsikko</code> ja <code>lukija</code>-muuttuja on käytössä vain luokan sisällä.</p>
 
     <p>Pakkausnäkyvyyttä käytettäessä muuttujille tai metodeille ei aseteta mitään näkyvyyteen liittyvää etuliitettä. Muutetaan yllä olevaa esimerkkiä siten, että metodilla <code>tulostaOtsikko</code> on pakkausnäkyvyys.</p>
 
@@ -5043,7 +5043,7 @@ public class Kayttoliittyma {
         this.lukija = lukija;
     }
 
-    public void kaynnista() {
+    public void start() {
         tulostaOtsikko();
 
         // muu toiminnallisuus
@@ -5869,7 +5869,7 @@ Ohjelmoinnin perusteiden tehtävän <em>kellosta olio</em> bonusversiossa kerrot
 
     <p>Nyt metodia <code>nuku</code>-kutsuvan metodin tulee joko käsitellä poikkeus <code>try-catch</code> -lohkossa, tai siirtää poikkeuksen käsittelyn vastuuta eteenpäin heittää poikkeus eteenpäin. Joskus poikkeuksen käsittelyä pakoillaan viimeiseen asti, ja <code>main</code>-metodikin heittää poikkeuksen käsiteltäväksi eteenpäin:</p> 
 <pre class="sh_java">
-public class Paaohjelma {
+public class MainProgram {
    public static void main(String[] args) throws Exception {
        // ...
    }
@@ -5934,7 +5934,7 @@ Exception in thread "..." java.lang.IllegalArgumentException: Arvosanan tulee ol
 <div class="tehtavat">
   <h3>Parametrien validointi</h3>
 
-  <p>Harjoitellaan hieman parametrien validointia <code>IllegalArgumentException</code>-poikkeuksen avulla. Tehtäväpohjassa tulee kaksi luokkaa, <code>Person</code> ja <code>Laskin</code>. Muuta luokkia seuraavasti:</p>
+  <p>Harjoitellaan hieman parametrien validointia <code>IllegalArgumentException</code>-poikkeuksen avulla. Tehtäväpohjassa tulee kaksi luokkaa, <code>Person</code> ja <code>Calculator</code>. Muuta luokkia seuraavasti:</p>
 
   <h4>Henkilön validointi</h4>
 
@@ -5942,7 +5942,7 @@ Exception in thread "..." java.lang.IllegalArgumentException: Arvosanan tulee ol
 
   <h4>Laskimen validointi</h4>
 
-  <p>Luokan <code>Laskin</code> metodeja tulee muuttaa seuraavasti: Metodin <code>kertoma</code> tulee toimia vain jos parametrina annetaan ei-negatiivinen luku (0 tai suurempi). Metodin <code>binomikerroin</code> tulee toimia vain jos parametrit ovat ei-negatiivisia ja osajoukon koko on pienempi kuin joukon koko. Jos jompikumpi metodeista saa epäkelpoja arvoja metodikutsujen yhteydessä, tulee metodien heittää poikkeus <code>IllegalArgumentException</code>.</p>
+  <p>Luokan <code>Calculator</code> metodeja tulee muuttaa seuraavasti: Metodin <code>kertoma</code> tulee toimia vain jos parametrina annetaan ei-negatiivinen luku (0 tai suurempi). Metodin <code>binomikerroin</code> tulee toimia vain jos parametrit ovat ei-negatiivisia ja osajoukon koko on pienempi kuin joukon koko. Jos jompikumpi metodeista saa epäkelpoja arvoja metodikutsujen yhteydessä, tulee metodien heittää poikkeus <code>IllegalArgumentException</code>.</p>
 
 <h3>Sensorit ja lämpötilan mittausta</h3>
 
@@ -6828,65 +6828,65 @@ käytettävissä olevat komennot:
  7 filtteröity listaus
  x lopeta
 
-komento: <font color="red">1</font>
+command: <font color="red">1</font>
 kenelle: <font color="red">pekka</font>
 numero: <font color="red">040-123456</font>
 
-komento: <font color="red">2</font>
+command: <font color="red">2</font>
 kenen: <font color="red">jukka</font>
   ei löytynyt
 
-komento: <font color="red">2</font>
+command: <font color="red">2</font>
 kenen: <font color="red">pekka</font>
  <font color="red">040-123456</font>
 
-komento: <font color="red">1</font>
+command: <font color="red">1</font>
 kenelle: <font color="red">pekka</font>
 numero: <font color="red">09-222333</font>
 
-komento: <font color="red">2</font>
+command: <font color="red">2</font>
 kenen: <font color="red">pekka</font>
  040-123456
  09-222333
 
-komento: <font color="red">3</font>
+command: <font color="red">3</font>
 numero: <font color="red">02-444123</font>
  ei löytynyt
 
-komento: <font color="red">3</font>
+command: <font color="red">3</font>
 numero: <font color="red">09-222333</font>
  pekka
 
-komento: <font color="red">5</font>
+command: <font color="red">5</font>
 kenen: <font color="red">pekka</font>
   osoite ei tiedossa
   puhelinnumerot:
    040-123456
    09-222333
 
-komento: <font color="red">4</font>
+command: <font color="red">4</font>
 kenelle: <font color="red">pekka</font>
 katu: <font color="red">ida ekmanintie</font>
 kaupunki: <font color="red">helsinki</font>
 
-komento: <font color="red">5</font>
+command: <font color="red">5</font>
 kenen: <font color="red">pekka</font>
   osoite: ida ekmanintie helsinki
   puhelinnumerot:
    040-123456
    09-222333
 
-komento: <font color="red">4</font>
+command: <font color="red">4</font>
 kenelle: <font color="red">jukka</font>
 katu: <font color="red">korsontie</font>
 kaupunki: <font color="red">vantaa</font>
 
-komento: <font color="red">5</font>
+command: <font color="red">5</font>
 kenen: <font color="red">jukka</font>
   osoite: korsontie vantaa
   ei puhelinta
 
-komento: <font color="red">7</font>
+command: <font color="red">7</font>
 hakusana (jos tyhjä, listataan kaikki): <font color="red">kk</font>
 
  jukka
@@ -6899,25 +6899,25 @@ hakusana (jos tyhjä, listataan kaikki): <font color="red">kk</font>
    040-123456
    09-222333
 
-komento: <font color="red">7</font>
+command: <font color="red">7</font>
 hakusana (jos tyhjä, listataan kaikki): <font color="red">vantaa</font>
 
  jukka
   osoite: korsontie vantaa
   ei puhelinta
 
-komento: <font color="red">7</font>
+command: <font color="red">7</font>
 hakusana (jos tyhjä, listataan kaikki): <font color="red">seppo</font>
  ei löytynyt
 
-komento: <font color="red">6</font>
+command: <font color="red">6</font>
 kenet: <font color="red">jukka</font>
 
-komento: <font color="red">5</font>
+command: <font color="red">5</font>
 kenen: <font color="red">jukka</font>
   ei löytynyt
 
-komento: <font color="red">x</font>
+command: <font color="red">x</font>
 </pre>
 
 <p>Huomioita:</p>
@@ -8602,7 +8602,7 @@ public class Kayttoliittyma {
         this.toiminnot.add(toiminto);
     }
 
-    public void kaynnista() {
+    public void start() {
         while (true) {
             tulostaToiminnot();
             System.out.println("Valinta: ");
@@ -8640,7 +8640,7 @@ public class Kayttoliittyma {
         Kayttoliittyma kayttolittyma = new Kayttoliittyma(new Scanner(System.in));
         kayttolittyma.lisaaToiminto(new Pluslasku());
 
-        kayttolittyma.kaynnista();
+        kayttolittyma.start();
 </pre>
 
 <pre>
@@ -9897,7 +9897,7 @@ public class ValikkoPanel extends JPanel {
 <p>Huomaa että tapahtumankäsittelyä tarvittaessa luokalle <code>ValikkoPanel</code> tulee antaa parametrina kaikki tarvittavat oliot.</p>
 
 <div class="tehtavat">
-<h3>Laskin</h3>
+<h3>Calculator</h3>
 
 <p>Tehtävässä on tarkoitus toteuttaa yksinkertainen laskin. Laskimen käyttöliittymän tulee olla seuraavanlainen:</p>
 
@@ -10772,11 +10772,11 @@ Muoto on oikea.
 
 <h3>Säännölliset lausekkeet</h3>
 
-<p>Harjoitellaan hieman säännöllisten lausekkeiden käyttöä. Tehtävät tehdään oletuspakkauksessa olevaan luokkaan <code>Paaohjelma</code>.</h3>
+<p>Harjoitellaan hieman säännöllisten lausekkeiden käyttöä. Tehtävät tehdään oletuspakkauksessa olevaan luokkaan <code>MainProgram</code>.</h3>
 
 <h4 class="req">Viikonpäivä</h4>
 
-<p>Tee säännöllisen lausekkeen avulla luokalle <code>Paaohjelma</code> metodi <code>public static boolean onViikonpaiva(String characterString)</code>, joka palauttaa <code>true</code> jos sen parametrina saama characterString viikonpäivän lyhenne (ma, ti, ke, to, pe, la tai su).</p>
+<p>Tee säännöllisen lausekkeen avulla luokalle <code>MainProgram</code> metodi <code>public static boolean onViikonpaiva(String characterString)</code>, joka palauttaa <code>true</code> jos sen parametrina saama characterString viikonpäivän lyhenne (ma, ti, ke, to, pe, la tai su).</p>
 
 <p>Esimerkkitulostuksia metodia käyttävästä ohjelmasta:</p>
 
@@ -10792,7 +10792,7 @@ Muoto ei ole oikea.
 
 <h4 class="req">Vokaalitarkistus</h4>
 
-<p>Tee luokalle <code>Paaohjelma</code> metodi <code>public static boolean kaikkiVokaaleja(String characterString)</code> joka tarkistaa säännöllisen lausekkeen avulla ovatko parametrina olevan characterStringn kaikki merkit vokaaleja. </p>
+<p>Tee luokalle <code>MainProgram</code> metodi <code>public static boolean kaikkiVokaaleja(String characterString)</code> joka tarkistaa säännöllisen lausekkeen avulla ovatko parametrina olevan characterStringn kaikki merkit vokaaleja. </p>
 
 <p>Esimerkkitulostuksia metodia käyttävästä ohjelmasta:</p>
 
@@ -10810,7 +10810,7 @@ Muoto ei ole oikea.
 
 <p>Säännölliset lausekkeet sopivat tietynlaisiin tilanteisiin. Joissain tapaukseesa lausekkeista tulee liian monimutkaisia, ja characterStringn "sopivuus" kannattaa tarkastaa muulla tyylillä tai voi olla tarkoituksenmukaista käyttää säännöllisiä lausekkeita vain osaan tarkastuksesta.</p>
 
-<p>Tee luokalle <code>Paaohjelma</code> metodi <code>public static boolean kellonaika(String characterString)</code>  ohjelma, joka tarkistaa säännöllisen lausekkeen avulla onko parametrina oleva characterString muotoa <code>tt:mm:ss</code> oleva kellonaika (tunnit, minuutit ja sekunnit kaksinumeroisina). Tässä metodissa saat käyttää säännöllisten lausekkeiden lisäksi mitä tahansa muutakin tekniikkaa.</p>
+<p>Tee luokalle <code>MainProgram</code> metodi <code>public static boolean kellonaika(String characterString)</code>  ohjelma, joka tarkistaa säännöllisen lausekkeen avulla onko parametrina oleva characterString muotoa <code>tt:mm:ss</code> oleva kellonaika (tunnit, minuutit ja sekunnit kaksinumeroisina). Tässä metodissa saat käyttää säännöllisten lausekkeiden lisäksi mitä tahansa muutakin tekniikkaa.</p>
 
 <p>Esimerkkitulostuksia metodia käyttävästä ohjelmasta:</p>
 
@@ -10952,7 +10952,7 @@ public class Kortti {
 <p>Kortin uutta versiota käytetään seuraavasti:</p>
 
 <pre class="sh_java">
-public class Paaohjelma {
+public class MainProgram {
 
     public static void main(String[] args) {
         Kortti eka = new Kortti(10, Maa.HERTTA);
@@ -11056,7 +11056,7 @@ Exception in thread "main" java.util.ConcurrentModificationException
         at java.util.AbstractList$Itr.checkForComodification(AbstractList.java:372)
         at java.util.AbstractList$Itr.next(AbstractList.java:343)
         at Kasi.poistaHuonommat(Kasi.java:26)
-        at Paaohjelma.main(Paaohjelma.java:20)
+        at MainProgram.main(MainProgram.java:20)
 Java Result: 1
 </pre>
 
@@ -11128,7 +11128,7 @@ Arto, FT
 <p>Seuraavassa esimerkki luokan käytöstä:</p>
 
 <pre class="sh_java">
-Public class Paaohjelma {
+Public class MainProgram {
 
     public static void main(String[] args) {
         Tyontekijat yliopisto = new Tyontekijat();
@@ -12359,7 +12359,7 @@ Joka alkoi ohjelmoimaan Javalla.
 
 <h4>Käyttöliittymä</h4>
 
-  <p>Pelin käyttöliittymä (luokka <code>Kayttoliittyma</code>) saa konstruktorin parametrina <code>Scanner</code>-olion ja <code>Kohta</code>-rajapinnan toteuttavan pelin aloittavan olion. Luokka tarjoaa metodin <code>public void kaynnista()</code>, joka käynnistää pelin suorituksen.</p>
+  <p>Pelin käyttöliittymä (luokka <code>Kayttoliittyma</code>) saa konstruktorin parametrina <code>Scanner</code>-olion ja <code>Kohta</code>-rajapinnan toteuttavan pelin aloittavan olion. Luokka tarjoaa metodin <code>public void start()</code>, joka käynnistää pelin suorituksen.</p>
 
   <p>Käyttöliittymä käsittelee kaikkia kohtia <code>Kohta</code>-rajapinnan kautta. Käyttöliittymän tulee jokaisessa kohdassa kysyä kohtaan liittyvältä metodilta <code>teksti</code> tekstiä, joka käyttäjälle näytetään. Tämän jälkeen käyttöliittymä kysyy käyttäjältä vastauksen, ja antaa sen parametrina kohta-olion metodille <code>seuraavaKohta</code>. Metodi <code>seuraavaKohta</code> palauttaa vastauksen perusteella seuraavan kohdan, johon pelin on määrä siirtyä. Peli loppuu, kun metodi <code>seuraavaKohta</code> palauttaa arvon <code>null</code>.</p>
 
@@ -12376,7 +12376,7 @@ Joka alkoi ohjelmoimaan Javalla.
         alku.asetaSeuraava(johdanto);
         johdanto.asetaSeuraava(loppu);
 
-        new Kayttoliittyma(lukija, alku).kaynnista();
+        new Kayttoliittyma(lukija, alku).start();
 </pre>
 
 
@@ -12395,10 +12395,10 @@ Ja päätti muuttaa Helsinkiin.
 
 </pre>
 
-  <p>Käytä seuraavaa metodia käyttöliittymän <code>kaynnista</code>-metodina. Yritä piirtää paperille mitä käy kun käyttöliittymä käynnistetään.</p>
+  <p>Käytä seuraavaa metodia käyttöliittymän <code>start</code>-metodina. Yritä piirtää paperille mitä käy kun käyttöliittymä käynnistetään.</p>
 
 <pre class="sh_java">
-    public void kaynnista() {
+    public void start() {
         Kohta nykyinen = alkukohta;
 
         while (nykyinen != null) {
@@ -12412,7 +12412,7 @@ Ja päätti muuttaa Helsinkiin.
     }
 </pre>
 
-  <p>Käyttöliittymän <code>kaynnista</code>-metodi sisältää siis toistolauseen, jossa ensin tulostetaan käsiteltävän kohdan teksti. Tämän jälkeen kysytään käyttäjältä syötettä. Käyttäjän syöte annetaan vastauksena käsiteltävän kohdan <code>seuraavaKohta</code>-metodille. Metodi <code>seuraavaKohta</code> palauttaa kohdan, jota käsitellään seuraavalla toiston kierroksella. Jos palautettu kohta oli <code>null</code>, lopetetaan toisto.</p>
+  <p>Käyttöliittymän <code>start</code>-metodi sisältää siis toistolauseen, jossa ensin tulostetaan käsiteltävän kohdan teksti. Tämän jälkeen kysytään käyttäjältä syötettä. Käyttäjän syöte annetaan vastauksena käsiteltävän kohdan <code>seuraavaKohta</code>-metodille. Metodi <code>seuraavaKohta</code> palauttaa kohdan, jota käsitellään seuraavalla toiston kierroksella. Jos palautettu kohta oli <code>null</code>, lopetetaan toisto.</p>
 
     <h4>Kysymyksiä</h4>
 
@@ -12437,7 +12437,7 @@ Ja päätti muuttaa Helsinkiin.
 
     alku.asetaSeuraava(hyva);
 
-    new Kayttoliittyma(lukija, alku).kaynnista();
+    new Kayttoliittyma(lukija, alku).start();
 </pre>
 
 <pre>
@@ -12517,7 +12517,7 @@ Mainio valinta!
     chemicum.lisaaVaihtoehto("Jauhelihakebakot, paprikakastiketta", nom);
     chemicum.lisaaVaihtoehto("Mausteista kalapataa", nom);
 
-    new Kayttoliittyma(lukija, lounas).kaynnista();
+    new Kayttoliittyma(lukija, lounas).start();
 </pre>
 
 <pre>

@@ -1095,91 +1095,91 @@ six = 64; // the variable 'six' now holds the value 64
 
         <p><img src="img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen-64.png" /></p>
 
-        <h4>Alkeistyyppinen muuttuja metodin parametrina ja paluuarvona</h4>
+        <h4>Primitive type variable as a method parameter and return value</h4>
 
-        <p>Kun alkeistyyppinen muuttuja annetaan metodille parametrina, asetetaan metodin parametrille kopio annetun muuttujan lokerossa olevasta. Käytännössä myös metodin parametrieilla on omat lokerot, joihin arvo kopioidaan kuten asetuslauseessa. Katsotaan seuraavaa metodia <code>lisaaLukuun(int luku, int paljonko)</code>.</p>
+        <p>When a primitive type variable is passed to a method as a parameter, the method parameter is set to the value in the given variable's slot. In practice, the method parameters also have own slots to which the value is copied like in an assignment expressions. Let us consider the following method <code>addToValue(int value, int amount)</code>.</p>
 
 <pre class="sh_java">
-public int lisaaLukuun(int luku, int paljonko) {
-    return luku + paljonko;
+public int addToValue(int value, int amount) {
+    return value + amount;
 }
 </pre>
 
-        <p>Metodi <code>lisaaLukuun</code> saa kaksi parametria, kokonaisvalues <code>luku</code> ja <code>paljonko</code>. Metodi palauttaa uuden luvun, joka on annettujen parametrien summa. Tutkitaan vielä metodin kutsumista.</p>
+        <p>The method <code>addToValue</code> is given two parameters: <code>value</code> and <code>amount</code>. The method returns a new value, which is the sum of the given parameters. Let us investigate how the method is called.</p>
 
 <pre class="sh_java">
-int omaLuku = 10;
-omaLuku = lisaaLukuun(omaLuku, 15);
-// muuttuja omaLuku sisältää nyt arvon 25
+int myValue = 10;
+myValue = addToValue(myValue, 15);
+// the variable 'myValue' now holds the value 25
 </pre>
 
-        <p>Esimerkissä kutsutaan <code>lisaaLukuun</code>-metodia muuttujalla <code>omaLuku</code> ja arvolla <code>15</code>. Metodin muuttujiin <code>luku</code> ja <code>paljonko</code> kopioituvat arvot 10, eli muuttujan <code>omaLuku</code> sisältö, ja 15. Metodi palauttaa muuttujien <code>luku</code> ja <code>paljonko</code> summan, eli <code>10 + 15 = 25</code>.</p>
+        <p>In the example, <code>addToValue</code> is called using the variable <code>myValue</code> and the value <code>15</code>. These are copied to the method parameters <code>value</code>, which will hold the value 10 (the contents of <code>myValue</code>), and <code>amount</code>, which wil hold the value 15. The method returns the sum of <code>value</code> and <code>amount</code>, which is equal to <code>10 + 15 = 25</code>.</p>
 
-        <p>Huom! Edellisessä esimerkissä muuttujan <code>omaLuku</code> arvo muuttuu ainoastaan koska metodin <code>lisaaLukuun</code> palauttama arvo asetetaan siihen sijoituslausekkeella (<code>omaLuku = lisaaLukuun(omaLuku, 15);</code>). Jos metodin <code>lisaaLukuun</code> kutsu olisi seuraavanlainen, ei muuttujan <code>omaLuku</code> arvo muutu.</p>
+        <p>Note! In the previous example, the value of the variable <code>myValue</code> is changed only because it is assigned the return value of <code>addToValue</code> (<code>myValue = addToValue(myValue, 15);</code>). If the call to <code>addToValue</code> were as follows, the value of the variable <code>myValue</code> would remain unchanged.</p>
 
 <pre class="sh_java">
-int omaLuku = 10;
-lisaaLukuun(omaLuku, 15);
-// muuttuja omaLuku sisältää vieläkin arvon 10
+int myValue = 10;
+addToValue(myValue, 15);
+// the variable 'myValue' still holds the value 10
 </pre>
 
-<h4>Minimi- ja maksimiarvot</h4>
+<h4>Minimum and maximum values</h4>
 
-        <p>Eri tietotyypeillä on omat minimi- ja maksimiarvonsa, eli arvot joita pienempiä tai suurempia ne eivät voi olla. Tämä johtuu Javan (ja useimpien ohjelmointikielten) sisäisestä tiedon esitysmuodosta, jossa tietotyyppien koot on ennalta määrätty.</p>
+        <p>Each primitive data type can represent a specific range of values limited by its minimum and maximum value, which are the smallest and largest values representible by the type. This is because a predefined data size is used for the internal represetantion of the type in Java (and most other programming languages).</p>
 
-        <p>Alla muutama Javan alkeistyyppi ja niiden minimi- ja maksimiarvot</p>
+        <p>The minimum and maximum values for a few Java primitive types are:</p>
 
         <p>
           <table cellspacing="5" >
-            <tr><th>Muuttujatyyppi</th><th>Selitys</th><th>Minimiarvo</th><th>Maksimiarvo</th></tr>
-            <tr><td>int</td><td>Kokonaisluku</td><td>-2 147 483 648 (<code>Integer.MIN_VALUE</code>)</td><td>2 147 483 647 (<code>Integer.MAX_VALUE</code>)</td></tr>
-            <tr><td>long</td><td>Iso kokonaisluku</td><td>-9 223 372 036 854 775 808 (<code>Long.MIN_VALUE</code>)</td><td>9 223 372 036 854 775 807 (<code>Long.MAX_VALUE</code>)</td></tr>
-            <tr><td>boolean</td><td>Totuusarvo</td><td colspan=2><code>true</code> tai <code>false</code></td></tr>
-            <tr><td>double</td><td>Liukuluku</td><td><code>Double.MIN_VALUE</code></td><td><code>Double.MAX_VALUE</code></td></tr>
+            <tr><th>Data type</th><th>Description</th><th>Minimum value</th><th>Max value</th></tr>
+            <tr><td>int</td><td>Integer</td><td>-2 147 483 648 (<code>Integer.MIN_VALUE</code>)</td><td>2 147 483 647 (<code>Integer.MAX_VALUE</code>)</td></tr>
+            <tr><td>long</td><td>Long interger</td><td>-9 223 372 036 854 775 808 (<code>Long.MIN_VALUE</code>)</td><td>9 223 372 036 854 775 807 (<code>Long.MAX_VALUE</code>)</td></tr>
+            <tr><td>boolean</td><td>Truth value</td><td colspan=2><code>true</code> or <code>false</code></td></tr>
+            <tr><td>double</td><td>Floating point</td><td><code>Double.MIN_VALUE</code></td><td><code>Double.MAX_VALUE</code></td></tr>
           </table>
         </p>
 
-        <p><strong>Pyöristysvirheet</strong></p>
+        <p><strong>Rounding errors</strong></p>
 
-        <p>Liukulukuja käyttäessä kannattaa muistaa että liukuluvun arvo on aina <em>arvio</em> oikeasta arvosta. Koska liukuluvun, kuten kaikkien muidenkin alkeistyyppien sisältämä tietomäärä on rajoitettu, voidaan huomata yllättäviäkin pyöristysvirheitä. Esimerkiksi seuraava tilanne.</p>
+        <p>When using floating point data types, it is important to keep in mind that floating point types are always an <em>approximation</em> of the actual value. Because floating point types use a predefined data size to represent the value similarly to all other primitive data types, we may observe quite surprising rounding errors. For example, consider the following case.</p>
 
 <pre class="sh_java">
-double eka = 0.39;
-double toka = 0.35;
-System.out.println(eka - toka);
+double a = 0.39;
+double b = 0.35;
+System.out.println(a - b);
 </pre>
 
-        <p>Esimerkki tulostaa arvon <code>0.040000000000000036</code>. Ohjelmointikielet tarjoavat usein työkalut liukulukujen tarkempaa käsittelyä varten. Esimerkiksi Javassa on luokka <em>BigDecimal</em>, johon voi asettaa äärettömän pitkiä liukulukuja.</p>
+        <p>The example prints the value <code>0.040000000000000036</code>. Programming languages usually include tools to more accurately handle floating point numbers. In Java, for example, the class <em>BigDecimal</em> can be used to store infinitely long floating point numbers.</p>
 
-        <p>Liukulukuja vertaillessa pyöristysvirheisiin varaudutaan usein vertaamalla arvojen etäisyyttä toisistaan. Esimerkiksi edellisen esimerkin muuttujia käytettäessä vertailu <code>eka - toka == 0.04</code> ei tuota toivottua tulosta pyöristysvirheen takia.</p>
+        <p>When comparing floating point numbers, rounding errors are usually taken into account by comparing the distance between the values. For example, with the variables in the previous example, the expression <code>a - b == 0.04</code> does not produce the expected result due to a rounding error.</p>
 
 <pre class="sh_java">
-double eka = 0.39;
-double toka = 0.35;
+double a = 0.39;
+double b = 0.35;
 
-if((eka - toka) == 0.04) {
-    System.out.println("Vertailu onnistui!");
+if((a - b) == 0.04) {
+    System.out.println("Successful comparison!");
 } else {
-    System.out.println("Vertailu epäonnistui!");
+    System.out.println("Failed comparison!");
 }
 </pre>
 
 <pre>
-Vertailu epäonnistui!
+Failed comparison!
 </pre>
 
-        <p>Arvon etäisyyttä jostain luvusta voi tarkastella esimerkiksi seuraavasti. Apufunktio <code>Math.abs</code> palauttaa sille annetun luvun itseisarvon.</p>
+        <p>One method to calculate the distance between two values is as follows. The helper function <code>Math.abs</code> returns the absolute value of the value passed to it.</p>
 
 <pre class="sh_java">
-double eka = 0.39;
-double toka = 0.35;
+double a = 0.39;
+double b = 0.35;
 
-double etaisyys = 0.04 - (eka - toka);
+double distance = 0.04 - (a - b);
 
-if(Math.abs(etaisyys) &lt; 0.0001) {
-    System.out.println("Vertailu onnistui!");
+if(Math.abs(distance) &lt; 0.0001) {
+    System.out.println("Successful comparison!");
 } else {
-    System.out.println("Vertailu epäonnistui!");
+    System.out.println("Failed comparison!");
 }
 </pre>
 

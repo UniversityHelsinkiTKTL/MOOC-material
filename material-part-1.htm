@@ -5732,8 +5732,6 @@ The recommended way of doing this is by defining a method that returns a "charac
 </pre>
 
 
-<!-- TARKISTETTU TÄHÄN SAAKKA -->
-
   <p>The method <code>toString</code> works just like <code>printPerson</code>,
  but instead of printing it returns the string representation, so the calls to the method can be used for printing at will.</p>
 
@@ -5756,7 +5754,7 @@ The recommended way of doing this is by defining a method that returns a "charac
     <span class="sh_cbracket">}</span>
 </pre>
 
-  <p>The principle is, that <code>System.out.println</code>-method requests the string representation of an object and then prints it. The string representation returning <code>toString</code>-method doesn't have to be written, since Java adds it automatically. When the programmer writes:</p>
+  <p>The principle is that <code>System.out.println</code>-method requests the string representation of an object and then prints it. The string representation a returning <code>toString</code>-method doesn't have to be written, since Java adds it automatically. When the programmer writes:</p>
 
 <pre class="sh_java sh_sourceCode">        System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class="sh_function">println</span><span class="sh_symbol">(</span> andy <span class="sh_symbol">);</span>      
 </pre>
@@ -5766,7 +5764,7 @@ The recommended way of doing this is by defining a method that returns a "charac
 <pre class="sh_java sh_sourceCode">        System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class="sh_function">println</span><span class="sh_symbol">(</span> andy<span class="sh_symbol">.</span><span class="sh_function">toString</span><span class="sh_symbol">()</span> <span class="sh_symbol">);</span>
 </pre>
 
-  <p>This means that an object gets asked for it's string representation. The string representation the object returns gets printed out normally with the <code>System.out.println</code>-command. </p>
+  <p>This means that an object gets asked for its string representation. The string representation the object returns gets printed out normally with the <code>System.out.println</code>-command. </p>
 
   <p><b>We can get rid of the obsolete <code>printObject</code>-method.</b></p>
 
@@ -5777,15 +5775,15 @@ The recommended way of doing this is by defining a method that returns a "charac
 <div class="tehtavat">
   <h3>Lyyra-card</h3>
 
-<p>In University of Helsinki students use so called Lyyra-card to pay their meals in student cafeterias. In this assignment we implement class <code>LyyraCard</code>, that simulates the Lyyra-card.</p>
+<p>The University of Helsinki students use so-called Lyyra cards to pay for their meals in student cafeterias. In this assignment we implement class <code>LyyraCard</code> that simulates the Lyyra card.</p>
 
 <h4 class="req">Class skeleton</h4>
 
   <p>Start by adding to your project the class <code>LyyraCard</code>. </p>
 
-  <p>Then implement <code>LyyraCard</code> a constructor that gets the starting balance of the card as parameter. Card saves the balance in the object variable <code>balance</code>. Implement also the <code>toString</code>-method that returns a string of the form "The card has X euros".</p>
+  <p>Then implement the <code>LyyraCard</code> a constructor that gets the starting balance of the card as parameter. The card saves the balance in the object variable <code>balance</code>. Implement also the <code>toString</code> method that returns a string of the form "The card has X euros".</p>
 
-  <p>The skeleton of class <code>LyyraCard</code> looks like:</p>
+  <p>The skeleton of class <code>LyyraCard</code> looks like this:</p>
 
 <pre class="sh_java">
 public class LyyraCard {
@@ -5812,7 +5810,7 @@ public class Main {
 }
 </pre>
 
-  <p>Output should be:</p>
+  <p>The output should be:</p>
 
 <pre>
 The card has 50.0 euros
@@ -5835,7 +5833,7 @@ The card has 50.0 euros
   <p>Method <code>payEconomical</code> should decrease the balance by 2.50 euros and method <code>payGourmet</code> 
 by 4.00 euros.</p>
 
- <p>The following main-program can be used to test the program:</p>
+ <p>The following main program can be used to test the program:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -5853,7 +5851,7 @@ public class Main {
 }
 </pre>
 
-<p>Output should be:</p>
+<p>The output should be:</p>
 
 <pre>
 The card has 50.0 euros
@@ -5866,7 +5864,7 @@ The card has 41.0 euros
   <p>Change methods <code>payEconomical</code> and <code>payGourmet</code> 
 so that if there is not enought money, the balance does not change.</p>
 
- <p>The following main-program can be used to test the program:</p>
+ <p>The following main program can be used to test the program:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -5883,7 +5881,7 @@ public class Main {
 }
 </pre>
 
-<p>Output should be:</p>
+<p>The output should be:</p>
 
 <pre>
 The card has 5.0 euros
@@ -5891,11 +5889,11 @@ The card has 1.0 euros
 The card has 1.0 euros
 </pre>
 
-  <p>In above the second call <code>payGourmet</code> does not alter the balance since there are not enough money in the card for gourmet lunch.</p>
+  <p>Above, the second call <code>payGourmet</code> does not alter the balance since there is not enough money on the card for a gourmet lunch.</p>
 
   <h4 class="req">Loading money to card</h4>
 
-  <p>Add <code>LyyraCard</code> the following method:</p>
+  <p>Add the <code>LyyraCard</code> the following method:</p>
 
 <pre class="sh_java">
     public void loadMoney(double amount) {
@@ -5903,9 +5901,9 @@ The card has 1.0 euros
     }
 </pre>
 
-  <p>Method should increase the balance of the card by the given amount. However, the maximum balance in a card is 150 euros. In case the balance after loading money would be more than that, it should be truncated to 150 euros.</p>
+  <p>The method should increase the balance of the card by the given amount. However, the maximum balance on a card is 150 euros. In case the balance after loading money would be more than that, it should be truncated to 150 euros.</p>
 
-  <p>The following main-program can be used to test the program:</p>
+  <p>The following main program can be used to test the program:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -5925,7 +5923,7 @@ public class Main {
 }
 </pre>
 
-  <p>Output should be:</p>
+  <p>The output should be:</p>
 
 <pre>
 The card has 10.0 euros
@@ -5939,7 +5937,7 @@ The card has 150.0 euros
   <p>Change the method <code>loadMoney</code> so that the balance of the card does not change if the amount to load is negative.</p>
 
 
-<p>The following main-program can be used to test the program:</p>
+<p>The following main program can be used to test the program:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -5952,7 +5950,7 @@ public class Main {
 }
 </pre>
 
-  <p>Output should be:</p>
+  <p>The output should be:</p>
 
 <pre>
 The card has 10.0 euros
@@ -5961,21 +5959,21 @@ The card has 10.0 euros
 
 <h4 class="req">Multiple cards</h4>
 
-  <p>Write main method that does the following:</p>
+  <p>Write a main method that does the following:</p>
 
   <ul>
     <li> Create LyyraCard for Pekka with initial balance of 20 euros</li>
     <li> Create LyyraCard for Brian with initial balance of 30 euros</li>
     <li> Pekka buys gourmet lunch</li>
     <li> Brian buys economical lunch</li>
-    <li> cards are printed (both to an own row, started by name of the card owner)</li>
+    <li> cards are printed (both to their own row, starting with the name of the card owner)</li>
     <li> Pekka loads 20 euros</li>
     <li> Brian buys gourmet lunch</li>
-    <li> cards are printed (both to an own row, started by name of the card owner)</li>
+    <li> cards are printed (both to their own row, starting with the name of the card owner)</li>
     <li> Pekka buys economical lunch</li>
     <li> Pekka buys economical lunch</li>
     <li> Brian loads 50 euros</li>
-    <li> cards are printed (both to an own row, started by name of the card owner)</li>
+    <li> cards are printed (both to their own row, starting with the name of the card owner)</li>
   </ul>
 
 <p>The main skeleton is as follows:</p>
@@ -5991,7 +5989,7 @@ public class Main {
 }
 </pre>
 
-  <p>Output should be:</p>
+  <p>The output should be:</p>
 
 <pre>
 Pekka: The card has 16.0 euros
@@ -6010,7 +6008,7 @@ Brian: The card has 73.5 euros
 
   <p>Let us continue with the class <code>Person</code>.
 
-We would be interested in knowing the <a href="http://en.wikipedia.org/wiki/Body_mass_index">body mass index</a> of a person. To calculate that information we need to know height and weight of persons. We add for both the height and the weight object variables and methods that can be used to assign the variables a value. After those are in place, we can add also the method that counts the body mass index. Class after the changes (only the parts affected by the change shown):</p>
+We would be interested in knowing the <a href="http://en.wikipedia.org/wiki/Body_mass_index">body mass index</a> of a person. To calculate that information we need to know their height and weight. We add for both the height and the weight object variables and methods that can be used to assign the variables a value. After those are in place, we can add also the method that calculates the body mass index. The class after the changes (only the parts affected by the change shown):</p>
 
 <pre class="sh_java">
    public class Person {
@@ -6043,7 +6041,7 @@ We would be interested in knowing the <a href="http://en.wikipedia.org/wiki/Body
 }      
 </pre>
  
-  <p>We added object variables <code>height</code> and <code>weight</code> and methods  <code>setHeight</code> and <code>setWeight</code> that can be used to give values to the variables. In naming of the methods we follow the Java convention to call a method that just sets a variable a new value <code>setVariableName</code>, this type of methods are usually called <em>setter methods</em>.</p>
+  <p>We added object variables <code>height</code> and <code>weight</code> and methods  <code>setHeight</code> and <code>setWeight</code> that can be used to give values to the variables. In naming the methods we follow the Java convention to call a method that just sets a new value to a variable <code>setVariableName</code>, this type of methods are usually called <em>setter methods</em>.</p>
 
 <p>The new methods in use:</p>
 
@@ -6062,7 +6060,7 @@ We would be interested in knowing the <a href="http://en.wikipedia.org/wiki/Body
         System.out.println( john.getName() + ", body mass index: " + john.bodyMassIndex() );
 </pre>
 
-<p>Output:</p>
+<p>The output:</p>
 
 <pre>
 Matti, body mass index: on 26.54320987654321
@@ -6071,7 +6069,7 @@ John, body mass index: on 20.897959183673468
 
 <h3>Object variable and parameter with identical name</h3>
 
-<p>In above the method <code>setHeight</code> assigns the objec variable <code>height</code> the value of the parameter <code>newHeight</code>:</p>
+<p>Above, the method <code>setHeight</code> assigns the objec variable <code>height</code> the value of the parameter <code>newHeight</code>:</p>
 
 <pre class="sh_java">
     public void setHeight(int newHeight) {
@@ -6079,7 +6077,7 @@ John, body mass index: on 20.897959183673468
     }
 </pre>
 
-<p>Parameter could also be named identically with the object variable:</p>
+<p>The parameter could also be named identically with the object variable:</p>
 
 <pre class="sh_java">
     public void setHeight(int height) {
@@ -6087,7 +6085,7 @@ John, body mass index: on 20.897959183673468
     }
 </pre>
 
-<p>Now the name <code>height</code> menans the parameter <em>height</em> and the identically named object variable is referred with <code>this.height</code>. The following would not work since the object variable <em>height</em> is not referred at all in the code:</p>
+<p>Now the name <code>height</code> menans the parameter <em>height</em> and the identically named object variable is referred to as <code>this.height</code>. The following would not work since the object variable <em>height</em> is not referred to at all in the code:</p>
 
 <pre class="sh_java">
     public void setHeight(int height) {
@@ -6100,7 +6098,7 @@ John, body mass index: on 20.897959183673468
 
 <h3>Contolling the number of decimals when printing a float</h3>
 
-<p>The number of decimals in last output was far too high, two decimals would be enough. 
+<p>The number of decimals in the last output was far too high, two decimals would be enough. 
 One technique to control how a float number is printed is to use the command <code>String.format</code>.</p>
 
 <p>If <code>value</code> is float, the command <code>String.value( "%.2f", value )</code> returns a string where the value is rounded to contain 2 decimals. The number between dot and f defines the amount of decimals shown. </p>
@@ -6121,7 +6119,7 @@ John,  body mass index: 20,90
 
 
 
-<p>Method <code>String.format</code> is perhaps not the most flexible way that Java provides for formatting float values but it is simple to use and suits well to our purposes.</p>
+<p>Method <code>String.format</code> is perhaps not the most flexible way that Java provides for formatting float values but it is simple to use and suits our purposes well.</p>
 
 
 <div class="tehtavat">
@@ -6136,13 +6134,13 @@ John,  body mass index: 20,90
 
 <ul>
   <li> counter has an object variable that remembers the <em>value</em> of the counter. The value is within the range 0..upperBound</li>
-  <li> At start the value is 0.</li>
+  <li> At the start the value is 0.</li>
   <li> The upper bound of the value is defined by the constructor parameter</li>
   <li> The method <code>next</code> increments the value of the counter. If the value would be more that the upper limit, it wraps around and becomes zero.</li>
   <li> Method <code>toString</code> returns a string representation of the counter value.</li>
 </ul>
 
-<p>Skeleton of the class is the following:</p>
+<p>The skeleton of the class is the following:</p>
 
 <pre class="sh_java">
 public class BoundedCounter {
@@ -6163,7 +6161,7 @@ public class BoundedCounter {
 }
 </pre>
 
-  <p><b>Note</b>: you can't return an integer value directly in method toString since the method should return a string.  Integer variable <code>value</code> can be turned to a string by prefixing it with an empty string: <code>"" + value</code>.</p>
+  <p><b>Note</b>: you can't return an integer value directly in method toString since the method should return a string.  Integer variable <code>value</code> can be turned into a string by prefixing it with an empty string: <code>"" + value</code>.</p>
 
   <p>A main program that uses the counter:</p>
 
@@ -6183,7 +6181,7 @@ public class Main {
 }
 </pre>
 
-<p>In constructor a upper limit of 4 is given to the new counter object, so the value of the counter should be within range 0...4. Note how the method <code>next</code> increases the value until it hits the upper limit and becomes again zero:</p>
+<p>In the constructor a upper limit of 4 is given to the new counter object, so the value of the counter should be within the range 0...4. Note how the method <code>next</code> increases the value until it hits the upper limit and becomes zero again:</p>
 
 <pre>
 Value at start: 0
@@ -6201,9 +6199,9 @@ Value: 0
 
 <h4 class="req">Printing the initial zero</h4>
 
-<p>Imrove <code>toString</code> so that if the value of counter is less than 10, it prefixes the value with 0. So if the value of the counter is e.g. 3, toString should produce "03". If value is at least 10, e.g. 12, the returned string would be "12".</p>
+<p>Imrove <code>toString</code> so that if the value of the counter is less than 10, it prefixes the value with 0. So if the value of the counter is e.g. 3, toString should produce "03". If the value is at least 10, e.g. 12, the returned string would be "12".</p>
 
-<p>Main program that demonstrates the desired functionality of the improved toString.</p>
+<p>A main program that demonstrates the desired functionality of the improved toString.</p>
 
 <pre class="sh_java">
 public class Main {
@@ -6244,7 +6242,7 @@ value: 01
 
 <h4 class="req">The first version of the clock</h4>
 
-<p>With two counter objects we can build a simple clock. Hours can be represent by a counter with upper bound 23 and minutes by a conuter with upper bound 59. As we all know, when minutes wrap around from 59 to 0, hours advance by one. </p>
+<p>With two counter objects we can build a simple clock. Hours can be represented by a counter with upper bound 23 and minutes by a counter with upper bound 59. As we all know, when minutes wrap around from 59 to 0, hours advance by one. </p>
 
 
 <p>First you should implement method <code>getValue</code> to counter class:</p>
@@ -6292,10 +6290,10 @@ public class Main {
 <h4 class="req">The second version of the clock</h4>
 
 <p>
-Firstly implement the method <code>setValue</code> to class <code>BoundedCounter</code>. Method should set te counter the value of the parameter unless if the parameter is less that zero or larger than the upper bound. In those cases, method does not have any effect.</p>
+Firstly implement the method <code>setValue</code> to class <code>BoundedCounter</code>. The method should set  the value of the parameter to the counter unless the parameter is less that zero or larger than the upper bound. In those cases, the method does not have any effect.</p>
 
 
-<p>Then add seconds counter to your clock. The clock should now be like the following:</p>
+<p>Then add a seconds counter to your clock. The clock should now be like the following:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -6329,9 +6327,9 @@ public class Main {
 <p>
 Ensure that all works as expected when starting e.g. with time<i>23:59:50</i>.</p> 
 
-<p><strong>Bonus: eternal clock (exercise not assessed with tmc!)</strong></p>
+<p><strong>Bonus: eternal clock (exercise not assessed with TMC!)</strong></p>
 
-<p>Before you start, sublit the exercise for assesment.</p>
+<p>Before you start, submit the exercise for assesment.</p>
 
 <p>Change your main as follows:</p>
 
@@ -6355,9 +6353,9 @@ public class Main {
 }
 </pre>
 
-<p>Now the clock goes on forever and the value is updated as it should be, once in the second. Second is waited with the command <code>Thread.sleep(1000);</code> Parameter in the command is the time to sleep in milliseconds. In order to use the sleep command, you should do a addition to the definition of main: <code>public static void main(String[] args) <b>throws Exception</b> {</code></p> 
+<p>Now the clock goes on forever and the value is updated as it should be, once in a second. A second is waited with the command <code>Thread.sleep(1000);</code> The parameter in the command is the time to sleep in milliseconds. In order to use the sleep command, you should do an addition to the definition of main: <code>public static void main(String[] args) <b>throws Exception</b> {</code></p> 
 
-<p>You can end the eternal clock by pressing the red box in NetBeans-console (i,e, the area in NB where the output of programs gets printed).</p>
+<p>You can end the eternal clock by pressing the red box in the NetBeans console (i,e, the area in NB where the output of programs gets printed).</p>
 
 </div>
 
@@ -6365,8 +6363,8 @@ public class Main {
 <p><big><b>Important notes regarding the use of objects. Make sure to read
 these.</b></big></p>
 
-<p>Object oriented programming is mostly about turning concepts in to their
-own entirities, or in other words forming abstractions. One might think
+<p>Object oriented programming is mostly about turning concepts into their
+own entities, or in other words forming abstractions. One might think
 that it's pointless to create an object that only holds one number in it,
 and that the same could be achieved with simple <code>int</code> variables.
 This is not the case. If a clock consists of just 3 int variables that are
@@ -6375,11 +6373,11 @@ difficult to "see" what the program is about. Earlier in the material we
 mentioned the advice of the renown programmer Kent Beck: <em>"Any fool can
 write code that a computer can understand.  Good programmers write code
 that humans can understand"</em>,
- since a hand of a clock is actually it's own clearly definable concept, it
-is a good idea to create it it's own class - <code>BoundedCounter</code> -
+ since the hand of a clock is actually its own clearly definable concept, it
+is a good idea to create it its own class - <code>BoundedCounter</code> -
 for the sake of human readability.</p>
 
-<p>Turning a concept in to a class of it's own is a good idea for a lot of
+<p>Turning a concept into a class of its own is a good idea for a lot of
 reasons. Firstly some details (ie. when the counter makes a full round) can
 be hidden inside the class (<em>abstracted</em>). Instead of writing an
 if-clause and an assignment operation, it is enough that the user of the
@@ -6393,7 +6391,7 @@ changed if need be.</p>
 <p>We established that a clock contains three hands, it consists of three
 concepts. Actually the clock itself is a concept too and next week we'll
 make the class Clock, so we can create distinct Clock objects. Clock will
-be an object of which functionality is based on "simpler" objects, the
+be an object which in the functionality is based on "simpler" objects, the
 hands. This is the grand idea of object oriented programming: a program is
 built out of small, clearly defined co-operating objects.</p>
 
@@ -6404,11 +6402,9 @@ pieces</em> - which at this point might feel incomprehensible - will become
 something you'll take for granted.</p>
 
 
-<h3>Calling other methods within object</h3>
+<h3>Calling other methods within an object</h3>
 
-<p>Objects can call also in's own methods. Let us assume we'd like to include body mass index in the string representation of the person objects. Instead of calculationg the body mass index in toString method, a better idea is to call the method <code>bodyMassInded</code> from the 
-
- Jos esim. halutaan, että toString-metodin palauttama merkkijonoesitys kertoisi myös henkilön painoindeksin, kannattaa istä kutsua olion omaa metodia <code>toString</code> method:</p>
+<p>Objects can also call ins own methods. Let us assume we'd like to include body mass index in the string representation of the person objects. Instead of calculating the body mass index in the toString method, a better idea is to call the method <code>bodyMassInded</code> from the <code>toString</code> method:</p>
 
 <pre class="sh_java">
     public String toString() {
@@ -6416,7 +6412,7 @@ something you'll take for granted.</p>
     }
 </pre>
 
-<p>As can be seen, object can call it's own method by prefixing the method name with <code>this</code> and dot. The this is not necessary, so also the below works:</p>
+<p>As can be seen, an object can call its own method by prefixing the method name with <code>this</code> and dot. The this is not necessary, so also the following works:</p>
 
 <pre class="sh_java">
     public String toString() {
@@ -6425,18 +6421,18 @@ something you'll take for granted.</p>
 </pre>
 
 <!-- screencast -->
-<p>Nyt on aika harjoitella lisää yksinkertaisten olioiden tekemistä käytännössä:</p>
+<p>Now it is time to continue practising programming.</p>
 
 <div class="tehtavat">
 <h3>NumberStatistics</h3>
 
-<h4 class="req">Amount of the numbers</h4>
+<h4 class="req">Amount of numbers</h4>
 
 <p>Implement class <code>NumberStatistics</code> with the following methods:</p>
 
 <ul>
-<li> <code>addNumber</code> adds a new number to statistics
-<li> <code>amountOfnumbers</code> tells how many numbers have been added to statistics
+<li> <code>addNumber</code> adds a new number to the statistics
+<li> <code>amountOfnumbers</code> tells us how many numbers have been added to the statistics
 </ul>
 
 <p>Note that the class <em>should not store</em> the added numbers. At this stage it is enough to remember how many added numbers there are, i.e. how many times the method  <code>addNumber</code> has been called.</p>
@@ -6461,7 +6457,7 @@ public class NumberStatistics {
 }
 </pre>
 
-<p>An usage example:</p>
+<p>A usage example:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -6476,7 +6472,7 @@ public class Main {
 }
 </pre>
 
-<p>Output should be:</p>
+<p>The output should be:</p>
 
 <pre>
 Amount: 4
@@ -6520,7 +6516,7 @@ public class NumberStatistics {
 }
 </pre>
 
-<p>An usage example:</p>
+<p>A usage example:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -6537,7 +6533,7 @@ public class Main {
 }
 </pre>
 
-<p>Output should be:</p>
+<p>The output should be:</p>
 
 <pre>
 Amount: 4
@@ -6545,11 +6541,13 @@ sum: 11
 average: 2.75
 </pre>
 
-<h4 class="req">Asking the numbers form the user</h4>
+<h4 class="req">Asking for the numbers from the user</h4>
 
-<p>Create a program that asks the user to input numbers of the type integer. When user gives -1, program stops and prints the sum of given numbers (excluding the -1).</p>
+<p>Create a program that asks the user to input numbers of the type integer. When the user gives -1, the program stops and prints the sum of the given numbers (excluding the -1).</p>
 
-<p>Program should use a <code>NumberStatistics</code> object to count the sum.</p>
+<p><strong>Note:</strong> you should not make any changes to class NumberStatistics!</p>
+
+<p>The program should use a <code>NumberStatistics</code> object to calculate the sum.</p>
 
 <pre>
 Type numbers:
@@ -6563,13 +6561,13 @@ sum: 15
 
 <h4>Many sums</h4>
 
-<p>Chage your program so that it also counts the sum of even and odd numbers in the user input (again -1 excluded).</p>
+<p>Change your program so that it also calculates the sum of even and odd numbers in the user input (again -1 excluded).</p>
 
-<p><b>NOTE</b>: define in your program <i>three</i> <code>NumberStatistics</code> objects. The first is used to track sum of all the numbers. The second takes care of even numbers and the third the odd numbers.</p>
+<p><b>NOTE</b>: define in your program <i>three</i> <code>NumberStatistics</code> objects. The first is used to track the sum of all the numbers. The second takes care of even numbers and the third the odd numbers.  Remember also that you should not make any changes to class NumberStatistics!</p>
 
 <p><b>The tests does not work if you do not create the objects in the order below!!</b></p>
 
-<p>Program should work as follows:</p>
+<p>The program should work as follows:</p>
 
 <pre>
 Type numbers:
@@ -6587,7 +6585,7 @@ sum of odd: 5
 
 <h2>Randomness</h2>
 
-<p>When programming you may occasionally need to simulate random events. Situations such as the unpredictability of weather, or surpising moves on the AI's part in a computer game can often be simulated with random number generators, running on a computer. In Java there is a ready-made class <code>Random</code>, which you can use in the following way:</p>
+<p>When programming you may occasionally need to simulate random events. Situations such as the unpredictability of weather, or surprising moves on the AI's part in a computer game can often be simulated with random number generators, running on a computer. In Java there is a ready-made class <code>Random</code>, which you can use in the following way:</p>
 
 <pre class="sh_java">
 import java.util.Random;
@@ -6720,7 +6718,7 @@ functionality:</p>
 <li> The constructor <code>Dice(int numberOfSides)</code> creates a new
 dice object that has the amount of sides defined by the argument.</li>
 <li> The method <code>roll</code> tells the result of the roll (which
-depends on the number of it's sides)</li>
+depends on the number of its sides)</li>
 </ul>
 
 <p>The frame of the program is as follows:</p>
@@ -6743,7 +6741,7 @@ public class Dice {
 
 </pre>
 
-<p>Expand the class <code>Dice</code> so, that the dice returns with each
+<p>Expand the class <code>Dice</code> so that the dice returns with each
 roll a random number between <code>1...number of sides</code>. Here's a
 main program that tests the dice: </p>
 
@@ -6784,7 +6782,7 @@ which has the following functionality:</p>
   <li> The constructor <code>PasswordRandomizer</code> creates a new
 object, which uses the given password length.</li>
   <li> The method <code>createPassword</code> returns a new password which
-consists of symbols a-z and is of the length that is passed in as a
+consists of symbols a-z and is of the length that is given as a
 parameter to the constructor </li>
 </ul>
 
@@ -6856,7 +6854,7 @@ Password: dzaccatonjcqu
 Password: bpqmedlbqaopq
 </pre>
 
-<p><b>Tip1:</b> this is how you turn the integer <tt>number</tt> in to a
+<p><b>Tip1:</b> this is how you turn the integer <tt>number</tt> into a
 character:</p>
 
 <pre class="sh_java">
@@ -6876,11 +6874,11 @@ between 1 and 39. The class has the following functionality:</p>
 
 <ul>
   <li> the constructor <code>LotteryNumbers</code> creates a new
-LotteryNumbers-object which contains the new drawn numbers</li>
+LotteryNumbers object which contains the new drawn numbers</li>
   <li> the method <code>numbers</code> returns the drawn numbers of this
 draw</li>
   <li> the method <code>drawNumbers</code> draws new numbers</li>
-  <li> the method <code>containsNumber</code> tells if the number is in the
+  <li> the method <code>containsNumber</code> reveals if the number is among the
 drawn numbers</li>
 </ul>
 
@@ -6909,7 +6907,7 @@ public class LotteryNumbers {
     }
 
     public boolean containsNumber(int number) {
-        // Test here if the number is already in the drawn numbers
+        // Test here if the number is already among the drawn numbers
     }
 }
 </pre>
@@ -6944,8 +6942,8 @@ public class Program {
 2 9 11 18 23 32 34
 </pre>
 
-<p><strong>Note!</strong> a number can be only once in one set of numbers
-(per draw ofcourse).</p>
+<p><strong>Note!</strong> a number can be in one set of numbers only once
+(per draw of course).</p>
 
 
 
@@ -6956,9 +6954,9 @@ public class Program {
 
   <p><img src="img/hirsipuu-tikkuukko.png"/></p>
 
-<p>Your friend has programmed the user interface and also a skeleton for the game logic. Now she asks you to finnish the remaining pieces of the game logic.</p>
+<p>Your friend has programmed the user interface and also a skeleton for the game logic. Now she asks you to finish the remaining pieces of the game logic.</p>
 
-  <p> With TMC you get amongst other stuff the following skeleton for the class <code>HangmanLogic</code>
+  <p>Amongst other stuff with TMC you get the following skeleton for the class <code>HangmanLogic</code>
 </p>
 
 <pre class="sh_java">
@@ -6991,16 +6989,16 @@ public class HangmanLogic {
 
         // if the letter has already been guessed, nothing happens
 
-        // it the word does not contains the guessed letter, number of faults increase
+        // it the word does not contains the guessed letter, the number of faults increases
         // the letter is added among the already guessed letters
     }
 
     public String hiddenWord() {
         // program here the functionality for building the hidden word
 
-        // create the hidden word by interating through this.word letter by letter
-        // if the letter in turn is within the guessed words, put it in to the hidden word
-        // if the letter is not among guessed, replace it with _ in the hidden word 
+        // create the hidden word by iterating through this.word letter by letter
+        // if the letter in turn is within the guessed words, put it in the hidden word
+        // if the letter is not among the guessed ones, replace it with _ in the hidden word 
 
         // return the hidden word at the end
         
@@ -7015,18 +7013,18 @@ public class HangmanLogic {
 
   <p><strong>Testing the code</strong></p>
 
-  <p>The tmc-project includes <em>two</em> classes that help you in testing. The class <code>Main</code> starts the graphical version of the game. The class <code>TestProgram</code> can be used to test the class <code>HangmanLogic</code>.</p>
+  <p>The tmc-project includes <em>two</em> classes that help you in the testing. The class <code>Main</code> starts the graphical version of the game. The class <code>TestProgram</code> can be used to test the class <code>HangmanLogic</code>.</p>
 
   <h4>Guessing a letter</h4>
 
   <p>Touch only the method <code>guessLetter(String letter)</code> in this assignment!</p>
 
 <p>
-When user guesses a letter, the user interface calls method <code>guessLetter</code> which is supposed to take care of action related to guessing a letter. First, it should check if the letter has already been guessed. In that case the method does not do anything.</p>
+When a user guesses a letter, the user interface calls method <code>guessLetter</code> which is supposed to take care of action related to guessing a letter. First, it should check if the letter has already been guessed. In that case the method does not do anything.</p>
 
-<p>The method increases the number of faults (<code>this.numberOfFaults</code>) if the word (<code>this.word</code>) does not contains the guessed letter. The letter is added among the already guessed letters (the object variable <code>this.guessedLetters</code>).</p>
+<p>The method increases the number of faults (<code>this.numberOfFaults</code>) if the word (<code>this.word</code>) does not contain the guessed letter. The letter is added among the already guessed letters (the object variable <code>this.guessedLetters</code>).</p>
 
-  <p>An example how the method <code>guessLetter</code> should work:</p>
+  <p>An example of how the method <code>guessLetter</code> should work:</p>
 
 <pre class="sh_java">
   HangmanLogic l = new HangmanLogic("kissa");
@@ -7035,7 +7033,7 @@ When user guesses a letter, the user interface calls method <code>guessLetter</c
   l.guessLetter("D");   // wrong
   l.guessLetter("S");   // correct
   l.guessLetter("F");   // wrong
-  l.guessLetter("D");   // This should not have effect in number of faults since D was already guessed
+  l.guessLetter("D");   // This should not have any effect on the number of faults since D was already guessed
   System.out.println("guessed letters: "+l.guessedLetters());
   System.out.println("number of faults: "+l.numberOfFaults());
 </pre>
@@ -7054,14 +7052,14 @@ number of faults: 2
 
 
   <p>Commands <code>while</code>, <code>charAt</code> and <code>contains</code> might be useful here.
-Note that a single char can be made to a string as follows:</p>
+Note that a single char can be made into a string as follows:</p>
 
 <pre class="sh_java">
 char c = 'a';
 String aString = "" + c;
 </pre>
 
-  <p>An example how the method:</p>
+  <p>An example of how the method:</p>
 
 <pre class="sh_java">
 HangmanLogic l = new HangmanLogic("kissa");
@@ -7094,11 +7092,14 @@ word now: __SSA
         game.start();
 </pre>
 
-  <p>Game is played with keyboard. You can end the game by pressing x in the upper left corner of the game window..</p>
+  <p>The game is played with the keyboard. You can end the game by pressing x in the upper left corner of the game window..</p>
 
 </div>
 
 </div>
+
+
+<!-- TYPOS FIXD -->
 
 <div class="tyhja"></div>
 

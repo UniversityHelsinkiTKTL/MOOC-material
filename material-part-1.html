@@ -7095,8 +7095,6 @@ word now: __SSA
 </div>
 
 
-<!-- TYPOS FIXD -->
-
 <div class="tyhja"></div>
 
 <div class="viikkoraja">Week 5</div>
@@ -7105,7 +7103,7 @@ word now: __SSA
 
 <h3>Multiple constructors</h3>
 
-<p>Lets return to the class that handles Persons again. The class <code>Person</code> currently looks like this:</p>
+<p>Let's return to the class that handles Persons again. The class <code>Person</code> currently looks like this:</p>
 
 <pre class="sh_java">
 public class Person {
@@ -7182,7 +7180,7 @@ public class Person {
     }
 </pre>
 
-<p>We also want to create a person thusly, that in addition to name, we can give an age as a parameter. This can be achieved easily, since multiple constructors can exist. Lets make an alternative constructor. You don't need to remove the old one. </p>
+<p>We also want to create a person so that in addition to name, we can give an age as a parameter. This can be achieved easily, since multiple constructors can exist. Let's make an alternative constructor. You don't need to remove the old one. </p>
 
 <pre class="sh_java">
     public Person(String name) {
@@ -7217,15 +7215,15 @@ Pekka, age 24 years
 Esko, age 0 years
 </pre>
 
-<p>The technique in which a class has two constructors is called <em>constructor overloading</em>.  A class can have multiple constructors, which are different from one another by the parameter quanitities and/or types. However it is not possible to create two different constructors that have exactly the same type of parameters. We cannot add in a constructor <code>public Person(String name, int weight)</code> on top of the old ones, since it is impossible for Java to tell the difference between this one and the one in which the integer stands for the age.</p>
+<p>The technique in which a class has two constructors is called <em>constructor overloading</em>.  A class can have multiple constructors, which are different from one another by the parameter quanitities and/or types. However, it is not possible to create two different constructors that have exactly the same type of parameters. We cannot add in a constructor <code>public Person(String name, int weight)</code> on top of the old ones, since it is impossible for Java to tell the difference between this one and the one in which the integer stands for the age.</p>
 
 <h3>Calling your own constructor</h3>
 
-<p>But wait, in chapter 21 we noted that "copy-paste"-code isn't too great of an idea. When we inspect the overloaded constructors above, we notice that they have same things repeated in them. We're not ok with this.</p>
+<p>But wait, in chapter 21 we noted that "copy-paste"-code isn't too great of an idea. When we inspect the overloaded constructors above, we notice that they have the same things repeated in them. We're not ok with this.</p>
 
 <p>The higher constructor actually is a special case of the constructor below it. What if the higher constructor could 'call' the constructor below it? This can be done, since you can call another constructor from within a constructor with <code>this</code>!</p>
 
-<p>Lets change the higher constructor that it itself does nothing, but only calls the constructor below it and asks it to set the age to 0:</p>
+<p>Let's change the higher constructor that itself does nothing, but only calls the constructor below it and asks it to set the age to 0:</p>
 
 <pre class="sh_java">
     public Person(String name) {
@@ -7240,12 +7238,12 @@ Esko, age 0 years
     }
 </pre>
 
-<p>Calling a class's own constructor <code>this(name, 0);</code> might seem a little peculiar. But we can think of it as that at the call it'll automatically copy-paste the code from the constructor below and that to the age parameter is entered 0.</p>
+<p>Calling a class's own constructor <code>this(name, 0);</code> might seem a little peculiar. But we can imagine that at the call it'll automatically copy-paste the code from the constructor below and that 0 is entered to the age parameter.</p>
 
 
 <h3>Overloading a method</h3>
 
-<p>Just like constructors, also methods can be overloaded, multiple versions of a method can exist. Again the parameter types of different versions have to be different. Lets create another version of the <code>becomeOlder</code>, which enables aging the person the amount of years that is entered as a parameter:</p>
+<p>Just like constructors, methods can also be overloaded, multiple versions of a method can exist. Again the parameter types of different versions have to be different. Let's create another version of the <code>becomeOlder</code>, which enables aging the person the amount of years that is entered as a parameter:</p>
 
 <pre class="sh_java">
     public void becomeOlder() {
@@ -7308,7 +7306,7 @@ Pekka, age 35 years
     <li><code>public Counter(int startingValue)</code> creates a new counter with the given value. The check on the new counter should be off.</li>
     <li><code>public Counter(boolean check)</code> creates a new counter with the starting value of 0.  The check is on if the parameter given to <code>check</code> was
     <code>true</code>.</li>
-    <li><code>public Counter()</code> creates a new counter with a the starting value of 0 and with checking off.</li>
+    <li><code>public Counter()</code> creates a new counter with the starting value of 0 and with checking off.</li>
     </ul>
   <p>and the following methods:</p>
   <ul>
@@ -7332,7 +7330,7 @@ Pekka, age 35 years
 
 <h3>Object is at the end of a wire</h3>
 
-<p>In chapter 20 we noted that <code>ArrayList</code> is at the end of a wire. Also objects are 'at the end of a wire'.  What does this mean? Lets inspect the following example:</p>
+<p>In chapter 20 we noted that <code>ArrayList</code> is at the end of a wire. Also objects are 'at the end of a wire'.  What does this mean? Let's inspect the following example:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -7348,7 +7346,7 @@ Pekka, age 35 years
 <img src="img/lanka1.PNG"/>
 </p>
 
-<p>Lets add to the program a variable <code>person</code> of the type <code>Person</code> and sit it's starting value to <code>pekka</code>. What happens now?</p>
+<p>Let's add to the program a variable <code>person</code> of the type <code>Person</code> and set its starting value to <code>pekka</code>. What happens now?</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -7372,13 +7370,13 @@ Pekka, age 49 years
 
 <p>So in the beginning Pekka was 24 years old, a Person object at the end of a wire attached to a  <code>Person</code> variable is aged by 25 years and as a consequence of that Pekka becomes older! What's going on here then? </p>
 
-<p>The command <code>Person person = pekka;</code> makes it so that <code>person</code> begins to refer to the same object that <code>pekka</code> refers to. So a copy of the object isn't born, but instead both of the variables refer to the same object. With the command <code>Person henkilo = pekka;</code> a <em>copy of the wire</em> is born. As a picture (Note: in the picture p refers to the variable pekka, and h to the variable person in the main program. The variablenames have also been abbreviated in some of the following pictures too.):</p>
+<p>The command <code>Person person = pekka;</code> makes it so that <code>person</code> begins to refer to the same object that <code>pekka</code> refers to. So a copy of the object isn't born, but instead both of the variables refer to the same object. With the command <code>Person henkilo = pekka;</code> a <em>copy of the wire</em> is born. As a picture (Note: in the picture p refers to the variable pekka, and h to the variable person in the main program. The variable names have also been abbreviated in some of the following pictures.):</p>
 
 <p>
 <img src="img/lanka2.PNG"/>
 </p>
 
-<p>In the example "an unknown <code>person</code> steals Pekka's identity". In the following we've  expanded the example so that a new object is created and <code>pekka</code> begins to refer to a new object:</p>
+<p>In the example "an unknown <code>person</code> steals Pekka's identity". In the following, we've  expanded the example so that a new object is created and <code>pekka</code> begins to refer to a new object:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -7412,7 +7410,7 @@ Here's the situation after running the previous line of code:</p>
 <img src="img/lanka3.PNG"/>
 </p>
 
-<p>Lets continue the example further by making <code>person</code> to refer to 'nothing', to  <code>null</code>: </p>
+<p>Let's develop the example further by making <code>person</code> to refer to 'nothing', to  <code>null</code>: </p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -7441,7 +7439,7 @@ Here's the situation after running the previous line of code:</p>
 
 <p>Nothing refers to the second object. The object has become 'garbage'. Java's garbace collector cleans up the garbage every now and then by itself. If this didn't happen, the garbage would pile up in the computer's memory until the execution of the program is done.</p>
 
-<p>We notice that on the last line that we try to print 'nothing' (<code>null</code>) on the last line. This is what happens:</p>
+<p>We notice when on the last line that we try to print 'nothing' (<code>null</code>) on the last line. This is what happens:</p>
 
 <pre>
 Pekka, age 24 years
@@ -7472,16 +7470,16 @@ Pekka, age 24 years
 Java Result: 1</font>
 </pre>
 
-<p>Not good. This might be the first time in your life that you see the text  <b>NullPointerException</b>. But we can assure you, that it won't be the last. NullPointerException is an exception state, when methods of an object with the value <code>null</code> are tried to be called.</p>
+<p>Not good. This might be the first time in your life that you see the text  <b>NullPointerException</b>. But we can assure you that it won't be the last. NullPointerException is an exception state, when we try to call methods of an object with the value <code>null</code>.</p>
 
 
 <h3>An object as a method parameter</h3>
 
 <p>We've seen that a method can have, for example <code>int, double, String</code>
-or ArrayList as it's parameter. ArrayLists and character strings are objects, so as one might guess a method can take any type of object as a parameter. Lets demonstrate this with an example.</p>
+or ArrayList as its parameter. ArrayLists and character strings are objects, so as one might guess a method can take any type of object as a parameter. Let's demonstrate this with an example.</p>
 
-<p>People whose weight index exceeds a certain limit are accepted to the Weight Watchers.
-The limit is not the same in all Weight Watchers associations. Lets make a class corresponding to the Weight Watchers association. As the object is being created the lowest acceptance limit is passed to the constructor as a parameter. </p>
+<p>People whose weight index exceeds a certain limit are accepted into the Weight Watchers.
+The limit is not the same in all Weight Watchers associations. Let's make a class corresponding to the Weight Watchers association. As the object is being created the lowest acceptance limit is passed to the constructor as a parameter. </p>
 
 <pre class="sh_java">
 public class WeightWatchersAssociation {
@@ -7494,7 +7492,7 @@ public class WeightWatchersAssociation {
 }
 </pre>
 
-<p>Next we'll create a method, by which we can check if a person is accepted to the association, in other words we check if a person's weight index is large enough. The method returns <code>true</code> if the person that is passed in as a parameter is accepted and <code>false</code> if not.</p>
+<p>Next we'll create a method, with which we can check if a person is accepted to the association, in other words we check if a person's weight index is large enough. The method returns <code>true</code> if the person that is passed in as a parameter is accepted and <code>false</code> if not.</p>
 
 <pre class="sh_java">
 public class WeightWatchersAssociation {
@@ -7510,7 +7508,7 @@ public class WeightWatchersAssociation {
 }
 </pre>
 
-<p>The method <code>isAcceptedAsMember</code> of the WeightWatchersAssociation object gets a <code>Person</code> object as it's parameter (or more accurately the wire to the person). And then calls the method <code>weightIndex</code> of the person that it received as a parameter. </p>
+<p>The method <code>isAcceptedAsMember</code> of the WeightWatchersAssociation object gets a <code>Person</code> object as its parameter (or more accurately the wire to the person). And then calls the method <code>weightIndex</code> of the person that it received as a parameter. </p>
 
 <p>In the following is a test main program in which a person object <code>matti</code> and then a person object <code>juhana</code> is passed to the weight watchers association's method:</p>
 
@@ -7580,14 +7578,14 @@ Juhana is not accepted as a member
 
 <h3>Reformatory</h3>
 
-<p>In this assignment we use the readily given class <code>Person</code> and are supposed to build a new class <code>Reformatory</code>. 
-Reformatory objects do certain thigs to persons, e.g. measure their weight and feed them.</p>
+<p>In this assignment we use the already given class <code>Person</code> and are supposed to build a new class <code>Reformatory</code>. 
+Reformatory objects do certain things to persons, e.g. measure their weight and feed them.</p>
 
 <p>Note: you should not alter the code in the class Person!</p>
 
 <h4>Weight of a person</h4>
 
-<p>Reformatory class has already a method skeleton <code>public int weight(Person person)</code>:</p>
+<p>The reformatory class already has a method skeleton <code>public int weight(Person person)</code>:</p>
 
 <pre class="sh_java">
 public class Reformatory {
@@ -7599,9 +7597,9 @@ public class Reformatory {
 }
 </pre>
 
-<p>Method gets a person object as a parameter. The method is supposed to return the weight of the parameter, so the method should call a suitable method of <code>person</code>, get the return value and then return it to the caller. </p>
+<p>The method gets a person object as a parameter. The method is supposed to return the weight of the parameter, so the method should call a suitable method of <code>person</code>, get the return value and then return it to the caller. </p>
 
-<p>In the following a reformatory weights two persons:</p>
+<p>In the following a reformatory weight's two persons:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -7615,7 +7613,7 @@ public class Reformatory {
     }
 </pre>
 
-<p>Output should be:</p>
+<p>The output should be:</p>
 
 <pre>
 Brian weight: 7 kilos
@@ -7624,8 +7622,8 @@ Pekka weight: 85 kilos
 
 <h4>feeding a person</h4>
 
-<p>In the previous part of the assignment, the method <code>weight</code> queried some information form the parameter object by calling it's method. It is also possible to change the state of the parameter.
-Add class Reformatory the method <code>public void feed(Person person)</code> that increases the weight of it's parameter by one. </p>
+<p>In the previous part of the assignment, the method <code>weight</code> queried some information from the parameter object by calling its method. It is also possible to change the state of the parameter.
+Add to class Reformatory the method <code>public void feed(Person person)</code> that increases the weight of its parameter by one. </p>
 
 <p>Next an example where first the weight of Pekka and Brian is measured and printed. Then Reformatory feeds Brian three times and after that the weights are measured and printed again.</p>
 
@@ -7650,7 +7648,7 @@ Add class Reformatory the method <code>public void feed(Person person)</code> th
     }
 </pre>
 
-<p>Output should reveal that Brian has gained 3 kilos:</p>
+<p>The output should reveal that Brian has gained 3 kilos:</p>
 
 <pre>
 Brian weight: 7 kilos
@@ -7660,9 +7658,9 @@ Brian weight: 10 kilos
 Pekka weight: 85 kilos
 </pre>
 
-<h4>Number of times a weight have been measured</h4>
+<h4>Number of times a weight has been measured</h4>
 
-<p>Add class Reformatory the method <code>public int totalWeightsMeasured()</code> that returns the total number of times a weight has been measured.
+<p>Add to class Reformatory the method <code>public int totalWeightsMeasured()</code> that returns the total number of times a weight has been measured.
 </p>
 
 <p>With the following main program:</p>
@@ -7698,19 +7696,19 @@ total weights measured 2
 total weights measured 6
 </pre>
 
-<h3>Lyyra-card and Cash Register</h3>
+<h3>Lyyra card and Cash Register</h3>
 
-<h4 class="req"> The "stupid" Lyyra-card</h4>
+<h4 class="req"> The "stupid" Lyyra card</h4>
 
 <p>
-At last week we implemented the class LyyraCard. The card had methods for paying economical and gourmet lunches and method for loading money.</p>
+Last exercise set we implemented the class LyyraCard. The card had methods for paying economical and gourmet lunches and a method for loading money.</p>
 
-<p>The last week's version of the card is however somehow problematic. The card knew the lunch prices so that it could decrement the right price from the balance if a lunch was payed. What if the lunch prices change? Or what if it is decided that LyyraCards could also be used to purchase coffee? A change like these would mean that all the existing LyyraCards should be replaced with the new ones with right prices and/or new methods. This does not sound good at all!</p>
+<p>Last week's version of the card is however somehow problematic. The card knew the lunch prices so that it could take the right price from the balance if a lunch was paid. What if the lunch prices change? Or what if it is decided that LyyraCards could also be used to purchase coffee? A change like these would mean that all the existing LyyraCards should be replaced with the new ones with the right prices and/or new methods. This does not sound good at all!</p>
 
-<p>A better solution is to only store the balance in the card and have all the inteligence in a <em>cash register</em>.</p> 
+<p>A better solution is to only store the balance on the card and have all the inteligence in a <em>cash register</em>.</p> 
 
 <p>We will soon program the cash register but let us start by completing the "stupid" version of the Lyyra card. 
-Card holds the balance and has only two methods, <code>public void loadMoney(double amount)</code> that is readily implemented and <code>public boolean pay(double amount)</code> that you should complete according to the instructions below:</p>
+The card holds the balance and has only two methods, <code>public void loadMoney(double amount)</code> that is already implemented and <code>public boolean pay(double amount)</code> that you should complete according to the instructions below:</p>
 
 <pre class="sh_java">
 public class LyyraCard {
@@ -7729,8 +7727,8 @@ public class LyyraCard {
     }
 
     public boolean pay(double amount){
-       // method checks if the balance of the card is at least amount given as parameter
-       // if not, methods returns false meaning that the card could not be used for the payment
+       // the method checks if the balance of the card is at least the amount given as parameter
+       // if not, the method returns false meaning that the card could not be used for the payment
        // if the balance is enough, the given amount is taken from the balance and true is returned
     }
 }
@@ -7743,14 +7741,14 @@ public class Main {
     public static void main(String[] args) {
         LyyraCard cardOfPekka = new LyyraCard(10);
 
-        System.out.println("money in the card " + cardOfPekka.balance() );
+        System.out.println("money on the card " + cardOfPekka.balance() );
         boolean succeeded = cardOfPekka.pay(8);
         System.out.println("money taken: " + succeeded );
-        System.out.println("money in the card " + cardOfPekka.balance() );
+        System.out.println("money on the card " + cardOfPekka.balance() );
 
         succeeded = cardOfPekka.pay(4);
         System.out.println("money taken: " + succeeded );
-        System.out.println("money in the card " + cardOfPekka.balance() );
+        System.out.println("money on the card " + cardOfPekka.balance() );
     }
 }
 </pre>
@@ -7758,19 +7756,19 @@ public class Main {
 <p>output should be</p>
 
 <pre>
-money in the card 10.0
+money on the card 10.0
 money taken: true
-money in the card 2.0
+money on the card 2.0
 money taken: false
-money in the card 2.0
+money on the card 2.0
 </pre>
 
 <h4 class="req">Cash Register and paying with cash</h4>
 
-<p>In Unicafe a client pays either with cash or with Lyyra-Card. The personel uses a cash register to charge the client.
+<p>In Unicafe a client pays either with cash or with a Lyyra Card. The personnel uses a cash register to charge the client.
 Let us start by implementig the part of CashRegister that takes care of cash payments. </p>
 
-<p>In following hhe skeleton of CashRegister that also has the information how the methods should be implemented:</p>
+<p>In following the skeleton of CashRegister that also has the information on how the methods should be implemented:</p>
 
 <pre class="sh_java">
 public class CashRegister {
@@ -7783,21 +7781,21 @@ public class CashRegister {
     }
 
     public double payEconomical(double cashGiven) {
-        // price of the economical lunch is 2.50 euros
+        // the price of the economical lunch is 2.50 euros
         // if the given cash is at least the price of the lunch:
         //    the price of lunch is added to register
-        //    the amount of sold lunch is incremented by one
-        //    method returns cashGiven - lunch price 
-        // if not enough money given, all is returned and nothing else happens
+        //    the amount of the sold lunches is incremented by one
+        //    the method returns cashGiven - lunch price 
+        // if not enough money is given, all is returned and nothing else happens
     }
 
     public double payGourmet(double cashGiven) {
-        // price of the gourmet lunch is 4.00 euros
+        // the price of the gourmet lunch is 4.00 euros
         // if the given cash is at least the price of the lunch:
-        //    the price of lunch is added to register
-        //    the amount of sold lunch is incremented by one
-        //    method returns cashGiven - lunch price 
-        // if not enough money given, all is returned and nothing else happens
+        //    the price of lunch is added to the register
+        //    the amount of the sold lunches is incremented by one
+        //    the method returns cashGiven - lunch price 
+        // if not enough money is given, all is returned and nothing else happens
     }
 
     public String toString() { 
@@ -7838,33 +7836,33 @@ money in register 1009.0 economical lunches sold: 2 gourmet lunches sold: 1
 
 <h4 class="req">Paying with card</h4>
 
-<p>Extend the cash register with methods to charge lunch price from Lyyra-Card. See below how the methods should look like and behave:</p>
+<p>Extend the cash register with methods to charge a lunch price from a Lyyra Card. See below how the methods should look and behave:</p>
 
 <pre class="sh_java">
 public class CashRegister {    
     // ...
 
     public boolean payEconomical(LyyraCard card) {
-        // price of the economical lunch is 2.50 euros
-        // if balance of the card is at least the price of the lunch:
-        //    the amount of sold lunch is incremented by one
-        //    method returns true
-        // if not, method returns false
+        // the price of the economical lunch is 2.50 euros
+        // if the balance of the card is at least the price of the lunch:
+        //    the amount of sold lunches is incremented by one
+        //    the method returns true
+        // if not, the method returns false
     }
 
     public boolean payGourmet(LyyraCard card) {
-        // price of the gourmet lunch is 2.50 euros
-        // if balance of the card is at least the price of the lunch:
-        //    the amount of sold lunch is incremented by one
-        //    method returns true
-        // if not, method returns false
+        // the price of the gourmet lunch is 2.50 euros
+        // if the balance of the card is at least the price of the lunch:
+        //    the amount of sold lunches is incremented by one
+        //    the method returns true
+        // if not, the method returns false
     }
 
     // ...
 }
 </pre>
 
-<p><b>Note:</b> card payments does not affect on the amount of money in the register!</p>
+<p><b>Note:</b> card payments do not affect the amount of money in the register!</p>
 
 <p>Example main and output:</p>
 
@@ -7900,7 +7898,7 @@ money in register 1002.5 economical lunches sold: 2 gourmet lunches sold: 1
 
 <h4 class="req">Loading money</h4>
 
-<p>To complete the assignment, extend the cash register with method that can be used to load cash to Lyyra-cards. When a certain amount is loaded to the card, the amount stored in the register increases correspondingly. Remember that amount to load needs to be positive! The method skeleton:</p>
+<p>To complete the assignment, extend the cash register with a method that can be used to load cash to Lyyra-cards. When a certain amount is loaded to the card, the amount stored in the register increases correspondingly. Remember that the amount to load needs to be positive! The method skeleton:</p>
 
 <pre class="sh_java">
     public void loadMoneyToCard(LyyraCard card, double sum) {
@@ -7908,7 +7906,7 @@ money in register 1002.5 economical lunches sold: 2 gourmet lunches sold: 1
     }   
 </pre>
 
-<p>And the last example main and it's output:</p>
+<p>And the last example main and its output:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -7937,7 +7935,7 @@ public class Main {
 
 <pre>
 money in register 1000.0 economical lunches sold: 0 gourmet lunches sold: 0
-money in the card 2.0 euros
+money on the card 2.0 euros
 payment success: false
 payment success: true
 the card balance 98.0 euros
@@ -7973,8 +7971,7 @@ this:</p>
    Person juhana = new Person("Juhana")
 
    if ( pekka.getAge() > juhana.getAge() ) {
-       System.out.println( pekka.getName() + " if older than " +
-juhana.getName() );
+       System.out.println( pekka.getName() + " if older than " + juhana.getName() );
    }
 </pre>
 
@@ -7982,7 +7979,7 @@ juhana.getName() );
 two people.</p>
 
 <p>We'll create a method <code>boolean olderThan(Person compared)</code>
-for the Person-class, with which we can compare a certain person to a
+for the Person class, with which we can compare a certain person to a
 person that is given as a parameter.</p>
 
 <p>The method is meant to be used in the following way:</p>
@@ -8011,10 +8008,10 @@ to.</p>
 Pekka is older than Antti
 </pre>
 
-<p>The program gets a person object as it's parameter (or more accurately a
+<p>The program gets a person object as its parameter (or more accurately a
 reference to a person object, which is at 'the end of a wire') and then
-compares it's own age <code>this.age</code> to the age of the compared
-<code>compared.ika</code>. The implementation looks like this:</p>
+compares its own age <code>this.age</code> to the age of the compared
+<code>compared.age</code>. The implementation looks like this:</p>
 
 
 <pre class="sh_java">
@@ -8040,11 +8037,11 @@ a field of an object, in which case we don't write the parentheses.</p>
 
 <h3>The date as an object</h3>
 
-<p>Another example in the same theme. Lets create a class, with which we
+<p>Another example of the same theme. Let's create a class, with which we
 can represent dates.</p>
 
 <p>Within an object the date is represented with three objct variables.
-Lets also make a method with which we can compare if the date is earlier
+Let's also make a method with which we can compare wheather the date is earlier
 than the date that is given as a parameter:</p>
 
 <pre class="sh_java">
@@ -8142,12 +8139,12 @@ public class Apartment {
 </pre>
 
 <p>
-Next you should implement couple of methods that help in apartment comparisons.
+Next you should implement a couple of methods that help in apartment comparisons.
 </p>
 
 <h4>Larger</h4>
 
-<p>Implement the method <code>public boolean larger(Apartment otherApartment)</code> that returns true if the Apartment-object for which the method is called (<code>this</code>) is larger that the apartment object given as parameter (<code>otherApartment</code>).</p>
+<p>Implement the method <code>public boolean larger(Apartment otherApartment)</code> that returns true if the Apartment object for which the method is called (<code>this</code>) is larger than the apartment object given as parameter (<code>otherApartment</code>).</p>
 
 <p>Example of the usage:</p>
 
@@ -8162,9 +8159,7 @@ Next you should implement couple of methods that help in apartment comparisons.
 
 <h4>Price difference</h4>
 
-<p>Implement the method <code>public int priceDifference(Apartment otherApartment)</code> that returns the absolute value of the price difference 
-of the Apartment-object for which the method is called (<code>this</code>) and the apartment object given as parameter
-(<code>otherApartment</code>). Price of an apartment is <code>squareMeters * pricePerSquareMeter.</code></p>
+<p>Implement the method <code>public int priceDifference(Apartment otherApartment)</code> that returns the absolute value of the price difference of the Apartment object for which the method is called (<code>this</code>) and the apartment object given as parameter (<code>otherApartment</code>). The price of an apartment is <code>squareMeters * pricePerSquareMeter.</code></p>
 
 <p>Example of the usage:</p>
 
@@ -8180,7 +8175,7 @@ of the Apartment-object for which the method is called (<code>this</code>) and t
 <h4>more expensive than</h4>
 
 <p>Implement the method <code>public boolean moreExpensiveThan(Apartment otherApartment)</code> that returns true if 
-the Apartment-object for which the method is called (<code>this</code>) has higher price that the apartment object given as parameter
+the Apartment-object for which the method is called (<code>this</code>) has a higher price than the apartment object given as parameter
 (<code>otherApartment</code>).</p>
 
 <p>Example of the usage:</p>
@@ -8203,7 +8198,7 @@ already. You can add character strings, for example, to an ArrayList object
 and going through the strings, searching, removing and sorting them and so
 forth, are painless actions.</p>
 
-<p>You can put any type of objects to ArrayLists. Lets create a person
+<p>You can put any type of objects in ArrayLists. Let's create a person
 list, an  <code>ArrayList&lt;Person&gt;</code> and put a few person objects
 in it:</o>
 
@@ -8211,7 +8206,7 @@ in it:</o>
     public static void main(String[] args) {
         ArrayList&lt;Person&gt; teachers = new ArrayList&lt;Person&gt;();
 
-        // first we can take a person to a variable
+        // first we can take a person into a variable
         Person teacher = new Person("Juhana");
         // and then add it to the list
         teachers.add(teacher);
@@ -8264,7 +8259,7 @@ Martin, age 30 years
 <p>The class should have the following methods:</p>
 
 <ul>
-<li> constructor that initializes the name and the student number with the given parameters.</li>
+<li> A constructor that initializes the name and the student number with the given parameters.</li>
 <li> <code>getName</code>, that returns the student name</li>
 <li> <code>getStudentNumber</code>, that returns the student number</li>
 <li> <code>toString</code>, that returns a String representation of the form: Pekka Mikkola (013141590)</li>
@@ -8283,7 +8278,7 @@ public class Main {
 }
 </pre>
 
-<p>Output should be:</p>
+<p>The output should be:</p>
 
 <pre>
 name: Pekka Mikkola
@@ -8309,7 +8304,7 @@ Linus Torvalds (011288989)
 Steve Jobs (013672548)
 </pre>
 
-<p>So the program asks student information from the user until the user gives student an empty name. After the student info has been enteres, all the students are printed. From each inputted name-studentnumber-pair, the program should create a Student object. Program should store the students to an ArrayList which is defined as follows:</p>
+<p>So the program asks for student information from the user until the user gives a student an empty name. After the student info has been enteres, all the students are printed. From each inputted name-studentnumber-pair, the program should create a Student object. The program should store the students in an ArrayList which is defined as follows:</p>
 
 <pre class="sh_java">
 ArrayList&lt;Student&gt; list = new ArrayList&lt;Student&gt;();
@@ -8339,14 +8334,14 @@ Carl Gustaf Mannerheim (015696234)
 Edsger Dijkstra (014662803)
 </pre>
 
-<p><strong>TIP:</strong> in the search you should interate (using for or while) through the student list and by using the method <code>contains</code> of String check if a student's name (obtained with method <code>getName</code>) matches the search term.</p>
+<p><strong>TIP:</strong> in the search you should iterate (using for or while) through the student list and by using the method <code>contains</code> of String check if a student's name (obtained with method <code>getName</code>) matches the search term.</p>
 </div>
 
 
-<h3>An object within object</h3>
+<h3>An object within an object</h3>
 
 <p>Objects can have objects within them, not only character strings but
-also self defined objects. Lets get back to the <code>Person</code>-class
+also self-defined objects. Let's get back to the <code>Person</code>-class
 again and add a birthday for the person. We can use the
 <code>MyDate</code>-object we created earlier here:</p>
 
@@ -8361,8 +8356,7 @@ public class Person {
     // ...
 </pre>
 
-<p>Lets create a new constructor for person, which enables setting a
-birthday:</p>
+<p>Let's create a new constructor for persons, which enables setting a birthday:</p>
 
 <pre class="sh_java">
     public Person(String name, int day, int month, int year) {
@@ -8377,8 +8371,7 @@ birthday:</p>
 (day, month, year), the date object is created out of them and then
 <i>inserted</i> to the object variable <code>birthMyDate</code>.</p>
 
-<p>Lets edit <code>toString</code> so, that instead of age it displays the
-birthdate:</p>
+<p>Let's edit <code>toString</code> so that instead of age, it displays the birthdate:</p>
 
 <pre class="sh_java">
     public String toString() {
@@ -8386,7 +8379,7 @@ birthdate:</p>
     }
 </pre>
 
-<p>And then lets test how the renewed Person-class works:</p>
+<p>And then let's test how the renewed Person class works:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -8406,28 +8399,28 @@ Martin, born 24.4.1983
 Juhana, born 17.9.1985
 </pre>
 
-<p>In the chapter 24.4, we noted that objects are 'at the end of a wire'.
+<p>In chapter 24.4, we noted that objects are 'at the end of a wire'.
 Take a look at that chapter again for good measure.</p>
 
 <p>Person objects have the object variables <code>name</code>, which is a
-String-object and <code>birthMyDate</code>, which is a MyDate-object. The
+String-object and <code>birthMyDate</code>, which is a MyDate object. The
 variables of person are consequently both objects, so technically speaking
 they don't actually exist within a person object, but are 'at the end of a
 wire'. In other words a person has a reference to the objects stored in
-it's object variables. The concept as a picture:</p>
+its object variables. The concept as a picture:</p>
 
 <p>
 <img src="img/person.PNG"/>
 </p>
 
-<p>The main program now has two person programs at ends of wires. The
+<p>The main program now has two person programs at the ends of wires. The
 persons have a name and a birthdate. Because both are objects, both are at
-ends of wires the person holds.</p>
+the ends of wires the person holds.</p>
 
-<p>Birthday seems like a good expansion to the Person-class. We notice
-however that the object variable <code>age</code> is becoming obsolete and
+<p>Birthday seems like a good expansion to the Person class. We notice,
+however, that the object variable <code>age</code> is becoming obsolete and
 should probably be removed since the age can be determined easily with the
-help of current date and birthday. In Java, the current day can be figured
+help of the current date and birthday. In Java, the current day can be figured
 out, for example, like this:</p>
 
 <pre class="sh_java">
@@ -8437,7 +8430,7 @@ out, for example, like this:</p>
         System.out.println("Today is " + day + "." + month + "." + year );
 </pre>
 
-<p>When age is removed, the <code>olderThan</code>-method has to be changed
+<p>When age is removed, the <code>olderThan</code> method has to be changed
 so that it compares birthdates. We'll do this as an excersise
 assignment.</p>
 
@@ -8446,9 +8439,9 @@ assignment.</p>
 <div class="tehtavat">
 
 
-<h3>Clock-object</h3>
+<h3>Clock object</h3>
 
-<p>In assignment 78 we used objects of the class <code>BoundedCounter</code> to implement a clock in the main method. In this assignment we will tranform the clock to an object. Skeleton of the class clock looks like the following:</p>
+<p>In assignment 78 we used objects of the class <code>BoundedCounter</code> to implement a clock in the main method. In this assignment we will tranform the clock to an object. The skeleton of the class clock looks like the following:</p>
 
 <pre class="sh_java">
 
@@ -8474,7 +8467,7 @@ public class Clock {
 <p>Copy the class <code>BoundedCounter</code> from assignment 78 to the project of this assignment!</p>
 
 <p>Implement constructor and method <code>tick</code> for the class <code>Clock</code>. 
-Use following main to test your clock:</p>
+Use the following main to test your clock:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -8491,7 +8484,7 @@ public class Main {
 }
 </pre>
 
-<p>Output should be:</p>
+<p>The output should be:</p>
 
 <pre>
 23:59:50
@@ -8516,11 +8509,7 @@ public class Main {
 
 <h3>A list of objects within an object</h3>
 
-<p>Lets expand the <code>WeightWatchersAssociation</code>-object so, that
-the association records all it's members in to a
-<code>ArrayList</code>-object. So in this case the list will be filled with
-<code>Person</code>-objects. In the extended version the association is
-given a name as a constructor parameter:</p>
+<p>Let's expand the <code>WeightWatchersAssociation</code> object so that the association records all its members into an <code>ArrayList</code> object. So in this case the list will be filled with <code>Person</code> objects. In the extended version the association is given a name as a constructor parameter:</p>
 
 <pre class="sh_java">
 public class WeightWatchersAssociation {
@@ -8538,10 +8527,7 @@ public class WeightWatchersAssociation {
 }
 </pre>
 
-<p>Lets create a method with which a person is added to the association.
-The method won't add to the association anyone, but the people with a high
-enough weight index. Lets also make a toString with which the members'
-names are printed:</p>
+<p>Let's create a method with which a person is added to the association. The method won't add anyone to the association but  people with a high enough weight index. Let's also make a toString with which the members' names are printed:</p>
 
 <pre class="sh_java">
 public class WeightWatchersAssociation {
@@ -8578,7 +8564,7 @@ public class WeightWatchersAssociation {
 <p>The method <code>addAsMember</code> uses the method
 <code>isAccepted</code> that was creater earlier.</p>
 
-<p>Lets try the expanded weightwatchers association out:</p>
+<p>Let's try out the expanded weightwatchers association:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -8608,7 +8594,7 @@ public class WeightWatchersAssociation {
 }
 </pre>
 
-<p>From the output we can see that Juhana wasn't accepted as a member:</p>
+<p>In the output we can see that Juhana wasn't accepted as a member:</p>
 
 <pre>
 The members of weight watchers association 'kumpulan paino':
@@ -8631,7 +8617,7 @@ The members of weight watchers association 'kumpulan paino':
 <p>Implement a class <code>Team</code>. At this stage team has only a name  (<code>String</code>) and the following functionality:</p>
 
 <ul>
-<li> constructor that sets the team name</li>
+<li> a constructor that sets the team name</li>
 <li> <code>getName</code>, that returns the name</li>
 </ul>
 
@@ -8646,7 +8632,7 @@ public class Main {
 }
 </pre>
 
-<p>output should be::</p>
+<p>the output should be::</p>
 
 <pre>
 Team: FC Barcelona
@@ -8654,7 +8640,7 @@ Team: FC Barcelona
 
 <h4 class="req">Player</h4>
 
-<p>Create a class <code>Player</code> with the instance variables for the player name and the amount of goals. Player should have two constructors: one that initializes the name and other that initializes the name and the amount of goals.  Implement also the following methods:</p>
+<p>Create a class <code>Player</code> with the instance variables for the player name and the amount of goals. A player should have two constructors: one that initializes the name and an another that initializes the name and the amount of goals.  Implement also the following methods:</p>
 
 <ul>
   <li> <code>getName</code>, returns the player name</li>
@@ -8691,7 +8677,7 @@ Player: Pekka, goals 39
 <h4 class="req">Adding players to a team</h4>
 
 
-<p>Add the class <code>Team</code> the following methods:</p>
+<p>Add to the class <code>Team</code> the following methods:</p>
 
 <ul>
   <li> <code>addPlayer</code>, adds a player to the team</li>
@@ -8699,7 +8685,7 @@ Player: Pekka, goals 39
 </ul>
 
 <p>
-You should store the players to instance variable of the type <code>ArrayList&lt;Player&gt;</code> within the class <code>Team</code>.</p>
+You should store the players to an instance variable of the type <code>ArrayList&lt;Player&gt;</code> within the class <code>Team</code>.</p>
 
 <p>With the code:</p>
 
@@ -8720,7 +8706,7 @@ public class Main {
 }
 </pre>
 
-<p>output should be:</p>
+<p>the output should be:</p>
 
 <pre>
 Brian, goals 0
@@ -8730,7 +8716,7 @@ Mikael, goals 1
 
 <h4 class="req">The team maximum size and current size</h4>
 
-<p>Add the class <code>Team</code> methods</p>
+<p>Add to the class <code>Team</code> the methods</p>
 
 <ul>
 <li> <code>setMaxSize(int maxSize)</code>, sets the maximum number of players that the team can have</li>
@@ -8740,7 +8726,7 @@ Mikael, goals 1
 <p>By default the maximum number of players is 16, and that can be changed with the method
  <code>setMaxSize</code>.
 Change the method  <code>addPlayer</code>
-so that it does not add player to the team if the team has already maximum number of players.</p>
+so that it does not add players to the team if the team already has the maximum number of players.</p>
 
 <p>With the code:</p>
 
@@ -8761,7 +8747,7 @@ public class Main {
 }
 </pre>
 
-<p>output should be</p>
+<p>the output should be</p>
 
 <pre>
 Number of players: 1
@@ -8769,7 +8755,7 @@ Number of players: 1
 
 <h4 class="req">Goals of a team</h4>
 
-<p>Add the class <code>Team</code> the method</p>
+<p>Add to the class <code>Team</code> the method</p>
 
 <ul>
 <li> <code>goals</code>, returns the total number of goals for all the players in the team</li>
@@ -8793,7 +8779,7 @@ public class Main {
 }
 </pre>
 
-<p>output should be</p>
+<p>the output should be</p>
 
 <pre>
 Total goals: 40
@@ -8805,7 +8791,7 @@ Total goals: 40
 <h3>Method returns an object</h3>
 
 <p>We've seen methods that return booleans, numbers, lists and strings.
-It's easy to guess that a method can return any type of an object. Lets
+It's easy to guess that a method can return any type of an object. Let's
 make a method for the weight watchers association that returns the person
 with the highest weight index. </p>
 
@@ -8832,16 +8818,16 @@ public class WeightWatchersAssociation {
 </pre>
 
 <p>The logic in this method works in the same way as when finding the
-largest number from a list. We use a dummy variable
-<code>heaviestSoFar</code> which is at the beginning made to refer to the
+largest number in a list. We use a dummy variable
+<code>heaviestSoFar</code> which is initially made to refer to the
 first person on the list. After that the list is read through and we see if
 there's anyone with a greater weight index in it, if so, we make
-<code>heaviestSoFar</code> refer to that one instad. In the end we return
+<code>heaviestSoFar</code> refer to that one instead. At the end we return
 the value of the dummy variable, or in other words the <i>reference to a
 person object</i>.</p>
 
-<p>Lets make an expansion to the previous main program. The main program
-receives the reference returned by the method to it's variable
+<p>Let's make an expansion to the previous main program. The main program
+receives the reference returned by the method to its variable
 <code>heaviest</code>.</p>
 
 <pre class="sh_java">
@@ -8894,8 +8880,7 @@ public Counter {
   }
 
   public Counter clone(){
-     // lets create a new counter object, that gets as it's initial value
-the value of the counter that is being cloned
+     // lets create a new counter object, that gets as its initial value the value of the counter that is being cloned
      Counter clone = new Counter(this.value);
 
      // return the clone to the caller
@@ -8904,7 +8889,7 @@ the value of the counter that is being cloned
 }
 </pre>
 
-<p>Here's an usage example:</p>
+<p>Here's a usage example:</p>
 
 <pre class="sh_java">
   Counter counter = new Counter();
@@ -8934,14 +8919,14 @@ the value of the counter that is being cloned
 
 <p>The value of the object being cloned and the value of the clone - after
 the cloning has happened - are the same. However they are two different
-objects, so in the future as one of the counters is grown the value of the
+objects, so in the future as one of the counters grows the value of the
 other isn't affected in any way.</p>
 
 
 <div class="tehtavat">
 <h3>Extending MyDate</h3>
 
-<p>In this assignment we will extend the class <code>MyDate</code>, that was developed in the chapter 24.7. Code of the class:
+<p>In this assignment we will extend the class <code>MyDate</code>, that was developed in chapter 24.7. The code of the class:
 
 <pre class="sh_java">
 public class MyDate {
@@ -8984,17 +8969,17 @@ public class MyDate {
 
 <h4 class="req">Next day</h4>
 
-<p>Add the class MyDate the method <code>public void advance()</code> that advances the date by one. <strong>Note:</strong> In this assignment we assume that all the months have 30 days!</p>
+<p>Add to the class MyDate the method <code>public void advance()</code> that advances the date by one. <strong>Note:</strong> In this assignment we assume that all the months have 30 days!</p>
 
 <h4 class="req">Advancing many days</h4>
 
 <p>Add also overloaded version  <code>public void advance(int numberOfDays)</code>.
 This method should advance the day by the number given as parameter. Implement this method so that it calls the method
- <code>advance()</code> that was defined in the previous part of the assignment, e.g. the call  <code>advance(5)</code> should call 5 times <code>advance()</code>. Again assume that all the months have 30 days!</p>
+ <code>advance()</code> that was defined in the previous part of the assignment, e.g. the call  <code>advance(5)</code> should call  <code>advance()</code> 5 times. Again assume that all the months have 30 days!</p>
 
 <h4 class="req">Creation of a new date</h4>
 
-  <p>Add the class <code>MyDate</code> the method <code>MyDate afterNumberOfDays(int days)</code>, that returns a <strong>new</strong> <code>MyDate</code>-object that has the date which equals the date of the object for which the method was called advance dy the parameter of the method <code>days</code>.  Again assume that all the months have 30 days!</p>
+  <p>Add to the class <code>MyDate</code> the method <code>MyDate afterNumberOfDays(int days)</code>, that returns a <strong>new</strong> <code>MyDate</code>-object that has the date which equals the date of the object for which the method was called advance by the parameter of the method <code>days</code>.  Again assume that all the months have 30 days!</p>
 
 <p>Note that the object for which this method is called should not change!</p>
 
@@ -9022,8 +9007,8 @@ This method should advance the day by the number given as parameter. Implement t
             System.out.println("Friday after  " + i + " weeks is " + newDate);
             newDate = newDate.afterNumberOfDays(7);
         }
-        System.out.println("This weeks Friday is " + day);
-        System.out.println("The date from 790 days from this week's Friday is  " + day.afterNumberOfDays(790));
+        System.out.println("This week's Friday is " + day);
+        System.out.println("The date 790 days from this week's Friday is  " + day.afterNumberOfDays(790));
   }
 </pre>
 
@@ -9037,25 +9022,25 @@ Friday after  4 weeks is 23.3.2011
 Friday after  5 weeks is 30.3.2011
 Friday after  6 weeks is 7.4.2011
 Friday after  7 weeks is 14.4.2011
-This weeks Friday is 25.2.2011
-The date from 790 days from this week's Friday is  5.5.2013
+This week's Friday is 25.2.2011
+The date 790 days from this week's Friday is  5.5.2013
 </pre>
 </div>
 
 <h3>More assignments</h3>
 
-<p>Al the theory new theory for this week has already been covered. However since this week's topics are quite challenging,
-we will practise our routine with couple of more exercises.</p>
+<p>All the new theory for this week has already been covered. However, since this week's topics are quite challenging,
+we will practise our routine with a couple of more exercises.</p>
 
 <div class="tehtavat">
 <h3>Difference of two dates</h3>
 
-<p>In this assignment we'll further extend the class MyDate. This assignment does not depend on the previous one, so the project contains the MyDate-class that has not the extensions of the previous assignment.</p>
+<p>In this assignment we'll further extend the class MyDate. This assignment does not depend on the previous one, so the project contains the MyDate class that does not have the extensions of the previous assignment.</p>
 
 <h4 class="req">Difference in years, first version</h4>
 
 
-<p>Add the class MyDate the mehtod <code>public int differenceInYears(MyDate comparedDate)</code>, 
+<p>Add to the class MyDate the method <code>public int differenceInYears(MyDate comparedDate)</code>, 
 that calculates the difference in years of the object for which the method is called and the object given as parameters.</p>
 
 <p>
@@ -9087,7 +9072,7 @@ public class Main {
 }
 </pre>
 
-<p>output should be:</p>
+<p>the output should be:</p>
 
 <pre>
 1.1.2011 and 24.12.2009 difference in years: 2     // since 2011-2009 = 2
@@ -9104,7 +9089,7 @@ Modify the method so that it can calculate the difference properly.</b> Only the
 
 <p> The method still needs to work only in the case where the date given as parameter is before the date for which the method is called </p>
 
-<p>Output for the previous example is now:</p>
+<p>The output for the previous example is now:</p>
 
 <pre>
 1.1.2011 and 24.12.2009 difference in years: 1
@@ -9149,9 +9134,9 @@ public class Main {
 
 <h4 class="req">Calculating the age based on the birthday</h4>
 
-<p>In chapter 24.9. Person was extended by adding it a birthday represented as a MyDate object. It was noticed that after the addition the instance variable <code>age</code> has no role since the age could easily be calculated based on the current date and the birthday.</p>
+<p>In chapter 24.9. Person was extended by adding to it a birthday represented as a MyDate object. It was noticed that after the addition the instance variable <code>age</code> has no role since the age could easily be calculated based on the current date and the birthday.</p>
 
-<p>Implement now the method <code>age</code> that calucates and returns age of the person.</p>
+<p>Now implement the method <code>age</code> that calucates and returns the age of the person.</p>
 
 <p><b>Note:</b> in the previous assignment we added the class <code>MyDate</code> method <code>public int differenceInYears(MyDate compared)</code>. Copy the method here since it eases this assignment considerably.</p>
 
@@ -9206,9 +9191,9 @@ Thomas age 57 years
 Pekka age 19 years
 </pre>
 
-<h4 class="req">Comparing age based on birthdate</h4>
+<h4 class="req">Comparing ages based on birthdate</h4>
 
-<p>Add the class Person the method <code>boolean olderThan(Person compared)</code> which compares ages of the object for which the method is called and the object given as parameter. Method returns true if the object it self is older than the parameter.</p>
+<p>Add to the class Person the method <code>boolean olderThan(Person compared)</code> which compares the ages of the object for which the method is called and the object given as parameter. The method returns true if the object itself is older than the parameter.</p>
 
 <pre class="sh_java">
 public class Person {
@@ -9234,7 +9219,7 @@ public class Main {
 }  
 </pre>
 
-<p>Output should be:</p>
+<p>The output should be:</p>
 
 <pre>
 Martin is older than Pekka: false
@@ -9243,7 +9228,7 @@ Pekka is older than Martin: true
 
 <h4>New constructors</h4>
 
-<p>Add the class Person two new constructors:</p>
+<p>Add to the class Person two new constructors:</p>
 <ul>
   <li><code>public Person(String name, MyDate birthday)</code> constructor sets the given MyDate-object to be the birthday of the person</li>
   <li><code>public Person(String name)</code> constructor sets the current date (i.e., the date when the program is run) to be the birthday of the person</li>
@@ -9275,6 +9260,8 @@ Steve, born 9.2.2012
 </div>
 
 </div>
+
+<!-- TYPOFIXES UPTO HERE DONE -->
 
 
 <div class="tyhja"></div>

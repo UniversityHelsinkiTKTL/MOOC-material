@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <title>Introduction to Programming, Spring 2012</title>
+    <title>Introduction to Programming, Spring 2012</title>
     <link rel="stylesheet" href="stylesheets/common.css" type="text/css" media="screen, print" />
     <link rel="stylesheet" href="stylesheets/menu.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="stylesheets/shjs/sh_style.css" type="text/css" media="screen, print" />
@@ -22,7 +22,7 @@
 
     <p><em>Material and exercises:</em> <b>Arto Vihavainen, Matti Luukkainen</b></p>
     
-    <p><em>English translation:</em> <b>Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu</b></p>
+    <p><em>English translation:</em> <b>Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas</b></p>
 
     <div id="toc" class="menu" data-first-chapter-index="1" data-first-exercise-index="1">
       <p><strong>Material</strong></p>
@@ -33,74 +33,70 @@
 
     <h2>Note to the reader</h2>
 
-    <p>This learning material is made for the courses Introduction to Programming and Advanced Programming held in spring 2012 at the University of Helsinki, Department of Computer Science. The material is used also for the online course MOOC (massively open online course) of programming. The material is based on previous years' (2010 and 2011) course material and the following people have contributed to the content: Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju and Martin Pärtel.</p>
+    <p>This learning material is for the Introduction to Programming and Advanced Programming courses held in spring 2012 at the University of Helsinki, Department of Computer Science. The material is used also for the online MOOC (massively open online course) programming course. The material is based on previous years' (2010 and 2011) course material with content contributions from: Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju and Martin Pärtel.</p>
 
-    <p>You should read the material and do the given exercise examples as you go forward. It is recommended to make changes to the examples yourself and see how your changes take effect on the programs. You might think that doing those example exercises will slow down your learning process. That is not the case! As far as we can tell, no-one has yet learned to program by only reading a textbook or listening to lectures. Learning is based essentially on active doing and increasing the routine. Doing the given exercise examples and especially making your own changes to them is one of the best ways to internalize the information in question.</p>
-    <p>
-    You should at least try to do the exercises as you proceed. If you do not get it the first time, do not feel bad. You have the opportunity to seek help (and also later on to help others) on the course IRC channel.
-    </p>
-    <p>
-    This material is not meant to be read just once. It is most likely that you need later on to re-read something you have read before or to look at an example exercise you have completed again. This material does not include everything that is essential in computer programming. Actually there exists no book that includes that either. That means that during your career as a computer programmer you have to seek information by yourself. This material includes instructions on where and how to find useful information.
-    </p>
-    <p>
-    There are also a bunch of screencasts, which are instructional videos. By watching these screencasts you can see in real time how a program is made, instead of just reading the example.
-    </p>
+    <p>You should do all the example exercises yourself as you read the material. It is recommended to make changes to the examples yourself and observe the result of the changes on the programs. Although you might think that doing examples yourself will only slow down your progress, this is definitely not the case here! As far as we know, no one has yet learned to program merely by reading a textbook or listening to lectures. Doing activities and improving your routine is an essential part of the learning process. Doing the given exercise examples and, more importantly, making your own changes to them is one of the best ways to internalize the information you just read.</p>
+
+    <p>Do or at least try to do the exercises as you proceed. If you are not able to complete an exercise on your first attempt, do not become discouraged as you will be able to find help (and later help others, too) on the IRC channel of the course.</p>
+
+    <p>This material is not meant to be read just once. You will definitely need to return and reread sections that you have already read and exercises that you have already completed. This material does not cover everything essential to computer programming. In fact, no book in existence contains all the essentials. That means that during your career as a computer programmer you will also have to seek information individually. The material exercises include some instructions on where and how to find useful information.</p>
+
+    <p>There are also a bunch of screencasts (i.e. instructional videos), which allow you to follow the construction of program rather than just reading the full example at once.</p>
 
     <p></p>
 
     <div class="week" data-week-number="1">
 
-    <p></p>        
+    <p></p>
 
 <div class="tyhja"></div>
 
 <div class="viikkoraja">Week 1</div>
 
-        <h2 id="ensimmäinen_ohjelma">The first program</h2>
+    <h2 id="ensimmäinen_ohjelma">The first program</h2>
 
-        <p>Modern computer programming takes place almost with no exceptions in an Integrated Development Environment (IDE). This Development Environment includes some functionalities that help the programmer. The Development Environment does not create the program for you, but it can for example give hints of easily spotted errors in program code and helps you to understand the program structure better. </p>
-<p>
-During this course we use an IDE called NetBeans. Check the <a href="netbeans-english.html">guide</a> on how to use NetBeans and the exercise robot.</p> 
+    <p>Modern computer programming takes place almost with no exceptions in an Integrated Development Environment (IDE). This Development Environment includes some functionalities that help the programmer. The Development Environment does not create the program for you, but it can for example give hints of easily spotted errors in program code and helps you to understand the program structure better.</p>
 
-        <h3>Starting to program in the Development Environment</h3>
-<p>
-The guides on how to start programming in NetBeans are in the same place as the previous guide.
-In the future we will give out more guides on how to use NetBeans. The Development Environment might seem a bit confusing at first, but do not worry! NetBeans is quite easy to use in the end. You will learn the basics in 5 minutes and during this course you will continue to learn more step by step. When this course is finished you have become a true power user of NetBeans!</p>
+    <p>During this course we use an IDE called NetBeans. Check the <a href="netbeans-english.html">guide</a> on how to use NetBeans and the exercise robot.</p>
 
-        <p></p>
-        
-        
-        <h2 id="koodia">The program and the source code</h2>
-<h3>The source code</h3>
-<p>
-The program consists of the <em>source code</em>. As a rule the computer will run the <em>commands</em> from <em>top to bottom</em> and <em>from left to right</em>. The source code is saved in textual format and will be <em>executed</em> somehow. </p>
-<h3>The commands</h3>
-<p>
-Properly speaking the program consists of the commands that are written in the source code. Computers execute different <em>operations</em> based on the commands. For example when printing a string, which means a text, on the screen the most important command is <code>System.out.println</code>.    </p>
+    <h3>Starting to program in the Development Environment</h3>
+
+    <p>The guides on how to start programming in NetBeans are in the same place as the previous guide.
+    In the future we will give out more guides on how to use NetBeans. The Development Environment might seem a bit confusing at first, but do not worry! NetBeans is quite easy to use in the end. You will learn the basics in 5 minutes and during this course you will continue to learn more step by step. When this course is finished you have become a true power user of NetBeans!</p>
+
+    <p></p>
+
+    <h2 id="koodia">The program and the source code</h2>
+
+    <h3>Source code</h3>
+
+    <p>A program is made up of <em>source code</em>. A computer generally runs <em>commands</em> in the source code from <em>top to bottom</em> and <em>from left to right</em>. The source code is saved in a textual format and will be <em>executed</em> somehow.</p>
+
+    <h3>Commands</h3>
+
+    <p>Actually, a program is composed of commands written in the source code. Computers execute different <em>operations</em>, or actions, based on the commands. For example, when printing the string (i.e. text) "Hello world!" on the screen, <code>System.out.println</code> is the most important command.</p>
 
 <pre class="sh_java">
 System.out.println("Hello world!");
 </pre>
 
+    <p>The <code>System.out.println</code> command prints the string given to inside the brackets onto the screen. The suffix <code>ln</code> is short for the word <i>line</i>. Therefore, this command prints out a line. This means that after the given string has been printed, the command will also print a line break.</p>
 
-        <p>The command <code>System.out.println</code> prints to the screen the string given inside brackets. The ending <code>ln</code> is a shortening of the word <i>line</i>. This command prints out a line, it means that when all the characters have been printed it also prints a line break.
+    <h3>Compiler and interpreter</h3>
 
+    <p>Computers do not directly understand the programming language we are using. We need a <em>compiler</em> between the source code and the computer. When we are programming using the command line interface, the command <code>javac Hello.java</code> will compile the <code>Hello.java</code> file into <i>bytecode</i>, which can be executed using the Java interpreter. To run the compiled program, you can use the command <code>java Hello</code> where Hello is the name of the original source code file.</p>
 
-                <h3>Compiler and interpreter</h3>
-        
-        <p>The computer does not understand the programming language we are using. We need a <em>compiler</em> between the source code and the computer. When we are programming using the command line interface, the command  <code>javac Hello.java</code> will compile the <code>Hello.java</code> file into <i>bytecode</i>. That bytecode can be run using the Java interpreter. You can run the compiled program with the command <code>java Hello</code>, Hello being the name of your original source code file.</p>
+    <p>When using a modern development environment (more on this later), it will take care of compiling the source code. When we choose to run the program, rhw development environment will compile and execute the program. All development environments compile source code while it is being written by the programmer, which means that simple errors will be noticed before executing the program.</p>
+    
+    <h3>Components of commands</h3>
 
-        <p>When we use a development environment, such as NetBeans, it takes care of compiling the source code for us. When we select the “run program” command from the interface, NetBeans compiles and executes the program. All the development environments compile the source code while a programmer writes it, so that the programmer can spot simple errors in the code before the program is executed.</p>
-        
-        <h3>How the commands are formed</h3>
+    <h4>Semicolon</h4>
+    
+    <p>A semicolon <code>;</code> is used to separate different commands. The compiler and the interpreter both ignore lines in the source code so we could write the entire program on a single line.</p>
 
-        <h4>Semicolon</h4>
-        
-        <p>A semicolon <code>;</code> is used to separate different commands. Actually the compiler and the interpreter pay no attention to the lines in the source code, so that in theory we can write the whole program as a single line.</p>
+    <p>In the example below we will use the <code>System.out.print</code> command, which is similar to the <code>System.out.println</code> command except that it will not print a line break after printing the text.</p>
 
-<p>In the example below we will use the command <code>System.out.print</code>. It works like the command <code>System.out.println</code>, except that it will not print a line break after text.</p>
-
-<p><b>Example of how the semicolons are used</b></p>
+    <p><b>Example of how the semicolons are used</b></p>
 
 <pre class="sh_java">
 System.out.print("Hello "); System.out.print("world");
@@ -110,32 +106,28 @@ System.out.print("!");
 Hello world!
 </pre>
 
-        <p>Even though neither the compiler nor the interpretor need line breaks in the source code, it is highly important to use them and divide the source code into chapters considering other people who will read the source code in the future. This course has a special emphasis on different code-writing style rules that help the readers to understand the source code.</p> 
-        
+    <p>Even though neither the compiler nor the interpreter need line breaks in the source code, they are very important when considering other humans. Line breaks are required to divide source code in a clear manner. This and other similar matters related to readability will emphasized throughout this course.</p>
 
-        <h4>The information that is passed to commands (parameters)</h4>
+    <h4>Parameters (information passed to commands)</h4>
 
-        <p>Some of the commands can behave differently depending on what information is passed to them. We can pass information to commands by using parameters. They are passed to the command by adding them inside the brackets <code>()</code> that follow the command name. For example, to the command  <code>System.out.print</code> is given a text <em>hello</em> as a parameter like this: <code>System.out.print("hello")</code>.  </p>
+    <p>The information processed by a command are the <em>parameters of a command</em>. They are passed to the command by placing them between <code>()</code> brackets that follow the command name. For example, the <code>System.out.print</code> command is given the text <em>hello</em> as a parameter as follows: <code>System.out.print("hello")</code>.</p>
 
+    <h4>Comments</h4>
 
-        
-        <h4>Comments</h4>
-        
-        <p>Writing <code>comments</code> inside the source code is a handy way to make notes for yourself and others. A comment is actually any line in the source code that begins with a double slash <code>//</code>. Everything written after the double slash on the same line will be interpreted as a comment.</p>
-        
-<h4>Example of using comments</h4>
+    <p><em>Comments</em> are a useful way to make notes in the source code for yourself and others. Everything on a line after two forward slashes <code>//</code> are treated as a comment.</p>
+
+    <h4>Example of using comments</h4>
 
 <pre class="sh_java">
-// Next we print the text "Hello world"
+// We will print the text "Hello world"
 System.out.print("Hello world");
 
-System.out.print(" and all the people of the world."); // We add more text to the same line.
+System.out.print(" and all the people of the world."); // We print more text to the same line.
 
-// System.out.print("this line will not be executed, because it is commented out.");
+// System.out.print("this line will not be executed, because it is commented out");
 </pre>
 
-    
-        <p>In the example the last line introduces an especially handy usage for comments. If you want to try removing something, you do not need to really delete the line, you can just comment it out. </p>
+    <p>The last line of the example introduces a particularly handy use for comments: you can comment out code instead of completely deleting it if you want to temporarily try something out.</p>
 
 <h3>3.5 More about printing</h3>
 

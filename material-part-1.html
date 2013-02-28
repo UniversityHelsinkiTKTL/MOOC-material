@@ -4614,6 +4614,7 @@ public static int addThreeAndReturn(int incremented) {
 <p>But why does the value of the parameter get copied and the original variable stay intact when the parameter is of  <code>int</code> type but the original list is given to the method when the parameter is of <code>ArrayList</code> type? In Java only the values of <strong><em>primitive data types</em></strong> (which are <code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code>  and a couple of others that we have not yet discussed) get copied to the method. When the method parameters are of other types only the <em>references</em> are copied to the method. A reference is like a "wire", therefore the method can access the list using it directly. The variables that are not of primitive data types are of <strong><em>reference data types</em></strong> and are "wired" just like the ArrayList in the previous example. The method is given to the wire and the method can access the parameter directly.</p> 
 
 <div id="viikko4" class="tehtavat"> 
+<div class="tehtava">
   <h3>Combining ArrayLists</h3> 
 
 <p>Create the method <code>public static void combine(ArrayList&lt;Integer&gt; first, ArrayList&lt;Integer&gt; second)</code> that inserts the items on the list called <code>second</code> to the list called <code>first</code>. The order of the items can be anything and the same item can appear on the list more than once. An example on using the method:</p> 
@@ -4637,11 +4638,13 @@ public static int addThreeAndReturn(int incremented) {
 </pre> 
 
 <p>We can use the method <code>addAll</code> provided by the ArrayList class to add one list to another list. The list gets the other list, whose items are to be added, as a parameter.</p> 
-
+</div>
+<div class="tehtava">
   <h3>Smart combining</h3> 
 
   <p>Create the method <code>smartCombine</code> that works like the previous <code>combine</code> method except that numbers can be on the list only once. So the method adds a new number to the list only if the list does not already contain that number. You might find the method <code>contains</code> from the ArrayList class useful. You can use that method to check if a number is on the list.</p> 
 </div> 
+</div>
 
 <h2>Instructions on code-writing and problem solving</h2> 
 
@@ -4978,7 +4981,7 @@ An object is always created from its class by calling the method - the <em>const
     <p>Constructors take parameters the way any other method does.</p>
 
 <div class="tehtavat">
-
+<div class="tehtava">
   <h3>Accounts</h3>
 
   <p>You get a ready-made class <code>Account</code> along with your exercise files. The object of the class <code>Account</code> represents a bank account, which has a balance (meaning some amount of money). The accounts are used like this:</p>
@@ -5039,6 +5042,7 @@ System.out.println(bartosSwissAccount);
   <li>Transfer 25.0 from account B to account C</li>
   </ol>
 
+</div>
 </div>
 
 <h3>Defining your own class - object variables</h3>
@@ -5159,7 +5163,7 @@ Martin, age 0 years
 </pre>
 
 <div class="tehtavat">
-
+<div class="tehtava">
   <h3>Product</h3>
 
   <p>Create a class <code>Product</code> that represents a product sold in a webshop. A product has a price, amount and name.</p> 
@@ -5178,6 +5182,7 @@ Then select <em>new</em> and <em>java class</em>. When a dialog opens, give the 
 </pre></li>
   </ul>
 
+</div>
 </div>
 
 <h3>More methods</h3>
@@ -5278,6 +5283,7 @@ Pekka and Andrew total of 3 years old
 </pre>
 
 <div class="tehtavat">
+<div class="tehtava">
   <h3>Multiplier</h3>
 
   <p>Implement the class <code>Multiplier</code> that has:</p>
@@ -5307,7 +5313,8 @@ fourMultiplier.multiply(2): 8
 threeMultiplier.multiply(1): 3
 fourMultiplier.multiply(1): 4
 </pre>
-
+</div>
+<div class="tehtava">
   <h3>Decreasing counter</h3>
 
   <p>The starting point of this exercise is a partially implemented class <code>DecreasingCounter</code>:</p>
@@ -5463,7 +5470,8 @@ value: 100
 </pre>
 
   <p><strong>Hint</strong>: add to the class a new object variable that remembers the initial value of the counter</p>
-
+</div>
+<div class="tehtava">
  <h3>Menu</h3>
 
 <p>In this assignment we will implement a class <code>Menu</code> that holds information about meals that are available in a cafeteria.</p>
@@ -5507,7 +5515,7 @@ Sauerkraut
 Within your method body write <code>meals.</code> and see how NetBeans helps you by showing the available methods.</p>
 
 </div>
-
+</div>
 <h3>The Person class grows</h3>
 
 <p>Let us get back to working on the <code>Person</code> class. The current version of the class looks like this:</p>
@@ -5694,6 +5702,7 @@ The recommended way of doing this is by defining a method that returns a "charac
 <!-- screencast -->
 
 <div class="tehtavat">
+<div class="tehtava">
   <h3>Lyyra-card</h3>
 
 <p>The University of Helsinki students use so-called Lyyra cards to pay for their meals in student cafeterias. In this assignment we implement class <code>LyyraCard</code> that simulates the Lyyra card.</p>
@@ -5921,7 +5930,7 @@ Brian: The card has 73.5 euros
 </pre>
 
 </div>
-
+</div>
 <h3>More methods</h3>
 
   <p>Let us continue with the class <code>Person</code>.
@@ -6038,7 +6047,7 @@ John,  body mass index: 20,90
 <p>Method <code>String.format</code> is perhaps not the most flexible way that Java provides for formatting float values but it is simple to use and suits our purposes well.</p>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Clock using a counter</h3>
 
 <p>We start by implementing a class <code>BoundedCounter</code> and then use counter objects to implement a clock.</p>
@@ -6269,6 +6278,7 @@ public class Main {
 
 <p>You can end the eternal clock by pressing the red box in the NetBeans console (i,e, the area in NB where the output of programs gets printed).</p>
 
+</div>
 </div>
 
 <p><big><b>Important notes regarding the use of objects. Make sure to read
@@ -6617,7 +6627,7 @@ Sun: Sunny -5 degrees.
 </pre>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3 id="e80" class="req"> Rolling the dice</h3>
 
 <p> In the template is a class <code>Dice</code>, that has the following
@@ -6681,8 +6691,9 @@ public class Program {
 6
 1
 </pre>
-
-<h3 id="e81">Password randomizer</h3>
+</div>
+<div class="tehtava">
+<h3>Password randomizer</h3>
 
 <p>Your assignment is to expand the class <code>PasswordRandomizer</code>,
 which has the following functionality:</p>
@@ -6714,7 +6725,7 @@ public class PasswordRandomizer {
 </pre>
 
 <p>In the following is a program that uses a PasswordRandomizer object:</p>
-
+<!--wtf-->
 <pre class="sh_java sh_sourceCode"><span class="sh_keyword">public</span>
 <span class="sh_keyword">class</span><span class="sh_normal"> </span><span
 class="sh_classname">Program</span> <span class="sh_cbracket">{</span>
@@ -6771,7 +6782,8 @@ char symbol = "abcdefghijklmnopqrstuvxyz".charAt(number);
 
 <p><b>Tip2:</b> The tip in assignment 58 might be useful in this one
 too.</p>
-
+</div>
+<div class="tehtava">
 <h3 id="e82">Lottery</h3>
 
 <p>Your assignment is to expand the class <code>LotteryNumbers</code>,
@@ -6851,7 +6863,8 @@ public class Program {
 
 <p><strong>Note!</strong> a number can be in one set of numbers only once
 (per draw of course).</p>
-
+</div>
+<div class="tehtava">
 <h3>Game logic for Hangman</h3>
 
   <p>Your friend designed a Hangman game that looks like the following:
@@ -7197,7 +7210,7 @@ Pekka, age 35 years
 <!-- screencast -->
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Overloaded counter</h3>
 
   <h4>Multiple constructors</h4>
@@ -7226,7 +7239,7 @@ Pekka, age 35 years
     <li><code>public void increase(int increaseAmount)</code> increases the value by the amount of the parameter. If the value of the parameter is negative, the value won't change.</li>
     <li><code>public void decrease(int decreaseAmount)</code> decreases the counter's value by the amount given by the parameter, but not below 0 if the check is on. If the value of the parameter is negative the value of the counter won't change.</li>
   </ul>
-
+</div>
 </div>
 
 <h3>Object is at the end of a wire</h3>
@@ -7468,7 +7481,7 @@ Juhana is not accepted as a member
 <!-- screencast -->
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Reformatory</h3>
 
 <p>In this assignment we use the already given class <code>Person</code> and are supposed to build a new class <code>Reformatory</code>. 
@@ -7588,7 +7601,8 @@ total weights measured 0
 total weights measured 2
 total weights measured 6
 </pre>
-
+</div>
+<div class="tehtava">
 <h3>Lyyra card and Cash Register</h3>
 
 <h4 class="req"> The "stupid" Lyyra card</h4>
@@ -7835,7 +7849,7 @@ the card balance 98.0 euros
 money in register 1100.0 economical lunches sold: 0 gourmet lunches sold: 1
 </pre>
 </div>
-
+</div>
 <h3>Another object of the same type as a parameter to a method</h3>
 
 <p>We'll keep on working with the <code>Person</code> class. As we can
@@ -8006,7 +8020,7 @@ public class MyDate {
 
 <!-- screencast -->
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Apartment comparison</h3>
 
 <p>The information system of a Housing service represents the apartments it has for sale using objects 
@@ -8078,6 +8092,7 @@ the Apartment-object for which the method is called (<code>this</code>) has a hi
 </pre>
 
 </div>
+</div>
 
 <h3>Objects on a list</h3>
 
@@ -8132,7 +8147,7 @@ Martin, age 30 years
 </pre>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Students</h3>
 
 <h4 class="req">Class Student</h4>
@@ -8223,7 +8238,7 @@ Edsger Dijkstra (014662803)
 
 <p><strong>TIP:</strong> in the search you should iterate (using for or while) through the student list and by using the method <code>contains</code> of String check if a student's name (obtained with method <code>getName</code>) matches the search term.</p>
 </div>
-
+</div>
 <h3>An object within an object</h3>
 
 <p>Objects can have objects within them, not only character strings but
@@ -8321,7 +8336,7 @@ so that it compares birthdates. We'll do this as an excersise
 assignment.</p>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Clock object</h3>
 
 <p>In assignment 78 we used objects of the class <code>BoundedCounter</code> to implement a clock in the main method. In this assignment we will tranform the clock to an object. The skeleton of the class clock looks like the following:</p>
@@ -8384,7 +8399,7 @@ public class Main {
 00:00:01
 ...
 </pre>
-
+</div>
 </div>
 
 <!-- foobar --> 
@@ -8490,6 +8505,7 @@ The members of weight watchers association 'kumpulan paino':
 <!-- CAST4 -->
 
 <!-- screencast -->
+<div class="tehtava">
 <h3>Team and Players</h3>
 
 <h4 class="req">Class Team</h4>
@@ -8663,7 +8679,7 @@ public class Main {
 Total goals: 40
 </pre>
 </div>
-
+</div>
 <h3>Method returns an object</h3>
 
 <p>We've seen methods that return booleans, numbers, lists and strings.
@@ -8799,6 +8815,7 @@ objects, so in the future as one of the counters grows the value of the
 other isn't affected in any way.</p>
 
 <div class="tehtavat">
+    <div class="tehtava">
 <h3>Extending MyDate</h3>
 
 <p>In this assignment we will extend the class <code>MyDate</code>, that was developed in chapter 24.7. The code of the class:
@@ -8900,13 +8917,14 @@ This week's Friday is 25.2.2011
 The date 790 days from this week's Friday is  5.5.2013
 </pre>
 </div>
-
+</div>
 <h3>More assignments</h3>
 
 <p>All the new theory for this week has already been covered. However, since this week's topics are quite challenging,
 we will practise our routine with a couple of more exercises.</p>
 
 <div class="tehtavat">
+<div class="tehtava">
 <h3>Difference of two dates</h3>
 
 <p>In this assignment we'll further extend the class MyDate. This assignment does not depend on the previous one, so the project contains the MyDate class that does not have the extensions of the previous assignment.</p>
@@ -8999,6 +9017,8 @@ public class Main {
 1.1.2011 and 25.12.2010 difference in years: 0
 25.12.2010 and 1.1.2011 difference in years: 0
 </pre>
+</div>
+<div class="tehtava">
 
 <h3>Person extended</h3>
 
@@ -9143,8 +9163,7 @@ Steve, born 9.2.2012
 <p>Let us start week 6 with two assignment that use the most important topics of week 5. You might want to read chapter  24.10 before assignment 94 and chapters 24.6 and 24.12 before assignment 95.</p>
 
 <div class="tehtavat">
-
-<NEXTWEEK></NEXTWEEK>
+<div class="tehtava">
 <h3>PhoneBook</h3>
 
 <p>In this assignment we are implementing a simple phone book.</p>
@@ -9244,7 +9263,8 @@ public static void main(String[] args) {
 040-123123
 number not known
 </pre>
-
+</div>
+<div class="tehtava">
 <h3>Money</h3>
 
 <p>In a previous assignment we stored the balance of LyyraCard using a double variable. In reality money should not be represented as a double since the double arithmetics is not accurate. A better idea would be to implement a class that represent money. We'll start with the  folowing the class skeleton:</p>
@@ -9346,6 +9366,7 @@ If the value would be negative, the resulting Money object should have value 0.<
   System.out.println(c);  // 0.00e
 </pre>
 
+</div>
 </div>
 
 <h3>Character strings are immutable</h3>
@@ -9555,7 +9576,7 @@ public static void  main(String[] args) {
 -->
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3 class="req">Sum of the array</h3>
 
 <p>Implement the method <code>public static sum(int[] array)</code>, that returns the sum of the numbers in the array given as parameter.</p>
@@ -9583,7 +9604,8 @@ public class Main {
 </pre>
 
 <p><b>NOTE:</b> in this and some of the following assignments method are <code>static</code> as the they used to be in the assignments for the weeks 2 and 3. The reason for this is that the methods are not instance methods, i.e. not operating with instance variables of objects, instead they are working at "class level" and operating just with the values and objects given as parameter. In chapter 31 we'll elaborate more on the  question whether a method should be static or not. </p>
-
+</div>
+<div class="tehtava">
 <h3 class="req">Elegant printing of an array</h3>
 
 <p>Implement the method <code>public static int printElegantly(int[] array)</code>, that prints the numbers in the array at the same row. In the printout all the numbers should be separated with comma and whitespace and there should not be a comma trailing the last number.</p>
@@ -9610,7 +9632,7 @@ public class Main {
 </pre>
 
 </div>
-
+</div>
 <h3>Creating a new array</h3>
 
 <p>If the size of the array isn't always the same, that is if it's size depends on, for example on user input the previously introduced way of creating arrays will not do. It is also possible to creat a table so that it's size is defined with the help of a variable:</p>
@@ -9692,7 +9714,7 @@ public static void main(String[] args){
 </pre>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3 class="req">Reversing and copying of an array</h3>
 
 <h4 class="req">Copy</h4>
@@ -9749,7 +9771,7 @@ original: [1, 2, 3, 4]
 reversed: [4, 3, 2, 1]
 </pre>
 </div>
-
+</div>
 <h2 id="lohkoista">About blocks and nested loops</h2>
 
 <p>A piece of code that begins with a curly bracket <code>{</code> and ends with a curly bracket <code>}</code> is called a <em>block</em>.  As we've already seen, blocks are used - among other things - to denote the code of conditional and loop sentences. <em>An important feature of a bock, is that variables defined within it only exist within it.</em>.</p>
@@ -9910,7 +9932,7 @@ public class MultiplicationTable {
 </pre>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Array to stars</h3>
 
 <p>Implement the method <code>public static printArrayAsStars(int[] array)</code>, that prints a line with stars for each number in the array. The line length is determined by the number.</p>
@@ -9944,7 +9966,7 @@ public class Main {
 
 </div>
 
-<div class="tehtavat">
+<div class="tehtava">
 
 <h3>Night sky</h3>
 
@@ -10060,6 +10082,7 @@ Number of stars: 1
 
 Number of stars: 3
 </pre>
+</div>
 </div>
 
 <h2>to static or not to static?</h2>
@@ -10261,6 +10284,8 @@ public class Main {
 <strong>but</strong> the method receives a Person object as a parameter. The method is not defined within the Person-class since even though it handles a Person object that it receives as a paramter, it is an assistance method of the main program we just wrote. With the method we've made main more readable.</p>
 
 <div class="tehtavat">
+<div class="tehtava">
+
  <h3>The library information system</h3>
 
   <p>In this assignment we are implementing a simple information system prototype for a library. The prototype will have functionality for searching books by the title, publisher or publishing year.</p>
@@ -10429,11 +10454,12 @@ The Stinky Cheese Man and Other Fairly Stupid Tales, Penguin Group, 1992
 </pre>
 
 </div>
+</div>
 
 <h2>Assignments where you are free to decide how to structure the program.</h2>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Grade distribution</h3>
 
 <p><b>This assignment corresponds to three assignment points. </b></p>

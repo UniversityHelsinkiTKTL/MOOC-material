@@ -1,0 +1,16 @@
+/*.req {
+	//background: #ddd;
+	padding: 0.3em 0.3em 0.3em 0.3em;
+}*/
+
+.show {
+	background: #f00;
+	padding: 0.3em 0.3em 0.3em 0.3em;
+}
+
+.bonus {
+	background: #000;
+	color: #fff;
+	padding: 0.3em 0.3em 0.3em 0.3em;
+}
+

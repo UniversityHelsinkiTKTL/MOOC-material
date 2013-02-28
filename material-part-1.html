@@ -3145,9 +3145,9 @@ public static double average(int number1, int number2, int number3) {
 
 <!-- screencast -->
 
-<div id="viikko3" class="tehtavat">
-
-<h3 class="req">Sum of numbers</h3>
+<div class="tehtavat">
+  <div class="tehtava">
+    <h3 class="req">Sum of numbers</h3>
 
 <p>Create the method <code>sum</code> that calculates the sum of numbers the method receives as parameters.</p>
 
@@ -3173,7 +3173,8 @@ sum: 14
 
 <p><b>Note:</b> if it is said in the exercise that a method needs to <em>return</em> something, it means that the return type needs to be defined for the method and in the end the method needs to return that value using a <code>return</code> command. The method does not print (or use the command <code>System.out.println(..)</code>), the method caller handles printing, in this case the main program..</p>
 
-
+  </div>
+<div class="tehtava">
 <h3 class="req">Least</h3>
 
 <p>Create the method <code>least</code> that returns the least of the numbers given as parameters. If the parameters are equal, you can decide which one is returned.</p>
@@ -3194,11 +3195,11 @@ public static void main(String[] args) {
 </pre>
 
 <p>Example output:</p>
-
 <pre>
 Least: 2
 </pre>
-
+</div>
+<div class="tehtava">
 <h3>Greatest</h3>
 
 <p>Create the method <code>greatest</code> that gets three integers as parameters and then returns the greatest of them. If there are several parameters that are greatest, you can decide which one is returned. Printing should be done in the main program.</p>
@@ -3219,7 +3220,9 @@ public static void main(String[] args) {
 <pre>
 Greatest: 7
 </pre>
+</div>
 
+<div class="tehtava">
 
 <h3 class="req">Average of given numbers</h3>
 
@@ -3228,7 +3231,7 @@ Greatest: 7
 <p>Place the method in the following program body:</p>
 
 <pre class="sh_java">
-public static double average(int number1, int number2, int number3, int number4) {
+publicp static double average(int number1, int number2, int number3, int number4) {
     // write your code here
 }
 
@@ -3247,6 +3250,7 @@ average: 3.5
 
 <p>Make sure you remember how you can transform a whole number (<tt>int</tt>) into a decimal number (<tt>double</tt>)!</p>
 
+</div>
 </div>
 
 
@@ -3314,7 +3318,7 @@ char character = word.charAt(word.length());
 
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3 class="req">The length of a name</h3>
 
 <p>Create a program that asks for the user's name and says how many characters the name contains.</p>
@@ -3331,7 +3335,7 @@ Number of characters: 9
 
 <p><strong>Note!</strong>Your program should be structured so that you put the calculating of the name length in it's own method: <code>public static int calculateCharacters(String text)</code>. The tests will be testing both the method <code>calculateCharacters</code> and the program overall.</p>
 
-
+<div class="tehtava">
 <h3 class="req">First character</h3>
 
 <p>Create a program that asks for the user's name and gives the first character.</p>
@@ -3348,7 +3352,8 @@ First character: C
 
 <p><strong>Note!</strong> Your program should be structured so that you put the search for the first character in its own method: <code>public static char
 firstCharacter(String text)</code>. The tests will be testing both the method <code>firstCharacter</code> and the program overall</p>
-
+</div>
+<div class="tehtava">
 <h3>Last character</h3>
 
 <p>Create a program that asks for the user's name and gives the last character.</p>
@@ -3365,7 +3370,8 @@ Last character: e
 
 <p><strong>Note!</strong> Your program should be structured so that you put the search for the last character in its own method: <code>public static char
 lastCharacter(String text)</code>.  The tests will be testing both the method <code>lastCharacter</code> and the program overall.</p>
-
+</div>
+<div class="tehtava">
 <h3 class="req">Separating first characters</h3>
 
 <p>Create a program that asks for the user's name and gives its first, second and third characters separately. If the name length is less than three, the program prints nothing. You do not need to create methods in this exercise.</p>
@@ -3382,7 +3388,8 @@ Type your name: <font color="red">me</font>
 </pre>
 
 <p><strong>Note:</strong> watch closely the output in this and the following exercise. The print needs to contain a space after the dot and the colon!</p>
-
+</div>
+<div class="tehtava">
 <h3 class="req">Separating characters</h3>
 
 <p>Create a program that asks for the user's name and gives its characters separately. You do not need to create methods in this exercise.</p>
@@ -3409,6 +3416,8 @@ Type your name: <font color="red">Catherine</font>
 8. character: n
 9. character: e
 </pre>
+</div>
+<div class="tehtava">
 <h3 class="req">Reversing a name</h3>
 
 <p>Create a program that asks for the user's name and prints it in reverse order. You do not need to create a separate method for this..</p>
@@ -3425,7 +3434,7 @@ In reverse order: enirehtaC
 
 <p><b>Hint: You can print one character using the command <code>System.out.print()</code></b></p>
 
-
+</div>
 </div>
 
 <h3 id="merkkijonon_muita">Other methods for strings</h3>

@@ -3958,7 +3958,7 @@ Sibelius
 Next the printing method is given the list <em>countries</em>. Now again the method uses the name <em>printed</em> referring to the parameter list. </p>
 
 <div class="tehtavat"> 
-
+<div class="tehtava">
 <h3 class="req">Number of items on a list</h3> 
 
 <p>Create the method <code>public static int 
@@ -3977,7 +3977,6 @@ System.out.println(countItems(list));
 There are this many items on the list: 
 3 
 </pre> 
-</div> 
 
 <p>Inside the method it is possible to influence the items on the parameter list. In the following example the method <code>removeFirst</code> --as the name suggests-- removes the first string from the list. What would happen if the list was empty?</p>
 
@@ -4026,8 +4025,8 @@ C++
 </pre>
 
 <p>Similarly a method could, for example, add more strings to the list it got as a parameter.</p>
-
-<div class="tehtavat">
+</div>
+<div class="tehtava">
 
 <h3 class="req">Remove last</h3>
 
@@ -4064,7 +4063,7 @@ brothers:
 
 <p>As we can tell from the example above, an ArrayList can be printed as it is. The print formatting is not usually what is sought after and we are forced to handle the printing ourself with the help of the <code>for</code> command, for example.
 </p>
-
+</div>
 <h3>Numbers in an ArrayList</h3> 
 
 <p>ArrayLists can be used to store any type of values. If the stored variables are of integer type, there are a couple of details to remember. An integer ArrayList is defined like this: <code>ArrayList&lt;Integer&gt;</code>, instead of writing <code>int</code> you must write  <code>Integer</code>. </p> 
@@ -4096,6 +4095,7 @@ brothers:
 </pre> 
 
 <div class="tehtavat"> 
+    <div class="tehtava">
 <h3 class="req">The sum of the numbers</h3> 
 
 <p>Create the method <code>sum</code> that gets a list of numbers (<code>ArrayList&lt;Integer&gt;</code>) as a parameter and then calculates the sum of the items on that list.</p> 
@@ -4128,7 +4128,8 @@ public static void main(String[] args) {
 The sum: 14 
 The sum: 24 
 </pre> 
-
+</div>
+<div class="tehtava">
 <h3 class="req">The average of the numbers</h3> 
 
 <p>Create the method <code>average</code> that gets a list of numbers (<code>ArrayList&lt;Integer&gt;</code>) as a parameter and then calculates the average of the items on that list. </p>
@@ -4161,7 +4162,7 @@ The average is: 3.5
 </pre> 
 
 </div> 
-
+</div>
 <h3>ArrayList as a method's return value</h3> 
 
 <p>ArrayList can also be returned from a method as a return value. In the next example a method creates an ArrayList, adds three integers in the list and then returns the list. Pay attention to how the main program assigns the list returned by the method as a value into a variable that has the same type as the return value list:</p> 
@@ -4188,8 +4189,9 @@ public class Main {
     } 
 } 
 </pre> 
-
-<div class="tehtavat"> 
+</div>
+<div class="tehtavat">
+<div class="tehtava">
 
 <h3 class="req">The lengths of the Strings</h3> 
 
@@ -4280,7 +4282,7 @@ The variance is: 5.666667
     <p><strong>Note!</strong> Remember while testing your program that a sample variance for a list that contains only one item is not defined! Then a division by zero happens in the formula. Java considers the result of division by zero a <em>Not a Number</em> (<code>NaN</code>).</p> 
 
 </div> 
-
+</div>
 <h2>Using truth values</h2> 
 
 <p>A variable of truth value type (i.e. <code>boolean</code> can  only have two values: <em>true</em> or <em>false</em>. Here is an example on how to use boolean variables:</p> 
@@ -4407,7 +4409,7 @@ The variance is: 5.666667
 <p>When we are going through the list of numbers and we find a negative number, we can exit the method by returning false. If there are no negative numbers on the list, we get to the end and therefore can return true. We have now gotten rid of the helper variable inside the method!</p> 
 
 <div class="tehtavat"> 
-
+<div class="tehtava">
 <h3 class="req">Is the number more than once on the list?</h3> 
 
 <p>Create the method <code>moreThanOnce</code> that gets a list of integers and an integer (i.e. number) as parameters. If the number appears on the list <em>more than once</em> the method returns  <code>true</code> and otherwise <code>false</code>.</p> 
@@ -4445,7 +4447,8 @@ Type a number: <font color="red">2</font>
 Type a number: <font color="red">3</font> 
 3 does not appear more than once. 
 </pre> 
-
+</div>
+<div class="tehtava">
 <h3>Palindrome</h3> 
 
 <p>Create the method <code>palindrome</code> that checks if a string is a palindrome (the string reads the same forward and backward).</p> 
@@ -4485,7 +4488,7 @@ The text is not a palindrome!
 
 </div> 
 
-</div> 
+</div>
 
 </section>
 <section class="viikkoraja" id="4" >
@@ -6997,7 +7000,7 @@ word now: __SSA
 </div>
 
 </div>
-
+</section>
 <section class="viikkoraja" id="5" >
   <div class="viikkoraja">Week 5</div>
   <div class="viikkoraja-mooc" id="Week 5" deadline="24.2.2013 23.59" data-first-chapter-index="1" data-first-exercise-index="1" data-first-week-index="1"  data-first-chapter-index-mooc="1" data-first-exercise-index-mooc="1" data-first-week-index-mooc="1" tekija="Arto Vihavainen, Matti Luukkainen">

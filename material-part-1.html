@@ -9,15 +9,13 @@
     <link rel="stylesheet" href="stylesheets/exercises.css" type="text/css" media="screen, print" />
 
     <script type="text/javascript" src="javascripts/jquery-1.7.1.min.js"></script>
-    
+
     <script type="text/javascript" src="javascripts/exercises-eng.js"></script>
     <script type="text/javascript" src="javascripts/common.js"></script>
 
     <script type="text/javascript" src="javascripts/shjs/sh_main.min.js"></script>
     <script type="text/javascript" src="javascripts/shjs/sh_java.min.js"></script>
 -->
-
-
 
     <link rel="stylesheet" href="stylesheets/common-new.css" type="text/css" media="screen, print" />
 
@@ -29,8 +27,6 @@
     <script type="text/javascript" src="javascripts/shjs/sh_main.min.js"></script>
     <script type="text/javascript" src="javascripts/shjs/sh_java.min.js"></script>
     <!-- END MOOC SNIP -->
-
-
 
     <link rel="stylesheet" href="stylesheets/shjs/sh_style.css" type="text/css" media="screen, print" />
     <link rel="stylesheet" href="stylesheets/common-new.css" type="text/css" media="screen, print" />
@@ -79,12 +75,9 @@
 
     <p></p>
 
-
 <section class="viikkoraja" id="1" >
   <div class="viikkoraja">Week 1</div>
   <div class="viikkoraja-mooc" id="Week 1" deadline="24.2.2013 23.59" data-first-chapter-index="1" data-first-exercise-index="1" data-first-week-index="1"  data-first-chapter-index-mooc="1" data-first-exercise-index-mooc="1" data-first-week-index-mooc="1" tekija="Arto Vihavainen, Matti Luukkainen">
-  
-
 
     <h2 id="ensimmäinen_ohjelma">The first program</h2>
 
@@ -120,11 +113,11 @@ System.out.println("Hello world!");
     <p>Computers do not directly understand the programming language we are using. We need a <em>compiler</em> between the source code and the computer. When we are programming using the command line interface, the command <code>javac Hello.java</code> will compile the <code>Hello.java</code> file into <i>bytecode</i>, which can be executed using the Java interpreter. To run the compiled program, you can use the command <code>java Hello</code> where Hello is the name of the original source code file.</p>
 
     <p>When using a modern development environment (more on this later), it will take care of compiling the source code. When we choose to run the program, rhw development environment will compile and execute the program. All development environments compile source code while it is being written by the programmer, which means that simple errors will be noticed before executing the program.</p>
-    
+
     <h3>Components of commands</h3>
 
     <h4>Semicolon</h4>
-    
+
     <p>A semicolon <code>;</code> is used to separate different commands. The compiler and the interpreter both ignore lines in the source code so we could write the entire program on a single line.</p>
 
     <p>In the example below we will use the <code>System.out.print</code> command, which is similar to the <code>System.out.println</code> command except that it will not print a line break after printing the text.</p>
@@ -170,9 +163,7 @@ System.out.print(" and all the people of the world."); // We print more text to 
 <li> <code>System.out.println</code> prints the text and the line break</li>
 </ul>
 
-
 <p>The printed text can contain both traditional characters and special characters. The most important special character is <code>\n</code>, which makes a line break. There are also other <a href="http://en.wikipedia.org/wiki/Escape_character" title="Escape character - Wikipedia, the free encyclopedia">special characters</a>.</p>
-
 
 <pre class="sh_java">
 System.out.println("First\nSecond\nThird");
@@ -188,9 +179,6 @@ Third
 
         <p>The body of the program named “Example” is the following.</p>
 
-
-
-
 <pre class="sh_java">
 public class Example {
   public static void main(String[] args) {
@@ -200,7 +188,7 @@ public class Example {
 </pre>
 
         <p>The program is written in a text file having the same name as the program and the ending .java. The program named <i>“Example”</i> has to be located in a file named <code>Example.java</code>.
-        
+
         <p>The right place in the program body to write commands in is marked above with <i>// program code</i>. During the first week we use only that area in the program body. When we want the program to execute commands like printing, we need to write those commands into the program body. For example: 
         <code>System.out.print("Text to be printed");</code></p>
 
@@ -215,11 +203,11 @@ public class Example {
         <p>From now on the main program body will be omitted from the examples.</p>
 
 <div>
-  
+
     <p><strong>Let us start!</strong></p>
-  
+
     <p>You are now starting to actually do the exercises.</p>
-    
+
     <p>The exercises will be done in the NetBeans development environment. The guide on how to start with NetBeans is <a href="netbeans-english.html">here</a>. Before you know what you are doing, try to <b>follow the example strictly step by step</b>.
 
 Most of the following exercise assignments include the information on what the program should print to the screen when it works correctly. If the assignment seems unclear, tell us and we will clarify it! Unclear assignments are always the teacher's fault.</p>
@@ -229,7 +217,6 @@ Most of the following exercise assignments include the information on what the p
 <div class="tehtavat">
 <a name="1"> </a>
 <p>In the following exercises we are practicing NetBeans use and printing text to the screen.</p>
-
 
 <big>
 <p>
@@ -275,14 +262,10 @@ Most of the following exercise assignments include the information on what the p
 <p><b>NOTE:</b> You probably wrote <code>System.out.println("...")</code> quite a few times. Try to type only <i>sout</i> on an empty line in NetBeans instead and then press the <a href="http://en.wikipedia.org/wiki/Tab_key">tabulator key</a>. What happened? This small shortcut should save a lot of your time in the future!</p>
 </div>
 
-
 <h2 id="muuttuja_ja_sijoitus">Variables and assignment</h2>
 
-
-
-        
         <h3>Variables and data types</h3>
-        
+
         <p>A <em>variable</em> is one of the most important concepts in computer programming. A variable should be imagined as a box, into which you can store information. The information stored in a variable always has a data type. Those data types include, for example, text (<em>String</em>), whole numbers (<em>int</em>), decimal numbers (<em>double</em>) and truth value (<em>boolean</em>).  A <em>value</em> can be assigned to a variable using the equals sign  (<code>=</code>). </p>  
 
 <pre class="sh_java">
@@ -293,13 +276,10 @@ int months = 12;
 
 <p>The value of the variable can be added to a string with the plus <code>+</code> sign as we learn in the next example.</p>
 
-
-
-
 <!--        
 <h4>Esimerkkejä muuttujista ja tietotyypeistä</h4>
 -->    
-    
+
 <pre class="sh_java">
 String text = "includes text";
 int wholeNumber = 123;
@@ -321,9 +301,7 @@ The variable's type is decimal number. Its value is 3.141592653
 The variable's type is truth value. Its value is true
 </pre>
 
-
         <p>The variable holds its value until it is assigned a new one. Note that the variable type is written only when the variable is first introduced in the program. After that we can use the variable with its name.</p>
-
 
 <pre class="sh_java">
 int wholeNumber = 123;
@@ -340,7 +318,6 @@ The variable's type is whole number. Its value is 123
 The variable's type is whole number. Its value is 42
 </pre>
 
-
         <h3>A variable's data type holds</h3>
         <p>When a variable has once been given a data type, it will never change. For example a text variable can not turn into an integer variable, and integer values cannot be assigned to that variable. </p>
 <pre class="sh_java">
@@ -353,8 +330,9 @@ text = 42; // Does not work! :(
 double decimalNumber = 0.42;
 decimalNumber = 1; // Does work! :)
 </pre>
-    
+
 <div class="tehtavat">
+    <div class="tehtava">
         <h3 class="req">The changing variables</h3>
 
         <p>You will get into your NetBeans a program that prints the following.</p>
@@ -389,48 +367,44 @@ In a nutshell:
 Zetor
 </pre>
 </div>
-
+</div>
 
         <h3>Allowed and descriptive variable name</h3>
 
         <p>There are certain regulations on how we are allowed to name our variables. Even though using umlauts is allowed, it is better not to use those, because problems might arise with <a href="http://en.wikipedia.org/wiki/Character_encoding" title="Character encoding - Wikipedia, the free encyclopedia">character encoding</a>. Instead it is advised to <em>change A characters with dots into regular A characters and so on</em>.
-        
+
         <p>Variable names are not allowed to include certain special characters like an exclamation mark (!).  A space character is also not allowed, because it separates the command into multiple parts. It is a good idea to replace the space character using a <em><a href="http://fi.wikipedia.org/wiki/CamelCase" title="CamelCase – Wikipedia">camelCase</a></em> writing style. The name camelCase comes from the word's visual form that rises in the middle like a camel's back.
 <b>Notice!</b> Variable names are always written with a lowercase first letter:</p>
 <pre class="sh_java">
 int camelCaseVariable = 7;
 </pre>
-        
+
         <p>Variable names can contain numbers, as long as the name does not start with one. Variable names need to have at least one alphabetic letter, which means that the name cannot contain only numbers.</p>
 
 <pre class="sh_java">
 int 7variable = 4; // Not allowed!
 int variable7 = 4; // A valid, but not descriptive variable name
 </pre>
-        
+
         <p>Variable names need to be unique in the program. It means that we can use a name only once. We are also not allowed to use command names like <code>System.out.print</code> as our variable names.</p> 
 
 <pre class="sh_java">
 int camelCase = 2;
 int camelCase = 5; // Not allowed, the variable camelCase is already defined!
 </pre>
-                
+
         <p>It is strongly recommended that a variable is named by its usage. It helps people to understand why and when the variable is used without having to find out what the variable does by reading comments or thinking hard. On this course the <strong>variable names have to be descriptive</strong>.</p>
 
-            
-
-        
         <h4>Good variable names</h4>
-        
+
         <ul>
             <li>lastDay = 20</li>
             <li>firstYear = 1952</li>
             <li>name = "Matti"</li>
         </ul>
-        
 
         <h4>Bad or disallowed variable names</h4>
-        
+
         <ul>
             <li>last day of the month = 20</li>
             <li>1day = 1952</li>
@@ -438,12 +412,10 @@ int camelCase = 5; // Not allowed, the variable camelCase is already defined!
             <li>1920 = 1</li>
         </ul>
 
-        
-
         <h2 id="laskentaa">Calculation</h2>
-        
+
         <p>The calculation operations are pretty straightforward: <code>+</code>, <code>-</code>, <code>*</code> and <code>/</code>. A more special operation is <code>%</code>, which is used to calculate the remainder of a division and is called modulo.  The order of operations is also pretty straightforward: the operations are calculated from left to right taking the brackets into account.</p>
-        
+
 <pre class="sh_java">
 int first = 2; // variable of whole number type is assigned the value 2
 int second = 4; // variable of whole number type is assigned the value 4
@@ -469,7 +441,6 @@ calcWithoutBrackets = calcWithoutBrackets + 5;        // 13
 
         <p>Calculation operations can be executed almost anywhere in the program code.</p>
 
-        
 <pre class="sh_java">
 int first = 2;
 int second = 4;
@@ -480,9 +451,9 @@ System.out.println(2 + second - first - second);
 
         <h3>Floating point numbers alias decimal numbers</h3>
         <a name="liuku_eli_desimaali"></a>
-        
+
         <p>Division of whole numbers is a bit more tricky, as is the remainder in this context. A floating point number (decimal number) and integer (whole number) often get mixed up. If all the variables in a calculation operation are integers, the end result will also be an integer. </p>
-        
+
 <pre class="sh_java">
 int result = 3 / 2;      // result is 1 (integer), because 3 and 2 are integers as well
 </pre>
@@ -500,14 +471,14 @@ int remainder = 7 % 2; // remainder is 1 (integer)
 </pre>
 
         <p>If either the dividend or the divider (or both!) is a floating point number (decimal number) the end result will also be a floating point number. </p>
-        
+
 <pre class="sh_java">
 double whenDividentIsFloat = 3.0 / 2; //result will be: 1.5
 double whenDividerIsFloat = 3 / 2.0;    //result will be: 1.5
 </pre>
 
         <p>It is possible to turn an integer into a floating point number if needed. It is done by adding a type exchange operation <code>(double)</code> in front of it:</p>
-        
+
 <pre class="sh_java">
 int first = 3;
 int second = 2;
@@ -527,10 +498,8 @@ If the quotient is assigned as a value to a variable of integer type, then the r
 int quotientIntegerBecauseTypeIsInteger = 3.0 / 2; // quotient is automatically integer: 1
 </pre>
 
-
-
         <p>The next example will print “1.5”, because the dividend is transformed into a floating point number by multiplying it with a floating point number (1.0 * 3 = 3.0) before the division.</p>
-        
+
 <pre class="sh_java">
 int dividend = 3;
 int divider = 2;
@@ -555,7 +524,7 @@ System.out.println(quotinent);
 Make sure that, starting now, you will give the variables names that follow good conventions as stated in the examples. 
 </big>
 </p>
-
+<div class="tehtava">
 <h3 class="req">Seconds of the year</h3>
 
 <p>Create a program that counts how many seconds there are in a year. You can assume that a year consists of 365 days (ergo the year is not a leap year).</p>
@@ -569,12 +538,12 @@ There are X seconds in a year.
 <p>
 X will be replaced with the calculation your program makes.</p>
 </div>
-
+</div>
 
         <h2 id="katenointi">Concatenation or combining strings</h2>
 
 <p>Let us take a closer look on putting strings together with a <code>+</code> operator.</p>
-        
+
         <p>If the <code>+</code> operator is used between two strings, a new string is created. The new string includes the previous two strings combined. Notice the clever use of a space character as a part of the "variables"!</p>
 
 <pre class="sh_java">
@@ -590,16 +559,15 @@ System.out.println(sentence);
 <pre>
 Hi John, and goodbye!
 </pre>
-
         <p>If the <code>+</code> operator is used to combine a string and, for example, an integer, a new string is created as well. In that string the integer, let us say <code>2</code>, is transformed into string (text) "2" and then combined with the original string.</p>
-        
+
 <pre class="sh_java">
 System.out.println("there is an integer --&gt; " + 2);
 System.out.println( 2 + " &lt;-- there is an integer");
 </pre>
 
         <p>What we learned earlier about the order of operations is still valid:</p>
-        
+
 <pre class="sh_java">
 System.out.println("Four: " + (2+2));
 System.out.println("But! Twentytwo: " + 2 + 2);
@@ -610,7 +578,7 @@ But! Twentytwo: 22
 </pre>
 
         <p>With this information we now possess, we can print out both text and values of variables:</p>
-        
+
 <pre class="sh_java">
 int x = 10;
 
@@ -629,8 +597,8 @@ variable x has the following value: 10
 y has the value of 5 and z has the value of 6
 </pre>
 
-
 <div class="tehtavat">
+<div class="tehtava">
         <h3 class="req">Addition</h3>
 
 <p>Create a program that can be used to calculate the sum of two numbers. At the beginning of the program two variables are introduced and those variables hold the numbers to be summed. Feel free to use other variables if you need to.</p>
@@ -646,7 +614,8 @@ y has the value of 5 and z has the value of 6
 <pre>
 73457 + 12888 = 86345
 </pre>
-
+</div>
+<div class="tehtava">
         <h3 class="">Multiplication</h3>
 
 <p>Create a program that resembles the previous one except that it should be used to multiply the two numbers instead of adding them.</p>
@@ -665,10 +634,10 @@ y has the value of 5 and z has the value of 6
 
 <p>What is the biggest multiplication that your program is able to calculate?</p>
 </div>
-
+</div>
 
 <h2 id="syötteen_lukeminen">Reading user input</h2>
-        
+
         <p>So far our programs have been very one-sided. Next we will learn how to read <em>input</em> from the user. We will use a special <em>Scanner</em> tool to read the user input.</p>
 
 <p>Let us add the <em>Scanner</em> to our existing main program body. Do not worry if the main program body seems mind-bending, we will continue to program the same way we did before. The code is added to the main program body and the place for your code is marked with the comment <em>// program code</em>.</p>
@@ -676,7 +645,7 @@ y has the value of 5 and z has the value of 6
 import java.util.Scanner;
 
 public class ProgramBody {
-  
+
   public static void main(String[] args) {
     Scanner reader = new Scanner(System.in);
 
@@ -702,7 +671,6 @@ Hi, John
 
         <p>(In the following example we have the program described above with the main program body included. The name of the program is <em>Greeting</em>. Because its name is Greeting, it has to be located in a file called <code>Greeting.java</code>. --When using NetBeans you can start following the original <a href=””>guide</a>, but make sure to change the program name from Hello (<em>Hello</em>) to Greeting (<em>Greeting</em>).</p>
 
-
 <pre class="sh_java">
 import java.util.Scanner;
 
@@ -726,11 +694,8 @@ Hi John
 BUILD SUCCESSFUL (total time: 6 seconds)
 </pre>
 
-
-
-
         <h3 id="syote_kokonaisluku">Reading integers</h3>
-        
+
         <p>Our Scanner tool is not good for reading integers, so we will use another special tool for transforming a string to an integer. Command <code>Integer.parseInt</code> takes as a parameter a String-type variable that contains the number the user has given and transforms it into a variable of integer type. The parameter (that means the name of the string variable) is given to the command in brackets and the command returns an integer, which will be assigned in a variable of integer type.</p>
 
         <p>In practice we will join two commands together. First we read the input as a string from the user and immediately give it to the command <code>Integer.parseInt</code>.</p>
@@ -780,7 +745,6 @@ public class NameAndAgeGreeting {
 }
 </pre>
 
-
 <h3 id="yhteenveto">Summary</h3>
 
 <p>Next follows the main program body of a program that interacts with the user:</p>
@@ -808,13 +772,10 @@ String text = reader.nextLine();
 int number = Integer.parseInt(reader.nextLine());
 </pre>
 
-
-
 <div id="viikko1" class="tehtavat">
 
         <h3 class="req">Adder</h3>
         <p>Create a program that asks the user for two integers and then prints their sum.</p>
-
 
 <pre>
 Type a number: <font color="red">6</font>
@@ -837,7 +798,7 @@ Type another number: <font color="red">2</font>
 
 Division: 3 / 2 = 1.5
 </pre>
-        
+
         <h3 class="req">Calculating Circumference</h3>
 
 <p>The circumference of a circle can be calculated with the formula <code>Circumference equals 2 * PI * Radius</code>.
@@ -873,7 +834,6 @@ Type your age: <font color="red">12</font>
 
 Matti and Arto are 26 years old in total.
 </pre>
-
 
         <h3 class="req">NHL statistics, part1</h3>
 
@@ -957,21 +917,16 @@ Create a program to the main program body, kääntäjä korjasi: Create a progra
 </ul>
 </p>
 
-
-
 <p>Please note that when you first run the program, the execution might take a while. That is because the server giving out the statistics information might be sleeping and waking it up takes some time. After the first run the execution should be quick.</p>
 
 <p>After you have sent the assignment to evaluation and the exercise robot has accepted your solution, you can alter the code as you wish! </p>
 
 </div>
 
-
-
-
 <h2 id="valinta_ja_totuusarvot">Selection and truth values</h2>
-        
+
         <p>A selection command is needed in order to <em>branch</em> the program execution.</p>
-        
+
 <pre class="sh_java">
 int number = 11;
 
@@ -983,9 +938,8 @@ if ( number > 10 ) {
         <p>The condition <code>( number > 10 )</code> transforms into a truth value, so it is either <em>true</em> or <em>false</em>. The selection command <code>if</code> handles only truth values in the end. The condition sentence above will be read "if the number is greater than 10".</p>
 
         <p>Note that after the <code>if</code> sentence there will be no semicolon, since the sentence continues after the condition part.</p>
-        
-        <p>After the condition an opening brace <code>{</code> starts a new <em>block</em>. The block will be executed if the <em>condition</em> is true. <em>The block</em> ends with a closing brace <code>}</code>. The block can be as long as you wish.</p>
 
+        <p>After the condition an opening brace <code>{</code> starts a new <em>block</em>. The block will be executed if the <em>condition</em> is true. <em>The block</em> ends with a closing brace <code>}</code>. The block can be as long as you wish.</p>
 
         <p>Comparison operators are the following:</p>
 
@@ -997,7 +951,6 @@ if ( number > 10 ) {
             <li><code>==</code>Equals</li>
             <li><code>!=</code>Not equal</li>
         </ul>
-
 
 <pre class="sh_java">
 int number = 55;
@@ -1013,7 +966,7 @@ if ( number >= 1000 ) {
 </pre>
 
         <p>A block can contain any code, such as another selection command.</p>
-        
+
 <pre class="sh_java">
 int x = 45;
 int number = 55;
@@ -1027,9 +980,8 @@ if ( number > 0 ) {
 }
 </pre>
 
-        
         <p>The comparison operators can also be used outside the conditions. In that case the truth value will be stored in a truth value variable.</p>
-        
+
 <pre class="sh_java">
 int first = 1;
 int second = 3;
@@ -1054,18 +1006,16 @@ if ( isLesser ) {
 1 is less than 3!
 </pre>
 
-
 <h3>Code indentation</h3>
 
 <p>You should note that the commands in the block following the if-command (i.e. the lines that come after the { brace) should not be written at the same level as the if-command. They should be "more right", meaning that the lines will be <b>indented</b>. Indentation happens when you press the tabulator key, which is located to the left of q key. When the block ends with the closing brace, indentation ends as well. The closing brace } should be on the same level as the original if-command.</p>
 
 <p>Using indentation is a crucial thing concerning the understandability of the computer programs. During this course and everywhere in "real life" it is required to indent the code with propriety. NetBeans helps with the correct indentation. You can easily indent your program by pressing shift, alt and f simultaneously.</p>
-        
 
         <h3>else</h3>
-        
+
         <p>If the truth value of the comparison is false, another alternative block can be executed in that case. To achieve that we can use the command <code>else</code>.</p>
-        
+
 <pre class="sh_java">
 int number = 4;
 
@@ -1097,13 +1047,11 @@ Type a number: <font color="red">-2</font>
 
 The number is not positive.
 </pre>
-                
 
 <big>
 <p><b>Are you certain that your code is indented correctly?</b></p>
 </big>
 <p>Re-read the section <a href="materiaali.html#sisennys">Code indentation</a>. See what happens in NetBeans when you hit shift, alt and f simultaneously! The same functionality (automatic indentation) can be achieved also by selecting first Source and then Format from the upper menu.</p>
-
 
 <h3 class="req">Age of consent</h3>
 
@@ -1120,8 +1068,6 @@ How old are you? <font color="red">32</font>
 
 You have reached the age of consent!
 </pre>
-
-
 
         <h3 class="req">Even or odd?</h3>
 
@@ -1161,8 +1107,6 @@ The number is three!
 </pre>
         <p>Let us read the upper example out loud. 'If number is one, print out "The number is one." otherwise if the number is two, print out "The number is two." Otherwise if the number is three, print out "The number is three!" and otherwise print out "The number is many!"</p>
 
-
-
     <h3>Comparing Strings</h3>
 
         <p>Strings alias texts cannot be compared with the equals (<em>==</em>) operator. There is another command for comparing strings and it is called <code>equals</code>. That command is always associated with the compared string. </p>
@@ -1191,12 +1135,7 @@ if ( text.equals(anotherText) ) {
 
         <p>When comparing strings it is crucial to check that both string variables have a value stored in them. If the variable holds no value, the program execution will end in a <em>NullPointerException</em> error. That means the variable has no value or it is empty (<em>null</em>).</p>
 
-
-
-        
-    
 <div class="tehtavat">
-
 
         <h3 class="req"> Greater number</h3>
 
@@ -1224,8 +1163,6 @@ Type the second number: <font color="red">5</font>
 
 The numbers are equal!
 </pre>
-
-
 
         <h3 class="req">Grades and points</h3>
         <p>Create a program that gives out the course grade based on the following table.</p>
@@ -1255,10 +1192,8 @@ Grade: 5
 
 </div>
 
-
-    
         <h3>Logical operations</h3>
-        
+
 <p>The selection clause can also be more complicated, made with logical operations. Logical operations are: </p>        
         <ul>
             <li><span class="tab"><code>&amp;&amp;</code></span><span>conditional and (AND)</span>
@@ -1312,7 +1247,6 @@ Is the number between 5-10:
 YES! :)
 </pre>
 
-
 <pre class="sh_java">
 System.out.println("Is the number either 1, 50 or 100: ");
 int selection = 50;
@@ -1328,9 +1262,7 @@ Is the number either 1, 50 or 100:
 Yes! :)
 </pre>
 
-
 <div class="tehtavat">
-
 
 <h3 class="req">Age check</h3>
 
@@ -1413,7 +1345,7 @@ The year is a leap year.
 </pre>
 
 </div>
-        
+
 <h2 id="toiston_alkeet">Introduction to repetition</h2>
 
 <p>A selection clause helps us make programs that act on different conditions, i.e. if the username and password match, for example the program lets the user log in and otherwise it does not.</p>
@@ -1431,7 +1363,6 @@ The year is a leap year.
 <p>In the above example the command <code>while( true )</code> makes the whole command block (i.e. the code inside these braces <code>{}</code>) to be repeated infinitely.</p>
 
 <p>Infinite repetition is not usually the behavior we want from a program. A repetition can be interrupted using the command <code>break</code> for example. </p>
-
 
 <pre class="sh_java">
   while ( true ) {
@@ -1458,9 +1389,6 @@ I know how to program!
 Continue? (no quits)? <font color="red">no</font>
 Thank you and see you again!
 </pre>
-
-
-
 
 <p>Many different things can be done inside a repetition. Next we introduce a simple calculator. The calculator calculates based on commands that the user enters. If the command is <em>quit</em>, a <code>break</code> command will be executed and the repetition ends. After that the program asks the user to type two numbers. If the command was <em>sum</em> the program calculates the sum of the two numbers and prints it. If the command was <em>difference</em>, the program calculates the difference of the two numbers and prints it. If the command entered is something else, the program says that it does not recognize the command.</p>
 
@@ -1492,10 +1420,7 @@ Thank you and see you again!
   System.out.println("thanks bye!");
 </pre>
 
-
 <!-- screencast -->
-
-
 
 <div class="tehtavat">
       <h3 class="req">Password</h3>
@@ -1535,7 +1460,7 @@ Wrong!
 </pre>
 
       <h4>Asking for the password until the user gives the correct one</h4>
-      
+
       <p>Change the program so that it asks the user to type a password until it gets the correct one. Implement the password query using a <code>while-true</code> repetition clause so that the only way to get out of the clause is giving a password that matches the one stored in the variable <code>password</code>. </p>
 
 <pre>
@@ -1563,7 +1488,7 @@ The secret is: jryy qbar!
 </pre>
 
       <p>The secret above has been encrypted using the <a href="http://en.wikipedia.org/wiki/Rot13" target="_blank">Rot13</a> algorithm. During this course we will implement our own encrypting program.</p>
-      
+
       <h3 class="req">Temperatures</h3>
 
       <p>You will get to your NetBeans a component called <code>Graph</code> along with your exercise files. <code>Graph</code> draws graphs based on numbers that are given to it. You can give it numbers the following way:</p>
@@ -1580,12 +1505,9 @@ Graph.addNumber(13.0);
 
 <p><strong>Note:</strong> <code>double</code> can be read this way: <code>double number = Double.parseDouble( reader.nextLine() );</code></p>
 
-
       <h4>Checking</h4>
 
       <p>Make your program better by checking that it does not add to the graph temperatures that are either under -30 degrees or over +40 degrees.</p>
-
-
 
         <h3 class="req">NHL statistics, part 2</h3>
 
@@ -1602,11 +1524,11 @@ Graph.addNumber(13.0);
             System.out.println("");
             System.out.print("command (points, goals, assists, penalties, player, club, quit): ");
             String command = reader.nextLine();
-            
+
             if ( command.equals("quit")) {
                 break;
             }
-           
+
             if ( command.equals("points")) {
                 // print the top ten playes sorted by points
             } else if ( command.equals("goals")) {
@@ -1672,7 +1594,6 @@ command (points, goals, assists, penalties, player, club): <font color="red">qui
   <div class="viikkoraja">Week 2</div>
   <div class="viikkoraja-mooc" id="Week 2" deadline="24.2.2013 23.59" data-first-chapter-index="1" data-first-exercise-index="1" data-first-week-index="1"  data-first-chapter-index-mooc="1" data-first-exercise-index-mooc="1" data-first-week-index-mooc="1" tekija="Arto Vihavainen, Matti Luukkainen">
 
-
     <h2>Changing variables</h2>
 
     <p>Usually when we have an existing variable we want to change its value. This can be achieved using a basic assignment clause. In the next example we raise the value of the variable <code>age</code> by one:</p>
@@ -1723,7 +1644,6 @@ int read;
 
 // WRITE YOUR PROGRAM HERE
 // USE ONLY 3 VARIABLES, sum, reader AND read!
-
 
 System.out.println("Sum: "+sum);
 </pre>
@@ -1780,7 +1700,7 @@ Sum in the end: 7
 <p>A <code>break</code> command is not the only way to end repetition. A common structure for a repetition command is <code>while (condition)</code>, where the condition can be any truth clause. That means the condition can be exactly like conditions for an <code>if</code> command.</p>
 
 <p>In the following example our program prints the numbers 1, 2, …, 10. When the value of the variable <code>number</code> grows to be over 10, the condition of the <code>while</code> structure becomes false and executing the block ends.</p>
-        
+
 <pre class="sh_java">
 int number = 1;
 
@@ -1794,7 +1714,7 @@ while (number &lt; 11) {
         <p>In the code above the variable <code>number</code> was incremented each time the block was executed. The change can be anything, meaning that the variable used in the boolean condition does not always need to be incremented, as we can see in the following example:</p>
 
 <p></p>
-        
+
 <pre class="sh_java">
 int number = 1024;
 
@@ -1804,9 +1724,7 @@ while (number &gt;= 1) {
 }
 </pre>
 
-
 <!-- screencast -->
-
 
 <div>
 <big><big><b>A couple of tips on using NetBeans</b></big></big>    
@@ -1830,7 +1748,6 @@ There is a really useful tool in NetBeans called auto-complete. If you have, for
 </div>
 
 <div class="tehtavat">
-
 
 <p>Complete the following exercises using the while structure:</p>
 
@@ -1908,7 +1825,6 @@ Up to what number? <font color="red">5</font>
 
 <p>Create a program that asks the user for the first number and the last number and then prints all the numbers in between those two.</p>
 
-
 <pre>
 First: <font color="red">5</font>
 Last: <font color="red">8</font>
@@ -1929,12 +1845,10 @@ Last: <font color="red">12</font>
 
 </div>
 
-
-
         <h3>Assignment operations</h3>
 
         <p>Because changing the value of a variable is a very common operation, there are certain assignment operations for that in Java.</p>
-        
+
 <pre class="sh_java">
 int length = 100;
 
@@ -1945,12 +1859,12 @@ length -= 50;  // same as length = length - 50;
 <p>When the assignment operation is done to an existing variable, it is written as <code>variable type of change = change</code>, for example <code>variable += 5</code>. Note that you must always tell the type of the variable before you can assign any value to it. This means that when we want a new variable into use we must first introduce it. Introducing a variable is done by specifying the variable type and the name of the variable.</p>
 
 <p>The following example will not work, because the type of the variable <code>length</code> has not been specified.</p>
-        
+
 <pre class="sh_java">
 length = length + 100;   // not working!
 length += 100;           // not working!
 </pre>
-        
+
 <p>When the type is specified, the calculations start working correctly.</p>
 <pre class="sh_java">
 int length = 0;
@@ -2079,7 +1993,7 @@ The result is 255
         <h3>Eternal loop</h3>
 
         <p>One of the classic errors in programming is to accidentally create an eternal loop. In the next example we try to print "Never again shall I program an eternal loop!" 10 times:</p>
-        
+
 <pre class="sh_java">
 int i = 0;
 
@@ -2150,7 +2064,6 @@ while( true ) {
 
 System.out.println("Your age is "+ age);
 </pre>
-
 
 <div class="tehtavat">
 
@@ -2256,7 +2169,6 @@ Odd numbers: 1
 <hr></hr>
 </div>
 
-
 <h2 id="metodit1">Methods</h2>
 
 <p>
@@ -2287,12 +2199,6 @@ Method names also seem to include a dot, for example <code>reader.nextLine()</co
 <p>
 This far we have been using ready-made methods from Java libraries. Next we will learn how to do our own methods. 
 </p>
-
-
-
-
-
-
 
 <h2 id="metodit">Self-written methods</h2>
 
@@ -2390,13 +2296,11 @@ Greetings from the world of methods!
 
         <p>From now on when we introduce methods we will not point out that they need to be written in the right place inside the program code. For example, a method cannot be defined inside another method.</p>
 
-
 <div class="tehtavat">
 
 <h3 class="req">Printing out text</h3>
 
 <p>Create a method <code>printText</code> that prints the following string of characters:  "In the beginning there were the swamp, the hoe and Java." and a line break.</p>
-
 
 <pre class="sh_java">
 public static void main(String[] args) {
@@ -2491,7 +2395,6 @@ Hi John 24 years, greetings from the world of methods!
 
 <p>In both cases the method has only one parameter. The value for the parameter is calculated before calling the method. In the first case the parameter value comes from the String concatenation (a cool word that means putting the text together) <code>name1 + " " + name2</code>. The value for that concatenation is <i>Anne Green</i>. In the second case we get the parameter value from the String concatenation <code>"John " + age + " years"</code>.  </p>
 
-
 <h3>Many parameters</h3>
 
         <p>A method can be defined to have more than one parameter. In that case the parameters are always given in the same order.</p>
@@ -2532,7 +2435,7 @@ public static void greetManyTimes(String name, int times) {
     greet(name);
     i++;
   }
-  
+
 }
 
 public static void main(String[] args) {
@@ -2587,7 +2490,6 @@ public static void main(String[] args) {
 </pre>
 
 <p><b>Note:</b> you can return the exercises that contain many parts to the exercise robot even though you are not finished with all parts. In that case the robot complains about the tests that consider undone parts of the exercise, but gives you the points for all passing tests. </p>
-
 
 <h4>Printing a square</h4>
 
@@ -2682,9 +2584,9 @@ public static void main(String[] args) {
   <p><em>Second note:</em> Heights under 3 do not need to work!</p>
 
       <h3 class="req">Guessing a number game</h3>
-      
+
       <p>In this exercise the following game is created:</p>
- 
+
 <pre>
 Guess a number: <font color="red">73</font>
 The number is smaller, guesses made: 1
@@ -2724,11 +2626,11 @@ Congratulations, your guess is correct!
       <h4>Repeated guessing</h4>
 
       <p>Develop your program by adding the following functionality: the guessing should be made repeatedly until the user types the right number. Note that you need to draw the number by using the <code>drawNumber</code> command <em>before the repetition</em>. Why? What happens if you draw the number inside the repetition?
-  
+
 </p>
 
       <p>In the example below the command call <code>drawNumber</code> returned the value  83.</p>
- 
+
 <pre>
 Guess a number: <font color="red">55</font>
 The number is greater
@@ -2759,7 +2661,6 @@ Guess a number: <font color="red">83</font>
 Congratulations, your guess is correct!
 </pre>
 
-
 <h3 class="req">A text-based user interface for the Hangman game</h3>
 
   <p>Your friend has programmed a Hangman game for you, but the game lacks the user inferface. The Hangman has the following methods:</p>
@@ -2778,14 +2679,14 @@ Congratulations, your guess is correct!
 <pre class="sh_java">
         Scanner reader = new Scanner(System.in);
         Hangman hangman = new Hangman();
-        
+
         System.out.println("************");
         System.out.println("* Hangman *");
         System.out.println("************");
         System.out.println("");
         printMenu();
         System.out.println("");
-        
+
         // ADD YOUR IMPLEMENTATION HERE
 
     System.out.println("Thank you for playing!");
@@ -2802,7 +2703,6 @@ Congratulations, your guess is correct!
         System.out.println("an empty line prints this menu");
     }
 </pre>
-
 
 <p>The exercise is completed in small steps.</p>
 
@@ -2900,7 +2800,6 @@ Type a command:
 Thank you for playing!
 </pre>
 
-
 <h4>Printing out the menu</h4>
 
 <p>If the user types an empty string of characters, meaning a string that has zero length, you need to call the method <code>printMenu</code>. Note that the method <code>printMenu</code> is not in the Hangman game but in your own program.</p>
@@ -2956,8 +2855,6 @@ Thank you for playing!
 <section class="viikkoraja" id="3" >
   <div class="viikkoraja">Week 3</div>
   <div class="viikkoraja-mooc" id="Week 3" deadline="24.2.2013 23.59" data-first-chapter-index="1" data-first-exercise-index="1" data-first-week-index="1"  data-first-chapter-index-mooc="1" data-first-exercise-index-mooc="1" data-first-week-index-mooc="1" tekija="Arto Vihavainen, Matti Luukkainen">
-  
-
 
 <h2>More about methods</h2>
 
@@ -3018,7 +2915,7 @@ Main program variable number holds the value:  1
 public static void addThree() {
   ...
 </pre>
- 
+
 <p>
 When defining a method that returns a value we also have to define the type of the return value. We can define the return value type by writing it just before the method name. Next we have a method that always returns the number 10 (that is of type <code>int</code>). Returning happens via the command return: </p> 
 
@@ -3089,7 +2986,7 @@ public static int sum(int first, int second) {
 int sumNumbers = sum(2, 7);
 // sumNumbers now holds the value 9
 </pre>
-        
+
         <p>Let us expand the example program so that the user types the numbers.</p>
 
 <pre class="sh_java">
@@ -3140,7 +3037,6 @@ public static double average(int number1, int number2, int number3) {
 }
 </pre>
 
-
 <p>Screencast aiheesta: TODO</p>
 
 <!-- screencast -->
@@ -3173,17 +3069,15 @@ sum: 14
 
 <p><b>Note:</b> if it is said in the exercise that a method needs to <em>return</em> something, it means that the return type needs to be defined for the method and in the end the method needs to return that value using a <code>return</code> command. The method does not print (or use the command <code>System.out.println(..)</code>), the method caller handles printing, in this case the main program..</p>
 
-
 <h3 class="req">Least</h3>
 
 <p>Create the method <code>least</code> that returns the least of the numbers given as parameters. If the parameters are equal, you can decide which one is returned.</p>
-
 
 <pre class="sh_java">
 public static int least(int number1, int number2) {
     // write program code here
     // do not print anything inside the method
-   
+
     // method needs a return in the end
 }
 
@@ -3220,7 +3114,6 @@ public static void main(String[] args) {
 Greatest: 7
 </pre>
 
-
 <h3 class="req">Average of given numbers</h3>
 
 <p>Create the method <code>average</code> that calculates the average of the numbers it gets as parameters. Inside the method you should use the method  <code>sum</code> as a helper!</p>
@@ -3249,7 +3142,6 @@ average: 3.5
 
 </div>
 
-
         <h2 id="merkkijonot">Strings of characters</h2>
         <p>
 In this section we take a closer look at Java's strings of characters, which are called <code>Strings</code>. We have already used variables of <code>String</code> type when printing and learned how to compare Strings. Comparing two strings happens by <em>calling</em> the string's <code>equals()</code> method.</p>
@@ -3263,7 +3155,6 @@ if( animal.equals("Dog") ) {
     System.out.println(cat + " says meow meow");
 }
 </pre>
-
 
         <p>It is possible to ask the string how many characters long it is by writing <code>.length()</code>
  after its name. In other words we are calling its method called length().
@@ -3312,7 +3203,6 @@ char character = word.charAt(word.length());
 </ul>
 </div>
 
-
 <div class="tehtavat">
 
 <h3 class="req">The length of a name</h3>
@@ -3330,7 +3220,6 @@ Number of characters: 9
 </pre>
 
 <p><strong>Note!</strong>Your program should be structured so that you put the calculating of the name length in it's own method: <code>public static int calculateCharacters(String text)</code>. The tests will be testing both the method <code>calculateCharacters</code> and the program overall.</p>
-
 
 <h3 class="req">First character</h3>
 
@@ -3425,7 +3314,6 @@ In reverse order: enirehtaC
 
 <p><b>Hint: You can print one character using the command <code>System.out.print()</code></b></p>
 
-
 </div>
 
 <h3 id="merkkijonon_muita">Other methods for strings</h3>
@@ -3466,12 +3354,10 @@ System.out.println(index); //prints -1
 System.out.println(word.substring(index)); //error!
 </pre>
 
-
 <p>Screencast aiheesta: TODO</p>
 
 <!-- screencast -->
 <div class="tehtavat">
-
 
 <h3 class="req">First part</h3>
 
@@ -3505,8 +3391,6 @@ Type a word: <font color="red">esimerkki</font>
 Length of the end part: <font color="red">6</font>
 Result: xample
 </pre>
-
-
 
 <h3 class="req">A word inside a word</h3>
 
@@ -3561,7 +3445,6 @@ elpmaxe
 </pre>
 
 </div>
-
 
 <h2>Object</h2>
 
@@ -3624,7 +3507,6 @@ String carrot = "carrot";
 
 <p>The object "type" is called a <em>class</em>. The class of character strings is called <code>String</code> and the class of readers is called <code>Scanner</code>. Later we learn much more about classes and objects.</p>
 
-
 <h2>ArrayList or an "object container"</h2>
 
 <p>It often happens during programming that we would like to keep for example many different strings in the memory. A very bad idea would be to define a variable for each of them:
@@ -3685,7 +3567,7 @@ public class ListProgram {
 
         System.out.println("first teacher on the list " + teachers.get(0));
         System.out.println("third teacher on the list " + teachers.get(2));
-       
+
         teachers.remove("Barto");
 
         if ( teachers.contains("Barto") ) {
@@ -3696,12 +3578,9 @@ public class ListProgram {
     }
 </pre>
 
-
-
 <p>First a string list is created and then 6 names added to it. <code>size</code> tells us the amount of strings on the list. <b>Note:</b> when the method is called, the call should have the following formatting: <code>teachers.size()</code>. First comes the object name, then follows a dot and after that comes the method name.</p> 
 
 <p>The strings will be on the list in the order in which they were added to it. With the method <code>get(i)</code> we get the value from the index (place) i on the list. The list items indexing (place numbering) starts from 0. That means the first added string will be found at the index 0, second at the index 1 and so on. </p> 
-
 
 <p>We can remove strings from the list using the method <code>remove</code>. The method can be used in two ways. The first way, <code>remove("characters")</code> removes the string of characters given as a parameter. The second way, <code>remove(3)</code> removes the 4th String from the list.</p> 
 
@@ -3731,7 +3610,7 @@ Barto is not on the teachers list
         teachers.add("Paul");
         teachers.add("John");
         teachers.add("Martin");
-    
+
         System.out.println( teachers.get(0) );
         System.out.println( teachers.get(1) );
         System.out.println( teachers.get(2) );
@@ -3752,7 +3631,7 @@ Barto is not on the teachers list
         teachers.add("John");
         teachers.add("Martin");
         teachers.add("Matt");
-    
+
         int place = 0;
         System.out.println( teachers.get(place) );
         place++;  
@@ -3817,9 +3696,7 @@ Barto is not on the teachers list
 
 <p>Even though the <code>for</code> command might seem a bit strange at first, you should definitely get used to using it!</p>
 
-
 <p>Screencast aiheesta: TODO</p>
-
 
 <div class="tehtavat">
 
@@ -3885,7 +3762,6 @@ You gave twice the word celery
 
 </div>
 
-
 <h3>Ordering, reversing and shuffling a list</h3>
 
 <p>Items on an ArrayList are easy to order by size. Ordering by size means an alphabetic order when the list is of String type. Ordering happens like this::</p>
@@ -3923,9 +3799,8 @@ Paul
 <li> <code>reverse</code> reverses the list item order</li>
 </ul>
 
-
 <div class="tehtavat">
- 
+
 <h3 class="req">Words in reverse order</h3>
 
 <p>
@@ -3967,8 +3842,6 @@ Sibelius
 
 </div>
 
-
-
 <h3>ArrayList as a parameter for a method</h3>
 
 <p>ArrayList can be given to a method as a parameter:</p>
@@ -3986,7 +3859,7 @@ Sibelius
         list.add("Python");
         list.add("Ruby");
         list.add("C++");
-        
+
         print(list);         
     }
 </pre>
@@ -4008,15 +3881,15 @@ Sibelius
         programmingLanguages.add("Python");
         programmingLanguages.add("Ruby");
         programmingLanguages.add("C++");
-        
+
         ArrayList&lt;String&gt; countries = new ArrayList&lt;String&gt;();
         countries.add("Finland");
         countries.add("Sweden");
         countries.add("Norway");
-        
+
         print(programmingLanguages);    // method is given the list programmingLanguages
  as a parameter
-        
+
        print(countries);                 //  method is given the list countries as a parameter
     }
 </pre>
@@ -4046,7 +3919,6 @@ There are this many items on the list:
 </pre> 
 </div> 
 
-
 <p>Inside the method it is possible to influence the items on the parameter list. In the following example the method <code>removeFirst</code> --as the name suggests-- removes the first string from the list. What would happen if the list was empty?</p>
 
 <pre class="sh_java">
@@ -4055,7 +3927,7 @@ There are this many items on the list:
             System.out.println( word );
         }
     }
-    
+
     public static void removeFirst(ArrayList&lt;String&gt; list) {
         list.remove(0);  // removes the first item (indexed 0)
     }
@@ -4067,14 +3939,13 @@ There are this many items on the list:
         programmingLanguages.add("Python");
         programmingLanguages.add("Ruby");
         programmingLanguages.add("C++");
-        
 
         print(programmingLanguages);   
-        
+
         removeFirst(programmingLanguages);
-        
+
         System.out.println();  // prints an empty line
-        
+
        print(programmingLanguages);      
     }
 </pre>
@@ -4131,14 +4002,8 @@ brothers:
 
 </div>
 
-
 <p>As we can tell from the example above, an ArrayList can be printed as it is. The print formatting is not usually what is sought after and we are forced to handle the printing ourself with the help of the <code>for</code> command, for example.
 </p>
-
-
-
-
-
 
 <h3>Numbers in an ArrayList</h3> 
 
@@ -4162,7 +4027,7 @@ brothers:
 
 <p><code>numbers.remove(4)</code> tries to remove the item in the index 4 from the list. There are only 2 items on the list, so that the command results in an error. We must use a slightly more complicated form if the number 4 needs to be removed:
 <code>numbers.remove( Integer.valueOf(4) );</code></p> 
- 
+
 <p>ArrayLists can also be used to store <code>double</code>s (i.e. decimal numbers) and characters (i.e. <code>char</code> variables). The lists can be defined like this:</p> 
 
 <pre class="sh_java"> 
@@ -4246,17 +4111,17 @@ public class Main {
 
     public static ArrayList&lt;Integer&gt; addNumbersToList(int num1, int num2, int num3){ 
         ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;(); 
-        
+
         list.add(num1); 
         list.add(num2); 
         list.add(num3); 
-        
+
         return list; 
     } 
-    
+
     public static void main(String[] args) { 
         ArrayList&lt;Integer&gt; numbers = addNumbersToList(3, 5, 2); 
-        
+
         for (int number : numbers) { 
             System.out.println( number ); 
         } 
@@ -4326,7 +4191,6 @@ The greatest number is: 7
 <p><b>Note:</b>
 the metod should use the method <code>average</code> of exercise 64 to calculate the average of the parameters. The method should be called only once!</p> 
 
-
 <pre class="sh_java"> 
 public static double variance(ArrayList&lt;Integer&gt; list) { 
     // write your code here
@@ -4357,8 +4221,6 @@ The variance is: 5.666667
 
 </div> 
 
-
- 
 <h2>Using truth values</h2> 
 
 <p>A variable of truth value type (i.e. <code>boolean</code> can  only have two values: <em>true</em> or <em>false</em>. Here is an example on how to use boolean variables:</p> 
@@ -4484,7 +4346,6 @@ The variance is: 5.666667
 
 <p>When we are going through the list of numbers and we find a negative number, we can exit the method by returning false. If there are no negative numbers on the list, we get to the end and therefore can return true. We have now gotten rid of the helper variable inside the method!</p> 
 
-
 <div class="tehtavat"> 
 
 <h3 class="req">Is the number more than once on the list?</h3> 
@@ -4492,7 +4353,6 @@ The variance is: 5.666667
 <p>Create the method <code>moreThanOnce</code> that gets a list of integers and an integer (i.e. number) as parameters. If the number appears on the list <em>more than once</em> the method returns  <code>true</code> and otherwise <code>false</code>.</p> 
 
 <p>The program body is the following:</p> 
-
 
 <pre class="sh_java"> 
 public static boolean moreThanOnce(ArrayList&lt;Integer&gt; list, int number) { 
@@ -4526,7 +4386,6 @@ Type a number: <font color="red">3</font>
 3 does not appear more than once. 
 </pre> 
 
-
 <h3>Palindrome</h3> 
 
 <p>Create the method <code>palindrome</code> that checks if a string is a palindrome (the string reads the same forward and backward).</p> 
@@ -4541,7 +4400,7 @@ public static boolean palindrome(String text) {
 
 public static void main(String[] args) { 
     Scanner reader = new Scanner(System.in); 
-   
+
     System.out.println("Type a text: "); 
     String text = reader.nextLine();    
     if (palindrome(text)) { 
@@ -4564,7 +4423,6 @@ Type a word: <font color="red">example</font>
 The text is not a palindrome!
 </pre> 
 
-
 </div> 
 
 </div> 
@@ -4573,8 +4431,6 @@ The text is not a palindrome!
 <section class="viikkoraja" id="4" >
   <div class="viikkoraja">Week 4</div>
   <div class="viikkoraja-mooc" id="Week 4" deadline="24.2.2013 23.59" data-first-chapter-index="1" data-first-exercise-index="1" data-first-week-index="1"  data-first-chapter-index-mooc="1" data-first-exercise-index-mooc="1" data-first-week-index-mooc="1" tekija="Arto Vihavainen, Matti Luukkainen">
-  
-
 
 <div class="week" data-week-number="4"> 
 
@@ -4595,7 +4451,7 @@ public static void addThree() {
   number = number + 3; 
 } 
 </pre> 
- 
+
 <p>This program of ours does not work, because the method cannot access the main program variable <code>number</code>.</p> 
 
 <p>That is because main program variables are not visible to the methods. And more generally: no method variable is visible to other methods. Because the main program <code>main</code> is also a method, this holds for the main program as well. The only way to give information to a method is to use parameters.</p> 
@@ -4626,7 +4482,6 @@ public static addThree(int number) {
 <img src="img/metodi1.png"/> 
 </p> 
 
-
 <p>The method can still naturally pass information to the caller, that happens by using a return value (i.e. using a <code>return</code> command to return a variable with a value). We can get the previous example to work by changing the code a little bit:</p> 
 
 <pre class="sh_java"> 
@@ -4639,7 +4494,7 @@ public static void main(String[] args) {
 
 public static int addThreeAndReturn(int number) { 
   number = number + 3; 
- 
+
   return number; 
 } 
 </pre> 
@@ -4671,16 +4526,15 @@ public static int addThreeAndReturn(int incremented) {
     }  
 </pre> 
 
-
 <pre class="sh_java"> 
     ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;(); 
     numbers.add(4); 
     numbers.add(3); 
     numbers.add(7); 
     numbers.add(3); 
-        
+
     System.out.println(numbers); // prints [4,3,7,3] 
-        
+
     removeFirst(numbers); 
 
     System.out.println(numbers); // prints [3,7,3] 
@@ -4698,22 +4552,22 @@ public static int addThreeAndReturn(int incremented) {
 
 <div id="viikko4" class="tehtavat"> 
   <h3>Combining ArrayLists</h3> 
-  
+
 <p>Create the method <code>public static void combine(ArrayList&lt;Integer&gt; first, ArrayList&lt;Integer&gt; second)</code> that inserts the items on the list called <code>second</code> to the list called <code>first</code>. The order of the items can be anything and the same item can appear on the list more than once. An example on using the method:</p> 
 
 <pre class="sh_java"> 
     ArrayList&lt;Integer&gt; list1= new ArrayList&lt;Integer&gt;(); 
     ArrayList&lt;Integer&gt; list2= new ArrayList&lt;Integer&gt;();  
-    
+
     list1.add(4); 
     list1.add(3); 
-    
+
     list2.add(5); 
     list2.add(10); 
     list2.add(7); 
-    
+
     combine(list1, list2); 
-    
+
     System.out.println(list1); // prints [4, 3, 5, 10, 7] 
 
     System.out.println(list2); // prints [5, 10, 7] 
@@ -4725,7 +4579,6 @@ public static int addThreeAndReturn(int incremented) {
 
   <p>Create the method <code>smartCombine</code> that works like the previous <code>combine</code> method except that numbers can be on the list only once. So the method adds a new number to the list only if the list does not already contain that number. You might find the method <code>contains</code> from the ArrayList class useful. You can use that method to check if a number is on the list.</p> 
 </div> 
-
 
 <h2>Instructions on code-writing and problem solving</h2> 
 
@@ -4742,11 +4595,10 @@ public static int addThreeAndReturn(int incremented) {
 
   <p>We are now, at the latest, taking the first steps towards that goal.</p> 
 
-
   <h3>Well indented and "breathing" code</h3> 
 
   <p>Let us take a look at a code that first adds numbers to a list and then prints the list items. After that all instances of a certain number are removed from the list and the list gets printed.</p> 
-  
+
   <p>First we write the code badly and without indentations:</p> 
 
 <pre class="sh_java"> 
@@ -4778,22 +4630,22 @@ System.out.println(number);
         numbers.add(3); 
         numbers.add(7); 
         numbers.add(3); 
-        
+
         System.out.println("The numbers in the beginning:"); 
-        
+
         // here we print numbers 
         for (int number : numbers) { 
             System.out.println(number); 
         } 
-        
+
         // checks if the list contains the number 3 
         while (numbers.contains(Integer.valueOf(3))) { 
             numbers.remove(Integer.valueOf(3));  // if yes, it is removed
         } 
         // we use a while structure to get all the threes removed!
-        
+
         System.out.println("The numbers after removal:"); 
-        
+
          // here we print numbers
         for (int number : numbers) { 
             System.out.println(number); 
@@ -4815,18 +4667,18 @@ System.out.println(number);
         numbers.add(3);
         numbers.add(7);
         numbers.add(3);
-        
+
         System.out.println("The numbers in the beginning:");
 
         // here we print numbers
         print(numbers);
-        
+
         while (numbers.contains(Integer.valueOf(3))) {
             numbers.remove(Integer.valueOf(3));
         }
-        
+
         System.out.println("The numbers after removal:");
-        
+
         // here we print numbers
         print(numbers);
     }
@@ -4852,12 +4704,12 @@ System.out.println(number);
         numbers.add(3);
         numbers.add(7);
         numbers.add(3);
-        
+
         System.out.println("The numbers in the beginning:");
         print(numbers);
-        
+
         remove(numbers, 3);
-        
+
         System.out.println("The numbers after removal:");
         print(numbers);
     }
@@ -4953,17 +4805,11 @@ Use the <code>askLineNumber</code> method to read the line number.</p>
 
 -->
 
-
-
-
-
 <!-- 
 
 Alla oleva materiaali on nyt oikea. Sisältää jo koko ohpen. Mukaanlukien 1 jo käännetty tehtävä
 
 -->
-
-
 
         <h2 id="olio_ohjelmointi">Object-oriented programming</h2>
 
@@ -4975,7 +4821,6 @@ In procedural programming - which is the way of programming we've been studying 
 <p>
 In object oriented programming, just like in procedural programming, we attempt to divide a program into smaller parts. In object-oriented programming the small parts are objects. Each separate object has its own individual responsibility; an object contains a related group of information and functionality. Object-oriented programs consist of multiple objects which together define how the program works.
 </p>
-
 
         <h3>Object</h3>
 
@@ -4995,7 +4840,7 @@ Functionality is also contained in the list objects: the methods by which the st
         cities.add("Nijmegen");
         cities.add("Turku");
         cities.add("Helsinki");
-        
+
         System.out.println("number of countries " + countries.size() );
         System.out.println("number of cities " + cities.size() );
     }
@@ -5062,13 +4907,12 @@ Individual objects, the houses in our analogy, are made from that same blueprint
 <p>
 An object is always created from its class by calling the method - the <em>constructor</em> - that creates the object with the command <code>new</code>. For example, a new instance is created from the class Scanner by calling <code>new Scanner(..)</code>:
 </p>
-    
+
 <pre class="sh_java">
     Scanner reader = new Scanner(System.in);
 </pre>
 
     <p>Constructors take parameters the way any other method does.</p>
-
 
 <div class="tehtavat">
 
@@ -5099,7 +4943,6 @@ System.out.println(bartosSwissAccount);
 <p><large><b>Note:</b> there is a different exercise template for each of the sub-exercises. For this exercise use the template 057.1</large></p>
 
   <p>Create a program that creates an account with the balance of 100.0, deposits 20.0 and prints the account. <strong>Note!</strong> do all the steps described in the exercise exactly in the described order!</p>
-
 
   <h4>Your first money transfer</h4>
 
@@ -5132,9 +4975,8 @@ System.out.println(bartosSwissAccount);
   <li>Transfer 50.0 from account A to account B</li>
   <li>Transfer 25.0 from account B to account C</li>
   </ol>
-       
-</div>
 
+</div>
 
 <h3>Defining your own class - object variables</h3>
 
@@ -5253,19 +5095,17 @@ Brian, age 0 years
 Martin, age 0 years
 </pre>
 
-
 <div class="tehtavat">
 
   <h3>Product</h3>
 
   <p>Create a class <code>Product</code> that represents a product sold in a webshop. A product has a price, amount and name.</p> 
 
-
   <p> A new class can be created as follows:  Point at the project <em>073.Product</em> in the <em>projects</em> tab and click the right mouse button.
 Then select <em>new</em> and <em>java class</em>. When a dialog opens, give the class the name <code>Product</code>.</p>
 
 <p>The class should have:</p>
-  
+
   <ul>
     <li>Constructor <code>public Product(String nameAtStart, double priceAtStart, int amountAtStart)</code></li>
     <li>Method <code>public void printProduct()</code> that prints a product in the following form:
@@ -5274,7 +5114,7 @@ Then select <em>new</em> and <em>java class</em>. When a dialog opens, give the 
     Banana, price 1.1, amount 13
 </pre></li>
   </ul>
-  
+
 </div>
 
 <h3>More methods</h3>
@@ -5343,7 +5183,6 @@ public class Person {
 <p>Now the <code>void</code> in the method definition is replaced with <code>int</code> since the value the method returns has the type integer. The following example demonstrates how the value returned by a method can be used:
 </p>
 
-
 <pre class="sh_java">
 public class Main {
 
@@ -5375,7 +5214,6 @@ Age of Andrew: 1
 Pekka and Andrew total of 3 years old
 </pre>
 
-
 <div class="tehtavat">
   <h3>Multiplier</h3>
 
@@ -5397,7 +5235,7 @@ System.out.println("fourMultiplier.multiply(2): " + fourMultiplier.multiply(2));
 System.out.println("threeMultiplier.multiply(1): " + threeMultiplier.multiply(1));
 System.out.println("fourMultiplier.multiply(1): " + fourMultiplier.multiply(1));
 </pre>
-  
+
   <p>Output</p>
 
 <pre>
@@ -5407,15 +5245,14 @@ threeMultiplier.multiply(1): 3
 fourMultiplier.multiply(1): 4
 </pre>
 
-
   <h3>Decreasing counter</h3>
-  
+
   <p>The starting point of this exercise is a partially implemented class <code>DecreasingCounter</code>:</p>
-  
+
 <pre class="sh_java">
 public class DecreasingCounter {
     private int value;   // object variable that remembers the value of the counter
-    
+
     public DecreasingCounter(int valueAtStart) {
         this.value = valueAtStart;
     }
@@ -5427,7 +5264,7 @@ public class DecreasingCounter {
     public void decrease() {
         // write here the code that decrements the value of counter by one
     }
-    
+
     // and here the rest of the methods
 }
 </pre>
@@ -5438,9 +5275,9 @@ public class DecreasingCounter {
 public class Main {
     public static void main(String[] args) {
         DecreasingCounter counter = new DecreasingCounter(10);
-        
+
         counter.printValue();
-        
+
         counter.decrease();
         counter.printValue();
 
@@ -5474,9 +5311,9 @@ When this is done, your program should work as the example above.</p>
 public class Main {
     public static void main(String[] args) {
         DecreasingCounter counter = new DecreasingCounter(2);
-        
+
         counter.printValue();
-        
+
         counter.decrease();
         counter.printValue();
 
@@ -5506,9 +5343,9 @@ value: 0
 public class Main {
     public static void main(String[] args) {
         DecreasingCounter counter = new DecreasingCounter(100);
-        
+
         counter.printValue();
-        
+
         counter.reset();
         counter.printValue();
 
@@ -5534,9 +5371,9 @@ value: 0
 public class Main {
     public static void main(String[] args) {
         DecreasingCounter counter = new DecreasingCounter(100);
-        
+
         counter.printValue();
-        
+
         counter.decrease();
         counter.printValue();
 
@@ -5587,9 +5424,8 @@ public class Menu {
 
 <p>Menu objects store the information on meals using an object variable of type  ArrayList&lt;String&gt;</p>
 
-
   <h4>Adding a meal to menu</h4>
-  
+
   <p>Implement the method <code>public void addMeal(String meal)</code> that adds a new meal to the list <code>this.meals</code> of a Menu object. If the meal is already on the list, it shoulf not be added.</p>
 
   <h4>Printing the menu</h4>
@@ -5608,7 +5444,6 @@ Sauerkraut
 Within your method body write <code>meals.</code> and see how NetBeans helps you by showing the available methods.</p>
 
 </div>
-
 
 <h3>The Person class grows</h3>
 
@@ -5743,7 +5578,6 @@ adult: bob, age 30 years
 bob is an adult
 </pre>
 
-
   <h3>toString</h3>
 
 <p>We've been partially guilty of a bad programming style; we've created a method with which the object is printed, the <code>printPerson</code> one.
@@ -5757,7 +5591,6 @@ The recommended way of doing this is by defining a method that returns a "charac
     <span class="sh_cbracket">}</span>
 <span class="sh_cbracket">}</span>
 </pre>
-
 
   <p>The method <code>toString</code> works just like <code>printPerson</code>,
  but instead of printing it returns the string representation, so the calls to the method can be used for printing at will.</p>
@@ -5794,8 +5627,6 @@ The recommended way of doing this is by defining a method that returns a "charac
   <p>This means that an object gets asked for its string representation. The string representation the object returns gets printed out normally with the <code>System.out.println</code>-command. </p>
 
   <p><b>We can get rid of the obsolete <code>printObject</code>-method.</b></p>
-
-
 
 <!-- screencast -->
 
@@ -5963,7 +5794,6 @@ The card has 150.0 euros
 
   <p>Change the method <code>loadMoney</code> so that the balance of the card does not change if the amount to load is negative.</p>
 
-
 <p>The following main program can be used to test the program:</p>
 
 <pre class="sh_java">
@@ -6029,8 +5859,6 @@ Brian: The card has 73.5 euros
 
 </div>
 
-
-
 <h3>More methods</h3>
 
   <p>Let us continue with the class <code>Person</code>.
@@ -6067,7 +5895,7 @@ We would be interested in knowing the <a href="http://en.wikipedia.org/wiki/Body
     // ...
 }      
 </pre>
- 
+
   <p>We added object variables <code>height</code> and <code>weight</code> and methods  <code>setHeight</code> and <code>setWeight</code> that can be used to give values to the variables. In naming the methods we follow the Java convention to call a method that just sets a new value to a variable <code>setVariableName</code>, this type of methods are usually called <em>setter methods</em>.</p>
 
 <p>The new methods in use:</p>
@@ -6079,10 +5907,10 @@ We would be interested in knowing the <a href="http://en.wikipedia.org/wiki/Body
 
         matti.setHeight(180);
         matti.setWeight(86);
-        
+
         john.setHeight(175);
         john.setWeight(64);
-        
+
         System.out.println( matti.getName() + ", body mass index: " + matti.bodyMassIndex() );
         System.out.println( john.getName() + ", body mass index: " + john.bodyMassIndex() );
 </pre>
@@ -6144,10 +5972,7 @@ Matti,  body mass index: 26,54
 John,  body mass index: 20,90
 </pre>
 
-
-
 <p>Method <code>String.format</code> is perhaps not the most flexible way that Java provides for formatting float values but it is simple to use and suits our purposes well.</p>
-
 
 <div class="tehtavat">
 
@@ -6266,11 +6091,9 @@ value: 00
 value: 01
 </pre>
 
-
 <h4 class="req">The first version of the clock</h4>
 
 <p>With two counter objects we can build a simple clock. Hours can be represented by a counter with upper bound 23 and minutes by a counter with upper bound 59. As we all know, when minutes wrap around from 59 to 0, hours advance by one. </p>
-
 
 <p>First you should implement method <code>getValue</code> to counter class:</p>
 
@@ -6318,7 +6141,6 @@ public class Main {
 
 <p>
 Firstly implement the method <code>setValue</code> to class <code>BoundedCounter</code>. The method should set  the value of the parameter to the counter unless the parameter is less that zero or larger than the upper bound. In those cases, the method does not have any effect.</p>
-
 
 <p>Then add a seconds counter to your clock. The clock should now be like the following:</p>
 
@@ -6386,7 +6208,6 @@ public class Main {
 
 </div>
 
-
 <p><big><b>Important notes regarding the use of objects. Make sure to read
 these.</b></big></p>
 
@@ -6427,7 +6248,6 @@ end of the course, objects will start to come to you naturally and the idea
 of <em>programs being built out of small, well defined, co-operating
 pieces</em> - which at this point might feel incomprehensible - will become
 something you'll take for granted.</p>
-
 
 <h3>Calling other methods within an object</h3>
 
@@ -6473,7 +6293,7 @@ public class NumberStatistics {
     public NumberStatistics() {
         // initialize here the object variable amountOfNumbers
     }
-    
+
     public void addNumber(int number) {
         // code here
     }
@@ -6524,7 +6344,7 @@ public class NumberStatistics {
     public NumberStatistics() {
         // initialize here the object variable amountOfNumbers
     }
-    
+
     public void addnumber(int luku) {
         // code here
     }
@@ -6704,7 +6524,7 @@ public class Program {
 
     public static void main(String[] args) {
         WeatherForecaster forecaster = new WeatherForecaster();
-        
+
         // Use a list to help you organise things 
         ArrayList&lt;String&gt; days = new ArrayList&lt;String&gt;();
         Collections.addAll(days, "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
@@ -6732,7 +6552,6 @@ Fri: Snow -3 degrees.
 Sat: Snow -3 degrees.
 Sun: Sunny -5 degrees.
 </pre>
-
 
 <div class="tehtavat">
 
@@ -6832,8 +6651,6 @@ public class PasswordRandomizer {
 </pre>
 
 <p>In the following is a program that uses a PasswordRandomizer object:</p>
-
-
 
 <pre class="sh_java sh_sourceCode"><span class="sh_keyword">public</span>
 <span class="sh_keyword">class</span><span class="sh_normal"> </span><span
@@ -6972,8 +6789,6 @@ public class Program {
 <p><strong>Note!</strong> a number can be in one set of numbers only once
 (per draw of course).</p>
 
-
-
 <h3>Game logic for Hangman</h3>
 
   <p>Your friend designed a Hangman game that looks like the following:
@@ -7006,7 +6821,7 @@ public class HangmanLogic {
     public String guessedLetters() {
         return this.guessedLetters;
     }
-    
+
     public int losingFaultAmount() {
         return 12;
     }
@@ -7028,7 +6843,7 @@ public class HangmanLogic {
         // if the letter is not among the guessed ones, replace it with _ in the hidden word 
 
         // return the hidden word at the end
-        
+
         return "";
     }
 }
@@ -7071,12 +6886,10 @@ guessed letters: ADSF
 number of faults: 2
 </pre>
 
-
   <h4>Creating the hidden word</h4>
 
 <p>The Hangman user interface shows a hidden version of the word to the user. In the above figure the hidden word is METO_I. All the letters that the user has already guessed are shown in the hidden word but the rest of the letters are replaced with underscores. In this part of the assignment you should complete the method <code>hiddenWord</code> of Hangman logic that takes care of building the hidden word for the user interface.
 </p>
-
 
   <p>Commands <code>while</code>, <code>charAt</code> and <code>contains</code> might be useful here.
 Note that a single char can be made into a string as follows:</p>
@@ -7128,8 +6941,6 @@ word now: __SSA
 <section class="viikkoraja" id="5" >
   <div class="viikkoraja">Week 5</div>
   <div class="viikkoraja-mooc" id="Week 5" deadline="24.2.2013 23.59" data-first-chapter-index="1" data-first-exercise-index="1" data-first-week-index="1"  data-first-chapter-index-mooc="1" data-first-exercise-index-mooc="1" data-first-week-index-mooc="1" tekija="Arto Vihavainen, Matti Luukkainen">
-  
-
 
 <h2>More about objects and classes</h2>
 
@@ -7167,10 +6978,10 @@ public class Person {
 
         return true;
     }
-   
+
     public double weightIndex(){
         double heightInMeters = this.height/100.0;
-       
+
         return this.weight / (heightInMeters*heightInMeters);
     }   
 
@@ -7181,7 +6992,7 @@ public class Person {
     public void setHeight(int height){
         this.height = height;
     }
-   
+
     public int getHeight(){
         return this.height;
     }
@@ -7193,13 +7004,12 @@ public class Person {
     public void setWeight(int weight) {
         this.weight = weight;
     }  
-   
+
     public String getName(){
         return this.name;
     }  
 }
 </pre>
-
 
 <p>All person objects are 0 years old at creation, since the constructor sets it to 0:</p>
 
@@ -7272,7 +7082,6 @@ Esko, age 0 years
 
 <p>Calling a class's own constructor <code>this(name, 0);</code> might seem a little peculiar. But we can imagine that at the call it'll automatically copy-paste the code from the constructor below and that 0 is entered to the age parameter.</p>
 
-
 <h3>Overloading a method</h3>
 
 <p>Just like constructors, methods can also be overloaded, multiple versions of a method can exist. Again the parameter types of different versions have to be different. Let's create another version of the <code>becomeOlder</code>, which enables aging the person the amount of years that is entered as a parameter:</p>
@@ -7281,7 +7090,7 @@ Esko, age 0 years
     public void becomeOlder() {
         this.age = this.age + 1;
     }
-   
+
     public void becomeOlder(int years) {
         this.age = this.age + years;
     }
@@ -7310,17 +7119,15 @@ Pekka, age 35 years
 
 <p>So now a person has two <code>becomeOlder</code> methods. The method that is chosen to be run depends on the amount of parameters entered in to the method call. The method <code>becomeOlder</code> can also be run through the method <code>becomeOlder(int years)</code>: </p>
 
-
 <pre class="sh_java">
     public void becomeOlder() {
         this.becomeOlder(1);
     }
-   
+
     public void becomeOlder(int years) {
         this.age = this.age + years;
     }
 </pre>
-
 
 <!-- CAST1-->
 
@@ -7358,7 +7165,6 @@ Pekka, age 35 years
   </ul>
 
 </div>
-
 
 <h3>Object is at the end of a wire</h3>
 
@@ -7504,7 +7310,6 @@ Java Result: 1</font>
 
 <p>Not good. This might be the first time in your life that you see the text  <b>NullPointerException</b>. But we can assure you that it won't be the last. NullPointerException is an exception state, when we try to call methods of an object with the value <code>null</code>.</p>
 
-
 <h3>An object as a method parameter</h3>
 
 <p>We've seen that a method can have, for example <code>int, double, String</code>
@@ -7520,7 +7325,7 @@ public class WeightWatchersAssociation {
     public WeightWatchersAssociation(double indexLimit) {
         this.lowestWeightIndex = indexLimit;
     }
-   
+
 }
 </pre>
 
@@ -7529,7 +7334,7 @@ public class WeightWatchersAssociation {
 <pre class="sh_java">
 public class WeightWatchersAssociation {
     // ...
-   
+
     public boolean isAcceptedAsMember(Person person) {
         if ( person.weightIndex() &lt; this.lowestWeightIndex ) {
             return false;
@@ -7579,7 +7384,6 @@ Matti is accepted as a member
 Juhana is not accepted as a member
 </pre>
 
-
 <div>
 <big><big><b>A few NetBeans-tips</b></big></big>   
 
@@ -7595,12 +7399,6 @@ Juhana is not accepted as a member
 
 </ul>
 </div>
-
-
-
-
-
-
 
 <!-- CAST2 -->
 
@@ -7672,9 +7470,9 @@ Add to class Reformatory the method <code>public void feed(Person person)</code>
         haaganNeuvola.feed(brian);
         haaganNeuvola.feed(brian);
         haaganNeuvola.feed(brian);
-        
+
         System.out.println("");
-        
+
         System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
         System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
     }
@@ -7705,17 +7503,17 @@ Pekka weight: 85 kilos
         Person pekka = new Person("Pekka", 33, 176, 85);
 
         System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
-        
+
         haaganNeuvola.weight(brian);
         haaganNeuvola.weight(pekka);
-        
+
         System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
 
         eastHelsinkiReformatory.weight(brian);
         eastHelsinkiReformatory.weight(brian);
         eastHelsinkiReformatory.weight(brian);
         eastHelsinkiReformatory.weight(brian);
-        
+
         System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
     }
 </pre>
@@ -7842,7 +7640,7 @@ public class CashRegister {
 public class Main {
     public static void main(String[] args) {
         CashRegister unicafeExactum = new CashRegister();
-        
+
         double theChange = unicafeExactum.payEconomical(10);
         System.out.println("the change was " + theChange );
 
@@ -7975,7 +7773,6 @@ money in register 1100.0 economical lunches sold: 0 gourmet lunches sold: 1
 </pre>
 </div>
 
-
 <h3>Another object of the same type as a parameter to a method</h3>
 
 <p>We'll keep on working with the <code>Person</code> class. As we can
@@ -8044,7 +7841,6 @@ Pekka is older than Antti
 reference to a person object, which is at 'the end of a wire') and then
 compares its own age <code>this.age</code> to the age of the compared
 <code>compared.age</code>. The implementation looks like this:</p>
-
 
 <pre class="sh_java">
 public class Person {
@@ -8142,9 +7938,6 @@ public class MyDate {
 31.12.2010 earlier than 14.2.2011: true
 14.2.2011 earlier than 31.12.2010: false
 </pre>
-
-
-
 
 <!-- CAST3 -->
 
@@ -8342,7 +8135,6 @@ Steve Jobs (013672548)
 ArrayList&lt;Student&gt; list = new ArrayList&lt;Student&gt;();
 </pre>
 
-
 <h4 class="req">Search</h4>
 
 <p>Extend the program of the previous part so that after the student info has been entered and students printed, the user can search the student list based on a given search term. The extended program should work in the following manner:</p>
@@ -8368,7 +8160,6 @@ Edsger Dijkstra (014662803)
 
 <p><strong>TIP:</strong> in the search you should iterate (using for or while) through the student list and by using the method <code>contains</code> of String check if a student's name (obtained with method <code>getName</code>) matches the search term.</p>
 </div>
-
 
 <h3>An object within an object</h3>
 
@@ -8466,10 +8257,7 @@ out, for example, like this:</p>
 so that it compares birthdates. We'll do this as an excersise
 assignment.</p>
 
-
-
 <div class="tehtavat">
-
 
 <h3>Clock object</h3>
 
@@ -8533,7 +8321,6 @@ public class Main {
 00:00:01
 ...
 </pre>
-
 
 </div>
 
@@ -8635,8 +8422,6 @@ The members of weight watchers association 'kumpulan paino':
   Petri
 </pre>
 
-
-
 <div class="tehtavat">
 
 <!-- CAST4 -->
@@ -8690,7 +8475,7 @@ public class Main {
 
         Player brian = new Player("Brian");
         System.out.println("Player: " + brian);
-        
+
         Player pekka = new Player("Pekka", 39);
         System.out.println("Player: " + pekka);
     }
@@ -8705,9 +8490,7 @@ Player: Brian, goals 0
 Player: Pekka, goals 39
 </pre>
 
-
 <h4 class="req">Adding players to a team</h4>
-
 
 <p>Add to the class <code>Team</code> the following methods:</p>
 
@@ -8817,8 +8600,6 @@ public class Main {
 Total goals: 40
 </pre>
 </div>
-
-
 
 <h3>Method returns an object</h3>
 
@@ -8954,7 +8735,6 @@ the cloning has happened - are the same. However they are two different
 objects, so in the future as one of the counters grows the value of the
 other isn't affected in any way.</p>
 
-
 <div class="tehtavat">
 <h3>Extending MyDate</h3>
 
@@ -8998,7 +8778,6 @@ public class MyDate {
 }
 </pre> 
 
-
 <h4 class="req">Next day</h4>
 
 <p>Add to the class MyDate the method <code>public void advance()</code> that advances the date by one. <strong>Note:</strong> In this assignment we assume that all the months have 30 days!</p>
@@ -9020,7 +8799,7 @@ This method should advance the day by the number given as parameter. Implement t
 <pre class="sh_java">
     public MyDate afterNumberOfDays(int days){
         MyDate newMyDate = new MyDate( ... );
-        
+
         // some code here
 
         return newMyDate;
@@ -9071,7 +8850,6 @@ we will practise our routine with a couple of more exercises.</p>
 
 <h4 class="req">Difference in years, first version</h4>
 
-
 <p>Add to the class MyDate the method <code>public int differenceInYears(MyDate comparedDate)</code>, 
 that calculates the difference in years of the object for which the method is called and the object given as parameters.</p>
 
@@ -9117,8 +8895,6 @@ public class Main {
 <p>Calculation of the previous version was not very exact, e.g. the difference of dates 1.1.2011 and 25.12.2010 was claimed to be one year. <b>
 Modify the method so that it can calculate the difference properly.</b> Only the full years in difference count. So if the difference of two dates would be 1 year and 364 days, only the full years are counted and the result is thus one.</p>
 
-
-
 <p> The method still needs to work only in the case where the date given as parameter is before the date for which the method is called </p>
 
 <p>The output for the previous example is now:</p>
@@ -9160,7 +8936,6 @@ public class Main {
 1.1.2011 and 25.12.2010 difference in years: 0
 25.12.2010 and 1.1.2011 difference in years: 0
 </pre>
-
 
 <h3>Person extended</h3>
 
@@ -9299,8 +9074,6 @@ Steve, born 9.2.2012
 <section class="viikkoraja" id="6" >
   <div class="viikkoraja">Week 6</div>
   <div class="viikkoraja-mooc" id="Week 6" deadline="24.2.2013 23.59" data-first-chapter-index="1" data-first-exercise-index="1" data-first-week-index="1"  data-first-chapter-index-mooc="1" data-first-exercise-index-mooc="1" data-first-week-index-mooc="1" tekija="Arto Vihavainen, Matti Luukkainen">
-  
-
 
 <h2>A quick recap</h2>
 
@@ -9349,7 +9122,6 @@ Pekka Mikkola  number: 050-333444
   <li> <code>public String getNumber()</code>, that returns the phone number</li>
   <li> the method <code>public void changeNumber(String newNumber)</code>, that can be used to change the phone number of the person</li>
 </ul>
-
 
 <h4>Adding persons to Phonebook</h4>
 
@@ -9428,7 +9200,7 @@ public class Money {
     public int euros(){
         return euros;
     }
-    
+
     public int cents(){
         return cents;
     }
@@ -9466,7 +9238,7 @@ public class Money {
 
   a = a.plus(c);          // NOTE: new Money-object is created and reference to that is assigned to variable a
                           //       the Money object 10.00e that variable a used to hold, is not referenced anymore
-  
+
   System.out.println(a);  // 25.00e
   System.out.println(b);  // 5.00e
   System.out.println(c);  // 15.00e
@@ -9505,14 +9277,13 @@ If the value would be negative, the resulting Money object should have value 0.<
 
   c = c.minus(a);        // NOTE: new Money-object is created and reference to that is assigned to variable c
                           //       the Money object 6.50e that variable c used to hold, is not referenced anymore
-  
+
   System.out.println(a);  // 10.00e
   System.out.println(b);  // 3.50e
   System.out.println(c);  // 0.00e
 </pre>
 
 </div>
-
 
 <h3>Character strings are immutable</h3>
 
@@ -9574,7 +9345,6 @@ System.out.println(numbers[2]);    // prints the number in the array's index 2, 
 <p>The size (length) of the array above is 8.</p>
 
 <p><em>You'll probably notice that the <code>get</code>-method of ArrayList works pretty much the same as getting from a certain index of an array. Only the notation - the syntax - is different when dealing with arrays.</em></p>
-
 
 <p>Setting an individual value to a certain spot in an array happens the same way as with regular variables, only with arrays the index has to be also told. The index is told inside of brackets.</p>
 
@@ -9676,7 +9446,6 @@ for(int i = 6; i&gt;2 ; i--) {
 }
 </pre>
 
-
 <h3>For and array length</h3>
 
 <p>Going through all cells of an array with for happens like this:</p>
@@ -9712,9 +9481,7 @@ public static void  main(String[] args) {
 }
 </pre>
 
-
 <p>As we already now, the name of the parameter within a method can be freely chosen. The name does not need to be the same as in the one used in calling it. Above the array is called <code>integerArray</code> within the method and the caller of the method knows the array as <code>numbers</code>.
-
 
 <!-- CAST61-->
 
@@ -9724,11 +9491,7 @@ public static void  main(String[] args) {
 <p><iframe allowfullscreen="" frameborder="0"  height="450" width="700" src="http://www.youtube.com/embed/mpfbaukh-4Y"></iframe></p>
 -->
 
-
-
 <div class="tehtavat">
-
-
 
 <h3 class="req">Sum of the array</h3>
 
@@ -9785,8 +9548,6 @@ public class Main {
 
 </div>
 
-
-
 <h3>Creating a new array</h3>
 
 <p>If the size of the array isn't always the same, that is if it's size depends on, for example on user input the previously introduced way of creating arrays will not do. It is also possible to creat a table so that it's size is defined with the help of a variable:</p>
@@ -9810,7 +9571,6 @@ if(array.length == cells) {
 </pre>
 
 <p>In the following example there is a program, that prompts the user the amount of values and subsequently the values. After this the program prints the values in the same order again. The values given by the user are stored in the array.</p>
-
 
 <pre class="sh_java">
 System.out.print("How many values? ");
@@ -9845,9 +9605,8 @@ Values again:
 1
 </pre>
 
-
 <h3 id="muita_palautustyyppeja">An array as the return value</h3>
-       
+
 <p>Since methods can return objects, they also can return arrays. This particular method that returns an array looks like this -- notice that arrays can might as well be filled with objects.olioita. </p>
 
 <pre class="sh_java">
@@ -9884,10 +9643,10 @@ public static void main(String[] args){
     public static void main(String[] args) {
         int[] original = {1, 2, 3, 4};
         int[] copied = copy(original);
-        
+
         // change the copied
         copied[0] = 99;
-        
+
         // print both
         System.out.println( "original: " + Arrays.toString(original));
         System.out.println( "copied: " + Arrays.toString(copied));
@@ -9913,7 +9672,7 @@ copied: [99, 2, 3, 4]
     public static void main(String[] args) {
         int[] original = {1, 2, 3, 4};
         int[] reverse = reverseCopy(original);
-        
+
         // print both
         System.out.println( "original: " +Arrays.toString(original));
         System.out.println( "reversed: " +Arrays.toString(reverse));        
@@ -9927,7 +9686,6 @@ original: [1, 2, 3, 4]
 reversed: [4, 3, 2, 1]
 </pre>
 </div>
-
 
 <h2 id="lohkoista">About blocks and nested loops</h2>
 
@@ -9956,7 +9714,6 @@ if( number == 5 ) {
 
 System.out.println(number); // prints 6
 </pre>
-
 
     <p>You can have any kind of code within a block. For example a for-loop can have another for-loop within it or say, a while loop. Lets inspect the following program:</p>
 
@@ -10027,7 +9784,7 @@ for(int i = 0; i &lt; 3; i++) {
 </pre>
 
     <p>The following program prints out the multiplication tables of the numbers 1 .. 10.</p>
-       
+
 <pre class="sh_java">
 for(int i = 1; i &lt;= 10; i++) {
 
@@ -10066,11 +9823,10 @@ public class MultiplicationTable {
   public void print(int upTo) {
     for(int i = 1; i &lt;= upTo; i++) {
       printMultiplicationTableRow(i, upTo);
-     
+
       System.out.println();
     }
   }
-
 
   public void printMultiplicationTableRow(int multiplier, int howManyTimes) {
     for(int i = 1; j &lt;= howManyTimes; i++) {
@@ -10140,12 +9896,11 @@ Below an example which demonstrates how the <code>NightSky</code> could be used 
     NightSky.print();
     System.out.println("Number of stars: " + NightSky.starsInLastPrint());
     System.out.println("");
-    
+
     NightSky = new NightSky(0.2, 15, 6);
     NightSky.print();
     System.out.println("Number of stars: " + NightSky.starsInLastPrint());
 </pre>
-
 
 <pre>
         *     *                  *      
@@ -10210,11 +9965,10 @@ Use the method <code>printLine</code> to print each separate line of the night s
 
 <pre>
     *   
-        
+
   *     
     *   
 </pre>
-
 
 <h4>Counting the number of the stars</h4>
 
@@ -10226,26 +9980,24 @@ that returns the number of stars printed in the previous night sky. Example in t
     NightSky.print();
     System.out.println("Number of stars: " + NightSky.starsInLastPrint());
     System.out.println("");
-    
+
     NightSky.print();
     System.out.println("Number of stars: " + NightSky.starsInLastPrint());
 </pre>
 
 <pre>
-        
-        
+
  *      
-        
+
 Number of stars: 1
 
  *      
       * 
 *       
-        
+
 Number of stars: 3
 </pre>
 </div>
-
 
 <h2>to static or not to static?</h2>
 
@@ -10348,7 +10100,7 @@ public class Person {
     public void becomeOlder() {
         this.age++;
     }
- 
+
     public String getName() {
         return this.name;
     }
@@ -10426,9 +10178,9 @@ public class Main {
         antti.becomeOlder();
 
         reportMaturity(antti);
-  
+
         reportMaturity(pekka);
-  
+
         reportMaturity(juhana);
     }
 
@@ -10445,18 +10197,12 @@ public class Main {
 <p>The method <code>reportMaturity</code> is defined as static so it doesn't belong to any object,
 <strong>but</strong> the method receives a Person object as a parameter. The method is not defined within the Person-class since even though it handles a Person object that it receives as a paramter, it is an assistance method of the main program we just wrote. With the method we've made main more readable.</p>
 
-
-
-
-
-
 <div class="tehtavat">
  <h3>The library information system</h3>
 
   <p>In this assignment we are implementing a simple information system prototype for a library. The prototype will have functionality for searching books by the title, publisher or publishing year.</p>
 
   <p>The main building blocks of the system are the classes <code>Book</code> and <code>Library</code>. Objects of the class <code>Book</code> represent the information of a sigle book. Object of the class <code>Library</code> holds a set of books and provides various ways to search for the books within the library.</p>
-
 
     <h4>Book</h4>
 
@@ -10483,7 +10229,6 @@ Woodhead Publishing
 2007
 Cheese Problems Solved, Woodhead Publishing, 2007
 </pre>
-
 
 <h4>Library</h4>
 
@@ -10512,7 +10257,6 @@ Cheese Problems Solved, Woodhead Publishing, 2007
 NHL Hockey, Stanley Kupp, 1952
 Battle Axes, Tom A. Hawk, 1851
 </pre>
-
 
 <h4>Search functionality</h4>
 
@@ -10572,7 +10316,6 @@ The Stinky Cheese Man and Other Fairly Stupid Tales, Penguin Group, 1992
 ---
 Battle Axes, Tom A. Hawk, 1851
 </pre>
- 
 
 <h4>Improved search</h4>
 
@@ -10621,12 +10364,8 @@ The Stinky Cheese Man and Other Fairly Stupid Tales, Penguin Group, 1992
 ---
 The Stinky Cheese Man and Other Fairly Stupid Tales, Penguin Group, 1992
 </pre>
- 
+
 </div>
-
-
-
-
 
 <h2>Assignments where you are free to decide how to structure the program.</h2>
 
@@ -10644,7 +10383,7 @@ Your program should use only one Scanner object, i.e., it is allowed to call <co
      Scanner scanner = new Scanner(System.in);
 
      // ...
-     
+
      doSomething(scanner);  
   }
 
@@ -10793,13 +10532,11 @@ with the Arrays.sort -command.</p>
 
 <h3>Implementation of a sorting algorithm</h3>
 
-
     <p>It's easy to sort an array with the ready-made tools of Java. The
 general knowledge of a program requires knowing at least one sorting
 algorithm (or in other words, way to sort an array). Lets get familiar with
 the "classic" sorting algorithm, choice sorting. Lets do this with a few
 excercise.</p>
-
 
 <div class="tehtavat">
 <h3>Sorting</h3>
@@ -10848,7 +10585,6 @@ public static int indexOfSmallest(int[] array) {
     // code goes here
 }
 </pre>
-
 
 <p><b>NOTE:</b> You can't change the array that gets passed in to the
 method as a parameter!</p>
@@ -10923,7 +10659,6 @@ public static void swap(int[] array, int index1, int index2) {
     // code goes here
 }
 </pre>
-
 
 <p>The following showcases the functionality of the method. In printing the
 array we'll use the Arrays.toString-method which formats the array in to a
@@ -11009,10 +10744,6 @@ content of the array after each swap!</p>
 <p>You'll notice how the array little by little gets sorted out starting
 from the beginning and advances towards the end.</p>
 </div>
-
-
-
-
 
 <h2>Searching</h2>
 
@@ -11135,7 +10866,6 @@ would have eventually been reduced to nothing.</p>
 // values      <font color="lightgrey">-7  -3   3   7  11   15</font><font color="red">17</font>  21  <font color="lightgrey">24  28  30</font>
 </pre>
 
-
 <p>So for the idea of binary search to become clear to you, simulate with
 pen and paper how the binary search works when the array is the one below
 and first you're searching for value 33 and then value 1.</p>
@@ -11162,10 +10892,6 @@ from a sorted array of 4294967296 different values would only take up to 32
 cell inspections. Efficiency is an essential part of computer science. For
 example, the first year course 'data structures' of computer sciences
 focuses to implementing efficient data structures.</em></p>
-
-
-
-
 
 <div class="tehtavat">
 <h3 class="req">Guessing game</h3>
@@ -11409,8 +11135,6 @@ Value 99 is not in the array
 </pre>
 </div>
 
-
-
 <h2>About arrays and objects</h2>
 
 <p>If need be, any type of object can be put in to an array. In the
@@ -11491,10 +11215,6 @@ public class Week {
     }
 }
 </pre>
-
-
-
-
 
 </div>
 </section>

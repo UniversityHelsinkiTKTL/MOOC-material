@@ -1,0 +1,108 @@
+
+/* BEGIN marginaalit */
+body {
+/*	width: 60em; */
+}
+
+#toc {
+	margin-bottom: 5em;
+}
+
+h2 {
+	margin-top: 3em;
+   margin-left: 0.4em;
+}
+
+h3 {
+	margin-top: 1.7em;
+}
+
+h3 {
+	margin-left: 0.7em;
+}
+
+p {
+	margin-left: 1.3em;
+}
+
+h4 {
+	margin-left: 1em;
+}
+
+h4+pre {
+	margin-top: -1em;
+	margin-left: 3.6em;
+	margin-bottom: 2em;
+}
+
+h4+ul {
+	margin-top: -0.5em;
+	margin-left: 1.4em;
+	margin-bottom: 2em;
+}
+
+pre {
+   margin-left: 1.4em;
+	border: 1px #000 solid;
+	padding: 1em 50em 1em 1em;
+	background-color: #ffffff;
+
+	-moz-border-radius: 10px; /* Firefox */
+	-webkit-border-radius: 10px; /* Safari, Chrome */
+	border-radius: 10px; /* CSS3 */
+}
+/* END marginaalit */
+
+
+pre {
+	border: 1px #000 solid;
+	padding: 1em 50em 1em 1em;
+}
+
+span.tab {
+	width: 2em; float: left;
+}
+
+
+span.gray {
+	color: gray;
+}
+
+.tyhja{
+	height: 2em;
+}
+
+div.viikkoraja {
+    border: 2px #000 solid;
+    margin: 0em;
+    padding-top: 2em;
+    color: #black;
+    background-color: #228B22;
+ 	 height: 3em;
+    font-size: 200%;
+	 font-weight: bold;
+    text-align: center;
+
+}
+
+.ekstra {
+    border: 2px #000 solid;
+    margin: 0.5em;
+    padding-right: 1em;
+    color: #C0C0C0;
+}
+
+.tehtavat {
+    border: 1px #000 solid;
+    margin: 0.5em;
+    padding-right: 1em;
+    background-color: #e8ffe8;
+}
+
+
+.tehtava {
+    border: 1px #000 solid;
+    margin: 0.5em;
+    padding-right: 1em;
+    background-color: #e8ffe8;
+}

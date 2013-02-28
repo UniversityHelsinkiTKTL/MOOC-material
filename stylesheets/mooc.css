@@ -1,0 +1,18 @@
+.mooc-pakollinen{
+  background-color: #FF1493;/*#1BDFFF*/
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  margin-left: 20px;
+  -webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+  -moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+  box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+  border:none;
+  height:100%;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+
+}
+.mooc-pakollinen:before{
+  content: "Allaoleva tehtävä on kaikille yliopistoon hakeville pakollinen";
+}

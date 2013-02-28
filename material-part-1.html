@@ -1875,6 +1875,7 @@ Last: <font color="red">12</font>
 <p><em>Note!</em> remember that the lower limit and the upper limit can also be negative!</p>
 
 </div>
+</div>
 
         <h3>Assignment operations</h3>
 
@@ -1944,6 +1945,7 @@ while ( i &lt; 4 ) {
 </pre>
 
 <div class="tehtavat">
+    <div class="tehtava">
 <h3 class="req">The sum of a set of numbers</h3>
 
 <p>Create a program that calculates the sum of n numbers, where n is a number given by the user. The program should add the numbers together one by one, like 1+2+3+...+n. </p>
@@ -1961,7 +1963,8 @@ Sum is 28   // calculated 1+2+3+4+5+6+7
 </pre>
 
 <p><strong>Hint:</strong> Create a program using the <code>while</code> structure. Use a helper variable in your program to remember how many times the block has been executed. Use also another helper variable to store the sum. During each execution add the value of the helper variable that counts the executions to the variable in which you should collect the sum.</p>
-
+</div>
+<div class="tehtava">
 <h3 class="req">The sum between two numbers</h3>
 
 <p>Change the previous program so that the user gives the starting number and the ending number. You can assume that the user first gives the smaller number and then the greater number.</p>
@@ -1979,7 +1982,8 @@ First: <font color="red">2</font>
 Last: <font color="red">8</font>
 The sum is 35
 </pre>
-
+</div>
+<div class="tehtava">
 <h3>Factorial</h3>
 
 <p>Create a program that calculates the factorial of the number n. Factorial n! is calculated with the formula 1*2*3*...*n.
@@ -1997,7 +2001,8 @@ Factorial is 6
 Type a number: <font color="red">10</font>
 Factorial is 3628800
 </pre>
-
+</div>
+<div class="tehtava">
 <h3>Sum of the powers</h3>
 
 <p>Create a program that calculates the sum of  2<sup>0</sup>+2<sup>1</sup>+2<sup>2</sup>+...+2<sup>n</sup>,
@@ -2018,7 +2023,7 @@ The result is 15
 Type a number: <font color="red">7</font>
 The result is 255
 </pre>
-
+</div>
 </div>
 
         <h3>Eternal loop</h3>
@@ -2097,7 +2102,7 @@ System.out.println("Your age is "+ age);
 </pre>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Loops, ending and remembering</h3>
 
 <p>This set of exercises will form one larger program when put together. We create the program by adding features exercise by exercise. If you do not finish all the exercises you can still send them to be reviewed by the exercise robot. You can do that by clicking the "submit" button, which has a picture of an arrow and is located on the right of the testing button. Even though the exercise robot complains about tests that consider the exercises you have not done, you will still get points for the parts you completed. </p>
@@ -2184,7 +2189,7 @@ Odd numbers: 1
 </pre>
 
 </div>
-
+</div>
 <div>
 <hr> </hr>
 
@@ -2328,7 +2333,7 @@ Greetings from the world of methods!
         <p>From now on when we introduce methods we will not point out that they need to be written in the right place inside the program code. For example, a method cannot be defined inside another method.</p>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3 class="req">Printing out text</h3>
 
 <p>Create a method <code>printText</code> that prints the following string of characters:  "In the beginning there were the swamp, the hoe and Java." and a line break.</p>
@@ -2348,7 +2353,8 @@ public static void printText() {
 <pre>
 In the beginning there were the swamp, the hoe and Java.
 </pre>
-
+</div>
+<div class="tehtava">
 <h3 class="req">Many prints</h3>
 
 <p>Develop the program by adding the following feature: the main program should ask the user how many times the text should be printed (meaning how many times the method is called).</p>
@@ -2381,7 +2387,7 @@ In the beginning there were the swamp, the hoe and Java.
 <p><strong>Note:</strong> you should print the assisting question <em>How many?</em> on its own line!</p>
 
 </div>
-
+</div>
         <h3>Method parameters</h3>
 
         <p>We can make our methods more useful by giving some <em>parameters</em> to it! Parameters are variables that we can define in the first line of method inside the brackets, just after the method name.  When the method is called, the parameters get their values at that point.</p>
@@ -2425,6 +2431,7 @@ Hi John 24 years, greetings from the world of methods!
 </pre>
 
 <p>In both cases the method has only one parameter. The value for the parameter is calculated before calling the method. In the first case the parameter value comes from the String concatenation (a cool word that means putting the text together) <code>name1 + " " + name2</code>. The value for that concatenation is <i>Anne Green</i>. In the second case we get the parameter value from the String concatenation <code>"John " + age + " years"</code>.  </p>
+</div>
 
 <h3>Many parameters</h3>
 
@@ -2489,7 +2496,7 @@ Hi Martin, greetings from the world of methods!
 
 <!-- screencast -->
 <div class="tehtavat">
-
+<div class="tehtava">
   <h3>Printing</h3>
 
 <h4 class="req">Printing stars</h4>
@@ -2557,7 +2564,8 @@ public static void main(String[] args) {
 ***
 ****
 </pre>
-
+</div>
+<div class="tehtava">
 <h3>Printing Like A Boss</h3>
 
 <h4 class="req">Printing stars and whitespaces</h4>
@@ -2613,7 +2621,8 @@ public static void main(String[] args) {
 </pre>
 
   <p><em>Second note:</em> Heights under 3 do not need to work!</p>
-
+</div>
+<div class="tehtava">
       <h3 class="req">Guessing a number game</h3>
 
       <p>In this exercise the following game is created:</p>
@@ -2691,7 +2700,8 @@ The number is greater, guesses made: 4
 Guess a number: <font color="red">83</font>
 Congratulations, your guess is correct!
 </pre>
-
+</div>
+<div class="tehtava">
 <h3 class="req">A text-based user interface for the Hangman game</h3>
 
   <p>Your friend has programmed a Hangman game for you, but the game lacks the user inferface. The Hangman has the following methods:</p>
@@ -2879,7 +2889,7 @@ Thank you for playing!
 </pre>
 
 </div>
-
+</div>
 </div>
 </section>
 

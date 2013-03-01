@@ -2417,7 +2417,7 @@ System.out.println("Type your age ");
 while( true ) {   
   int age = Integer.parseInt(reader.nextLine());
 
-  if ( age &gt;= 5 && age &lt;= 85 ) {   // age between 5 AND 85
+  if ( age &gt;= 5 &amp;&amp; age &lt;= 85 ) {   // age between 5 AND 85
     break;                              // ending the repetition
   }
 
@@ -9127,12 +9127,12 @@ public class MyDate {
         }
 
         // if the years are the same, we'll compare the months
-        if ( this.year == compared.year && this.month &lt; compared.month ) {
+        if ( this.year == compared.year &amp;&amp; this.month &lt; compared.month ) {
             return true;
         }
 
         // years and months the same, we'll compare the days
-        if ( this.year == compared.year && this.month == compared.month &&
+        if ( this.year == compared.year &amp;&amp; this.month == compared.month &amp;&amp;
                 this.day &lt; compared.day ) {
             return true;
         }
@@ -10012,12 +10012,12 @@ public class MyDate {
         }
 
         // if the years are the same, we'll compare the months
-        if ( this.year == compared.year && this.month &lt; compared.month ) {
+        if ( this.year == compared.year &amp;&amp; this.month &lt; compared.month ) {
             return true;
         }
 
         // years and months the same, we'll compare the days
-        if ( this.year == compared.year && this.month == compared.month &&
+        if ( this.year == compared.year &amp;&amp; this.month == compared.month &amp;&amp;
                 this.day &lt; compared.day ) {
             return true;
         }
@@ -10838,7 +10838,7 @@ public static void  main(String[] args) {
             <p>As we already now, the name of the parameter within a method can be freely chosen. The name does not
             need to be the same as in the one used in calling it. Above the array is called <code>integerArray</code>
             within the method and the caller of the method knows the array as <code>numbers</code>. <!-- CAST61-->
-             <a href="http://www.youtube.com/watch?feature=player_embedded&v=mpfbaukh-4Y" height="300" target=
+             <a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=mpfbaukh-4Y" height="300" target=
             "_blank"><img src="img/youtube.jpg"></a> <!--
 <p><iframe allowfullscreen="" frameborder="0"  height="450" width="700" src="http://www.youtube.com/embed/mpfbaukh-4Y"></iframe></p>
 --></p>

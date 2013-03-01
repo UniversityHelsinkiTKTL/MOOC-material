@@ -1073,75 +1073,72 @@ NHLStatistics.teamStatistics("NYR");  // Statistics of New York Rangers
                 </div>
             </div>
 
-            <h2 id="valinta_ja_totuusarvot">Selection and truth values</h2>
+            <h2 id="valinta_ja_totuusarvot">Conditional statements and truth values</h2>
 
-            <p>A selection command is needed in order to <em>branch</em> the program execution.</p>
+            <p>So far, our programs have progressed from one command to another in a straightforward manner. In order
+            for the program to <em>branch</em> to different execution paths based on e.g. user input, we need
+            conditional statements.</p>
 
 <pre class="sh_java">
 int number = 11;
 
-if ( number &gt; 10 ) {
-  System.out.println("The number was greater than 10");
+if (number &gt; 10) {
+    System.out.println("The number was greater than 10");
 }
 </pre>
 
-            <p>The condition <code>( number &gt; 10 )</code> transforms into a truth value, so it is either
-            <em>true</em> or <em>false</em>. The selection command <code>if</code> handles only truth values in the
-            end. The condition sentence above will be read "if the number is greater than 10".</p>
+            <p>The condition <code>(number &gt; 10)</code> evaluates into a truth value; either <em>true</em> or
+            <em>false</em>. So, in the end, the <code>if</code> command only handles truth values. The conditional
+            statement above is read as "if the number is greater than 10".</p>
 
-            <p>Note that after the <code>if</code> sentence there will be no semicolon, since the sentence continues
-            after the condition part.</p>
+            <p>Note that the <code>if</code> statement is not followed by semicolon as the condition path continues
+            after the statement.</p>
 
-            <p>After the condition an opening brace <code>{</code> starts a new <em>block</em>. The block will be
-            executed if the <em>condition</em> is true. <em>The block</em> ends with a closing brace <code>}</code>.
-            The block can be as long as you wish.</p>
+            <p>After the condition, the opening brace <code>{</code> starts a new <em>block</em>, which is executed
+            if the condition is true. The <em>block</em> ends with a closing brace <code>}</code>. Block can be as
+            long as desired.</p>
 
-            <p>Comparison operators are the following:</p>
+            <p>The comparison operators are:</p>
 
             <ul>
-                <li><code>&gt;</code>Greater than</li>
-
-                <li><code>&gt;=</code>Greater than or equal to</li>
-
-                <li><code>&lt;</code>Less than</li>
-
-                <li><code>&lt;=</code>Less than or equal to</li>
-
-                <li><code>==</code>Equals</li>
-
-                <li><code>!=</code>Not equal</li>
+                <li><code>&gt;</code> Greater than</li>
+                <li><code>&gt;=</code> Greater than or equal to</li>
+                <li><code>&lt;</code> Less than</li>
+                <li><code>&lt;=</code> Less than or equal to</li>
+                <li><code>==</code> Equals</li>
+                <li><code>!=</code> Not equal</li>
             </ul>
 
 <pre class="sh_java">
 int number = 55;
 
-if ( number != 0 ) {
-  System.out.println("The number does not equal 0");
+if (number != 0) {
+    System.out.println("The number was not equal to 0");
 }
 
-if ( number &gt;= 1000 ) {
-   System.out.println("The number was greater than or equal to 1000");  
+if (number &gt;= 1000) {
+    System.out.println("The number was greater than or equal to 1000");  
 }
 
 </pre>
 
-            <p>A block can contain any code, such as another selection command.</p>
+            <p>A block can contain any code including other <code>if</code> statements.</p>
 
 <pre class="sh_java">
 int x = 45;
 int number = 55;
 
-if ( number &gt; 0 ) {
-   System.out.println("The number is positive!");
-   if ( number &gt; x ) {
-     System.out.println(" and greater than the number stored in variable x"); 
-     System.out.println(“ the number stored in variable x is " + x);
-   }
+if (number &gt; 0) {
+    System.out.println("The number is positive!");
+    if (number &gt; x) {
+        System.out.println(" and greater than the value of variable x"); 
+        System.out.println("after all, the value of variable x is " + x);
+    }
 }
 </pre>
 
-            <p>The comparison operators can also be used outside the conditions. In that case the truth value will be
-            stored in a truth value variable.</p>
+            <p>The comparison operators can also be used outside the <code>if</code> statements. In that case the truth
+            value will be stored in a truth value variable.</p>
 
 <pre class="sh_java">
 int first = 1;
@@ -1161,8 +1158,8 @@ int second = 3;
 
 boolean isLesser = first &lt; second;
 
-if ( isLesser ) {
-  System.out.println("1 is less than 3!");
+if (isLesser) {
+    System.out.println("1 is less than 3!");
 }
 </pre>
 
@@ -1172,29 +1169,28 @@ if ( isLesser ) {
 
             <h3>Code indentation</h3>
 
-            <p>You should note that the commands in the block following the if-command (i.e. the lines that come after
-            the { brace) should not be written at the same level as the if-command. They should be "more
-            right", meaning that the lines will be <b>indented</b>. Indentation happens when you press the
-            tabulator key, which is located to the left of q key. When the block ends with the closing brace,
-            indentation ends as well. The closing brace } should be on the same level as the original if-command.</p>
+            <p>Note that the commands in the block following the <code>if</code> statement (i.e. the lines after the
+            <code>{</code> brace) are not written at the same level as the <code>if</code> statement itself. They
+            should be <b>indented</b> slightly to the right. Indentation happens when you press the tab key, which is
+            located to the left of q key. When the block ends with the closing brace, indentation ends as well. The
+            closing brace <code>}</code> should be on the same level as the original <code>if</code> statement.</p>
 
-            <p>Using indentation is a crucial thing concerning the understandability of the computer programs. During
-            this course and everywhere in "real life" it is required to indent the code with propriety.
-            NetBeans helps with the correct indentation. You can easily indent your program by pressing shift, alt and
-            f simultaneously.</p>
+            <p>Using indentation is crucial to the readability of program code. During this course and generally
+            everywhere, you are expected to indent the code properly. NetBeans helps with the correct indentation.
+            You can easily indent your program by pressing shift, alt, and f simultaneously.</p>
 
             <h3>else</h3>
 
-            <p>If the truth value of the comparison is false, another alternative block can be executed in that case.
-            To achieve that we can use the command <code>else</code>.</p>
+            <p>If the truth value of the comparison is false, another optional block can be executed using the
+            <code>else</code> command.</p>
 
 <pre class="sh_java">
 int number = 4;
 
-if ( number &gt; 5 ) {
-  System.out.println("Your number is greater than five!");
+if (number &gt; 5) {
+    System.out.println("Your number is greater than five!");
 } else {
-  System.out.println("Your number is equal to or less than five!");
+    System.out.println("Your number is equal to or less than five!");
 }
 </pre>
 
@@ -1206,13 +1202,13 @@ Your number is equal to or less than five!
                 <div class="tehtava">
                     <h3 class="req">A positive number</h3>
 
-                    <p>Create a program that asks the user for a number and tells if the number is positive. A number
-                    is positive, if it is greater than zero..</p>
+                    <p>Create a program that asks the user for a number and tells if the number is positive (i.e.
+                    greater than zero).</p>
 
 <pre>
 Type a number: <font color="red">5</font>
 
-The Number is positive.
+The number is positive.
 </pre>
 
 <pre>
@@ -1223,17 +1219,16 @@ The number is not positive.
 
                     <p><big><b>Are you certain that your code is indented correctly?</b></big></p>
 
-                    <p>Re-read the section <a href="materiaali.html#sisennys">Code indentation</a>. See what happens in
-                    NetBeans when you hit shift, alt and f simultaneously! The same functionality (automatic
-                    indentation) can be achieved also by selecting first Source and then Format from the upper
-                    menu.</p>
+                    <p>Reread the section on <a href="materiaali.html#sisennys">code indentation</a>. Observe what
+                    happens when you press shift, alt and f simultaneously! The same automatic indentation
+                    functionality can also be used using the menu bar by selecting Source and then Format.</p>
                 </div>
 
                 <div class="tehtava">
                     <h3 class="req">Age of consent</h3>
 
                     <p>Create a program that asks for the user's age and tells whether the user has reached the age
-                    of consent (that means the age should be at least 18 years).</p>
+                    of consent (i.e. 18 years old or older).</p>
 
 <pre>
 How old are you? <font color="red">12</font>
@@ -1264,29 +1259,29 @@ Type a number: <font color="red">7</font>
 Number 7 is odd.
 </pre>
 
-                    <p>Hint: the number's remainder when dividing with 2 tells whether the number is even or odd.
-                    The remainder can be calculated with the <code>%</code> operator.</p>
+                    <p><b>Hint:</b> The number's remainder when dividing by 2 tells whether the number is even or odd.
+                    The remainder can be obtained with the <code>%</code> operator.</p>
                 </div>
             </div>
 
             <h3>else if</h3>
 
-            <p>If there are over two options for the program to select, it is recommended to use the <code>else
+            <p>If there are more than two conditions for the program to check, it is recommended to use the <code>else
             if</code> command. It works like the <code>else</code> command, but with an additional condition.
-            <code>Else if</code> comes after the <code>if</code> command. There can be multiple <code>else if</code>
+            <code>else if</code> comes after the <code>if</code> command. There can be multiple <code>else if</code>
             commands.</p>
 
 <pre class="sh_java">
 int number = 3;
 
-if ( number == 1 ) {
-  System.out.println("The number is one.");
-} else if ( number == 2 ) {
-  System.out.println("The number is two.");
-} else if ( number == 3 ) {
-  System.out.println("The number is three!");
+if (number == 1) {
+    System.out.println("The number is one.");
+} else if (number == 2) {
+    System.out.println("The number is two.");
+} else if (number == 3) {
+    System.out.println("The number is three!");
 } else {
-  System.out.println("The number is many!");
+    System.out.println("Quite a lot!");
 }
 </pre>
 
@@ -1294,50 +1289,49 @@ if ( number == 1 ) {
 The number is three!
 </pre>
 
-            <p>Let us read the upper example out loud. 'If number is one, print out "The number is one."
-            otherwise if the number is two, print out "The number is two." Otherwise if the number is three,
-            print out "The number is three!" and otherwise print out "The number is many!"</p>
+            <p>Let us read the example above out loud: If number is one, print out "The number is one.".
+            Otherwise if the number is two, print out "The number is two.". Otherwise if the number is three,
+            print out "The number is three!". Otherwise print out "Quite a lot!"</p>
 
-            <h3>Comparing Strings</h3>
+            <h3>Comparing strings</h3>
 
-            <p>Strings alias texts cannot be compared with the equals (<em>==</em>) operator. There is another command
-            for comparing strings and it is called <code>equals</code>. That command is always associated with the
-            compared string.</p>
+            <p>Strings cannot be compared using the equality operator (<em>==</em>). For string comparison, we use the
+            <code>equals</code>. command, which is always associated with the string to compare.</p>
 
 <pre class="sh_java">
 String text = "course";
 
-if ( text.equals("marzipan") ) {
-  System.out.println("The variable text contains the text marzipan");
+if (text.equals("marzipan")) {
+    System.out.println("The variable text contains the text marzipan");
 } else {
-  System.out.println("The variable text does not contain the text marzipan");
+    System.out.println("The variable text does not contain the text marzipan");
 }
 </pre>
 
-            <p>The command <code>equals</code> is always used with the comparable string variable, "string
-            variable dot equals text". A string variable can also be compared with another string variable.</p>
+            <p>The <code>equals</code> command is always attached to the string variable to compare with a dot in
+            between. A string variable can also compared to another string variable.</p>
 
 <pre class="sh_java">
 String text = "course";
 String anotherText = "horse";
 
-if ( text.equals(anotherText) ) {
-  System.out.println("The texts are the same!");
+if (text.equals(anotherText)) {
+    System.out.println("The texts are the same!");
 } else {
-  System.out.println("The texts are not the same!");
+    System.out.println("The texts are not the same!");
 }
 </pre>
 
-            <p>When comparing strings it is crucial to check that both string variables have a value stored in them. If
-            the variable holds no value, the program execution will end in a <em>NullPointerException</em> error. That
-            means the variable has no value or it is empty (<em>null</em>).</p>
+            <p>When comparing strings, it is crucial to make sure that both string variables have been assigned some
+            value. If a value has not been assigned, the program execution terminates with a
+            <i>NullPointerException</i> error, which means that variable has no value assigned to it (<i>null</i>).</p>
 
             <div class="tehtavat">
                 <div class="tehtava">
                     <h3 class="req">Greater number</h3>
 
                     <p>Create a program that asks the user for two numbers and prints the greater of those two. The
-                    program should also notice if the two numbers are equal.</p>
+                    program should also handle the case in which the two numbers are equal.</p>
 
                     <p>Example outputs:</p>
 
@@ -1370,7 +1364,7 @@ The numbers are equal!
 
                     <table border style="margin-left:50px">
                         <tr>
-                            <th>Number of points</th>
+                            <th>Points</th>
                             <th>Grade</th>
                         </tr>
                         <tr>

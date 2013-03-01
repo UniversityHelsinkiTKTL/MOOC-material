@@ -695,11 +695,11 @@ y has the value 5 and z has the value 6
                 <div class="tehtava">
                     <h3 class="req">Addition</h3>
 
-                    <p>Create a program that can be used to calculate the sum of two numbers. At the beginning of the
-                    program two variables are introduced and those variables hold the numbers to be summed. Feel free
-                    to use other variables if you need to.</p>
+                    <p>Create a program used to calculate the sum of two numbers. At the beginning of the program two
+                    variables are introduced and those variables hold the numbers to be summed. Feel free to use other
+                    variables if you need to.</p>
 
-                    <p>For example, if the variables hold numbers 5 and 4, the program output should be:</p>
+                    <p>For example, if the variables hold numbers 5 and 4, the program should output:</p>
 
 <pre>
 5 + 4 = 9
@@ -715,8 +715,8 @@ y has the value 5 and z has the value 6
                 <div class="tehtava">
                     <h3 class="">Multiplication</h3>
 
-                    <p>Create a program that resembles the previous one except that it should be used to multiply the
-                    two numbers instead of adding them.</p>
+                    <p>Create a program similar to the previous one except that it multiplies the two numbers
+                    instead of adding them.</p>
 
                     <p>For example, if the variables hold numbers 2 and 8, the program output should be:</p>
 
@@ -736,18 +736,16 @@ y has the value 5 and z has the value 6
 
             <h2 id="syötteen_lukeminen">Reading user input</h2>
 
-            <p>So far our programs have been very one-sided. Next we will learn how to read <em>input</em> from the
+            <p>So far our programs have been rather one-sided. Next we will learn how to read <em>input</em> from the
             user. We will use a special <em>Scanner</em> tool to read the user input.</p>
 
             <p>Let us add the <em>Scanner</em> to our existing main program body. Do not worry if the main program body
-            seems mind-bending, we will continue to program the same way we did before. The code is added to the main
-            program body and the place for your code is marked with the comment <em>// program code</em>.</p>
+            seems obscure as we will continue to write our code in the part marked <em>// program code</em>.</p>
 
 <pre class="sh_java">
 import java.util.Scanner;
 
 public class ProgramBody {
-
   public static void main(String[] args) {
     Scanner reader = new Scanner(System.in);
 
@@ -758,11 +756,11 @@ public class ProgramBody {
 
             <h3 id="syote_simppeli">Reading a string</h3>
 
-            <p>The following code reads the user's name from the keyboard and prints a greeting:</p>
+            <p>The following code reads the user's name and prints a greeting:</p>
 
 <pre class="sh_java">
 System.out.print("What is your name? ");
-String name = reader.nextLine(); // Reads a line from the user's keyboard and assigns it as a value to the variable called name
+String name = reader.nextLine(); // Reads a line of input from the user and assigns it to the variable called name
 
 System.out.println("Hi, " + name);
 </pre>
@@ -772,30 +770,28 @@ What is your name? <span class="red">John</span>
 Hi, John
 </pre>
 
-            <p>(In the following example we have the program described above with the main program body included. The
-            name of the program is <em>Greeting</em>. Because its name is Greeting, it has to be located in a file
-            called <code>Greeting.java</code>. --When using NetBeans you can start following the original <a href=
-            "%E2%80%9D%E2%80%9D">guide</a>, but make sure to change the program name from Hello (<em>Hello</em>) to
-            Greeting (<em>Greeting</em>).</p>
+            <p>The program above combined along with the main program body is below. The name of the program is
+            <em>Greeting</em>, which means that it must be located in a file named <code>Greeting.java</code>. With
+            NetBeans, you can follow the original <a href="%E2%80%9D%E2%80%9D">guide</a>, but be sure to change the
+            program name from Hello to Greeting.</p>
 
 <pre class="sh_java">
 import java.util.Scanner;
 
 public class Greeting {
-
   public static void main(String[] args) {
     Scanner reader = new Scanner(System.in);
 
     System.out.print("Who is greeted: ");
-    String nimi = reader.nextLine(); // Reads a line from the users keyboard and assigns it as a value to the variable called name
+    String nimi = reader.nextLine(); // Reads a line of input from the user and assigns it to the variable called name
 
     System.out.print("Hi " + name);
   }
 }
 </pre>
 
-            <p>When the program above is executed, you can type the input. The output tab in NetBeans looks like this
-            (below) when the program has finished.</p>
+            <p>When the program above is executed, you can type the input. The output tab in NetBeans (on the bottom)
+            looks like this when the program has finished (the user inputs the name "John").</p>
 
 <pre>
 run:
@@ -806,15 +802,15 @@ BUILD SUCCESSFUL (total time: 6 seconds)
 
             <h3 id="syote_kokonaisluku">Reading integers</h3>
 
-            <p>Our Scanner tool is not good for reading integers, so we will use another special tool for transforming
-            a string to an integer. Command <code>Integer.parseInt</code> takes as a parameter a String-type variable
-            that contains the number the user has given and transforms it into a variable of integer type. The
-            parameter (that means the name of the string variable) is given to the command in brackets and the command
-            returns an integer, which will be assigned in a variable of integer type.</p>
+            <p>Our Scanner tool is not good for reading integers, so we will use another special tool to convert a
+            string to an integer. The command <code>Integer.parseInt</code> converts the string given to it into an
+            integer. The command is given its parameter between brackets and it returns an integer that can be
+            assigned to a integer variable.</p>
 
-            <p>In practice we will join two commands together. First we read the input as a string from the user and
-            immediately give it to the command <code>Integer.parseInt</code>.</p><!--
+            <p>We are practically joining two commands together. First we read the input as a string from the user and
+            immediately give it to the command <code>Integer.parseInt</code>.</p>
 
+<!--
 <pre class="sh_java">
 String threeString = "3";
 int three = Integer.parseInt(threeString);
@@ -840,8 +836,7 @@ int number = Integer.parseInt(reader.nextLine());
 System.out.println("You typed " + number);
 </pre>
 
-            <p>Next we will ask the user to give us his name and age. This time the example contains the program
-            body.</p>
+            <p>Next we will ask the user to give us his name and age. The program body is included this time.</p>
 
 <pre class="sh_java">
 import java.util.Scanner;
@@ -863,7 +858,7 @@ public class NameAndAgeGreeting {
 
             <h3 id="yhteenveto">Summary</h3>
 
-            <p>Next follows the main program body of a program that interacts with the user:</p>
+            <p>The program body for interaction with the user is as follows:</p>
 
 <pre class="sh_java">
 import java.util.Scanner;
@@ -871,7 +866,7 @@ public class ProgramName {
   public static void main(String[] args) {
     Scanner reader = new Scanner(System.in);
 
-    // code to be written here
+    // code here
   }
 }
 </pre>
@@ -908,9 +903,9 @@ Sum of the numbers: 8
                 <div class="tehtava">
                     <h3>Divider</h3>
 
-                    <p>Create a program that asks the user for two integers and prints their quotient. Make sure, that
-                    <code>3 / 2 = 1.5</code>. If the decimal part disappers, take another look at <a href=
-                    "%E2%80%9D%E2%80%9D">6.1 Floating point numbers alias decimal numbers</a> to find the solution.</p>
+                    <p>Create a program that asks the user for two integers and prints their quotient. Make sure that
+                    <code>3 / 2 = 1.5</code>. If the decimal part is missing, take another look at <a href=
+                    "%E2%80%9D%E2%80%9D">6.1 Floating point numbers (decimal numbers)</a> to find the solution.</p>
 
 <pre>
 Type a number: <font color="red">3</font>
@@ -921,15 +916,15 @@ Division: 3 / 2 = 1.5
                 </div>
 
                 <div class="tehtava">
-                    <h3 class="req">Calculating Circumference</h3>
+                    <h3 class="req">Calculating the circumference</h3>
 
-                    <p>The circumference of a circle can be calculated with the formula <code>Circumference equals 2 *
-                    PI * Radius</code>. Create a program that asks the user for the radius and based on that calculates
-                    the circumference of the circle. You can find the value of PI in Java by writing
-                    <code>Math.PI</code> in the calculation.</p>
+                    <p>The circumference of a circle is calculated using the formula <code>2 * pi * radius</code>.
+                    Create a program that asks the user for the radius and then calculates the circumference using the
+                    given radius. Java already contains the value of pi in the <code>Math.PI</code> variable, which you
+                    can use in your calculation.</p>
 
 <pre>
-Type the Radius: <font color="red">20</font>
+Type the radius of the circle: <font color="red">20</font>
 
 Circumference of the circle: 125.66370614359172
 </pre>
@@ -938,11 +933,13 @@ Circumference of the circle: 125.66370614359172
                 <div class="tehtava">
                     <h3>Bigger number</h3>
 
-                    <p>When you write Math. (that is, Math followed by a dot) in NetBeans, it shows you a bunch of
-                    ready-made mathematical calculations, for example, <code>Math.cos(10)</code> calculates the cosine
-                    of number 10. Try to find a suitable tool to complete the following programming exercise! If you
-                    cannot find anything suitable or do not know how to do this exercise, you can skip this
-                    immediately. We will focus on this later in the course.</p>
+                    <p>Create a program that asks the user for two integers and then prints the larger of the two.</p>
+
+                    <p><b>Tip:</b> When you write <code>Math.</code> (that is, Math followed by a dot) in NetBeans, it
+                    shows you a bunch of available mathematical calculations. For example, <code>Math.cos(10)</code>
+                    calculates the cosine of the number 10. Try to find a suitable tool in <code>Math</code> to
+                    complete this excerise! If you cannot find anything suitable or do not know how to do this
+                    exercise, you should skip exercise for now. We will focus on this later on in the course.</p>
 
 <pre>
 Type a number: <font color="red">20</font>
@@ -972,14 +969,13 @@ Matti and Arto are 26 years old in total.
                 <div class="tehtava">
                     <h3 class="req">NHL statistics, part1</h3>
 
-                    <p>A ready-made component <code>NHLStatistics</code> comes with the exercise files for this
-                    assignment and you will find it in NetBeans. With the component you can fetch and see NHL
-                    players' score data, including matches they played in, goals and assists they have made, points
-                    they have earned and penalties they have received.</p>
+                    <p>A ready-made component <code>NHLStatistics</code> is included along with the exercise files for
+                    this excercise. It can be used to fetch and see NHL players' score data, including their number of
+                    played games, goals, assists, points, and penalty amount.</p>
 
-                    <p>The main program imports, in other words takes the component into use, by adding the following
-                    line at the beginning of the file: <code>import nhlstats.NHLStatistics;</code>. In the next example
-                    we print the top ten players judging by the points they have received:</p>
+                    <p>The main program imports (i.e. enables the use of) the component by adding the following line to
+                    the beginning of the file: <code>import nhlstats.NHLStatistics;</code>. The next example prints the
+                    top 10 players based on points:</p>
 
 <pre class="sh_java">
 import java.util.Scanner;
@@ -996,7 +992,7 @@ public class Mainprogram {
 }
 </pre>
 
-                    <p>That will print (this was the situation on the 9th of January 2012):</p>
+                    <p>It will print (this was the situation on the 9th of January 2012):</p>
 
 <pre>
 Top ten by points
@@ -1012,16 +1008,15 @@ Jordan Eberle          EDM        41 17 + 26= 43   6
 Jason Pominville       BUF        41 14 + 29= 43   8
 </pre>
 
-                    <p>The information that is printed about a player includes: name, abbreviation of the club,
-                    matches, assists, points and penalties.</p>
+                    <p>The name, abbreviation of the club, matches played, assists, points and penalties of players
+                    are printed.</p>
 
                     <p>The first command <code>NHLStatistics.sortByPoints()</code> sorts the list of NHL players by the
-                    points they have gained. The second command <code>NHLStatistics.top(10);</code> prints the ten
+                    points they have gathered. The second command <code>NHLStatistics.top(10);</code> prints the ten
                     first players from the list. Any integer can be given as a parameter.</p>
 
                     <p>Similarly the players can be printed ordered by the goals or serves they have made, or by
-                    penalty minutes they have been given. First we call the command that sorts the players into the
-                    order we want. Those commands are:</p>
+                    penalty minutes they have been given. First, we call the command to sort the players:</p>
 
 <pre class="sh_java">
 NHLStatistics.sortByPoints();     // orders the players by points
@@ -1030,58 +1025,51 @@ NHLStatistics.sortByAssists();    // orders the players by assists
 NHLStatistics.sortByPenalties();  // orders the players by penalty minutes
 </pre>
 
-                    <p>After that the players are printed with the command <code>top</code>, giving the number of
-                    players to be printed as a parameter.</p>.
+                    <p>After that the players are printed with the command <code>top</code> using the number of players
+                    to be printed as its parameter.<br></p>
 
-                    <p>It is also possible to use the component to ask for the statistics of a certain player:</p>
-
-<pre class="sh_java">
-NHLStatistics.searchByPlayer("Jaromir Jagr");   // prints the statistics of Jaromir Jagr
-NHLStatistics.searchByPlayer("Koivu");          // prints the statistics of Mikko and Saku Koivu
-NHLStatistics.searchByPlayer("Teemu");          // prints the statistics of all players named Teemu
-</pre>
-
-                    <p>And of course the component knows how to print the statistics of all players of a club:</p>
+                    <p>It is also possible to use the component to request the the statistics of a certain player:</p>
 
 <pre class="sh_java">
-NHLStatistics.teamStatistics("NYR");            // Statistics of New York Rangers
+NHLStatistics.searchByPlayer("Jaromir Jagr");  // prints the statistics of Jaromir Jagr
+NHLStatistics.searchByPlayer("Koivu");         // prints the statistics of Mikko Koivu and Saku Koivu
+NHLStatistics.searchByPlayer("Teemu");         // prints the statistics of all players named Teemu
 </pre>
 
-                    <p>The club statistics will print in the order, into which the statistics have been set in the
-                    previous called command <code>sortBy...()</code>.</p>
+                    <p>The component can also print the statistics of all players in a club:</p>
 
-                    <p>The name of the club must be given using the official three-letter abbreviation. You can check
-                    <a href="http://everything2.com/title/Ice+hockey+acronyms+and+abbreviations">the list of
-                    abbreviations here for example</a>. The statistics component prints a list for you of the
-                    abbreviations it uses if you try to ask for the statistics of an unrecognizable club.</p><!--
-Create a program to the main program body, kääntäjä korjasi: Create a program the main program body. Oma ehdotus: Create the following program and place it into the main program body -->
+<pre class="sh_java">
+NHLStatistics.teamStatistics("NYR");  // Statistics of New York Rangers
+</pre>
 
-                    <p><strong>Create the following program and place it into the main program body. The listed
-                    requirements must be made in exactly the same order as they are listed here. Commands should follow
-                    each other and you must not delete any part of the program.</strong></p>
+                    <p>The order of the printed club statistics can be changed using a <code>sortBy...()</code>
+                    first.</p>
+
+                    <p>The name of the club must be given using the official three letter abbreviation. You can check
+                    the abbreviations <a href="http://everything2.com/title/Ice+hockey+acronyms+and+abbreviations">here
+                    </a>, for example. The statistics component prints a list of the available abbreviations if you
+                    request the statistics of an invalid club.</p><
+
+                    <p><strong>Create a program that does the following tasks into the main program body. The tasks
+                    must be done in exactly the same order as listed below. Do the tasks in the program body one after
+                    another without deleting tasks you have already done.</strong></p>
+
+                    <p><b>Note:</b> When you first run the program, the execution might take a while because the
+                    information is downloaded from the internet. Execution should be quick after the first run.</p>
 
                     <p>The program must do the following:</p>
 
                     <ul>
                         <li>Print the top ten players based on goals</li>
-
-                        <li>Print the top 25 players based on penalties they received</li>
-
+                        <li>Print the top 25 players based on penalty amounts</li>
                         <li>Print the statistics for Sidney Crosby</li>
-
-                        <li>Print the statistics for Philadelphia Flyers (PHI)</li>
-
-                        <li>Note the order the players will be printed in and why that might be!</li>
-
-                        <li>Print the players in Anaheim Ducks (ANA) with the most points</li>
+                        <li>Print the statistics for Philadelphia Flyers (abbreviation: PHI). Note in which order the
+                        players are printed in and why that might be!</li>
+                        <li>Print the players in Anaheim Ducks (abbreviation: ANA) ordered by points</li>
                     </ul>
 
-                    <p>Please note that when you first run the program, the execution might take a while. That is
-                    because the server giving out the statistics information might be sleeping and waking it up takes
-                    some time. After the first run the execution should be quick.</p>
-
-                    <p>After you have sent the assignment to evaluation and the exercise robot has accepted your
-                    solution, you can alter the code as you wish!</p>
+                    <p>After you have sent the exercise for evaluation it has has been successfully submitted, you can
+                    play with the code as you wish!</p>
                 </div>
             </div>
 

@@ -201,7 +201,7 @@ System.out.print(" and all the people of the world."); // We print more text to 
             </ul>
 
             <p>The printed text can contain both traditional characters and special characters. The most important
-            special character is <code>\n</code>, which makes a line break. There are also other <a href=
+            special character is <code>\n</code>, which stands for a line break. There are also other <a href=
             "http://en.wikipedia.org/wiki/Escape_character" title=
             "Escape character - Wikipedia, the free encyclopedia">special characters</a>.</p>
 
@@ -209,7 +209,7 @@ System.out.print(" and all the people of the world."); // We print more text to 
 System.out.println("First\nSecond\nThird");
 </pre>
 
-            <p>When executed, the example above prints :</p>
+            <p>When executed, the example above prints:</p>
 
 <pre>
 First
@@ -219,7 +219,7 @@ Third
 
             <h2>Main program body</h2>
 
-            <p>The body of the program named “Example” is the following.</p>
+            <p>The body for a the program named "Example" as follows:</p>
 
 <pre class="sh_java">
 public class Example {
@@ -229,12 +229,12 @@ public class Example {
 }
 </pre>
 
-            <p>The program is written in a text file having the same name as the program and the ending .java. The
-            program named <i>“Example”</i> has to be located in a file named <code>Example.java</code>.</p>
+            <p>The program is stored in a text file named after the program with the <i>.java</i> extension. For a
+            program named <i>Example</i>, the file should be named <code>Example.java</code>.</p>
 
-            <p>The right place in the program body to write commands in is marked above with <i>// program code</i>.
-            During the first week we use only that area in the program body. When we want the program to execute
-            commands like printing, we need to write those commands into the program body. For example:
+            <p>The execution of the program begins at the part marked with the <i>// program code</i> comment above.
+            During our first week of programming, we will limit ourselves to this part. When we are talking about
+            commands such as printing, we need to write the commands into the program body. For example:
             <code>System.out.print("Text to be printed");</code></p>
 
 <pre class="sh_java">
@@ -245,32 +245,46 @@ public class Example {
 }
 </pre>
 
-            <p>From now on the main program body will be omitted from the examples.</p>
+            <p>From this point on, the main program body will be omitted from the examples.</p>
 
-            <div>
-                <p><strong>Let us start!</strong></p>
+            <h2>Getting to know your development environment</h2>
 
-                <p>You are now starting to actually do the exercises.</p>
+            <p>Programming these days takes place in development environments almost without exceptions. The
+            development environment provides several tools and features to assist the programmer. Although the
+            development environment does not write the program on behalf of the programmer, it contains several handy
+            features such as hinting about mistakes in code and assisting the programmer to visualize the structure
+            of the program.</p>
 
-                <p>The exercises will be done in the NetBeans development environment. The guide on how to start with
-                NetBeans is <a href="netbeans-english.html">here</a>. Before you know what you are doing, try to
-                <b>follow the example strictly step by step</b>. Most of the following exercise assignments include the
-                information on what the program should print to the screen when it works correctly. If the assignment
-                seems unclear, tell us and we will clarify it! Unclear assignments are always the teacher's
-                fault.</p>
+            <div class="help">
+                <p>For this course, we will use the <a href="http://netbeans.org/">NetBeans</a> development
+                environment. A guide for using NetBeans is available
+                    <!-- BEGIN MINI MOOC SNIP-->
+                    <a class="ahy" href="netbeans-english.html">here</a> 
+                    <!-- END MINI MOOC SNIP-->
+                    <!-- BEGIN MINI SNIP-->
+                    <a class="amooc" href="/ohjelmointi/ilmoittautuminen-ja-alkutoimet#nb">here</a>
+                    <!-- END MINI SNIP-->
+                </p>
             </div>
 
-            <div class="tehtavat">
-                <p>In the following exercises we are practicing NetBeans use and printing text to the screen.</p>
+            <p>Until you become familiar with NetBeans, follow the guides and steps precisely. Most of the following
+            exercises show what needs to be printed to the screen for the program to function correctly.</p>
 
-                <p><big><b>Remember to read the <a>guide on using NetBeans</a> first before you continue!</b></big></p>
+            <p><b>Note:</b> Do not do the examples by writing code and then clicking the test button. You should also
+            execute the code manually (green arrow) and observe the result on the screen. This is especially useful if
+            an exercise fails to pass the tests.</p>
+
+            <div class="tehtavat">
+                <p>In the following exercises, we will practice using NetBeans and printing text to the screen.</p>
+
+                <p><b>Remember to read the <a>guide on using NetBeans</a> before you continue!</b></p>
 
                 <div class="tehtava">
                     <h3 class="req">Name</h3>
 
                     <p>Create a program that prints your name to the screen.</p>
 
-                    <p>The program output could be as follows:</p>
+                    <p>The program output should resemble the following:</p>
 
 <pre>
 Jane Doe
@@ -284,7 +298,6 @@ Jane Doe
 
 <pre>
 Hello world!
-
 (And all the people of the world)
 </pre>
                 </div>
@@ -305,10 +318,10 @@ Hello world!
 </pre>
                 </div>
 
-                <p><b>NOTE:</b> You probably wrote <code>System.out.println("...")</code> quite a few times.
+                <p><b>Note:</b> You probably wrote <code>System.out.println("...")</code> quite a few times.
                 Try to type only <i>sout</i> on an empty line in NetBeans instead and then press the <a href=
-                "http://en.wikipedia.org/wiki/Tab_key">tabulator key</a>. What happened? This small shortcut should
-                save a lot of your time in the future!</p>
+                "http://en.wikipedia.org/wiki/Tab_key">tab key</a>. What happened? This tip will save a lot of your
+                time in the future!</p>
             </div>
 
             <h2 id="muuttuja_ja_sijoitus">Variables and assignment</h2>
@@ -316,23 +329,23 @@ Hello world!
             <h3>Variables and data types</h3>
 
             <p>A <em>variable</em> is one of the most important concepts in computer programming. A variable should be
-            imagined as a box, into which you can store information. The information stored in a variable always has a
-            data type. Those data types include, for example, text (<em>String</em>), whole numbers (<em>int</em>),
-            decimal numbers (<em>double</em>) and truth value (<em>boolean</em>). A <em>value</em> can be assigned to a
-            variable using the equals sign (<code>=</code>).</p>
+            imagined as a box in which you can store information. The information stored in a variable always has a
+            type. These types include text (<em>String</em>), whole numbers (<em>int</em>), decimal numbers
+            (<em>double</em>), and truth value (<em>boolean</em>). A <em>value</em> can be assigned to a variable using
+            the equals sign (<code>=</code>).</p>
 
 <pre class="sh_java">
 int months = 12;
 </pre>
 
-            <p>In the example above we have an assignment sentence, in which we assign the value 12 to the variable
-            named <em>months</em>, that is of data type whole number (<em>int</em>). The sentence can be read aloud as
-            “the variable <em>months</em> is assigned the <em>value</em> 12”.</p>
+            <p>In the statement above, we assign the value 12 to the variable named <em>months</em> whose data type is
+            whole number (<em>int</em>). The statement is read as "the variable <em>months</em> is assigned the
+            <em>value</em> 12".</p>
 
-            <p>The value of the variable can be added to a string with the plus <code>+</code> sign as we learn in the
-            next example.</p><!--        
-<h4>Esimerkkejä muuttujista ja tietotyypeistä</h4>
--->
+            <p>The value of the variable can be appended to a string with the plus <code>+</code> sign as shown in the
+            following example.</p>
+
+            <!-- <h4>Esimerkkejä muuttujista ja tietotyypeistä</h4> -->
 
 <pre class="sh_java">
 String text = "includes text";
@@ -355,8 +368,8 @@ The variable's type is decimal number. Its value is 3.141592653
 The variable's type is truth value. Its value is true
 </pre>
 
-            <p>The variable holds its value until it is assigned a new one. Note that the variable type is written only
-            when the variable is first introduced in the program. After that we can use the variable with its name.</p>
+            <p>A variables holds its value until it is assigned a new one. Note that the variable type is written only
+            when the variable is first declared in the program. After that we can use the variable by its name.</p>
 
 <pre class="sh_java">
 int wholeNumber = 123;
@@ -366,7 +379,7 @@ wholeNumber = 42;
 System.out.println("The variable's type is whole number. Its value is  " + wholeNumber);
 </pre>
 
-            <p>What is printed:</p>
+            <p>The output is:</p>
 
 <pre>
 The variable's type is whole number. Its value is 123

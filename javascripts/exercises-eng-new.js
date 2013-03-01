@@ -30,47 +30,46 @@ function showAll(){
 var Exercises = {
 
     numberExercises: function(firstExerciseIndex) {
-				//var toc_div = $('#tehtavat_toc');
-				//var ol_element = $('<ol start="' + firstExerciseIndex + '"/>');
-				
-				var exerciseNum = firstExerciseIndex;
-				var subExerciseNum = 1;
-				var weekNum = -1;
+        //var toc_div = $('#tehtavat_toc');
+        //var ol_element = $('<ol start="' + firstExerciseIndex + '"/>');
+        
+        var exerciseNum = firstExerciseIndex;
+        var subExerciseNum = 1;
+        var weekNum = 0;
 
 
-				var toc_div_new = $('#tehtavat_toc2');
+        var toc_div_new = $('#tehtavat_toc2');
 
 
-				$('section.viikkoraja').each(function(){  	
-					weekNum++;
-					  if (weekNum != 0){
-                toc_div_new.append("<a class='toc_title viikko"+weekNum+"' onclick=\"$('div.viikko"+weekNum+"').toggle()\" >Week "+weekNum+"</a></br>");
-    						toc_div_new.append("<div class=\"toc_viikko viikko"+weekNum+"\">");
-					  }
-					$(this).find('.tehtava > h3').each(function() {
-							subExerciseNum = 1;
-			        var txt = $(this).text();
-			        
-					    txt = ('Exercise '+exerciseNum+': '+txt);
-					    $(this).hide();
-					    
-			        $(this).parent().before("<p class=\"heading\" id=\"e"+ exerciseNum+"\" >"+txt+"</p>");
-			     		$(this).attr('id', 'e'+exerciseNum);
-					    
-					    var item = $('<span><a href="#e'+exerciseNum+'">'+txt+'</a></span><br>');
-					    $("div.viikko"+weekNum).append(item);
-					    
-					    $(this).nextUntil('h2, h3', 'h4').each(function() {
-						
-								if($(this).is('h4')) {
-								    var txt = $(this).text();
-								    $(this).text('Exercise '+exerciseNum+'.'+subExerciseNum+': '+txt);
-								    subExerciseNum++;
-								}
-							    });
+        $('div.viikkoraja-mooc').each(function(){   
+          weekNum++;
+          toc_div_new.append("<a class='toc_title viikko"+weekNum+"' onclick=\"$('div.viikko"+weekNum+"').toggle()\" >Exercises</a></br>");
+            toc_div_new.append("<div class=\"toc_viikko viikko"+weekNum+"\">");
+          
+          $(this).find('.tehtava > h3').each(function() {
+              subExerciseNum = 1;
+              var txt = $(this).text();
+              
+              txt = ('Tehtävä '+exerciseNum+': '+txt);
+              $(this).hide();
+              
+              $(this).parent().before("<p class=\"heading\" id=\"e"+ exerciseNum+"\" >"+txt+"</p>");
+              $(this).attr('id', 'e'+exerciseNum);
+              
+              var item = $('<span><a href="#e'+exerciseNum+'">'+txt+'</a></span><br>');
+              $("div.viikko"+weekNum).append(item);
+              
+              $(this).nextUntil('h2, h3', 'h4').each(function() {
+            
+                if($(this).is('h4')) {
+                    var txt = $(this).text();
+                    $(this).text('Exercise '+exerciseNum+'.'+subExerciseNum+': '+txt);
+                    subExerciseNum++;
+                }
+                  });
 
-					    exerciseNum++;
-				});});
+              exerciseNum++;
+        });});
     }
 }
-	
+  

@@ -2417,7 +2417,7 @@ System.out.println("Type your age ");
 while( true ) {   
   int age = Integer.parseInt(reader.nextLine());
 
-  if ( age &gt;= 5 && age &lt;= 85 ) {   // age between 5 AND 85
+  if ( age &gt;= 5 &amp;&amp; age &lt;= 85 ) {   // age between 5 AND 85
     break;                              // ending the repetition
   }
 
@@ -9127,12 +9127,12 @@ public class MyDate {
         }
 
         // if the years are the same, we'll compare the months
-        if ( this.year == compared.year && this.month &lt; compared.month ) {
+        if ( this.year == compared.year &amp;&amp; this.month &lt; compared.month ) {
             return true;
         }
 
         // years and months the same, we'll compare the days
-        if ( this.year == compared.year && this.month == compared.month &&
+        if ( this.year == compared.year &amp;&amp; this.month == compared.month &amp;&amp;
                 this.day &lt; compared.day ) {
             return true;
         }
@@ -10012,12 +10012,12 @@ public class MyDate {
         }
 
         // if the years are the same, we'll compare the months
-        if ( this.year == compared.year && this.month &lt; compared.month ) {
+        if ( this.year == compared.year &amp;&amp; this.month &lt; compared.month ) {
             return true;
         }
 
         // years and months the same, we'll compare the days
-        if ( this.year == compared.year && this.month == compared.month &&
+        if ( this.year == compared.year &amp;&amp; this.month == compared.month &amp;&amp;
                 this.day &lt; compared.day ) {
             return true;
         }

@@ -219,7 +219,7 @@ Third
 
             <h2>Main program body</h2>
 
-            <p>The body for a the program named "Example" as follows:</p>
+            <p>The body for a program named "Example" as follows:</p>
 
 <pre class="sh_java">
 public class Example {
@@ -386,29 +386,29 @@ The variable's type is whole number. Its value is 123
 The variable's type is whole number. Its value is 42
 </pre>
 
-            <h3>A variable's data type holds</h3>
+            <h3>Variable data types are immutable</h3>
 
-            <p>When a variable has once been given a data type, it will never change. For example a text variable can
-            not turn into an integer variable, and integer values cannot be assigned to that variable.</p>
+            <p>When a variable is declared with a data type, it cannot be changed later. For example, a text variable
+            cannot be changed into an integer variable and it cannot be assigned integer values.</p>
 
 <pre class="sh_java">
 String text = "yabbadabbadoo!";
 text = 42; // Does not work! :(
 </pre>
 
-            <p>We can assign decimal number variables values that are whole numbers, because whole numbers are also
+            <p>Whole numbers values can be assigned to decimal number variables, because whole numbers are also
             decimal numbers.</p>
 
 <pre class="sh_java">
 double decimalNumber = 0.42;
-decimalNumber = 1; // Does work! :)
+decimalNumber = 1; // Works! :)
 </pre>
 
             <div class="tehtavat">
                 <div class="tehtava">
-                    <h3 class="req">The changing variables</h3>
+                    <h3 class="req">Varying variables</h3>
 
-                    <p>You will get into your NetBeans a program that prints the following.</p>
+                    <p>The exercise file initially contains a program which prints:</p>
 
 <pre>
 Chickens:
@@ -442,164 +442,153 @@ Zetor
                 </div>
             </div>
 
-            <h3>Allowed and descriptive variable name</h3>
+            <h3>Allowed and descriptive variable names</h3>
 
-            <p>There are certain regulations on how we are allowed to name our variables. Even though using umlauts is
-            allowed, it is better not to use those, because problems might arise with <a href=
+            <p>There are certain limitations on the naming of our variables. Even though umlauts, for example, can
+            can be used, it is better to avoid them, because problems might arise with <a href=
             "http://en.wikipedia.org/wiki/Character_encoding" title=
-            "Character encoding - Wikipedia, the free encyclopedia">character encoding</a>. Instead it is advised to
-            <em>change A characters with dots into regular A characters and so on</em>.</p>
+            "Character encoding - Wikipedia, the free encyclopedia">character encoding</a>. For example, it is
+            reccomended to use A instead of Ä.</p>
 
-            <p>Variable names are not allowed to include certain special characters like an exclamation mark (!). A
-            space character is also not allowed, because it separates the command into multiple parts. It is a good
-            idea to replace the space character using a <em><a href="http://fi.wikipedia.org/wiki/CamelCase" title=
-            "CamelCase – Wikipedia">camelCase</a></em> writing style. The name camelCase comes from the word's
-            visual form that rises in the middle like a camel's back. <b>Notice!</b> Variable names are always
-            written with a lowercase first letter:</p>
+            <p>Variable names must not contain certain special characters like exclamation marks (!). Space characters
+            cannot be used, either, as it is used to separate commands into multiple parts. It is a good idea to
+            replace the space character using a <em><a href="http://fi.wikipedia.org/wiki/CamelCase" title=
+            "CamelCase – Wikipedia">camelCase</a></em> notation. <b>Note:</b> The first character is always written
+            in lower case when using the camel case notation.</p>
 
 <pre class="sh_java">
 int camelCaseVariable = 7;
 </pre>
 
-            <p>Variable names can contain numbers, as long as the name does not start with one. Variable names need to
-            have at least one alphabetic letter, which means that the name cannot contain only numbers.</p>
+            <p>Variable names can contain numbers as long it does not start with one. Variable names cannot be composed
+            solely of numbers, either.</p>
 
 <pre class="sh_java">
 int 7variable = 4; // Not allowed!
 int variable7 = 4; // A valid, but not descriptive variable name
 </pre>
 
-            <p>Variable names need to be unique in the program. It means that we can use a name only once. We are also
-            not allowed to use command names like <code>System.out.print</code> as our variable names.</p>
+            <p>Variable names that have been defined before cannot be used. Command names such as
+            <code>System.out.print</code> cannot be used, either.</p>
 
 <pre class="sh_java">
 int camelCase = 2;
 int camelCase = 5; // Not allowed, the variable camelCase is already defined!
 </pre>
 
-            <p>It is strongly recommended that a variable is named by its usage. It helps people to understand why and
-            when the variable is used without having to find out what the variable does by reading comments or thinking
-            hard. On this course the <strong>variable names have to be descriptive</strong>.</p>
+            <p>It is strongly recommended to name variables such that their purpose can be understood without comments
+            and without thinking. Variable names used in this course <strong>must</strong> be descriptive.</p>
 
-            <h4>Good variable names</h4>
-
+            <h4>Valid variable names</h4>
             <ul>
                 <li>lastDay = 20</li>
-
                 <li>firstYear = 1952</li>
-
                 <li>name = "Matti"</li>
             </ul>
 
-            <h4>Bad or disallowed variable names</h4>
-
+            <h4>Invalid variable names</h4>
             <ul>
                 <li>last day of the month = 20</li>
-
                 <li>1day = 1952</li>
-
-                <li>lookout! = 1910</li>
-
+                <li>watchout! = 1910</li>
                 <li>1920 = 1</li>
             </ul>
 
             <h2 id="laskentaa">Calculation</h2>
 
             <p>The calculation operations are pretty straightforward: <code>+</code>, <code>-</code>, <code>*</code>
-            and <code>/</code>. A more special operation is <code>%</code>, which is used to calculate the remainder of
-            a division and is called modulo. The order of operations is also pretty straightforward: the operations are
+            and <code>/</code>. A more peculiar operation is the modulo operation <code>%</code>, which calculates the
+            remainder of a division. The order of operations is also pretty straightforward: the operations are
             calculated from left to right taking the brackets into account.</p>
 
 <pre class="sh_java">
-int first = 2; // variable of whole number type is assigned the value 2
-int second = 4; // variable of whole number type is assigned the value 4
-int sum = first + second;  // variable of whole number type is assigned the value of first + second (that means 2 + 4)
+int first = 2;   // variable of whole number type is assigned the value 2
+int second = 4;  // variable of whole number type is assigned the value 4
+int sum = first + second;  // variable of whole number type is assigned the value of first + second (which means 2 + 4)
 
 System.out.println(sum); // the value of the variable sum is printed
 </pre>
 
 <pre class="sh_java">
-int calcWithBrackets = (1 + 1) + 3 * (2 + 5);   // 23
-int calcWithoutBrackets = 1 + 1 + 3 * 2 + 5;       // 13
+int calcWithBrackets = (1 + 1) + 3 * (2 + 5);  // 23
+int calcWithoutBrackets = 1 + 1 + 3 * 2 + 5;   // 13
 </pre>
 
             <p>The bracket example above can also be done step by step.</p>
 
 <pre class="sh_java">
 int calcWithBrackets = (1 + 1);
-calcWithBrackets = calcWithBrackets + 3 * (2 + 5)   // 32
+calcWithBrackets = calcWithBrackets + 3 * (2 + 5);  // 32
 
 int calcWithoutBrackets = 1 + 1;
 calcWithoutBrackets = calcWithoutBrackets + 3 * 2;
-calcWithoutBrackets = calcWithoutBrackets + 5;        // 13
+calcWithoutBrackets = calcWithoutBrackets + 5;      // 13
 </pre>
 
-            <p>Calculation operations can be executed almost anywhere in the program code.</p>
+            <p>Calculation operations can be used almost anywhere in the program code.</p>
 
 <pre class="sh_java">
 int first = 2;
 int second = 4;
 
-System.out.println(first+second);
+System.out.println(first + second);
 System.out.println(2 + second - first - second);
 </pre>
 
-            <h3>Floating point numbers alias decimal numbers</h3>
+            <h3>Floating point numbers (decimal numbers)</h3>
 
-            <p>Division of whole numbers is a bit more tricky, as is the remainder in this context. A floating point
-            number (decimal number) and integer (whole number) often get mixed up. If all the variables in a
+            <p>Calculating the division and remainder of whole numbers is a little trickier. A floating point number
+            (decimal number) and integer (whole number) often get mixed up. If all the variables in a
             calculation operation are integers, the end result will also be an integer.</p>
 
 <pre class="sh_java">
-int result = 3 / 2;      // result is 1 (integer), because 3 and 2 are integers as well
+int result = 3 / 2;  // result is 1 (integer) because 3 and 2 are integers as well
 </pre>
 
 <pre class="sh_java">
 int first = 3:
 int second = 2;
-double result = first / second;      // the result is again 1, because first and second are integers
+double result = first / second;  // the result is again 1 because first and second are integers
 </pre>
 
-            <p>The remainder is discovered using the remainder operation (% alias modulo). For example, the remainder
-            of calculation <code>7 % 2</code> is 1.</p>
+            <p>The remainder can be calculated using the remainder operation (<code>%</code>). For example, the
+            calculation <code>7 % 2</code> yields 1.</p>
 
 <pre class="sh_java">
-int remainder = 7 % 2; // remainder is 1 (integer)
+int remainder = 7 % 2;  // remainder is 1 (integer)
 </pre>
 
             <p>If either the dividend or the divider (or both!) is a floating point number (decimal number) the end
             result will also be a floating point number.</p>
 
 <pre class="sh_java">
-double whenDividentIsFloat = 3.0 / 2; //result will be: 1.5
-double whenDividerIsFloat = 3 / 2.0;    //result will be: 1.5
+double whenDividendIsFloat = 3.0 / 2;  // result is: 1.5
+double whenDividerIsFloat = 3 / 2.0;   // result is: 1.5
 </pre>
 
-            <p>It is possible to turn an integer into a floating point number if needed. It is done by adding a type
-            exchange operation <code>(double)</code> in front of it:</p>
+            <p>If needed, integers can be converted to floating point using the type cast operation
+            <code>(double)</code> as follows:</p>
 
 <pre class="sh_java">
 int first = 3;
 int second = 2;
-double result1 = (double)first / second;  //result will be: 1.5
+double result1 = (double)first / second;  // result is: 1.5
 
-double result2 = first / (double)second;  //result will be: 1.5
+double result2 = first / (double)second;  // result is: 1.5
 
-double result3 = (double)(first / second);  //result will be: 1
+double result3 = (double)(first / second);  // result is: 1
 </pre>
 
-            <p>In the last example calculation, the result is rounded incorrectly, because the calculation between the
-            integers (first / second) is done before their types are exchanged from integers to floating point
-            numbers.</p>
+            <p>In the last example calculation, the result is rounded incorrectly because the calculation between the
+            integers is done before the type cast to a floating point number.</p>
 
-            <p>If the quotient is assigned as a value to a variable of integer type, then the result will be an integer
-            as well.</p>
+            <p>If the quotient is assigned to a variable of integer type, the result will be an integer as well.</p>
 
 <pre class="sh_java">
-int quotientIntegerBecauseTypeIsInteger = 3.0 / 2; // quotient is automatically integer: 1
+int integerResultBecauseTypeIsInteger = 3.0 / 2;  // quotient is automatically integer: 1
 </pre>
 
-            <p>The next example will print “1.5”, because the dividend is transformed into a floating point number by
+            <p>The next example will print "1.5" because the dividend is transformed into a floating point number by
             multiplying it with a floating point number (1.0 * 3 = 3.0) before the division.</p>
 
 <pre class="sh_java">
@@ -620,33 +609,32 @@ double quotient = dividend / divider * 1.0;
 System.out.println(quotinent);
 </pre>
 
-            <div class="tehtavat">
-                <p><big>Make sure that, starting now, you will give the variables names that follow good conventions as
-                stated in the examples.</big></p>
+            <p><big>From now on, make sure that you name your variables that follow good conventions like the variables
+            in the examples above.</big></p>
 
+            <div class="tehtavat">
                 <div class="tehtava">
-                    <h3 class="req">Seconds of the year</h3>
+                    <h3 class="req">Seconds in an year</h3>
 
                     <p>Create a program that counts how many seconds there are in a year. You can assume that a year
-                    consists of 365 days (ergo the year is not a leap year).</p>
+                    consists of 365 days (therefore the year is not a leap year).</p>
 
-                    <p>The program prints the following:</p>
+                    <p>The program should print the following:</p>
 
 <pre>
 There are X seconds in a year.
 </pre>
 
-                    <p>X will be replaced with the calculation your program makes.</p>
+                    <p>X should be replaced with the calculation of your program.</p>
                 </div>
             </div>
 
             <h2 id="katenointi">Concatenation or combining strings</h2>
 
-            <p>Let us take a closer look on putting strings together with a <code>+</code> operator.</p>
+            <p>Let us take a closer look on combining strings with the <code>+</code> operator.</p>
 
-            <p>If the <code>+</code> operator is used between two strings, a new string is created. The new string
-            includes the previous two strings combined. Notice the clever use of a space character as a part of the
-            "variables"!</p>
+            <p>If the <code>+</code> operator is used between two strings, a new string is created with the two strings
+            combined. Note the clever use of a space character as a part of the "variables" below!</p>
 
 <pre class="sh_java">
 String greeting = "Hi ";
@@ -662,28 +650,28 @@ System.out.println(sentence);
 Hi John, and goodbye!
 </pre>
 
-            <p>If the <code>+</code> operator is used to combine a string and, for example, an integer, a new string is
-            created as well. In that string the integer, let us say <code>2</code>, is transformed into string (text)
-            "2" and then combined with the original string.</p>
+            <p>If a string is on either side of the <code>+</code> operator, the other side is converted to a string
+            and a new string is created. For example, the integer <code>2</code> will be converted into the string
+            "2" and then combined with the other string.</p>
 
 <pre class="sh_java">
 System.out.println("there is an integer --&gt; " + 2);
-System.out.println( 2 + " &lt;-- there is an integer");
+System.out.println(2 + " &lt;-- there is an integer");
 </pre>
 
             <p>What we learned earlier about the order of operations is still valid:</p>
 
 <pre class="sh_java">
-System.out.println("Four: " + (2+2));
-System.out.println("But! Twentytwo: " + 2 + 2);
+System.out.println("Four: " + (2 + 2));
+System.out.println("But! Twenty-two: " + 2 + 2);
 </pre>
 
 <pre>
 Four: 4
-But! Twentytwo: 22
+But! Twenty-two: 22
 </pre>
 
-            <p>With this information we now possess, we can print out both text and values of variables:</p>
+            <p>Using this information, we can print a mix of strings and values of variables:</p>
 
 <pre class="sh_java">
 int x = 10;
@@ -693,14 +681,14 @@ System.out.println("variable x has the following value: " + x);
 int y = 5;
 int z = 6;
 
-System.out.println("y has the value of  " + y + " and z has the value of " + z);
+System.out.println("y has the value  " + y + " and z has the value " + z);
 </pre>
 
             <p>This program obviously prints:</p>
 
 <pre>
 variable x has the following value: 10
-y has the value of 5 and z has the value of 6
+y has the value 5 and z has the value 6
 </pre>
 
             <div class="tehtavat">

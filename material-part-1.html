@@ -963,7 +963,7 @@ Matti and Arto are 26 years old in total.
                 </div>
 
                 <div class="tehtava">
-                    <h3 class="req">NHL statistics, part1</h3>
+                    <h3 class="req">NHL statistics, part 1</h3>
 
                     <p>A ready-made component <code>NHLStatistics</code> is included along with the exercise files for
                     this excercise. It can be used to fetch and see NHL players' score data, including their number of
@@ -1416,56 +1416,78 @@ Grade: 5
                 <li><code>!condition</code> is true if the condition is false.</li>
             </ul>
 
-<pre class="sh_java">
-int year = 2012;
-int month = 1;
-
-System.out.println("Courses that begin now:");
-
-if ( year == 2012 &amp;&amp; month == 1 ) {
-  System.out.println("Introduction to Programming");
-}
-
-if ( year == 2012 &amp;&amp; month == 3 ) {
-  System.out.println("Advanced Course in Programming");
-}
-</pre>
-
-<pre>
-Courses that begin now:
-Introduction to Programming
-</pre>
+            <p>Below we will use the AND operation <code>&amp;&amp;</code> to combine two individual conditions in
+            order to check if the value of the variable is greater than 4 <strong>and</strong> less than 11 (i.e. in
+            the range 5 - 10).</p>
 
 <pre class="sh_java">
-System.out.println("Is the number between 5-10: ");
+System.out.println("Is the number between 5-10?");
 int number = 7;
 
-if ( number &gt; 4 &amp;&amp; number &lt; 11 ) {
-  System.out.println("YES! :)");
+if (number &gt; 4 &amp;&amp; number &lt; 11) {
+    System.out.println("Yes! :)");
 } else {
-  System.out.println("No it was not :(")
+    System.out.println("Nope :(")
 }
 </pre>
 
 <pre>
-Is the number between 5-10: 
-YES! :)
+Is the number between 5-10?
+Yes! :)
 </pre>
+
+            <p>Next up is the OR operation <code>||</code>, which will be used to check if the value is less than 0
+            <strong>or</strong> greater than 100. The condition evaluates to true if the value fulfills either
+            condition.</p>
 
 <pre class="sh_java">
-System.out.println("Is the number either 1, 50 or 100: ");
-int selection = 50;
+System.out.println("Is the number less than 0 or greater than 100?");
+int number = 145;
 
-if ( selection == 1 || selection == 50 || selection == 100 ) {
-  System.out.println("Yes! :)");
+if (number &lt; 0 || number &gt; 100) {
+    System.out.println("Yes! :)");
 } else {
-  System.out.println("No it was not :(")
+    System.out.println("Nope :(")
 }
 </pre>
 
 <pre>
-Is the number either 1, 50 or 100: 
+Is the number less than 0 or greater than 100?
 Yes! :)
+</pre>
+
+            <p>Now we will use the negation operation <code>!</code> to negate the condition:</p>
+
+<pre class="sh_java">
+System.out.println("Is the string equal to 'milk'?");
+String text = "water";
+
+if (!(text.equals("milk"))) {  // true if the condition text.equals("milk") is false
+    System.out.println("No!");
+} else {
+    System.out.println("Yes")
+}
+</pre>
+
+<pre>
+Is the text equal to 'milk'?
+No!
+</pre>
+
+            <p>For complicated conditions, we often need brackets:</p>
+
+<pre class="sh_java">
+int number = 99;
+
+if ((number &gt; 0 &amp;&amp; number &lt; 10) || number &gt; 100 ) {
+    System.out.println("The number was in the range 1-9 or it was over 100"); 
+} else {
+    System.out.println("The number was equal to or less than 0 or it was in the range 10-99");
+}
+</pre>
+
+<pre>
+The number was equal to or less than 0 or it was in the range 10-99
 </pre>
 
             <div class="tehtavat">
@@ -1473,7 +1495,7 @@ Yes! :)
                     <h3 class="req">Age check</h3>
 
                     <p>Create a program that asks for the user's age and checks that it is reasonable (at least 0
-                    and not over 120).</p>
+                    and at most 120).</p>
 
 <pre>
 How old are you? <font color="red">10</font>
@@ -1516,8 +1538,7 @@ Impossible!
                         </tr>
                     </table>
 
-                    <p>The program will show the user a personal message or a notification, if the username or password
-                    does not match.</p>
+                    <p>The program should check for the username and password as follows:</p>
 
 <pre>
 Type your username: <font color="red">alex</font>
@@ -1536,15 +1557,17 @@ Type your username: <font color="red">emily</font>
 Type your password: <font color="red">dog</font>
 Your username or password was invalid!
 </pre>
+
+                    <p><b>Note:</b> Remember that you cannot compare strings with the <code>==</code> operation!</p>
                 </div>
 
                 <div class="tehtava">
                     <h3>Leap year</h3>
 
-                    <p>A year is a leap year, if it is divisible by four. But if the year is divisible by 100, it is a
+                    <p>A year is a leap year if it is divisible by 4. But if the year is divisible by 100, it is a
                     leap year only when it is also divisible by 400.</p>
 
-                    <p>Create a program that checks whether a year is a leap year.</p>
+                    <p>Create a program that checks whether the given year is a leap year.</p>
 
 <pre>
 Type a year: <font color="red">2011</font>
@@ -1568,91 +1591,91 @@ The year is a leap year.
                 </div>
             </div>
 
-            <h2 id="toiston_alkeet">Introduction to repetition</h2>
+            <h2 id="toiston_alkeet">Introduction to loops</h2>
 
-            <p>A selection clause helps us make programs that act on different conditions, i.e. if the username and
-            password match, for example the program lets the user log in and otherwise it does not.</p>
+            <p>Conditional statements allow us to execute different commands based on the conditions. For example, we
+            can let the user login only if the username and password are correct.</p>
 
-            <p>In addition to conditions we also need repetitions, we need the program to keep asking the user to input
-            a username and password until a matching pair is given.</p>
+            <p>In addition to conditions we also need repetitions. We may, for example, need to keep asking the user
+            to input a username and password until a valid pair is entered.</p>
 
-            <p>The most simple repetition is endless repetition. The following program will print out the string <em>I
-            know how to program!</em> endlessly or "an infinite number of times":</p>
-
-<pre class="sh_java">
-  while ( true ) {
-    System.out.println("I know how to program!");
-  }
-</pre>
-
-            <p>In the above example the command <code>while( true )</code> makes the whole command block (i.e. the code
-            inside these braces <code>{}</code>) to be repeated infinitely.</p>
-
-            <p>Infinite repetition is not usually the behavior we want from a program. A repetition can be interrupted
-            using the command <code>break</code> for example.</p>
+            <p>The most simple repetition is an infinite loop. The following code will print out the string <em>I
+            can program!</em> forever or "an infinite number of times":</p>
 
 <pre class="sh_java">
-  while ( true ) {
-    System.out.println("I know how to program!");
-
-    System.out.print("Continue? (no quits)? ");
-    String command = reader.nextLine();
-    if ( command.equals("no") ) {
-      break;
-    }
-  }
-  System.out.println("Thank you and see you again!");
+while (true) {
+    System.out.println("I can program!");
+}
 </pre>
 
-            <p>Now the repetition goes forward like this: first the program prints <em>I know how to program!</em> and
-            after that the program will ask the user if it should continue. If the user answers <em>no</em>, the
-            command <code>break</code> is executed and it stops the repetition. Now the printing command is executed
-            and it prints <em>Thank you and see you again!</em></p>
+            <p>In the example above, the <code>while (true)</code> command causes the associated block (i.e. the code
+            between the braces <code>{}</code>) to be <em>looped</em> (or repeated) infinitely.</p>
 
-<pre>
-I know how to program!
-Continue? (no quits)?<font color="red">yeah</font>
-I know how to program!
-Continue? (no quits)? <font color="red">jawohl</font>
-I know how to program!
-Continue? (no quits)? <font color="red">no</font>
-Thank you and see you again!
-</pre>
-
-            <p>Many different things can be done inside a repetition. Next we introduce a simple calculator. The
-            calculator calculates based on commands that the user enters. If the command is <em>quit</em>, a
-            <code>break</code> command will be executed and the repetition ends. After that the program asks the user
-            to type two numbers. If the command was <em>sum</em> the program calculates the sum of the two numbers and
-            prints it. If the command was <em>difference</em>, the program calculates the difference of the two numbers
-            and prints it. If the command entered is something else, the program says that it does not recognize the
+            <p>We generally do not want an infinite loop. The loop can be interrupted using e.g. the <code>break</code>
             command.</p>
 
 <pre class="sh_java">
-  System.out.println("welcome to the calculator");
+while (true) {
+    System.out.println("I can program!");
 
-  while ( true ) {    
-    System.out.print("enter a command (sum, difference, quit): ");
+    System.out.print("Continue? ('no' to quit)? ");
     String command = reader.nextLine();
-    if ( command.equals("quit") ) {
-      break;
+    if (command.equals("no")) {
+        break;
+    }
+}
+
+System.out.println("Thank you and see you later!");
+</pre>
+
+            <p>Now the loop progresses like this: First, the program prints <em>I can program!</em>. Then, the program
+            program will ask the user if it should continue. If the user types in <em>no</em>, the <code>break</code>
+            command is executed and the loop is interrupted and <em>Thank you and see you again!</em> is printed.</p>
+
+<pre>
+I can program!
+Continue? ('no' to quit)?<font color="red">yeah</font>
+I can program!
+Continue? ('no' to quit)? <font color="red">jawohl</font>
+I can program!
+Continue? ('no' to quit)? <font color="red">no</font>
+Thank you and see you again!
+</pre>
+
+            <p>Many different things can be done inside a loop. Next we create a simple calculator, which performs
+            calculations based on commands that the user enters. If the command is <em>quit</em>, the
+            <code>break</code> command will be executed to end the loop. Otherwise two numbers are asked. Then, if the
+            initial command was <em>sum</em>, the program calculates and prints the sum of the two numbers. If the
+            command was <em>difference</em>, the program calculates and prints the difference of the two numbers. If
+            the command was something else, the program reports that the command was unknown.</p>
+
+<pre class="sh_java">
+System.out.println("welcome to the calculator");
+
+while (true) {
+    System.out.print("Enter a command (sum, difference, quit): ");
+    String command = reader.nextLine();
+    if (command.equals("quit")) {
+        break;
     }
 
     System.out.print("enter the numbers");
     int first = Integer.parseInt(reader.nextLine());
     int second = Integer.parseInt(reader.nextLine());
 
-    if ( command.equals("sum") ) {     
-      int sum = first+second;
-      System.out.println( "The sum of the numbers " + sum );
-    } else if ( command.equals("difference") ) {     
-      int difference = first-second;
-      System.out.println( "The difference of the numbers " + erotus );
-    } else {     
-      System.out.println( "Unknown command" );
+    if (command.equals("sum") ) {
+        int sum = first + second;
+        System.out.println( "The sum of the numbers is " + sum );
+    } else if (command.equals("difference")) {
+        int difference = first - second;
+        System.out.println("The difference of the numbers is " + erotus);
+    } else {
+        System.out.println("Unknown command");
     } 
 
-  }
-  System.out.println("thanks bye!");
+}
+
+System.out.println("Thanks, bye!");
 </pre><!-- screencast -->
 
             <div class="tehtavat">
@@ -1665,7 +1688,7 @@ Thank you and see you again!
 <pre>
 Type the password: <font color="red">turnip</font>
 Wrong!
-Type the password: <font color="red">rutabaga</font>
+Type the password: <font color="red">beetroot</font>
 Wrong!
 Type the password: <font color="red">carrot</font>
 Right!
@@ -1673,15 +1696,14 @@ Right!
 The secret is: jryy qbar!
 </pre>
 
-                    <p>Now we will create the program in three steps.</p>
+                    <p>The program will be done in three steps.</p>
 
                     <h4>Asking for the password</h4>
 
-                    <p>We have already defined a String variable named password, and set its value to carrot. You get
-                    it to your NetBeans with the exercise from the test server. Do not change the password! You should
-                    implement a feature, where the program asks the user to enter the password and then compares it
-                    with the value assigned to the variable <code>password</code>. Remember that there is a certain way
-                    to compare texts!!</p>
+                    <p>The initial exercise template defines the variable <code>String password</code> with a value of
+                    <code>carrot</code>. Do not change this password! You should make the program ask the user to enter
+                    a password and then compare it with the value in the variable <code>password</code>. Remember what
+                    that there is a special way to compare strings!</p>
 
 <pre>
 Type the password: <font color="red">turnip</font>
@@ -1694,21 +1716,21 @@ Right!
 </pre>
 
 <pre>
-Type the password: <font color="red">sweet potato</font>
+Type the password: <font color="red">potato</font>
 Wrong!
 </pre>
 
                     <h4>Asking for the password until the user gives the correct one</h4>
 
-                    <p>Change the program so that it asks the user to type a password until it gets the correct one.
-                    Implement the password query using a <code>while-true</code> repetition clause so that the only way
-                    to get out of the clause is giving a password that matches the one stored in the variable
-                    <code>password</code>.</p>
+                    <p>Modify the program so that it asks the user to type a password until it gets the correct one.
+                    Implement this using a <code>while-true</code> loop statement. The loop statement can be
+                    interrupted only if and only if the entered password matches the is equal to the value of the
+                    <code>password</code> variable.</p>
 
 <pre>
 Type the password: <font color="red">turnip</font>
 Wrong!
-Type the password: <font color="red">rutabaga</font>
+Type the password: <font color="red">beetroot</font>
 Wrong!
 Type the password: <font color="red">carrot</font>
 Right!
@@ -1717,7 +1739,7 @@ Right!
                     <h4>Secret message</h4>
 
                     <p>Add your own secret message to the program and show it to the user when the password is correct.
-                    Your message can be anything you like!</p>
+                    Your message can be whatever you want!</p>
 
 <pre>
 Type the password: <font color="red">turnip</font>
@@ -1738,9 +1760,9 @@ The secret is: jryy qbar!
                 <div class="tehtava">
                     <h3 class="req">Temperatures</h3>
 
-                    <p>You will get to your NetBeans a component called <code>Graph</code> along with your exercise
-                    files. <code>Graph</code> draws graphs based on numbers that are given to it. You can give it
-                    numbers the following way:</p>
+                    <p>You will get the <code>Graph</code> component along with the exercise template.
+                    <code>Graph</code> draws graphs based on numbers that are given to it. You can give it numbers in
+                    as follows:</p>
 
 <pre class="sh_java">
 Graph.addNumber(13.0);
@@ -1750,65 +1772,64 @@ Graph.addNumber(13.0);
 
                     <h4>Asking for numbers</h4>
 
-                    <p>Create a program that asks the user to input floating point (or decimal) numbers
-                    (<code>double</code>) and then adds the numbers to the graph. Use the <code>while-true</code>
-                    structure again.</p>
+                    <p>Create a program that asks the user to input floating point numbers (<code>double</code>) and
+                    then adds the numbers to the graph. Use the <code>while-true</code> structure again.</p>
 
-                    <p><strong>Note:</strong> <code>double</code> can be read this way: <code>double number =
-                    Double.parseDouble( reader.nextLine() );</code></p>
+                    <p><b>Note:</b> To read a <code>double</code>, use: <code>double number =
+                    Double.parseDouble(reader.nextLine());</code></p>
 
                     <h4>Checking</h4>
 
-                    <p>Make your program better by checking that it does not add to the graph temperatures that are
-                    either under -30 degrees or over +40 degrees.</p>
+                    <p>Improve your program so that temperatures below -30 degrees or over +40 degrees are ignored and
+                    not added to the graph.</p>
                 </div>
 
                 <div class="tehtava">
                     <h3 class="req">NHL statistics, part 2</h3>
 
-                    <p>Let us continue using the NHL component and create another program that helps the user to ask
-                    for some statistics.</p>
+                    <p>We will continue using the NHL component introduced earlier and create a program that the user
+                    can use to query for statistics.</p>
 
-                    <p>The program is structured in the same manner as the previous Calculator example program. The
-                    program body is as follows:</p>
+                    <p>The program is structured similarly to the Calculator example program above. The program body
+                    is as follows:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) throws Exception {
-        Scanner reader = new Scanner(System.in);
+public static void main(String[] args) throws Exception {
+    Scanner reader = new Scanner(System.in);
 
-        System.out.println("NHL statistics service");
-        while ( true ) {
-            System.out.println("");
-            System.out.print("command (points, goals, assists, penalties, player, club, quit): ");
-            String command = reader.nextLine();
+    System.out.println("NHL statistics service");
+    while (true) {
+        System.out.println("");
+        System.out.print("command (points, goals, assists, penalties, player, club, quit): ");
+        String command = reader.nextLine();
 
-            if ( command.equals("quit")) {
-                break;
-            }
+        if (command.equals("quit")) {
+            break;
+        }
 
-            if ( command.equals("points")) {
-                // print the top ten playes sorted by points
-            } else if ( command.equals("goals")) {
-                // print the top ten players sorted by goals
-            } else if ( command.equals("assists")) {
-                //  print the top ten players sorted by assists
-            } else if ( command.equals("penalties")) {
-                //  print the top ten players sorted by penalties
-            } else if ( command.equals("player")) {
-                // ask the user first which player's statistics are needed and then print them
-            } else if ( command.equals("club")) {
-               // ask the user first which club's statistics are needed and then print them
-               // note: when printing statistics they should be ordered by points (so that the players with the most points come in first)
-            }
+        if (command.equals("points")) {
+            // print the top ten playes sorted by points
+        } else if (command.equals("goals")) {
+            // print the top ten players sorted by goals
+        } else if (command.equals("assists")) {
+            // print the top ten players sorted by assists
+        } else if (command.equals("penalties")) {
+            // print the top ten players sorted by penalties
+        } else if (command.equals("player")) {
+            // ask the user for the player name and print the statistics for that player
+        } else if (scommand.equals("club")) {
+            // ask the user for the club abbreviation and print the statistics for the club
+            // note: the statistics should be sorted by points (players with the most points are first)
         }
     }
+}
 </pre>
 
-                    <p>The program asks the user to give commands and then executes the operation that is associated
-                    with the given command. Commands are: <em>points, goals, assists, penalties, player, club,
+                    <p>So the program asks the user to give commands and then executes the operation that is associated
+                    with the given command. The commands are: <em>points, goals, assists, penalties, player, club,
                     quit</em>.</p>
 
-                    <p>The places where you should write code are marked with comments in the program body.</p>
+                    <p>You should write code in the parts marked with comments.</p>
 
                     <p>Here is an example demonstrating the program in action:</p>
 
@@ -1843,9 +1864,8 @@ Henrik Zetterberg      DET        41  8 + 24= 32  14
 command (points, goals, assists, penalties, player, club): <font color="red">quit</font>
 </pre>
 
-                    <p>Please note that when you first run the program, the execution might take a while. That is
-                    because the server giving out the statistics information might be sleeping and waking it up takes
-                    some time. After the first run the execution should be quick.</p>
+                    <p><b>Note:</b> When you first run the program, the execution might take a while because the
+                    information is downloaded from the internet. Execution should be quick after the first run.</p>
                 </div>
             </div>
         </div>
@@ -1858,30 +1878,30 @@ command (points, goals, assists, penalties, player, club): <font color="red">qui
 
         <div class="viikkoraja-mooc" id="Week 2" deadline="unlocks when 85% of week 1 is completed" unlock="unlocks when 85% of week 1 is completed" data-first-chapter-index="11"
         data-first-exercise-index="25" data-first-week-index="2" data-first-chapter-index-mooc="11"
-        data-first-exercise-index-mooc="25" data-first-week-index-mooc="2" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
+        data-first-exercise-index-mooc="25" data-first-week-index-mooc="2" tekija="Arto Vihavainen, Matti Luukkainen">
             <h2>Changing variables</h2>
 
-            <p>Usually when we have an existing variable we want to change its value. This can be achieved using a
-            basic assignment clause. In the next example we raise the value of the variable <code>age</code> by
+            <p>Usually we want to change the value of an existing variable. This can be done using the normal
+            assignment statement. In the next example, we increase the value of the variable <code>age</code> by
             one:</p>
 
 <pre class="sh_java">
 int age = 1;
 
-System.out.println( age );    // prints 1
-age = age + 1;                // the new value of age is the old value of age + 1    
-System.out.println( age );    // prints 2
+System.out.println(age);  // prints 1
+age = age + 1;            // the new value of age is the old value of age + 1    
+System.out.println(age);  // prints 2
 </pre>
 
-            <p>The command <code>age = age + 1</code> increments the value of the variable <code>age</code> by one. It
-            is also possible to increment a variable by one this way:</p>
+            <p>The <code>age = age + 1</code> statement increments the value of the variable <code>age</code> by one.
+            It is also possible to increment a variable by one this way:</p>
 
 <pre class="sh_java">
 int age = 1;
 
-System.out.println( age );    // prints 1
-age++;                        // means the same as age = age + 1
-System.out.println( age );    // prints 2
+System.out.println(age);  // prints 1
+age++;                    // means the same as age = age + 1
+System.out.println(age);  // prints 2
 </pre>
 
             <p>Another example:</p>
@@ -1889,23 +1909,23 @@ System.out.println( age );    // prints 2
 <pre class="sh_java">
 int length = 100;
 
-System.out.println( length );   // prints 100
+System.out.println(length);  // prints 100
 length = length - 50;    
-System.out.println( length );   // prints 50
+System.out.println(length);  // prints 50
 length = length * 2;
-System.out.println( length );   // prints 100 
+System.out.println(length);  // prints 100 
 length = length / 4;
-System.out.println( length );   // prints 25
-length--;                       // means the same as length = length-1;
-System.out.println( length );   // prints 24
+System.out.println(length);  // prints 25
+length--;                    // means the same as length = length - 1;
+System.out.println(length);  // prints 24
 </pre>
 
             <div id="viikko2" class="tehtavat">
                 <div class="tehtava">
                     <h3>Sum of three numbers</h3>
 
-                    <p>Create a program that asks the user for three numbers and then prints their sum. Make sure your
-                    program has the following structure::</p>
+                    <p>Create a program that asks the user for three numbers and then prints their sum. Use the
+                    following structure in your program:</p>
 
 <pre class="sh_java">
 Scanner reader = new Scanner(System.in);
@@ -1913,9 +1933,9 @@ int sum = 0;
 int read;
 
 // WRITE YOUR PROGRAM HERE
-// USE ONLY 3 VARIABLES, sum, reader AND read!
+// USE ONLY THE VARIABLES sum, reader AND read!
 
-System.out.println("Sum: "+sum);
+System.out.println("Sum: " + sum);
 </pre>
 
 <pre>
@@ -1930,9 +1950,8 @@ Sum: 21
                 <div class="tehtava">
                     <h3>Sum of many numbers</h3>
 
-                    <p>Create a program that reads numbers from the user and prints their sum. The program will stop
-                    asking the user to type a number when user enters the number 0. Use the following program body
-                    given by the exercise robot:</p>
+                    <p>Create a program that reads numbers from the user and prints their sum. The program should stop
+                    asking for numbers when user enters the number 0. The program should be structured like this:</p>
 
 <pre class="sh_java">
 Scanner reader = new Scanner(System.in);
@@ -1945,9 +1964,10 @@ while (true) {
 
     // DO SOMETHING HERE
 
-    System.out.println("Sum now: "+sum);
+    System.out.println("Sum now: " + sum);
 }
-System.out.println("Sum in the end: "+sum);
+
+System.out.println("Sum in the end: " + sum);
 </pre>
 
                     <p>The program should work as follows:</p>
@@ -3306,7 +3326,7 @@ Thank you for playing!
 
         <div class="viikkoraja-mooc" id="Week 3"  deadline="unlocks when 85% of week 2 is completed" unlock="unlocks when 85% of week 2 is completed" data-first-chapter-index="1"
         data-first-exercise-index="15" data-first-week-index="3" data-first-chapter-index-mooc="15"
-        data-first-exercise-index-mooc="43" data-first-week-index-mooc="43" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
+        data-first-exercise-index-mooc="43" data-first-week-index-mooc="43" tekija="Arto Vihavainen, Matti Luukkainen">
             <h2>More about methods</h2>
 
             <h3>Methods and the visibility of the variables</h3>

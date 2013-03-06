@@ -50,7 +50,7 @@ var Exercises = {
               subExerciseNum = 1;
               var txt = $(this).text();
               
-              txt = ('Tehtävä '+exerciseNum+': '+txt);
+              txt = ('Exercise '+exerciseNum+': '+txt);
               $(this).hide();
               
               $(this).parent().before("<p class=\"heading\" id=\"e"+ exerciseNum+"\" >"+txt+"</p>");

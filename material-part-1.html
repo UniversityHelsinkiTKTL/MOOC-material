@@ -1987,35 +1987,34 @@ Sum in the end: 7
                 </div>
             </div>
 
-            <h2 id="lisaa_toistoa">More repetition</h2>
+            <h2 id="lisaa_toistoa">More loops</h2>
 
-            <p>We have previously learned to create a repeating program with the <code>while(true)</code> command.
-            Programs we have made have been repeating certain commands until they reach a <code>break</code>
-            command.</p>
+            <p>Previously we have learned to use repetition using the <code>while (true)</code> loop, which repeats
+            commands until the <code>break</code> command is used.</p>
 
-            <p>A <code>break</code> command is not the only way to end repetition. A common structure for a repetition
-            command is <code>while (condition)</code>, where the condition can be any truth clause. That means the
-            condition can be exactly like conditions for an <code>if</code> command.</p>
+            <p>The <code>break</code> command is not the only way to end the loop. A common structure for a loop
+            is <code>while (condition)</code>, where the condition can be any statement that evaluates to a truth
+            value. This means that the condition works exactly like conditions for an <code>if</code> statements.</p>
 
-            <p>In the following example our program prints the numbers 1, 2, …, 10. When the value of the variable
-            <code>number</code> grows to be over 10, the condition of the <code>while</code> structure becomes false
-            and executing the block ends.</p>
+            <p>In the following example, we print the numbers 1, 2, …, 10. When the value of the variable
+            <code>number</code> increases to be over 10, the condition of the <code>while</code> statement is no longer
+            true so the loop ends.</p>
 
 <pre class="sh_java">
 int number = 1;
 
 while (number &lt; 11) {
   System.out.println(number);
-  number++;    // number++ means the same as number = number + 1
+  number++;  // number++ means the same as number = number + 1
 }
 </pre>
 
-            <p>Read the above example "as long as the variable number is less than 11, print the variable and
+            <p>The exampel above can be read "as long as the variable number is less than 11, print the variable and
             increment it by one".</p>
 
-            <p>In the code above the variable <code>number</code> was incremented each time the block was executed. The
-            change can be anything, meaning that the variable used in the boolean condition does not always need to be
-            incremented, as we can see in the following example:</p>
+            <p>Above, the variable <code>number</code> was incremented on each iteration of the loop. The change can be
+            anything, meaning that the variable used in the condition does not always need to be incremented. For
+            example:</p>
 
 <pre class="sh_java">
 int number = 1024;
@@ -2027,38 +2026,34 @@ while (number &gt;= 1) {
 </pre><!-- screencast -->
 
             <div>
-                <big><big><b>A couple of tips on using NetBeans</b></big></big>
+                <big><big><b>A few NetBeans tips</b></big></big>
 
                 <ul>
-                    <li>You can find all the NetBeans tips <a href="">here</a>
-                    </li>
-
+                    <li>You can find all the NetBeans tips <a href="">here</a>.</li>
                     <li>
-                        <b>Using auto-complete</b>
+                        <b>Auto-completion of your code</b>
 
-                        <p>There is a really useful tool in NetBeans called auto-complete. If you have, for example, a
-                        variable <code>String familyName;</code> in your code, you do not need to always write it all.
-                        See what happens when you type <code>s</code> and after that press ctrl and space
-                        simultaniously. Similarly NetBeans can auto-complete other names as well, for example to get
-                        the command <code>while</code> you need to type only w and press ctrl and space...</p>
+                        <p>If you have, for example, the variable <code>String familyName;</code> in your code, you do
+                        not need to always write <code>familyName</code>. Try what happens when you type in
+                        <code>f</code> and then press CTRL and space simultaneously. You can also use auto-completion
+                        with commands like <code>while</code> by typing in <code>w</code> and then CTRL + space...</p>
                     </li>
-
                     <li>
                         <b>sout</b>
 
                         <p>Remember also that you can get the text <em>System.out.println("")</em> by typing
-                        <em>sout</em> and pressing the <em>tabulator</em> key (located to the left of the q key)</p>
+                        <em>sout</em> and pressing the <em>tab</em> key (located to the left of the q key)</p>
                     </li>
                 </ul>
             </div>
 
             <div class="tehtavat">
-                <p>Complete the following exercises using the while structure:</p>
+                <p>Complete the following exercises using the <code>while</code> statement:</p>
 
                 <div class="tehtava">
                     <h3 class="req">From one to a hundred</h3>
 
-                    <p>Create a program that prints the integers (whole numbers) 1–100.</p>
+                    <p>Create a program that prints the integers (whole numbers) from 1 to 100.</p>
 
                     <p>The program output should be:</p>
 
@@ -2076,7 +2071,7 @@ while (number &gt;= 1) {
                 <div class="tehtava">
                     <h3 class="req">From hundred to one</h3>
 
-                    <p>Create a program that prints the integers (whole numbers) 100–1.</p>
+                    <p>Create a program that prints the integers (whole numbers) from 100 to 1.</p>
 
                     <p>The program output should be:</p>
 
@@ -2090,8 +2085,8 @@ while (number &gt;= 1) {
 1
 </pre>
 
-                    <p><strong>Hint:</strong> assign the variable you use as a helper variable in the repetition clause
-                    the value 100 and then in each iteration subtract one from the current value.</p>
+                    <p><b>Tip:</b> Assign the variable you use in the condition of the loop a initial value of 100 and
+                    then subtract one on each iteration of the loop.</p>
                 </div>
 
                 <div class="tehtava">
@@ -2113,7 +2108,7 @@ while (number &gt;= 1) {
                 <div class="tehtava">
                     <h3 class="req">Up to a certain number</h3>
 
-                    <p>Create a program that prints all whole numbers from 1 to the number the user types.</p>
+                    <p>Create a program that prints all whole numbers from 1 to the number the user enters.</p>
 
 <pre>
 Up to what number? <font color="red">3</font>
@@ -2131,14 +2126,14 @@ Up to what number? <font color="red">5</font>
 5
 </pre>
 
-                    <p><strong>Hint:</strong> the number you read from the user now works as the upper limit in the
-                    boolean condition needed by the while structure. Remember that in Java <code>a &lt;= b</code> means
-                    <em>a is less or equal to b</em>.</p>
+                    <p><b>Tip:</b> The number you read from the user now works as the upper limit in the condition of
+                    the <code>while</code> statement. Remember that in Java <code>a &lt;= b</code> means <em>a is less
+                    than or equal to b</em>.</p>
 
                     <h3>Lower limit and upper limit</h3>
 
                     <p>Create a program that asks the user for the first number and the last number and then prints all
-                    the numbers in between those two.</p>
+                    numbers between those two.</p>
 
 <pre>
 First: <font color="red">5</font>
@@ -2156,14 +2151,14 @@ First: <font color="red">16</font>
 Last: <font color="red">12</font>
 </pre>
 
-                    <p><em>Note!</em> remember that the lower limit and the upper limit can also be negative!</p>
+                    <p><b>Note:</b> Remember that the lower and upper limits can also be negative!</p>
                 </div>
             </div>
 
             <h3>Assignment operations</h3>
 
-            <p>Because changing the value of a variable is a very common operation, there are certain assignment
-            operations for that in Java.</p>
+            <p>Because changing the value of a variable is a very common operation, Java has special assignment
+            operations for it.</p>
 
 <pre class="sh_java">
 int length = 100;
@@ -2172,28 +2167,27 @@ lenght += 10;  // same as length = length + 10;
 length -= 50;  // same as length = length - 50;
 </pre>
 
-            <p>When the assignment operation is done to an existing variable, it is written as <code>variable type of
-            change = change</code>, for example <code>variable += 5</code>. Note that you must always tell the type of
-            the variable before you can assign any value to it. This means that when we want a new variable into use we
-            must first introduce it. Introducing a variable is done by specifying the variable type and the name of the
-            variable.</p>
+            <p>When performing the assignment operation on an existing variable, it is written as
+            <code>variable operation= change</code>, for example <code>variable += 5</code>. Note that a variable must
+            be defined before you can assign a value to it. Defining a variable is done by specifying the variable
+            type and the name of the variable.</p>
 
-            <p>The following example will not work, because the type of the variable <code>length</code> has not been
-            specified.</p>
+            <p>The following example will not work because the type of the variable <code>length</code> has not been
+            defined.</p>
 
 <pre class="sh_java">
-length = length + 100;   // not working!
-length += 100;           // not working!
+length = length + 100;  // error!
+length += 100;          // error!
 </pre>
 
-            <p>When the type is specified, the calculations start working correctly.</p>
+            <p>When the type is defined, the operations will also work.</p>
 
 <pre class="sh_java">
 int length = 0;
 length = length + 100;
 length += 100;
 
-// length now holds the value 200
+// the variable length now holds the value 200
 </pre>
 
             <p>There are also other assignment operations:</p>
@@ -2201,39 +2195,38 @@ length += 100;
 <pre class="sh_java">
 int length = 100;
 
-length *= 10; // same as length = 10 * length; 
-length /= 100; //same as length = length / 100;
-length %= 3;  // same as length = length % 3;
+length *= 10;   // same as length = length * 10; 
+length /= 100;  // same as length = length / 100;
+length %= 3;    // same as length = length % 3;
 
 // the variable length now holds the value 1
 </pre>
 
-            <p>Many programs contain a repetition, during which the program calculates a value for the variable, so
-            that the value depends on the repetition. The following program calculates 4*3 in a somewhat clumsy way as
-            a sum of 3+3+3+3:</p>
+            <p>Often during a loop, the value of a variable is calculated based on the repetition. The following
+            calculates 3*4 somewhat clumsily as a sum of 3+3+3+3:</p>
 
 <pre class="sh_java">
 int result = 0;
 
 int i = 0;
-while ( i &lt; 4 ) {
+while (i &lt; 4) {
    result = result + 3;
-   i++;   // means the same as i = i+1;
+   i++;  // means the same as i = i + 1;
 }
 </pre>
 
-            <p>In the beginning <code>result = 0</code>. During the repetition the value of the variable is incremented
-            by 3. And because there are 4 repetitions, the value of the variable is 3*4 in the end.</p>
+            <p>In the beginning <code>result = 0</code>. During the loop, the value of the variable is incremented
+            by 3 on each iteration. And because there are 4 iterations, the value of the variable is 3*4 in the end.</p>
 
-            <p>Using the assignment operator introduced before, we can achieve the same behavior also like this:</p>
+            <p>Using the assignment operator introduced above, we can achieve the same behavior as follows:</p>
 
 <pre class="sh_java">
 int result = 0;
 
 int i = 0;
-while ( i &lt; 4 ) {
-   result += 3;      // this is the same as result = result + 3;
-   i++;             // means the same as i = i+1;
+while (i &lt; 4) {
+   result += 3;  // this is the same as result = result + 3;
+   i++;          // means the same as i = i+1;
 }
 </pre>
 
@@ -2241,23 +2234,26 @@ while ( i &lt; 4 ) {
                 <div class="tehtava">
                     <h3 class="req">The sum of a set of numbers</h3>
 
-                    <p>Create a program that calculates the sum of n numbers, where n is a number given by the user.
-                    The program should add the numbers together one by one, like 1+2+3+...+n.</p>
+                    <p>Create a program that calculates the sum 1+2+3+…+n where n is a number entered by the user.</p>
 
                     <p>Example outputs:</p>
 
 <pre>
 Until what? <font color="red">3</font>
-Sum is 6   // calculated 1+2+3
+Sum is 6
 </pre>
+
+                    <p>The calculation above was: 1+2+3 = 6.</code>
 
 <pre>
 Until what? <font color="red">7</font>
-Sum is 28   // calculated 1+2+3+4+5+6+7
+Sum is 28
 </pre>
 
-                    <p><strong>Hint:</strong> Create a program using the <code>while</code> structure. Use a helper
-                    variable in your program to remember how many times the block has been executed. Use also another
+                    <p>The calculation above was: 1+2+3+4+5+6+7 = 28.</code>
+
+                    <p><b>Hint:</b> Create the program using the <code>while</code> statement. Use a helper variable
+                    in your program to remember how many times the block has been executed. Use also another
                     helper variable to store the sum. During each execution add the value of the helper variable that
                     counts the executions to the variable in which you should collect the sum.</p>
                 </div>
@@ -2265,8 +2261,9 @@ Sum is 28   // calculated 1+2+3+4+5+6+7
                 <div class="tehtava">
                     <h3 class="req">The sum between two numbers</h3>
 
-                    <p>Change the previous program so that the user gives the starting number and the ending number.
-                    You can assume that the user first gives the smaller number and then the greater number.</p>
+                    <p>Similar to the previous exercise, except that the program should ask for both the lower and
+                    upper bound. You can assume that the users first gives the smaller number and then the greater
+                    number.</p>
 
                     <p>Example outputs:</p>
 
@@ -2286,9 +2283,9 @@ The sum is 35
                 <div class="tehtava">
                     <h3>Factorial</h3>
 
-                    <p>Create a program that calculates the factorial of the number n. Factorial n! is calculated with
-                    the formula 1*2*3*...*n. For example 4! = 1*2*3*4 = 24. Additionally it is predefined that 0! =
-                    1.</p>
+                    <p>Create a program that calculates the factorial of the number n. The factorial n! is calculated
+                    using the formula 1*2*3*...*n. For example 4! = 1*2*3*4 = 24. Additionally, it is defined that
+                    0! = 1.</p>
 
                     <p>Example outputs:</p>
 
@@ -2307,14 +2304,14 @@ Factorial is 3628800
                     <h3>Sum of the powers</h3>
 
                     <p>Create a program that calculates the sum of
-                    2<sup>0</sup>+2<sup>1</sup>+2<sup>2</sup>+...+2<sup>n</sup>, where n is the number given by the
+                    2<sup>0</sup>+2<sup>1</sup>+2<sup>2</sup>+...+2<sup>n</sup>, where n is a number entered by the
                     user. The notation 2<sup>i</sup> means raising the number 2 to the power of i, for example
                     2<sup>4</sup> = 2*2*2*2 = 16. In Java we cannot write a<sup>b</sup> directly, but instead we can
                     calculate the power with the command <code>Math.pow(number, power)</code>. Note that the command
-                    returns a number of <code>double</code> type (i.e. a decimal / floating point number). A double can
-                    be transformed into an <code>integer</code> (i.e. whole number) this way: <code>int result = (int)
-                    Math.pow(2, 3)</code>. This command assigns the variable result the value that is the outcome of
-                    the calculation 2 to the power of 3.</p>
+                    returns a number of <code>double</code> type (i.e. floating point number). A double can be
+                    converted into the <code>int</code> type (i.e. whole number) as follows:
+                    <code>int result = (int)Math.pow(2, 3)</code>. This assigns the value of 2<sup>3</sup> to variable
+                    result.</p>
 
                     <p>Example outputs:</p>
 

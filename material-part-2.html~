@@ -1185,7 +1185,7 @@ if(Math.abs(distance) &lt; 0.0001) {
         <p>Reference-type variables memorize the information which has been assigned to them, on the other end of the line. Reference-type variables contain a reference to the location where the information is stored. Differently from the primitive-type variables, the reference type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Also, a substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
 
 <!--
-        <p>Reference-type variables are objects which are created through the keyword <code>new</code>. The value of a reference-type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to the object. The reference is stored within variable, and it becomes its value.</p> 
+        <p>Reference-type variables are objects which are created through the keyword <code>new</code>. The value of a reference-type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to the object. The refenence is stored within variable, and it becomes its value.</p> 
 -->
 
 <p>Let us have a look at two reference-type variables. In the following examples we make use of the class <em>Calculator</em>:</p>
@@ -1225,11 +1225,11 @@ Laskuri axeCalculator = new Calculator(6);
 Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
-bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
+bonusCalculator = axeCalculator; // The reference contained by the variable axeCalculator is copied to the variable bonusCalculator
                            // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable  bonusCalculator
 </pre>
 
-        <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable gets copied, too. In this case, a reference to the <code>axeCalculator</code> variable slot gets copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
+        <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable gets copied, too. In this case, a reference to the storage space contained by the <code>axeCalculator</code> variable gets copied to the storage space of the <code>bonusCalculator</code> variable. Now, both the objects point to the same place!</p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-3.png" /></p>
 
@@ -1239,35 +1239,35 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
 Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
-bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable 
+bonusCalculator = axeCalculator; // muuttujaan bonusLaskuri kopioidaan muuttujan axeLaskuri sisältämä viite,
+                           // eli viite Laskuri-tyyppiseen olioon joka on saanut konstruktorissaan arvon 6
 
-axeCalculator = new Calculator(10); // a new reference is assigned to the axeCalculator variable 
-                              // which points to the object created by the command new Laskuri(10)
+axeCalculator = new Calculator(10); // muuttujaan axeLaskuri asetetaan uusi viite, joka osoittaa
+                              // new Laskuri(10) - kutsulla luotuun Laskuri-olioon
 
-// the bonusCalculator variable still contains a reference to the Calculator object which receive value 6 in its parameter
+// muuttuja bonusLaskuri sisältää vieläkin viitteen Laskuri-olioon, joka sai konstruktorissaan arvon 6
 </pre>
 
-        <p>In these examples, we basically do the same operations which were shown in the setting example in the primitive-type variables section. In the last examples, we copied the references of reference-type variable, whereas in the primitive-type variables section we copied the values of primitive-type variable. In both cases, we copy the cointents of a slot: the primitive-type variable slot contains a value, whereas the reference-type variable slot contains a reference.</p>
+        <p>Esimerkissä tehdään käytännössä samat operaatiot kuin alkeistyyppi-kappaleessa olevassa asetusesimerkissä. Äskeisessä esimerkissä kopioimme viitetyyppisten muuttujien viitteitä, kun taas alkeistyyppisiin muuttujiin liittyvässä esimerkissä kopioimme alkeistyyppien arvoja. Kummassakin tapausessa siis lokeron sisältö kopioidaan, alkeistyyppisten muuttujien lokero sisältää arvon, viitetyyppisten muuttujien lokero sisältää viitteen.</p>
 
-        <p>At the end of the previous example no variable ponints to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes from time to time such useless objects. Our final situation looks like the following:</p>
+        <p>Edellisen esimerkin lopussa kukaan ei viittaa Laskuriolioon, joka sai arvokseen 5 sen konstruktorissa. Javassa oleva roskienkeruumekanismi käy ajallaan poistamassa tällaiset turhat oliot. Lopputilanne kuvana:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-2.png" /></p>
 
-        <p>Let us have a look to a third example still, and let us focus on an essencial difference between primitive-type and reference-type variables.</p>
+        <p>Tarkastellaan vielä kolmatta esimerkkiä, joka näyttää viite- ja alkeistyyppisten muuttujien oleellisen eron.</p>
 
 <pre class="sh_java">
-Calculator bonusCalculator = new Calculator(5);
-Calculator axeCalculator = new Calculator(6);
+Laskuri bonusLaskuri = new Laskuri(5);
+Laskuri axeLaskuri = new Laskuri(6);
 
-bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable 
+bonusLaskuri = axeLaskuri; // muuttujaan bonusLaskuri kopioidaan muuttujan axeLaskuri sisältämä viite,
+                           // eli viite Laskuri-tyyppiseen olioon joka on saanut konstruktorissaan arvon 6
 
-axeCalculator.increaseValue(); // we increase by one the value of the object referenced by axeCalculator
+axeLaskuri.kasvataArvoa(); // kasvatetaan axeLaskuri-viitteen takana olevan olion arvoa yhdellä
 
-System.out.println(bonusCalculator.getValue());
-System.out.println(axeCalculator.getValue());
+System.out.println(bonusLaskuri.annaArvo());
+System.out.println(axeLaskuri.annaArvo());
 </pre>
 
 <pre>
@@ -1275,36 +1275,36 @@ System.out.println(axeCalculator.getValue());
 7
 </pre>
 
-        <p>Both <code>bonusCalculator</code>and <code>axeLaskuri</code> point to the same object, after running the command <code>bonusCalculator = axeCalculator;</code>, and therefore now they both have the same value 7, even though we have increased only one of them.</p>
+        <p>Koska asetuksen <code>bonusLaskuri = axeLaskuri;</code> jälkeen <code>bonusLaskuri</code>-muuttuja viittaa samaan olioon kuin <code>axeLaskuri</code>-muuttuja, on kummankin laskurin arvo 7 vaikka kasvatuksia on tehty vain yksi. Tämä johtuu siitä että kummatkin laskurit viittaavat samaan olioon.</p>
 
-        <p>The situation might be clear if we look at the following picture. The method <code>axeCalculator.increaseValue()</code> increases by one the <code>value</code> variable of the object pointing to the <code>axeCalculator</code> variable. Because <code>bonusCalculator</code> points to the same object, the method <code>bonusCalculator.getValue()</code> returns the same value which was increased by the method <code>axeCalculator.increaseValue()</code>.</p>
+        <p>Kuvana tilanne on ehkä selkeämpi. Kutsu <code>axeLaskuri.kasvataArvoa()</code> kasvattaa muuttujan <code>axeLaskuri</code> viittaaman olion sisältämää muuttujan <code>arvo</code> arvoa yhdellä. Koska muuttuja <code>bonusLaskuri</code> viittaa samaan olioon, palauttaa kutsu <code>bonusLaskuri.annaArvo()</code> saman muuttujan arvon, jota aiempi kutsu <code>axeLaskuri.kasvataArvoa()</code> kasvatti.</p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-4.png" /></p>
 
-        <p>In the following example, three reference-type variables all point to the same <code>Calculator</code> object.</p>
+        <p> Seuraavassa esimerkissä on kolme viitetyyppistä muuttujaa, jotka kaikki osoittavat samaan <code>Laskuri</code>-olioon.</p>
 
 <pre class="sh_java">
-Calculator bonus = new Calculator(5);
-Calculator ihq = bonus;
-Calculator lennon = bonus;
+Laskuri bonus = new Laskuri(5);
+Laskuri ihq = bonus;
+Laskuri lennon = bonus;
 </pre>
 
-        <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, all the <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls modify the same object. To tell it once again: when reference-type variables are copied, their references also get copied. The same concept in a picture:</p>
+        <p>Esimerkissä luodaan vain yksi <code>Laskuri</code>-olio, mutta kaikki kolme <code>Laskuri</code>-tyyppistä muuttujaa osoittavat lopussa siihen. Tällöin kaikki metodikutsut viitteille <code>bonus</code>, <code>ihq</code> ja <code>lennon</code> muokkaavat samaa oliota. Vielä kerran: viitetyyppisiä muuttujia kopioitaessa viitteet kopioituvat. Kuvana:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-5.png" /></p>
 
-        <p>Let us focuse again on duplication with one example.</p>
+        <p>Katsotaan kopioitumista vielä esimerkillä.</p>
 
 <pre class="sh_java">
-Calculator bonus = new Calculator(5);
-Calculator ihq = bonus;
-Calculator lennon = bonus;
+Laskuri bonus = new Laskuri(5);
+Laskuri ihq = bonus;
+Laskuri lennon = bonus;
 
-lennon = new Calculator(3);
+lennon = new Laskuri(3);
 </pre>
 
-        <p>The modification of the <code>lennon</code> variable contents - that is to say the change of reference - does not affect on the references of <code>bonus</code> or <code>ihq</code>. When we assign a value to a variable, we always change the contents of that variable's own slot only. The same concept in a picture:</p>
+        <p>Kun muuttujan <code>lennon</code> sisältö, eli viite muuttuu, se ei vaikuta muuttujien <code>bonus</code> tai <code>ihq</code> sisältämiin viitteisiin. Muuttujan arvoa asetettaessa muutetaan aina vain muuttujan oman lokeron sisältöä. Kuvana:</p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-6.png" /></p>
 

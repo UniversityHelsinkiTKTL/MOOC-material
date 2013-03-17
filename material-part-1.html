@@ -12002,13 +12002,13 @@ smallest: 5
 
                     <h4 class="req">The index of the smallest</h4>
 
-                    <p>Implement a method <code>indexOfSmallest</code>, which returns the index of the smallest value
+                    <p>Implement a method <code>indexOfTheSmallest</code>, which returns the index of the smallest value
                     in the array (the position of the value in the array, that is).</p>
 
                     <p>The frame of the method looks like this:</p>
 
 <pre class="sh_java">
-public static int indexOfSmallest(int[] array) {
+public static int indexOfTheSmallest(int[] array) {
     // code goes here
 }
 </pre>
@@ -12021,7 +12021,7 @@ public static int indexOfSmallest(int[] array) {
 <pre class="sh_java">
 // indexes:   0  1  2  3  4
 int[] values = {6, 5, 8, 7, 11};
-System.out.println("Index of the smallest: " + indexOfSmallest(values));
+System.out.println("Index of the smallest: " + indexOfTheSmallest(values));
 </pre>
 
 <pre>
@@ -12033,7 +12033,7 @@ Index of the smallest: 1
 
                     <h4 class="req">Index of the smallest at the end of an array</h4>
 
-                    <p>Implement a method <code>indexOfSmallestStartingFrom</code>, which works just like the method of
+                    <p>Implement a method <code>indexOfTheSmallestStartingFrom</code>, which works just like the method of
                     the previous assignment, but only takes into consideration the end of an array starting from a
                     certain index. In addition to the array the method gets as parameter an index, from which the search for the
                     smallest will be started.</p>
@@ -12041,7 +12041,7 @@ Index of the smallest: 1
                     <p>The frame of the method is as follows:</p>
 
 <pre class="sh_java">
-public static int indexOfSmallestStartingFrom(int[] array, int index) {
+public static int indexOfTheSmallestStartingFrom(int[] array, int index) {
     // write the code here
 }
 </pre>
@@ -12054,9 +12054,9 @@ public static int indexOfSmallestStartingFrom(int[] array, int index) {
 <pre class="sh_java">
 // indexes:    0  1  2  3   4
 int[] values = {-1, 6, 9, 8, 12};
-System.out.println(indexOfSmallestStartingFrom(values, 1));
-System.out.println(indexOfSmallestStartingFrom(values, 2));
-System.out.println(indexOfSmallestStartingFrom(values, 4));
+System.out.println(indexOfTheSmallestStartingFrom(values, 1));
+System.out.println(indexOfTheSmallestStartingFrom(values, 2));
+System.out.println(indexOfTheSmallestStartingFrom(values, 4));
 </pre>
 
 <pre>
@@ -12108,9 +12108,9 @@ System.out.println( Arrays.toString(values) );
                     <h4 class="req">Sorting</h4>
 
                     <p>Now we've got a set of useful methods, with which we can implement a sorting algorithm known
-                    as exchange sorting.</p>
+                    as selection sorting.</p>
 
-                    <p>The idea of exchange sorting is this:</p>
+                    <p>The idea of selection sorting is this:</p>
 
                     <ul>
                         <li>Move the smallest number of the array to index 0.</li>
@@ -12482,7 +12482,7 @@ Is your number larger than 3? (y/n)
 <font color="red">k</font>
 The number you're thinking of is 4.
 </pre>
-
+		</div>
                     <h3>Implementation of binary search</h3>
 
                     <p>The template you get from the test automaton has a start for an implementation of binary search.

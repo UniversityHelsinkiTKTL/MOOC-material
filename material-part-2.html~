@@ -1339,26 +1339,26 @@ addToCalculator(bonus, times);
 
         <p>As far as the reference reference-type variable is concerned, a reference is copied into the method, which means that the variable inside the method will still point to the same object. As far as the original-type variable is concerned, a value is copied, which means that the variable inside the method holds its completely own value.</p>
 
-        <p>Metodi näkee saman laskurin johon muuttuja <code>bonus</code> viittaa, eli metodin tekemä muutos vaikuttaa suoraan olioon. Alkeistyyppien suhteen tilanne on toinen, eli metodille tulee ainoastaan kopio muuttujan <code>kertoja</code> arvosta. Metodista käsin ei siis voi muuttaa alkeistyyppisten muuttujien arvoja.</p>
+        <p>The method recognises the calculator which the <code>bonus</code> variable points to, and the alterations made by the method have a direct impact to the object. The situation is different with original-type variables, which means that the method only receives a copy of the value of the <code>times</code> variable. In fact, it is not possible to modify the value of original-type variables directly within a method.</p>
 
-        <h4>Viitetyyppinen muuttuja metodin paluuarvona</h4>
+        <h4>A method which returns a reference-type variable</h4>
 
-        <p>Kun metodi palauttaa viitetyyppisen muuttujan, palauttaa se viitteen muualla sijaitsevaan olioon. Metodin palauttaman viitetyyppisen muuttujan voi asettaa muuttujalle samalla tavalla kuin normaalikin asetus tapahtuu, eli yhtäsuuruusmerkin avulla. Katsotaan metodia <code>public Laskuri luoLaskuri(int alkuarvo)</code>, joka luo uuden viitetyyppisen muuttujan.</p>
+        <p>When a method returns a a reference-type variable, it returns the reference to the object located elsewhere. Once it is returned by a method, a reference can be assigned to a variable in the same as a normal assignment would happen, through the equal sign (=). Let us have a look at the method <code>public Calculator createCalculator(int startValue)</code>, which creates a new reference-type variable.</p>
 
 <pre class="sh_java">
-public Laskuri luoLaskuri(int alkuarvo) {
-    return new Laskuri(alkuarvo);
+public Calculator createCalculator(int startValue) {
+    return new Calculator(startValue);
 }
 </pre>
 
-    <p>Metodi luoLaskuri palauttaa metodissa luotuun olioon viittaavan viitteen <code>uusiLaskuri</code>. Uusi olio luodaan aina metodia kutsuttaessa, seuraavassa esimerkissä luomme kaksi erillistä <code>Laskuri</code>-tyyppistä oliota.</p>
+    <p>The creteCalculator method creates an object and returns its <code>newCalculator</code> reference. By calling the method, we always create a new object. In the following example we create two different <code>Calculator</code>-type objects.</p>
 
 <pre class="sh_java">
-Laskuri bonus  = luoLaskuri(10);
-Laskuri lennon = luoLaskuri(10);
+Calculator bonus  = createCalculator(10);
+Calculator lennon = createCalculator(10);
 </pre>
 
-        <p>Metodi <code>luoLaskuri</code> luo aina uuden <code>Laskuri</code>-tyyppisen olion. Ensimmäisessä kutsussa, eli kutsussa <code>Laskuri bonus = luoLaskuri(10);</code> asetetaan metodin palauttama viite viitetyyppiseen muuttujaan <code>bonus</code>. Toisessa metodikutsussa luodaan uusi viite, joka asetetaan muuttujaan <code>lennon</code>. Muuttujat <code>bonus</code> ja <code>lennon</code> eivät sisällä samaa viitettä, sillä metodi luo aina uuden olion ja palauttaa viitteen luotuun olioon.</p>
+        <p>The method <code>createCalculator</code> always creates a new <code>Calculator</code>-type object. With the first call, <code>Calculator bonus  = createCalculator(10);</code> we assign the method return reference to the <code>bonus</code> variable. With the second call, we create another reference and we assign it to the <code>lennon</code> variable. The variables <code>bonus</code> and <code>lennon</code> do not contain the same reference because the method creates a new object in both cases, and it returns the reference to that particular object.</p>
 
 
         <h2 id="stat_ja_ei">Static ja ei-static</h2>

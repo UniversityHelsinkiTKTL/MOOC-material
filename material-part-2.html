@@ -1182,10 +1182,10 @@ if(Math.abs(distance) &lt; 0.0001) {
 
 <h3>Reference-type variables</h3>
 
-        <p>Reference-type variables memorize the information which has been assigned to them, on the other end of the line. Reference-type variables contain a reference to the location where the information is stored. Differently from the primitive-type variables, the reference type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Also, a substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
+        <p>Reference-type variables memorize the information which has been assigned to them "on the other end of the line". Reference-type variables contain a reference to the location where the information is stored. Differently from primitive-type variables, reference-type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Another substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
 
 <!--
-        <p>Reference-type variables are objects which are created through the keyword <code>new</code>. The value of a reference-type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to the object. The reference is stored within variable, and it becomes its value.</p> 
+        <p>Reference-type variables are objects which are created through the <code>new</code> keyword. The value of a reference-type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to that object. The reference is stored within the variable, and it becomes its value.</p> 
 -->
 
 <p>Let us have a look at two reference-type variables. In the following examples we make use of the class <em>Calculator</em>:</p>
@@ -1194,7 +1194,7 @@ if(Math.abs(distance) &lt; 0.0001) {
 public class Calculator {
     private int value;
 
-    public Laskuri(int originalValue) { // Konstruktori
+    public Laskuri(int originalValue) { // Contructor
         this.value = originalValue;
     }
 
@@ -1211,15 +1211,15 @@ public class Calculator {
         <p>Main:</p>
 
 <pre class="sh_java">
-Laskuri bonusCalculator = new Calculator(5);
-Laskuri axeCalculator = new Calculator(6);
+Calculator bonusCalculator = new Calculator(5);
+Calculator axeCalculator = new Calculator(6);
 </pre>
 
-        <p>In the examples we create first a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information which will be assigned to the variable, we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is tied to the variable <code>bonusCalculator</code> through the <code>=</code> operator. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it was a box, the variable, with a line or arrow which starts from the box and points to the object itself. In fact, the variable does not contain the object, but it points to the object information. </p>
+        <p>In the examples we first create a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is assigned to the <code>bonusCalculator</code> variable through the <code>=</code> equal sign. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information. </p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit.png" /></p>
 
-        <p>Next, let us have a look at how a referene-type object is copied.</p>
+        <p>Next, let us have a look at how a referene-type object is duplicated.</p>
 
 <pre class="sh_java">
 Calculator bonusCalculator = new Calculator(5);
@@ -1229,7 +1229,7 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
                            // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable  bonusCalculator
 </pre>
 
-        <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable gets copied, too. In this case, a reference to the <code>axeCalculator</code> variable slot gets copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
+        <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable duplicates, too. In this case, a reference to the <code>axeCalculator</code> variable slot is copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-3.png" /></p>
 
@@ -1245,12 +1245,12 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
 axeCalculator = new Calculator(10); // a new reference is assigned to the axeCalculator variable 
                               // which points to the object created by the command new Laskuri(10)
 
-// the bonusCalculator variable still contains a reference to the Calculator object which receive value 6 in its parameter
+// the bonusCalculator variable still contains a reference to the Calculator object which received value 6 in its parameter
 </pre>
 
-        <p>In these examples, we basically do the same operations which were shown in the setting example in the primitive-type variables section. In the last examples, we copied the references of reference-type variable, whereas in the primitive-type variables section we copied the values of primitive-type variable. In both cases, we copy the cointents of a slot: the primitive-type variable slot contains a value, whereas the reference-type variable slot contains a reference.</p>
+        <p>In these examples, we do the same operations which were shown in the assignment example in the primitive-type variables section. In the very last example, we copied the reference of reference-type variables, whereas in the primitive-type variables section we copied the value of primitive-type variables. In both cases, we copy the contents of a slot: the primitive-type variable slot contains a value, whereas the reference-type variable slot contains a reference.</p>
 
-        <p>At the end of the previous example no variable ponints to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes from time to time such useless objects. Our final situation looks like the following:</p>
+        <p>At the end of the previous example no variable points to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes such useless objects from time to time. Our final situation looks like the following:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-2.png" /></p>
@@ -1275,7 +1275,7 @@ System.out.println(axeCalculator.getValue());
 7
 </pre>
 
-        <p>Both <code>bonusCalculator</code>and <code>axeLaskuri</code> point to the same object, after running the command <code>bonusCalculator = axeCalculator;</code>, and therefore now they both have the same value 7, even though we have increased only one of them.</p>
+        <p>Both <code>bonusCalculator</code>and <code>axeCalculator</code> point to the same object, after we have run the command <code>bonusCalculator = axeCalculator;</code>, and therefore, now they both have the same value 7, even though we have increased only one of them.</p>
 
         <p>The situation might be clear if we look at the following picture. The method <code>axeCalculator.increaseValue()</code> increases by one the <code>value</code> variable of the object pointing to the <code>axeCalculator</code> variable. Because <code>bonusCalculator</code> points to the same object, the method <code>bonusCalculator.getValue()</code> returns the same value which was increased by the method <code>axeCalculator.increaseValue()</code>.</p>
 
@@ -1289,12 +1289,12 @@ Calculator ihq = bonus;
 Calculator lennon = bonus;
 </pre>
 
-        <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, all the <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls modify the same object. To tell it once again: when reference-type variables are copied, their references also get copied. The same concept in a picture:</p>
+        <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls all modify the same object. To tell it once again: when reference-type variables are copied, their references also duplicate. The same concept in a picture:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-5.png" /></p>
 
-        <p>Let us focuse again on duplication with one example.</p>
+        <p>Let us focus again on duplication with one example.</p>
 
 <pre class="sh_java">
 Calculator bonus = new Calculator(5);
@@ -1304,13 +1304,13 @@ Calculator lennon = bonus;
 lennon = new Calculator(3);
 </pre>
 
-        <p>The modification of the <code>lennon</code> variable contents – that is to say the change of reference – does not affect on the references of <code>bonus</code> or <code>ihq</code>. When we assign a value to a variable, we always change the contents of that variable's own slot only. The same concept in a picture:</p>
+        <p>The modification of the <code>lennon</code> variable contents – that is to say the change of reference – does not affect the references of either <code>bonus</code> or <code>ihq</code>. Always when we assign a value to a variable, we change the contents of only that variable's own slot. The same concept in a picture:</p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-6.png" /></p>
 
         <h4>A reference-type variable as method parameter</h4>
 
-        <p>When a reference-type variable is given to a method as its parameter, we creat a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently form what happens with orginial-type variables, we copy the reference, and not their value. In fact, we can we can modify the object behind the reference even inside the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
+        <p>When a reference-type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original-type variables, we copy the reference, and not their value. In fact, we can we can modify the object behind the reference even form within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
 
 <pre class="sh_java">
 public void addToCalculator(Calculator calculator, int amount) {
@@ -1320,7 +1320,7 @@ public void addToCalculator(Calculator calculator, int amount) {
 }
 </pre>
 
-        <p>We give two parameters to the method <code>addToCalculator</code> – a reference-type value and an original-type variable. The contents of both variable slots are copied to the own slots of the method parameters. A reference is copied to the reference-type parameter <code>calculator</code>, whereas a value is copied to the original-type parameter <code>amount</code>. The method will call the <code>calculator</code>-type parameter method <code>increaseValue()</code>, and it will do it as many times as the value of the variable <code>amount</code>. Let us analise the method call better.</p>
+        <p>We give two parameters to the method <code>addToCalculator</code> – a reference-type value and an original-type variable. The contents of both variable slots are copied to method parameter slots. The reference-type parameter <code>calculator</code> receives a copy of a reference, whereas the original-type parameter <code>amount</code> receives the copy of value. The method will call the <code>increaseValue()</code> method of the <code>Calculator</code>-type parameter, and it will do it as many times as the value of the <code>amount</code> variable. Let us analise the method call more deeply.</p>
 
 <pre class="sh_java">
 int times = 10;
@@ -1330,35 +1330,35 @@ addToCalculator(bonus, times);
 // the bonus variable value is now 20
 </pre>
 
-        <p>In the example, we call the <code>addToCalculator</code> method whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference-type variable <code>bonus</code> and the value of the original-type variable <code>times</code> – which is <code>10</code> – are copied as parameter whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the method <code>increaseValue()</code> of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
+        <p>In the example, we call the <code>addToCalculator</code> method whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference-type variable <code>bonus</code> and the value of the original-type variable <code>times</code> – which is <code>10</code> – are copied as parameters whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the <code>increaseValue()</code> method of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-7.png" /></p>
 
         <p><em>The method contains variables which are completely separated from the main program!</em></p>
 
-        <p>As far as the reference reference-type variable is concerned, a reference is copied into the method, which means that the variable inside the method will still point to the same object. As far as the original-type variable is concerned, a value is copied, which means that the variable inside the method holds its completely own value.</p>
+        <p>As far as the reference-type variable is concerned, a reference duplicates and it is given to the method, and the variable inside the method will still point to the same object. As far as the original-type variable is concerned, a value is copied, and the variable inside the method will have its completely independent value.</p>
 
-        <p>The method recognises the calculator which the <code>bonus</code> variable points to, and the alterations made by the method have a direct impact to the object. The situation is different with original-type variables, which means that the method only receives a copy of the value of the <code>times</code> variable. In fact, it is not possible to modify the value of original-type variables directly within a method.</p>
+        <p>The method recognises the calculator which the <code>bonus</code> variable points to, and the alterations made by the method have a direct impact on the object. The situation is different with original-type variables, and the method only receives a copy of the value of the <code>times</code> variable. In fact, it is not possible to modify the value of original-type variables directly within a method.</p>
 
-        <h4>Viitetyyppinen muuttuja metodin paluuarvona</h4>
+        <h4>A method which returns a reference-type variable</h4>
 
-        <p>Kun metodi palauttaa viitetyyppisen muuttujan, palauttaa se viitteen muualla sijaitsevaan olioon. Metodin palauttaman viitetyyppisen muuttujan voi asettaa muuttujalle samalla tavalla kuin normaalikin asetus tapahtuu, eli yhtäsuuruusmerkin avulla. Katsotaan metodia <code>public Laskuri luoLaskuri(int alkuarvo)</code>, joka luo uuden viitetyyppisen muuttujan.</p>
+        <p>When a method returns a reference-type variable, it returns the reference to an object located elsewhere. Once the reference is returned by a method, it can be assigned to a variable in the same way as a normal assignment would happen, through the equal sign (=). Let us have a look at the method <code>public Calculator createCalculator(int startValue)</code>, which creates a new reference-type variable.</p>
 
 <pre class="sh_java">
-public Laskuri luoLaskuri(int alkuarvo) {
-    return new Laskuri(alkuarvo);
+public Calculator createCalculator(int startValue) {
+    return new Calculator(startValue);
 }
 </pre>
 
-    <p>Metodi luoLaskuri palauttaa metodissa luotuun olioon viittaavan viitteen <code>uusiLaskuri</code>. Uusi olio luodaan aina metodia kutsuttaessa, seuraavassa esimerkissä luomme kaksi erillistä <code>Laskuri</code>-tyyppistä oliota.</p>
+    <p>The creteCalculator method creates an object and returns its <code>newCalculator</code> reference. By calling the method, we always create a new object. In the following example we create two different <code>Calculator</code>-type objects.</p>
 
 <pre class="sh_java">
-Laskuri bonus  = luoLaskuri(10);
-Laskuri lennon = luoLaskuri(10);
+Calculator bonus  = createCalculator(10);
+Calculator lennon = createCalculator(10);
 </pre>
 
-        <p>Metodi <code>luoLaskuri</code> luo aina uuden <code>Laskuri</code>-tyyppisen olion. Ensimmäisessä kutsussa, eli kutsussa <code>Laskuri bonus = luoLaskuri(10);</code> asetetaan metodin palauttama viite viitetyyppiseen muuttujaan <code>bonus</code>. Toisessa metodikutsussa luodaan uusi viite, joka asetetaan muuttujaan <code>lennon</code>. Muuttujat <code>bonus</code> ja <code>lennon</code> eivät sisällä samaa viitettä, sillä metodi luo aina uuden olion ja palauttaa viitteen luotuun olioon.</p>
+        <p>The method <code>createCalculator</code> always creates a new <code>Calculator</code>-type object. With the first call, <code>Calculator bonus  = createCalculator(10);</code> we assign the method return reference to the <code>bonus</code> variable. With the second call, we create another reference and we assign it to the <code>lennon</code> variable. The variables <code>bonus</code> and <code>lennon</code> do not contain the same reference because the method creates a new object in both cases, and it returns the reference to that particular object.</p>
 
 
         <h2 id="stat_ja_ei">Static ja ei-static</h2>

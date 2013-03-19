@@ -1180,7 +1180,7 @@ if(Math.abs(distance) &lt; 0.0001) {
 }
 </pre>
 
-<h3>Reference-type variables</h3>
+<h3>Reference-Type Variables</h3>
 
         <p>Reference-type variables memorize the information which has been assigned to them "on the other end of the line". Reference-type variables contain a reference to the location where the information is stored. Differently from primitive-type variables, reference-type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Another substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
 
@@ -1308,7 +1308,7 @@ lennon = new Calculator(3);
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-6.png" /></p>
 
-        <h4>A reference-type variable as method parameter</h4>
+        <h4>A Reference-Type Variables and Method Parameters</h4>
 
         <p>When a reference-type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original-type variables, we copy the reference, and not their value. In fact, we can we can modify the object behind the reference even form within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
 
@@ -1361,12 +1361,12 @@ Calculator lennon = createCalculator(10);
         <p>The method <code>createCalculator</code> always creates a new <code>Calculator</code>-type object. With the first call, <code>Calculator bonus  = createCalculator(10);</code> we assign the method return reference to the <code>bonus</code> variable. With the second call, we create another reference and we assign it to the <code>lennon</code> variable. The variables <code>bonus</code> and <code>lennon</code> do not contain the same reference because the method creates a new object in both cases, and it returns the reference to that particular object.</p>
 
 
-        <h2 id="stat_ja_ei">Static and non-static</h2>
+        <h2 id="stat_ja_ei">Static and Non-Static</h2>
 
 
         <p>Let us go back to the topic of the 30th section of Introduction to Programming, and let us examine it in depth. The static or non-static nature of a variable or of a method depends on their scope. Static methods are always related to their class, whereas non-static methods can modify the variables of the object itself.</p>
 
-        <h3>Static, class libraries and final</h3>
+        <h3>Static, Class Libraries and Final</h3>
 
         <p>The methods which receive the definition static are not related to objects but to classes. it is possible to define class-specific variables by adding <code>static</code> to their name. For instance, <code>Integer.MAX_VALUE</code>, <code>Long.MIN_VALUE</code> and <code>Double.MAX_VALUE</code> are all static methods. Static methods are use via their class name, for instance <code>ClassName.variable</code> or <code>ClassName.method()</code>.</p>
 
@@ -1459,48 +1459,49 @@ public class Peson {
 
 <p>Even though Java allows for static variable use, we do not usually require it. Often, using static methods causes problems with the program structure, because static variables are as inconvenient as <a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">global variable</a>. <b>The only static variables we use in this course are constant, i.e. final!</b></p>
 
-    <h3>Ei-static</h3>
+    <h3>Non-Static</h3>
 
-    <p>Ei-staattiset metodit ja muuttujat liittyvät olioihin. Oliomuuttujat, eli attribuutit määritellään luokan alussa. Kun olio luodaan <code>new</code>-kutsulla, kaikille oliomuuttujille varataan tila olioon liittyvän viitteen päähän. Muuttujien arvot ovat oliokohtaisia, eli jokaisella oliolla on omat muuttujien arvot. Tutkitaan taas luokkaa <code>Ihminen</code>, jolla on oliomuuttujat <code>nimi</code> ja <code>rahat</code>.</p>
+    <p>Non-static methods and variables are related to objects. The object variables, or attributes, are defined at the beginning of the class. When an object is created with the <code>new</code> operator, we allocate storage space for all its object variables. The variable values are personal of the object, which means that every object receives personal variable values. Let us focus again on the class <code>Person</code>, which has got the object variable <code>name</code> and <code>money</code>.</p>
 
 <pre class="sh_java">
-public class Ihminen {
+public class Person {
   private String name;
-  private double rahat;
+  private double money;
 
-  // muut tiedot
+  // other details
 }
 </pre>
 
-    <p>Kun luokasta <em>Ihminen</em> luodaan uusi ilmentymä, alustetaan myös siihen liittyvät muuttujat. Jos viitetyyppistä muuttujaa <code>nimi</code> ei alusteta, saa se arvokseen <em>null</em>-viitteen. Lisätään luokan <em>Ihminen</em> toteutukseen vielä <em>konstruktori</em> ja muutama metodi.</p>
+    <p>When we create a new instance of class <em>Person</em>, we also initialize its variables. If we do not initialize the reference-type variable <code>name</code>, it receives value <em>null</em>. Let us add the <em>constructor</em> and a couple of methods to our class <em>person</em>.
+Lisätään luokan <em>Ihminen</em> toteutukseen vielä <em>konstruktori</em> ja muutama metodi.</p>
 
 <pre class="sh_java">
-public class Ihminen {
-    private String name;
-    private double rahat;
+public class Person {
+  private String name;
+  private double money;
 
-    // konstruktori
-    public Ihminen(String name, double rahat) {
-        this.name = nimi;
-        this.rahat = rahat;
+    // constructor
+    public Person(String name, double money) {
+        this.name = name;
+        this.rahat = money;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public double getRahat() {
-        return this.rahat;
+    public double getMoney() {
+        return this.money;
     }
 
-    public void lisaaRahaa(double summa) {
-        if(summa &gt; 0) {
-          this.rahat += summa;
+    public void addMoney(double amount) {
+        if(amount &gt; 0) {
+          this.money += amount;
         }
     }
 
-    public boolean onkoRahaaKertalippuun() {
-        if(this.rahat >= HslHinnasto.annaKertalipunHinta()) {
+    public boolean enoughMoneyForSigleTicket() {
+        if(this.money >= HslPrices.giveSingleTicketPrice()) {
             return true;
         }
 
@@ -1509,22 +1510,22 @@ public class Ihminen {
 }
 </pre>
 
-    <p>Konstruktori <code>Ihminen(String name, double rahat)</code> luo uuden ihmisolion ja palauttaa viitteen siihen. Metodi <code>getName()</code> palauttaa viitteen <code>nimi</code>-olioon, ja <code>getRahat()</code>-metodi palauttaa alkeistyyppisen muuttujan <code>rahat</code>. Metodi <code>lisaaRahaa(double summa)</code> lisaa oliomuuttujaan <code>rahat</code> parametrina annetun summan jos parametrin arvo on suurempi kuin 0.</p>
+    <p>The constructor <code>Person(String name, double money)</code> creates a new Person object, and it returns its reference. The method <code>getName()</code> returns the reference to a <code>name</code> object, and the <code>getMoney()</code> method returs the original-type variable <code>money</code>. The method <code>addMoney(double amount)</code> receives as parameter an amount of money, and it adds it to the <code>money</code> object variable if the parameter's value is greater than 0.</p>
 
-    <p>Oliometodeja kutsutaan olion viitteen kautta. Seuraava koodiesimerkki luo uuden Ihmis-olion, lisää sille rahaa, ja lopuksi tulostaa sen nimen. Huomaa että metodikutsut ovat muotoa <code>olionNimi.metodinNimi()</code></p>
+    <p>Object methods are called through their object reference. The following code example creates a new Person object, increases its money, and prints its name, at the end. Note that the method calls follow the pattern <code>objectName.methodName()</code></p>
 
 <pre class="sh_java">
-Ihminen matti = new Ihminen("Matti", 5.0);
-matti.lisaaRahaa(5); 
+Person matti = new Person("Matti", 5.0);
+matti.addMoney(5); 
 
-if (matti.onkoRahaaKertalippuun()) {
-    System.out.println("Ostetaan kertalippu.");
+if (matti.enoughMoneyForSingleTicket()) {
+    System.out.println("I'll buy a single ticket.");
 } else {
-    System.out.println("Mennään pummilla.");
+    System.out.println("Fare dodging, yeah!");
 }
 </pre>
 
-    <p>Esimerkki tulostaa "<code>Ostetaan kertalippu</code>".</p>
+    <p>The example prints "<code>I'll buy a single ticket.</code>"</p>
 
     <h4>Metodit luokan sisällä</h4>
 

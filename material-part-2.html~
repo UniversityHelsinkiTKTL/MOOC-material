@@ -1180,7 +1180,7 @@ if(Math.abs(distance) &lt; 0.0001) {
 }
 </pre>
 
-<h3>Reference-type variables</h3>
+<h3>Reference-Type Variables</h3>
 
         <p>Reference-type variables memorize the information which has been assigned to them "on the other end of the line". Reference-type variables contain a reference to the location where the information is stored. Differently from primitive-type variables, reference-type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Another substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
 
@@ -1308,7 +1308,7 @@ lennon = new Calculator(3);
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-6.png" /></p>
 
-        <h4>A reference-type variable as method parameter</h4>
+        <h4>A Reference-Type Variables and Method Parameters</h4>
 
         <p>When a reference-type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original-type variables, we copy the reference, and not their value. In fact, we can we can modify the object behind the reference even form within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
 
@@ -1361,146 +1361,147 @@ Calculator lennon = createCalculator(10);
         <p>The method <code>createCalculator</code> always creates a new <code>Calculator</code>-type object. With the first call, <code>Calculator bonus  = createCalculator(10);</code> we assign the method return reference to the <code>bonus</code> variable. With the second call, we create another reference and we assign it to the <code>lennon</code> variable. The variables <code>bonus</code> and <code>lennon</code> do not contain the same reference because the method creates a new object in both cases, and it returns the reference to that particular object.</p>
 
 
-        <h2 id="stat_ja_ei">Static ja ei-static</h2>
+        <h2 id="stat_ja_ei">Static and Non-Static</h2>
 
 
-        <p>Kerrataan ja täsmennetään Ohjelmoinnin perusteiden luvussa 30 käsiteltyä asiaa. Staattisuudella ja ei-staattisisuudella erotetaan se, mihin muuttuja tai metodi liittyy. Staattiset metodit liittyvät aina luokkaan, kun taas ei-staattiset metodit voivat muokata olion omia muuttujia.</p>
+        <p>Let us go back to the topic of the 30th section of Introduction to Programming, and let us examine it in depth. The static or non-static nature of a variable or of a method depends on their scope. Static methods are always related to their class, whereas non-static methods can modify the variables of the object itself.</p>
 
-        <h3>Static, luokkakirjastot ja final</h3>
+        <h3>Static, Class Libraries and Final</h3>
 
-        <p>Static-määreen saavat metodit eivät liity olioihin vaan luokkiin. On mahdollista määritellä myös luokkakohtaisia muuttujia lisäämällä muuttujan eteen määre <code>static</code>. Esimerkiksi <code>Integer.MAX_VALUE</code>, <code>Long.MIN_VALUE</code> ja <code>Double.MAX_VALUE</code> ovat kaikki staattisia muuttujia. Staattisia muuttujia ja metodeja käytetään luokan nimen kautta, esimerkiksi <code>LuokanNimi.muuttuja</code> tai <code>LuokanNimi.metodi()</code>.</p>
+        <p>The methods which receive the definition static are not related to objects but to classes. it is possible to define class-specific variables by adding <code>static</code> to their name. For instance, <code>Integer.MAX_VALUE</code>, <code>Long.MIN_VALUE</code> and <code>Double.MAX_VALUE</code> are all static methods. Static methods are use via their class name, for instance <code>ClassName.variable</code> or <code>ClassName.method()</code>.</p>
 
-        <p>Luokkakirjastoksi kutsutaan luokkaa, jossa on yleiskäyttöisiä metodeja ja muuttujia. Esimerkiksi Javan <code>Math</code>-luokka on luokkakirjasto. Se tarjoaa muun muassa <code>Math.PI</code>-muuttujan. Omien luokkakirjastojen toteuttaminen on usein hyödyllistä. Esimerkiksi Helsingin Seudun Liikenne (HSL) voisi pitää lippujensa hintoja luokkakirjastossa, josta ne löytyisi tarvittaessa.</p>
+        <p>We call class library that class which contains common-use methods and variables. For instance, Java <code>Math</code> class is a class library. It provides the <code>Math.PI</code> variable, inter alia. Often, creating your own class libraries can prove useful. Helsinki Regional Transport Authority (Finnish: Helsingin Seudun Liikenne, HSL) could keep its ticket prices at its fingertips in a class library.</p>
 
 <pre class="sh_java">
-public class HslHinnasto {
-    public static final double KERTALIPPU_AIKUINEN = 2.50;
-    public static final double RAITIOVAUNULIPPU_AIKUINEN = 2.50;
+public class HslPrices {
+    public static final double SINGLETICKET_AUDULT = 2.50;
+    public static final double TRAMTICKET_AUDULT = 2.50;
 }
 </pre>
 
-        <p>Avainsana <code>final</code> muuttujan määrittelyssä kertoo ettei muuttujaan voi asettaa uutta arvoa kun se on kerran asetettu. Final-tyyppiset muuttujat ovat vakioita, ja niiden tulee sisältää aina arvo. Esimerkiksi suurimman kokonaisluvun kertova luokkamuuttuja <code>Integer.MAX_VALUE</code> on vakiotyyppinen luokkamuuttuja.</p>
+        <p>The keyword <code>final</code> in the variable definition tells that once we assign a variable to a value, we can not assign a new one to it. Final-type variables are constant, and they always have to contain a value. For instance, the class variable which tells the greatest integer, <code>Integer.MAX_VALUE</code>, is a constant class variable.</p>
 
-        <p>Jos käytössämme on yllä esitelty luokka <code>HslHinnasto</code>, voivat kaikki ohjelmat, jotka tarvitsevat kerta- tai raitiovaunulipun hintaa, päästä niihin käsiksi <code>HslHinnasto</code>-luokan kautta. Seuraavassa esimerkissä esitellään luokka <code>Ihminen</code>, jolla on metodi <code>onkoRahaaKertalippuun()</code>, joka käyttää <code>HslHinnasto</code>-luokasta löytyvää lipun hintaa.</p>
+        <p>If we have the class presented above, <code>HslPrices</code>, all the programs which need the single or tram-ticket price can have access to it through the class <code>HslPrices</code>. With the next example, we present the class <code>Person</code>, which has the method <code>enoughMoneyForSingleTicket()</code>, which makes use of the ticket price found in the class <code>HslPrices</code>.</p>
 
 <pre class="sh_java">
-public class Ihminen {
+public class Person {
     private String name;
-    private double rahat;
-    // muut oliomuuttujat
+    private double money;
+    // more object variables
 
-    // konstruktori
+    // constructor
 
-    public boolean onkoRahaaKertalippuun() {
-        if(this.rahat >= HslHinnasto.KERTALIPPU_AIKUINEN) {
+    public boolean enoughMoneyForSingleTicket() {
+        if(this.rahat >= HslPrices.SINGLETICKET_AUDULT) {
             return true;
         }
 
         return false;
     }
 
-    // muut luokkaan Ihminen liittyvät metodit
+    // the other methods regarding the class Person
 }
 </pre>
 
-<p>Metodi <code>public boolean onkoRahaaKertalippuun()</code> vertaa luokan <code>Ihminen</code> oliomuuttujaa <code>rahat</code> <code>HslHinnasto</code>-luokan staattiseen muuttujaan <code>KERTALIPPU_AIKUINEN</code>. Metodia <code>onkoRahaaKertalippuun()</code> voi kutsua vain olioviitteen kautta. Esimerkiksi:</p>
+<p>The method <code>public boolean enoughMoneyForSingleTicket()</code> compares the object variable <code>money</code> of class <code>Person</code> to the static variable <code>SINGLETICKET_AUDULT</code> of class <code>HslPrices</code>. The method <code>enoughMoneyForSingleTicket()</code> can be called only through an object reference. For instance:</p>
 
 <pre class="sh_java">
-Ihminen matti = new Ihminen();
+Person matti = new Person();
 
-if (matti.onkoRahaaKertalippuun()) {
-    System.out.println("Ostetaan kertalippu.");
+if (matti.enoughMoneyForSingleTicket()) {
+    System.out.println("I'll buy a ticket.");
 } else {
-    System.out.println("Mennään pummilla.");
+    System.out.println("Fare dodging, yeah!");
 }
 </pre>
 
-<p>Huomaa nimeämiskäytäntö! Kaikki <em>vakiot</em> eli final-määreellä varustetut muuttujat kirjoitetaan ISOLLA_JA_ALAVIIVOILLA.</p> 
+<p>Note the naming convention! All <em>constants</em>, i.e. all variable which are provided with the definition final, are written with CAPITAL_LETTERS_AND_UNDERLINE_CHARACTERS.</p> 
 
-<p>Staattiset metodit toimivat vastaavasti. Esimerkiksi Luokka <code>HslHinnasto</code> saattaisi <em>kapseloida</em> muuttujat ja antaa vain <em>aksessorit</em> niihin. Aksessoriksi kutsutaan metodia, jolla voi joko lukea muuttujan arvon tai sijoittaa muuttujalle uuden arvon.</p>
+<p>Static methods function analogously. For instance, the class <code>HslPrices</code> could <em>encapsulate</em> the variables and only provide <em>accessors</em>. We call accessors the methods which allow us to either read a variable value or to assign them a new value.</p>
 
 <pre class="sh_java">
-public class HslHinnasto {
-  private static final double KERTALIPPU_AIKUINEN = 2.50;
-  private static final double RAITIOVAUNULIPPU_AIKUINEN = 2.50;
+public class HslPrices {
+    public static final double SINGLETICKET_AUDULT = 2.50;
+    public static final double TRAMTICKET_AUDULT = 2.50;
 
-  public static double annaKertalipunHinta() {   // Aksessori
-    return KERTALIPPU_AIKUINEN;
+  public static double getSingleTicketPrice() {   // Accessor
+    return SINGLETICKET_AUDULT;
   }
 
-  public static double annaRaitiovaunulipunHinta() {   // Aksessori
-    return RAITIOVAUNULIPPU_AIKUINEN;
+  public static double getTramTicketPrice() {   // Accessor
+    return TRAMTICKET_AUDULT;
   }
 }
 </pre>
 
-<p>Tällöin <code>Ihminen</code>-luokan toteutuksessa tulee kutsua metodia<code>annaKertalipunHinta()</code> sen sijaan että kutsuttaisiin muuttujaa suoraan.</p>
+<p>In such cases, if we code a <code>Person</code> class, we would need to call the method <code>getSingleTicketPrice()</code>, and we could not call the variable directly.</p>
 
 <pre class="sh_java">
-public class Ihminen {
+public class Peson {
     private String name;
-    private double rahat;
-    // muut oliomuuttujat
+    private double money;
+    // more object variable
 
-    // konstruktori
+    // constructor
 
-    public boolean onkoRahaaKertalippuun() {
-        if(this.rahat >= HslHinnasto.annaKertalipunHinta()) {
+    public boolean enoughMoneyForSingleTicket() {
+        if(this.money >= HslPrices.giveSingleTicketPrice()) {
             return true;
         }
 
         return false;
     }
 
-    // muut luokkaan Ihminen liittyvät metodit
+    // the other methods regarding the class Person
 }
 </pre>
 
 
-<p>Vaikka Java periaatteessa mahdollistaa staattisten muuttujien käytön, ei niille useinkaan ole tarvetta. Usein staattisten muuttujien käyttö aiheuttaa ongelmia ohjelman rakenteelle, sillä staattiset muuttujat toimivat pahamaineisten <a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">globaalien muuttujien</a> tapaan. <b>Tällä kurssilla käytämme ainoastaan vakioarvoisia eli final määreen omaavia staattisia muuttujia!</b></p>
+<p>Even though Java allows for static variable use, we do not usually require it. Often, using static methods causes problems with the program structure, because static variables are as inconvenient as <a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">global variable</a>. <b>The only static variables we use in this course are constant, i.e. final!</b></p>
 
-    <h3>Ei-static</h3>
+    <h3>Non-Static</h3>
 
-    <p>Ei-staattiset metodit ja muuttujat liittyvät olioihin. Oliomuuttujat, eli attribuutit määritellään luokan alussa. Kun olio luodaan <code>new</code>-kutsulla, kaikille oliomuuttujille varataan tila olioon liittyvän viitteen päähän. Muuttujien arvot ovat oliokohtaisia, eli jokaisella oliolla on omat muuttujien arvot. Tutkitaan taas luokkaa <code>Ihminen</code>, jolla on oliomuuttujat <code>nimi</code> ja <code>rahat</code>.</p>
+    <p>Non-static methods and variables are related to objects. The object variables, or attributes, are defined at the beginning of the class. When an object is created with the <code>new</code> operator, we allocate storage space for all its object variables. The variable values are personal of the object, which means that every object receives personal variable values. Let us focus again on the class <code>Person</code>, which has got the object variable <code>name</code> and <code>money</code>.</p>
 
 <pre class="sh_java">
-public class Ihminen {
+public class Person {
   private String name;
-  private double rahat;
+  private double money;
 
-  // muut tiedot
+  // other details
 }
 </pre>
 
-    <p>Kun luokasta <em>Ihminen</em> luodaan uusi ilmentymä, alustetaan myös siihen liittyvät muuttujat. Jos viitetyyppistä muuttujaa <code>nimi</code> ei alusteta, saa se arvokseen <em>null</em>-viitteen. Lisätään luokan <em>Ihminen</em> toteutukseen vielä <em>konstruktori</em> ja muutama metodi.</p>
+    <p>When we create a new instance of class <em>Person</em>, we also initialize its variables. If we do not initialize the reference-type variable <code>name</code>, it receives value <em>null</em>. Let us add the <em>constructor</em> and a couple of methods to our class <em>person</em>.
+Lisätään luokan <em>Ihminen</em> toteutukseen vielä <em>konstruktori</em> ja muutama metodi.</p>
 
 <pre class="sh_java">
-public class Ihminen {
-    private String name;
-    private double rahat;
+public class Person {
+  private String name;
+  private double money;
 
-    // konstruktori
-    public Ihminen(String name, double rahat) {
-        this.name = nimi;
-        this.rahat = rahat;
+    // constructor
+    public Person(String name, double money) {
+        this.name = name;
+        this.rahat = money;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public double getRahat() {
-        return this.rahat;
+    public double getMoney() {
+        return this.money;
     }
 
-    public void lisaaRahaa(double summa) {
-        if(summa &gt; 0) {
-          this.rahat += summa;
+    public void addMoney(double amount) {
+        if(amount &gt; 0) {
+          this.money += amount;
         }
     }
 
-    public boolean onkoRahaaKertalippuun() {
-        if(this.rahat >= HslHinnasto.annaKertalipunHinta()) {
+    public boolean enoughMoneyForSigleTicket() {
+        if(this.money >= HslPrices.giveSingleTicketPrice()) {
             return true;
         }
 
@@ -1509,7 +1510,7 @@ public class Ihminen {
 }
 </pre>
 
-    <p>Konstruktori <code>Ihminen(String name, double rahat)</code> luo uuden ihmisolion ja palauttaa viitteen siihen. Metodi <code>getName()</code> palauttaa viitteen <code>nimi</code>-olioon, ja <code>getRahat()</code>-metodi palauttaa alkeistyyppisen muuttujan <code>rahat</code>. Metodi <code>lisaaRahaa(double summa)</code> lisaa oliomuuttujaan <code>rahat</code> parametrina annetun summan jos parametrin arvo on suurempi kuin 0.</p>
+    <p>The constructor <code>Person(String name, double money)</code> creates a new Person object, and it returns its reference. The method <code>getName()</code> returns the reference to a <code>name</code> object, and the <code>getMoney()</code> method returs the original-type variable <code>money</code>. The method <code>addMoney(double amount)</code> receives as parameter an amount of money, and it adds it to the <code>money</code> object variable if the parameter's value is greater than 0.</p>
 
     <p>Oliometodeja kutsutaan olion viitteen kautta. Seuraava koodiesimerkki luo uuden Ihmis-olion, lisää sille rahaa, ja lopuksi tulostaa sen nimen. Huomaa että metodikutsut ovat muotoa <code>olionNimi.metodinNimi()</code></p>
 

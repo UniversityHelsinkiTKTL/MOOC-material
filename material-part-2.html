@@ -1364,13 +1364,13 @@ Calculator lennon = createCalculator(10);
         <h2 id="stat_ja_ei">Static and Non-Static</h2>
 
 
-        <p>Let us go back to the topic of the 30th section of Introduction to Programming, and let us examine it in depth. The static or non-static nature of a variable or of a method depends on their scope. Static methods are always related to their class, whereas non-static methods can modify the variables of the object itself.</p>
+        <p>Let us go back to a topic which we introduced in the 30th section of Introduction to Programming, and let us go deeper into into. The static or non-static nature of a variable or of a method depends on their scope. Static methods are always related to their class, whereas non-static methods can modify the variables of the object itself.</p>
 
         <h3>Static, Class Libraries and Final</h3>
 
-        <p>The methods which receive the definition static are not related to objects but to classes. it is possible to define class-specific variables by adding <code>static</code> to their name. For instance, <code>Integer.MAX_VALUE</code>, <code>Long.MIN_VALUE</code> and <code>Double.MAX_VALUE</code> are all static methods. Static methods are use via their class name, for instance <code>ClassName.variable</code> or <code>ClassName.method()</code>.</p>
+        <p>The methods which receive the definition static are not related to objects but to classes. it is possible to define class-specific variables by adding the word <code>static</code> to their name. For instance, <code>Integer.MAX_VALUE</code>, <code>Long.MIN_VALUE</code> and <code>Double.MAX_VALUE</code> are all static methods. Static methods are called via their class name, for instance <code>ClassName.variable</code> or <code>ClassName.method()</code>.</p>
 
-        <p>We call class library that class which contains common-use methods and variables. For instance, Java <code>Math</code> class is a class library. It provides the <code>Math.PI</code> variable, inter alia. Often, creating your own class libraries can prove useful. Helsinki Regional Transport Authority (Finnish: Helsingin Seudun Liikenne, HSL) could keep its ticket prices at its fingertips in a class library.</p>
+        <p>We call class library that class which contains common-use methods and variables. For instance, Java <code>Math</code> class is a class library. It provides the <code>Math.PI</code> variable, inter alia. Often, creating your own class libraries can prove useful. Helsinki Regional Transport Authority (Finnish: Helsingin Seudun Liikenne, HSL) could use a class library to keep its ticket prices at its fingertips.</p>
 
 <pre class="sh_java">
 public class HslPrices {
@@ -1379,9 +1379,9 @@ public class HslPrices {
 }
 </pre>
 
-        <p>The keyword <code>final</code> in the variable definition tells that once we assign a variable to a value, we can not assign a new one to it. Final-type variables are constant, and they always have to contain a value. For instance, the class variable which tells the greatest integer, <code>Integer.MAX_VALUE</code>, is a constant class variable.</p>
+        <p>The keyword <code>final</code> in the variable definition tells that once we assign a value to a variable, we can not assign a new one to it. Final-type variables are constant, and they always have to have a value. For instance, the class variable which tells the greatest integer, <code>Integer.MAX_VALUE</code>, is a constant class variable.</p>
 
-        <p>If we have the class presented above, <code>HslPrices</code>, all the programs which need the single or tram-ticket price can have access to it through the class <code>HslPrices</code>. With the next example, we present the class <code>Person</code>, which has the method <code>enoughMoneyForSingleTicket()</code>, which makes use of the ticket price found in the class <code>HslPrices</code>.</p>
+        <p>Once we have the class presented above, <code>HslPrices</code>, all the programs which need the single or tram-ticket price can have access to it through the class <code>HslPrices</code>. With the next example, we present the class <code>Person</code>, which has the method <code>enoughMoneyForSingleTicket()</code>, which makes use of the ticket price found in the class <code>HslPrices</code>.</p>
 
 <pre class="sh_java">
 public class Person {
@@ -1417,7 +1417,7 @@ if (matti.enoughMoneyForSingleTicket()) {
 
 <p>Note the naming convention! All <em>constants</em>, i.e. all variable which are provided with the definition final, are written with CAPITAL_LETTERS_AND_UNDERLINE_CHARACTERS.</p> 
 
-<p>Static methods function analogously. For instance, the class <code>HslPrices</code> could <em>encapsulate</em> the variables and only provide <em>accessors</em>. We call accessors the methods which allow us to either read a variable value or to assign them a new value.</p>
+<p>Static methods function analogously. For instance, the class <code>HslPrices</code> could <em>encapsulate</em> the variables and only provide <em>accessors</em>. We call accessors the methods which allow us to either read a variable value or to assign them a new one.</p>
 
 <pre class="sh_java">
 public class HslPrices {
@@ -1434,13 +1434,13 @@ public class HslPrices {
 }
 </pre>
 
-<p>In such cases, if we code a <code>Person</code> class, we would need to call the method <code>getSingleTicketPrice()</code>, and we could not call the variable directly.</p>
+<p>In such cases, when we code a class such as <code>Person</code>, we can't call the variable straight, but we have to get it through the method <code>getSingleTicketPrice()</code>.</p>
 
 <pre class="sh_java">
 public class Peson {
     private String name;
     private double money;
-    // more object variable
+    // other object variables
 
     // constructor
 
@@ -1452,12 +1452,12 @@ public class Peson {
         return false;
     }
 
-    // the other methods regarding the class Person
+    // other methods regarding the class Person
 }
 </pre>
 
 
-<p>Even though Java allows for static variable use, we do not usually require it. Often, using static methods causes problems with the program structure, because static variables are as inconvenient as <a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">global variable</a>. <b>The only static variables we use in this course are constant, i.e. final!</b></p>
+<p>Even though Java allows for static variable use, we do not usually require it. Often, using static methods causes problems with the program structure, because static variables are as inconvenient as <a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">global variables</a>. <b>The only static variables we use in this course are constant, i.e. final!</b></p>
 
     <h3>Non-Static</h3>
 
@@ -1472,8 +1472,7 @@ public class Person {
 }
 </pre>
 
-    <p>When we create a new instance of class <em>Person</em>, we also initialize its variables. If we do not initialize the reference-type variable <code>name</code>, it receives value <em>null</em>. Let us add the <em>constructor</em> and a couple of methods to our class <em>person</em>.
-Lisätään luokan <em>Ihminen</em> toteutukseen vielä <em>konstruktori</em> ja muutama metodi.</p>
+    <p>When we create a new instance of class <em>Person</em>, we also initialize its variables. If we do not initialize the reference-type variable <code>name</code>, it receives value <em>null</em>. Let us add the <em>constructor</em> and a couple of methods to our class <em>Person</em>.</p>
 
 <pre class="sh_java">
 public class Person {
@@ -1483,7 +1482,7 @@ public class Person {
     // constructor
     public Person(String name, double money) {
         this.name = name;
-        this.rahat = money;
+        this.money = money;
     }
 
     public String getName() {
@@ -1501,7 +1500,7 @@ public class Person {
     }
 
     public boolean enoughMoneyForSigleTicket() {
-        if(this.money >= HslPrices.giveSingleTicketPrice()) {
+        if(this.money >= HslPrices.getSingleTicketPrice()) {
             return true;
         }
 
@@ -1527,13 +1526,13 @@ if (matti.enoughMoneyForSingleTicket()) {
 
     <p>The example prints "<code>I'll buy a single ticket.</code>"</p>
 
-    <h4>Metodit luokan sisällä</h4>
+    <h4>Class Methods</h4>
 
-    <p>Luokan sisäisiä ei-staattisia metodeja voi kutsua myös ilman olio-etuliitettä metodiin liittyvissä luokissa. Esimerkiksi seuraava <code>toString()</code>-metodi <code>Ihminen</code> luokalle, joka kutsuu olioon liittyvää metodia <code>getName()</code>.</p>
+    <p>Non-static class methods can be also called without specifing the object affix which indicates the class. In the following example, the <code>toString()</code> method points to the class <code>Person</code>, which calls the object method <code>getName()</code>.</p>
 
 <pre class="sh_java">
-public class Ihminen {
-    // aiemmin toteutetun luokan sisältö
+public class Person {
+    // earlier written content
 
     public String toString() {
         return this.getName();
@@ -1541,31 +1540,31 @@ public class Ihminen {
 }
 </pre>
 
-    <p>Metodi <code>toString()</code> kutsuu siis luokan sisäistä juuri käsiteltävään olioon liittyvää <code>getName()</code>-metodia. Etuliite <code>this</code> korostaa kutsun liittyvän juuri tähän olioon.</p>
+    <p>The <code>toString()</code> method calls the class method <code>getName()</code>, which belongs to the object in question. The <code>this</code> affix emphasize that the calls precisely refers to this object.</p>
 
-    <p>Ei-staattiset metodit voivat kutsua myös staattisia, eli luokkakohtaisia metodeja. Toisaalta, luokkakohtaiset metodit eivät voi kutsua oliokohtaisia metodeja ilman viitettä itse olioon, sillä ilman viitettä ei päästä käsiksi olioon liittyviin tietoihin.</p>
+    <p>Non-static methods can also call static methods, that is the class-specific ones. On the other hand, static methods can not call non-static methods without a reference to the object itself, which is essential to retrive the object information.</p>
 
 
-    <h4>Muuttujat metodien sisällä</h4>
+    <h4>A Variable within a Method</h4>
 
-    <p>Metodien sisällä määriteltävät muuttujat ovat metodien suorituksessa käytettäviä apumuuttujia, eikä niitä tule sekoittaa oliomuuttujiin. Alla esimerkki metodista, jossa luodaan metodiin paikallinen muuttuja. Muuttuja <code>indeksi</code> on olemassa ja käytössä vain metodin suorituksen ajan.</p>
+    <p>The variables which are defined inside a method are auxiliary variables used during the method execution, and they are not to be confused with object variables. The example below shows how a local variable is created inside a method. The <code>index</code> variable exists and is accessible only during the method execution.</p>
 
 <pre class="sh_java">
 public class ... {
     ...
 
-    public static void tulostaTaulukko(String[] taulukko) {
-        int indeksi = 0;
+    public static void printTable(String[] table) {
+        int index = 0;
 
-        while(indeksi &lt; taulukko.length) {
-            System.out.println(taulukko[indeksi]);
-            indeksi++;
+        while(index &lt; table.length) {
+            System.out.println(table[index]);
+            index++;
         }
     }
 }
 </pre>
 
-    <p>Metodissa <code>tulostaTaulukko()</code> luodaan apumuuttuja <code>indeksi</code> jota käytetään taulukon läpikäynnissä. Muuttuja <code>indeksi</code> on olemassa vain metodin suorituksen ajan.</p>
+    <p>In the <code>printTable()</code> method, we create the auxiliary variable <code>index</code> which we use to parse the table. The variable <code>index</code> exists only during the method execution.</p>
 
 
 <div class="tehtavat">

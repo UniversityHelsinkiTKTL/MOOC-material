@@ -1945,88 +1945,88 @@ null
 
 </div>
 
-        <h3 id="kirjastotietokanta">Kirjojen haku hajautustaulun avulla</h3>
+        <h3 id="kirjastotietokanta">Book Search through HashMap</h3>
 
-        <p>Tutkitaan hajautustaulun toimintaa seuraavaksi kirjastoesimerkin avulla. Bookstosta voi hakea kirjoja kirjan nimen perusteella, nimi toimii siis kirjan avaimena. Jos annetulle nimelle löytyy kirja, saadaan siihen liittyvä viite ja samalla kirjan tiedot. Luodaan ensin esimerkkiluokka <code>Book</code>, jolla on oliomuuttujina nimi ja kirjaan liittyvä sisältö.</p>
+        <p>Let us go deeper into HashMap workings with the help of the following example. Books can be retrived based on their name, which acts as book key. If we find a book for the given name, we obtain the respective reference, as well as the book details. Let us create the example class <code>Book</code>, which has a name and the book contents as object variables.</p>
 
 <pre class="sh_java">
 public class Book {
     private String name;
-    private String sisalto;
+    private String contents;
     private int publishingYear;
 
-    public Book(String name, int publishingYear, String sisalto) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
-        this.sisalto = sisalto;
+    public Book(String name, int publishingYear, String contents) {
+        this.name = name;
+        this.publishingYear = publishingYear;
+        this.contents = contents;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public void setNimi(String name) {
-        this.name = nimi;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPublishingYear() {
         return this.publishingYear;
     }
 
-    public void setJulkaisuvuosi(int publishingYear) {
-        this.publishingYear = julkaisuvuosi;
+    public void setPublishingYear(int publishingYear) {
+        this.publishingYear = publishingYear;
     }
 
-    public String getSisalto() {
-        return this.sisalto;
+    public String getContents() {
+        return this.contents;
     }
 
-    public void setSisalto(String sisalto) {
-        this.sisalto = sisalto;
+    public void setContents(String contents) {
+        this.contents = contents;
     }
 
     public String toString() {
         return "Nimi: " + this.name + " (" + this.publishingYear + ")\n"
-                + "Sisältö: " + this.sisalto;
+                + "Contents: " + this.contents;
     }
 }
 </pre>
 
-        <p>Luodaan seuraavaksi hajautustaulu, joka käyttää avaimena kirjan nimeä eli String-tyyppistä oliota, ja tallentaa viitteitä <code>Book</code>-olioihin.</p>
+        <p>In the following example, we create a HashMap which makes use of the book name - a String-type object- and stores the references to <code>Book</code>-objects.</p>
 
 <pre class="sh_java">
-HashMap&lt;String, Book&gt; kirjahakemisto = new HashMap&lt;String, Book&gt;();
+HashMap&lt;String, Book&gt; library = new HashMap&lt;String, Book&gt;();
 </pre>
 
-    <p>Yllä oleva hajautustaulu käyttää avaimena <code>String</code>-oliota. Laajennetaan esimerkkiä siten, että kirjahakemistoon lisätään kaksi kirjaa, <code>"Järki ja tunteet"</code> ja <code>"Ylpeys ja ennakkoluulo"</code>.</p>
+    <p>The HashMap above has a <code>String</code> object as key. Let us extend our example so that we would add two books to our library, <code>"Sense and Sensibility"</code> and <code>"Pride and Prejudice"</code>.</p>
 
 <pre class="sh_java">
-Book senseAndSensibility = new Book("Järki ja tunteet", 1811, "...");
-Book prideAndPrejudice = new Book("Ylpeys ja ennakkoluulo", 1813, "....");
+Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
+Book prideAndPrejudice = new Book("Pride and Prejudice", 1813, "....");
 
-HashMap&lt;String, Book&gt; kirjahakemisto = new HashMap&lt;String, Book&gt;();
-kirjahakemisto.put(senseAndSensibility.getName(), senseAndSensibility);
-kirjahakemisto.put(prideAndPrejudice.getName(), prideAndPrejudice);
+HashMap&lt;String, Book&gt; library = new HashMap&lt;String, Book&gt;();
+library.put(senseAndSensibility.getName(), senseAndSensibility);
+library.put(prideAndPrejudice.getName(), prideAndPrejudice);
 </pre>
 
-        <p>Bookhakemistosta voi hakea kirjoja kirjan nimellä. Haku kirjalla <code>"Viisasteleva sydän"</code> ei tuota osumaa, jolloin hajautustaulu palauttaa <code>null</code>-viitteen. Book "Ylpeys ja ennakkoluulo" kuitenkin löytyy.</p>
+        <p>Books can be retrived from the library based on their name. A search for the book <code>"Persuasion"</code> does not return a corrispondence, in which case the HashMap returns a <code>null</code> reference. However, the book "Pride and Prejudice" was found.</p>
 
 <pre class="sh_java">
-Book kirja = kirjahakemisto.get("Viisasteleva sydän");
-System.out.println(kirja);
+Book book = library.get("Persuasion");
+System.out.println(book);
 System.out.println();
-kirja = kirjahakemisto.get("Ylpeys ja ennakkoluulo");
-System.out.println(kirja);
+book = library.get("Pride and Prejudice");
+System.out.println(book);
 </pre>
 
 <pre>
 null
 
-Nimi: Ylpeys ja ennakkoluulo (1813)
-Sisältö: ...
+Name: Pride and Prejudice (1813)
+Contents: ...
 </pre>
 
-    <p>Hajautustaulu on hyödyllinen silloin kun tiedetään avain minkä perusteella halutaan hakea. Avaimet ovat aina yksilöllisiä, joten saman avaimen taakse ei voi tallettaa montaa eri oliota. Tallennettava olio voi toki olla lista tai toinen hajautustaulukko!</p>
+    <p>HashMaps are useful when we know the key to use for our search. Keys are always unique, and it is not possible to store more than one object with one key. The object which we store can still be a list or another HashMap, of course!</p>
 
     <h3 id="kapseloitu_kirjasto">Booksto</h3>
 

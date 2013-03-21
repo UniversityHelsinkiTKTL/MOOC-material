@@ -317,7 +317,7 @@ public class HelloWorld {
 
     <p>In a program, classes are used to define concepts and functionalities related to those concepts. Objects can be created from a class which are the embodiments of the class. Every object belongs to a certain class has the same structure, but the variables belonging to the objects can be different. The methods of objects handle the state of the object, that is, the variables of the object.</p>
 
-    <p>Let's inspect the class <code>Book</code> below; the class has the object variables name (character string) and publishingYear (integer).</p>
+    <p>Let's inspect the class <code>Book</code> below; the class has the object variables name (String) and publishingYear (integer).</p>
 
 <pre class="sh_java">
         public class Book {
@@ -1897,7 +1897,7 @@ null
 </pre>
 
 
-    <p>In the example, we create a HashMap which both the key and the mapped object are character strings. We add information to the HashMap with the <code>put()</code> method, which receives the references to the key and to the mapped object as parameter. The method <code>get()</code> returns either the reference to the key given as parameter or a <code>null</code> value in case the key was not found.</p>
+    <p>In the example, we create a HashMap which both the key and the mapped object are strings. We add information to the HashMap with the <code>put()</code> method, which receives the references to the key and to the mapped object as parameter. The method <code>get()</code> returns either the reference to the key given as parameter or a <code>null</code> value in case the key was not found.</p>
 
     <p>Each key is mapped to one value, within the HashMap. If we store a new value with an already existing key, the old value is lost.</p>
 
@@ -1995,27 +1995,27 @@ public class Book {
         <p>In the following example, we create a HashMap which makes use of the book name - a String-type object - and stores the references which point to <code>Book</code>-objects.</p>
 
 <pre class="sh_java">
-HashMap&lt;String, Book&gt; library = new HashMap&lt;String, Book&gt;();
+HashMap&lt;String, Book&gt; bookCollection = new HashMap&lt;String, Book&gt;();
 </pre>
 
-    <p>The HashMap above has a <code>String</code> object as key. Let us extend our example so that we would add two books to our library, <code>"Sense and Sensibility"</code> and <code>"Pride and Prejudice"</code>.</p>
+    <p>The HashMap above has a <code>String</code> object as key. Let us extend our example so that we would add two books to our book collection, <code>"Sense and Sensibility"</code> and <code>"Pride and Prejudice"</code>.</p>
 
 <pre class="sh_java">
 Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
 Book prideAndPrejudice = new Book("Pride and Prejudice", 1813, "....");
 
-HashMap&lt;String, Book&gt; library = new HashMap&lt;String, Book&gt;();
-library.put(senseAndSensibility.getName(), senseAndSensibility);
-library.put(prideAndPrejudice.getName(), prideAndPrejudice);
+HashMap&lt;String, Book&gt; bookCollection = new HashMap&lt;String, Book&gt;();
+bookCollection.put(senseAndSensibility.getName(), senseAndSensibility);
+librabookCollectionry.put(prideAndPrejudice.getName(), prideAndPrejudice);
 </pre>
 
-        <p>Books can be retrived from the library based on their name. A search for the book <code>"Persuasion"</code> does not return a corrispondence, in which case the HashMap returns a <code>null</code> reference. However, the book "Pride and Prejudice" was found.</p>
+        <p>Books can be retrived from the book collection based on their name. A search for the book <code>"Persuasion"</code> does not return a corresponding entry, in which case the HashMap returns a <code>null</code> reference. However, the book "Pride and Prejudice" was found.</p>
 
 <pre class="sh_java">
-Book book = library.get("Persuasion");
+Book book = bookCollection.get("Persuasion");
 System.out.println(book);
 System.out.println();
-book = library.get("Pride and Prejudice");
+book = bookCollection.get("Pride and Prejudice");
 System.out.println(book);
 </pre>
 
@@ -2028,74 +2028,74 @@ Contents: ...
 
     <p>HashMaps are useful when we know the key to use for our search. Keys are always unique, and it is not possible to store more than one object together with one key alone. The object which we store can still be a list or another HashMap, of course!</p>
 
-    <h3 id="kapseloitu_kirjasto">Booksto</h3>
+    <h3 id="kapseloitu_kirjasto">Library</h3>
 
-    <p>Yllä olevan kirjahakemiston ongelmana on se, että kirjoja haettaessa täytyy muistaa kirjan nimi merkki merkiltä oikein. Javan valmis <code>String</code>-luokka tarjoaa meille välineet tähänkin. Metodi <code>toLowerCase()</code> muuttaa characterStringn kirjaimet pieniksi, ja metodi <code>trim()</code> poistaa characterStringn alusta ja lopusta tyhjät merkit (esimerkiksi välilyönnit). Tietokoneen käyttäjät usein kirjoittavat tekstin alkuun tai loppuun vahingossa välilyöntejä.</p>
+    <p>The problem with the book collection above is that we must remember the correct book name when we search for it, character by character. Java built-in <code>String</code> class provides us the tools for this. The <code>toLowerCase()</code> method turns a string's characters to lower case, and the <code>trim()</code> method deletes the white spaces at the beginning and at the end of the string. Computer users tend to write white spaces at the beginning or end of a text, involuntarily.</p>
 
 <pre class="sh_java">
-String teksti = "Ylpeys ja ennakkoluulo ";
-teksti = teksti.toLowerCase(); // teksti nyt "ylpeys ja ennakkoluulo "
-teksti = teksti.trim() // teksti nyt "ylpeys ja ennakkoluulo"
+String text = "Pride and Prejudice ";
+text = text.toLowerCase(); // the text is now "Pride and Prejudice "
+text = text.trim() // the text is now "Pride and Prejudice"
 </pre>
 
-    <p>Luodaan luokka <code>Booksto</code>, joka kapseloi kirjat sisältävän hajautustaulun ja mahdollistaa kirjoitusasusta riippumattoman kirjojen haun. Lisätään <code>Booksto</code>-luokalle metodit <code>lisaaBook(Book kirja)</code> ja <code>poistaBook(String kirjanNimi)</code>. Huomaamme jo nyt että characterStringn siistimistä tarvitsisi useammassa metodissa, joten tehdään siitä erillinen metodi <code>private String siisticharacterString(String characterString)</code>.</p>
+    <p>Let us create the the class <code>Library</code>, which capsulates a HashMap containing books, and allows for book search regardless of its spelling. Let us add the methods <code>addBook(Book book)</code> and <code>removeBook(String bookName)</code> to our <code>Library</code> class. It's already clear that we would need various different methods to clean a string. Therefore, we can create a separate method called <code>private String stringCleaner(String string)</code>.</p>
 
 <pre class="sh_java">
-public class Booksto {
-    private HashMap&lt;String, Book&gt; hakemisto;
+public class Library {
+    private HashMap&lt;String, Book&gt; collection;
 
-    public Booksto() {
-        this.hakemisto = new HashMap&lt;String, Book&gt;();
+    public Library() {
+        this.collection = new HashMap&lt;String, Book&gt;();
     }
 
-    public void lisaaBook(Book kirja) {
-        String name = siisticharacterString(kirja.getName());
+    public void lisaaBook(Book book) {
+        String name = stringCleaner(book.getName());
 
-        if(this.hakemisto.containsKey(nimi)) {
-            System.out.println("Book on jo kirjastossa!");
+        if(this.collection.containsKey(nimi)) {
+            System.out.println("The book is already in the library!");
         } else {
-            hakemisto.put(nimi, kirja);
+            collection.put(name, book);
         }
     }
 
-    public void poistaBook(String kirjanNimi) {
-        kirjanNimi = siisticharacterString(kirjanNimi);
+    public void removeBook(String bookName) {
+        bookName = stringCleaner(bookName);
 
-        if(this.hakemisto.containsKey(kirjanNimi)) {
-            this.hakemisto.remove(kirjanNimi);
+        if(this.collection.containsKey(bookName)) {
+            this.collection.remove(bookName);
         } else {
-            System.out.println("Booka ei löydy, ei voida poistaa!");
+            System.out.println("The book was not found, you can't remove it!");
         }
     }
 
-    private String siisticharacterString(String characterString) {
-        if (characterString == null) {
+    private String stringCleaner(String string) {
+        if (string == null) {
             return "";
         }
 
-        characterString = characterString.toLowerCase();
-        return characterString.trim();
+        string = string.toLowerCase();
+        return string.trim();
     }
 }
 </pre>
-        <p>Toteutetaan kirjan hakutoiminnallisuus siten, että kirjaa haetaan hajautusrakenteesta sen nimellä.</p>
+        <p>We implement our search functionality so that we can retrieve a book using a hash algorithm based on the book name.</p>
 
 <pre class="sh_java">
-    public Book haeBook(String kirjanNimi) {
-        kirjanNimi = siisticharacterString(kirjanNimi);
-        return this.hakemisto.get(kirjanNimi);
+    public Book getBook(String bookName) {
+        bookName = stringCleaner(bookName);
+        return this.collection.get(bookName);
     }
 </pre>
 
-    <p>Yllä oleva metodi palauttaa haetun kirjan jos sellainen löytyy, muulloin <code>null</code>-arvon. Voimme myös käydä kaikki hakemiston avaimet läpi  yksitellen, etsien esimerkiksi alkuosaa kirjan nimestä. Tällä tavalla etsiessä menetämme kuitenkin hajautustaulun nopeusedun, sillä huonoimmassa tapauksessa joudumme käymään kaikkien kirjojen nimet läpi. Hakeminen alkuosan perusteella onnistuisi hajautustaulun <code>keySet()</code>-metodin avulla. Metodi <code>keySet()</code> palauttaa avaimet joukossa, jonka voi käydä läpi <code>for-each</code> -toistolauseella.</p>
+    <p>The method above returns the wanted book when this is found, otherwise it returns a <code>null</code> value. We can also also go through all the collection keys one by one, and say look for the beginning characters of the book's name. In this way, we would anyway fail to capitalise on HashMap performance speed, because we would need to go through all the book names, in the worst case. Search based on the beginning characters of a string is possible through the <code>keySet()</code> method. The <code>keySet()</code> method returns a set of keys, which can be parsed with the <code>for each</code> loop.</p>
 
 <pre class="sh_java">
-    public Book haeBookNimenAlkuosalla(String kirjanAlkuosa) {
-        kirjanAlkuosa = siisticharacterString(kirjanAlkuosa);
+    public Book getBookUsingItsBeginningCharacters(String beginning) {
+        beginning = stringCleaner(beginning);
 
-        for (String avain: this.hakemisto.keySet()) {
-            if (avain.startsWith(kirjanAlkuosa)) {
-                return this.hakemisto.get(avain);
+        for (String key: this.collection.keySet()) {
+            if (key.startsWith(beginning)) {
+                return this.collection.get(key);
             }
         }
 
@@ -2103,57 +2103,57 @@ public class Booksto {
     }
 </pre>
 
-    <p>Jätämme yllä olevan metodin kuitenkin pois kirjastostamme. Bookstosta puuttuu oleellisista toiminnoista vielä kirjojen listaaminen. Luodaan metodi <code>public ArrayList&lt;Book&gt; kirjalista()</code>, joka palauttaa listan kirjaston kirjoista. Metodi <code>kirjalista</code> hyödyntää hajautustaulun tarjoamaa <code>values()</code>-metodia. Metodi <code>values()</code> palauttaa kokoelman kirjaston kirjoista, jonka voi antaa parametrina <code>ArrayList</code>-luokan konstruktorille.</p>
+    <p>Let us leave the method above out of our library, anyway. Our library is still lacking an essential feature concerning book addition. Let us create the method <code>public ArrayList&lt;Book&gt; bookList()</code>, which returns a list of the books in our library. The method <code>bookList()</code> makes use of the <code>values()</code> method, which is provided by HashList. The <code>values()</code> method returns a set of our library books, which can be given as parameter to the constructor of an <code>ArrayList</code> class.</p>
 
 <pre class="sh_java">
-public class Booksto {
-    private HashMap&lt;String, Book&gt; hakemisto;
+public class Library {
+    private HashMap&lt;String, Book&gt; collection;
 
-    public Booksto() {
-        this.hakemisto = new HashMap&lt;String, Book&gt;();
+    public Library() {
+        this.collection = new HashMap&lt;String, Book&gt;();
     }
 
-    public Book haeBook(String kirjanNimi) {
-        kirjanNimi = siisticharacterString(kirjanNimi);
-        return this.hakemisto.get(kirjanNimi);
+    public Book getBook(String bookName) {
+        bookName = stringCleaner(bookName);
+        return this.collection.get(bookName);
     }
 
-    public void lisaaBook(Book kirja) {
-        String name = siisticharacterString(kirja.getName());
+    public void addBook(Book kirja) {
+        String name = stringCleaner(book.getName());
 
-        if(this.hakemisto.containsKey(nimi)) {
-            System.out.println("Book on jo kirjastossa!");
+        if(this.collection.containsKey(name)) {
+            System.out.println("The book is already in the library!");
         } else {
-            this.hakemisto.put(nimi, kirja);
+            this.collection.put(name, book);
         }
     }
 
-    public void poistaBook(String kirjanNimi) {
-        kirjanNimi = siisticharacterString(kirjanNimi);
+    public void removeBook(String bookName) {
+        bookName = stringCleaner(bookName);
 
-        if(this.hakemisto.containsKey(kirjanNimi)) {
-            this.hakemisto.remove(kirjanNimi);
+        if(this.collection.containsKey(bookName)) {
+            this.collection.remove(bookName);
         } else {
-            System.out.println("Booka ei löydy, ei voida poistaa!");
+            System.out.println("The book was not found, you can't remove it!");
         }
     }
 
-    public ArrayList&lt;Book&gt; kirjalista() {
-        return new ArrayList&lt;Book&gt;(this.hakemisto.values());
+    public ArrayList&lt;Book&gt; bookList() {
+        return new ArrayList&lt;Book&gt;(this.collection.values());
     }
 
-    private String siisticharacterString(String characterString) {
-        if (characterString == null) {
+    private String stringCleaner(String string) {
+        if (string == null) {
             return "";
         }
 
-        characterString = characterString.toLowerCase();
-        return characterString.trim();
+        string = string.toLowerCase();
+        return string.trim();
     }
 }
 </pre>
 
-    <p>Yksi ohjelmoinnin periaatteista on ns. <em>DRY</em>-periaate (Don't Repeat Yourself), jolla pyritään välttämään saman koodin olemista useassa paikassa. characterStringn pieneksi muuttaminen ja <em>trimmaus</em>, eli tyhjien merkkien poisto alusta ja lopusta, olisi toistunut useasti kirjastoluokassamme ilman metodia <code>siisticharacterString</code>. Toistuvaa koodia ei usein huomaa ennen kuin sitä on jo kirjoittanut, jolloin sitä päätyy koodiin lähes pakosti. Tässä ei kuitenkaan ole mitään pahaa. Tärkeintä on että siistit koodiasi sitä mukaa kun huomaat siistimistä vaativia tilanteita.</p>
+    <p>Among the programming principles, there is the so called <em>DRY</em> principle (Don't Repeat Yourself), according to which we try to avoid repeting the same code in different places. Turning a string to lower case, and its <em>trimming</em> - that is to say removing white spaces from the beginning and the end of a string - would have recourred various different times without the <code>stringCleaner()</code> method. We hardly notice we are repeating the same code before we have written it, in which case it eventually ends up there. This is not bad, however. The most important thing is that we clean our code as soon as we notice the need.</p>
 
 
     <h3>Alkeistyyppiset muuttujat hajautustaulussa</h3>

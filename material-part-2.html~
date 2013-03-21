@@ -1862,64 +1862,64 @@ public class Main {
 
 </div>
 
-    <h2 id="hashmap">Hajautustaulu (HashMap)</h2>
+    <h2 id="hashmap">HashMap</h2>
 
-    <p><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html">Hajautustaulu</a> on yksi Javan yleishyödyllisistä tietorakenteista. Hajautustaulun ideana on laskea olioon liittyvälle <em>avaimelle</em>, eli yksilöivälle arvolle (esimerkiksi henkilötunnus, opiskelijanumero, puhelinnumero), indeksi hajautustaulun sisältämästä taulukosta. Indeksin avulla Avaimen muuttamista indeksiksi kutsutaan <em>hajautukseksi</em>, joka tarkoittaa indeksin laskemista. Hajautus tapahtuu aina tietyn hajautusfunktion avulla, joka takaa että tietyllä avaimella saadaan aina sama indeksi.</p>
+    <p><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html">HashMap</a> is one of Java's most useful data structures. The idea behind HashMap is we find an index for an object key - a unique value, as for instance the social number, the student number, or the phone number. We call <em>hashing</em> the process of changing a key into an index, or simply to find an index. The hashing happens thanks to a particular function which makes sure that we get always the same index with a known key.</p>
 
-    <p>Avaimen perusteella lisääminen ja hakeminen mahdollistaa erittäin nopean hakemisen. Sen sijaan että tutkisimme taulukon alkiot järjestyksessä (pahimmassa tapauksessa joudumme käymään kaikki alkiot läpi), tai etsisimme arvoa binäärihaulla (pahimmassa tapauksessa käymme taulukon kokoon liittyvän logaritmisen määrän alkoita läpi), voimme periaatteessa katsoa tasan yhtä taulukon indeksiä ja tarkistaa onko indeksiin tallennettu arvoa vai ei.</p>
+    <p>Adding and retriving items on key basis, allows for a particularly quick search process. Instead of parsing the table items one by one (and in the worst case we would have to parse all the items), and instead of looking for a value with a binar search (and in which case we would have to parse a number of items which would depend on the logarithm of the table size), we can look at only one table index and check whether a value is mapped to that index.</p>
 
-    <p>Hajautustaulu käyttää avaimen arvon laskemiseen <code>Object</code>-luokassa määriteltyä <code>hashCode()</code>-metodia, jonka jokainen toteutettu luokka <em>perii</em>. Emme kuitenkaan tutustu hajautustaulun toteutukseen tarkemmin tällä kurssilla. Perintään palaamme noin viikolla 4.</p>
+    <p>HashMap uses the <code>Object</code> class <code>hashCode()</code> method to find a key value. Every HashMap subclass will <em>inherit</em> the <code>hashCode()</code> method. However, we will not go deep into HasMap workings in this course. We will return to heritage in week 4.</p>
 
 
-    <p>Javan luokka <code>HashMap</code> kapseloi eli piilottaa hajautustaulun toteutuksen, ja tarjoaa valmiit metodit sen käyttöön.</p>
+    <p>Java's <code>HashMap</code> class capsulate - or hides - how it works, and it returns made-up methods ready to use.</p>
 
-    <p>Hajautustaulua luodessa tarvitaan kaksi <em>tyyppiparametria</em>, avainmuuttujan tyyppi ja tallennettavan olion tyyppi. Seuraava esimerkki käyttää avaimena <code>String</code>-tyyppistä oliota, ja tallennettavana oliona <code>String</code>-tyyppistä oliota. </p>
+    <p>When we create a HashMap we need two <em>type parameters</em>, a type for the key variable, and a type for the mapped object. The following example uses a <code>String</code>-type object as key, and a <code>String</code>-type object as mapped object.</p>
 
 
 <pre class="sh_java">
-HashMap&lt;String, String&gt; numerot = new HashMap&lt;String, String&gt;();
-numerot.put("Yksi", "Uno");
-numerot.put("Kaksi", "Dos");
+HashMap&lt;String, String&gt; numbers = new HashMap&lt;String, String&gt;();
+numbers.put("One", "Yksi");
+numbers.put("Two", "Kaksi");
 
-String kaannos = numerot.get("Yksi");
-System.out.println(kaannos);
+String translation = numbers.get("One");
+System.out.println(translation);
 
-System.out.println(numerot.get("Kaksi"));
-System.out.println(numerot.get("Kolme"));
-System.out.println(numerot.get("Uno"));
+System.out.println(numbers.get("Two"));
+System.out.println(numbers.get("Three"));
+System.out.println(numbers.get("Yksi"));
 </pre>
+
+<pre>
+Yksi
+Kaksi
+null
+null
+</pre>
+
+
+    <p>In the example, we create a HashMap which has character strings both as key and mapped object. We add information to the HashMap with the <code>put()</code> method, which receives as parameter the references to the key and to the mapped object. The method <code>get()</code> returns either the reference to the key given as parameter or the <code>null</code> value in case the key was not found.</p>
+
+    <p>Each key is mapped to one value, within the HashMap. If we store a new value with an already existing key, the old value is lost.</p>
+
+<pre class="sh_java">
+HashMap&lt;String, String&gt; numbers = new HashMap&lt;String, String&gt;();
+numbers.put("One", "Yksi");
+numbers.put("Two", "Kaksi");
+numbers.put("One", "Uno");
+
+String translation = numbers.get("One");
+System.out.println(translation);
+
+System.out.println(numbers.get("Two"));
+System.out.println(numbers.get("Three"));
+System.out.println(numbers.get("Yksi"));
+</pre>
+
+    <p>Because the key "<code>Yksi</code>" is assigned a new value, the print output of the example is like the following.</p>
 
 <pre>
 Uno
-Dos
-null
-null
-</pre>
-
-
-    <p>Esimerkissä luodaan hajatustaulu, jonka avaimena ja tallennettavana oliona characterString. Hajautustauluun lisätään tietoa <code>put()</code>-metodilla, joka saa parametreikseen viitteet avaimeen ja tallennettavaan olioon. Metodi <code>get()</code>-palauttaa parametrina annettuun avaimeen liittyvän viitteen tai arvon <code>null</code> jos avaimella ei löydy viitettä.</p>
-
-    <p>Hajautustaulussa tiettyä avainta vastaa aina yksi arvo. Jos jo olemassaolevalla avaimella tallennetaan uusi arvo, katoaa vanha arvo hajautustaulusta.</p>
-
-<pre class="sh_java">
-HashMap&lt;String, String&gt; numerot = new HashMap&lt;String, String&gt;();
-numerot.put("Yksi", "Uno");
-numerot.put("Kaksi", "Dos");
-numerot.put("Yksi", "Ein");
-
-String kaannos = numerot.get("Yksi");
-System.out.println(kaannos);
-
-System.out.println(numerot.get("Kaksi"));
-System.out.println(numerot.get("Kolme"));
-System.out.println(numerot.get("Uno"));
-</pre>
-
-    <p>Koska avain "<code>Yksi</code>" asetetaan uudestaan, on esimerkin tulostus nyt seuraavanlainen.</p>
-
-<pre>
-Ein
-Dos
+Kaksi
 null
 null
 </pre>

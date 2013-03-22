@@ -317,7 +317,7 @@ public class HelloWorld {
 
     <p>In a program, classes are used to define concepts and functionalities related to those concepts. Objects can be created from a class which are the embodiments of the class. Every object belongs to a certain class has the same structure, but the variables belonging to the objects can be different. The methods of objects handle the state of the object, that is, the variables of the object.</p>
 
-    <p>Let's inspect the class <code>Book</code> below; the class has the object variables name (character string) and publishingYear (integer).</p>
+    <p>Let's inspect the class <code>Book</code> below; the class has the object variables name (String) and publishingYear (integer).</p>
 
 <pre class="sh_java">
         public class Book {
@@ -1180,12 +1180,12 @@ if(Math.abs(distance) &lt; 0.0001) {
 }
 </pre>
 
-<h3>Reference-type variables</h3>
+<h3>Reference-Type Variables</h3>
 
-        <p>Reference-type variables memorize the information which has been assigned to them, on the other end of the line. Reference-type variables contain a reference to the location where the information is stored. Differently from the primitive-type variables, the reference type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Also, a substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
+        <p>Reference-type variables memorize the information which has been assigned to them "on the other end of the line". Reference-type variables contain a reference to the location where the information is stored. Differently from primitive-type variables, reference-type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Another substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
 
 <!--
-        <p>Reference-type variables are objects which are created through the keyword <code>new</code>. The value of a reference-type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to the object. The reference is stored within variable, and it becomes its value.</p> 
+        <p>Reference-type variables are objects which are created through the <code>new</code> keyword. The value of a reference-type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to that object. The reference is stored within the variable, and it becomes its value.</p> 
 -->
 
 <p>Let us have a look at two reference-type variables. In the following examples we make use of the class <em>Calculator</em>:</p>
@@ -1194,7 +1194,7 @@ if(Math.abs(distance) &lt; 0.0001) {
 public class Calculator {
     private int value;
 
-    public Laskuri(int originalValue) { // Konstruktori
+    public Laskuri(int originalValue) { // Contructor
         this.value = originalValue;
     }
 
@@ -1211,15 +1211,15 @@ public class Calculator {
         <p>Main:</p>
 
 <pre class="sh_java">
-Laskuri bonusCalculator = new Calculator(5);
-Laskuri axeCalculator = new Calculator(6);
+Calculator bonusCalculator = new Calculator(5);
+Calculator axeCalculator = new Calculator(6);
 </pre>
 
-        <p>In the examples we create first a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information which will be assigned to the variable, we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is tied to the variable <code>bonusCalculator</code> through the <code>=</code> operator. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it was a box, the variable, with a line or arrow which starts from the box and points to the object itself. In fact, the variable does not contain the object, but it points to the object information. </p>
+        <p>In the examples we first create a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is assigned to the <code>bonusCalculator</code> variable through the <code>=</code> equal sign. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information. </p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit.png" /></p>
 
-        <p>Next, let us have a look at how a referene-type object is copied.</p>
+        <p>Next, let us have a look at how a referene-type object is duplicated.</p>
 
 <pre class="sh_java">
 Calculator bonusCalculator = new Calculator(5);
@@ -1229,7 +1229,7 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
                            // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable  bonusCalculator
 </pre>
 
-        <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable gets copied, too. In this case, a reference to the <code>axeCalculator</code> variable slot gets copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
+        <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable duplicates, too. In this case, a reference to the <code>axeCalculator</code> variable slot is copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-3.png" /></p>
 
@@ -1245,12 +1245,12 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
 axeCalculator = new Calculator(10); // a new reference is assigned to the axeCalculator variable 
                               // which points to the object created by the command new Laskuri(10)
 
-// the bonusCalculator variable still contains a reference to the Calculator object which receive value 6 in its parameter
+// the bonusCalculator variable still contains a reference to the Calculator object which received value 6 in its parameter
 </pre>
 
-        <p>In these examples, we basically do the same operations which were shown in the setting example in the primitive-type variables section. In the last examples, we copied the references of reference-type variable, whereas in the primitive-type variables section we copied the values of primitive-type variable. In both cases, we copy the cointents of a slot: the primitive-type variable slot contains a value, whereas the reference-type variable slot contains a reference.</p>
+        <p>In these examples, we do the same operations which were shown in the assignment example in the primitive-type variables section. In the very last example, we copied the reference of reference-type variables, whereas in the primitive-type variables section we copied the value of primitive-type variables. In both cases, we copy the contents of a slot: the primitive-type variable slot contains a value, whereas the reference-type variable slot contains a reference.</p>
 
-        <p>At the end of the previous example no variable ponints to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes from time to time such useless objects. Our final situation looks like the following:</p>
+        <p>At the end of the previous example no variable points to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes such useless objects from time to time. Our final situation looks like the following:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-2.png" /></p>
@@ -1275,7 +1275,7 @@ System.out.println(axeCalculator.getValue());
 7
 </pre>
 
-        <p>Both <code>bonusCalculator</code>and <code>axeLaskuri</code> point to the same object, after running the command <code>bonusCalculator = axeCalculator;</code>, and therefore now they both have the same value 7, even though we have increased only one of them.</p>
+        <p>Both <code>bonusCalculator</code>and <code>axeCalculator</code> point to the same object, after we have run the command <code>bonusCalculator = axeCalculator;</code>, and therefore, now they both have the same value 7, even though we have increased only one of them.</p>
 
         <p>The situation might be clear if we look at the following picture. The method <code>axeCalculator.increaseValue()</code> increases by one the <code>value</code> variable of the object pointing to the <code>axeCalculator</code> variable. Because <code>bonusCalculator</code> points to the same object, the method <code>bonusCalculator.getValue()</code> returns the same value which was increased by the method <code>axeCalculator.increaseValue()</code>.</p>
 
@@ -1289,12 +1289,12 @@ Calculator ihq = bonus;
 Calculator lennon = bonus;
 </pre>
 
-        <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, all the <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls modify the same object. To tell it once again: when reference-type variables are copied, their references also get copied. The same concept in a picture:</p>
+        <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls all modify the same object. To tell it once again: when reference-type variables are copied, their references also duplicate. The same concept in a picture:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-5.png" /></p>
 
-        <p>Let us focuse again on duplication with one example.</p>
+        <p>Let us focus again on duplication with one example.</p>
 
 <pre class="sh_java">
 Calculator bonus = new Calculator(5);
@@ -1304,203 +1304,203 @@ Calculator lennon = bonus;
 lennon = new Calculator(3);
 </pre>
 
-        <p>The modification of the <code>lennon</code> variable contents - that is to say the change of reference - does not affect on the references of <code>bonus</code> or <code>ihq</code>. When we assign a value to a variable, we always change the contents of that variable's own slot only. The same concept in a picture:</p>
+        <p>The modification of the <code>lennon</code> variable contents – that is to say the change of reference – does not affect the references of either <code>bonus</code> or <code>ihq</code>. Always when we assign a value to a variable, we change the contents of only that variable's own slot. The same concept in a picture:</p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-6.png" /></p>
 
-        <h4>Viitetyyppinen muuttuja metodin parametrina</h4>
+        <h4>A Reference-Type Variables and Method Parameters</h4>
 
-        <p>Kun viitetyyppinen muuttuja annetaan parametrina metodille, luodaan metodin parametrille kopio annetusta muuttujan viitteestä. Parametrilla on siis oma lokero, johon viite kopioidaan. Alkeistyyppisistä muuttujista poiketen kopioimme viitteen, emmekä arvoa, eli voimme muokata viitteen takana olevaa oliota myös metodin sisällä. Oletetaan että metodimme on alla esitelty <code>public void lisaaLaskuriin(Laskuri laskuri, int paljonko)</code>.</p>
+        <p>When a reference-type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original-type variables, we copy the reference, and not their value. In fact, we can we can modify the object behind the reference even form within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
 
 <pre class="sh_java">
-public void lisaaLaskuriin(Laskuri laskuri, int paljonko) {
-    for (int i = 0; i &lt; paljonko; i++) {
-        laskuri.kasvataArvoa();
+public void addToCalculator(Calculator calculator, int amount) {
+    for (int i = 0; i &lt; amount; i++) {
+        calculator.increaseValue();
     }
 }
 </pre>
 
-        <p>Metodille <code>lisaaLaskuriin</code> annetaan kaksi parametria, viitetyyppinen muuttuja ja alkeistyyppinen muuttuja. Kumpaankin muuttujaan liittyvän lokeron sisältö kopioidaan metodin parametrien omiin lokeroihin. Viitetyyppiselle parametrille <code>laskuri</code> kopioituu viite ja alkeistyyppiselle parametrille <code>paljonko</code> kopioituu arvo. Metodi kutsuu <code>Laskuri</code>-tyyppisen parametrin metodia <code>kasvataArvoa()</code> <code>paljonko</code>-muuttujan sisältämän arvon määrän. Tutkitaan vielä metodin kutsumista.</p>
+        <p>We give two parameters to the method <code>addToCalculator</code> – a reference-type value and an original-type variable. The contents of both variable slots are copied to method parameter slots. The reference-type parameter <code>calculator</code> receives a copy of a reference, whereas the original-type parameter <code>amount</code> receives the copy of value. The method will call the <code>increaseValue()</code> method of the <code>Calculator</code>-type parameter, and it will do it as many times as the value of the <code>amount</code> variable. Let us analise the method call more deeply.</p>
 
 <pre class="sh_java">
-int kertoja = 10;
+int times = 10;
 
-Laskuri bonus = new Laskuri(10);
-lisaaLaskuriin(bonus, kertoja);
-// muuttujan bonus sisäinen arvo on nyt 20
+Calculator bonus = new Calculator(10);
+addToCalculator(bonus, times);
+// the bonus variable value is now 20
 </pre>
 
-        <p>Esimerkissä kutsutaan <code>lisaaLaskuriin()</code>-metodia muuttujilla <code>bonus</code> ja <code>kertoja</code>. Metodin parametriin <code>laskuri</code> ja <code>paljonko</code> kopioituvat siis viitetyyppisen muuttujan <code>bonus</code> viite, ja alkeistyyppisen muuttujan <code>kertoja</code>arvo <code>10</code>. Metodi suorittaa metodissa olevalle muuttujalle <code>laskuri</code> <code>paljonko</code> muuttujan määrittelemän määrän <code>kasvataArvoa()</code>-metodikutsuja. Tämä kuvana:</p>
+        <p>In the example, we call the <code>addToCalculator</code> method whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference-type variable <code>bonus</code> and the value of the original-type variable <code>times</code> – which is <code>10</code> – are copied as parameters whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the <code>increaseValue()</code> method of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-7.png" /></p>
 
-        <p><em>Metodissa on siis pääohjelmasta täysin erilliset muuttujat!</em></p>
+        <p><em>The method contains variables which are completely separated from the main program!</em></p>
 
-        <p>Viitetyyppisestä muuttujasta kopioituu metodin sisäiseen muuttujaan viite, eli metodin sisäinen muuttuja viittaa vieläkin samaan olioon. Alkeistyyppisestä muuttujasta kopioituu arvo, eli metodin sisäisellä muuttujalla on täysin oma arvonsa.</p>
+        <p>As far as the reference-type variable is concerned, a reference duplicates and it is given to the method, and the variable inside the method will still point to the same object. As far as the original-type variable is concerned, a value is copied, and the variable inside the method will have its completely independent value.</p>
 
-        <p>Metodi näkee saman laskurin johon muuttuja <code>bonus</code> viittaa, eli metodin tekemä muutos vaikuttaa suoraan olioon. Alkeistyyppien suhteen tilanne on toinen, eli metodille tulee ainoastaan kopio muuttujan <code>kertoja</code> arvosta. Metodista käsin ei siis voi muuttaa alkeistyyppisten muuttujien arvoja.</p>
+        <p>The method recognises the calculator which the <code>bonus</code> variable points to, and the alterations made by the method have a direct impact on the object. The situation is different with original-type variables, and the method only receives a copy of the value of the <code>times</code> variable. In fact, it is not possible to modify the value of original-type variables directly within a method.</p>
 
-        <h4>Viitetyyppinen muuttuja metodin paluuarvona</h4>
+        <h4>A method which returns a reference-type variable</h4>
 
-        <p>Kun metodi palauttaa viitetyyppisen muuttujan, palauttaa se viitteen muualla sijaitsevaan olioon. Metodin palauttaman viitetyyppisen muuttujan voi asettaa muuttujalle samalla tavalla kuin normaalikin asetus tapahtuu, eli yhtäsuuruusmerkin avulla. Katsotaan metodia <code>public Laskuri luoLaskuri(int alkuarvo)</code>, joka luo uuden viitetyyppisen muuttujan.</p>
+        <p>When a method returns a reference-type variable, it returns the reference to an object located elsewhere. Once the reference is returned by a method, it can be assigned to a variable in the same way as a normal assignment would happen, through the equal sign (=). Let us have a look at the method <code>public Calculator createCalculator(int startValue)</code>, which creates a new reference-type variable.</p>
 
 <pre class="sh_java">
-public Laskuri luoLaskuri(int alkuarvo) {
-    return new Laskuri(alkuarvo);
+public Calculator createCalculator(int startValue) {
+    return new Calculator(startValue);
 }
 </pre>
 
-    <p>Metodi luoLaskuri palauttaa metodissa luotuun olioon viittaavan viitteen <code>uusiLaskuri</code>. Uusi olio luodaan aina metodia kutsuttaessa, seuraavassa esimerkissä luomme kaksi erillistä <code>Laskuri</code>-tyyppistä oliota.</p>
+    <p>The creteCalculator method creates an object and returns its <code>newCalculator</code> reference. By calling the method, we always create a new object. In the following example we create two different <code>Calculator</code>-type objects.</p>
 
 <pre class="sh_java">
-Laskuri bonus  = luoLaskuri(10);
-Laskuri lennon = luoLaskuri(10);
+Calculator bonus  = createCalculator(10);
+Calculator lennon = createCalculator(10);
 </pre>
 
-        <p>Metodi <code>luoLaskuri</code> luo aina uuden <code>Laskuri</code>-tyyppisen olion. Ensimmäisessä kutsussa, eli kutsussa <code>Laskuri bonus = luoLaskuri(10);</code> asetetaan metodin palauttama viite viitetyyppiseen muuttujaan <code>bonus</code>. Toisessa metodikutsussa luodaan uusi viite, joka asetetaan muuttujaan <code>lennon</code>. Muuttujat <code>bonus</code> ja <code>lennon</code> eivät sisällä samaa viitettä, sillä metodi luo aina uuden olion ja palauttaa viitteen luotuun olioon.</p>
+        <p>The method <code>createCalculator</code> always creates a new <code>Calculator</code>-type object. With the first call, <code>Calculator bonus  = createCalculator(10);</code> we assign the method return reference to the <code>bonus</code> variable. With the second call, we create another reference and we assign it to the <code>lennon</code> variable. The variables <code>bonus</code> and <code>lennon</code> do not contain the same reference because the method creates a new object in both cases, and it returns the reference to that particular object.</p>
 
 
-        <h2 id="stat_ja_ei">Static ja ei-static</h2>
+        <h2 id="stat_ja_ei">Static and Non-Static</h2>
 
 
-        <p>Kerrataan ja täsmennetään Ohjelmoinnin perusteiden luvussa 30 käsiteltyä asiaa. Staattisuudella ja ei-staattisisuudella erotetaan se, mihin muuttuja tai metodi liittyy. Staattiset metodit liittyvät aina luokkaan, kun taas ei-staattiset metodit voivat muokata olion omia muuttujia.</p>
+        <p>Let us go back to a topic which we introduced in the 30th section of Introduction to Programming, and let us go deeper into into. The static or non-static nature of a variable or of a method depends on their scope. Static methods are always related to their class, whereas non-static methods can modify the variables of the object itself.</p>
 
-        <h3>Static, luokkakirjastot ja final</h3>
+        <h3>Static, Class Libraries and Final</h3>
 
-        <p>Static-määreen saavat metodit eivät liity olioihin vaan luokkiin. On mahdollista määritellä myös luokkakohtaisia muuttujia lisäämällä muuttujan eteen määre <code>static</code>. Esimerkiksi <code>Integer.MAX_VALUE</code>, <code>Long.MIN_VALUE</code> ja <code>Double.MAX_VALUE</code> ovat kaikki staattisia muuttujia. Staattisia muuttujia ja metodeja käytetään luokan nimen kautta, esimerkiksi <code>LuokanNimi.muuttuja</code> tai <code>LuokanNimi.metodi()</code>.</p>
+        <p>The methods which receive the definition static are not related to objects but to classes. it is possible to define class-specific variables by adding the word <code>static</code> to their name. For instance, <code>Integer.MAX_VALUE</code>, <code>Long.MIN_VALUE</code> and <code>Double.MAX_VALUE</code> are all static methods. Static methods are called via their class name, for instance <code>ClassName.variable</code> or <code>ClassName.method()</code>.</p>
 
-        <p>Luokkakirjastoksi kutsutaan luokkaa, jossa on yleiskäyttöisiä metodeja ja muuttujia. Esimerkiksi Javan <code>Math</code>-luokka on luokkakirjasto. Se tarjoaa muun muassa <code>Math.PI</code>-muuttujan. Omien luokkakirjastojen toteuttaminen on usein hyödyllistä. Esimerkiksi Helsingin Seudun Liikenne (HSL) voisi pitää lippujensa hintoja luokkakirjastossa, josta ne löytyisi tarvittaessa.</p>
+        <p>We call class library that class which contains common-use methods and variables. For instance, Java <code>Math</code> class is a class library. It provides the <code>Math.PI</code> variable, inter alia. Often, creating your own class libraries can prove useful. Helsinki Regional Transport Authority (Finnish: Helsingin Seudun Liikenne, HSL) could use a class library to keep its ticket prices at its fingertips.</p>
 
 <pre class="sh_java">
-public class HslHinnasto {
-    public static final double KERTALIPPU_AIKUINEN = 2.50;
-    public static final double RAITIOVAUNULIPPU_AIKUINEN = 2.50;
+public class HslPrices {
+    public static final double SINGLETICKET_AUDULT = 2.50;
+    public static final double TRAMTICKET_AUDULT = 2.50;
 }
 </pre>
 
-        <p>Avainsana <code>final</code> muuttujan määrittelyssä kertoo ettei muuttujaan voi asettaa uutta arvoa kun se on kerran asetettu. Final-tyyppiset muuttujat ovat vakioita, ja niiden tulee sisältää aina arvo. Esimerkiksi suurimman kokonaisluvun kertova luokkamuuttuja <code>Integer.MAX_VALUE</code> on vakiotyyppinen luokkamuuttuja.</p>
+        <p>The keyword <code>final</code> in the variable definition tells that once we assign a value to a variable, we can not assign a new one to it. Final-type variables are constant, and they always have to have a value. For instance, the class variable which tells the greatest integer, <code>Integer.MAX_VALUE</code>, is a constant class variable.</p>
 
-        <p>Jos käytössämme on yllä esitelty luokka <code>HslHinnasto</code>, voivat kaikki ohjelmat, jotka tarvitsevat kerta- tai raitiovaunulipun hintaa, päästä niihin käsiksi <code>HslHinnasto</code>-luokan kautta. Seuraavassa esimerkissä esitellään luokka <code>Ihminen</code>, jolla on metodi <code>onkoRahaaKertalippuun()</code>, joka käyttää <code>HslHinnasto</code>-luokasta löytyvää lipun hintaa.</p>
+        <p>Once we have the class presented above, <code>HslPrices</code>, all the programs which need the single or tram-ticket price can have access to it through the class <code>HslPrices</code>. With the next example, we present the class <code>Person</code>, which has the method <code>enoughMoneyForSingleTicket()</code>, which makes use of the ticket price found in the class <code>HslPrices</code>.</p>
 
 <pre class="sh_java">
-public class Ihminen {
+public class Person {
     private String name;
-    private double rahat;
-    // muut oliomuuttujat
+    private double money;
+    // more object variables
 
-    // konstruktori
+    // constructor
 
-    public boolean onkoRahaaKertalippuun() {
-        if(this.rahat >= HslHinnasto.KERTALIPPU_AIKUINEN) {
+    public boolean enoughMoneyForSingleTicket() {
+        if(this.rahat >= HslPrices.SINGLETICKET_AUDULT) {
             return true;
         }
 
         return false;
     }
 
-    // muut luokkaan Ihminen liittyvät metodit
+    // the other methods regarding the class Person
 }
 </pre>
 
-<p>Metodi <code>public boolean onkoRahaaKertalippuun()</code> vertaa luokan <code>Ihminen</code> oliomuuttujaa <code>rahat</code> <code>HslHinnasto</code>-luokan staattiseen muuttujaan <code>KERTALIPPU_AIKUINEN</code>. Metodia <code>onkoRahaaKertalippuun()</code> voi kutsua vain olioviitteen kautta. Esimerkiksi:</p>
+<p>The method <code>public boolean enoughMoneyForSingleTicket()</code> compares the object variable <code>money</code> of class <code>Person</code> to the static variable <code>SINGLETICKET_AUDULT</code> of class <code>HslPrices</code>. The method <code>enoughMoneyForSingleTicket()</code> can be called only through an object reference. For instance:</p>
 
 <pre class="sh_java">
-Ihminen matti = new Ihminen();
+Person matti = new Person();
 
-if (matti.onkoRahaaKertalippuun()) {
-    System.out.println("Ostetaan kertalippu.");
+if (matti.enoughMoneyForSingleTicket()) {
+    System.out.println("I'll buy a ticket.");
 } else {
-    System.out.println("Mennään pummilla.");
+    System.out.println("Fare dodging, yeah!");
 }
 </pre>
 
-<p>Huomaa nimeämiskäytäntö! Kaikki <em>vakiot</em> eli final-määreellä varustetut muuttujat kirjoitetaan ISOLLA_JA_ALAVIIVOILLA.</p> 
+<p>Note the naming convention! All <em>constants</em>, i.e. all variable which are provided with the definition final, are written with CAPITAL_LETTERS_AND_UNDERLINE_CHARACTERS.</p> 
 
-<p>Staattiset metodit toimivat vastaavasti. Esimerkiksi Luokka <code>HslHinnasto</code> saattaisi <em>kapseloida</em> muuttujat ja antaa vain <em>aksessorit</em> niihin. Aksessoriksi kutsutaan metodia, jolla voi joko lukea muuttujan arvon tai sijoittaa muuttujalle uuden arvon.</p>
+<p>Static methods function analogously. For instance, the class <code>HslPrices</code> could <em>encapsulate</em> the variables and only provide <em>accessors</em>. We call accessors the methods which allow us to either read a variable value or to assign them a new one.</p>
 
 <pre class="sh_java">
-public class HslHinnasto {
-  private static final double KERTALIPPU_AIKUINEN = 2.50;
-  private static final double RAITIOVAUNULIPPU_AIKUINEN = 2.50;
+public class HslPrices {
+    public static final double SINGLETICKET_AUDULT = 2.50;
+    public static final double TRAMTICKET_AUDULT = 2.50;
 
-  public static double annaKertalipunHinta() {   // Aksessori
-    return KERTALIPPU_AIKUINEN;
+  public static double getSingleTicketPrice() {   // Accessor
+    return SINGLETICKET_AUDULT;
   }
 
-  public static double annaRaitiovaunulipunHinta() {   // Aksessori
-    return RAITIOVAUNULIPPU_AIKUINEN;
+  public static double getTramTicketPrice() {   // Accessor
+    return TRAMTICKET_AUDULT;
   }
 }
 </pre>
 
-<p>Tällöin <code>Ihminen</code>-luokan toteutuksessa tulee kutsua metodia<code>annaKertalipunHinta()</code> sen sijaan että kutsuttaisiin muuttujaa suoraan.</p>
+<p>In such cases, when we code a class such as <code>Person</code>, we can't call the variable straight, but we have to get it through the method <code>getSingleTicketPrice()</code>.</p>
 
 <pre class="sh_java">
-public class Ihminen {
+public class Peson {
     private String name;
-    private double rahat;
-    // muut oliomuuttujat
+    private double money;
+    // other object variables
 
-    // konstruktori
+    // constructor
 
-    public boolean onkoRahaaKertalippuun() {
-        if(this.rahat >= HslHinnasto.annaKertalipunHinta()) {
+    public boolean enoughMoneyForSingleTicket() {
+        if(this.money >= HslPrices.giveSingleTicketPrice()) {
             return true;
         }
 
         return false;
     }
 
-    // muut luokkaan Ihminen liittyvät metodit
+    // other methods regarding the class Person
 }
 </pre>
 
 
-<p>Vaikka Java periaatteessa mahdollistaa staattisten muuttujien käytön, ei niille useinkaan ole tarvetta. Usein staattisten muuttujien käyttö aiheuttaa ongelmia ohjelman rakenteelle, sillä staattiset muuttujat toimivat pahamaineisten <a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">globaalien muuttujien</a> tapaan. <b>Tällä kurssilla käytämme ainoastaan vakioarvoisia eli final määreen omaavia staattisia muuttujia!</b></p>
+<p>Even though Java allows for static variable use, we do not usually require it. Often, using static methods causes problems with the program structure, because static variables are as inconvenient as <a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">global variables</a>. <b>The only static variables we use in this course are constant, i.e. final!</b></p>
 
-    <h3>Ei-static</h3>
+    <h3>Non-Static</h3>
 
-    <p>Ei-staattiset metodit ja muuttujat liittyvät olioihin. Oliomuuttujat, eli attribuutit määritellään luokan alussa. Kun olio luodaan <code>new</code>-kutsulla, kaikille oliomuuttujille varataan tila olioon liittyvän viitteen päähän. Muuttujien arvot ovat oliokohtaisia, eli jokaisella oliolla on omat muuttujien arvot. Tutkitaan taas luokkaa <code>Ihminen</code>, jolla on oliomuuttujat <code>nimi</code> ja <code>rahat</code>.</p>
+    <p>Non-static methods and variables are related to objects. The object variables, or attributes, are defined at the beginning of the class. When an object is created with the <code>new</code> operator, we allocate storage space for all its object variables. The variable values are personal of the object, which means that every object receives personal variable values. Let us focus again on the class <code>Person</code>, which has got the object variable <code>name</code> and <code>money</code>.</p>
 
 <pre class="sh_java">
-public class Ihminen {
+public class Person {
   private String name;
-  private double rahat;
+  private double money;
 
-  // muut tiedot
+  // other details
 }
 </pre>
 
-    <p>Kun luokasta <em>Ihminen</em> luodaan uusi ilmentymä, alustetaan myös siihen liittyvät muuttujat. Jos viitetyyppistä muuttujaa <code>nimi</code> ei alusteta, saa se arvokseen <em>null</em>-viitteen. Lisätään luokan <em>Ihminen</em> toteutukseen vielä <em>konstruktori</em> ja muutama metodi.</p>
+    <p>When we create a new instance of class <em>Person</em>, we also initialize its variables. If we do not initialize the reference-type variable <code>name</code>, it receives value <em>null</em>. Let us add the <em>constructor</em> and a couple of methods to our class <em>Person</em>.</p>
 
 <pre class="sh_java">
-public class Ihminen {
-    private String name;
-    private double rahat;
+public class Person {
+  private String name;
+  private double money;
 
-    // konstruktori
-    public Ihminen(String name, double rahat) {
-        this.name = nimi;
-        this.rahat = rahat;
+    // constructor
+    public Person(String name, double money) {
+        this.name = name;
+        this.money = money;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public double getRahat() {
-        return this.rahat;
+    public double getMoney() {
+        return this.money;
     }
 
-    public void lisaaRahaa(double summa) {
-        if(summa &gt; 0) {
-          this.rahat += summa;
+    public void addMoney(double amount) {
+        if(amount &gt; 0) {
+          this.money += amount;
         }
     }
 
-    public boolean onkoRahaaKertalippuun() {
-        if(this.rahat >= HslHinnasto.annaKertalipunHinta()) {
+    public boolean enoughMoneyForSigleTicket() {
+        if(this.money >= HslPrices.getSingleTicketPrice()) {
             return true;
         }
 
@@ -1509,30 +1509,30 @@ public class Ihminen {
 }
 </pre>
 
-    <p>Konstruktori <code>Ihminen(String name, double rahat)</code> luo uuden ihmisolion ja palauttaa viitteen siihen. Metodi <code>getName()</code> palauttaa viitteen <code>nimi</code>-olioon, ja <code>getRahat()</code>-metodi palauttaa alkeistyyppisen muuttujan <code>rahat</code>. Metodi <code>lisaaRahaa(double summa)</code> lisaa oliomuuttujaan <code>rahat</code> parametrina annetun summan jos parametrin arvo on suurempi kuin 0.</p>
+    <p>The constructor <code>Person(String name, double money)</code> creates a new Person object, and it returns its reference. The method <code>getName()</code> returns the reference to a <code>name</code> object, and the <code>getMoney()</code> method returs the original-type variable <code>money</code>. The method <code>addMoney(double amount)</code> receives as parameter an amount of money, and it adds it to the <code>money</code> object variable if the parameter's value is greater than 0.</p>
 
-    <p>Oliometodeja kutsutaan olion viitteen kautta. Seuraava koodiesimerkki luo uuden Ihmis-olion, lisää sille rahaa, ja lopuksi tulostaa sen nimen. Huomaa että metodikutsut ovat muotoa <code>olionNimi.metodinNimi()</code></p>
+    <p>Object methods are called through their object reference. The following code example creates a new Person object, increases its money, and prints its name, at the end. Note that the method calls follow the pattern <code>objectName.methodName()</code></p>
 
 <pre class="sh_java">
-Ihminen matti = new Ihminen("Matti", 5.0);
-matti.lisaaRahaa(5); 
+Person matti = new Person("Matti", 5.0);
+matti.addMoney(5); 
 
-if (matti.onkoRahaaKertalippuun()) {
-    System.out.println("Ostetaan kertalippu.");
+if (matti.enoughMoneyForSingleTicket()) {
+    System.out.println("I'll buy a single ticket.");
 } else {
-    System.out.println("Mennään pummilla.");
+    System.out.println("Fare dodging, yeah!");
 }
 </pre>
 
-    <p>Esimerkki tulostaa "<code>Ostetaan kertalippu</code>".</p>
+    <p>The example prints "<code>I'll buy a single ticket.</code>"</p>
 
-    <h4>Metodit luokan sisällä</h4>
+    <h4>Class Methods</h4>
 
-    <p>Luokan sisäisiä ei-staattisia metodeja voi kutsua myös ilman olio-etuliitettä metodiin liittyvissä luokissa. Esimerkiksi seuraava <code>toString()</code>-metodi <code>Ihminen</code> luokalle, joka kutsuu olioon liittyvää metodia <code>getName()</code>.</p>
+    <p>Non-static class methods can be also called without specifing the object affix which indicates the class. In the following example, the <code>toString()</code> method points to the class <code>Person</code>, which calls the object method <code>getName()</code>.</p>
 
 <pre class="sh_java">
-public class Ihminen {
-    // aiemmin toteutetun luokan sisältö
+public class Person {
+    // earlier written content
 
     public String toString() {
         return this.getName();
@@ -1540,31 +1540,31 @@ public class Ihminen {
 }
 </pre>
 
-    <p>Metodi <code>toString()</code> kutsuu siis luokan sisäistä juuri käsiteltävään olioon liittyvää <code>getName()</code>-metodia. Etuliite <code>this</code> korostaa kutsun liittyvän juuri tähän olioon.</p>
+    <p>The <code>toString()</code> method calls the class method <code>getName()</code>, which belongs to the object in question. The <code>this</code> affix emphasize that the calls precisely refers to this object.</p>
 
-    <p>Ei-staattiset metodit voivat kutsua myös staattisia, eli luokkakohtaisia metodeja. Toisaalta, luokkakohtaiset metodit eivät voi kutsua oliokohtaisia metodeja ilman viitettä itse olioon, sillä ilman viitettä ei päästä käsiksi olioon liittyviin tietoihin.</p>
+    <p>Non-static methods can also call static methods, that is the class-specific ones. On the other hand, static methods can not call non-static methods without a reference to the object itself, which is essential to retrive the object information.</p>
 
 
-    <h4>Muuttujat metodien sisällä</h4>
+    <h4>A Variable within a Method</h4>
 
-    <p>Metodien sisällä määriteltävät muuttujat ovat metodien suorituksessa käytettäviä apumuuttujia, eikä niitä tule sekoittaa oliomuuttujiin. Alla esimerkki metodista, jossa luodaan metodiin paikallinen muuttuja. Muuttuja <code>indeksi</code> on olemassa ja käytössä vain metodin suorituksen ajan.</p>
+    <p>The variables which are defined inside a method are auxiliary variables used during the method execution, and they are not to be confused with object variables. The example below shows how a local variable is created inside a method. The <code>index</code> variable exists and is accessible only during the method execution.</p>
 
 <pre class="sh_java">
 public class ... {
     ...
 
-    public static void tulostaTaulukko(String[] taulukko) {
-        int indeksi = 0;
+    public static void printTable(String[] table) {
+        int index = 0;
 
-        while(indeksi &lt; taulukko.length) {
-            System.out.println(taulukko[indeksi]);
-            indeksi++;
+        while(index &lt; table.length) {
+            System.out.println(table[index]);
+            index++;
         }
     }
 }
 </pre>
 
-    <p>Metodissa <code>tulostaTaulukko()</code> luodaan apumuuttuja <code>indeksi</code> jota käytetään taulukon läpikäynnissä. Muuttuja <code>indeksi</code> on olemassa vain metodin suorituksen ajan.</p>
+    <p>In the <code>printTable()</code> method, we create the auxiliary variable <code>index</code> which we use to parse the table. The variable <code>index</code> exists only during the method execution.</p>
 
 
 <div class="tehtavat">
@@ -1862,64 +1862,64 @@ public class Main {
 
 </div>
 
-    <h2 id="hashmap">Hajautustaulu (HashMap)</h2>
+    <h2 id="hashmap">HashMap</h2>
 
-    <p><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html">Hajautustaulu</a> on yksi Javan yleishyödyllisistä tietorakenteista. Hajautustaulun ideana on laskea olioon liittyvälle <em>avaimelle</em>, eli yksilöivälle arvolle (esimerkiksi henkilötunnus, opiskelijanumero, puhelinnumero), indeksi hajautustaulun sisältämästä taulukosta. Indeksin avulla Avaimen muuttamista indeksiksi kutsutaan <em>hajautukseksi</em>, joka tarkoittaa indeksin laskemista. Hajautus tapahtuu aina tietyn hajautusfunktion avulla, joka takaa että tietyllä avaimella saadaan aina sama indeksi.</p>
+    <p><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html">HashMap</a> is one of Java's most useful data structures. The idea behind HashMap is we define an index for an object key - a unique value, as for instance a social number, a student number, or a phone number. We call <em>hashing</em> the process of changing a key into an index, or simply to define an index. The hashing happens thanks to a particular function which makes sure that we get always the same index with a known key.</p>
 
-    <p>Avaimen perusteella lisääminen ja hakeminen mahdollistaa erittäin nopean hakemisen. Sen sijaan että tutkisimme taulukon alkiot järjestyksessä (pahimmassa tapauksessa joudumme käymään kaikki alkiot läpi), tai etsisimme arvoa binäärihaulla (pahimmassa tapauksessa käymme taulukon kokoon liittyvän logaritmisen määrän alkoita läpi), voimme periaatteessa katsoa tasan yhtä taulukon indeksiä ja tarkistaa onko indeksiin tallennettu arvoa vai ei.</p>
+    <p>Adding and retriving items based on the keys, allows for a particularly quick search process. Instead of parsing the table items one by one (in the worst case we would have to go through all the items), and instead of looking for a value with a binar search (in which case we would have to go through a number of items which would depend on the logarithm of the table size), we can look at only one table index and check whether a value is mapped to that index.</p>
 
-    <p>Hajautustaulu käyttää avaimen arvon laskemiseen <code>Object</code>-luokassa määriteltyä <code>hashCode()</code>-metodia, jonka jokainen toteutettu luokka <em>perii</em>. Emme kuitenkaan tutustu hajautustaulun toteutukseen tarkemmin tällä kurssilla. Perintään palaamme noin viikolla 4.</p>
+    <p>HashMap uses the <code>Object</code> class <code>hashCode()</code> method to find a key value. Every HashMap subclass will <em>inherit</em> the <code>hashCode()</code> method. However, we will not go deep into HasMap workings in this course. We will return to heritage in week 4.</p>
 
 
-    <p>Javan luokka <code>HashMap</code> kapseloi eli piilottaa hajautustaulun toteutuksen, ja tarjoaa valmiit metodit sen käyttöön.</p>
+    <p>Java's <code>HashMap</code> class capsulates - or hides - the way it works, and it returns made-up methods ready to use.</p>
 
-    <p>Hajautustaulua luodessa tarvitaan kaksi <em>tyyppiparametria</em>, avainmuuttujan tyyppi ja tallennettavan olion tyyppi. Seuraava esimerkki käyttää avaimena <code>String</code>-tyyppistä oliota, ja tallennettavana oliona <code>String</code>-tyyppistä oliota. </p>
+    <p>When we create a HashMap we need two <em>type parameters</em>, a type for the key variable, and a type for the mapped object. The following example uses a <code>String</code>-type object as key, and a <code>String</code>-type object as the mapped object.</p>
 
 
 <pre class="sh_java">
-HashMap&lt;String, String&gt; numerot = new HashMap&lt;String, String&gt;();
-numerot.put("Yksi", "Uno");
-numerot.put("Kaksi", "Dos");
+HashMap&lt;String, String&gt; numbers = new HashMap&lt;String, String&gt;();
+numbers.put("One", "Yksi");
+numbers.put("Two", "Kaksi");
 
-String kaannos = numerot.get("Yksi");
-System.out.println(kaannos);
+String translation = numbers.get("One");
+System.out.println(translation);
 
-System.out.println(numerot.get("Kaksi"));
-System.out.println(numerot.get("Kolme"));
-System.out.println(numerot.get("Uno"));
+System.out.println(numbers.get("Two"));
+System.out.println(numbers.get("Three"));
+System.out.println(numbers.get("Yksi"));
 </pre>
+
+<pre>
+Yksi
+Kaksi
+null
+null
+</pre>
+
+
+    <p>In the example, we create a HashMap which both the key and the mapped object are strings. We add information to the HashMap with the <code>put()</code> method, which receives the references to the key and to the mapped object as parameter. The method <code>get()</code> returns either the reference to the key given as parameter or a <code>null</code> value in case the key was not found.</p>
+
+    <p>Each key is mapped to one value, within the HashMap. If we store a new value with an already existing key, the old value is lost.</p>
+
+<pre class="sh_java">
+HashMap&lt;String, String&gt; numbers = new HashMap&lt;String, String&gt;();
+numbers.put("One", "Yksi");
+numbers.put("Two", "Kaksi");
+numbers.put("One", "Uno");
+
+String translation = numbers.get("One");
+System.out.println(translation);
+
+System.out.println(numbers.get("Two"));
+System.out.println(numbers.get("Three"));
+System.out.println(numbers.get("Yksi"));
+</pre>
+
+    <p>Because the key "<code>Yksi</code>" is assigned a new value, the print output of the example is like the following.</p>
 
 <pre>
 Uno
-Dos
-null
-null
-</pre>
-
-
-    <p>Esimerkissä luodaan hajatustaulu, jonka avaimena ja tallennettavana oliona characterString. Hajautustauluun lisätään tietoa <code>put()</code>-metodilla, joka saa parametreikseen viitteet avaimeen ja tallennettavaan olioon. Metodi <code>get()</code>-palauttaa parametrina annettuun avaimeen liittyvän viitteen tai arvon <code>null</code> jos avaimella ei löydy viitettä.</p>
-
-    <p>Hajautustaulussa tiettyä avainta vastaa aina yksi arvo. Jos jo olemassaolevalla avaimella tallennetaan uusi arvo, katoaa vanha arvo hajautustaulusta.</p>
-
-<pre class="sh_java">
-HashMap&lt;String, String&gt; numerot = new HashMap&lt;String, String&gt;();
-numerot.put("Yksi", "Uno");
-numerot.put("Kaksi", "Dos");
-numerot.put("Yksi", "Ein");
-
-String kaannos = numerot.get("Yksi");
-System.out.println(kaannos);
-
-System.out.println(numerot.get("Kaksi"));
-System.out.println(numerot.get("Kolme"));
-System.out.println(numerot.get("Uno"));
-</pre>
-
-    <p>Koska avain "<code>Yksi</code>" asetetaan uudestaan, on esimerkin tulostus nyt seuraavanlainen.</p>
-
-<pre>
-Ein
-Dos
+Kaksi
 null
 null
 </pre>
@@ -1945,157 +1945,157 @@ null
 
 </div>
 
-        <h3 id="kirjastotietokanta">Kirjojen haku hajautustaulun avulla</h3>
+        <h3 id="kirjastotietokanta">Book Search through HashMap</h3>
 
-        <p>Tutkitaan hajautustaulun toimintaa seuraavaksi kirjastoesimerkin avulla. Bookstosta voi hakea kirjoja kirjan nimen perusteella, nimi toimii siis kirjan avaimena. Jos annetulle nimelle löytyy kirja, saadaan siihen liittyvä viite ja samalla kirjan tiedot. Luodaan ensin esimerkkiluokka <code>Book</code>, jolla on oliomuuttujina nimi ja kirjaan liittyvä sisältö.</p>
+        <p>Let us go deeper into HashMap workings with the help of the following example. Books can be retrived based on their name, which acts as book key. If we find a book for the given name, we obtain the respective reference, as well as the book details. Let us create the example class <code>Book</code>, which has a name and the book contents as object variables.</p>
 
 <pre class="sh_java">
 public class Book {
     private String name;
-    private String sisalto;
+    private String contents;
     private int publishingYear;
 
-    public Book(String name, int publishingYear, String sisalto) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
-        this.sisalto = sisalto;
+    public Book(String name, int publishingYear, String contents) {
+        this.name = name;
+        this.publishingYear = publishingYear;
+        this.contents = contents;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public void setNimi(String name) {
-        this.name = nimi;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPublishingYear() {
         return this.publishingYear;
     }
 
-    public void setJulkaisuvuosi(int publishingYear) {
-        this.publishingYear = julkaisuvuosi;
+    public void setPublishingYear(int publishingYear) {
+        this.publishingYear = publishingYear;
     }
 
-    public String getSisalto() {
-        return this.sisalto;
+    public String getContents() {
+        return this.contents;
     }
 
-    public void setSisalto(String sisalto) {
-        this.sisalto = sisalto;
+    public void setContents(String contents) {
+        this.contents = contents;
     }
 
     public String toString() {
         return "Nimi: " + this.name + " (" + this.publishingYear + ")\n"
-                + "Sisältö: " + this.sisalto;
+                + "Contents: " + this.contents;
     }
 }
 </pre>
 
-        <p>Luodaan seuraavaksi hajautustaulu, joka käyttää avaimena kirjan nimeä eli String-tyyppistä oliota, ja tallentaa viitteitä <code>Book</code>-olioihin.</p>
+        <p>In the following example, we create a HashMap which makes use of the book name - a String-type object - and stores the references which point to <code>Book</code>-objects.</p>
 
 <pre class="sh_java">
-HashMap&lt;String, Book&gt; kirjahakemisto = new HashMap&lt;String, Book&gt;();
+HashMap&lt;String, Book&gt; bookCollection = new HashMap&lt;String, Book&gt;();
 </pre>
 
-    <p>Yllä oleva hajautustaulu käyttää avaimena <code>String</code>-oliota. Laajennetaan esimerkkiä siten, että kirjahakemistoon lisätään kaksi kirjaa, <code>"Järki ja tunteet"</code> ja <code>"Ylpeys ja ennakkoluulo"</code>.</p>
+    <p>The HashMap above has a <code>String</code> object as key. Let us extend our example so that we would add two books to our book collection, <code>"Sense and Sensibility"</code> and <code>"Pride and Prejudice"</code>.</p>
 
 <pre class="sh_java">
-Book senseAndSensibility = new Book("Järki ja tunteet", 1811, "...");
-Book prideAndPrejudice = new Book("Ylpeys ja ennakkoluulo", 1813, "....");
+Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
+Book prideAndPrejudice = new Book("Pride and Prejudice", 1813, "....");
 
-HashMap&lt;String, Book&gt; kirjahakemisto = new HashMap&lt;String, Book&gt;();
-kirjahakemisto.put(senseAndSensibility.getName(), senseAndSensibility);
-kirjahakemisto.put(prideAndPrejudice.getName(), prideAndPrejudice);
+HashMap&lt;String, Book&gt; bookCollection = new HashMap&lt;String, Book&gt;();
+bookCollection.put(senseAndSensibility.getName(), senseAndSensibility);
+librabookCollectionry.put(prideAndPrejudice.getName(), prideAndPrejudice);
 </pre>
 
-        <p>Bookhakemistosta voi hakea kirjoja kirjan nimellä. Haku kirjalla <code>"Viisasteleva sydän"</code> ei tuota osumaa, jolloin hajautustaulu palauttaa <code>null</code>-viitteen. Book "Ylpeys ja ennakkoluulo" kuitenkin löytyy.</p>
+        <p>Books can be retrived from the book collection based on their name. A search for the book <code>"Persuasion"</code> does not return a corresponding entry, in which case the HashMap returns a <code>null</code> reference. However, the book "Pride and Prejudice" was found.</p>
 
 <pre class="sh_java">
-Book kirja = kirjahakemisto.get("Viisasteleva sydän");
-System.out.println(kirja);
+Book book = bookCollection.get("Persuasion");
+System.out.println(book);
 System.out.println();
-kirja = kirjahakemisto.get("Ylpeys ja ennakkoluulo");
-System.out.println(kirja);
+book = bookCollection.get("Pride and Prejudice");
+System.out.println(book);
 </pre>
 
 <pre>
 null
 
-Nimi: Ylpeys ja ennakkoluulo (1813)
-Sisältö: ...
+Name: Pride and Prejudice (1813)
+Contents: ...
 </pre>
 
-    <p>Hajautustaulu on hyödyllinen silloin kun tiedetään avain minkä perusteella halutaan hakea. Avaimet ovat aina yksilöllisiä, joten saman avaimen taakse ei voi tallettaa montaa eri oliota. Tallennettava olio voi toki olla lista tai toinen hajautustaulukko!</p>
+    <p>HashMaps are useful when we know the key to use for our search. Keys are always unique, and it is not possible to store more than one object together with one key alone. The object which we store can still be a list or another HashMap, of course!</p>
 
-    <h3 id="kapseloitu_kirjasto">Booksto</h3>
+    <h3 id="kapseloitu_kirjasto">Library</h3>
 
-    <p>Yllä olevan kirjahakemiston ongelmana on se, että kirjoja haettaessa täytyy muistaa kirjan nimi merkki merkiltä oikein. Javan valmis <code>String</code>-luokka tarjoaa meille välineet tähänkin. Metodi <code>toLowerCase()</code> muuttaa characterStringn kirjaimet pieniksi, ja metodi <code>trim()</code> poistaa characterStringn alusta ja lopusta tyhjät merkit (esimerkiksi välilyönnit). Tietokoneen käyttäjät usein kirjoittavat tekstin alkuun tai loppuun vahingossa välilyöntejä.</p>
+    <p>The problem with the book collection above is that we must remember the correct book name when we search for it, character by character. Java built-in <code>String</code> class provides us the tools for this. The <code>toLowerCase()</code> method turns a string's characters to lower case, and the <code>trim()</code> method deletes the white spaces at the beginning and at the end of the string. Computer users tend to write white spaces at the beginning or end of a text, involuntarily.</p>
 
 <pre class="sh_java">
-String teksti = "Ylpeys ja ennakkoluulo ";
-teksti = teksti.toLowerCase(); // teksti nyt "ylpeys ja ennakkoluulo "
-teksti = teksti.trim() // teksti nyt "ylpeys ja ennakkoluulo"
+String text = "Pride and Prejudice ";
+text = text.toLowerCase(); // the text is now "Pride and Prejudice "
+text = text.trim() // the text is now "Pride and Prejudice"
 </pre>
 
-    <p>Luodaan luokka <code>Booksto</code>, joka kapseloi kirjat sisältävän hajautustaulun ja mahdollistaa kirjoitusasusta riippumattoman kirjojen haun. Lisätään <code>Booksto</code>-luokalle metodit <code>lisaaBook(Book kirja)</code> ja <code>poistaBook(String kirjanNimi)</code>. Huomaamme jo nyt että characterStringn siistimistä tarvitsisi useammassa metodissa, joten tehdään siitä erillinen metodi <code>private String siisticharacterString(String characterString)</code>.</p>
+    <p>Let us create the the class <code>Library</code>, which capsulates a HashMap containing books, and allows for book search regardless of its spelling. Let us add the methods <code>addBook(Book book)</code> and <code>removeBook(String bookName)</code> to our <code>Library</code> class. It's already clear that we would need various different methods to clean a string. Therefore, we can create a separate method called <code>private String stringCleaner(String string)</code>.</p>
 
 <pre class="sh_java">
-public class Booksto {
-    private HashMap&lt;String, Book&gt; hakemisto;
+public class Library {
+    private HashMap&lt;String, Book&gt; collection;
 
-    public Booksto() {
-        this.hakemisto = new HashMap&lt;String, Book&gt;();
+    public Library() {
+        this.collection = new HashMap&lt;String, Book&gt;();
     }
 
-    public void lisaaBook(Book kirja) {
-        String name = siisticharacterString(kirja.getName());
+    public void lisaaBook(Book book) {
+        String name = stringCleaner(book.getName());
 
-        if(this.hakemisto.containsKey(nimi)) {
-            System.out.println("Book on jo kirjastossa!");
+        if(this.collection.containsKey(nimi)) {
+            System.out.println("The book is already in the library!");
         } else {
-            hakemisto.put(nimi, kirja);
+            collection.put(name, book);
         }
     }
 
-    public void poistaBook(String kirjanNimi) {
-        kirjanNimi = siisticharacterString(kirjanNimi);
+    public void removeBook(String bookName) {
+        bookName = stringCleaner(bookName);
 
-        if(this.hakemisto.containsKey(kirjanNimi)) {
-            this.hakemisto.remove(kirjanNimi);
+        if(this.collection.containsKey(bookName)) {
+            this.collection.remove(bookName);
         } else {
-            System.out.println("Booka ei löydy, ei voida poistaa!");
+            System.out.println("The book was not found, you can't remove it!");
         }
     }
 
-    private String siisticharacterString(String characterString) {
-        if (characterString == null) {
+    private String stringCleaner(String string) {
+        if (string == null) {
             return "";
         }
 
-        characterString = characterString.toLowerCase();
-        return characterString.trim();
+        string = string.toLowerCase();
+        return string.trim();
     }
 }
 </pre>
-        <p>Toteutetaan kirjan hakutoiminnallisuus siten, että kirjaa haetaan hajautusrakenteesta sen nimellä.</p>
+        <p>We implement our search functionality so that we can retrieve a book using a hash algorithm based on the book name.</p>
 
 <pre class="sh_java">
-    public Book haeBook(String kirjanNimi) {
-        kirjanNimi = siisticharacterString(kirjanNimi);
-        return this.hakemisto.get(kirjanNimi);
+    public Book getBook(String bookName) {
+        bookName = stringCleaner(bookName);
+        return this.collection.get(bookName);
     }
 </pre>
 
-    <p>Yllä oleva metodi palauttaa haetun kirjan jos sellainen löytyy, muulloin <code>null</code>-arvon. Voimme myös käydä kaikki hakemiston avaimet läpi  yksitellen, etsien esimerkiksi alkuosaa kirjan nimestä. Tällä tavalla etsiessä menetämme kuitenkin hajautustaulun nopeusedun, sillä huonoimmassa tapauksessa joudumme käymään kaikkien kirjojen nimet läpi. Hakeminen alkuosan perusteella onnistuisi hajautustaulun <code>keySet()</code>-metodin avulla. Metodi <code>keySet()</code> palauttaa avaimet joukossa, jonka voi käydä läpi <code>for-each</code> -toistolauseella.</p>
+    <p>The method above returns the wanted book when this is found, otherwise it returns a <code>null</code> value. We can also also go through all the collection keys one by one, and say look for the beginning characters of the book's name. In this way, we would anyway fail to capitalise on HashMap performance speed, because we would need to go through all the book names, in the worst case. Search based on the beginning characters of a string is possible through the <code>keySet()</code> method. The <code>keySet()</code> method returns a set of keys, which can be parsed with the <code>for each</code> loop.</p>
 
 <pre class="sh_java">
-    public Book haeBookNimenAlkuosalla(String kirjanAlkuosa) {
-        kirjanAlkuosa = siisticharacterString(kirjanAlkuosa);
+    public Book getBookUsingItsBeginningCharacters(String beginning) {
+        beginning = stringCleaner(beginning);
 
-        for (String avain: this.hakemisto.keySet()) {
-            if (avain.startsWith(kirjanAlkuosa)) {
-                return this.hakemisto.get(avain);
+        for (String key: this.collection.keySet()) {
+            if (key.startsWith(beginning)) {
+                return this.collection.get(key);
             }
         }
 
@@ -2103,57 +2103,57 @@ public class Booksto {
     }
 </pre>
 
-    <p>Jätämme yllä olevan metodin kuitenkin pois kirjastostamme. Bookstosta puuttuu oleellisista toiminnoista vielä kirjojen listaaminen. Luodaan metodi <code>public ArrayList&lt;Book&gt; kirjalista()</code>, joka palauttaa listan kirjaston kirjoista. Metodi <code>kirjalista</code> hyödyntää hajautustaulun tarjoamaa <code>values()</code>-metodia. Metodi <code>values()</code> palauttaa kokoelman kirjaston kirjoista, jonka voi antaa parametrina <code>ArrayList</code>-luokan konstruktorille.</p>
+    <p>Let us leave the method above out of our library, anyway. Our library is still lacking an essential feature concerning book addition. Let us create the method <code>public ArrayList&lt;Book&gt; bookList()</code>, which returns a list of the books in our library. The method <code>bookList()</code> makes use of the <code>values()</code> method, which is provided by HashList. The <code>values()</code> method returns a set of our library books, which can be given as parameter to the constructor of an <code>ArrayList</code> class.</p>
 
 <pre class="sh_java">
-public class Booksto {
-    private HashMap&lt;String, Book&gt; hakemisto;
+public class Library {
+    private HashMap&lt;String, Book&gt; collection;
 
-    public Booksto() {
-        this.hakemisto = new HashMap&lt;String, Book&gt;();
+    public Library() {
+        this.collection = new HashMap&lt;String, Book&gt;();
     }
 
-    public Book haeBook(String kirjanNimi) {
-        kirjanNimi = siisticharacterString(kirjanNimi);
-        return this.hakemisto.get(kirjanNimi);
+    public Book getBook(String bookName) {
+        bookName = stringCleaner(bookName);
+        return this.collection.get(bookName);
     }
 
-    public void lisaaBook(Book kirja) {
-        String name = siisticharacterString(kirja.getName());
+    public void addBook(Book kirja) {
+        String name = stringCleaner(book.getName());
 
-        if(this.hakemisto.containsKey(nimi)) {
-            System.out.println("Book on jo kirjastossa!");
+        if(this.collection.containsKey(name)) {
+            System.out.println("The book is already in the library!");
         } else {
-            this.hakemisto.put(nimi, kirja);
+            this.collection.put(name, book);
         }
     }
 
-    public void poistaBook(String kirjanNimi) {
-        kirjanNimi = siisticharacterString(kirjanNimi);
+    public void removeBook(String bookName) {
+        bookName = stringCleaner(bookName);
 
-        if(this.hakemisto.containsKey(kirjanNimi)) {
-            this.hakemisto.remove(kirjanNimi);
+        if(this.collection.containsKey(bookName)) {
+            this.collection.remove(bookName);
         } else {
-            System.out.println("Booka ei löydy, ei voida poistaa!");
+            System.out.println("The book was not found, you can't remove it!");
         }
     }
 
-    public ArrayList&lt;Book&gt; kirjalista() {
-        return new ArrayList&lt;Book&gt;(this.hakemisto.values());
+    public ArrayList&lt;Book&gt; bookList() {
+        return new ArrayList&lt;Book&gt;(this.collection.values());
     }
 
-    private String siisticharacterString(String characterString) {
-        if (characterString == null) {
+    private String stringCleaner(String string) {
+        if (string == null) {
             return "";
         }
 
-        characterString = characterString.toLowerCase();
-        return characterString.trim();
+        string = string.toLowerCase();
+        return string.trim();
     }
 }
 </pre>
 
-    <p>Yksi ohjelmoinnin periaatteista on ns. <em>DRY</em>-periaate (Don't Repeat Yourself), jolla pyritään välttämään saman koodin olemista useassa paikassa. characterStringn pieneksi muuttaminen ja <em>trimmaus</em>, eli tyhjien merkkien poisto alusta ja lopusta, olisi toistunut useasti kirjastoluokassamme ilman metodia <code>siisticharacterString</code>. Toistuvaa koodia ei usein huomaa ennen kuin sitä on jo kirjoittanut, jolloin sitä päätyy koodiin lähes pakosti. Tässä ei kuitenkaan ole mitään pahaa. Tärkeintä on että siistit koodiasi sitä mukaa kun huomaat siistimistä vaativia tilanteita.</p>
+    <p>Among the programming principles, there is the so called <em>DRY</em> principle (Don't Repeat Yourself), according to which we try to avoid repeting the same code in different places. Turning a string to lower case, and its <em>trimming</em> - that is to say removing white spaces from the beginning and the end of a string - would have recourred various different times without the <code>stringCleaner()</code> method. We hardly notice we are repeating the same code before we have written it, in which case it eventually ends up there. This is not bad, however. The most important thing is that we clean our code as soon as we notice the need.</p>
 
 
     <h3>Alkeistyyppiset muuttujat hajautustaulussa</h3>

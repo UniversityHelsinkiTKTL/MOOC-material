@@ -1873,7 +1873,7 @@ public class Main {
 
     <p>Java's <code>HashMap</code> class capsulates - or hides - the way it works, and it returns made-up methods ready to use.</p>
 
-    <p>When we create a HashMap we need two <em>type parameters</em>, a type for the key variable, and a type for the mapped object. The following example uses a <code>String</code>-type object as key, and a <code>String</code>-type object as the mapped object.</p>
+    <p>When we create a HashMap we need two <em>type parameters</em>, a type for the key variable, and a type for the stored object. The following example uses a <code>String</code>-type object as key, and a <code>String</code>-type object as the stored object.</p>
 
 
 <pre class="sh_java">
@@ -1897,7 +1897,7 @@ null
 </pre>
 
 
-    <p>In the example, we create a HashMap which both the key and the mapped object are strings. We add information to the HashMap with the <code>put()</code> method, which receives the references to the key and to the mapped object as parameter. The method <code>get()</code> returns either the reference to the key given as parameter or a <code>null</code> value in case the key was not found.</p>
+    <p>In the example, we create a HashMap which both the key and the stored object are strings. We add information to the HashMap with the <code>put()</code> method, which receives the references to the key and to the stored object as parameter. The method <code>get()</code> returns either the reference to the key given as parameter or a <code>null</code> value in case the key was not found.</p>
 
     <p>Each key is mapped to one value, within the HashMap. If we store a new value with an already existing key, the old value is lost.</p>
 
@@ -2030,7 +2030,7 @@ Contents: ...
 
     <h3 id="kapseloitu_kirjasto">Library</h3>
 
-    <p>The problem with the book collection above is that we must remember the correct book name character by character, when we search for it. Java built-in <code>String</code> class provides us the tools for this. The <code>toLowerCase()</code> method turns a string's characters to lower case, and the  <code>trim()</code> method deletes the white spaces at the beginning and at the end of the string. Computer users tend to write white spaces at the beginning or end of a text, involuntarily.</p>
+    <p>The problem with the book collection above is that we must remember the correct book name when we search for it, character by character. Java built-in <code>String</code> class provides us the tools for this. The <code>toLowerCase()</code> method turns a string's characters to lower case, and the <code>trim()</code> method deletes the white spaces at the beginning and at the end of the string. Computer users tend to write white spaces at the beginning or end of a text, involuntarily.</p>
 
 <pre class="sh_java">
 String text = "Pride and Prejudice ";
@@ -2038,7 +2038,7 @@ text = text.toLowerCase(); // the text is now "Pride and Prejudice "
 text = text.trim() // the text is now "Pride and Prejudice"
 </pre>
 
-    <p>Let us create the the class <code>Library</code>, which capsulates a HashMap containing books and allows for book search regardless of its spelling. Let us add the methods <code>addBook(Book book)</code> and <code>removeBook(String bookName)</code> to our <code>Library</code> class. It's already clear that we would need various different methods to clean a string. Therefore, we can create a separate method called <code>private String stringCleaner(String string)</code>.</p>
+    <p>Let us create the the class <code>Library</code>, which capsulates a HashMap containing books, and allows for book search regardless of its spelling. Let us add the methods <code>addBook(Book book)</code> and <code>removeBook(String bookName)</code> to our <code>Library</code> class. It's already clear that we would need various different methods to clean a string. Therefore, we can create a separate method called <code>private String stringCleaner(String string)</code>.</p>
 
 <pre class="sh_java">
 public class Library {
@@ -2078,7 +2078,7 @@ public class Library {
     }
 }
 </pre>
-        <p>We implement the book search functionality so that we can retrieve the book thorugh a hash algorithm based on the book name.</p>
+        <p>We implement our search functionality so that we can retrieve a book using a hash algorithm based on the book name.</p>
 
 <pre class="sh_java">
     public Book getBook(String bookName) {
@@ -2087,10 +2087,10 @@ public class Library {
     }
 </pre>
 
-    <p>The method above returns the wanted book when that is found, otherwise it returns a <code>null</code> value. We can also also go through all the collection key one by one, and say look for the beginning of the book's name. In this way, we would anyway fail to capitalise on HashMap performance speed, because we would need to go through all the book names, in the worst case. The search based on the beginning of the string is possible through the <code>keySet()</code> method. The <code>keySet()</code> method returns a set of keys, which can be parsed with the <code>for each</code> loop.</p>
+    <p>The method above returns the wanted book when this is found, otherwise it returns a <code>null</code> value. We can also also go through all the collection keys one by one, and say look for the beginning characters of the book's name. In this way, we would anyway fail to capitalise on HashMap performance speed, because we would need to go through all the book names, in the worst case. Search based on the beginning characters of a string is possible through the <code>keySet()</code> method. The <code>keySet()</code> method returns a set of keys, which can be parsed with the <code>for each</code> loop.</p>
 
 <pre class="sh_java">
-    public Book getBookUsingTheBeginningOfItsName(String beginning) {
+    public Book getBookUsingItsBeginningCharacters(String beginning) {
         beginning = stringCleaner(beginning);
 
         for (String key: this.collection.keySet()) {
@@ -2103,7 +2103,7 @@ public class Library {
     }
 </pre>
 
-    <p>Let us leave the method above out of our library, anyway. Our library is still lacking an essential feature to add books. Let us create the method <code>public ArrayList&lt;Book&gt; bookList()</code>, which returns a list of the books in our library. The method <code>bookList()</code> makes use of the method <code>values()</code> method, which is provided by the HashList. The <code>values()</code> method returns a set of our library books, which can be given as parameter to the constructor of an <code>ArrayList</code> class.</p>
+    <p>Let us leave the method above out of our library, anyway. Our library is still lacking an essential feature concerning book addition. Let us create the method <code>public ArrayList&lt;Book&gt; bookList()</code>, which returns a list of the books in our library. The method <code>bookList()</code> makes use of the <code>values()</code> method, which is provided by HashList. The <code>values()</code> method returns a set of our library books, which can be given as parameter to the constructor of an <code>ArrayList</code> class.</p>
 
 <pre class="sh_java">
 public class Library {
@@ -2128,7 +2128,7 @@ public class Library {
         }
     }
 
-    public void poistaBook(String bookName) {
+    public void removeBook(String bookName) {
         bookName = stringCleaner(bookName);
 
         if(this.collection.containsKey(bookName)) {
@@ -2153,56 +2153,56 @@ public class Library {
 }
 </pre>
 
-    <p>Among the programming principles, there is the so called <em>DRY</em> principle (Don't Repeat Yourself), according to which we try to avoid repeting the same code in different places. Turning a string to lower case, and its <em>trimming</em> - that is to say removing white spaces from the beginning and the end of a string - would have repeated themselves various different times without the <code>stringCleaner()</code> method. We hardly notice we are repeating the same code before we have written it, in which case it eventually ends up there. This is not bad, however. The most important thing is that we clean our code when we notice the need.</p>
+    <p>Among the programming principles, there is the so called <em>DRY</em> principle (Don't Repeat Yourself), according to which we try to avoid repeting the same code in different places. Turning a string to lower case, and its <em>trimming</em> - that is to say removing white spaces from the beginning and the end of a string - would have recourred various different times without the <code>stringCleaner()</code> method. We hardly notice we are repeating the same code before we have written it, in which case it eventually ends up there. This is not bad, however. The most important thing is that we clean our code as soon as we notice the need.</p>
 
 
-    <h3>Alkeistyyppiset muuttujat hajautustaulussa</h3>
+    <h3>Orignial-Type Variables in a HashMaps</h3>
 
-    <p>Huomaa että hajautustaulun avain ja tallennettava olio ovat aina viitetyyppisiä. Jos haluat käyttää alkeistyyppisiä muuttujia avaimena tai tallennettavana arvona, on niille olemassa myös viitetyyppiset vastineet. Alla on esitelty muutama.</p>
+    <p>HashMap keys and stored objects are both referece-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.</p>
 
     <p>
       <table>
-        <tr><th>Alkeistyyppi</th><th>Viitetyyppinen vastine</th><tr>
+        <tr><th>Original-type</th><th>Reference-type equivalent</th><tr>
         <tr><td>int</td><td><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html" target="_blank">Integer</a></td></tr>
         <tr><td>double</td><td><a href="docs.oracle.com/javase/6/docs/api/java/lang/Double.html" target="_blank">Double</a></td></tr>
         <tr><td>char</td><td><a href="docs.oracle.com/javase/6/docs/api/java/lang/Character.html" target="_blank">Character</a></td></tr>
       </table>
     </p>
 
-        <p>Java oikeastaan kapseloi alkeistyyppiset muuttujat automaattisesti viitetyyppisiksi muuttujiksi tarvittaessa. Vaikka numero <code>1</code> on alkeistyyppinen muuttuja, voit käyttää sitä suoraan <code>Integer</code>-tyyppisenä avaimena seuraavasti.</p>
+        <p>In fact, Java automatically capsulates original-type values and translates them into reference-type values when that is needed. Even though the number <code>1</code> is an original-type variable, it can be used as <code>Integer</code>-type key directly in the following way.</p>
 
 <pre class="sh_java">
 HashMap&lt;Integer, String&gt; taulu = new HashMap&lt;Integer, String&gt;();
 taulu.put(1, "Ole!");
 </pre>
 
-        <p>Alkeistyyppisten muuttujien automaattista muunnosta viitetyyppisiksi kutsutaan Javassa <em>auto-boxingiksi</em>, eli automaattiseksi "laatikkoon" asettamiseksi. Vastaava onnistuu myös toisinpäin. Voimme luoda metodin, joka palauttaa hajautustaulun sisältämän kokonaisluvun. Seuraavassa esimerkissä olevassa metodissa <code>lisaaBongaus</code> tapahtuu automaattinen tyyppimuunnos.</p>
+        <p>In Java, the automatic translation of original type variables into reference-type ones is called <em>auto-boxing</em>, that is to say allocation into a slot. The same thing also works in the opposite way. We can create a method which returns a HashMap containing an Integer. In the following example, the automatic translation happens within the method <code>addTwitch</code>.</p>
 
 
 <pre class="sh_java">
-public class Rekisteribongaus {
-    private HashMap&lt;String, Integer&gt; bongatut;
+public class TwitchRegister {
+    private HashMap&lt;String, Integer&gt; twitched;
 
-    public Numerokirjanpito() {
-        this.bongatut = new HashMap&lt;String, Integer&gt;();
+    public NumberBookkeeping() {
+        this.twitched = new HashMap&lt;String, Integer&gt;();
     }
 
-    public void lisaaBongaus(String name, int numero) {
-        this.bongatut.put(nimi, numero);
+    public void addTwitch(String name, int number) {
+        this.twitched.put(nimi, numero);
     }
 
-    public int viimeisinBongaus(String name) {
-        this.bongatut.get(nimi);
+    public int lastTwitch(String name) {
+        this.twitched.get(name);
     }
 }
 </pre>
 
-        <p>Vaikka hajautustaulu sisältää Integer-tyyppisiä olioita, osaa Java myös muuntaa tietyt viitetyyppiset muuttujat myös niiden alkeistyyppisiksi vastineiksi. Esimerkiksi <code>Integer</code>-oliot muuttuvat tarpeen vaatiessa <code>int</code>-tyyppisiksi muuttujiksi. Tässä piilee kuitenkin vaara!  Jos yritämme muuttaa null-viitettä numeroksi, näemme virheen <em>java.lang.reflect.InvocationTargetException</em>. Kun teemme automaattista muunnosta, tulee varmistaa että muunnettava arvo ei ole null. Yllä olevassa ohjelmassa oleva <code>viimeisinBongaus</code>-metodi tulee korjata esimerkiksi seuraavasti.</p>
+        <p>Even though the HashMap contains Integer objects, Java can also translate certain reference-type variables into their original-type equivalent. For instance, <code>Integer</code> objects can be translated into <code>int</code> values, if needed. This is however misleading! If we try to translate a null reference into a number, we receive the error <em>java.lang.reflect.InvocationTargetException</em>. When we use this automatic translation, we have to be sure that the value we want to translate is not null. The above <code>lastTritch</code> method must be fixed in the following way.</p>
 
 <pre class="sh_java">
-    public int viimeisinBongaus(String name) {
-        if(this.bongatut.containsKey(nimi) {
-            return this.bongatut.get(nimi);
+    public int lastTwitch(String name) {
+        if(this.twitched.containsKey(name) {
+            return this.twitched.get(name);
         }
 
         return 0;
@@ -2419,71 +2419,71 @@ Hei hei!
 </div>
 
 
-<h2>Kohti testauksen automatisointia</h2>
+<h2>Towards Authomatic Tests</h2>
 
-<p>Ohjelman testaaminen käsin on toivottoman työlästä. Syötteen antaminen on kuitenkin mahdollista automatisoida esimerkiksi syöttämällä Scanner-oliolle luettava characterString. Alla on annettu esimerkki siitä, miten yllä olevassa tehtävässä luotua ohjelmaa voi testata automaattisesti.</p>
+<p>Testing a program manually is a hopeless burden. It is possible to automate inputs by setting a string as a Scanner object parameter. The example below shows how it is possible to test authomatically the program above.</p>
 
 <pre class="sh_java">
-    String syote = "kaanna\n" + "apina\n"  +
-                   "kaanna\n" + "juusto\n" +
-                   "lisaa\n"  + "juusto\n" + "cheese\n" +
-                   "kaanna\n" + "juusto\n" +
-                   "lopeta\n";
+    String input = "translate\n" + "monkey\n"  +
+                   "translate\n" + "cheese\n" +
+                   "add\n"  + "cheese\n" + "juusto\n" +
+                   "translate\n" + "cheese\n" +
+                   "quit\n";
 
-    Scanner lukija = new Scanner(syote);
-    Sanakirja sanakirja = new Sanakirja();
+    Scanner reader = new Scanner(input);
+    Dictionary dictionary = new Dictionary();
 
-    Tekstikayttoliittyma kayttoliittyma = new Tekstikayttoliittyma(lukija, sanakirja);
-    kayttoliittyma.start();
+    TextUserInterface interface = new TextUserInterface(reader, dictionary);
+    interface.start();
 </pre>
 
-  <p>Ohjelma tulostus näyttää vain ohjelman antaman tulostuksen, ei käyttäjän tekemiä komentoja.</p>
+  <p>The print output contains only the program output, and not the user commands.</p>
 
 <pre>
-Komennot:
-  lisaa - lisää sanaparin sanakirjaan
-  kaanna - kysyy sanan ja tulostaa sen käännöksen
-  lopeta - poistuu käyttöliittymästä
+Commands:
+  add - adds a word couple to the dictionary
+  translate - asks for a word and prints its translation
+  quit - leaves the user interface
 
-Komento: Anna sana: Tuntematon sana!
+Command: Give word: Unknown word!
 
-Komento: Anna sana: Tuntematon sana!
+Command: Give word: Unknown word!
 
-Komento: Suomeksi: Käännös:
-Komento: Anna sana: Käännös: cheese
+Command: In Finnish: Translation:
+Command: Give word: Translation: juusto
 
-Komento: Hei hei!
+Command: Cheers!
 </pre>
 
-<p>characterStringn antaminen Scanner-luokalle korvaa näppäimistöltä luettavan syötteen characterStringlla. characterStringmuuttujan <code>syote</code> sisältö siis "simuloi" käyttäjän antamaa syötettä. Rivinvaihto syötteeseen merkitään <code>\n</code>:llä. Jokainen yksittäinen rivinvaihtomerkkiin loppuva osa <code>syote</code>-characterStringssa siis vastaa käyttäjän yhteen nextLine()-komentoon antamaa syötettä.</p>
+<p>Giving a string to a Scanner class is a way to replace the String inputs given by keyboard. The contents of the String variable <code>input</code> "simulates" the user input. The <code>\n</code> denotes a line break. Each single part of the <code>input</code> variable, which ends with a line break, corresponds to one nextLine() input given.</p>
 
-<p>Testityötettä on helppo muuttaa, esim. seuraavassa syötetään lisää uusia sanoja sanakirjaan:</p>
+<p>It is easy to change the text input, and we can add new words to our dictionary, in the following way:</p>
 
 <pre class="sh_java">
-    String syote = "lisaa\n"  + "juusto\n" +     "cheese\n" +
-                   "lisaa\n"  + "olut\n"   +     "beer\n" +
-                   "lisaa\n"  + "kirja\n"  +     "book\n" +
-                   "lisaa\n"  + "tietokone\n" +  "computer\n" +
-                   "lisaa\n"  + "auto\n"   +     "car\n" +
-                   "lopeta\n";
+    String input = "add\n"  + "cheese\n" + "juusto\n" +
+                   "add\n"  + "bier\n" + "olut\n" +
+                   "add\n"  + "book\n" + "kirja\n" +
+                   "add\n"  + "computer\n" + "tietokone\n" +
+                   "add\n"  + "auto\n" + "car\n" +
+                   "quit\n";
 </pre>
 
-<p>Kun haluat testata ohjelmasi toimintaa jälleen käsin, vaihda Scanner-olion konstruktorin parametriksi <code>System.in</code>, eli järjestelmän syötevirta.</p>
+<p>If you want to test again your program manually, change the Scanner object constructor parameter into <code>System.in</code>, i.e system input stream.</p>
 
-<p>Ohjelman toiminnan oikeellisuus pitää edelleen tarkastaa itse ruudulta. Tulostus voi olla aluksi hieman hämmentävää, sillä automatisoitu syöte ei näy ruudulla ollenkaan.</p>
+<p>The program functionality must be checked from the output pane, still. The result can still be confusing at the beginning, because the athomatic input does not appear in the output pane at all.</p>
 
-<p>Lopullinen tavoite on automatisoida myös ohjelman tulostuksen oikeellisuden tarkastaminen niin hyvin, että ohjelman testaus ja testituloksen analysointi onnistuu "nappia painamalla". Palaamme aiheeseen myöhemmin kurssin aikana.</p>
+<p>The final goal will be to automate also the program functionality inspection, so that both testing the program and analising its output text would happen successfully in a click.</p>
 
 
 
 
 <h2>Java API</h2>
 
-        <p>Kurssilla käyttämämme Java-ohjelmointikieli koostuu kolmesta osasta. Ensimmäinen osa on ohjelmointikielen  syntaksi ja semantiikka: muuttujien määrittelytapa, kontrollirakenteiden muoto, ja muuttujien ja luokkien rakenne ja niiden toimintatapa. Toinen osa on JVM, eli <em>Java Virtual Machine</em>, jota käytetään ohjelmien suorittamiseen. Java-ohjelmat käännetään <em>tavukoodiksi</em>, jota voidaan suorittaa missä tahansa koneessa olevan JVM:n avulla. Emme oikeastaan ole törmänneet ohjelmien kääntämiseen, sillä ohjelmointiympäristöt tekevät sen ohjelmoijien puolesta. Silloin tällöin ohjelmointiympäristö ei toimi odotetulla tavalla, ja saatamme joutua valitsemaan <em>clean & build</em>, joka poistaa vanhat lähdekoodit ja kääntää ohjelman uudestaan. Kolmantena osana on API (<em>Application Programming Interface</em>), eli ohjelmointirajapinta tai standardikirjasto.</p>
+        <p>The Java programming language we use in our course is made of three parts. The first part is the program syntax and semantics: the way we define variables, the control flow, variable and class structure and their functionality. The second part is JVM, i.e. <em>Java Virtual Machine</em>, used for running our programs. Our Java programs are translated into a <em>bytecode</em>, which can be run on whatever computer has JVM. We haven't dealt with program translation because the program environment does it on our behalf. Sometimes, if the program environtment does not work as expected we may have to choose <em>clean & build</em>, which deletes the old source code and translates again our program. The third part is API (<em>Application Programming Interface</em>), that is to say the program interface or standard library.</p>
 
-        <p>API on ohjelmointikielen tarjoama joukko valmiita luokkia, joita ohjelmoija voi käyttää omissa projekteissaan. Esimerkiksi luokat <code>ArrayList</code>, <code>Arrays</code>, <code>Collections</code>, ja <code>String</code> ovat kaikki osa Javan valmista APIa. Javan version 7 API-kuvaus löytyy osoitteesta <a href="http://docs.oracle.com/javase/7/docs/api/" target="_blank">http://docs.oracle.com/javase/7/docs/api/</a>. Osoitteessa olevan sivuston vasemmassa laidassa on Javan valmiille luokille luokkakuvaus. Etsiessäsi sivulta luokkaa <code>ArrayList</code>, löydät sivun <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html</a>, joka kuvaa <code>ArrayList</code>-luokan rakenteen, konstruktorit, ja metodit.</p>
+        <p>API is a set of built-in classes specific of the programming language, which is provided to users to use them in their own projects. For instance the casses <code>ArrayList</code>, <code>Arrays</code>, <code>Collections</code>, and <code>String</code> are all part of Java's build-in API. A description of the API of Java 7 can be found at the address <a href="http://docs.oracle.com/javase/7/docs/api/" target="_blank">http://docs.oracle.com/javase/7/docs/api/</a>. On the left side of the page we find a description of Java's built-in classes. If you look for the <code>ArrayList</code> class, you  find a link to <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html</a>, which shows the stucture, constructors, and methods of the class.</p>
 
-        <p>NetBeans osaa näyttää luokkaan liittyvän APIn tarvittaessa. Kun kirjoitat luokan nimen ja lisäät siihen liittyvän import-lauseen, voit klikata luokan nimeä oikealla hiirennapilla ja valita <em>Show Javadoc</em>. Tämä avaa luokkaan liittyvän API-kuvauksen selaimessa.</p>
+        <p>NetBeans is able to show a class API, if needed. If you write a class name and add the relative import sentence, you can right click on the class name and and choose <em>Show Javadoc</em>. This opens the class API description in your browser.</p>
 
 <div class="tehtavat">
   <h3>Lentokenttä</h3>

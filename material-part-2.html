@@ -1873,7 +1873,7 @@ public class Main {
 
     <p>Java's <code>HashMap</code> class capsulates - or hides - the way it works, and it returns made-up methods ready to use.</p>
 
-    <p>When we create a HashMap we need two <em>type parameters</em>, a type for the key variable, and a type for the mapped object. The following example uses a <code>String</code>-type object as key, and a <code>String</code>-type object as the mapped object.</p>
+    <p>When we create a HashMap we need two <em>type parameters</em>, a type for the key variable, and a type for the stored object. The following example uses a <code>String</code>-type object as key, and a <code>String</code>-type object as the stored object.</p>
 
 
 <pre class="sh_java">
@@ -1897,7 +1897,7 @@ null
 </pre>
 
 
-    <p>In the example, we create a HashMap which both the key and the mapped object are strings. We add information to the HashMap with the <code>put()</code> method, which receives the references to the key and to the mapped object as parameter. The method <code>get()</code> returns either the reference to the key given as parameter or a <code>null</code> value in case the key was not found.</p>
+    <p>In the example, we create a HashMap which both the key and the stored object are strings. We add information to the HashMap with the <code>put()</code> method, which receives the references to the key and to the stored object as parameter. The method <code>get()</code> returns either the reference to the key given as parameter or a <code>null</code> value in case the key was not found.</p>
 
     <p>Each key is mapped to one value, within the HashMap. If we store a new value with an already existing key, the old value is lost.</p>
 
@@ -2156,53 +2156,53 @@ public class Library {
     <p>Among the programming principles, there is the so called <em>DRY</em> principle (Don't Repeat Yourself), according to which we try to avoid repeting the same code in different places. Turning a string to lower case, and its <em>trimming</em> - that is to say removing white spaces from the beginning and the end of a string - would have recourred various different times without the <code>stringCleaner()</code> method. We hardly notice we are repeating the same code before we have written it, in which case it eventually ends up there. This is not bad, however. The most important thing is that we clean our code as soon as we notice the need.</p>
 
 
-    <h3>Alkeistyyppiset muuttujat hajautustaulussa</h3>
+    <h3>Orignial-Type Variables in a HashMap</h3>
 
-    <p>Huomaa että hajautustaulun avain ja tallennettava olio ovat aina viitetyyppisiä. Jos haluat käyttää alkeistyyppisiä muuttujia avaimena tai tallennettavana arvona, on niille olemassa myös viitetyyppiset vastineet. Alla on esitelty muutama.</p>
+    <p>Both HashMap keys and stored objects are referece-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.</p>
 
     <p>
       <table>
-        <tr><th>Alkeistyyppi</th><th>Viitetyyppinen vastine</th><tr>
+        <tr><th>Original-type</th><th>Reference-type equivalent</th><tr>
         <tr><td>int</td><td><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html" target="_blank">Integer</a></td></tr>
         <tr><td>double</td><td><a href="docs.oracle.com/javase/6/docs/api/java/lang/Double.html" target="_blank">Double</a></td></tr>
         <tr><td>char</td><td><a href="docs.oracle.com/javase/6/docs/api/java/lang/Character.html" target="_blank">Character</a></td></tr>
       </table>
     </p>
 
-        <p>Java oikeastaan kapseloi alkeistyyppiset muuttujat automaattisesti viitetyyppisiksi muuttujiksi tarvittaessa. Vaikka numero <code>1</code> on alkeistyyppinen muuttuja, voit käyttää sitä suoraan <code>Integer</code>-tyyppisenä avaimena seuraavasti.</p>
+        <p>In fact, Java automatically capsulates original-type values and translates them into reference-type values when that is needed. Even though the number <code>1</code> is an original-type variable, it can be used as an <code>Integer</code> key directly in the following way.</p>
 
 <pre class="sh_java">
-HashMap&lt;Integer, String&gt; taulu = new HashMap&lt;Integer, String&gt;();
-taulu.put(1, "Ole!");
+HashMap&lt;Integer, String&gt; table = new HashMap&lt;Integer, String&gt;();
+table.put(1, "Be!");
 </pre>
 
-        <p>Alkeistyyppisten muuttujien automaattista muunnosta viitetyyppisiksi kutsutaan Javassa <em>auto-boxingiksi</em>, eli automaattiseksi "laatikkoon" asettamiseksi. Vastaava onnistuu myös toisinpäin. Voimme luoda metodin, joka palauttaa hajautustaulun sisältämän kokonaisluvun. Seuraavassa esimerkissä olevassa metodissa <code>lisaaBongaus</code> tapahtuu automaattinen tyyppimuunnos.</p>
+        <p>In Java, the automatic translation of original-type variables into reference-type ones is called <em>auto-boxing</em>, i.e. allocation into a slot. The same process also works in the opposite way. We can create a method which returns a HashMap containing an Integer. In the following example, the automatic translation happens inside the method <code>addTwitch</code>.</p>
 
 
 <pre class="sh_java">
-public class Rekisteribongaus {
-    private HashMap&lt;String, Integer&gt; bongatut;
+public class TwitchRegister {
+    private HashMap&lt;String, Integer&gt; twitched;
 
-    public Numerokirjanpito() {
-        this.bongatut = new HashMap&lt;String, Integer&gt;();
+    public NumberBookkeeping() {
+        this.twitched = new HashMap&lt;String, Integer&gt;();
     }
 
-    public void lisaaBongaus(String name, int numero) {
-        this.bongatut.put(nimi, numero);
+    public void addTwitch(String name, int number) {
+        this.twitched.put(nimi, numero);
     }
 
-    public int viimeisinBongaus(String name) {
-        this.bongatut.get(nimi);
+    public int lastTwitch(String name) {
+        this.twitched.get(name);
     }
 }
 </pre>
 
-        <p>Vaikka hajautustaulu sisältää Integer-tyyppisiä olioita, osaa Java myös muuntaa tietyt viitetyyppiset muuttujat myös niiden alkeistyyppisiksi vastineiksi. Esimerkiksi <code>Integer</code>-oliot muuttuvat tarpeen vaatiessa <code>int</code>-tyyppisiksi muuttujiksi. Tässä piilee kuitenkin vaara!  Jos yritämme muuttaa null-viitettä numeroksi, näemme virheen <em>java.lang.reflect.InvocationTargetException</em>. Kun teemme automaattista muunnosta, tulee varmistaa että muunnettava arvo ei ole null. Yllä olevassa ohjelmassa oleva <code>viimeisinBongaus</code>-metodi tulee korjata esimerkiksi seuraavasti.</p>
+        <p>Even though the HashMap contains Integer objects, Java can also translate certain reference-type variables into their original-type equivalent. For instance, <code>Integer</code> objects can be translated into <code>int</code> values, if needed. However, this can be misleading! If we try to translate a null reference into a number, we receive the <em>java.lang.reflect.InvocationTargetException</em> error. When we make use of this automatic translation, we have to be sure that the value we want to translate is not null. The above <code>lastTwitch</code> method must be fixed in the following way.</p>
 
 <pre class="sh_java">
-    public int viimeisinBongaus(String name) {
-        if(this.bongatut.containsKey(nimi) {
-            return this.bongatut.get(nimi);
+    public int lastTwitch(String name) {
+        if(this.twitched.containsKey(name) {
+            return this.twitched.get(name);
         }
 
         return 0;
@@ -2419,71 +2419,71 @@ Hei hei!
 </div>
 
 
-<h2>Kohti testauksen automatisointia</h2>
+<h2>Towards Automatic Tests</h2>
 
-<p>Ohjelman testaaminen käsin on toivottoman työlästä. Syötteen antaminen on kuitenkin mahdollista automatisoida esimerkiksi syöttämällä Scanner-oliolle luettava characterString. Alla on annettu esimerkki siitä, miten yllä olevassa tehtävässä luotua ohjelmaa voi testata automaattisesti.</p>
+<p>Testing a program manually is a hopeless burden. It is possible to automate inputs by setting up a string as a Scanner object parameter. The example below shows how it is possible to test automatically the program above.</p>
 
 <pre class="sh_java">
-    String syote = "kaanna\n" + "apina\n"  +
-                   "kaanna\n" + "juusto\n" +
-                   "lisaa\n"  + "juusto\n" + "cheese\n" +
-                   "kaanna\n" + "juusto\n" +
-                   "lopeta\n";
+    String input = "translate\n" + "monkey\n"  +
+                   "translate\n" + "cheese\n" +
+                   "add\n"  + "cheese\n" + "juusto\n" +
+                   "translate\n" + "cheese\n" +
+                   "quit\n";
 
-    Scanner lukija = new Scanner(syote);
-    Sanakirja sanakirja = new Sanakirja();
+    Scanner reader = new Scanner(input);
+    Dictionary dictionary = new Dictionary();
 
-    Tekstikayttoliittyma kayttoliittyma = new Tekstikayttoliittyma(lukija, sanakirja);
-    kayttoliittyma.start();
+    TextUserInterface interface = new TextUserInterface(reader, dictionary);
+    interface.start();
 </pre>
 
-  <p>Ohjelma tulostus näyttää vain ohjelman antaman tulostuksen, ei käyttäjän tekemiä komentoja.</p>
+  <p>The print output contains only the program output, and not the user commands.</p>
 
 <pre>
-Komennot:
-  lisaa - lisää sanaparin sanakirjaan
-  kaanna - kysyy sanan ja tulostaa sen käännöksen
-  lopeta - poistuu käyttöliittymästä
+Commands:
+  add - adds a word couple to the dictionary
+  translate - asks for a word and prints its translation
+  quit - stops the user interface
 
-Komento: Anna sana: Tuntematon sana!
+Command: Give word: Unknown word!
 
-Komento: Anna sana: Tuntematon sana!
+Command: Give word: Unknown word!
 
-Komento: Suomeksi: Käännös:
-Komento: Anna sana: Käännös: cheese
+Command: In Finnish: Translation:
+Command: Give word: Translation: juusto
 
-Komento: Hei hei!
+Command: Cheers!
 </pre>
 
-<p>characterStringn antaminen Scanner-luokalle korvaa näppäimistöltä luettavan syötteen characterStringlla. characterStringmuuttujan <code>syote</code> sisältö siis "simuloi" käyttäjän antamaa syötettä. Rivinvaihto syötteeseen merkitään <code>\n</code>:llä. Jokainen yksittäinen rivinvaihtomerkkiin loppuva osa <code>syote</code>-characterStringssa siis vastaa käyttäjän yhteen nextLine()-komentoon antamaa syötettä.</p>
+<p>Giving a string to a Scanner class is a way to replace the String inputs given with the keyboard. The contents of the String variable <code>input</code> "simulates" the user input. <code>\n</code> denotes a line break. Each single part of the <code>input</code> variable which ends with a line break corresponds to one nextLine() input.</p>
 
-<p>Testityötettä on helppo muuttaa, esim. seuraavassa syötetään lisää uusia sanoja sanakirjaan:</p>
+<p>It is easy to change the text input, and we can add new words to our dictionary, in the following way:</p>
 
 <pre class="sh_java">
-    String syote = "lisaa\n"  + "juusto\n" +     "cheese\n" +
-                   "lisaa\n"  + "olut\n"   +     "beer\n" +
-                   "lisaa\n"  + "kirja\n"  +     "book\n" +
-                   "lisaa\n"  + "tietokone\n" +  "computer\n" +
-                   "lisaa\n"  + "auto\n"   +     "car\n" +
-                   "lopeta\n";
+    String input = "add\n"  + "cheese\n" + "juusto\n" +
+                   "add\n"  + "bier\n" + "olut\n" +
+                   "add\n"  + "book\n" + "kirja\n" +
+                   "add\n"  + "computer\n" + "tietokone\n" +
+                   "add\n"  + "auto\n" + "car\n" +
+                   "quit\n";
 </pre>
 
-<p>Kun haluat testata ohjelmasi toimintaa jälleen käsin, vaihda Scanner-olion konstruktorin parametriksi <code>System.in</code>, eli järjestelmän syötevirta.</p>
+<p>If you want to test again your program manually, change the Scanner object constructor parameter into <code>System.in</code>, i.e system input stream.</p>
 
-<p>Ohjelman toiminnan oikeellisuus pitää edelleen tarkastaa itse ruudulta. Tulostus voi olla aluksi hieman hämmentävää, sillä automatisoitu syöte ei näy ruudulla ollenkaan.</p>
+<p>The program functionality must be checked from the output pane, still. The result can still be confusing at the beginning, because the athomatic input does not appear in the output pane at all.</p>
 
-<p>Lopullinen tavoite on automatisoida myös ohjelman tulostuksen oikeellisuden tarkastaminen niin hyvin, että ohjelman testaus ja testituloksen analysointi onnistuu "nappia painamalla". Palaamme aiheeseen myöhemmin kurssin aikana.</p>
+<p>The final goal will be to automate also the program functionality inspection, so that both testing the program and analising its output text would happen successfully in a click.</p>
 
 
 
 
 <h2>Java API</h2>
 
-        <p>Kurssilla käyttämämme Java-ohjelmointikieli koostuu kolmesta osasta. Ensimmäinen osa on ohjelmointikielen  syntaksi ja semantiikka: muuttujien määrittelytapa, kontrollirakenteiden muoto, ja muuttujien ja luokkien rakenne ja niiden toimintatapa. Toinen osa on JVM, eli <em>Java Virtual Machine</em>, jota käytetään ohjelmien suorittamiseen. Java-ohjelmat käännetään <em>tavukoodiksi</em>, jota voidaan suorittaa missä tahansa koneessa olevan JVM:n avulla. Emme oikeastaan ole törmänneet ohjelmien kääntämiseen, sillä ohjelmointiympäristöt tekevät sen ohjelmoijien puolesta. Silloin tällöin ohjelmointiympäristö ei toimi odotetulla tavalla, ja saatamme joutua valitsemaan <em>clean & build</em>, joka poistaa vanhat lähdekoodit ja kääntää ohjelman uudestaan. Kolmantena osana on API (<em>Application Programming Interface</em>), eli ohjelmointirajapinta tai standardikirjasto.</p>
+        <p>The Java programming language we use in our course is made of three things. The first is the program syntax and semantics: the way we define variables, the control flow, the variable and class structure, and their functionality. The second is JVM, i.e. <em>Java Virtual Machine</em>, used for running our programs. Our Java programs are translated into a <em>bytecode</em>, which can be run on whatever computer has JVM. We haven't dealt with program translation because the program environment does it on our behalf. Sometimes, if the program environtment does not work as expected we may have to choose <em>clean & build</em>, which deletes the old source code and translates our program again. The third is API (<em>Application Programming Interface</em>), that is to say the program interface or standard library.</p>
 
-        <p>API on ohjelmointikielen tarjoama joukko valmiita luokkia, joita ohjelmoija voi käyttää omissa projekteissaan. Esimerkiksi luokat <code>ArrayList</code>, <code>Arrays</code>, <code>Collections</code>, ja <code>String</code> ovat kaikki osa Javan valmista APIa. Javan version 7 API-kuvaus löytyy osoitteesta <a href="http://docs.oracle.com/javase/7/docs/api/" target="_blank">http://docs.oracle.com/javase/7/docs/api/</a>. Osoitteessa olevan sivuston vasemmassa laidassa on Javan valmiille luokille luokkakuvaus. Etsiessäsi sivulta luokkaa <code>ArrayList</code>, löydät sivun <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html</a>, joka kuvaa <code>ArrayList</code>-luokan rakenteen, konstruktorit, ja metodit.</p>
+        <p>API is a set of built-in classes specific of the programming language, which is provided to users for their own projects. For instance the casses <code>ArrayList</code>, <code>Arrays</code>, <code>Collections</code>, and <code>String</code> are all part of Java's build-in API. A description of the API of Java 7 can be found at the address <a href="http://docs.oracle.com/javase/7/docs/api/" target="_blank">http://docs.oracle.com/javase/7/docs/api/</a>. On the left side of the page we find a description of Java's built-in classes. If you look for the <code>ArrayList</code> class, you  find a link to <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html</a>, which shows the stucture, constructors, and methods of the class.</p>
 
-        <p>NetBeans osaa näyttää luokkaan liittyvän APIn tarvittaessa. Kun kirjoitat luokan nimen ja lisäät siihen liittyvän import-lauseen, voit klikata luokan nimeä oikealla hiirennapilla ja valita <em>Show Javadoc</em>. Tämä avaa luokkaan liittyvän API-kuvauksen selaimessa.</p>
+        <p>NetBeans is able to show a class API, if needed. If you write a class name and add the relative import sentence, you can right click on the class name and and choose <em>Show Javadoc</em>. This opens the class API description in your browser.</p>
 
 <div class="tehtavat">
   <h3>Lentokenttä</h3>
@@ -2598,11 +2598,11 @@ Valitse toiminto:
 
 <div class="tyhja"></div>
 
-<div class="viikkoraja">Viikko 2</div>
+<div class="viikkoraja">Week 2</div>
 
 <h2 id="object">Object</h2>
 
-        <p>Kurssilla on jo useampaan otteeseen käytetty metodia <code>public String toString()</code> olion characterStringesityksen muodostanuseen esim. tulostuskomennon yhteydessä. Emme ole saaneet selvyyttä <em>miksi</em> Java osaa käyttää kyseistä metodia. Olemattoman metodin kutsuminenhan tuottaa normaalisti virheen. Tutkitaan seuraavaa luokkaa <code>Book</code>, jolla ei ole metodia <code>public String toString()</code>, ja ohjelmaa joka yrittää tulostaa <code>Book</code>-luokasta luodun olion <code>System.out.println()</code>-komennolla.</p>
+        <p>In our course, we have been frequently using the method <code>public String toString()</code> when we wanted to produce the print output of an object in String shape. Calling the method without setting it up properly does usually cause an error. Let us have a look at the class <code>Book</code>, which does not have the method <code>public String toString()</code>, while the program tries to print the object produced from the <code>Book</code> class through the method <code>System.out.println()</code>.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2610,8 +2610,8 @@ public class Book {
     private int publishingYear;
 
     public Book(String name, int publishingYear) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
+        this.name = name;
+        this.publishingYear = publishingYear;
     }
 
     public String getName() {
@@ -2625,15 +2625,15 @@ public class Book {
 </pre>
 
 <pre class="sh_java">
-Book olioBook = new Book("Oliokirja", 2000);
-System.out.println(olioBook);
+Book objectBook = new Book("Object book", 2000);
+System.out.println(objectBook);
 </pre>
 
-        <p>Ohjelmamme ei tulosta virheilmoitusta tai kaadu kun annamme <code>Book</code>-luokasta tehdyn olion parametrina <code>System.out.println</code>-komennolle. Näemme virheilmoituksen tai kaatumisen sijaan mielenkiintoisen tulosteen. Tuloste sisältää luokan <code>Book</code> nimen ja epämääräisen @-merkkiä seuraavan characterStringn. Huomaa että kutsussa <code>System.out.println(olioBook)</code> Java tekee oikeasti kutsun <code>System.out.println(olioBook.toString())</code>, emme kuitenkaan kohtaa virhettä.</p>
+        <p>Our program does not print an error message when take an object of <code>Book</code> class, and use it as <code>System.out.println()</code> method parameter. Our program does not crash, and instead of reading an error message we notice an interesting printout. The printout contains the name of the <code>Book</code> class plus an indefinite String which follows a @ character. Notice that when we call <code>System.out.println(objectBook)</code> Java calls <code>System.out.println(objectBook.toString())</code>, in fact, but we don't run into an error, however.</p>
 
-        <p>Selitys liittyy Javan luokkien rakenteeseen. Jokainen Javan luokka <em>perii</em> automaattisesti luokan <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code>, joka sisältää joukon jokaiselle Javan luokalle hyödyllisiä perusmetodeja. Perintä tarkoittaa että oma luokkamme saa käyttöön perittävän luokan määrittelemiä toiminnallisuuksia ja ominaisuuksia. Luokka <code>Object</code> sisältää muun muassa metodin <code>toString</code>, joka periytyy luomiimme luokiin.</p>
+        <p>The explenation concerns the way Java classes are built. Each Java class automatically <em>inherits</em> the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code> class, which contains a set of methods that are useful to each Java class. Heritage means that our own class has access to the features and functions defined in the inherited class. Among the others, the class <code>Object</code> contains the method <code>toString</code>, which is inherited by the classes we create.</p>
 
-        <p>Object-luokassa määritelty <code>toString</code>-metodin tuottama characterString ei yleensä ole toivomamme. Tämän takia meidän tulee <em>korvata</em>, eli syrjäyttää metodi omalla toteutuksellamme. Lisätään luokkaan <code>Book</code> metodi <code>public String toString()</code>, joka korvaa perityssä <code>Object</code> luokassa olevan metodin <code>toString</code>.</p>
+        <p>The <code>toString</code> method inherited from the object class is not usually the one we'd want. That's why we will want to <em>replace</em> it with one we personally make. Let us add the method <code>public String toString()</code> to our <code>Book</code> class. This method will replace the <code>toString</code> method inherited from the <code>Object</code> class.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2641,8 +2641,8 @@ public class Book {
     private int publishingYear;
 
     public Book(String name, int publishingYear) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
+        this.name = anme;
+        this.publishingYear = publishingYear;
     }
 
     public String getName() {
@@ -2660,21 +2660,20 @@ public class Book {
 }
 </pre>
 
-        <p>Nyt kun teemme oliosta ilmentymän ja annamme sen tulostusmetodille, näemme luokassa <code>Book</code> olevan <code>toString</code>-metodin tuottaman characterStringn.</p>
+        <p>If we now create an object instance and we give it to the print method, we notice that the <code>toString</code> method of the <code>Book</code> class produces a string.</p>
 
 <pre class="sh_java">
-Book olioBook = new Book("Oliokirja", 2000);
-System.out.println(olioBook);
+Book objectBook = new Book("object book", 2000);
+System.out.println(objectBook);
 </pre>
 
 <pre>
-Oliokirja (2000)
+Object book (2000)
 </pre>
 
-        <p>Luokassa <code>Book</code> olevan metodin <code>toString</code> yläpuolella on <em>annotaatio</em> <code>@Override</code>. Annotaatioilla annetaan vinkkejä sekä kääntäjälle että lukijalle siitä, miten metodeihin tulisi suhtautua. Annotaatio <code>@Override</code> antaa vihjeen että annotaatiota seuraava korvaa perityssä luokassa määritellyn metodin. Jos korvattavaan metodiin ei liitetä annotaatiota, 
-antaa kääntäjä tilanteesa <em>varoituksen</em>, overriden kirjottamatta jättäminen ei kuitenkaan ole virhe.</p>
+        <p>Above the <code>toString</code> in the <code>Book</code> class we see the <code>@Override</code> <em>annotation</em>. We use annotations to give guidelines to both the translator and the reader about how to relate to the methods. The <code>@Override</code> annotations tells that the following method replaces the one defined in the inherited class. If we don't add an annotation to the method we replace, the translator gives us a <em>warning</em>, however avoiding writing annotations is not a mistake.</p>
 
-        <p>Luokasta <code>Object</code> peritään muitakin hyödyllisiä metodeja. Tutustutaan seuraavaksi metodeihin <code>equals</code> ja <code>hashCode</code>.</p>
+        <p>There are also other useful methods we inherit from the <code>Object</code> class. Let us now get acquainted with the methods <code>equals</code> and <code>hashCode</code>.</p>
 
         <h3>Metodi equals</h3>
 

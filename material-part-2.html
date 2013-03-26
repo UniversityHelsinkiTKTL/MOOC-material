@@ -2598,11 +2598,11 @@ Valitse toiminto:
 
 <div class="tyhja"></div>
 
-<div class="viikkoraja">Viikko 2</div>
+<div class="viikkoraja">Week 2</div>
 
 <h2 id="object">Object</h2>
 
-        <p>Kurssilla on jo useampaan otteeseen käytetty metodia <code>public String toString()</code> olion characterStringesityksen muodostanuseen esim. tulostuskomennon yhteydessä. Emme ole saaneet selvyyttä <em>miksi</em> Java osaa käyttää kyseistä metodia. Olemattoman metodin kutsuminenhan tuottaa normaalisti virheen. Tutkitaan seuraavaa luokkaa <code>Book</code>, jolla ei ole metodia <code>public String toString()</code>, ja ohjelmaa joka yrittää tulostaa <code>Book</code>-luokasta luodun olion <code>System.out.println()</code>-komennolla.</p>
+        <p>In our course, we have been frequently using the method <code>public String toString()</code> when we wanted to produce the print output of an object in String shape. Calling the method without setting it up properly does usually cause an error. Let us have a look at the class <code>Book</code>, which does not have the method <code>public String toString()</code>, while the program tries to print the object produced from the <code>Book</code> class through the method <code>System.out.println()</code>.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2610,8 +2610,8 @@ public class Book {
     private int publishingYear;
 
     public Book(String name, int publishingYear) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
+        this.name = name;
+        this.publishingYear = publishingYear;
     }
 
     public String getName() {
@@ -2625,15 +2625,15 @@ public class Book {
 </pre>
 
 <pre class="sh_java">
-Book olioBook = new Book("Oliokirja", 2000);
-System.out.println(olioBook);
+Book objectBook = new Book("Object book", 2000);
+System.out.println(objectBook);
 </pre>
 
-        <p>Ohjelmamme ei tulosta virheilmoitusta tai kaadu kun annamme <code>Book</code>-luokasta tehdyn olion parametrina <code>System.out.println</code>-komennolle. Näemme virheilmoituksen tai kaatumisen sijaan mielenkiintoisen tulosteen. Tuloste sisältää luokan <code>Book</code> nimen ja epämääräisen @-merkkiä seuraavan characterStringn. Huomaa että kutsussa <code>System.out.println(olioBook)</code> Java tekee oikeasti kutsun <code>System.out.println(olioBook.toString())</code>, emme kuitenkaan kohtaa virhettä.</p>
+        <p>Our program does not print an error message when take an object of <code>Book</code> class, and use it as <code>System.out.println()</code> method parameter. Our program does not crash, and instead of reading an error message we notice an interesting printout. The printout contains the name of the <code>Book</code> class plus an indefinite String which follows a @ character. Notice that when we call <code>System.out.println(objectBook)</code> Java calls <code>System.out.println(objectBook.toString())</code>, in fact, but we don't run into an error, however.</p>
 
-        <p>Selitys liittyy Javan luokkien rakenteeseen. Jokainen Javan luokka <em>perii</em> automaattisesti luokan <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code>, joka sisältää joukon jokaiselle Javan luokalle hyödyllisiä perusmetodeja. Perintä tarkoittaa että oma luokkamme saa käyttöön perittävän luokan määrittelemiä toiminnallisuuksia ja ominaisuuksia. Luokka <code>Object</code> sisältää muun muassa metodin <code>toString</code>, joka periytyy luomiimme luokiin.</p>
+        <p>The explenation concerns the way Java classes are built. Each Java class automatically <em>inherits</em> the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code> class, which contains a set of methods that are useful to each Java class. Heritage means that our own class has access to the features and functions defined in the inherited class. Among the others, the class <code>Object</code> contains the method <code>toString</code>, which is inherited by the classes we create.</p>
 
-        <p>Object-luokassa määritelty <code>toString</code>-metodin tuottama characterString ei yleensä ole toivomamme. Tämän takia meidän tulee <em>korvata</em>, eli syrjäyttää metodi omalla toteutuksellamme. Lisätään luokkaan <code>Book</code> metodi <code>public String toString()</code>, joka korvaa perityssä <code>Object</code> luokassa olevan metodin <code>toString</code>.</p>
+        <p>The <code>toString</code> method inherited from the object class is not usually the one we'd want. That's why we will want to <em>replace</em> it with one we personally make. Let us add the method <code>public String toString()</code> to our <code>Book</code> class. This method will replace the <code>toString</code> method inherited from the <code>Object</code> class.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2641,8 +2641,8 @@ public class Book {
     private int publishingYear;
 
     public Book(String name, int publishingYear) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
+        this.name = anme;
+        this.publishingYear = publishingYear;
     }
 
     public String getName() {
@@ -2660,21 +2660,20 @@ public class Book {
 }
 </pre>
 
-        <p>Nyt kun teemme oliosta ilmentymän ja annamme sen tulostusmetodille, näemme luokassa <code>Book</code> olevan <code>toString</code>-metodin tuottaman characterStringn.</p>
+        <p>If we now create an object instance and we give it to the print method, we notice that the <code>toString</code> method of the <code>Book</code> class produces a string.</p>
 
 <pre class="sh_java">
-Book olioBook = new Book("Oliokirja", 2000);
-System.out.println(olioBook);
+Book objectBook = new Book("object book", 2000);
+System.out.println(objectBook);
 </pre>
 
 <pre>
-Oliokirja (2000)
+Object book (2000)
 </pre>
 
-        <p>Luokassa <code>Book</code> olevan metodin <code>toString</code> yläpuolella on <em>annotaatio</em> <code>@Override</code>. Annotaatioilla annetaan vinkkejä sekä kääntäjälle että lukijalle siitä, miten metodeihin tulisi suhtautua. Annotaatio <code>@Override</code> antaa vihjeen että annotaatiota seuraava korvaa perityssä luokassa määritellyn metodin. Jos korvattavaan metodiin ei liitetä annotaatiota, 
-antaa kääntäjä tilanteesa <em>varoituksen</em>, overriden kirjottamatta jättäminen ei kuitenkaan ole virhe.</p>
+        <p>Above the <code>toString</code> in the <code>Book</code> class we see the <code>@Override</code> <em>annotation</em>. We use annotations to give guidelines to both the translator and the reader about how to relate to the methods. The <code>@Override</code> annotations tells that the following method replaces the one defined in the inherited class. If we don't add an annotation to the method we replace, the translator gives us a <em>warning</em>, however avoiding writing annotations is not a mistake.</p>
 
-        <p>Luokasta <code>Object</code> peritään muitakin hyödyllisiä metodeja. Tutustutaan seuraavaksi metodeihin <code>equals</code> ja <code>hashCode</code>.</p>
+        <p>There are also other useful methods we inherit from the <code>Object</code> class. Let us now get acquainted with the methods <code>equals</code> and <code>hashCode</code>.</p>
 
         <h3>Metodi equals</h3>
 

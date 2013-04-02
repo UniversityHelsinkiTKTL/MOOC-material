@@ -2760,7 +2760,7 @@ The books were not the same
     WantedType variable = (WantedType) oldVariable;
 </pre>
 
-        <p>Type casting is possible because we know two objects are the same type. If they are different type, the above <code>getClass</code> method returns false. Let us change the <code>Object</code> parameter received with the <code>equals</code> method into <code>Book</code> type, and let us identify two different books against their publishing year. The books are otherwise the same.</em>
+        <p>Type casting is possible because we know two objects are the same type. If they are different type, the above <code>getClass</code> method returns false. Let us change the <code>Object</code> parameter received with the <code>equals</code> method into <code>Book</code> type, and let us identify two different books against their publishing year. The books are otherwise the same.</p>
 
 <pre class="sh_java">
     public boolean equals(Object object) {
@@ -2895,25 +2895,23 @@ if (!books.contains(objectBook)) {
 }
 </pre>
 
-        <h3>Metodi hashCode</h3>
+        <h3>HashCode Method</h3>
 
-        <p>Metodi <code>hashCode</code> luo oliosta numeerisen arvon eli hajautusarvon. Numeerista arvoa tarvitaan esimerkiksi 
-jos olioa käytetään HashMap:in avaimena. 
-Olemme tähän mennessä käyttäneet HashMapin avaimina ainoastaan String- ja Integer-tyyppisiä olioita ja niillä on valmiit sopivasti toteutetut  <code>hashCode</code>-metodit. Luodaan esimerkki jossa näin ei ole: jatketaan kirjojen parissa ja ruvetaan pitämään kirjaa lainassa olevista kirjoista. Päätetään ratkaista kirjanpito HashMapin avulla. Avaimena toimii kirja ja kirjaan liitetty arvo on characterString, joka keroo lainaajan nimen:</p>
+        <p>The <code>hashCode</code> method takes an object and returns a numeric value, i.e. a hash value. We need numeric values for instance when we use and object as HashMap keys. So far, we have been using only String and Integer objects as HashMap keys, and their <code>hashCode</code> method is implemented by default. Let us make an example where it is not so: let us continue with our book examples and let us start to take note of our books on loan. We want to implement our bookkeeping through Hashmap. The key is the book, and the book's value is a string, which tells the loaner's name:</p>
 
 <pre class="sh_java">
-        HashMap&lt;Book, String&gt; lainaajat = new HashMap&lt;Book, String&gt;();
+        HashMap&lt;Book, String&gt; loaners = new HashMap&lt;Book, String&gt;();
        
-        Book oliokirja = new Book("Oliokirja", 2000);
-        lainaajat.put( oliokirja, "Pekka" );
-        lainaajat.put( new Book("Test Driven Development",1999), "Arto" );
+        Book objectbook = new Book("Objectbook", 2000);
+        loaners.put( objectbook, "Pekka" );
+        loaners.put( new Book("Test Driven Development",1999), "Arto" );
         
-        System.out.println( lainaajat.get( oliokirja ) );
-        System.out.println( lainaajat.get( new Book("Oliokirja", 2000) );
-        System.out.println( lainaajat.get( new Book("Test Driven Development", 1999) );
+        System.out.println( loaners.get( objectbook ) );
+        System.out.println( loaners.get( new Book("Objectbook", 2000) );
+        System.out.println( loaners.get( new Book("Test Driven Development", 1999) );
 </pre>
 
-<p>Tulostuu:</p>
+<p>Print output:</p>
 
 <pre>
 Pekka
@@ -2921,11 +2919,11 @@ null
 null
 </pre>
 
-        <p>Löydämme lainaajan hakiessamme samalla oliolla, joka annettiin hajautustaulun <code>put</code>-metodille avaimeksi. Täsmälleen samanlaisella kirjalla mutta eri oliolla haettaessa lainaajaa ei kuitenkaan löydy ja saamme <em>null</em>-viitteen. Syynä on taas <code>Object</code>-luokassa oleva <code>hashCode</code>-metodin oletustoteutus. Oletustoteutus luo indeksin viitteen perusteella eli samansisältöiset mutta eri oliot saavat eri tuloksen hashCode-metodista ja tämän takia olioa ei osata etsiä oikeasta paikasta HashMapia.</p>
+        <p>We can find the loaner by searching against the same object which was given as HashMap key with the <code>put</code> method. However, if we search against the same book but different object, we are not able to find its loaner and we are retured with a <em>null</em> reference. This is again due to the default implementation of the <code>hashCode</code> method of <code>Object</code> class. The default implementation creates an index based on the reference; this means that different objects with the same content receive different hashCode method outputs, and therefore it is not possible to find the right place of the object in the HashMap.</p>
 
-        <p>Jotta HashMap toimisi haluamallamme tavalla, eli palauttaisi lainaajan kun avaimeksi annetaan oikean <em>sisältöinen</em> olio (ei välttämässä siis sama olio kuin alkuperäinen avain), on avaimena toimivan luokan ylikirjoitettava metodin <code>equals</code> lisäksi metodi <code>hashCode</code>. Metodi on ylikirjoitettava siten, että se antaa saman numeerisen tuloksen kaikille samansisältöisille olioille. Myös jotkut erisisältöiset oliot saavat saada saman tuloksen hashCode-metodista, on kuitenkin HashMapin tehokkuuden kannalta oleellista, että erisisältöiset oliot saavat mahdollisimman harvoin saman tuloksen.</p> 
+        <p>If we want that our HashMap worked in the way we want - i.e. it retured the loaner when the key is an object with the right <em>content</em> (not necessarily the same object as the original value) - the class which works as key must overwrite both the <code>equals</code> method and the <code>hashCode</code> method. The method must be overwritten in such a way, so that it would give the same numeric code to all objects which have the same content. Some objects with different content may eventually receive the same hashCode; however, different content objects should receive the same hashCode as rarely as possible, if we want our HashMap to be efficient.</p> 
 
-<p> Olemme aiemmin käyttäneet <code>String</code>-olioita menestyksekkäästi HashMapin avaimena, joten voimme päätellä että <code>String</code>-luokassa on oma järkevästi toimiva <code>hashCode</code>-toteutus. <em>Delegoidaan</em>, eli siirretään laskemisvastuu <code>String</code>-oliolle.</p>
+<p>Previously, we have successfully used <code>String</code> objects as HashMap keys, and we can therefore say that the <code>String</code> class has got a <code>hashCode</code> implementation which works as expected. Let us <em>delegate</em> the calculation to the <code>String</code> object.</p>
 
 <pre class="sh_java">
     public int hashCode() {
@@ -2933,7 +2931,7 @@ null
     }
 </pre>
 
-        <p>Yllä oleva ratkaisu on melko hyvä, mutta jos <code>nimi</code> on <em>null</em>, näemme <code>NullPointerException</code>-virheen. Korjataan tämä vielä määrittelemällä ehto: jos <code>nimi</code>-muuttujan arvo on <em>null</em>, palautetaan arvo 7. Arvo 7 on "satunnaisesti"  valittu alkuluku, yhtä hyvin olisi voitu valita esimerkiksi arvo 13.</p>
+        <p>The solution above is quite good; but if <code>name</code> is <em>null</em>, we receive a <code>NullPointerException</code>. We can fix this by setting the condition: if the value of the <code>name</code> variable is is <em>null</em>, return value 7. Seven is a value chosen casually, thirteen could have done as well.</p>
 
 <pre class="sh_java">
     public int hashCode() {
@@ -2945,7 +2943,7 @@ null
     }
 </pre>
 
-<p>Parantelemme vielä <code>hashCode</code>-metodia siten, että koodin laskennassa huomioidaan myös kirjan julkaisuvuosi:</p>
+<p>We can still improve the <code>hashCode</code> method by taking into consideration the book publishing year, in our calculations:</p>
 
 <pre class="sh_java">
     public int hashCode() {
@@ -2958,9 +2956,9 @@ null
 </pre>
 
 
-        <p>Sivuhuomautus: HashMapissa avaimina olevien olioiden hashCode-metodin tulos kertoo hajautusrakenteeseen talletettavien arvon paikan eli indeksin hajautustaulussa. Saatat tässä kohtaa miettiä "eikö tämä johda tilanteeseen jossa useampi olio päätyy samaan indeksiin hajautustaulussa?". Vastaus on kyllä ja ei. Vaikka metodi <code>hashCode</code> antaisi kahdelle eri oliolle saman arvon, on hajautustaulut toteutettu sisäisesti siten että useampi olio voi olla samassa indeksissä. Jotta samassa indeksissä olevat oliot voi erottaa toisistaan, tulee hajautustaulun avaimina toimivina olioilla olla metodi <code>equals</code> toteutettuna. Lisätietoa hajautustaulujen toteuttamisen periaatteista tulee kurssilla <em>tietorakenteet ja algoritmit</em>.</p>
+        <p>An additional remark: the output of the hashCode method of the HashMap key objects tells us the value slot in the hash construction, i.e. the index in the HashMap. You may now be wondering: "doesn't this lead to a situation where more than one object ends up with the same index in the HashMap?". The answer is yes and no. Even if the <code>hashCode</code> method gave the same value to two different objects, HashMaps are built in such way that various different obejcts may have the same index. In order to distinguish objects with the same index, the key objects of the HashMap must have implemented the <code>equals</code> method. You will find more information about how Hashmap implementation in the course <em>Data Structures and Algorithms</em>.</p>
 
-        <p>Luokka <code>Book</code> nyt kokonaisuudessaan.</p>
+        <p>The final <code>Book</code> class now.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2969,8 +2967,8 @@ public class Book {
     private int publishingYear;
 
     public Book(String name, int publishingYear) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
+        this.name = name;
+        this.publishingYear = publishingYear;
     }
 
     public String getName() {
@@ -2987,18 +2985,18 @@ public class Book {
     }
 
     @Override
-    public boolean equals(Object olio) {
-        if (olio == null) {
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
         }
 
-        if (getClass() != olio.getClass()) {
+        if (getClass() != object.getClass()) {
             return false;
         }
 
-        Book verrattava = (Book) olio;
+        Book compared = (Book) object;
 
-        if (this.publishingYear != verrattava.getPublishingYear()) {
+        if (this.publishingYear != compared.getPublishingYear()) {
             return false;
         }
 
@@ -3019,28 +3017,27 @@ public class Book {
 }
 </pre>
 
-<p><b>Kerrataan vielä:</b> jotta luokkaa voidaan käyttää HashMap:in avaimena, tulee sille määritellä</p>
+<p><b>Let us sum up everything again:</b> in order to use a class as HashMap key, we have to define</p>
 <ul>
-<li>metodi <code>equals</code> siten, että kaikki samansisältöisenä ajatellut oliot tuottavat vertailussa tuloksen true ja erisisältöiset false</li>
-<li>metodi <code>hashCode</code> siten, että kaikki samansisältöisenä ajatelluille olioille metodin kutsu tuottaa saman arvon</li>
+<li>The <code>equals</code> method in a way that object with the same content return true when compared, whereas different-content objects return false</li>
+<li>The <code>hashCode</code> method in a way that it assigns the same value to all the objects whose content is regarded as similar</li>
 </ul>
 
-<p>Luokalle <code>Book</code> määrittelemämme equals ja hashCode selvästi täyttävät nämä ehdot.
-Nyt myös aiemmin kohtaamamme ongelma ratkeaa ja kirjojen lainaajat löytyvät:</p>
+<p>The equals and hashCode methods of our Book class fulfill these two conditions. Now, the problem we faced before is solved, and we can find out the book loaners:</p>
 
 <pre class="sh_java">
-        HashMap&lt;Book, String&gt; lainaajat = new HashMap&lt;Book, String&gt;();
+        HashMap&lt;Book, String&gt; loaners = new HashMap&lt;Book, String&gt;();
        
-        Book oliokirja = new Book("Oliokirja", 2000);
-        lainaajat.put( oliokirja, "Pekka" );
-        lainaajat.put( new Book("Test Driven Development",1999), "Arto" );
+        Book objectbook = new Book("Objectbook", 2000);
+        loaners.put( objectbook, "Pekka" );
+        loaners.put( new Book("Test Driven Development",1999), "Arto" );
         
-        System.out.println( lainaajat.get( oliokirja ) );
-        System.out.println( lainaajat.get( new Book("Oliokirja", 2000) );
-        System.out.println( lainaajat.get( new Book("Test Driven Development", 1999) );
+        System.out.println( loaners.get( objectbook ) );
+        System.out.println( loaners.get( new Book("Objectbook", 2000) );
+        System.out.println( loaners.get( new Book("Test Driven Development", 1999) );
 </pre>
 
-<p>Tulostuu:</p>
+<p>Print output:</p>
 
 <pre>
 Pekka
@@ -3048,7 +3045,7 @@ Pekka
 Arto
 </pre>
 
-        <p><em>NetBeans tarjoaa metodien <code>equals</code> ja <code>hashCode</code> automaattisen luonnin. Voit valita valikosta Source -> Insert Code, ja valita aukeavasta listasta <em>equals() and hashCode()</em>. Tämän jälkeen NetBeans kysyy oliomuuttujat joita metodeissa käytetään.</em></p>
+        <p><em>NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. You from the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
 
         <div class="tehtavat" id="viikko8">
 

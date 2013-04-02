@@ -2675,106 +2675,78 @@ Object book (2000)
 
         <p>There are also other useful methods we inherit from the <code>Object</code> class. Let us now get acquainted with the methods <code>equals</code> and <code>hashCode</code>.</p>
 
-        <h3>Metodi equals</h3>
+        <h3>Equals Method</h3>
 
-        <p>Metodia <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object)" target="_blank">equals</a></code> käytetään kahden olion yhtäsuuruusvertailuun. Metodia on jo käytetty muun muassa <code>String</code>-olioiden yhteydessä.</p>
+        <p>The <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object)" target="_blank">equals</a></code> method is used to compare two objects. Among the other things, the method is used when we deal with two <code>String</code> objects.</p>
 
 <pre class="sh_java">
-Scanner lukija = new Scanner(System.in);
+Scanner reader = new Scanner(System.in);
 
-System.out.print("Kirjoita salasana: ");
-String salasana = reader.nextLine();
+System.out.print("Write password: ");
+String password = reader.nextLine();
 
-if(salasana.equals("salasana")) {
-    System.out.println("Oikein meni!");
+if(password.equals("password")) {
+    System.out.println("Right!");
 } else {
-    System.out.println("Pieleen meni!");
+    System.out.println("Wrong!");
 }
 </pre>
 
 <pre>
-Kirjoita salasana: <font color="red">mahtiporkkana</font>
-Pieleen meni!
+Write password: <font color="red">mightycarrot</font>
+Wrong!
 </pre>
 
-        <p>Luokassa <code>Object</code> määritelty <code>equals</code>-metodi tarkistaa onko parametrina annetulla oliolla sama viite kuin oliolla johon verrataan, eli toisinsanoen oletusarvoisesti vertaillaan onko kyse kahdesta <em>samasta</em> oliosta. Jos viite on sama, palauttaa metodi arvon <code>true</code>, muuten <code>false</code>. Tämä selvenee seuraavalla esimerkillä. Luokassa <code>Book</code> ei ole omaa <code>equals</code>-metodin toteutusta, joten se käyttää <code>Object</code>-luokassa olevaa toteutusta.</p>
+        <p>The <code>equals</code> method is defined in the <code>Object</code> class, and it makes sure that both the parameter object and the compared object have the same reference. In other words, by default the method makes sure that we are dealing with the <em>same</em> one object. If the reference is the same, the method returns <code>true</code>, or otherwise <code>false</code>. The following example should clarify the concept. The class <code>Book</code> doesn't implement its own <code>equals</code> method, and therefore it uses the one created by the <code>Object</code> class.</p>
 
 <pre class="sh_java">
-Book olioBook = new Book("Oliokirja", 2000);
-Book toinenOlioBook = olioBook;
+Book objectBook = new Book("Objectbook", 2000);
+Book anotherObjectBook = objectBook;
 
-if (olioBook.equals(toinenOlioBook)) {
-    System.out.println("Bookt olivat samat");
+if (objectBook.equals(objectBook)) {
+    System.out.println("The books were the same");
 } else {
-    System.out.println("Bookt eivät olleet samat");
+    System.out.println("The books were not the same");
 }
 
-// nyt luodaan saman sisältöinen olio joka kuitenkin on oma erillinen olionsa
-toinenOlioBook = new Book("Oliokirja", 2000);
+// Now we create an object with the same contents, which is however a different, independent object
+anotherObjectBook = new Book("Objectbook", 2000);
 
-if (olioBook.equals(toinenOlioBook)) {
-    System.out.println("Bookt olivat samat");
+if (objectBook.equals(anotherObjectBook)) {
+    System.out.println("The books were the same");
 } else {
-    System.out.println("Bookt eivät olleet samat");
+    System.out.println("The books were not the same");
 }
 </pre>
 
-<p>Tulostuu:</p>
+<p>Print output:</p>
 
 <pre>
-Bookt olivat samat
-Bookt eivät olleet samat
+The books were the same
+The books were not the same
 </pre>
 
-        <p>Vaikka <code>Book</code>-olioiden sisäinen rakenne (eli oliomuuttujien arvot) ovat molemmissa tapauksissa täsmälleen samat, vain ensimmäinen vertailu tulostaa characterStringn "<code>Bookt olivat samat</code>". Tämä johtuu siitä että vain ensimmäisessä tapauksessa myös viitteet ovat samat eli vertaillaan olioa itseensä. Toisessa vertailussa kyse on kahdesta eri oliosta, vaikka muuttujilla onkin samat arvot.</p>
+        <p>Even if the internal structure of both <code>Book</code> objects (i.e. the object variable values) are exactly the same, only the first comparison prints "<code>The books were the same</code>". This depends on the fact that only in the first case also the references were the same, i.e. we were comparing an object with itself. In the second example, we had two different objects even though have both the same values.</p>
 
-<p>characterStringjen eli Stringien yhteydessä <code>equals</code> toimii odotetulla tavalla, eli se ilmoittaa kaksi <em>samansisältöistä</em> characterStringa "equalseiksi" vaikka kyseessä olisikin kaksi erillistä olioa. String-luokassa onkin korvattu oletusarvoinen <code>equals</code> omalla toteutuksella.</p>
+<p>When we use the <code>equals</code> method to compare strings, it works as we want it to: it identifies two strings as equal if the have the same <em>contents</em> even though they were two different objects. In fact, the default <code>equals</code> method is replaced with a new implementation in the String class.</p>
 
-        <p>Haluamme että kirjojen vertailu onnistuu myös nimen ja vuoden perusteella. Korvataan <code>Object</code>-luokassa oleva metodi <code>equals</code> määrittelemällä sille toteutus luokkaan <code>Book</code>. Metodin <code>equals</code> tehtävänä on selvittää onko olio sama kuin metodin parametrina saatu olio. Metodi saa parametrina <code>Object</code>-tyyppisen viitteen olion. Määritellään ensin metodi, jonka mielestä kaikki oliot ovat samoja.</p>
+        <p>We want that book comparison happened against name and year. We replace the <code>equals</code> method in the <code>Object</code> class with an implementation in the <code>Book</code> class. The <code>equals</code> method has to make sure whether the object is the same as the one received as parameter. First, let us define a method according to which all the objects are the same.</p>
 
 <pre class="sh_java">
-    public boolean equals(Object olio) {
+    public boolean equals(Object object) {
         return true;
     }
 </pre>
 
-        <p>Metodimme on varsin optimistinen, joten muutetaan sen toimintaa hieman. Määritellään että oliot eivät ole samoja jos parametrina saatu olio on <em>null</em> tai jos olioiden tyypit eivät ole samat. Olion tyypin saa (<code>Object</code>-luokassa määritellyllä) metodilla <code>getClass()</code>. Muussa tapauksessa oletetaan että oliot ovat samat.</p>
+        <p>Our method is a little too optimistic, so let us change its functionality slightly. Let us define that the objects are not the same if the parameter object is <em>null</em> or if the the two object types are different. We can find out the type of an object with the method <code>getClass()</code> (which is denifed in the <code>oject</code> class). Otherwise, we expect that the objects are the same.</p>
 
 <pre class="sh_java">
-    public boolean equals(Object olio) {
-        if (olio == null) {
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
         }
 
-        if (this.getClass() != olio.getClass()) {
-            return false;
-        }
-
-        return true;
-    }
-</pre>
-
-        <p>Metodi <code>equals</code> huomaa eron erityyppisten olioiden välillä, mutta ei vielä osaa erottaa samanlaisia olioita toisistaan. Jotta voisimme verrata nykyistä oliota ja parametrina saatua <code>Object</code>-tyyppisellä parametrilla viitattua olioa, tulee Object-viitteen tyyppiä muuttaa. Viitteen tyyppiä voidaan muuttaa tyyppimuunnoksella jos ja vain jos olion tyyppi on oikeasti sellainen, mihin sitä yritetään muuttaa. Tyyppimuunnos tapahtuu antamalla asetuslauseen oikealla puolella haluttu luokka suluissa, esimerkiksi:</p>
-
-<pre class="sh_java">
-    HaluttuTyyppi muuttuja = (HaluttuTyyppi) vanhaMuuttuja;
-</pre>
-
-        <p>Voimme tehdä tyyppimuunnoksen koska tiedämme olioiden olevan samantyyppisiä, jos ne ovat erityyppisiä yllä oleva metodi <code>getClass</code> palauttaa arvon false. Muunnetaan metodissa <code>equals</code> saatu <code>Object</code>-tyyppinen parametri <code>Book</code>-tyyppiseksi, ja todetaan kirjojen olevan eri jos niiden julkaisuvuodet ovat eri. Muuten kirjat ovat vielä samat.</em>
-
-<pre class="sh_java">
-    public boolean equals(Object olio) {
-        if (olio == null) {
-            return false;
-        }
-
-        if (getClass() != olio.getClass()) {
-            return false;
-        }
-
-        Book verrattava = (Book) olio;
-
-        if(this.publishingYear != verrattava.getPublishingYear()) {
+        if (this.getClass() != object.getClass()) {
             return false;
         }
 
@@ -2782,25 +2754,27 @@ Bookt eivät olleet samat
     }
 </pre>
 
-        <p>Nyt vertailumetodimme osaa erottaa  eri vuosina julkaistut kirjat. Lisätään vielä tarkistus, että kirjojemme nimet ovat samat ja että oman kirjamme nimi ei ole <em>null</em>.</p>
+        <p>The <code>equals</code>method finds out the class difference of two objects, but it is not able to distinguish two similar objects from each other. In order to compare our object with the object we received as parameter, and whose referenceis <code>Object</code> type, we have to change the type of the Object reference. The reference type can be changed if and only if the object type is really such as we are converting it into. Type casting happens by specifying the desired class within brakets on the right side of the assignment sentence:</p>
 
 <pre class="sh_java">
-    public boolean equals(Object olio) {
-        if (olio == null) {
+    WantedType variable = (WantedType) oldVariable;
+</pre>
+
+        <p>Type casting is possible because we know two objects are the same type. If they are different type, the above <code>getClass</code> method returns false. Let us change the <code>Object</code> parameter received with the <code>equals</code> method into <code>Book</code> type, and let us identify two different books against their publishing year. The books are otherwise the same.</em>
+
+<pre class="sh_java">
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
         }
 
-        if (getClass() != olio.getClass()) {
+        if (getClass() != object.getClass()) {
             return false;
         }
 
-        Book verrattava = (Book) olio;
+        Book compared = (Book) object;
 
-        if (this.publishingYear != verrattava.getPublishingYear()) {
-            return false;
-        }
-
-        if (this.name == null || !this.name.equals(verrattava.getName())) {
+        if(this.publishingYear != compared.getPublishingYear()) {
             return false;
         }
 
@@ -2808,7 +2782,33 @@ Bookt eivät olleet samat
     }
 </pre>
 
-        <p>Mahtavaa, viimeinkin toimiva vertailumetodi! Alla vielä tämänhetkinen <code>Book</code>-luokkamme.</p>
+        <p>Now, our comparison method is able to distinguish books against their publishing year. Wa want to check still that our book names are the same, and our own book name is not <em>null</em>.</p>
+
+<pre class="sh_java">
+    public boolean equals(Object object) {
+        if (object == null) {
+            return false;
+        }
+
+        if (getClass() != object.getClass()) {
+            return false;
+        }
+
+        Book compared = (Book) object;
+
+        if (this.publishingYear != compared.getPublishingYear()) {
+            return false;
+        }
+
+        if (this.name == null || !this.name.equals(compared.getName())) {
+            return false;
+        }
+
+        return true;
+    }
+</pre>
+
+        <p>Excellent, we have got a comparison method which finally works! Below is our <code>Book</code> class as it looks like at the moment.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2816,8 +2816,8 @@ public class Book {
     private int publishingYear;
 
     public Book(String name, int publishingYear) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
+        this.name = name;
+        this.publishingYear = publishingYear;
     }
 
     public String getName() {
@@ -2834,22 +2834,22 @@ public class Book {
     }
 
     @Override
-    public boolean equals(Object olio) {
-        if (olio == null) {
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
         }
 
-        if (getClass() != olio.getClass()) {
+        if (getClass() != object.getClass()) {
             return false;
         }
 
-        Book verrattava = (Book) olio;
+        Book compared = (Book) object;
 
-        if (this.publishingYear != verrattava.getPublishingYear()) {
+        if (this.publishingYear != compared.getPublishingYear()) {
             return false;
         }
 
-        if (this.name == null || !this.name.equals(verrattava.getName())) {
+        if (this.name == null || !this.name.equals(compared.getName())) {
             return false;
         }
 
@@ -2858,40 +2858,40 @@ public class Book {
 }
 </pre>
 
-        <p>Nyt kirjojen vertailu palauttaa <code>true</code> jos kirjojen sisällöt ovat samat.</p>
+        <p>Now, our book comparison returns <code>true</code>, if the book contents are the same.</p>
 
 <pre class="sh_java">
-Book olioBook = new Book("Oliokirja", 2000);
-Book toinenOlioBook = new Book("Oliokirja", 2000);
+Book objectBook = new Book("Objectbook", 2000);
+Book anotherObjectBook = new Book("Objectbook", 2000);
 
-if (olioBook.equals(toinenOlioBook)) {
-    System.out.println("Bookt olivat samat");
+if (objectBook.equals(anotherObjectBook)) {
+    System.out.println("The books are the same");
 } else {
-    System.out.println("Bookt eivät olleet samat");
+    System.out.println("The books are not the same");
 }
 </pre>
 
 <pre>
-Bookt olivat samat
+The books are the same
 </pre>
 
-        <h4>Equals ja ArrayList</h4>
+        <h4>Equals and ArrayList</h4>
 
-        <p>Useat Javan valmiit tietorakenteet käyttävät <code>equals</code>-metodia osana sisäistä hakumekanismiaan. Esimerkiksi luokan <code>ArrayList</code> <code>contains</code>-metodi vertailee olioiden yhtäsuuruutta <code>equals</code>-metodin avulla. Jatketaan aiemmin määrittelemämme <code>Book</code>-luokan käyttöä seuraavassa esimerkissä. Jos emme toteuta omissa olioissamme <code>equals</code>-metodia, emme voi käyttää esimerkiksi <code>contains</code>-metodia. Kokeile alla olevaa koodia kahdella erilaisella <code>Book</code>-luokalla. Toisessa on <code>equals</code>-metodi, ja toisessa sitä ei ole.</p>
+        <p>Various different Java make-up methods make use of the <code>equals</code> method to implement their search functionality. For instance, <code>contains</code> mehod of class <code>ArrayList</code> compares objects through the <code>equals</code> method. Let us continue to use the <code>Book</code> class we defied for our examples. If our objects do not implement the <code>equals</code> method, we can't use the <code>contains</code> method, for instance. Try out the code below in two different <code>book</code> classes. The first class implements the <code>equals</code> method, does not.</p>
 
 <pre class="sh_java">
 ArrayList&lt;Book&gt; kirjat = new ArrayList&lt;Book&gt;();
-Book olioBook = new Book("Oliokirja", 2000);
-kirjat.add(olioBook);
+Book objectBook = new Book("Objectbook", 2000);
+books.add(olioBook);
 
-if (kirjat.contains(olioBook)) {
-    System.out.println("Oliokirja löytyi.");
+if (books.contains(objectBook)) {
+    System.out.println("The object book was found.");
 }
 
-olioBook = new Book("Oliokirja", 2000);
+objectBook = new Book("Objectbook", 2000);
 
-if (!kirjat.contains(olioBook)) {
-    System.out.println("Oliokirjaa ei löytynyt.");
+if (!books.contains(objectBook)) {
+    System.out.println("The object book was not found.");
 }
 </pre>
 

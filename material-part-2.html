@@ -2602,7 +2602,7 @@ Valitse toiminto:
 
 <h2 id="object">Object</h2>
 
-        <p>In our course, we have been frequently using the method <code>public String toString()</code> when we wanted to produce the print output of an object in String shape. Calling the method without setting it up properly does usually cause an error. Let us have a look at the class <code>Book</code>, which does not have the method <code>public String toString()</code>, while the program tries to print the object produced from the <code>Book</code> class through the method <code>System.out.println()</code>.</p>
+        <p>In our course, we have been using frequently the method <code>public String toString()</code> when we wanted to print an object in the shape of a string. Calling the method without setting it up properly does usually cause an error. We can have a look at the class <code>Book</code>, which does not contain the method <code>public String toString()</code> yet, and see what happens when the program uses the method <code>System.out.println()</code> and tries to print an object of <code>Book</code> class.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2629,11 +2629,11 @@ Book objectBook = new Book("Object book", 2000);
 System.out.println(objectBook);
 </pre>
 
-        <p>Our program does not print an error message when take an object of <code>Book</code> class, and use it as <code>System.out.println()</code> method parameter. Our program does not crash, and instead of reading an error message we notice an interesting printout. The printout contains the name of the <code>Book</code> class plus an indefinite String which follows a @ character. Notice that when we call <code>System.out.println(objectBook)</code> Java calls <code>System.out.println(objectBook.toString())</code>, in fact, but we don't run into an error, however.</p>
+        <p>if we take an object of <code>Book</code> class and use it as the parameter of the method <code>System.out.println()</code>, our program does not print an error message. Our program does not crash, and instead of reading an error message, we notice an interesting print output. The print output contains the name of the lass, <code>Book</code>, plus an indefinite String which follows a @ character. Notice that when we call <code>System.out.println(objectBook)</code> Java calls <code>System.out.println(objectBook.toString())</code>, in fact, but this does not cause an error.</p>
 
-        <p>The explenation concerns the way Java classes are built. Each Java class automatically <em>inherits</em> the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code> class, which contains a set of methods that are useful to each Java class. Heritage means that our own class has access to the features and functions defined in the inherited class. Among the others, the class <code>Object</code> contains the method <code>toString</code>, which is inherited by the classes we create.</p>
+        <p>The explenation is related to the way Java classes are built. Each Java class automatically <em>inherits</em> the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code> class, which contains a set of methods that are useful to each Java class. Heritage means that our class has access to the features and functions defined in the inherited class. Among the others, the class <code>Object</code> contains the method <code>toString</code>, which is inherited by the classes we create.</p>
 
-        <p>The <code>toString</code> method inherited from the object class is not usually the one we'd want. That's why we will want to <em>replace</em> it with one we personally make. Let us add the method <code>public String toString()</code> to our <code>Book</code> class. This method will replace the <code>toString</code> method inherited from the <code>Object</code> class.</p>
+        <p>The <code>toString</code> method inherited from the object class is not usually the one we'd want. That's why we will want to <em>replace</em> it with one we make personally. Let us add the method <code>public String toString()</code> to our <code>Book</code> class. This method will replace the <code>toString</code> method inherited from the <code>Object</code> class.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2641,7 +2641,7 @@ public class Book {
     private int publishingYear;
 
     public Book(String name, int publishingYear) {
-        this.name = anme;
+        this.name = name;
         this.publishingYear = publishingYear;
     }
 
@@ -2660,10 +2660,10 @@ public class Book {
 }
 </pre>
 
-        <p>If we now create an object instance and we give it to the print method, we notice that the <code>toString</code> method of the <code>Book</code> class produces a string.</p>
+        <p>If now we create an object instance, and we set it into the print method, we notice that the <code>toString</code> method of the <code>Book</code> class produces a string.</p>
 
 <pre class="sh_java">
-Book objectBook = new Book("object book", 2000);
+Book objectBook = new Book("Object book", 2000);
 System.out.println(objectBook);
 </pre>
 
@@ -2671,110 +2671,82 @@ System.out.println(objectBook);
 Object book (2000)
 </pre>
 
-        <p>Above the <code>toString</code> in the <code>Book</code> class we see the <code>@Override</code> <em>annotation</em>. We use annotations to give guidelines to both the translator and the reader about how to relate to the methods. The <code>@Override</code> annotations tells that the following method replaces the one defined in the inherited class. If we don't add an annotation to the method we replace, the translator gives us a <em>warning</em>, however avoiding writing annotations is not a mistake.</p>
+        <p>Above the <code>toString</code> method of class <code>Book</code> we see the <code>@Override</code> <em>annotation</em>. We use annotations to give guidelines to both the translator and the reader about how to relate to the methods. The <code>@Override</code> annotation tells that the following method replaces the one defined inside the inherited class. If we don't add an annotation to the method we replace, the translator gives us a <em>warning</em>, however avoiding writing annotations is not a mistake.</p>
 
         <p>There are also other useful methods we inherit from the <code>Object</code> class. Let us now get acquainted with the methods <code>equals</code> and <code>hashCode</code>.</p>
 
-        <h3>Metodi equals</h3>
+        <h3>Equals Method</h3>
 
-        <p>Metodia <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object)" target="_blank">equals</a></code> käytetään kahden olion yhtäsuuruusvertailuun. Metodia on jo käytetty muun muassa <code>String</code>-olioiden yhteydessä.</p>
+        <p>The <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object)" target="_blank">equals</a></code> method is used to compare two objects. The method is particularly used when we compare two <code>String</code> objects.</p>
 
 <pre class="sh_java">
-Scanner lukija = new Scanner(System.in);
+Scanner reader = new Scanner(System.in);
 
-System.out.print("Kirjoita salasana: ");
-String salasana = reader.nextLine();
+System.out.print("Write password: ");
+String password = reader.nextLine();
 
-if(salasana.equals("salasana")) {
-    System.out.println("Oikein meni!");
+if(password.equals("password")) {
+    System.out.println("Right!");
 } else {
-    System.out.println("Pieleen meni!");
+    System.out.println("Wrong!");
 }
 </pre>
 
 <pre>
-Kirjoita salasana: <font color="red">mahtiporkkana</font>
-Pieleen meni!
+Write password: <font color="red">mightycarrot</font>
+Wrong!
 </pre>
 
-        <p>Luokassa <code>Object</code> määritelty <code>equals</code>-metodi tarkistaa onko parametrina annetulla oliolla sama viite kuin oliolla johon verrataan, eli toisinsanoen oletusarvoisesti vertaillaan onko kyse kahdesta <em>samasta</em> oliosta. Jos viite on sama, palauttaa metodi arvon <code>true</code>, muuten <code>false</code>. Tämä selvenee seuraavalla esimerkillä. Luokassa <code>Book</code> ei ole omaa <code>equals</code>-metodin toteutusta, joten se käyttää <code>Object</code>-luokassa olevaa toteutusta.</p>
+        <p>The <code>equals</code> method is defined in the <code>Object</code> class, and it makes sure that both the parameter object and the compared object have the same reference. In other words, by default the method makes sure that we are dealing with <em>one</em> unique object. If the reference is the same, the method returns <code>true</code>, otherwise <code>false</code>. The following example should clarify the concept. The class <code>Book</code> doesn't implement its own <code>equals</code> method, and therefore it uses the one created by the <code>Object</code> class.</p>
 
 <pre class="sh_java">
-Book olioBook = new Book("Oliokirja", 2000);
-Book toinenOlioBook = olioBook;
+Book objectBook = new Book("Objectbook", 2000);
+Book anotherObjectBook = objectBook;
 
-if (olioBook.equals(toinenOlioBook)) {
-    System.out.println("Bookt olivat samat");
+if (objectBook.equals(objectBook)) {
+    System.out.println("The books were the same");
 } else {
-    System.out.println("Bookt eivät olleet samat");
+    System.out.println("The books were not the same");
 }
 
-// nyt luodaan saman sisältöinen olio joka kuitenkin on oma erillinen olionsa
-toinenOlioBook = new Book("Oliokirja", 2000);
+// Now we create an object with the same contents, which is however a different, independent object
+anotherObjectBook = new Book("Objectbook", 2000);
 
-if (olioBook.equals(toinenOlioBook)) {
-    System.out.println("Bookt olivat samat");
+if (objectBook.equals(anotherObjectBook)) {
+    System.out.println("The books were the same");
 } else {
-    System.out.println("Bookt eivät olleet samat");
+    System.out.println("The books were not the same");
 }
 </pre>
 
-<p>Tulostuu:</p>
+<p>Print output:</p>
 
 <pre>
-Bookt olivat samat
-Bookt eivät olleet samat
+The books were the same
+The books were not the same
 </pre>
 
-        <p>Vaikka <code>Book</code>-olioiden sisäinen rakenne (eli oliomuuttujien arvot) ovat molemmissa tapauksissa täsmälleen samat, vain ensimmäinen vertailu tulostaa characterStringn "<code>Bookt olivat samat</code>". Tämä johtuu siitä että vain ensimmäisessä tapauksessa myös viitteet ovat samat eli vertaillaan olioa itseensä. Toisessa vertailussa kyse on kahdesta eri oliosta, vaikka muuttujilla onkin samat arvot.</p>
+        <p>Even if the internal structure of both <code>Book</code> objects (i.e. the object variable values) is exactly the same, only the first comparison prints "<code>The books were the same</code>". This depends on the fact that only in the first case also the references were the same, i.e. we were comparing an object with itself. In the second example, we had two different objects even though they both had the same values.</p>
 
-<p>characterStringjen eli Stringien yhteydessä <code>equals</code> toimii odotetulla tavalla, eli se ilmoittaa kaksi <em>samansisältöistä</em> characterStringa "equalseiksi" vaikka kyseessä olisikin kaksi erillistä olioa. String-luokassa onkin korvattu oletusarvoinen <code>equals</code> omalla toteutuksella.</p>
+<p>When we use the <code>equals</code> method to compare strings, it works as we want it to: it identifies two strings as equal if the have the same <em>contents</em> even though they are two different objects. In fact, the default <code>equals</code> method is replaced with a new implementation in the String class.</p>
 
-        <p>Haluamme että kirjojen vertailu onnistuu myös nimen ja vuoden perusteella. Korvataan <code>Object</code>-luokassa oleva metodi <code>equals</code> määrittelemällä sille toteutus luokkaan <code>Book</code>. Metodin <code>equals</code> tehtävänä on selvittää onko olio sama kuin metodin parametrina saatu olio. Metodi saa parametrina <code>Object</code>-tyyppisen viitteen olion. Määritellään ensin metodi, jonka mielestä kaikki oliot ovat samoja.</p>
+        <p>We want that book comparison happened against name and year. We replace the <code>equals</code> method in the <code>Object</code> class with an implementation in the <code>Book</code> class. The <code>equals</code> method has to make sure whether the object is the same as the one received as parameter. First, we define a method according to which all the objects are the same.</p>
 
 <pre class="sh_java">
-    public boolean equals(Object olio) {
+    public boolean equals(Object object) {
         return true;
     }
 </pre>
 
-        <p>Metodimme on varsin optimistinen, joten muutetaan sen toimintaa hieman. Määritellään että oliot eivät ole samoja jos parametrina saatu olio on <em>null</em> tai jos olioiden tyypit eivät ole samat. Olion tyypin saa (<code>Object</code>-luokassa määritellyllä) metodilla <code>getClass()</code>. Muussa tapauksessa oletetaan että oliot ovat samat.</p>
+        <p>Our method is a little too optimistic, so let us change its functionality slightly. Let us define that the objects are not the same if the parameter object is <em>null</em> or if the the two object types are different. We can find out the type of an object with the method <code>getClass()</code> (which is denifed in the <code>oject</code> class). Otherwise, we expect that the objects are the same.</p>
 
 <pre class="sh_java">
-    public boolean equals(Object olio) {
-        if (olio == null) {
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
         }
 
-        if (this.getClass() != olio.getClass()) {
-            return false;
-        }
-
-        return true;
-    }
-</pre>
-
-        <p>Metodi <code>equals</code> huomaa eron erityyppisten olioiden välillä, mutta ei vielä osaa erottaa samanlaisia olioita toisistaan. Jotta voisimme verrata nykyistä oliota ja parametrina saatua <code>Object</code>-tyyppisellä parametrilla viitattua olioa, tulee Object-viitteen tyyppiä muuttaa. Viitteen tyyppiä voidaan muuttaa tyyppimuunnoksella jos ja vain jos olion tyyppi on oikeasti sellainen, mihin sitä yritetään muuttaa. Tyyppimuunnos tapahtuu antamalla asetuslauseen oikealla puolella haluttu luokka suluissa, esimerkiksi:</p>
-
-<pre class="sh_java">
-    HaluttuTyyppi muuttuja = (HaluttuTyyppi) vanhaMuuttuja;
-</pre>
-
-        <p>Voimme tehdä tyyppimuunnoksen koska tiedämme olioiden olevan samantyyppisiä, jos ne ovat erityyppisiä yllä oleva metodi <code>getClass</code> palauttaa arvon false. Muunnetaan metodissa <code>equals</code> saatu <code>Object</code>-tyyppinen parametri <code>Book</code>-tyyppiseksi, ja todetaan kirjojen olevan eri jos niiden julkaisuvuodet ovat eri. Muuten kirjat ovat vielä samat.</em>
-
-<pre class="sh_java">
-    public boolean equals(Object olio) {
-        if (olio == null) {
-            return false;
-        }
-
-        if (getClass() != olio.getClass()) {
-            return false;
-        }
-
-        Book verrattava = (Book) olio;
-
-        if(this.publishingYear != verrattava.getPublishingYear()) {
+        if (this.getClass() != object.getClass()) {
             return false;
         }
 
@@ -2782,25 +2754,27 @@ Bookt eivät olleet samat
     }
 </pre>
 
-        <p>Nyt vertailumetodimme osaa erottaa  eri vuosina julkaistut kirjat. Lisätään vielä tarkistus, että kirjojemme nimet ovat samat ja että oman kirjamme nimi ei ole <em>null</em>.</p>
+        <p>The <code>equals</code>method finds out the class difference of two objects, but it is not able to distinguish two similar objects from each other. In order to compare our object with the object we received as parameter, and whose reference is <code>Object</code> type, we have to change the type of the Object reference. The reference type can be changed if and only if the object type is really such as we are converting it into. Type casting happens by specifying the desired class within brakets on the right side of the assignment sentence:</p>
 
 <pre class="sh_java">
-    public boolean equals(Object olio) {
-        if (olio == null) {
+    WantedType variable = (WantedType) oldVariable;
+</pre>
+
+        <p>Type casting is possible because we know two objects are the same type. If they are different type, the above <code>getClass</code> method returns false. Let us change the <code>Object</code> parameter received with the <code>equals</code> method into <code>Book</code> type, and let us identify two different books against their publishing year. The books are otherwise the same.</p>
+
+<pre class="sh_java">
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
         }
 
-        if (getClass() != olio.getClass()) {
+        if (getClass() != object.getClass()) {
             return false;
         }
 
-        Book verrattava = (Book) olio;
+        Book compared = (Book) object;
 
-        if (this.publishingYear != verrattava.getPublishingYear()) {
-            return false;
-        }
-
-        if (this.name == null || !this.name.equals(verrattava.getName())) {
+        if(this.publishingYear != compared.getPublishingYear()) {
             return false;
         }
 
@@ -2808,7 +2782,33 @@ Bookt eivät olleet samat
     }
 </pre>
 
-        <p>Mahtavaa, viimeinkin toimiva vertailumetodi! Alla vielä tämänhetkinen <code>Book</code>-luokkamme.</p>
+        <p>Now, our comparison method is able to distinguish books against their publishing year. Wa want to check still that our book names are the same, and our own book name is not <em>null</em>.</p>
+
+<pre class="sh_java">
+    public boolean equals(Object object) {
+        if (object == null) {
+            return false;
+        }
+
+        if (getClass() != object.getClass()) {
+            return false;
+        }
+
+        Book compared = (Book) object;
+
+        if (this.publishingYear != compared.getPublishingYear()) {
+            return false;
+        }
+
+        if (this.name == null || !this.name.equals(compared.getName())) {
+            return false;
+        }
+
+        return true;
+    }
+</pre>
+
+        <p>Excellent, we have got a method for comparison which works, finally! Below is our <code>Book</code> class as it looks like at the moment.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2816,8 +2816,8 @@ public class Book {
     private int publishingYear;
 
     public Book(String name, int publishingYear) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
+        this.name = name;
+        this.publishingYear = publishingYear;
     }
 
     public String getName() {
@@ -2834,22 +2834,22 @@ public class Book {
     }
 
     @Override
-    public boolean equals(Object olio) {
-        if (olio == null) {
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
         }
 
-        if (getClass() != olio.getClass()) {
+        if (getClass() != object.getClass()) {
             return false;
         }
 
-        Book verrattava = (Book) olio;
+        Book compared = (Book) object;
 
-        if (this.publishingYear != verrattava.getPublishingYear()) {
+        if (this.publishingYear != compared.getPublishingYear()) {
             return false;
         }
 
-        if (this.name == null || !this.name.equals(verrattava.getName())) {
+        if (this.name == null || !this.name.equals(compared.getName())) {
             return false;
         }
 
@@ -2858,62 +2858,60 @@ public class Book {
 }
 </pre>
 
-        <p>Nyt kirjojen vertailu palauttaa <code>true</code> jos kirjojen sisällöt ovat samat.</p>
+        <p>Now, our book comparison returns <code>true</code>, if the book contents are the same.</p>
 
 <pre class="sh_java">
-Book olioBook = new Book("Oliokirja", 2000);
-Book toinenOlioBook = new Book("Oliokirja", 2000);
+Book objectBook = new Book("Objectbook", 2000);
+Book anotherObjectBook = new Book("Objectbook", 2000);
 
-if (olioBook.equals(toinenOlioBook)) {
-    System.out.println("Bookt olivat samat");
+if (objectBook.equals(anotherObjectBook)) {
+    System.out.println("The books are the same");
 } else {
-    System.out.println("Bookt eivät olleet samat");
+    System.out.println("The books are not the same");
 }
 </pre>
 
 <pre>
-Bookt olivat samat
+The books are the same
 </pre>
 
-        <h4>Equals ja ArrayList</h4>
+        <h4>Equals and ArrayList</h4>
 
-        <p>Useat Javan valmiit tietorakenteet käyttävät <code>equals</code>-metodia osana sisäistä hakumekanismiaan. Esimerkiksi luokan <code>ArrayList</code> <code>contains</code>-metodi vertailee olioiden yhtäsuuruutta <code>equals</code>-metodin avulla. Jatketaan aiemmin määrittelemämme <code>Book</code>-luokan käyttöä seuraavassa esimerkissä. Jos emme toteuta omissa olioissamme <code>equals</code>-metodia, emme voi käyttää esimerkiksi <code>contains</code>-metodia. Kokeile alla olevaa koodia kahdella erilaisella <code>Book</code>-luokalla. Toisessa on <code>equals</code>-metodi, ja toisessa sitä ei ole.</p>
+        <p>Various different Java made-up methods make use of the <code>equals</code> method to implement their search functionality. For instance, the <code>contains</code> mehod of class <code>ArrayList</code> compares objects through the <code>equals</code> method. Let us continue to use the <code>Book</code> class we defied for our examples. If our objects do not implement the <code>equals</code> method, we can't use the <code>contains</code> method, for instance. Try out the code below in two different <code>book</code> classes. The first class implements the <code>equals</code> method, the other does not.</p>
 
 <pre class="sh_java">
 ArrayList&lt;Book&gt; kirjat = new ArrayList&lt;Book&gt;();
-Book olioBook = new Book("Oliokirja", 2000);
-kirjat.add(olioBook);
+Book objectBook = new Book("Objectbook", 2000);
+books.add(olioBook);
 
-if (kirjat.contains(olioBook)) {
-    System.out.println("Oliokirja löytyi.");
+if (books.contains(objectBook)) {
+    System.out.println("The object book was found.");
 }
 
-olioBook = new Book("Oliokirja", 2000);
+objectBook = new Book("Objectbook", 2000);
 
-if (!kirjat.contains(olioBook)) {
-    System.out.println("Oliokirjaa ei löytynyt.");
+if (!books.contains(objectBook)) {
+    System.out.println("The object book was not found.");
 }
 </pre>
 
-        <h3>Metodi hashCode</h3>
+        <h3>HashCode Method</h3>
 
-        <p>Metodi <code>hashCode</code> luo oliosta numeerisen arvon eli hajautusarvon. Numeerista arvoa tarvitaan esimerkiksi 
-jos olioa käytetään HashMap:in avaimena. 
-Olemme tähän mennessä käyttäneet HashMapin avaimina ainoastaan String- ja Integer-tyyppisiä olioita ja niillä on valmiit sopivasti toteutetut  <code>hashCode</code>-metodit. Luodaan esimerkki jossa näin ei ole: jatketaan kirjojen parissa ja ruvetaan pitämään kirjaa lainassa olevista kirjoista. Päätetään ratkaista kirjanpito HashMapin avulla. Avaimena toimii kirja ja kirjaan liitetty arvo on characterString, joka keroo lainaajan nimen:</p>
+        <p>The <code>hashCode</code> method takes an object and returns a numeric value, i.e. a hash value. We need numeric values for instance when we use and object as HashMap keys. So far, we have been using only String and Integer objects as HashMap keys, and their <code>hashCode</code> method is implemented by default. Let us make an example where it is not so: let us continue with our book examples and let us start to take note of our books on loan. We want to implement our bookkeeping through Hashmap. The key is the book, and the book's value is a string, which tells the loaner's name:</p>
 
 <pre class="sh_java">
-        HashMap&lt;Book, String&gt; lainaajat = new HashMap&lt;Book, String&gt;();
+        HashMap&lt;Book, String&gt; loaners = new HashMap&lt;Book, String&gt;();
        
-        Book oliokirja = new Book("Oliokirja", 2000);
-        lainaajat.put( oliokirja, "Pekka" );
-        lainaajat.put( new Book("Test Driven Development",1999), "Arto" );
+        Book objectbook = new Book("Objectbook", 2000);
+        loaners.put( objectbook, "Pekka" );
+        loaners.put( new Book("Test Driven Development",1999), "Arto" );
         
-        System.out.println( lainaajat.get( oliokirja ) );
-        System.out.println( lainaajat.get( new Book("Oliokirja", 2000) );
-        System.out.println( lainaajat.get( new Book("Test Driven Development", 1999) );
+        System.out.println( loaners.get( objectbook ) );
+        System.out.println( loaners.get( new Book("Objectbook", 2000) );
+        System.out.println( loaners.get( new Book("Test Driven Development", 1999) );
 </pre>
 
-<p>Tulostuu:</p>
+<p>Print output:</p>
 
 <pre>
 Pekka
@@ -2921,11 +2919,11 @@ null
 null
 </pre>
 
-        <p>Löydämme lainaajan hakiessamme samalla oliolla, joka annettiin hajautustaulun <code>put</code>-metodille avaimeksi. Täsmälleen samanlaisella kirjalla mutta eri oliolla haettaessa lainaajaa ei kuitenkaan löydy ja saamme <em>null</em>-viitteen. Syynä on taas <code>Object</code>-luokassa oleva <code>hashCode</code>-metodin oletustoteutus. Oletustoteutus luo indeksin viitteen perusteella eli samansisältöiset mutta eri oliot saavat eri tuloksen hashCode-metodista ja tämän takia olioa ei osata etsiä oikeasta paikasta HashMapia.</p>
+        <p>We can find the loaner by searching against the same object which was given as HashMap key with the <code>put</code> method. However, if our search item is the same book but a different object, we are not able to find its loaner and we are retured with a <em>null</em> reference. This is again due to the default implementation of the <code>hashCode</code> method of <code>Object</code> class. The default implementation creates an index based on the reference; this means that different objects with the same content receive different hashCode method outputs, and therefore it is not possible to find the right place of the object in the HashMap.</p>
 
-        <p>Jotta HashMap toimisi haluamallamme tavalla, eli palauttaisi lainaajan kun avaimeksi annetaan oikean <em>sisältöinen</em> olio (ei välttämässä siis sama olio kuin alkuperäinen avain), on avaimena toimivan luokan ylikirjoitettava metodin <code>equals</code> lisäksi metodi <code>hashCode</code>. Metodi on ylikirjoitettava siten, että se antaa saman numeerisen tuloksen kaikille samansisältöisille olioille. Myös jotkut erisisältöiset oliot saavat saada saman tuloksen hashCode-metodista, on kuitenkin HashMapin tehokkuuden kannalta oleellista, että erisisältöiset oliot saavat mahdollisimman harvoin saman tuloksen.</p> 
+        <p>To be sure the HashMap worked in the way we want - i.e. it returned the loaner when the key is an object with the right <em>content</em> (not necessarily the same object as the original value) - the class which works as key must overwrite both the <code>equals</code> method and the <code>hashCode</code> method. The method must be overwritten in such a way, so that it would assign the same numeric value to all objects which have the same content. Some objects with different content may eventually be assigned the same hashCode; however, different content objects should be assigned the same hashCode as rarely as possible, if we want our HashMap to be efficient.</p> 
 
-<p> Olemme aiemmin käyttäneet <code>String</code>-olioita menestyksekkäästi HashMapin avaimena, joten voimme päätellä että <code>String</code>-luokassa on oma järkevästi toimiva <code>hashCode</code>-toteutus. <em>Delegoidaan</em>, eli siirretään laskemisvastuu <code>String</code>-oliolle.</p>
+<p>Previously, we have successfully used <code>String</code> objects as HashMap keys, and we can therefore say that the <code>String</code> class has got a <code>hashCode</code> implementation which works as expected. Let us <em>delegate</em> the calculation to the <code>String</code> object.</p>
 
 <pre class="sh_java">
     public int hashCode() {
@@ -2933,7 +2931,7 @@ null
     }
 </pre>
 
-        <p>Yllä oleva ratkaisu on melko hyvä, mutta jos <code>nimi</code> on <em>null</em>, näemme <code>NullPointerException</code>-virheen. Korjataan tämä vielä määrittelemällä ehto: jos <code>nimi</code>-muuttujan arvo on <em>null</em>, palautetaan arvo 7. Arvo 7 on "satunnaisesti"  valittu alkuluku, yhtä hyvin olisi voitu valita esimerkiksi arvo 13.</p>
+        <p>The solution above is quite good; but if <code>name</code> is <em>null</em>, we are thrown a <code>NullPointerException</code>. We can fix this by setting the condition: if the value of the <code>name</code> variable is is <em>null</em>, return value 7. Seven is a value chosen casually, thirteen could have done as well.</p>
 
 <pre class="sh_java">
     public int hashCode() {
@@ -2945,7 +2943,7 @@ null
     }
 </pre>
 
-<p>Parantelemme vielä <code>hashCode</code>-metodia siten, että koodin laskennassa huomioidaan myös kirjan julkaisuvuosi:</p>
+<p>We can still improve the <code>hashCode</code> method by taking into consideration the book publishing year, in our calculations:</p>
 
 <pre class="sh_java">
     public int hashCode() {
@@ -2958,9 +2956,9 @@ null
 </pre>
 
 
-        <p>Sivuhuomautus: HashMapissa avaimina olevien olioiden hashCode-metodin tulos kertoo hajautusrakenteeseen talletettavien arvon paikan eli indeksin hajautustaulussa. Saatat tässä kohtaa miettiä "eikö tämä johda tilanteeseen jossa useampi olio päätyy samaan indeksiin hajautustaulussa?". Vastaus on kyllä ja ei. Vaikka metodi <code>hashCode</code> antaisi kahdelle eri oliolle saman arvon, on hajautustaulut toteutettu sisäisesti siten että useampi olio voi olla samassa indeksissä. Jotta samassa indeksissä olevat oliot voi erottaa toisistaan, tulee hajautustaulun avaimina toimivina olioilla olla metodi <code>equals</code> toteutettuna. Lisätietoa hajautustaulujen toteuttamisen periaatteista tulee kurssilla <em>tietorakenteet ja algoritmit</em>.</p>
+        <p>An additional remark: the output of the hashCode method of HashMap key objects tells us their value slot in the hash construction, i.e. their index in the HashMap. You may now be wondering: "doesn't this lead to a situation where more than one object ends up with the same index in the HashMap?". The answer is yes and no. Even if the <code>hashCode</code> method gave the same value to two different objects, HashMaps are built in such way that various different obejcts may have the same index. In order to distinguish objects with the same index, the key objects of the HashMap must have implemented the <code>equals</code> method. You will find more information about Hashmap implementation in the course <em>Data Structures and Algorithms</em>.</p>
 
-        <p>Luokka <code>Book</code> nyt kokonaisuudessaan.</p>
+        <p>The final <code>Book</code> class now.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2969,8 +2967,8 @@ public class Book {
     private int publishingYear;
 
     public Book(String name, int publishingYear) {
-        this.name = nimi;
-        this.publishingYear = julkaisuvuosi;
+        this.name = name;
+        this.publishingYear = publishingYear;
     }
 
     public String getName() {
@@ -2987,22 +2985,22 @@ public class Book {
     }
 
     @Override
-    public boolean equals(Object olio) {
-        if (olio == null) {
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
         }
 
-        if (getClass() != olio.getClass()) {
+        if (getClass() != object.getClass()) {
             return false;
         }
 
-        Book verrattava = (Book) olio;
+        Book compared = (Book) object;
 
-        if (this.publishingYear != verrattava.getPublishingYear()) {
+        if (this.publishingYear != compared.getPublishingYear()) {
             return false;
         }
 
-        if (this.name == null || !this.name.equals(verrattava.getName())) {
+        if (this.name == null || !this.name.equals(compared.getName())) {
             return false;
         }
 
@@ -3019,28 +3017,27 @@ public class Book {
 }
 </pre>
 
-<p><b>Kerrataan vielä:</b> jotta luokkaa voidaan käyttää HashMap:in avaimena, tulee sille määritellä</p>
+<p><b>Let us sum up everything again:</b> in order to use a class as HashMap key, we have to define</p>
 <ul>
-<li>metodi <code>equals</code> siten, että kaikki samansisältöisenä ajatellut oliot tuottavat vertailussa tuloksen true ja erisisältöiset false</li>
-<li>metodi <code>hashCode</code> siten, että kaikki samansisältöisenä ajatelluille olioille metodin kutsu tuottaa saman arvon</li>
+<li>The <code>equals</code> method in a way that objects with the same content will return true when compared, whereas different-content objects shall return false</li>
+<li>The <code>hashCode</code> method in a way that it assigns the same value to all the objects whose content is regarded as similar</li>
 </ul>
 
-<p>Luokalle <code>Book</code> määrittelemämme equals ja hashCode selvästi täyttävät nämä ehdot.
-Nyt myös aiemmin kohtaamamme ongelma ratkeaa ja kirjojen lainaajat löytyvät:</p>
+<p>The equals and hashCode methods of our Book class fulfill these two conditions. Now, the problem we faced before is solved, and we can find out the book loaners:</p>
 
 <pre class="sh_java">
-        HashMap&lt;Book, String&gt; lainaajat = new HashMap&lt;Book, String&gt;();
+        HashMap&lt;Book, String&gt; loaners = new HashMap&lt;Book, String&gt;();
        
-        Book oliokirja = new Book("Oliokirja", 2000);
-        lainaajat.put( oliokirja, "Pekka" );
-        lainaajat.put( new Book("Test Driven Development",1999), "Arto" );
+        Book objectbook = new Book("Objectbook", 2000);
+        loaners.put( objectbook, "Pekka" );
+        loaners.put( new Book("Test Driven Development",1999), "Arto" );
         
-        System.out.println( lainaajat.get( oliokirja ) );
-        System.out.println( lainaajat.get( new Book("Oliokirja", 2000) );
-        System.out.println( lainaajat.get( new Book("Test Driven Development", 1999) );
+        System.out.println( loaners.get( objectbook ) );
+        System.out.println( loaners.get( new Book("Objectbook", 2000) );
+        System.out.println( loaners.get( new Book("Test Driven Development", 1999) );
 </pre>
 
-<p>Tulostuu:</p>
+<p>Print output:</p>
 
 <pre>
 Pekka
@@ -3048,7 +3045,7 @@ Pekka
 Arto
 </pre>
 
-        <p><em>NetBeans tarjoaa metodien <code>equals</code> ja <code>hashCode</code> automaattisen luonnin. Voit valita valikosta Source -> Insert Code, ja valita aukeavasta listasta <em>equals() and hashCode()</em>. Tämän jälkeen NetBeans kysyy oliomuuttujat joita metodeissa käytetään.</em></p>
+        <p><em>NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. You from the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
 
         <div class="tehtavat" id="viikko8">
 
@@ -3258,7 +3255,7 @@ Harjoittelu tekee mestarin. Keksi joku hauska oma projekti.
 
   <ul>
     <li> metodi <code>int getTJ()</code> palauttaa jäljellä olevien palveluspäivien määrän</li>
-    <li> metodi <code>void palvele()</code> vähentää yhden palveluspäivän. Palveluspäivien määrä ei saa mennä negatiiviseksi.</li>
+    <li> metodi <code>void palvele()</code> vähentää yhden palveluspäivän. Palveluspäivien määrä ei saa mennä negatiiviseksi.</li>	
   </ul>
 
 <pre class="sh_java">

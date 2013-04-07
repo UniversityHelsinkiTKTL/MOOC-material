@@ -45,7 +45,7 @@
 
     <p>This learning material is for the Introduction to Programming and Advanced Programming courses held in spring
     2012 at the University of Helsinki, Department of Computer Science. The material is used also for the online MOOC
-    (massively open online course) programming course. The material is based on previous years' (2010 and 2011)
+    (massive open online course) programming course. The material is based on previous years' (2010 and 2011)
     course material with content contributions from: Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju
     and Martin Pärtel.</p>
 
@@ -2312,82 +2312,78 @@ The result is 255
 <pre class="sh_java">
 int i = 0;
 
-while( i&lt;10 ) {
+while (i &lt; 10) {
   System.out.println("Never again shall I program an eternal loop!");
 }
 </pre>
 
-            <p>The variable <code>i</code> that controls how many times the block is executed starts with the value 0
-            and the block should be executed until <code>i&lt;10</code>. But something funny happens here. Because the
-            variable <code>i</code> never gets a new value after it is introduced, it will never grow and thus the
-            boolean condition stays true forever.</p>
+            <p>The variable <code>i</code>, which determines the number of loop, is initially set to 0. The block is
+            supposed to be looped as long as the condition <code>i &lt; 10</code> is true. But something funny happens
+            here. Because the value of the variable <code>i</code> is never changed, the condition stays true forever.</p>
 
-            <h3>while and ending</h3>
+            <h3>Ending a while loop</h3>
 
-            <p>We have now made several repetition exercises, where the repetition condition looks roughly like
-            this:</p>
+            <p>So far, we have used the while loop with a structure similar to this:</p>
 
 <pre class="sh_java">
 int i = 1;
-while ( i &lt; 10 ) {
-  // ...
+while (i &lt; 10) {
+  // Some code.
   i++;
 }
 </pre>
 
-            <p>In the program body above the variable <code>i</code> remembers how many times the while block has been
-            executed and ending the repetition is based on checking what the value of <code>i</code> is.</p>
+            <p>With the structure above, the variable <code>i</code> remembers the number of times the the loop has
+            been executed. The condition to end the loop is based on comparing the value of <code>i</code>.</p>
 
-            <p>Let us remember for a while how the repetition is stopped. The decision on ending the repetition of a
-            code block does not need to be based on how many times the block has been executed. Next follows an example
-            where the program asks for the user's age. If the age is not between 5 and 85 years, program prints a
-            warning and asks for the age again. The condition for executing the while structure can be anything that
-            produces a boolean (truth value).</p>
+            <p>Let us now recall how a while loop is stopped. Ending a while loop does not need to always be based on
+            the number of loops. The next example program asks for the user's age. If the given age is not in the range
+            5-85, the program prints a message and asks for the user's age again. As you can see, the condition for the
+            while loop can be any expression that results in a boolean (truth value).</p>
 
 <pre class="sh_java">
 System.out.println("Type your age: ");
 
 int age = Integer.parseInt(reader.nextLine());
 
-while( age &lt; 5 || age  &gt; 85 ) {   // age less than 5 OR greater than 85
-  System.out.println("You are lying!");
-  if ( age &lt; 5 ) {
-      System.out.println("You are so young that you cannot know how to write!");   
-  } else if ( age &gt; 85 ) {
-      System.out.println("You are so old that you cannot know how to use a computer!");   
-  } 
+while (age &lt; 5 || age &gt; 85) {  // age less than 5 OR greater than 85
+    System.out.println("You are lying!");
+    if (age &lt; 5) {
+        System.out.println("You are so young that you cannot know how to write!");   
+    } else if (age &gt; 85) {
+        System.out.println("You are so old that you cannot know how to use a computer!");   
+    } 
 
-  System.out.println("Type your age again: ");
-  age = Integer.parseInt(reader.nextLine();
+    System.out.println("Type your age again: ");
+    age = Integer.parseInt(reader.nextLine();
 }
 
-System.out.println("Your age is "+ age);
+System.out.println("Your age is " + age);
 </pre>
 
-            <p>The program with the same functionality could have also been done using the old faithful
-            <code>while(true)</code> structure:</p>
+            <p>The program could have also been implemented using the good old <code>while (true)</code> structure:</p>
 
 <pre class="sh_java">
 System.out.println("Type your age ");
 
-while( true ) {   
-  int age = Integer.parseInt(reader.nextLine());
+while (true) {
+    int age = Integer.parseInt(reader.nextLine());
 
-  if ( age &gt;= 5 &amp;&amp; age &lt;= 85 ) {   // age between 5 AND 85
-    break;                              // ending the repetition
-  }
+    if (age &gt;= 5 &amp;&amp; age &lt;= 85) {  // age between 5 AND 85
+        break;  // end the loop
+    }
 
-  System.out.println("You are lying!");
-  if ( age &lt; 5 ) {
-      System.out.println("You are so young that you cannot know how to write!");   
-  } else {  // that means age is over 85
-      System.out.println("You are so old that you cannot know how to use a computer!");   
-  } 
+    System.out.println("You are lying!");
+    if (age &lt; 5) {
+        System.out.println("You are so young that you cannot know how to write!");   
+    } else {  // that means age is over 85
+        System.out.println("You are so old that you cannot know how to use a computer!");   
+    } 
 
-  System.out.println("Type your age again: ");
+    System.out.println("Type your age again: ");
 }
 
-System.out.println("Your age is "+ age);
+System.out.println("Your age is " + age);
 </pre>
 
             <div class="tehtavat">

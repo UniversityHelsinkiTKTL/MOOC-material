@@ -3144,7 +3144,7 @@ Jürgen
 
         <h2 id="rajapinta">Interface</h2>
 
-        <p><em>Interface</em> is an instrument we have to define the behaviour our classes should have. The interfaces are defined as normal Java classes, but instead of the definition "<code>public class ...</code>", we write "<code>public interface ...</code>". The interfaces influence class behaviour by defining the method names and return values, but they <em>do not containt method implementation</em>. The access modifier is not specified, because it is always <code>public</code>. Let us have a look at the interface <em>Readable</em>, which defines whether an object can be read.</p>
+        <p><em>Interface</em> is an instrument we have to define the functionality our classes should have. Interfaces are defined as normal Java classes, but instead of the definition "<code>public class ...</code>", we write "<code>public interface ...</code>". The interfaces influence class behaviour by defining the method names and return values, but they <em>do not containt method implementation</em>. The access modifier is not specified, because it is always <code>public</code>. Let us have a look at the interface <em>Readable</em>, which defines whether an object can be read.</p>
 
 <pre class="sh_java">
 public interface Readable {
@@ -3152,8 +3152,7 @@ public interface Readable {
 }
 </pre>
 
-        <p>The interface <code>Readable</code> defines the method <code>lue()</code>, which returns a string object. The classes which implement an interface decide <em>in which way</em> the methods defined in the interface have to be implemented, in the end. A class implements an interface by adding the keyword <em>implements</em> between the class and the interface name. Below, we create 
-joka palauttaa String-tyyppisen olion. Rajapinnan toteuttavat luokat päättävät <em>miten</em> rajapinnassa määritellyt metodit lopulta toteutetaan. Luokka toteuttaa rajapinnan lisäämällä luokan nimen jälkeen avainsanalla <em>implements</em>, jota seuraa rajapinnan nimi. Luodaan luokka <code>Tekstiviesti</code>, joka toteuttaa rajapinnan <code>Luettava</code>.</p>
+        <p>The interface <code>Readable</code> defines the method <code>lue()</code>, which returns a string object. The classes which implement an interface decide <em>in which way</em> the methods defined in the interface have to be implemented, in the end. A class implements an interface by adding the keyword <em>implements</em> between the class and the interface name. Below, we create the class <code>SMS</code> which implements <code>Readable</code> interface.</p>
 
 <pre class="sh_java">
 public class SMS implements Readable {
@@ -3179,7 +3178,7 @@ public class SMS implements Readable {
 
         <p><em>An interface is a behavioural agreement. In order to implement the behaviour, the class must implement the methods defined by the interface. The programmer of a class which implements an interface has to define what the behaviour will be like. Implementing an interface means to agree that the class will offer all the actions defined by the interface, i.e. the behaviour defined by the interface. A class which implements an interface but does not implement some of the interface methods can not exist.</em></p>
 
-        <p>Let us implement another class which implements the <code>Readable</code> interface, in addition to our <code>SMS</code> class. The class <code>EBook</code> is the electronic implementation of a book, and it contains the book name and page number. The EBook is read one page at time, and the <code>public String read()</code> method always returns the string of the following page.</p>
+        <p>Let us implement another class which implements the <code>Readable</code> interface, in addition to our <code>SMS</code> class. The class <code>EBook</code> is the electronic implementation of a book, and it contains the book name and page number. The EBook reads one page at time, and the <code>public String read()</code> method always returns the string of the following page.</p>
 
 <pre class="sh_java">
 public class EBook implements Readable {
@@ -3226,7 +3225,7 @@ public class EBook implements Readable {
     messages.add(new SMS("unknown number", "I hid the body.");
 </pre>
 
-<pre>Huikeaa menoa!</pre>
+<pre>Awesome stuff!</pre>
 
 <pre class="sh_java">
     ArrayList&lt;String&gt; pages = new ArrayList&lt;String&gt;();
@@ -3277,16 +3276,16 @@ public interface Palvelusvelvollinen {
 </div>
 
 
-<h3>An Interface Variable Type</h3>
+<h3>An Interface as Variable Type</h3>
 
-        <p>When we create a new variable we always specify the variable type. There are two types of variable types: primitive-type variables (int, double, ...) and reference-type (all objects). So far, we have been using the object class as reference-type variable type.</p>
+        <p>When we create a new variable we always specify its type. There are two types of variable types: primitive-type variables (int, double, ...) and reference-type (all objects). As far as reference-type variables are concerned, their class has also been their type, so far.</p>
 
 <pre class="sh_java">
     String string = "string-object";
     SMS message = new SMS("teacher", "Something crazy is going to happen");
 </pre>
 
-        <p>The object type can be different from its class. For instance, the tyep of the class which implements the interface <code>Readable</code> is also <code>Readable</code>. For instance, since the class <code>SMS</code> implements the interface <code>Readable</code>, it has got two types: <code>SMS</code> and <code>Readable</code>.</p>
+        <p>The type of an object can be different from its class. For instance, if a class implements the interface <code>Readable</code>, its type is <code>Readable</code>, too. For instance, since the class <code>SMS</code> implements the interface <code>Readable</code>, it has got two types: <code>SMS</code> and <code>Readable</code>.</p>
 
 <pre class="sh_java">
     SMS message = new SMS("teacher", "Awesome stuff!");
@@ -3303,10 +3302,10 @@ public interface Palvelusvelvollinen {
     }
 </pre>
 
-        <p>Because an interface can be used as type, it is possible to create a lista containing interface-type objects.</p>
+        <p>Because an interface can be used as type, it is possible to create a list containing interface-type objects.</p>
 
 <pre class="sh_java">
-    ArrayList&lt;Luettava&gt; numberList = new ArrayList&lt;Luettava&gt;();
+    ArrayList&lt;Readable&gt; numberList = new ArrayList&lt;Readable&gt;();
 
     numberList.add(new SMS("teacher", "never been programming before..."));
     numberList.add(new SMS("teacher", "gonna love it i think!"));
@@ -3319,7 +3318,7 @@ public interface Palvelusvelvollinen {
     }
 </pre>
 
-        <p>The <code>EBook</code> class implements the <code>Readable</code> interface. However, notice that even though the type of <code>EBook</code> class is an interface, the type of not all the classes which implement the <code>Readable</code> interface is <code>EBook</code>. It is possible to assign an <code>EBook</code> object to a <code>Readable</code> variable, but the assignment does not work in the opposite way without a particular type change.</p>
+        <p>The <code>EBook</code> class implements the interface <code>Readable</code>. However, notice that even though the type of the class <code>EBook</code> is an interface, <code>EBook</code> is not the type of all the classes which implement the <code>Readable</code> interface. It is possible to assign an <code>EBook</code> object to a <code>Readable</code> variable, but the assignment does not work in the opposite way without a particular type change.</p>
 
 <pre class="sh_java">
     Readable readable = new Readable("teacher", "The SMS is Readable!"); // works
@@ -3328,11 +3327,11 @@ public interface Palvelusvelvollinen {
     SMS transformedMessage = (Message) Readable; // works
 </pre>
 
-        <p>Type casting works if and only if the variable's type is really what we try to change it into. Type casting is not usually a best practice; one of the only cases where that is legitimate is when it comes to implementing the <code>equals</code> method.</p>
+        <p>Type casting works if and only if the variable's type is really what we try to change it into. Type casting is not usually a best practice; one of the only cases where that is legitimate is in connection with the <code>equals</code> method.</p>
 
         <h3>An Interface as Method Parameter</h3>
 
-        <p>The real use of interfaces becomes clear when we use them as method parameter type. Because interfaces can be used as variable type, they can be used in method calls as parameter type. For instance, the below method <code>print</code> of class <ode>Printer</code> receives a <code>Readable</code> variable.</p>
+        <p>The real use of interfaces becomes clear when we use them for the type of a method parameter. Because interfaces can be used as variable type, they can be used in method calls as parameter type. For instance, the below method <code>print</code> of class <ode>Printer</code> receives a <code>Readable</code> variable.</p>
 
 <pre class="sh_java">
 public class Printer {
@@ -3342,7 +3341,7 @@ public class Printer {
 }
 </pre>
 
-        <p>The very value of the <code>print</code> method of class <code>Printer</code> is that it's parameter can be <em>whatever</em> class instance which implements our <code>Readable</code> interface. When we call the method of an object, whatever is the class of this object which implements Readable, the method will work.</p>
+        <p>The real value of the <code>print</code> method of class <code>Printer</code> is that it's parameter can be <em>whatever</em> class instance which implements our <code>Readable</code> interface. When we call the method of an object, the method will work regardless of the class of this object, as long as the object implements Readable.</p>
 
 <pre class="sh_java">
     SMS message = new SMS("teacher", "Huhhuh, this printer is able to print them, actually!");
@@ -3381,7 +3380,7 @@ public class NumberList {
 }
 </pre>
 
-        <p>Number lists are usually readable, so we can implement the <code>Readable</code> interface to the <code>NumberList</code> class. The number list <code>read</code> method reads all all the objects of the <code>readables</code> list, and it adds them one by one to a string which is returned by the <code>read()</code> method.</p>
+        <p>Number lists are usually readable, so we can implement the <code>Readable</code> interface to the <code>NumberList</code> class. The number list <code>read</code> method reads all the objects of the <code>readables</code> list, and it adds them one by one to a string which is returned by the <code>read()</code> method.</p>
 
 <pre class="sh_java">
 public class NumberList implements Readable {
@@ -3423,7 +3422,7 @@ public class NumberList implements Readable {
 Joel has got got 2 messages to read
 </pre>
 
-        <p>Because the type of <code>NumerList</code> is <code>Readable</code>, we can add <code>NumerList</code> objects to our number list. In the example below, Joel has got a lot of messages to read, luckily Mikael deals with it and reads the messages on behalf of Joel.</p>
+        <p>Because the type of <code>NumerList</code> is <code>Readable</code>, we can add <code>NumerList</code> objects to our number list, too. In the example below, Joel has got a lot of messages to read, luckily Mikael deals with it and reads the messages on behalf of Joel.</p>
 
 <pre class="sh_java">
     NumberList joelList = new NumberList();
@@ -3449,7 +3448,7 @@ Delegoidaan lukeminen Mikaelille
 Joel has got 0 messages to read
 </pre>
 
-        <p>The <cide>read</code> method which is called in connection to Mikael's list parses all the <code>Readable</code> objects contained by the list, and calls their <code>read</code> method. At the end of each <code>read</code> method call the list is cleared. In other words, Joel's number list is cleared as soon as Mikael reads it.</p>
+        <p>The <cide>read</code> method which is called in connection to Mikael's list parses all the <code>Readable</code> objects contained in the list, and calls their <code>read</code> method. At the end of each <code>read</code> method call the list is cleared. In other words, Joel's number list is cleared as soon as Mikael reads it.</p>
 
         <p><em>At this point, there are a lot of references; it would be good to draw down the objects and try to grasp how the <code>read</code> method call connected to <code>mikaelList</code> works!</em></p>
 
@@ -3566,7 +3565,7 @@ public class Laatikko {
 
 <h3>An Interface as Method Return Value</h3>
 
-        <p>As well as any other variable type, an interface can also be used as method return value. Below you find <code>Factory</code>, which can be used to produce different objects which implement the interface <code>Item</code>. In the beginning, Factory produces books and disks at random.</p>
+        <p>As well as any other variable type, an interface can also be used as method return value. Below you find <code>Factory</code>, which can be used to produce different objects that implement the interface <code>Item</code>. In the beginning, Factory produces books and disks at random.</p>
 
 <pre class="sh_java">
    public class Factory {
@@ -3579,9 +3578,9 @@ public class Laatikko {
            Random random = new Random();
            int num = random.nextInt(4);
            if ( num==0 ) {
-               return new CDLevy("Pink Floyd", "Dark Side of the Moon", 1973);
+               return new CD("Pink Floyd", "Dark Side of the Moon", 1973);
            } else if ( num==1 ) {
-               return new CDLevy("Wigwam", "Nuclear Nightclub", 1975);
+               return new CD("Wigwam", "Nuclear Nightclub", 1975);
            } else if ( num==2 ) {
                return new Book("Robert Martin", "Clean Code", 1 );
            } else {
@@ -3591,7 +3590,7 @@ public class Laatikko {
    }
 </pre>
 
-<p>It is possible to use our Fabric without knowing precisely what kind of classes are present, as long as they all implement Item. Below you find the class <code>Packer</code> which can be used to get a boxful of items. The Packer knows the fabric which produces its Items:</p>
+<p>It is possible to use our Fabric without knowing precisely what kind of classes are present in it, as long as they all implement Item. Below you find the class <code>Packer</code> which can be used to get a boxful of items. The Packer knows the fabric which produces its Items:</p>
 
 <pre class="sh_java">
    public class Packer {
@@ -3614,7 +3613,7 @@ public class Laatikko {
    }
 </pre>
 
-<p>Because the packer doesn't know the classes which implement the Item interface, it is possble to add new classes which implement the interface without need for modifying the packer. Below, we create a new class which implements our Item interface - <code>ChocolateBar</code>. Our Fabric was modified to produce chocolate bars in addition to books and CDs. The class <code>Packer</code> with the extended fabric version, without need for change.</p>
+<p>Because the packer doesn't know the classes which implement the Item interface, it is possble to add new classes which implement the interface without having to modify the packer. Below, we create a new class which implements our Item interface - <code>ChocolateBar</code>. Our Fabric was modified to produce chocolate bars in addition to books and CDs. The class <code>Packer</code> works fine with the extended fabric version, without having to change it.</p>
 
 <pre class="sh_java">
    public class ChocolateBar implements Item {
@@ -3632,9 +3631,9 @@ public class Laatikko {
            Random random = new Random();
            int num = random.nextInt(5);
            if ( num==0 ) {
-               return new CDLevy("Pink Floyd", "Dark Side of the Moon", 1973);
+               return new CD("Pink Floyd", "Dark Side of the Moon", 1973);
            } else if ( num==1 ) {
-               return new CDLevy("Wigwam", "Nuclear Nightclub", 1975);
+               return new CD("Wigwam", "Nuclear Nightclub", 1975);
            } else if ( num==2 ) {
                return new Book("Robert Martin", "Clean Code", 1 );
            } else if ( num==3 ) {
@@ -3647,7 +3646,7 @@ public class Laatikko {
 </pre>
 
 
-  <p><em>Using interfaces while programming permits us to reduce the number of dependences among our classes. In our example, Packer is not dependent on the classes which implement Item interface, it is only dependent on the interface itself. This allows us to add classes wihout need for changing the class Packer, as long as they implement our interface. We can even add classes that implement the interface to the methods which make use of our packer without compromising the process. In fact, less dependences make it easy to extend a program.</em></p>
+  <p><em>Using interfaces while programming permits us to reduce the number of dependences among our classes. In our example, Packer is not dependent on the classes which implement Item interface, it is only dependent on the interface itself. This allows us to add classes wihout having to change the class Packer, as long as they implement our interface. We can even add classes that implement the interface to the methods which make use of our packer without compromising the process. In fact, less dependences make it easy to extend a program.</em></p>
 
 
 
@@ -3676,9 +3675,9 @@ public class NewsService {
 }
 </pre>
 
-        <p>The news service always submits a <code>Readable</code> interface object. At this point, people often wonder a simple question: "<code>Why shouldn't we use the class PieceOfNews, simply?</code>". The answer is quite long but hopefully it will clear the idea behind this.</p>
+        <p>The news service always submits a <code>Readable</code> interface object. At this point, people often wonder a simple question: "<code>Why shouldn't we simply use the class PieceOfNews?</code>". The answer is quite long but hopefully it will clear the idea behind this.</p>
 
-        <p>Let us think about a situation where we have a <code>Publisher</code> which publishes news. The publisher has to read the news from the NewsService regularly, and print out the messages (the Publisher could send the message to different media, but let's stick to a basic example). Let us suppos that NewsService returns PieceOfNews objects.</p>
+        <p>Let us think about a situation where we have a <code>Publisher</code> which publishes news. The publisher has to read the news from the NewsService regularly, and print out the messages (the Publisher could send the message to different media, but let's stick to a basic example). Let us suppose that NewsService returns PieceOfNews objects.</p>
 
 <pre class="sh_java">
 public class NewsService {
@@ -3713,7 +3712,7 @@ public class Publisher {
 }
 </pre>
 
-        <p>So far, everything is working well. We can now suppos our CEO notices that they need a new format for graphic news. Thus, we create a different class colled <code>GraphicPieceOfNews</code>. GraphicPieceOfNews is readable so our NewsService programmer make it implement our Readable interface.</p>
+        <p>So far, everything works well. We can now suppose our CEO notices that they need a new format for graphic news. Thus, we create a different class called <code>GraphicPieceOfNews</code>. GraphicPieceOfNews is readable so our NewsService programmer make it implement our Readable interface.</p>
 
 <pre class="sh_java">
 public class GraphicPieceOfNews implements Readable {
@@ -3742,11 +3741,11 @@ public class NewsService {
 }
 </pre>
 
-        <p>Now <em>we have to</em> modify our Publisher. In fact, it does not work any more because it returns an instance of the class <code>GraphicPieceOfNews<code>. How many classes we would have got to modify if the news service used ten services, and what about one thousand? At this point <em>each</em> implementation which used our news service should change its own functionality.</p>
+        <p>Now <em>we have to</em> modify our Publisher. In fact, it does not work any more because it returns an instance of the class <code>GraphicPieceOfNews<code>. How many classes we would have to modify if the news service used ten services, and what about one thousand? At this point <em>each</em> implementation which used our news service should change its own functionality.</p>
 
-        <p>And what about if not all the pieces of news contain photos, and we wanted to return a <code>PieceOfNews</code> class instance, sometimes? The method above, <code>getLatestNews</code>, may not be enough.</p>
+        <p>And what about if not all the pieces of news contained photos, and sometimes we wanted to return a <code>PieceOfNews</code> class instance? The method above, <code>getLatestNews</code>, may not be enough.</p>
 
-        <p>Let's go back to our news formate change, where the return type of the news service method <code>getLatestNews</code> is <code>Readable</code>.</p>
+        <p>Let's go back to our news format change, where the return type of the news service method <code>getLatestNews</code> is <code>Readable</code>.</p>
 
 
 <pre class="sh_java">
@@ -3758,7 +3757,7 @@ public class NewsService {
 }
 </pre>
 
-        <p>If the news service CEO wanted to get a new image format, we would not need at all to modify the <code>getLatestNews</code> method.</p>
+        <p>If the news service CEO wanted to get a new image format, we would not need to modify the <code>getLatestNews</code> method at all.</p>
 
 <pre class="sh_java">
 public class NewsService {
@@ -3793,7 +3792,7 @@ public class Publisher {
 }
 </pre>
 
-        <p>How many classes should we have modified if our news service offered ten services, and what about one thousand? Zero. And what about if our news service wanted to send normal news sometimes, and sometimes graphic news? Easy! We only need to change our news service.</p>
+        <p>How many classes should we have modified if our news service offered ten services, and what about one thousand? Zero. And what about if our news service wanted to send sometimes normal news and sometimes graphic news? Easy! We only need to change our news service.</p>
 
 <pre class="sh_java">
 public class NewsService {
@@ -3810,20 +3809,20 @@ public class NewsService {
 }
 </pre>
 
-    <p>Emme joudu tässäkään tapauksessa muuttamaan Uutispalvelua käyttäviä sovelluksia.</p>
+    <p>Even in this case we don't need to change the implementations which make use of our NewsService.</p>
 
 
-    <p><em>Rajapintojen käyttö ohjelmoinnissa mahdollistaa riippuvaisuuksien vähentämisen. Jos kaikki uutispalvelua käyttävät palvelut käyttävät rajapintaa Luettava, eivät ne ole suoraan riippuvaisia jostain tietystä Luettava-rajapinnan toteuttavasta luokasta. Yllä olevassa esimerkissä uutispalvelun sisäistä toteutusta pystyi muuttamaan siten, että siinä tehdyt muutokset eivät vaikuttaneet uutispalvelua käyttäneisiin olioihin millään tavalla.</em></p>
+    <p><em>Coding to interface allows for reducing the dependences. If all the services which make use of our news service were coded to the interface Readable, they would not be dependent on any particular class which implements the Readable interface. In the wxamples above, the internal implementation of the news service can be modified so that the modifications would not affect the objects which make use of the news service, in any way.</em></p>
 
 
 
     <h3>Made-Up Interfaces</h3>
 
-    <p>Java API offers a sensible number of made-up interfaces. Below, we get to know possibly Java's most used interfaces: <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/List.html" target="_blank">List</a></code>, <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/Map.html" target="_blank">Map</a></code>, <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/Set.html" target="_blank">Set</a></code> and <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html" target="_blank">Collection</a></code>.</p>
+    <p>Java API offers a sensible number of made-up interfaces. Below, we get to know some of Java's most used interfaces: <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/List.html" target="_blank">List</a></code>, <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/Map.html" target="_blank">Map</a></code>, <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/Set.html" target="_blank">Set</a></code> and <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html" target="_blank">Collection</a></code>.</p>
 
     <h4>List</h4>
 
-    <p>The <a href="http://download.oracle.com/javase/6/docs/api/java/util/List.html">List</a> interface defines lists basic behaviour. Because the class ArrayList implements <code>List</code> interface, it can also be used through the <code>List</code> interface.</p>
+    <p>The <a href="http://download.oracle.com/javase/6/docs/api/java/util/List.html">List</a> interface defines lists basic functionality. Because the class ArrayList implements the <code>List</code> interface, it can also be initialized through the <code>List</code> interface.</p>
 
 <pre class="sh_java">
 List&lt;String&gt; strings = new ArrayList&lt;String&gt;();
@@ -3837,15 +3836,15 @@ List&lt;String&gt; strings = new LinkedList&lt;String&gt;();
 strings.add("A string object within a LinkedList object!");
 </pre>
 
-    <p>Both implementation of the <code>List</code> interface work in the same way, in the user point of view. In fact, the interface <em>abstracts</em> their internal functionality. ArrayList and linkedList internal construction is evidently different, anyway. ArrayList saves the objects into a table, and the search is quick with a specific index. Differently, LinkedList builds up a list where each item has got a reference to the following item. When we search for an item in a linked list, we have to go through all the list items till the index.</p>
+    <p>Both implementations of the <code>List</code> interface work in the same way, in the user point of view. In fact, the interface <em>abstracts</em> their internal functionality. ArrayList and linkedList internal construction is evidently different, anyway. ArrayList saves the objects into a table, and the search is quick with a specific index. Differently, LinkedList builds up a list where each item has got a reference to the following item. When we search for an item in a linked list, we have to go through all the list items till we reach the index.</p>
 
-    <p>When it comes to bigger lists, we can notice more than evident performance differences. LinkedList's strength is that adding new items is always fast. Differently, behind ArrayList there is a table which grows as it fills up. Increasing the size of the table means creating a new one and copying there the information of the old. However, searching against an index is extremely fast with an ArrayList, whereas we have to go thourgh all the list elements one by one before reaching the one we want, with a LinkedList. More information about data structures such as ArrayList and LinkedList internal implementation comes with the course <em>Data structures and algorithms</em>.</p>
+    <p>When it comes to bigger lists, we can point out more than evident performance differences. LinkedList's strength is that adding new items is always fast. Differently, behind ArrayList there is a table which grows as it fills up. Increasing the size of the table means creating a new one and copying there the information of the old. However, searching against an index is extremely fast with an ArrayList, whereas we have to go thourgh all the list elements one by one before reaching the one we want, with a LinkedList. More information about data structures such as ArrayList and LinkedList internal implementation comes with the course <em>Data structures and algorithms</em>.</p>
 
-    <p>In our programming course you will rather want to choose ArrayList, in fact. Interface programming is worth of it, anyway: implement your program so that you'll use data structures via interfaces.</p>
+    <p>In our programming course you will rather want to choose ArrayList, in fact. Programming to interface is worth of it, anyway: implement your program so that you'll use data structures via interfaces.</p>
 
     <h4>Map</h4>
 
-    <p><a href="http://download.oracle.com/javase/6/docs/api/java/util/Map.html">Map</a> Interface defines HashMap basic behaviour. Because HashMaps implement <code>Map</code> interface, it is possible to use them trough <code>Map</code> interface.</p>
+    <p>The <a href="http://download.oracle.com/javase/6/docs/api/java/util/Map.html">Map</a> Interface defines HashMap basic fuctionality. Because HashMaps implement the <code>Map</code> interface, it is possible to initialize them trough the <code>Map</code> interface.</p>
 
 <pre class="sh_java">
 Map&lt;String, String&gt; translations = new HashMap&lt;String, String&gt;();
@@ -3853,7 +3852,7 @@ kaannokset.put("gambatte", "tsemppiä");
 kaannokset.put("hai", "kyllä");
 </pre>
 
-    <p>Hajautustaulun avaimet saa hajautustaulusta <code>keySet</code>-metodin avulla.</p>
+    <p>You get HashMap keys thourgh the method <code>keySet</code>.</p>
 
 <pre class="sh_java">
 Map&lt;String, String&gt; translations = new HashMap&lt;String, String&gt;();
@@ -3874,7 +3873,7 @@ hai: yes
 
     <h4>Set</h4>
 
-    <p>The <a href="http://download.oracle.com/javase/6/docs/api/java/util/Set.html" target="_blank">Set</a> interface defines the functionality sets. Java's sets always contain 0 or 1 centrain element. Among the others, <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashSet.html" target="_blank">HashSet</a></code> is one of the classes which implement the Set interface. We can parse a key set through a for-each loop, in the following way</p>
+    <p>The <a href="http://download.oracle.com/javase/6/docs/api/java/util/Set.html" target="_blank">Set</a> interface defines the functionality of Java's sets. Java's sets always contain 0 or 1 element of a certain type. Among the others, <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashSet.html" target="_blank">HashSet</a></code> is one of the classes which implement the Set interface. We can parse a key set through a for-each loop, in the following way</p>
 
 <pre class="sh_java">
 Set&lt;String&gt; set = new HashSet&lt;String&gt;();
@@ -3896,7 +3895,7 @@ two
 
     <h4>Collection</h4>
 
-    <p>The <a href="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html" target="_blank">Collection</a> interface defines the functionalities of collections. Among the others, Java's lists and sets are collections -- that is, List and Set interfaces implement the Collection interface. Collections interface provides methods to check object existence (the <code>contains</code> method) and to check the collection size (<code>size</code> method). We can parse any class which implements the Collections interface with a <code>for-each</code> loop. </p>
+    <p>The <a href="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html" target="_blank">Collection</a> interface defines the functionality of collections. Among the others, Java's lists and sets are collections -- that is, List and Set interfaces implement the Collection interface. Collection interface provides methods to check object existence (the <code>contains</code> method) and to check the collection size (<code>size</code> method). We can parse any class which implements the Collection interface with a <code>for-each</code> loop. </p>
 
     <p>We now create a HashMap and parse first its keys, and then its values.</p>
 
@@ -4263,44 +4262,44 @@ public class Kauppa {
   <p><em>Vapise, verkkokauppa.com!</em></p>
 </div>
 
-<h2>Geneerisyys</h2>
+<h2>Generics</h2>
 
-    <p>Geneerisyys (<em>generics</em>) liittyy olioita säilövien luokkien tapaan säilöä vapaavalintaisen tyyppisiä olioita. Vapaavalintaisuus perustuu luokkien määrittelyssä käytettyyn geneeriseen tyyppiparametriin, jonka avulla voidaan määritellä <em>olion luontivaiheessa</em> valittavia tyyppejä. Luokan geneerisyys määritellään antamalla luokan nimen jälkeen haluttu määrä luokan tyyppiparametreja pienempi kuin ja suurempi kuin -merkkien väliin. Toteutetaan oma geneerinen luokka <code>Lokero</code>, johon voi asettaa yhden minkälaisen tahansa olion.</p>
+    <p>We speak about <em>Generics</em> in connection to the way classes can conserve objects of genric type. Generics is based on the generic type parameter which is used when we define a class, and which helps us to define the types that have to be chosen when an <em>object is created</em>. A class generics can be defined by setting up the number of type parameters we want. This number is written after the class name and between the greater-than and less-than signs. We now implement our own generic class <code>Slot</code> which be assigned whatever object.</p>
 
 <pre class="sh_java">
-public class Lokero&lt;T&gt; {
-    private T alkio;
+public class Slot&lt;T&gt; {
+    private T key;
 
-    public void asetaArvo(T alkio) {
-        this.alkio = alkio;
+    public void setValue(T key) {
+        this.key = key;
     }
 
-    public T haeArvo() {
-        return alkio;
+    public T getValue() {
+        return key;
     }
 }
 </pre>
 
-    <p>Määrittely <code>public class Lokero&lt;T&gt;</code> kertoo että luokalle <code>Lokero</code> tulee antaa konstruktorissa tyyppiparametri. Konstruktorikutsun jälkeen kaikki olion sisäiset muuttujat tulevat olemaan kutsun yhteydessä annettua tyyppiä. Luodaan characterStringn tallentava lokero.</p>
+    <p>The definition <code>public class Slot&lt;T&gt;</code> tells us that we have to give a type parameter to the constructor of the class <code>Slot</code>. After the constructor call the object variables have to be the same type as what established with the call. We now create a slot which memorizes strings.</p>
 
 <pre class="sh_java">
-    Lokero&lt;String&gt; characterString = new Lokero&lt;String&gt;();
-    characterString.asetaArvo(":)");
+    Slot&lt;String&gt; string = new Slot&lt;String&gt;();
+    string.setValue(":)");
 
-    System.out.println(characterString.haeArvo());
+    System.out.println(string.getValue());
 </pre>
 
 <pre>
 :)
 </pre>
 
-    <p>Tyyppiparametria vaihtamalla voidaan luoda myös muuntyyppisiä olioita tallentavia <code>Lokero</code>-olioita. Esimerkiksi kokonaisluvun saa tallennettua seuraavasti</p>
+    <p>If we change the type parameter we can create different kinds of <code>Slot</code> ojects, whose purpose is to memorize objects. For instance, we can memorize an integer in the following way:</p>
 
 <pre class="sh_java">
-    Lokero&lt;Integer&gt; luku = new Lokero&lt;Integer&gt;();
-    luku.asetaArvo(5);
+    Slot&lt;Integer&gt; num = new Slot&lt;Integer&gt;();
+    num.setValue(5);
 
-    System.out.println(luku.haeArvo());
+    System.out.println(slot.getValue());
 </pre>
 
 
@@ -4308,51 +4307,51 @@ public class Lokero&lt;T&gt; {
 5
 </pre>
 
-    <p>Huomattava osa Javan tietorakenteista on ohjelmoitu geneerisiksi. Esimerkiksi ArrayList saa yhden tyyppiparametrin, HashMap kaksi.</p>
+    <p>An important part of Java data structures are programmed to be generic. For instance, ArrayList receives one parameter, HashMap two.</p>
 
 <pre class="sh_java">
-    List&lt;String&gt; characterStringt = new ArrayList&lt;String&gt;();
-    Map&lt;String, String&gt; avainArvoParit = new HashMap&lt;String, String&gt;();
+    List&lt;String&gt; string = new ArrayList&lt;String&gt;();
+    Map&lt;String, String&gt; keyCouples = new HashMap&lt;String, String&gt;();
 </pre>
 
-    <p>Jatkossa kun näet esimerkiksi tyypin <code>ArrayList&lt;String&gt;</code> tiedät että sen sisäisessä rakenteessa on käytetty geneeristä tyyppiparametria.</p>
+    <p>In the future, when you see the type <code>ArrayList&lt;String&gt;</code>, for instance, you know that its internal structure makes use of a generic type parameter.</p>
 
-    <h3>Geneerisyyttä hyödyntävä rajapinta: Comparable</h3>
+    <h3>The Interface which Makes Use of Generics: Comparable</h3>
 
-    <p>Normaalien rajapintojen lisäksi Javassa on geneerisyyttä hyödyntäviä rajapintoja. Geneerisille rajapinnoille määritellään sisäisten arvojen tyypit samalla tavalla kuin geneerisille luokille. Tutkitaan Javan valmista rajapintaa <code><a href="http://java.sun.com/javase/6/docs/api/java/lang/Comparable.html">Comparable</a></code>. Rajapinta <code>Comparable</code> määrittelee metodin <code>compareTo</code>, jonka tulee palauttaa <code>this</code>-olion paikan vertailujärjestyksessä verrattuna parametrina annettuun olioon (negatiivinen luku, 0 tai positiivinen luku). Jos <code>this</code>-olio on vertailujärjestyksessä ennen parametrina saatavaa olioa, tulee metodin palauttaa negatiivinen luku, jos taas parametrina saatava olio on järjestyksessä ennen, tulee metodin palauttaa positiivinen luku. Jos oliot ovat vertailujärjestykseltään samat, palautetaan 0. Vertailujärjestyksellä tarkoitetaan tässä ohjelmoijan määrittelemää olioiden "suuruusjärjestystä", eli jos oliot järjestetään sort-metodilla, mikä on niiden järjestys.</p>
+    <p>In addition to normal interfaces, Java has got interfaces which make use of generics. The internal value types of generic interfaces are defined in the same way as for generic classes. Let us have a look at Java made-up <code><a href="http://java.sun.com/javase/6/docs/api/java/lang/Comparable.html">Comparable</a></code> interface. The <code>Comparable</code> interface defines the <code>compareTo</code> method, which returns the place of <code>this</code> object, in relation to the parameter obect (a negative number, 0, or a positive number). If <code>this</code> object is placed before the parameter object in the comparison order, the method returns a negative value, whereas it returns a positive value if it is placed after the parameter object. If the objects are placed at the same place in the comparison order, the method returns 0. With comparison order we mean the object order of magnitude defined by the programmer, i.e. the object order, when they are sorted with the sort method.</p>
 
-    <p>Yksi <code>Comparable</code>-rajapinnan eduista on se, että se mahdollistaa Comparable-tyyppisistä alkioista koostuvan listan järjestämisen esimerkiksi standardikirjaston <code>Collections.sort</code>-metodin avulla. <code>Collections.sort</code> käyttää listan alkioiden <code>compareTo</code>-metodia selvittääkseen, missä järjestyksessä alkoiden kuuluisi olla. Tätä <code>compareTo</code>-metodin avulla johdettua järjestystä kutsutaan <em>luonnolliseksi järjestykseksi</em> (natural ordering).</p>
+    <p>One of the advantages of the <code>Comparable</code> interface is that it allows us to sort a list of Comparable type keys by using the standard library method <code>Collections.sort</code>, for instance. <code>Collections.sort</code> uses the <code>compareTo</code> method of a key list to define in which order these keys should be. We call <em>Natural Ordering</em> this ordering technique which makes use of the <code>compareTo</code> method.
 
-    <p>Luodaan luokka <code>Kerholainen</code>, joka kuvaa kerhossa käyvää lasta tai nuorta. Jokaisella kerholaisella on nimi ja pituus. Kerholaisten tulee mennä aina syömään pituusjärjestyksessä, joten toteutetaan kerholaisille rajapinta <code>Comparable</code>. Comparable-rajapinta ottaa tyyppiparametrinaan myös luokan, johon sitä verrataan. Käytetään tyyppiparametrina luokkaa <code>Kerholainen</code>-luokkaa.</p>
+    <p>We create the class <code>ClubMember</code>, which depicts the young people and children who belong to the club. The members have to eat in order of height, so the club members will implement the interface <code>Comparable</code>. The interface <code>Comparable</code> also takes as type parameter the class which it is compared to. As type parameter, we use the <code>ClubMember</code> class.</p>
 
 <pre class="sh_java">
-public class Kerholainen implements Comparable&lt;Kerholainen&gt; {
+public class ClubMember implements Comparable&lt;ClubMember&gt; {
     private String name;
-    private int pituus;
+    private int height;
 
-    public Kerholainen(String name, int pituus) {
-        this.name = nimi;
-        this.pituus = pituus;
+    public Kerholainen(String name, int height) {
+        this.name = name;
+        this.height = height;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public int getPituus() {
-        return this.pituus;
+    public int getHeigth() {
+        return this.height;
     }
 
     @Override
     public String toString() {
-        return this.getName() + " (" + this.getPituus() + ")";
+        return this.getName() + " (" + this.getHeigth() + ")";
     }
 
     @Override
-    public int compareTo(Kerholainen kerholainen) {
-        if(this.pituus == kerholainen.getPituus()) {
+    public int compareTo(ClubMember clubMember) {
+        if(this.heigth == clubMember.getHeight()) {
             return 0;
-        } else if (this.pituus &gt; kerholainen.getPituus()) {
+        } else if (this.height &gt; clubMember.getHeight()) {
             return 1;
         } else {
             return -1;
@@ -4361,26 +4360,26 @@ public class Kerholainen implements Comparable&lt;Kerholainen&gt; {
 }
 </pre>
 
-    <p>Rajapinnan vaatima metodi <code>compareTo</code> palauttaa kokonaisluvun, joka kertoo vertausjärjestyksestä. Koska <code>compareTo()</code>-metodista riittää palauttaa negatiivinen luku, jos <code>this</code>-olio on pienempi kuin parametrina annettu olio ja nolla, kun pituudet ovat samat, voidaan edellä esitelty metodi <code>compareTo</code> toteuttaa myös seuraavasti:</p>
+    <p>The interface requires the method <code>compareTo</code>, which returns an integer that tells us the comparison order. Our <code>compareTo()</code> method has to return a negative number if <code>this</code> object is smaller than its parameter object, or zero, if the two members are equally tall. Therefore, we can implement the above <code>compareTo</code> method, in the following way:</p>
 
 <pre class="sh_java">
     @Override
-    public int compareTo(Kerholainen kerholainen) {
-        return this.pituus - kerholainen.getPituus();
+    public int compareTo(ClubMember clubMember) {
+        return this.height - clubMember.getHeight();
     }
 </pre>
 
-    <p>Kerholaisten järjestäminen on nyt helppoa.</p>
+    <p>Sorting club members is easy, now.</p>
 
 <pre class="sh_java">
-    List&lt;Kerholainen&gt; kerholaiset = new ArrayList&lt;Kerholainen&gt;();
-    kerholaiset.add(new Kerholainen("mikael", 182));
-    kerholaiset.add(new Kerholainen("matti", 187));
-    kerholaiset.add(new Kerholainen("joel", 184));
+    List&lt;Kerholainen&gt; clubMembers = new ArrayList&lt;ClubMember&gt;();
+    clubMembers.add(new ClubMember("mikael", 182));
+    clubMembers.add(new ClubMember("matti", 187));
+    clubMembers.add(new ClubMember("joel", 184));
 
-    System.out.println(kerholaiset);
-    Collections.sort(kerholaiset);
-    System.out.println(kerholaiset);
+    System.out.println(clubMembers);
+    Collections.sort(clubMembers);
+    System.out.println(clubMembers);
 </pre>
 
 <pre>
@@ -4388,7 +4387,7 @@ public class Kerholainen implements Comparable&lt;Kerholainen&gt; {
 [mikael (182), joel (184), matti (187)]
 </pre>
 
-    <p>Jos kerholaiset haluaa järjestää käänteiseen järjestykseen, riittää vain <code>compareTo</code>-metodissa olevien muuttujien paikan vaihtaminen.</p>
+    <p>If we want to sort the members in descending order, we only have to switch the variable order in our <code>compareTo</code> method.</p>
 
 
 <div class="tehtavat">
@@ -4648,45 +4647,45 @@ Pata A
 
 <h2>Collections</h2>
 
-    <p>Luokkakirjasto <code><a href="http://java.sun.com/javase/6/docs/api/java/util/Collections.html" target="_blank">Collections</a></code> on Javan yleishyödyllinen kokoelmaluokkiin liittyvä kirjasto. Kuten tiedämme, <code>Collections</code> tarjoaa metodit olioiden järjestämiseen joko <code>Comparable</code>- tai <code>Comparator</code> -rajapinnan kautta. Järjestämisen lisäksi luokkakirjaston avulla voi etsiä esimerkiksi minimi- (<code>min</code>-metodi) tai maksimialkioita (<code>max</code>-metodi), hakea tiettyä arvoa (<code>binarySearch</code>-metodi), tai kääntää listan (<code>reverse</code>-metodi).</p>
+    <p>The class library <code><a href="http://java.sun.com/javase/6/docs/api/java/util/Collections.html" target="_blank">Collections</a></code> is Java's general-purpose library for collection classes. As we can see, <code>Collections</code> provides methods to sort objects either through the interface <code>Comparable</code> or <code>Comparator</code>. In addition to sorting, we can use this class library to retrieve the minimum and maximum values (through the methods <code>min</code> and <code>max</code>, respectively), retrieve a specific value (<code>binarySearch</code> method), or reverse the list (<code>reverse</code> method).</p>
 
-    <h3>Hakeminen</h3>
+    <h3>Search</h3>
 
-    <p>Collections-luokkakirjasto tarjoaa valmiiksi toteutetun binäärihaun. Metodi <code>binarySearch()</code> palauttaa haetun alkion indeksin listasta jos se löytyy. Jos alkiota ei löydy, hakualgoritmi palauttaa negatiivisen arvon. Metodi <code>binarySearch()</code> käyttää Comparable-rajapintaa haetun olion löytämiseen. Jos olion <code>compareTo()</code>-metodi palauttaa arvon 0, eli olio on sama, ajatellaan arvon löytyneen.</p>
+    <p>The Collections class library provides a made-up binary search functionality. The method <code>binarySearch()</code> returns the index of our searched key, if this is found. If the key is not found, the search algorithm returns a negative value. The method <code>binarySearch()</code> makes use of the Comparable interface to retieve objects. If the object's <code>compareTo()</code> method returns the value 0, i.e. if it is the same object, the key is considered found.</p>
 
-    <p>Kerholainen-luokkamme vertaa pituuksia <code>compareTo()</code>-metodissaan, eli listasta etsiessä etsisimme samanpituista kerholaista.</p>
+    <p>Our ClubMember class compares people's heights in its <code>compareTo()</code> method, i.e. we look for club members whose height is the same while we parse our list.</p>
 
 <pre class="sh_java">
-    List&lt;Kerholainen&gt; kerholaiset = new ArrayList&lt;Kerholainen&gt;();
-    kerholaiset.add(new Kerholainen("mikael", 182));
-    kerholaiset.add(new Kerholainen("matti", 187));
-    kerholaiset.add(new Kerholainen("joel", 184));
+    List&lt;ClubMember&gt; clubMembers = new ArrayList&lt;ClubMember&gt;();
+    clubMembers.add(new ClubMember("mikael", 182));
+    clubMembers.add(new ClubMember("matti", 187));
+    clubMembers.add(new ClubMember("joel", 184));
 
-    Collections.sort(kerholaiset);
+    Collections.sort(clubMembers);
 
-    Kerholainen haettava = new Kerholainen("Nimi", 180);
-    int indeksi = Collections.binarySearch(kerholaiset, haettava);
-    if(indeksi &gt;= 0) {
-        System.out.println("180 senttiä pitkä löytyi indeksistä " + indeksi);
-        System.out.println("nimi: " + kerholaiset.get(indeksi).getName());
+    ClubMember wanted = new ClubMember("Name", 180);
+    int index = Collections.binarySearch(clubMembers, wanted);
+    if(index &gt;= 0) {
+        System.out.println("A person who is 180 centimiters tall was found at index " + index);
+        System.out.println("name: " + clubMembers.get(index).getName());
     }
 
-    haettava = new Kerholainen("Nimi", 187);
-    int indeksi = Collections.binarySearch(kerholaiset, haettava);
+    wanted = new ClubMember("Name", 187);
+    int index = Collections.binarySearch(clubMembers, wanted);
     if(indeksi &gt;= 0) {
-        System.out.println("187 senttiä pitkä löytyi indeksistä " + indeksi);
-        System.out.println("nimi: " + kerholaiset.get(indeksi).getName());
+        System.out.println("A person who is 187 centimiters tall was found at index " + index);
+        System.out.println("name: " + clubMembers.get(index).getName());
     }
 </pre>
 
-    <p>Esimerkkimme tulostaa seuraavaa</p>
+    <p>The print output is the following:</p>
 
 <pre>
-187 senttiä pitkä löytyi indeksistä 2
-nimi: matti
+A person who is 187 centimiters tall was found at index 2
+name: matti
 </pre>
 
-    <p>Huomaa että esimerkissä kutsuttiin myös metodia <code>Collections.sort()</code>. Tämä tehdään sen takia, että binäärihakua ei voida tehdä jos taulukko tai lista ei ole valmiiksi järjestyksessä.</p>
+    <p>Notice that we also called the method <code>Collections.sort()</code>, in our example. This is because binary search cannot be done if our table or list are not already sorted up.</p>
 
 
 

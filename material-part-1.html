@@ -910,7 +910,7 @@ Circumference of the circle: 125.66370614359172
                     <p><b>Tip:</b> When you write <code>Math.</code> (that is, Math followed by a dot) in NetBeans, it
                     shows you a bunch of available mathematical calculations. For example, <code>Math.cos(10)</code>
                     calculates the cosine of the number 10. Try to find a suitable tool in <code>Math</code> to
-                    complete this excerise! If you cannot find anything suitable or do not know how to do this
+                    complete this exercise! If you cannot find anything suitable or do not know how to do this
                     exercise, you should skip exercise for now. We will focus on this later on in the course.</p>
 
 <pre>
@@ -1984,7 +1984,7 @@ while (number &lt; 11) {
 }
 </pre>
 
-            <p>The exampel above can be read "as long as the variable number is less than 11, print the variable and
+            <p>The example above can be read "as long as the variable number is less than 11, print the variable and
             increment it by one".</p>
 
             <p>Above, the variable <code>number</code> was incremented on each iteration of the loop. The change can be
@@ -2939,7 +2939,7 @@ public static void main(String[] args) {
 
                 <p>Create the method <code>printTriangle(int size)</code> that prints a triangle using the printStars
                 method using the mehtods <code>printWhitespaces</code> and <code>printStars</code>. <b>Note:</b> do not
-                print anythin in the method itself, just call the helper methods to do the actual printing.</p>
+                print anything in the method itself, just call the helper methods to do the actual printing.</p>
 
                 <p>For example, the method call <code>printTriangle(4)</code> has the following output:</p>
 
@@ -2955,7 +2955,7 @@ public static void main(String[] args) {
                 <p>Create the method <code>xmasTree(int height)</code> that prints a Christmas tree using the mehtods
                 <code>printWhitespaces</code> and <code>printStars</code>. A Christmas tree consists of a triangle of
                 given height and a stand. The stand is two stars tall and three stars wide and it is located at the
-                middle of the triangle bottom. <b>Note:</b> do not print anythin in the method itself, just call the
+                middle of the triangle bottom. <b>Note:</b> do not print anything in the method itself, just call the
                 helper methods to do the actual printing.</p>
 
                 <p>The method call <code>xmasTree(4)</code>, for example, has the following output:</p>
@@ -3589,7 +3589,7 @@ Greatest: 7
                     <p>Place the method in the following program body:</p>
 
 <pre class="sh_java">
-publicp static double average(int number1, int number2, int number3, int number4) {
+public static double average(int number1, int number2, int number3, int number4) {
     // write your code here
 }
 
@@ -3657,7 +3657,7 @@ char character = word.charAt(3);
 System.out.println("The 4th character of the word is " + character); //prints "e"
 </pre>
 
-            <p>The characters in a string are numbered (ot more technically speaking strings are indexed) starting from
+            <p>The characters in a string are numbered (or more technically speaking strings are indexed) starting from
             0. Because of that we can reach the last character in a string from the number (or index) "the length
             of the word minus one", or <code>word.charAt(word.length()-1)</code>. The following example will make
             the program crash, because we are trying to get a character from an index that does not exist.</p>
@@ -7323,7 +7323,7 @@ public class Main {
 
                 <p>Objects can also call ins own methods. Let us assume we'd like to include body mass index in the
                 string representation of the person objects. Instead of calculating the body mass index in the toString
-                method, a better idea is to call the method <code>bodyMassInded</code> from the <code>toString</code>
+                method, a better idea is to call the method <code>bodyMassIndex</code> from the <code>toString</code>
                 method:</p>
 
 <pre class="sh_java">
@@ -9058,7 +9058,7 @@ public class Person {
             <p>Another example of the same theme. Let's create a class, with which we can represent dates.</p>
 
             <p>Within an object the date is represented with three objct variables. Let's also make a method with
-            which we can compare wheather the date is earlier than the date that is given as a parameter:</p>
+            which we can compare whether the date is earlier than the date that is given as a parameter:</p>
 
 <pre class="sh_java">
 public class MyDate {
@@ -10471,7 +10471,7 @@ public class Money {
                     <h4>Plus</h4>
 
                     <p>Let us start by implementing the method <code>public Money plus(Money added)</code>, that
-                    returns a <em>new Money ohject</em> that has a value equal to the sum of the object for which the
+                    returns a <em>new Money object</em> that has a value equal to the sum of the object for which the
                     method was called and the object given as parameter.</p>
 
                     <p>Examples of the method usage:</p>
@@ -11295,7 +11295,7 @@ Number of stars: 22
 
                     <p>Add the class <code>NightSky</code> the method <code>printLine</code>, that prints one line of
                     starts. The line length is determined by the value of the instance variable <code>width</code> and
-                    the instance variable <code>density</code> determines the star propability. For each printed
+                    the instance variable <code>density</code> determines the star probability. For each printed
                     character you should use a <code>Random</code> object to decide if it prints out as a white space
                     or a star. The method <code>nextDouble</code> is propably of the use now.</p>
 
@@ -11361,7 +11361,7 @@ Number of stars: 3
 
             <h2>to static or not to static?</h2>
 
-            <p>When we started using objects, the material adviced to leave out the keyword 'static' when
+            <p>When we started using objects, the material advised to leave out the keyword 'static' when
             defining their methods. However, up until week 3 all of the methods had the keyword in them. So what is it
             all about?</p>
 
@@ -11573,7 +11573,7 @@ public class Main {
 
             <p>The method <code>reportMaturity</code> is defined as static so it doesn't belong to any object,
             <strong>but</strong> the method receives a Person object as a parameter. The method is not defined within
-            the Person-class since even though it handles a Person object that it receives as a paramter, it is an
+            the Person-class since even though it handles a Person object that it receives as a parameter, it is an
             assistance method of the main program we just wrote. With the method we've made main more readable.</p>
 
             <div class="tehtavat">

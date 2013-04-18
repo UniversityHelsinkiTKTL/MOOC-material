@@ -12418,11 +12418,11 @@ public class GuessingGame {
 
                     <h4>Is greater than</h4>
 
-                    <p>Implement the method <code>public boolean isGreaterThan(Scanner reader, int value)</code>, which
+                    <p>Implement the method <code>public boolean isGreaterThan(int value)</code>, which
                     presents the user with a question:</p>
 
 <pre>
-"Is your number larger than <em>given value</em>? (y/n)"
+"Is your number greater than <em>given value</em>? (y/n)"
 </pre>
 
                     <p>The method returns the value <code>true</code> if the user replies "y", otherwise
@@ -12433,7 +12433,7 @@ public class GuessingGame {
 <pre class="sh_java">
     GuessingGame game = new GuessingGame();
 
-    System.out.println(game.isGreaterThan(reader, 32));
+    System.out.println(game.isGreaterThan(32));
 </pre>
 
 <pre>

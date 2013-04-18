@@ -111,7 +111,7 @@ System.out.println("Hello world!");
             <code>java Hello</code> where Hello is the name of the original source code file.</p>
 
             <p>When using a modern development environment (more on this later), it will take care of compiling the
-            source code. When we choose to run the program, rhw development environment will compile and execute the
+            source code. When we choose to run the program, the development environment will compile and execute the
             program. All development environments compile source code while it is being written by the programmer,
             which means that simple errors will be noticed before executing the program.</p>
 
@@ -476,7 +476,8 @@ int camelCase = 5; // Not allowed, the variable camelCase is already defined!
 <pre class="sh_java">
 int first = 2;   // variable of whole number type is assigned the value 2
 int second = 4;  // variable of whole number type is assigned the value 4
-int sum = first + second;  // variable of whole number type is assigned the value of first + second (which means 2 + 4)
+int sum = first + second;  // variable of whole number type is assigned the value of first + second
+                           //     (which means 2 + 4)
 
 System.out.println(sum); // the value of the variable sum is printed
 </pre>
@@ -732,7 +733,8 @@ public class ProgramBody {
 
 <pre class="sh_java">
 System.out.print("What is your name? ");
-String name = reader.nextLine(); // Reads a line of input from the user and assigns it to the variable called name
+String name = reader.nextLine(); // Reads a line of input from the user and assigns it 
+                                 //     to the variable called name
 
 System.out.println("Hi, " + name);
 </pre>
@@ -755,7 +757,8 @@ public class Greeting {
     Scanner reader = new Scanner(System.in);
 
     System.out.print("Who is greeted: ");
-    String nimi = reader.nextLine(); // Reads a line of input from the user and assigns it to the variable called name
+    String nimi = reader.nextLine(); // Reads a line of input from the user and assigns it 
+                                     //     to the variable called name
 
     System.out.print("Hi " + name);
   }
@@ -1003,9 +1006,9 @@ NHLStatistics.sortByPenalties();  // orders the players by penalty minutes
                     <p>It is also possible to use the component to request the the statistics of a certain player:</p>
 
 <pre class="sh_java">
-NHLStatistics.searchByPlayer("Jaromir Jagr");  // prints the statistics of Jaromir Jagr
-NHLStatistics.searchByPlayer("Koivu");         // prints the statistics of Mikko Koivu and Saku Koivu
-NHLStatistics.searchByPlayer("Teemu");         // prints the statistics of all players named Teemu
+NHLStatistics.searchByPlayer("Jaromir Jagr");  // prints stats of Jaromir Jagr
+NHLStatistics.searchByPlayer("Koivu");         // prints stats of Mikko Koivu and Saku Koivu
+NHLStatistics.searchByPlayer("Teemu");         // prints stats of all players named Teemu
 </pre>
 
                     <p>The component can also print the statistics of all players in a club:</p>
@@ -1794,7 +1797,8 @@ public static void main(String[] args) throws Exception {
             // ask the user for the player name and print the statistics for that player
         } else if (scommand.equals("club")) {
             // ask the user for the club abbreviation and print the statistics for the club
-            // note: the statistics should be sorted by points (players with the most points are first)
+            // note: the statistics should be sorted by points 
+            //     (players with the most points are first)
         }
     }
 }
@@ -4209,7 +4213,7 @@ Barto is not on the teachers list
         teachers.add("Matt");
 
         int place = 0;
-        while ( place &lt; teachers.size() )  // do you remember why place &lt;= teachers.size() does not work?
+        while ( place &lt; teachers.size() )  // remember why place &lt;= teachers.size() doesn't work?
             System.out.println( teachers.get(place) );
             place++;
         }
@@ -4912,7 +4916,7 @@ The variance is: 5.666667
             } 
         } 
 
-        // if one of the numbers on the list had a value that was under 0, noNegatives becomes false.
+        // if one of the numbers on the list had a value that's under 0, noNegatives becomes false.
 
         return noNegative; 
     } 
@@ -9467,7 +9471,8 @@ public class Clock {
     private BoundedCounter seconds;
 
     public Clock(int hoursAtBeginning, int minutesAtBeginning, int secondsAtBeginning) {
-      // the counters that represent hours, minutes and seconds are created and set to have the correct initial values
+      // the counters that represent hours, minutes and seconds are created and
+      // set to have the correct initial values
     }
 
     public void tick(){
@@ -9897,7 +9902,8 @@ public Counter {
   }
 
   public Counter clone(){
-     // lets create a new counter object, that gets as its initial value the value of the counter that is being cloned
+     // lets create a new counter object, that gets as its initial value 
+     // the value of the counter that is being cloned
      Counter clone = new Counter(this.value);
 
      // return the clone to the caller
@@ -10486,8 +10492,10 @@ public class Money {
   System.out.println(b);  // 5.00e
   System.out.println(c);  // 15.00e
 
-  a = a.plus(c);          // NOTE: new Money-object is created and reference to that is assigned to variable a
-                          //       the Money object 10.00e that variable a used to hold, is not referenced anymore
+  a = a.plus(c);          // NOTE: new Money-object is created and reference to that 
+                          //           is assigned to variable a.
+                          //       The Money object 10.00e that variable a used to hold
+                          //           is not referenced anymore
 
   System.out.println(a);  // 25.00e
   System.out.println(b);  // 5.00e

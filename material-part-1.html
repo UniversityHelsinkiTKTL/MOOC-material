@@ -33,7 +33,7 @@
     <p><em>Material and exercises:</em> <b>Arto Vihavainen,  Matti Luukkainen</b></p>
 
     <p><em>English translation:</em> <b>Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan
-    Mohanathas</b></p>
+    Mohanathas, Mateor</b></p>
 -->
 
     <div id="toc" class="menu" data-first-chapter-index="1" data-first-exercise-index="1">
@@ -111,7 +111,7 @@ System.out.println("Hello world!");
             <code>java Hello</code> where Hello is the name of the original source code file.</p>
 
             <p>When using a modern development environment (more on this later), it will take care of compiling the
-            source code. When we choose to run the program, rhw development environment will compile and execute the
+            source code. When we choose to run the program, the development environment will compile and execute the
             program. All development environments compile source code while it is being written by the programmer,
             which means that simple errors will be noticed before executing the program.</p>
 
@@ -476,7 +476,8 @@ int camelCase = 5; // Not allowed, the variable camelCase is already defined!
 <pre class="sh_java">
 int first = 2;   // variable of whole number type is assigned the value 2
 int second = 4;  // variable of whole number type is assigned the value 4
-int sum = first + second;  // variable of whole number type is assigned the value of first + second (which means 2 + 4)
+int sum = first + second;  // variable of whole number type is assigned the value of first + second
+                           //     (which means 2 + 4)
 
 System.out.println(sum); // the value of the variable sum is printed
 </pre>
@@ -732,7 +733,8 @@ public class ProgramBody {
 
 <pre class="sh_java">
 System.out.print("What is your name? ");
-String name = reader.nextLine(); // Reads a line of input from the user and assigns it to the variable called name
+String name = reader.nextLine(); // Reads a line of input from the user and assigns it 
+                                 //     to the variable called name
 
 System.out.println("Hi, " + name);
 </pre>
@@ -755,7 +757,8 @@ public class Greeting {
     Scanner reader = new Scanner(System.in);
 
     System.out.print("Who is greeted: ");
-    String nimi = reader.nextLine(); // Reads a line of input from the user and assigns it to the variable called name
+    String nimi = reader.nextLine(); // Reads a line of input from the user and assigns it 
+                                     //     to the variable called name
 
     System.out.print("Hi " + name);
   }
@@ -910,7 +913,7 @@ Circumference of the circle: 125.66370614359172
                     <p><b>Tip:</b> When you write <code>Math.</code> (that is, Math followed by a dot) in NetBeans, it
                     shows you a bunch of available mathematical calculations. For example, <code>Math.cos(10)</code>
                     calculates the cosine of the number 10. Try to find a suitable tool in <code>Math</code> to
-                    complete this excerise! If you cannot find anything suitable or do not know how to do this
+                    complete this exercise! If you cannot find anything suitable or do not know how to do this
                     exercise, you should skip exercise for now. We will focus on this later on in the course.</p>
 
 <pre>
@@ -1003,9 +1006,9 @@ NHLStatistics.sortByPenalties();  // orders the players by penalty minutes
                     <p>It is also possible to use the component to request the the statistics of a certain player:</p>
 
 <pre class="sh_java">
-NHLStatistics.searchByPlayer("Jaromir Jagr");  // prints the statistics of Jaromir Jagr
-NHLStatistics.searchByPlayer("Koivu");         // prints the statistics of Mikko Koivu and Saku Koivu
-NHLStatistics.searchByPlayer("Teemu");         // prints the statistics of all players named Teemu
+NHLStatistics.searchByPlayer("Jaromir Jagr");  // prints stats of Jaromir Jagr
+NHLStatistics.searchByPlayer("Koivu");         // prints stats of Mikko Koivu and Saku Koivu
+NHLStatistics.searchByPlayer("Teemu");         // prints stats of all players named Teemu
 </pre>
 
                     <p>The component can also print the statistics of all players in a club:</p>
@@ -1643,7 +1646,7 @@ while (true) {
         System.out.println( "The sum of the numbers is " + sum );
     } else if (command.equals("difference")) {
         int difference = first - second;
-        System.out.println("The difference of the numbers is " + erotus);
+        System.out.println("The difference of the numbers is " + difference);
     } else {
         System.out.println("Unknown command");
     } 
@@ -1794,7 +1797,8 @@ public static void main(String[] args) throws Exception {
             // ask the user for the player name and print the statistics for that player
         } else if (scommand.equals("club")) {
             // ask the user for the club abbreviation and print the statistics for the club
-            // note: the statistics should be sorted by points (players with the most points are first)
+            // note: the statistics should be sorted by points 
+            //     (players with the most points are first)
         }
     }
 }
@@ -1984,7 +1988,7 @@ while (number &lt; 11) {
 }
 </pre>
 
-            <p>The exampel above can be read "as long as the variable number is less than 11, print the variable and
+            <p>The example above can be read "as long as the variable number is less than 11, print the variable and
             increment it by one".</p>
 
             <p>Above, the variable <code>number</code> was incremented on each iteration of the loop. The change can be
@@ -2840,7 +2844,7 @@ public static void main(String[] args) {
 Hi Anthony, greetings from the world of methods!
 Hi Anthony, greetings from the world of methods!
 Hi Anthony, greetings from the world of methods!
-ja
+and
 Hi Martin, greetings from the world of methods!
 Hi Martin, greetings from the world of methods!
 </pre><!-- screencast -->
@@ -2939,7 +2943,7 @@ public static void main(String[] args) {
 
                 <p>Create the method <code>printTriangle(int size)</code> that prints a triangle using the printStars
                 method using the mehtods <code>printWhitespaces</code> and <code>printStars</code>. <b>Note:</b> do not
-                print anythin in the method itself, just call the helper methods to do the actual printing.</p>
+                print anything in the method itself, just call the helper methods to do the actual printing.</p>
 
                 <p>For example, the method call <code>printTriangle(4)</code> has the following output:</p>
 
@@ -2955,7 +2959,7 @@ public static void main(String[] args) {
                 <p>Create the method <code>xmasTree(int height)</code> that prints a Christmas tree using the mehtods
                 <code>printWhitespaces</code> and <code>printStars</code>. A Christmas tree consists of a triangle of
                 given height and a stand. The stand is two stars tall and three stars wide and it is located at the
-                middle of the triangle bottom. <b>Note:</b> do not print anythin in the method itself, just call the
+                middle of the triangle bottom. <b>Note:</b> do not print anything in the method itself, just call the
                 helper methods to do the actual printing.</p>
 
                 <p>The method call <code>xmasTree(4)</code>, for example, has the following output:</p>
@@ -3492,7 +3496,7 @@ public static double average(int number1, int number2, int number3) {
 }
 </pre>
 
-            <p>Screencast aiheesta: TODO</p><!-- screencast -->
+            <!-- <p>Screencast aiheesta: TODO</p>   screencast -->
 
             <div class="tehtavat">
                 <div class="tehtava">
@@ -3589,7 +3593,7 @@ Greatest: 7
                     <p>Place the method in the following program body:</p>
 
 <pre class="sh_java">
-publicp static double average(int number1, int number2, int number3, int number4) {
+public static double average(int number1, int number2, int number3, int number4) {
     // write your code here
 }
 
@@ -3657,7 +3661,7 @@ char character = word.charAt(3);
 System.out.println("The 4th character of the word is " + character); //prints "e"
 </pre>
 
-            <p>The characters in a string are numbered (ot more technically speaking strings are indexed) starting from
+            <p>The characters in a string are numbered (or more technically speaking strings are indexed) starting from
             0. Because of that we can reach the last character in a string from the number (or index) "the length
             of the word minus one", or <code>word.charAt(word.length()-1)</code>. The following example will make
             the program crash, because we are trying to get a character from an index that does not exist.</p>
@@ -3860,7 +3864,7 @@ System.out.println(index); //prints -1
 System.out.println(word.substring(index)); //error!
 </pre>
 
-            <p>Screencast aiheesta: TODO</p><!-- screencast -->
+            <!-- <p>Screencast aiheesta: TODO</p>   screencast -->
 
             <div class="tehtavat">
                 <div class="tehtava">
@@ -3894,7 +3898,7 @@ Result: mple
 </pre>
 
 <pre>
-Type a word: <font color="red">esimerkki</font>
+Type a word: <font color="red">example</font>
 Length of the end part: <font color="red">6</font>
 Result: xample
 </pre>
@@ -4083,7 +4087,7 @@ public class ListProgram {
 
             <p>When the list is created, two strings are added by calling the list method <code>add</code>. The list
             will not run out of space, so theoretically the list can contain any number of Strings (as long as they fit
-            in the "machines" memory.</p>
+            in the "machines" memory).</p>
 
             <p>Internally an ArrayList is -- as its name suggests -- a list. The added strings automatically go to the
             end of the ArrayList.</p>
@@ -4209,7 +4213,7 @@ Barto is not on the teachers list
         teachers.add("Matt");
 
         int place = 0;
-        while ( place &lt; teachers.size() )  // do you remember why place &lt;= teachers.size() does not work?
+        while ( place &lt; teachers.size() )  // remember why place &lt;= teachers.size() doesn't work?
             System.out.println( teachers.get(place) );
             place++;
         }
@@ -4219,13 +4223,13 @@ Barto is not on the teachers list
             <p>Now the printing works regardless of the number of items on the list.</p>
 
             <p>Using a while repetition sentence and "self indexing" the list places is not usually the best
-            way to go through a list. A much more recommendable way is to use the for-each repetition described
+            way to go through a list. A much more recommended way is to use the for-each repetition described
             below.</p>
 
             <h3>for-each</h3>
 
             <p>Even though usually the command is referred to as for-each, the real name of the command is only
-            <code>for</code>. There are two versions of for, the traditional and the "for-each". The later is
+            <code>for</code>. There are two versions of for, the traditional and the "for-each". The latter is
             used now.</p>
 
             <p>Going through ArrayList items with for-each is like child's play:</p>
@@ -4258,7 +4262,7 @@ Barto is not on the teachers list
             <p>Even though the <code>for</code> command might seem a bit strange at first, you should definitely get
             used to using it!</p>
 
-            <p>Screencast aiheesta: TODO</p>
+            <!-- <p>Screencast aiheesta: TODO</p>   screencast -->
 
             <div class="tehtavat">
                 <div class="tehtava">
@@ -4314,7 +4318,7 @@ Type a word: <font color="red">celery</font>
 Type a word: <font color="red">turnip</font>
 Type a word: <font color="red">rutabaga</font>
 Type a word: <font color="red">celery</font>
-You gave twice the word celery
+You gave the word celery twice
 </pre>
 
                     <p><b>Hint:</b> Remember that ArrayList has the method <code>.contains()</code></p>
@@ -4323,7 +4327,7 @@ You gave twice the word celery
             <h3>Ordering, reversing and shuffling a list</h3>
 
             <p>Items on an ArrayList are easy to order by size. Ordering by size means an alphabetic order when the
-            list is of String type. Ordering happens like this::</p>
+            list is of String type. Ordering happens like this:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -4843,7 +4847,7 @@ The variance is: 5.666667
         <h2>Using truth values</h2>
 
         <p>A variable of truth value type (i.e. <code>boolean</code> can only have two values: <em>true</em> or
-        <em>false</em>. Here is an example on how to use boolean variables:</p>
+        <em>false</em>). Here is an example on how to use boolean variables:</p>
 
 <pre class="sh_java">
  
@@ -4884,7 +4888,7 @@ The variance is: 5.666667
         <code>==true</code>, writing just the name of the variable is enough!</p>
 
         <p>If we want to check if the boolean variable holds the value false, we can check that using a negation
-        operation (i.e. an exclamation mark:</p>
+        operation (i.e. an exclamation mark):</p>
 
 <pre class="sh_java">
  
@@ -4912,7 +4916,7 @@ The variance is: 5.666667
             } 
         } 
 
-        // if one of the numbers on the list had a value that was under 0, noNegatives becomes false.
+        // if one of the numbers on the list had a value that's under 0, noNegatives becomes false.
 
         return noNegative; 
     } 
@@ -5217,17 +5221,19 @@ public static int addThreeAndReturn(int incremented) {
 
 <pre class="sh_java">
  
-    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;(); 
-    numbers.add(4); 
-    numbers.add(3); 
-    numbers.add(7); 
-    numbers.add(3); 
+    public static void main(String[] args) { 
+        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;(); 
+        numbers.add(4); 
+        numbers.add(3); 
+        numbers.add(7); 
+        numbers.add(3); 
 
-    System.out.println(numbers); // prints [4,3,7,3] 
+        System.out.println(numbers); // prints [4,3,7,3] 
 
-    removeFirst(numbers); 
+        removeFirst(numbers); 
 
-    System.out.println(numbers); // prints [3,7,3] 
+        System.out.println(numbers); // prints [3,7,3] 
+    }
 </pre>
 
                 <p>Unlike a parameter of <code>int</code> type, a list will not be copied and therefore the method
@@ -5318,7 +5324,7 @@ public static int addThreeAndReturn(int incremented) {
                     habits."</em></li>
                 </ul>
 
-                <p>We are now, at the latest, taking the first steps towards that goal.</p>
+                <p>We are now taking the first steps towards those goals.</p>
 
                 <h3>Well indented and "breathing" code</h3>
 
@@ -6935,8 +6941,8 @@ Brian: The card has 73.5 euros
     }
 
     public double bodyMassIndex(){
-        double heightDividedByZero = this.height / 100.0;
-        return this.weight / ( heightDividedByZero * heightDividedByZero );
+        double heightDividedByHundred = this.height / 100.0;
+        return this.weight / ( heightDividedByHundred * heightDividedByHundred );
     }
 
     // ...
@@ -6953,8 +6959,8 @@ Brian: The card has 73.5 euros
 
 <pre class="sh_java">
     public static void main(String[] args) {
-        Person matti = new Henkilo("Matti");
-        Person john = new Henkilo("John");
+        Person matti = new Person("Matti");
+        Person john = new Person("John");
 
         matti.setHeight(180);
         matti.setWeight(86);
@@ -7222,7 +7228,7 @@ public class Main {
 <pre class="sh_java">
 public class Main {
     public static void main(String[] args)  {
-        Scanner lukija = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in);
         BoundedCounter seconds = new BoundedCounter(59);
         BoundedCounter minutes = new BoundedCounter(59);
         BoundedCounter hours = new BoundedCounter(23);
@@ -7323,7 +7329,7 @@ public class Main {
 
                 <p>Objects can also call ins own methods. Let us assume we'd like to include body mass index in the
                 string representation of the person objects. Instead of calculating the body mass index in the toString
-                method, a better idea is to call the method <code>bodyMassInded</code> from the <code>toString</code>
+                method, a better idea is to call the method <code>bodyMassIndex</code> from the <code>toString</code>
                 method:</p>
 
 <pre class="sh_java">
@@ -7426,7 +7432,7 @@ public class NumberStatistics {
         // initialize here the object variable amountOfNumbers
     }
 
-    public void addnumber(int luku) {
+    public void addnumber(int number) {
         // code here
     }
 
@@ -8353,7 +8359,7 @@ Pekka, age 35 years
         System.out.println( pekka );
 
         Person person = pekka;
-        henkilo.becomeOlder(25);
+        person.becomeOlder(25);
 
         System.out.println( pekka );
     }
@@ -8372,7 +8378,7 @@ Pekka, age 49 years
 
             <p>The command <code>Person person = pekka;</code> makes it so that <code>person</code> begins to refer to
             the same object that <code>pekka</code> refers to. So a copy of the object isn't born, but instead both
-            of the variables refer to the same object. With the command <code>Person henkilo = pekka;</code> a <em>copy
+            of the variables refer to the same object. With the command <code>Person person = pekka;</code> a <em>copy
             of the wire</em> is born. As a picture (Note: in the picture p refers to the variable pekka, and h to the
             variable person in the main program. The variable names have also been abbreviated in some of the following
             pictures.):</p>
@@ -8390,7 +8396,7 @@ Pekka, age 49 years
         System.out.println( pekka );
 
         Person person = pekka;
-        henkilo.becomeOlder(25);
+        person.becomeOlder(25);
 
         System.out.println( pekka );
 
@@ -8422,7 +8428,7 @@ Pekka Mikkola, age 24 years
         System.out.println( pekka );
 
         Person person = pekka;
-        henkilo.becomeOlder(25);
+        person.becomeOlder(25);
 
         System.out.println( pekka );
 
@@ -8462,7 +8468,7 @@ null
         System.out.println( pekka );
 
         Person person = null;
-        System.out.println( henkilo.weightIndex() );
+        System.out.println( person.weightIndex() );
     }
 </pre>
 
@@ -8996,7 +9002,7 @@ public class Person {
    Person juhana = new Person("Juhana")
 
    if ( pekka.getAge() &gt; juhana.getAge() ) {
-       System.out.println( pekka.getName() + " if older than " + juhana.getName() );
+       System.out.println( pekka.getName() + " is older than " + juhana.getName() );
    }
 </pre>
 
@@ -9038,7 +9044,7 @@ public class Person {
     // ...
 
     public boolean olderThan(Person compared) {
-        if ( this.ika &gt; compared.age ) {
+        if ( this.age &gt; compared.age ) {
             return true;
         }
 
@@ -9058,7 +9064,7 @@ public class Person {
             <p>Another example of the same theme. Let's create a class, with which we can represent dates.</p>
 
             <p>Within an object the date is represented with three objct variables. Let's also make a method with
-            which we can compare wheather the date is earlier than the date that is given as a parameter:</p>
+            which we can compare whether the date is earlier than the date that is given as a parameter:</p>
 
 <pre class="sh_java">
 public class MyDate {
@@ -9467,7 +9473,8 @@ public class Clock {
     private BoundedCounter seconds;
 
     public Clock(int hoursAtBeginning, int minutesAtBeginning, int secondsAtBeginning) {
-      // the counters that represent hours, minutes and seconds are created and set to have the correct initial values
+      // the counters that represent hours, minutes and seconds are created and
+      // set to have the correct initial values
     }
 
     public void tick(){
@@ -9897,7 +9904,8 @@ public Counter {
   }
 
   public Counter clone(){
-     // lets create a new counter object, that gets as its initial value the value of the counter that is being cloned
+     // lets create a new counter object, that gets as its initial value 
+     // the value of the counter that is being cloned
      Counter clone = new Counter(this.value);
 
      // return the clone to the caller
@@ -10471,7 +10479,7 @@ public class Money {
                     <h4>Plus</h4>
 
                     <p>Let us start by implementing the method <code>public Money plus(Money added)</code>, that
-                    returns a <em>new Money ohject</em> that has a value equal to the sum of the object for which the
+                    returns a <em>new Money object</em> that has a value equal to the sum of the object for which the
                     method was called and the object given as parameter.</p>
 
                     <p>Examples of the method usage:</p>
@@ -10486,8 +10494,10 @@ public class Money {
   System.out.println(b);  // 5.00e
   System.out.println(c);  // 15.00e
 
-  a = a.plus(c);          // NOTE: new Money-object is created and reference to that is assigned to variable a
-                          //       the Money object 10.00e that variable a used to hold, is not referenced anymore
+  a = a.plus(c);          // NOTE: new Money-object is created and reference to that 
+                          //           is assigned to variable a.
+                          //       The Money object 10.00e that variable a used to hold
+                          //           is not referenced anymore
 
   System.out.println(a);  // 25.00e
   System.out.println(b);  // 5.00e
@@ -10638,8 +10648,8 @@ numbers[1] = 101;  // setting value 101 to index 1
             exist. So we cannot refer to a cell that is past the array - to an index that is smaller than 0, or larger
             or equals the size of the array.</p>
 
-            <p>We'll notice that the array clearly is related to ArrayList. As with lists, also in arrays the
-            cells are in a certain place within them!</p>
+            <p>We'll notice that the array clearly is related to ArrayList. Arrays, as with lists, have
+ their cells in a certain order!</p>
 
             <h3>Iteration of an array</h3>
 
@@ -11293,11 +11303,11 @@ Number of stars: 22
                         NightSky-object with the given density, width and height</li>
                     </ul>
 
-                    <p>Add the class <code>NightSky</code> the method <code>printLine</code>, that prints one line of
+                    <p>Add to the class <code>NightSky</code> the method <code>printLine</code>, that prints one line of
                     starts. The line length is determined by the value of the instance variable <code>width</code> and
-                    the instance variable <code>density</code> determines the star propability. For each printed
+                    the instance variable <code>density</code> determines the star probability. For each printed
                     character you should use a <code>Random</code> object to decide if it prints out as a white space
-                    or a star. The method <code>nextDouble</code> is propably of the use now.</p>
+                    or a star. The method <code>nextDouble</code> will probably be of use now.</p>
 
                     <p>In the following an exampe:</p>
 
@@ -11361,8 +11371,8 @@ Number of stars: 3
 
             <h2>to static or not to static?</h2>
 
-            <p>When we started using objects, the material adviced to leave out the keyword 'static' when
-            defining their methods. However, up until week 3 all of the methods had the keyword in them. So what is it
+            <p>When we started using objects, the material advised to leave out the keyword 'static' when
+            defining their methods. However, up until week 3 all of the methods included that keyword. So what is it
             all about?</p>
 
             <p>The following example has a method <code>resetArray</code>, that works as its name implies; it sets
@@ -11371,24 +11381,24 @@ Number of stars: 3
 <pre class="sh_java">
 public class Program {
 
-  public static void resetArray(int[] taulukko) {
-    for ( int i=0; i &lt; taulukko.length; i++ )
-      taulukko[i] = 0;
+  public static void resetArray(int[] table) {
+    for ( int i=0; i &lt; table.length; i++ )
+      table[i] = 0;
   }
 
   public static void main(String[] args) {
     int[] values = { 1, 2, 3, 4, 5 };
 
-    for ( int luku : values ) {
-      System.out.print( luku + " " );  // tulostuu 1, 2, 3, 4, 5
+    for ( int number : values ) {
+      System.out.print( number + " " );  // prints 1, 2, 3, 4, 5
     }
 
     System.out.println();
 
     resetArray(t);
 
-    for ( int luku : values ) {
-      System.out.print( luku + " " );  // tulostuu 0, 0, 0, 0, 0
+    for ( int number : values ) {
+      System.out.print( number + " " );  // prints 0, 0, 0, 0, 0
     }
   }
 }
@@ -11422,7 +11432,7 @@ public class Program {
     ArrayHandling.resetArray(values);
 
     for ( int value : values ) {
-      System.out.print( luku + " " );  // prints: 0, 0, 0, 0, 0
+      System.out.print( number + " " );  // prints: 0, 0, 0, 0, 0
     }
   }
 }
@@ -11562,7 +11572,7 @@ public class Main {
     }
 
     private static void reportMaturity(Person person) {
-        if ( henkilo.isAdult() ) {
+        if ( person.isAdult() ) {
             System.out.println(person.getName() + " is an adult");
         } else {
             System.out.println(person.getName() + " is a minor");
@@ -11573,7 +11583,7 @@ public class Main {
 
             <p>The method <code>reportMaturity</code> is defined as static so it doesn't belong to any object,
             <strong>but</strong> the method receives a Person object as a parameter. The method is not defined within
-            the Person-class since even though it handles a Person object that it receives as a paramter, it is an
+            the Person-class since even though it handles a Person object that it receives as a parameter, it is an
             assistance method of the main program we just wrote. With the method we've made main more readable.</p>
 
             <div class="tehtavat">
@@ -11727,7 +11737,7 @@ Battle Axes, Tom A. Hawk, 1851
 
                     <p>Implement the class <code>StringUtils</code> with a <strong>static</strong> method <code>public
                     static boolean included(String word, String searched)</code>, which checks if the string
-                    <code>searched</code> is contained within the string <code>searched</code>. As described in the
+                    <code>word</code> is contained within the string <code>searched</code>. As described in the
                     previous paragraph, the method should be case insensitive and should not care about trailing and
                     ending white spaces in the string <code>searched</code>. If either of the strings is <em>null</em>,
                     the method should return <code>false</code>.</p>

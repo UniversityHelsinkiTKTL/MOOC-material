@@ -4087,7 +4087,7 @@ public class ListProgram {
 
             <p>When the list is created, two strings are added by calling the list method <code>add</code>. The list
             will not run out of space, so theoretically the list can contain any number of Strings (as long as they fit
-            in the "machines" memory.</p>
+            in the "machines" memory).</p>
 
             <p>Internally an ArrayList is -- as its name suggests -- a list. The added strings automatically go to the
             end of the ArrayList.</p>
@@ -4223,13 +4223,13 @@ Barto is not on the teachers list
             <p>Now the printing works regardless of the number of items on the list.</p>
 
             <p>Using a while repetition sentence and "self indexing" the list places is not usually the best
-            way to go through a list. A much more recommendable way is to use the for-each repetition described
+            way to go through a list. A much more recommended way is to use the for-each repetition described
             below.</p>
 
             <h3>for-each</h3>
 
             <p>Even though usually the command is referred to as for-each, the real name of the command is only
-            <code>for</code>. There are two versions of for, the traditional and the "for-each". The later is
+            <code>for</code>. There are two versions of for, the traditional and the "for-each". The latter is
             used now.</p>
 
             <p>Going through ArrayList items with for-each is like child's play:</p>
@@ -4318,7 +4318,7 @@ Type a word: <font color="red">celery</font>
 Type a word: <font color="red">turnip</font>
 Type a word: <font color="red">rutabaga</font>
 Type a word: <font color="red">celery</font>
-You gave twice the word celery
+You gave the word celery twice
 </pre>
 
                     <p><b>Hint:</b> Remember that ArrayList has the method <code>.contains()</code></p>
@@ -4327,7 +4327,7 @@ You gave twice the word celery
             <h3>Ordering, reversing and shuffling a list</h3>
 
             <p>Items on an ArrayList are easy to order by size. Ordering by size means an alphabetic order when the
-            list is of String type. Ordering happens like this::</p>
+            list is of String type. Ordering happens like this:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -4847,7 +4847,7 @@ The variance is: 5.666667
         <h2>Using truth values</h2>
 
         <p>A variable of truth value type (i.e. <code>boolean</code> can only have two values: <em>true</em> or
-        <em>false</em>. Here is an example on how to use boolean variables:</p>
+        <em>false</em>). Here is an example on how to use boolean variables:</p>
 
 <pre class="sh_java">
  
@@ -4888,7 +4888,7 @@ The variance is: 5.666667
         <code>==true</code>, writing just the name of the variable is enough!</p>
 
         <p>If we want to check if the boolean variable holds the value false, we can check that using a negation
-        operation (i.e. an exclamation mark:</p>
+        operation (i.e. an exclamation mark):</p>
 
 <pre class="sh_java">
  
@@ -5221,17 +5221,19 @@ public static int addThreeAndReturn(int incremented) {
 
 <pre class="sh_java">
  
-    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;(); 
-    numbers.add(4); 
-    numbers.add(3); 
-    numbers.add(7); 
-    numbers.add(3); 
+    public static void main(String[] args) { 
+        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;(); 
+        numbers.add(4); 
+        numbers.add(3); 
+        numbers.add(7); 
+        numbers.add(3); 
 
-    System.out.println(numbers); // prints [4,3,7,3] 
+        System.out.println(numbers); // prints [4,3,7,3] 
 
-    removeFirst(numbers); 
+        removeFirst(numbers); 
 
-    System.out.println(numbers); // prints [3,7,3] 
+        System.out.println(numbers); // prints [3,7,3] 
+    }
 </pre>
 
                 <p>Unlike a parameter of <code>int</code> type, a list will not be copied and therefore the method
@@ -5322,7 +5324,7 @@ public static int addThreeAndReturn(int incremented) {
                     habits."</em></li>
                 </ul>
 
-                <p>We are now, at the latest, taking the first steps towards that goal.</p>
+                <p>We are now taking the first steps towards those goals.</p>
 
                 <h3>Well indented and "breathing" code</h3>
 
@@ -9000,7 +9002,7 @@ public class Person {
    Person juhana = new Person("Juhana")
 
    if ( pekka.getAge() &gt; juhana.getAge() ) {
-       System.out.println( pekka.getName() + " if older than " + juhana.getName() );
+       System.out.println( pekka.getName() + " is older than " + juhana.getName() );
    }
 </pre>
 
@@ -10646,8 +10648,8 @@ numbers[1] = 101;  // setting value 101 to index 1
             exist. So we cannot refer to a cell that is past the array - to an index that is smaller than 0, or larger
             or equals the size of the array.</p>
 
-            <p>We'll notice that the array clearly is related to ArrayList. As with lists, also in arrays the
-            cells are in a certain place within them!</p>
+            <p>We'll notice that the array clearly is related to ArrayList. Arrays, as with lists, have
+ their cells in a certain order!</p>
 
             <h3>Iteration of an array</h3>
 
@@ -11301,11 +11303,11 @@ Number of stars: 22
                         NightSky-object with the given density, width and height</li>
                     </ul>
 
-                    <p>Add the class <code>NightSky</code> the method <code>printLine</code>, that prints one line of
+                    <p>Add to the class <code>NightSky</code> the method <code>printLine</code>, that prints one line of
                     starts. The line length is determined by the value of the instance variable <code>width</code> and
                     the instance variable <code>density</code> determines the star probability. For each printed
                     character you should use a <code>Random</code> object to decide if it prints out as a white space
-                    or a star. The method <code>nextDouble</code> is propably of the use now.</p>
+                    or a star. The method <code>nextDouble</code> will probably be of use now.</p>
 
                     <p>In the following an exampe:</p>
 
@@ -11370,7 +11372,7 @@ Number of stars: 3
             <h2>to static or not to static?</h2>
 
             <p>When we started using objects, the material advised to leave out the keyword 'static' when
-            defining their methods. However, up until week 3 all of the methods had the keyword in them. So what is it
+            defining their methods. However, up until week 3 all of the methods included that keyword. So what is it
             all about?</p>
 
             <p>The following example has a method <code>resetArray</code>, that works as its name implies; it sets

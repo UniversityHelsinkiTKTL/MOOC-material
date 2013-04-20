@@ -1643,7 +1643,7 @@ while (true) {
         System.out.println( "The sum of the numbers is " + sum );
     } else if (command.equals("difference")) {
         int difference = first - second;
-        System.out.println("The difference of the numbers is " + erotus);
+        System.out.println("The difference of the numbers is " + difference);
     } else {
         System.out.println("Unknown command");
     } 
@@ -2840,7 +2840,7 @@ public static void main(String[] args) {
 Hi Anthony, greetings from the world of methods!
 Hi Anthony, greetings from the world of methods!
 Hi Anthony, greetings from the world of methods!
-ja
+and
 Hi Martin, greetings from the world of methods!
 Hi Martin, greetings from the world of methods!
 </pre><!-- screencast -->
@@ -3894,7 +3894,7 @@ Result: mple
 </pre>
 
 <pre>
-Type a word: <font color="red">esimerkki</font>
+Type a word: <font color="red">example</font>
 Length of the end part: <font color="red">6</font>
 Result: xample
 </pre>
@@ -6953,8 +6953,8 @@ Brian: The card has 73.5 euros
 
 <pre class="sh_java">
     public static void main(String[] args) {
-        Person matti = new Henkilo("Matti");
-        Person john = new Henkilo("John");
+        Person matti = new Person("Matti");
+        Person john = new Person("John");
 
         matti.setHeight(180);
         matti.setWeight(86);
@@ -7222,7 +7222,7 @@ public class Main {
 <pre class="sh_java">
 public class Main {
     public static void main(String[] args)  {
-        Scanner lukija = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in);
         BoundedCounter seconds = new BoundedCounter(59);
         BoundedCounter minutes = new BoundedCounter(59);
         BoundedCounter hours = new BoundedCounter(23);
@@ -7426,7 +7426,7 @@ public class NumberStatistics {
         // initialize here the object variable amountOfNumbers
     }
 
-    public void addnumber(int luku) {
+    public void addnumber(int number) {
         // code here
     }
 
@@ -8353,7 +8353,7 @@ Pekka, age 35 years
         System.out.println( pekka );
 
         Person person = pekka;
-        henkilo.becomeOlder(25);
+        person.becomeOlder(25);
 
         System.out.println( pekka );
     }
@@ -8372,7 +8372,7 @@ Pekka, age 49 years
 
             <p>The command <code>Person person = pekka;</code> makes it so that <code>person</code> begins to refer to
             the same object that <code>pekka</code> refers to. So a copy of the object isn't born, but instead both
-            of the variables refer to the same object. With the command <code>Person henkilo = pekka;</code> a <em>copy
+            of the variables refer to the same object. With the command <code>Person person = pekka;</code> a <em>copy
             of the wire</em> is born. As a picture (Note: in the picture p refers to the variable pekka, and h to the
             variable person in the main program. The variable names have also been abbreviated in some of the following
             pictures.):</p>
@@ -8390,7 +8390,7 @@ Pekka, age 49 years
         System.out.println( pekka );
 
         Person person = pekka;
-        henkilo.becomeOlder(25);
+        person.becomeOlder(25);
 
         System.out.println( pekka );
 
@@ -8422,7 +8422,7 @@ Pekka Mikkola, age 24 years
         System.out.println( pekka );
 
         Person person = pekka;
-        henkilo.becomeOlder(25);
+        person.becomeOlder(25);
 
         System.out.println( pekka );
 
@@ -8462,7 +8462,7 @@ null
         System.out.println( pekka );
 
         Person person = null;
-        System.out.println( henkilo.weightIndex() );
+        System.out.println( person.weightIndex() );
     }
 </pre>
 
@@ -9038,7 +9038,7 @@ public class Person {
     // ...
 
     public boolean olderThan(Person compared) {
-        if ( this.ika &gt; compared.age ) {
+        if ( this.age &gt; compared.age ) {
             return true;
         }
 
@@ -11371,24 +11371,24 @@ Number of stars: 3
 <pre class="sh_java">
 public class Program {
 
-  public static void resetArray(int[] taulukko) {
-    for ( int i=0; i &lt; taulukko.length; i++ )
-      taulukko[i] = 0;
+  public static void resetArray(int[] table) {
+    for ( int i=0; i &lt; table.length; i++ )
+      table[i] = 0;
   }
 
   public static void main(String[] args) {
     int[] values = { 1, 2, 3, 4, 5 };
 
-    for ( int luku : values ) {
-      System.out.print( luku + " " );  // tulostuu 1, 2, 3, 4, 5
+    for ( int number : values ) {
+      System.out.print( number + " " );  // prints 1, 2, 3, 4, 5
     }
 
     System.out.println();
 
     resetArray(t);
 
-    for ( int luku : values ) {
-      System.out.print( luku + " " );  // tulostuu 0, 0, 0, 0, 0
+    for ( int number : values ) {
+      System.out.print( number + " " );  // prints 0, 0, 0, 0, 0
     }
   }
 }
@@ -11422,7 +11422,7 @@ public class Program {
     ArrayHandling.resetArray(values);
 
     for ( int value : values ) {
-      System.out.print( luku + " " );  // prints: 0, 0, 0, 0, 0
+      System.out.print( number + " " );  // prints: 0, 0, 0, 0, 0
     }
   }
 }
@@ -11562,7 +11562,7 @@ public class Main {
     }
 
     private static void reportMaturity(Person person) {
-        if ( henkilo.isAdult() ) {
+        if ( person.isAdult() ) {
             System.out.println(person.getName() + " is an adult");
         } else {
             System.out.println(person.getName() + " is a minor");

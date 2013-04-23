@@ -4805,80 +4805,80 @@ Sija    Nimi
 
 <div class="viikkoraja">Viikko 3</div>
 
-<h2>Single responsibility principle</h2>
+<h2>Single Responsibility Principle</h2>
 
-    <p>Isompia ohjelmia suunniteltaessa pohditaan usein mille luokalle minkäkin asian toteuttaminen kuuluu. Jos kaikki ohjelmaan kuuluva toiminnallisuus asetetaan samaan luokkaan, on tuloksena väistämättä kaaos. Ohjelmistojen suunnittelun osa-alue <em>oliosuunnittelu</em> sisältää periaatteen <em>Single responsibility principle</em>, jota meidän kannattaa seurata.</p>
+    <p>When we design bigger programs, we often reason about what class has do deal with what task. If we delegate the implementation of the whole program to one class, the result is inevitably chaos. A sector of software design, <em>object-oriented design</em>, includes the <em>Single Responsibility Principle</em>, which we should follow.</p>
 
-    <p>Single responsibility principle sanoo että jokaisella luokalla tulee olla vain yksi vastuu ja selkeä tehtävä. Jos luokalla on yksi selkeä tehtävä, on tehtävässä tapahtuvien muutosten toteuttaminen helppoa, muutos tulee tehdä vain yhteen luokkaan. <em>Jokaisella luokalla tulisi olla vain yksi syy muuttua</em>.</p>
+    <p>The Single Responsibility Principle states that each class should have only one clear role. If the class has got one clear role, modifying that role is easy, and only one class will have to be modified. <em>Each class should have only one reason to be modified.</em>.</p>
 
-    <p>Tutkitaan seuraavaa luokkaa <code>Tyontekija</code>, jolla on metodit palkan laskemiseen ja tuntien raportointiin.</p>
+    <p>Let us focus on the following class <code>Worker</code>, which has got methods to calculate his salary and to report his working hours.</p>
 
 <pre class="sh_java">
-public class Tyontekija {
-    // oliomuuttujat
+public class Worker {
+    // object variables
 
-    // työntekijään liittyvät konstruktorit ja metodit
+    // worker's constructor and methods
 
-    public double laskePalkka() {
-        // palkan laskemiseen liittyvä logiikka
+    public double calculateSalary() {
+        // the logic concerning salary count
     }
 
-    public String raportoiTunnit() {
-        // työtuntien raportointiin liittyvä logiikka
-    }
-}
-</pre>
-
-    <p>Vaikka yllä olevasta esimerkistä puuttuvat konkreettiset toteutukset, tulisi hälytyskellojen soida. Luokalla <code>Tyontekija</code> on ainakin kolme eri vastuualuetta. Se kuvaa sovelluksessa työntekijää, se toteuttaa palkanlaskennan tehtävää palkan laskemisesta, ja tuntiraportointijärjestelmän tehtävää työtuntien raportoinnista. Yllä oleva luokka pilkkoa kolmeen osaan: yksi osa kuvaa työntekijää, toinen osa palkanlaskentaa ja kolmas osa tuntikirjanpitoa.</p>
-
-<pre class="sh_java">
-public class Tyontekija {
-    // oliomuuttujat
-
-    // työntekijään liittyvät konstruktorit ja metodit
-}
-</pre>
-
-<pre class="sh_java">
-public class Palkanlaskenta {
-    // oliomuuttujat
-
-    // palkanlaskentaan liittyvät metodit
-
-    public double laskePalkka(Person henkilo) {
-        // palkan laskemiseen liittyvä logiikka
+    public String reportHours() {
+        // the logic concerning working hours bookkeeping
     }
 }
 </pre>
 
+    <p>Even if the examples above do not show the concrete implementations, an alarm should go off. Our <code>Worker</code> class has got at least three different responsibilities. It represents a worker, it performes the role of a salary calculator, and the role of a working hour bookkeping system by reporting working hours. The class above should be split into three: one should represent the worker, another should represent the salary calculator, and the third should deal with time bookkeeping.</p>
 
 <pre class="sh_java">
-public class Tuntikirjanpito {
-    // oliomuuttujat
+public class Woker {
+    // object variables
 
-    // tuntikirjanpitoon liittyvät metodit
+    // worker's constructor and methods
+}
+</pre>
 
-    public String luoTuntiraportti(Person henkilo) {
-        // työtuntien raportointiin liittyvä logiikka
+<pre class="sh_java">
+public class SalaryCalculator {
+    // object variables
+
+    // methods for salary count
+
+    public double calculateSalary(Person person) {
+        // salary calculation logic
     }
 }
 </pre>
 
-    <p><em>Jokainen muuttuja, jokainen koodirivi, jokainen metodi, jokainen luokka, ja jokainen ohjelma pitäisi olla vain yhtä tarkoitusta varten. Usein ohjelman "parempi" rakenne on ohjelmoijalle selkeää vasta kun ohjelma on toteutettu jo kertaalleen. Tämä on täysin hyväksyttävää: vielä tärkeämpää on se, että ohjelmaa pyritään muuttamaan aina selkeämpään suuntaan. <strong>Refaktoroi eli muokkaa ohjelmaasi aina tarpeen tullen!</strong></em></p>
-
-
-<h2>Luokkien organisointi pakkauksiin</h2>
-
-    <p>Suurempia ohjelmia suunniteltaessa ja toteutettaessa luokkamäärä kasvaa helposti suureksi. Luokkien määrän kasvaessa niiden tarjoamien toiminnallisuuksien ja metodien muistaminen vaikeutuu. Järkevä luokkien nimentä helpottaa toiminnallisuuksien muistamista. Järkevän nimennän lisäksi lähdekooditiedostot kannattaa jakaa toiminnallisuutta, käyttötarkoitusta tai jotain muuta loogista kokonaisuutta kuvaaviin pakkauksiin. Pakkaukset (<em>package</em>) ovat käytännössä hakemistoja, joihin lähdekooditiedostot organisoidaan. Windowsissa ja puhekielessä hakemistoja (engl. directory) kutsutaan usein kansioiksi. Me käytämme kuitenkin termiä hakemisto.</p>
-
-    <p>Ohjelmointiympäristöt tarjoavat valmiit työkalut pakkausten hallintaan. Olemme tähän mennessä luoneet luokkia ja rajapintoja vain projektiin liittyvän lähdekoodipakkaukset-osion (<code>Source Packages</code>) oletuspakkaukseen (<code>default package</code>). Uuden pakkauksen voi luoda NetBeansissa projektin pakkauksiin liittyvässä <code>Source Packages</code> -osiossa oikeaa hiirennappia painamalla ja valitsemalla <code>New -&gt; Java Package...</code>. Luodun pakkauksen sisälle voidaan luoda luokkia aivan kuten oletuspakkaukseenkin (<code>default package</code>).</p>
-
-  <p>Pakkaus, jossa luokka sijaitsee, näkyy lähdekooditiedoston alussa ennen muita komentoja olevasta lauseesta <code>package <em>pakkaus</em></code>. Esimerkiksi alla oleva luokka <code>Sovellus</code> sijaitsee pakkauksessa <code>kirjasto</code>.</p>
 
 <pre class="sh_java">
-package kirjasto;
+public class TimeBookkeeping {
+    // object variables
 
-public class Sovellus {
+    // methods concerning time bookkeeping
+
+    public String createHourReport(Person person) {
+        // working hours bookeeping logic
+    }
+}
+</pre>
+
+    <p><em>Each variable, each code raw, each method, each class, and each program should have only one responsibility. Often a "better" program stucture is clear to the programmer only once the program is implemented. This is completely acceptable: even more important it is that we always try to change a program to make it clearer. <strong>Always refactor -- i.e. always improve your program when it is needed!</strong></em></p>
+
+
+<h2>Organising Classes into Packages</h2>
+
+    <p>When we design and implement bigger programs, the number of classes rapidly grows. When the number of classes grows, remembering their functionality and methods becomes more difficult. Giving sensible names to classes helps to remember their funcitonality. In addition to giving sensible names, it is good to split the source code files into packages according to their functionality, use, and other logical reasons. In fact, the <em>packages</em> are but folders we use to organise our source code files. Directories are often called folders, both in windows and colloqually. We will use the term directory, anyway.</p>
+
+    <p>Programming environments provide made-up tools for package management. So far, we have been creating classes and interfaces only in the <code>default package</code> of the <code>Source Packages</code> partition. In NetBeans, we can create a new package by clicking on <code>Source Packages</code>, and choosing <code>New -&gt; Java Package...</code>. In the created package, we can create classes in the same way as we do in the <code>default package</code>.</p>
+
+  <p>You can read the name of the package that contains a certain class is visible at the beginning of the source code files in the sentence <code>package <em>packageName</em></code> before the other statements. For instance, the below class <code>Implementation</code> is contained in the package <code>library</code>.</p>
+
+<pre class="sh_java">
+package library;
+
+public class Implementation {
 
     public static void main(String[] args) {
         System.out.println("Hello packageworld!");
@@ -4886,16 +4886,16 @@ public class Sovellus {
 }
 </pre>
 
-  <p>Pakkaukset voivat sisältää pakkauksia. Esimerkiksi pakkausmäärittelyssä <code>package kirjasto.domain</code> pakkaus <code>domain</code> on pakkauksen <code>kirjasto</code> sisällä. Asettamalla pakkauksia pakkausten sisään rakennetaan sovelluksen luokille ja rajapinnoille hierarkiaa. Esimerkiksi kaikki Javan luokat sijaitsevat pakkauksen <code>java</code> alla olevissa pakkauksissa. Pakkausnimeä <code>domain</code> käytetään usein kuvaamaan sovellusalueen käsitteisiin liittyvien luokkien säilytyspaikkaa. Esimerkiksi luokka <code>Book</code> voisi hyvin olla pakkauksen <code>kirjasto.domain</code> sisällä sillä se kuvaa kirjastosovellukseen liittyvää käsitettä.</p>
+  <p>Packages can contain other packages. For instance, the package definition <code>package library.domain</code> means that the package <code>domain</code> is contained in the package <code>library</code>. By placing packages into other packages, we design the hierachy of classes and interfaces. For instance, all Java's classes are located in packages that are contained in the package <code>java</code>. The package name <code>domain</code> is often used to represent the storage location of the classes which deal with concepts specific for the domain. For instance, the class <code>Book</code> could be stored in the package <code>library.domain</code> because it represents a concept specific of the library.</p>
 
 <pre class="sh_java">
-package kirjasto.domain;
+package library.domain;
 
 public class Book {
     private String name;
 
     public Book(String name) {
-        this.name = nimi;
+        this.name = name;
     }
 
     public String getName() {
@@ -4904,30 +4904,30 @@ public class Book {
 }
 </pre>
 
-  <p>Pakkauksissa olevia luokkia tuodaan luokan käyttöön <code>import</code>-lauseen avulla. Esimerkiksi <code>kirjasto</code>-pakkauksessa oleva luokka <code>Sovellus</code> saisi käyttöönsä pakkauksessa <code>kirjasto.domain</code> olevan luokan määrittelyllä <code>import kirjasto.domain.Book</code>.</p>
+  <p>We can uses the classes stored in our packages through the <code>import</code> statement. For instance, the class <code>Implementation</code>, which is contained in the package <code>library</code> could make use of a class stored in <code>library.domain</code> through the assignment <code>import kirjasto.domain.Book</code>.</p>
 
 
 <pre class="sh_java">
-package kirjasto;
+package librart;
 
-import kirjasto.domain.Book;
+import library.domain.Book;
 
-public class Sovellus {
+public class Implementation {
 
     public static void main(String[] args) {
-        Book kirja = new Book("pakkausten ABC!");
-        System.out.println("Hello packageworld: " + kirja.getName());
+        Book book = new Book("The ABC of Packages!");
+        System.out.println("Hello packageworld: " + book.getName());
     }
 }
 </pre>
 
 <pre>
-Hello packageworld: pakkausten ABC!
+Hello packageworld: The ABC of Packages!
 </pre>
 
-    <p>Import-lauseet asetetaan lähdekooditiedostossa pakkausmäärittelyn jälkeen mutta ennen luokkamäärittelyä. Niitä voi olla myös useita -- esimerkiksi kun haluamme käyttää useita luokkia. Javan valmiit luokat sijaitsevat yleensä ottaen pakkauksen <code>java</code> alipakkauksissa. Luokkiemme alussa usein esiintyvät lauseet <code>import java.util.ArrayList</code> ja <code>import java.util.Scanner;</code> alkavat nyt toivottavasti vaikuttaa merkityksellisimmiltä.</p>
+    <p>The import statements are defined in our source code file after the package statement but before the class statement. There can be many of them -- for instance, when we want to use different classes. Java's made-up classes are usually stored in <code>java</code> package child packages. Hopefully, the statements which appear at the beginning of our classes -- such as <code>import java.util.ArrayList</code> and <code>import java.util.Scanner;</code> -- are starting to look more meaningful now.</p>
 
-    <p>Jatkossa <em>kaikissa</em> tehtävissämme käytetään pakkauksia. Luodaan seuraavaksi ensimmäiset pakkaukset itse.</p>
+    <p>From now on, in <em>all</em> our excercises we will use packages. Next, we will create our first packages ourselves.</p>
 
 <div class="tehtavat" id="viikko9">
 
@@ -4986,519 +4986,517 @@ Päivitetään käyttöliittymää
 
 </div>
 
-    <h3>Konkreettinen hakemistorakenne</h3>
+    <h3>A Concrete Directory Construction</h3>
 
-    <p>Kaikki NetBeansissa näkyvät projektit ovat tietokoneesi <em><a href="http://fi.wikipedia.org/wiki/Tiedostoj%C3%A4rjestelm%C3%A4" target="_blank">tiedostojärjestelmässä</a></em>. Jokaiselle projektille on olemassa oma hakemisto (eli kansio), jonka sisällä on projektiin liittyvät tiedostot ja hakemistot.</p>
+    <p>All the projects which can be seen are stored in your computer <em><a href="http://en.wikipedia.org/wiki/File_system" target="_blank">file system</a></em>. Each project has got its own directory (folder) which contains the project directories and files.</p>
 
-    <p>Projektin hakemistossa <code>src</code> on ohjelmaan liittyvät lähdekoodit. Jos luokan pakkauksena on kirjasto, sijaitsee se projektin lähdekoodihakemistoon <code>src</code> sisällä olevassa hakemistossa <code>kirjasto</code>. Jos olet kiinnostunut, NetBeansissa voi käydä katsomassa projektien konkreettista rakennetta <em>Files</em>-välilehdeltä joka on normaalisti <em>Projects</em>-välilehden vieressä. Jos et näe välilehteä <em>Files</em>, saa sen näkyville valitsemalla vaihtoehdon <em>Files</em> valikosta <em>Window</em>.</p>
+    <p>The project directory <code>src</code> contains the program source code. If a class package is a library, it is located in the directory <code>library</code> of the project source code directory <code>src</code>. If you are interested in it, it is possible to have a look at the concrete project structure in NetBeans, by going to the <em>Files</em> tab which is next to the <em>Projects</em> tab. If you can't see the <em>Files</em> tab, you can display it by choosing <em>Files</em> from the <em>Window</em> menu.</p>
 
-    <p>Sovelluskehitystä tehdään normaalisti <em>Projects</em>-välilehdeltä, jossa NetBeans on piilottanut projektiin liittyviä tiedostoja joista ohjelmoijan ei tarvitse välittää.</p>
+    <p>Application development is usually done through the <em>Projects</em> tab, where NetBeans has hidden the project files which the programmer doesn't have to care about.</p>
 
-    <h3>Näkyvyysmääreet ja pakkaukset</h3>
+    <h3>Visibility Definitions and Packages</h3>
 
-    <p>Olemme aiemmin tutustuneet kahteen näkyvyysmääreeseen. Näkyvyysmääreellä <code>private</code> varustetut metodit ja muuttujat ovat näkyvissä vain sen luokan sisällä joka määrittelee ne. Niitä ei voi käyttää luokan ulkopuolelta. Näkyvyysmääreellä <code>public</code> varustetut metodit ja muuttujat ovat taas kaikkien käytettävissä.</p>
+    <p>We have already managed to know two visibility definitions. The method and variables with the visibility definition <code>private</code> are visible only inside the class that defines them. They cannot be used outside the class. Differently, the method and variables with visibility definition <code>public</code> are visible for any class.</p>
 
 <pre class="sh_java">
-package kirjasto.ui;
+package library.ui;
 
-public class Kayttoliittyma {
-    private Scanner lukija;
+public class UserInterface {
+    private Scanner reader;
 
-    public Kayttoliittyma(Scanner lukija) {
-        this.lukija = lukija;
+    public Kayttoliittyma(Scanner reader) {
+        this.reader = reader;
     }
 
     public void start() {
-        tulostaOtsikko();
+        printTitle();
 
-        // muu toiminnallisuus
+        // more functionality
     }
 
-    private void tulostaOtsikko() {
-        System.out.println("************");
-        System.out.println("* KIRJASTO *");
-        System.out.println("************");
+    private void printTitle() {
+        System.out.println("***********");
+        System.out.println("* LIBRARY *");
+        System.out.println("***********");
     }
 }
 </pre>
 
-    <p>Yllä olevasta <code>Kayttoliittyma</code>-luokasta tehdyn olion konstruktori ja <code>start</code>-metodi on kutsuttavissa mistä tahansa ohjelmasta. Metodi <code>tulostaOtsikko</code> ja <code>lukija</code>-muuttuja on käytössä vain luokan sisällä.</p>
+    <p>The object constructor and <code>start</code> method of the above class <code>UserInterface</code> can be called from whatever program. The method <code>printTitle</code> and the variable <code>reader</code> can be used only inside their class.</p>
 
-    <p>Pakkausnäkyvyyttä käytettäessä muuttujille tai metodeille ei aseteta mitään näkyvyyteen liittyvää etuliitettä. Muutetaan yllä olevaa esimerkkiä siten, että metodilla <code>tulostaOtsikko</code> on pakkausnäkyvyys.</p>
+    <p>When we want to assign package visibility to a variable or a method, we do not need to use any prefix. We can modify the example above assigning package visibility to the method <code>printTitle</code>.</p>
 
 <pre class="sh_java">
-package kirjasto.ui;
+package library.ui;
 
-public class Kayttoliittyma {
-    private Scanner lukija;
+public class UserInterface {
+    private Scanner reader;
 
-    public Kayttoliittyma(Scanner lukija) {
-        this.lukija = lukija;
+    public Kayttoliittyma(Scanner reader) {
+        this.reader = reader;
     }
 
     public void start() {
-        tulostaOtsikko();
+        printTitle();
 
-        // muu toiminnallisuus
+        // more functionality
     }
 
-    void tulostaOtsikko() {
-        System.out.println("************");
-        System.out.println("* KIRJASTO *");
-        System.out.println("************");
+    void printTitle() {
+        System.out.println("***********");
+        System.out.println("* Library *");
+        System.out.println("***********");
     }
 }
 </pre>
 
-    <p>Nyt <em>saman pakkauksen sisällä</em> olevat luokat voivat käyttää metodia <code>tulostaOtsikko</code>.
+    <p>Now, the classes <em>inside the same package</em> can use the method <code>printTitle</code>.
 
 <pre class="sh_java">
-package kirjasto.ui;
+package library.ui;
 
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner lukija = new Scanner(System.in);
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(lukija);
+        Scanner reader = new Scanner(System.in);
+        UserInterface userInterface = new UserInterface(reader);
 
-        kayttoliittyma.tulostaOtsikko(); // onnistuu!
+        userInterface.printTitle(); // it works!
     }
 }
 </pre>
 
-    <p>Jos luokka on eri pakkauksessa, ei metodia <code>tulostaOtsikko</code> pysty käyttämään.</p>
+    <p>If the class is in a different package, the method <code>printTitle</code> can't be used.</p>
 
 <pre class="sh_java">
-package kirjasto;
+package library;
 
 import java.util.Scanner;
-import kirjasto.ui.Kayttoliittyma;
+import library.ui.UserInterface;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner lukija = new Scanner(System.in);
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(lukija);
+        Scanner reader = new Scanner(System.in);
+        UserInterface userInterface = new UserInterface(reader);
 
-        kayttoliittyma.tulostaOtsikko(); // ei onnistu!
+        userInterface.printTitle(); // it doesn't work	!
     }
 }
 </pre>
 
-<h2>Monta rajapintaa ja rajapintojen tarjoamasta joustavuudesta</h2>
+<h2>Many Interfaces, and Interface Flexibility</h2>
 
-    <p>Viime viikolla tutustuimme rajapintoihin. Rajapinta siis määrittelee yhden tai useamman metodin, jotka sen toteuttavan luokan on pakko toteuttaa. Rajapintoja, kuten kaikkia luokkia voi asettaa pakkauksiin. Esimerkiksi seuraava <code>Tunnistettava</code>-rajapinta sijaitsee pakkauksessa <code>sovellus.domain</code>, ja määrittelee että <code>Tunnistettava</code>-rajapinnan toteuttavien luokkien tulee toteuttaa metodi <code>public String getTunnus()</code>.</p>
+    <p>Last week we were introduced to interfaces. An interface defines one or more methods which have to be implemented in the class which implements the interface. The interfaces can be stored into packages like any other class. For instance, the interface <code>Identifiable</code> below is located in the package <code>application.domain</code>, and it defines that the classes which implement it have to implement the method <code>public String getID()</code>.</p>
 
 <pre class="sh_java">
-package sovellus.domain;
+package application.domain;
 
-public interface Tunnistettava {
-    String getTunnus();
+public interface Identifiable {
+    String getID();
 }
 </pre>
 
-    <p>Luokka toteuttaa rajapinnan <code>implements</code>-avainsanalla. Toteutetaan luokka <code>Person</code>, joka toteuttaa rajapinnan tunnistettava. Person-luokan metodi <code>getTunnus</code> palauttaa aina henkilön henkilötunnuksen.</p>
+    <p>The class makes use of the interface through the keyword <code>implements</code>. The class <code>Person</code>, which implements the <code>Idenfifiable</code> interface. The <code>getID</code>of Person class always returns the person ID.</p>
 
 <pre class="sh_java">
-package sovellus.domain;
+package application.domain;
 
-public class Person implements Tunnistettava {
+public class Person implements Identifiable {
     private String name;
-    private String henkilotunnus;
+    private String id;
 
-    public Person(String name, String henkilotunnus) {
-        this.name = nimi;
-        this.henkilotunnus = henkilotunnus;
+    public Person(String name, String id) {
+        this.name = name;
+        this.id = id;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public String getPersontunnus() {
-        return this.henkilotunnus;
+    public String getPersonID() {
+        return this.id;
     }
 
     @Override
-    public String getTunnus() {
-        return getPersontunnus();
+    public String getID() {
+        return getPersonID();
     }
 
     @Override
     pulic toString(){
-        return this.name + " hetu: " +this.henkilotunnus; 
+        return this.name + " ID: " +this.id; 
     }
 }
 </pre>
 
 
-    <p>Rajapintojen vahvuus on se, että rajapinta on myös <em>tyyppi</em>. Kaikki rajapinnan toteuttavista luokista tehdyt oliot ovat myös rajapinnan tyyppisiä. Tämä helpottaa sovellusten rakentamista huomattavasti.</p>
+    <p>An interface strength is that interfaces are also <em>types</em>. All the objects which are created from classes that implement an interface also have that interface's type. This effictively helps us to build our applications.</p>
 
-    <p>Tehdään luokka <code>Rekisteri</code>, josta voimme hakea henkilöitä tunnisteen perusteella. Yksittäisten henkilöiden hakemisen lisäksi <code>Rekisteri</code> tarjoaa metodin kaikkien henkilöiden hakemiseen listana.</p>
+    <p>We create the class <code>Register</code>, which we can use to search for people against their names. In addition to retrieve single people, <code>Register</code> provides a method to retrieve a list with all the people.</p>
 
 <pre class="sh_java">
-public class Rekisteri {
-    private HashMap&lt;String, Tunnistettava&gt; rekisteroidyt;
+public class Register {
+    private HashMap&lt;String, Identifiable&gt; registered;
 
-    public Rekisteri() {
-        this.rekisteroidyt = new HashMap&lt;String, Tunnistettava&gt;();
+    public Register() {
+        this.registered = new HashMap&lt;String, Identifiable&gt;();
     }
 
-    public void lisaa(Tunnistettava lisattava) {
-        this.rekisteroidyt.put(lisattava.getTunnus(), lisattava);
+    public void add(Identifiable toBeAdded) {
+        this.registered.put(toBeAdded.getID(), toBeAdded);
     }
 
-    public Tunnistettava hae(String tunnus) {
-        return this.rekisteroidyt.get(tunnus);
+    public Identifiable get(String id) {
+        return this.registered.get(id);
     }
 
-    public List&lt;Tunnistettava&gt; haeKaikki() {
-        return new ArrayList&lt;Tunnistettava&gt;(rekisteroidyt.values());
+    public List&lt;Identifiable&gt; getAll() {
+        return new ArrayList&lt;Identifiable&gt;(registered.values());
     }
 }
 </pre>
 
-<p>Rekisterin käyttö on helppoa</p>
+<p>Using the register is easy.</p>
 
 <pre class="sh_java">
-Rekisteri henkilokunta = new Rekisteri();
-henkilokunta.lisaa( new Person("Pekka", "221078-123X") );
-henkilokunta.lisaa( new Person("Jukka", "110956-326B") );
+Register personnel = new Register();
+personnel.add( new Person("Pekka", "221078-123X") );
+personnel.add( new Person("Jukka", "110956-326B") );
 
-System.out.println( rekisteri.hae("280283-111A") );
+System.out.println( personnel.get("280283-111A") );
 
-Person loydetty = (Person)rekisteri.hae("110956-326B");
-System.out.println( loydetty.getName() );
+Person found = (Person) register.get("110956-326B");
+System.out.println( found.getName() );
 </pre>
 
-<p>Koska henkilöt on talletettu rekisteriin <code>Tunnistettava</code>-tyyppisinä, joudumme muuntanaan ne takaisin oikeaan tyyppiin jos haluamme käsitellä henkilöitä sellaisten metodien kautta, joita ei rajapinnassa ole määritelty. Näin tapahtuu yllä olevan esimerkin kahdella viimeisellä rivillä.</p>
+<p>Because the people are recorded in the register as <code>Identifiable</code>, we have to change back their type if we want to deal with people through those methods which are not defined in the interface. This is what happens in the last two lines.</p>
 
-    <p>Entä jos haluaisimme operaation, joka palauttaa rekisteriin talletetut henkilöt tunnisteen mukaan järjestettynä?</p>
+    <p>What about if we wanted an operation which returns the people recorded in our register sorted according to their ID?</p>
 
-    <p>Yksi luokka voi toteuttaa useamman rajapinnan, eli voimme toteuttaa <code>Person</code>-luokalla rajapinnan <code>Tunnistettava</code> lisäksi viime viikolta tutun rajapinnan <code>Comparable</code>. Useamman rajapinnan toteuttaminen tapahtuu erottamalla toteutettavat rajapinnat toisistaan pilkuilla (<code>public class ... implements <em>RajapintaEka</em>, <em>RajapintaToka</em> ...</code>). Toteuttaessamme useampaa rajapintaa, tulee meidän toteuttaa kaikki rajapintojen vaatimat metodit. Toteutetaan seuraavaksi luokalla <code>Person</code> rajapinta <code>Comparable</code>.</p>
+    <p>One class can implement various different interfaces, and our <code>Person</code> class can implement <code>Comparable</code> in addition to <code>Identifiable</code>. When we implement various different interfaces, we separate them with a comma (<code>public class ... implements <em>FirstInterface</em>, <em>SecondInterface</em> ...</code>). When we implement many interfaces, we have to implement all the methods required by all the interfaces. Below, we implement the interface <code>Comparable</code> in the class <code>Person</code>.</p>
 
 <pre class="sh_java">
-package sovellus.domain;
+package application.domain;
 
-public class Person implements Tunnistettava, Comparable&lt;Person&gt; {
+public class Person implements Identifiable, Comparable&lt;Person&gt; {
     private String name;
-    private String henkilotunnus;
+    private String id;
 
-    public Person(String name, String henkilotunnus) {
-        this.name = nimi;
-        this.henkilotunnus = henkilotunnus;
+    public Person(String name, String id) {
+        this.name = name;
+        this.id = id;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public String getPersontunnus() {
-        return this.henkilotunnus;
+    public String getPersonID() {
+        return this.id;
     }
 
     @Override
-    public String getTunnus() {
-        return getPersontunnus();
+    public String getID() {
+        return getPersonID();
     }
 
     @Override
-    public int compareTo(Person toinen) {
-        return this.getTunniste().compareTo(toinen.getTunniste());
+    public int compareTo(Person another) {
+        return this.getID().compareTo(toinen.getID());
     }
 }
 </pre>
 
-    <p>Nyt voimme lisätä rekisterille metodin haeKaikkiJarjestyksessa:</p>
+    <p>Now, we can ad to the registerd the method sortAndGetEverything:</p>
 
 <pre class="sh_java">
-    public List&lt;Tunnistettava&gt; haeKaikkiJarjestyksessa() {
-        ArrayList&lt;Tunnistettava&gt; kaikki = new ArrayList&lt;Tunnistettava&gt;(rekisteroidyt.values());;
-        Collections.sort(kaikki);
-        return kaikki;
+    public List&lt;Identifiable&gt; sortAndGetAll() {
+        ArrayList&lt;Identifiable&gt; all = new ArrayList&lt;Identifiable&gt;(registered.values());;
+        Collections.sort(all);
+        return all;
     }
 </pre>
 
-<p>Huomaamme kuitenkin, että ratkaisumme ei toimi. Koska henkilöt on talletettu rekisteriin <code>Tunnitettava</code>-tyyppisinä, onkin Henkilön toteutettava rajapinta <code>Comparable&lt;Tunnistettava&gt;</code> jotta rekisteri osaisi järjestää henkilöt metodin <code>Collections.sort()</code> avulla. Eli muutamme henkilön toteuttamaa rajapintaa:</p>
+<p>However, we notice that our solution does not work. Because the people are recorded into the register as if their type was <code>Identifiable</code>, Person has to implement the interface <code>Comparable&lt;Identifiable&gt;</code> so that our register could sort people with its method <code>Collections.sort()</code>. This means we have to modify Person's interface:</p>
 
 <pre class="sh_java">
-public class Person implements Tunnistettava, Comparable&lt;Tunnistettava&gt; {
+public class Person implements Identifiable, Comparable&lt;Identifiable&gt; {
     // ... 
 
     @Override
-    public int compareTo(Tunnistettava toinen) {
-        return this.getTunniste().compareTo(toinen.getTunniste());
+    public int compareTo(Identifiable another) {
+        return this.getID().compareTo(toinen.getID());
     }
 }
 </pre>
 
-<p>Nyt ratkaisu toimii!</p>
+<p>Now our solution works!</p>
 
-<p>Rekisteri on täysin tietämätön sinne talletettavien olioiden todellisesta tyypistä. Voimmekin käyttää luokkaa rekisteri myös muuntyyppisten olioiden kuin henkilöiden rekisteröintiin, kunhan olioiden luokka vaan toteuttaa rajapinnan <code>Tunnistettava</code>. Esim. seuraavassa käytetään rekisteriä kaupassa myytävien tuotteiden hallintaan:</p>
+<p>Our Register is unaware of the real type of the objects we record. We can use the class Register to record objects of different types than Person, as long as the object class implements the interface <code>Identifiable</code>. For instance, below we use the register to manage shop sales:</p>
 
 <pre class="sh_java">
-public class Tuote implements Tunnistettava {
+public class Sale implements Identifiable {
     private String name;
-    private String viivakoodi;
-    private int varastosaldo;
-    private int hinta;
+    private String barcode;
+    private int stockBalance;
+    private int price;
 
-    public Tuote(String name, String viivakoodi) {
-        this.name = nimi;
-        this.viivakoodi = viivakoodi;
+    public Tuote(String name, String barcode) {
+        this.name = name;
+        this.barcode = barcode;
     }
 
-    public String getTunniste() {
-        return viivakoodi;
+    public String getID() {
+        return barcode;
     }
 
     // ...
 }
 
-Rekisteri tuotteet = new Rekisteri();
-tuotteet.lisaa( new Tuote("maito", "11111111") );
-tuotteet.lisaa( new Tuote("piimä", "11111112") );
-tuotteet.lisaa( new Tuote("juusto", "11111113") );
+Register products = new Register();
+products.add( new Product("milk", "11111111") );
+products.add( new Product("yogurt", "11111112") );
+products.add( new Product("cheese", "11111113") );
 
-System.out.println( tuotteet.hae("99999999") );
+System.out.println( products.get("99999999") );
 
-Tuote tuote = (Tuote)tuotteet.hae("11111112");
-tuote.kasvataSaldoa(100);
-tuote.muutaHinta(23);
+Product product = (Product)products.get("11111112");
+product.increaseStock(100);
+product.changePrice(23);
 </pre>
 
-<p>Eli olemme tehneet luokasta <code>Rekisteri</code> melko yleiskäyttöisen pitämällä sen riippumattomana konkreettisista luokista. Mikä tähänsa luokka, joka toteuttaa rajapinnan <code>Tunnistettava</code> on rekisterin kanssa käyttökelpoinen. Metodin <code>haeKaikkiJarjestyksessä</code> toimiminen tosin edellyttää luokalta myös vertailtavuuden eli Comparable&lt;Tunnistettava&gt;-rajapinnan toteuttamisen.</p>
+<p>The class <code>Register</code> is quite universal now that it is not dependent on concrete classes. Whatever class which implements <code>Identifiable</code> is compatible with Register. However, the metodi <code>sortAndGetEverything</code> can only work if we implement the interface Comparable&lt;Identifiable&gt;.</p>
 
-<!--
 
-    <p>Tehdään luokka <code>Personrekisteri</code>, josta voimme hakea henkilöitä <code>Tunnistettava</code>-rajapinnan avulla. Yksittäisten henkilöiden hakemisen lisäksi <code>Personrekisteri</code> tarjoaa metodin kaikkien henkilöiden hakemiseen listana.</p>
+
+    <p>We create now the class <code>PersonRegister</code> which returns people using the interface <code>Identifiable</code>. In addition to retrieve individuals, <code>PersonRegister</code> provides a method to return a list with all the people.</p>
 
 <pre class="sh_java">
-public class Personrekisteri {
-    private HashMap&lt;String, Person&gt; henkilot;
+public class PersonRegister {
+    private HashMap&lt;String, Person&gt; people;
 
-    public Personrekisteri(HashMap&lt;String, Person&gt; henkilot) {
-        this.henkilot = henkilot;
+    public PersonRegister(HashMap&lt;String, Person&gt; people) {
+        this.people = people;
     }
 
-    public void lisaaPerson(Person henkilo) {
-        this.henkilot.put(henkilo.getTunnus(), henkilo);
+    public void addPerson(Person person) {
+        this.people.put(person.getID(), person);
     }
 
-    public void haePersonTunnuksella(Tunnistettava tunnistettava) {
-        this.henkilot.get(tunnistettava.getTunnus());
+    public void getPersonByID(Identifiable identifiable) {
+        this.people.get(identifiable.getID());
     }
 
-    public List&lt;Person&gt; getPersont() {
-        return new ArrayList&lt;Person&gt;(henkilot.values());
+    public List&lt;Person&gt; getPerson() {
+        return new ArrayList&lt;Person&gt;(people.values());
     }
 }
 </pre>
 
-    <p>Entä jos haluaisimme järjestää henkilölistan aakkosjärjestykseen?</p>
+    <p>What about if we wanted to order our list in alphabetic order?</p>
 
 
-    <p>Yksi luokka voi toteuttaa useamman rajapinnan, eli voimme toteuttaa <code>Person</code>-luokalla rajapinnan <code>Tunnistettava</code> lisäksi viime viikolta tutun rajapinnan <code>Comparable</code>. Useamman rajapinnan toteuttaminen tapahtuu erottamalla toteutettavat rajapinnat toisistaan pilkuilla (<code>public class ... implements <em>RajapintaEka</em>, <em>RajapintaToka</em> ...</code>). Toteuttaessamme useampaa rajapintaa, tulee meidän toteuttaa kaikki rajapintojen vaatimat metodit. Toteutetaan seuraavaksi luokalla <code>Person</code> rajapinta <code>Comparable</code>.</p>
+    <p>One class can implement various different interfaces; in addition to <code>Identifiable</code> the class <code>Person</code> can implement the interface we saw last week, <code>Comparable</code>. We can implement different interfaces by separating their names with a comma (<code>public class ... implements <em>FirstInterface</em>, <em>SecondInterface</em> ...</code>). When we implement many interfaces, we also have to implement all the methods they require. In the following example, <code>Person</code> implements the interface <code>Comparable</code>.</p>
 
 <pre class="sh_java">
-package sovellus.domain;
+package application.domain;
 
-public class Person implements Tunnistettava, Comparable&lt;Person&gt; {
+public class Person implements Identifiable, Comparable&lt;Person&gt; {
     private String name;
-    private String henkilotunnus;
+    private String id;
 
-    public Person(String name, String henkilotunnus) {
-        this.name = nimi;
-        this.henkilotunnus = henkilotunnus;
+    public Person(String name, String id) {
+        this.name = name;
+        this.id = id;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public String getPersontunnus() {
-        return this.henkilotunnus;
+    public String getPersonID() {
+        return this.id;
     }
 
     @Override
-    public String getTunnus() {
-        return getPersontunnus();
+    public String getID() {
+        return getPersonID();
     }
 
     @Override
-    public int compareTo(Person toinen) {
-        return this.name.compareTo(toinen.getName());
+    public int compareTo(Person another) {
+        return this.name.compareTo(another.getName());
     }
 }
 </pre>
 
-    <p>Nyt henkilöstörekisterin listaa-metodia voidaan laajentaa seuraavaan tapaan:</p>
+    <p>Now we can extend our the List method of PersonRegister in the following way:</p>
 
 <pre class="sh_java">
-    public List&lt;Person&gt; getPersont() {
-        ArrayList&lt;Person&gt; henkilot = new ArrayList&lt;Person&gt;(henkilot.values());
-        Collections.sort(henkilot);
-        return henkilot;
+    public List&lt;Person&gt; getPerson() {
+        ArrayList&lt;Person&gt; people = new ArrayList&lt;Person&gt;(people.values());
+        Collections.sort(people);
+        return people;
     }
 </pre>
 
--->
 
-<!--
 
-    <h3>Kassaesimerkki</h3>
 
-    <p>Pohditaan seuraavaksi kauppojen kassalaitteessa olevaan lukijalaitteeseen liittyvää tuotteen tunnistamistoimintoa. Oletetaan että tuotteet sisältävät niihin liittyvän viivakoodin, nimen ja hinnan. Tuotteita kuvastava <code>Tuote</code>-olio toteuttaa aiemmin määritellyn rajapinnan <code>Tunnistettava</code>.</p>
+    <h3>Check-out Example</h3>
+
+    <p>In this section, we can reason about the product identification operations of a shop check-out. We can suppose that the products have a barcode, a name, and a price. A <code>Product</code> object implements the already defined interface <code>Identifiable</code>.</p>
 
 <pre class="sh_java">
-package sovellus.domain;
+package application.domain;
 
-public class Tuote implements Tunnistettava {
-    private String viivakoodi;
+public class Tuote implements Identifiable {
+    private String barcode;
     private String name;
-    private int hinta;
+    private int price;
 
-    public Tuote(String viivakoodi, String name, int hinta) {
-        this.viivakoodi = viivakoodi;
-        this.name = nimi;
-        this.hinta = hinta;
+    public Tuote(String barcode, String name, int price) {
+        this.barcode = barcode;
+        this.name = name;
+        this.price = price;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public int getHinta() {
-        return this.hinta;
+    public int getPrice() {
+        return this.price;
     }
 
     @Override
-    public String getTunnus() {
-        return this.viivakoodi;
+    public String getID() {
+        return this.barcode;
     }
 }
 </pre>
 
-    <p>Toteutetaan seuraavaksi <code>Lukijalaite</code>, joka osaa muuntaa tunnistettavat oliot tuotteiksi. Lukijalaitteen tulee lukea ja tunnistaa tuotteet rajapinnan <code>Tunnistettava</code>-avulla. Toteutetaan luokka <code>Lukijalaite</code> siten, että se sisältää hajautustaulun, josta tuotteet löytyvät tunnisteen perusteella. Lukijalaite on osa sovelluksen logiikkaa, joten lisätään se pakkaukseen <code>sovellus.logiikka</code>.</p>
+    <p>Below, we implement <code>BarcodeReader</code> which reads objects and turns them into products. The barcode reader has to identify products thanks to the interface <code>Identifiable</code>. We can implement the class <code>BarcodeReader</code> so that it will include a HashMap, which retrieves products against their ID. The BarcodeReader is a part of our application logic, and we store it into the package <code>application.logic</code>.</p>
 
 <pre class="sh_java">
-package sovellus.logiikka;
+package application.logic;
 
-public class Lukijalaite {
-    private HashMap&lt;String, Tuote&gt; tuotteet;
+public class BarcodeReader {
+    private HashMap&lt;String, Product&gt; products;
 
-    public Lukijalaite(HashMap&lt;String, Tuote&gt; tuotteet) {
-        this.tuotteet = tuotteet;
+    public BarcodeReader(HashMap&lt;String, Product&gt; products) {
+        this.products = products;
     }
 
-    public Tuote tunnista(Tunnistettava tunnistettava) {
-        return this.tuotteet.get(tunnistettava.getTunnus());
+    public Product identify(Identifiable identifiable) {
+        return this.products.get(identifiable.getID());
     }
 }
 </pre>
 
-    <p>Lukijalaite-olio palauttaa <code>Tuote</code>-olion jos sen tunnus löytyy lukijalaitteen sisältämästä hajautustaulusta. Luodaan seuraavaksi kassa, joka käyttää lukijalaitetta tuotteiden lisäämiseen ostettujen tuotteiden listalle. Kassalla on metodi <code>public void osta</code>, jolle annetaan luokan <code>Tunnistettava</code>-ilmentymä parametrina. Ostaminen lisää lukijalaitteella tunnistetun tuotteen ostettujen listalle. Jos tuotetta ei tunnisteta, ei tehdä mitään. Metodi <code>tulostaOstokset</code> tulostaa ostettujen tuotteiden nimet.</p>
+    <p>A BarcodeReader object returns a <code>Product</code> object if the barcode is found in the BarcodeReader HashMap. In the following example, we create a check-out which uses the barcode reader to add products to the purchase list. The class has got the method <code>public void buy</code> which is given an instance of <code>Identifiable</code> as parameter. The purchase adds to the purchase list the objects which are recognised by the barcode reader. If an object is not recognised, nothing happens. The method <code>printPurchases</code> prints the name of the purchased products.</p>
 
 <pre class="sh_java">
-package sovellus.domain;
+package application.domain;
 
-public class Kassa {
-    private Lukijalaite laite;
-    private List&lt;Tuote&gt; tuotteet;
+public class Cashout {
+    private BarcodeReader reader;
+    private List&lt;Product&gt; products;
 
-    public Kassa(Lukijalaite lukijalaite) {
-        this.laite = lukijalaite;
-        this.tuotteet = new ArrayList&lt;Tuote&gt;();
+    public Cashout(BarcodeReader barcodeReader) {
+        this.reader = barcodeReader;
+        this.products = new ArrayList&lt;Product&gt;();
     }
 
-    public void osta(Tunnistettava tunnistettava) {
-        Tuote tunnistettu = this.laite.tunnista(tunnistettava);
-        if (tunnistettu == null) {
+    public void buy(Identifiable identifiable) {
+        Product identified = this.reader.identify(identifiable);
+        if (identified == null) {
             return;
         }
 
-        this.tuotteet.add(tunnistettu);
+        this.products.add(identified);
     }
 
-    public void tulostaOstokset() {
-        for(Tuote tuote: this.tuotteet) {
-            System.out.println(tuote.getName());
+    public void printPurchases() {
+        for(Product product: this.products) {
+            System.out.println(product.getName());
         }
     }
 }
 </pre>
 
-    <p>Huomaamme tässä vaiheessa että tuotteiden lukeminen listalta, joka on tulostettu tuotteiden lisäysjärjestyksessä, on hyvin kuormittavaa asiakkaalle. Muokataan tulostusta siten, että tuotteet listataan aakkosjärjestyksessä. Lisätään <code>Tuote</code>-luokalle rajapinta <code>Comparable</code>, jonka avulla tuotteet voidaan järjestää aakkosjärjestyksessä.</p>
+    <p>At this point we notice that it is extremely unconvenient to read products if they are printed in succession according to when they were added. We modify the printout so that it will list the products in aplphabetic order. We add the interface <code>Comparable</code> to <code>Product</code> to sort our products in alphabetic order.</p>
 
 <pre class="sh_java">
-package sovellus.domain;
+package application.domain;
 
-public class Tuote implements Tunnistettava, Comparable&lt;Tuote&gt; {
-    private String viivakoodi;
+public class Product implements Identifiable, Comparable&lt;Product&gt; {
+    private String barcode;
     private String name;
-    private int hinta;
+    private int price;
 
-    public Tuote(String viivakoodi, String name, int hinta) {
-        this.viivakoodi = viivakoodi;
-        this.name = nimi;
-        this.hinta = hinta;
+    public Tuote(String barcode, String name, int price) {
+        this.barcode = barcode;
+        this.name = name;
+        this.price = price;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public int getHinta() {
-        return this.hinta;
+    public int getPrice() {
+        return this.price;
     }
 
     @Override
-    public String getTunnus() {
-        return this.viivakoodi;
+    public String getID() {
+        return this.barcode;
     }
 
     @Override
-    public int compareTo(Tuote tuote) {
-        return this.name.compareTo(tuote.getName());
+    public int compareTo(Product product) {
+        return this.name.compareTo(product.getName());
     }
 }
 </pre>
 
-    <p>Muokataan vielä kassaan liittyvää toiminnallisuutta siten, että tuotteet järjestetään tarvittaessa. Huomaa että tuotteita tarvitsee järjestää vain silloin kun tuotteita <em>ostetaan</em>. Ostaminen on ainut tilanne, jossa tuotteita sisältävän listan järjestys mahdollisesti muuttuu. Tällöin ostokset ovat aina järjestyksessä metodia <code>tulostaOstokset</code> kutsuttaessa.</p>
+    <p>We can still modify our cashout implementation so that our products are sorted if need be. Notice that the products only have to be sorted when products <em>are purchased</em>. A purchase is possibly the only situation where the order of the products in the list can change. If we do so, the purchases are always sorted when we call the method <code>printPurchases</code>.</p>
 
 <pre class="sh_java">
-package sovellus.domain;
+package application.domain;
 
-public class Kassa {
-    private Lukijalaite laite;
-    private List&lt;Tuote&gt; tuotteet;
+public class Checkout {
+    private BarcodeReder reader;
+    private List&lt;Product&gt; products;
 
-    public Kassa(Lukijalaite lukijalaite) {
-        this.laite = lukijalaite;
-        this.tuotteet = new ArrayList&lt;Tuote&gt;();
+    public Kassa( BarcodeReder BarcodeReader) {
+        this.reader = BarcodeReader;
+        this.products = new ArrayList&lt;Product&gt;();
     }
 
-    public void osta(Tunnistettava tunnistettava) {
-        Tuote tunnistettu = this.laite.tunnista(tunnistettava);
-        if (tunnistettu == null) {
+    public void buy(Identifiable identifiable) {
+        Tuote identified = this.reader.identify(identifiable);
+        if (identified == null) {
             return;
         }
 
-        this.tuotteet.add(tunnistettu);
-        Collections.sort(this.tuotteet);
+        this.products.add(identified);
+        Collections.sort(this.products);
     }
 
-    public void tulostaOstokset() {
-        for(Tuote tuote: this.tuotteet) {
-            System.out.println(tuote.getName());
+    public void printPurchases() {
+        for(Product product: this.products) {
+            System.out.println(product.getName());
         }
     }
 }
 </pre>
 
--->
 
 <div>
 <big><big><b>Muutama NetBeans-vihje</b></big></big>	

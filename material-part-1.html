@@ -6,8 +6,8 @@
 
     <script type="text/javascript" src="javascripts/html5shiv.js"></script>
     <script type="text/javascript" src="javascripts/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="javascripts/exercises-eng.js"></script>
-    <script type="text/javascript" src="javascripts/common-new-eng.js"></script><!-- jamox: change to common-mooc-eng -->
+    <script type="text/javascript" src="javascripts/exercises2.js"></scraipt>
+    <script type="text/javascript" src="javascripts/common-new.js"></script><!-- jamox: change to common-mooc-eng -->
     <script type="text/javascript" src="javascripts/shjs/sh_main.min.js"></script>
     <script type="text/javascript" src="javascripts/shjs/sh_java.min.js"></script>
 
@@ -30,10 +30,10 @@
 <div div class="viikkoraja-mooc" id="Note to readers" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
   
 <!--
-    <p><em>Material and exercises:</em> <b>Arto Vihavainen, Matti Luukkainen</b></p>
+    <p><em>Material and exercises:</em> <b>Arto Vihavainen,  Matti Luukkainen</b></p>
 
     <p><em>English translation:</em> <b>Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan
-    Mohanathas</b></p>
+    Mohanathas, Mateor</b></p>
 -->
 
     <div id="toc" class="menu" data-first-chapter-index="1" data-first-exercise-index="1">
@@ -43,17 +43,17 @@
         <div id="tehtavat_toc2"></div>
     </div>
 
-    <p>This learning material is for the Introduction to Programming and Advanced Programming courses held in spring
+    <p>This learning material is for the Introduction to Programming course held in spring
     2012 at the University of Helsinki, Department of Computer Science. The material is used also for the online MOOC
-    (massively open online course) programming course. The material is based on previous years' (2010 and 2011)
-    course material with content contributions from: Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju
+    (massive open online course) programming course Object-Oriented Programming with Java, part 1. The material is based on previous years' (2010 and 2011)
+    on course material with content contributions from: Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju
     and Martin Pärtel.</p>
 
-    <p>You should do all the example exercises yourself as you read the material. It is recommended to make changes to
-    the examples yourself and observe the result of the changes on the programs. Although you might think that doing
-    examples yourself will only slow down your progress, this is definitely not the case here! As far as we know, no
+    <p>You should do all the examples yourself while you read the material. It is recommended to make changes to
+    the examples yourself and observe the result of the changes in the programs. Although you might think that doing
+    examples yourself will only slow down your progress, this is definitely not the case! As far as we know, no
     one has yet learned to program merely by reading a textbook or listening to lectures. Doing activities and
-    improving your routine is an essential part of the learning process. Doing the given exercise examples and, more
+    improving your routine is an essential part of the learning process. Doing the given examples and, more
     importantly, making your own changes to them is one of the best ways to internalize the information you just
     read.</p>
 
@@ -63,12 +63,12 @@
 
     <p>This material is not meant to be read just once. You will definitely need to return and reread sections that you
     have already read and exercises that you have already completed. This material does not cover everything essential
-    to computer programming. In fact, no book in existence contains all the essentials. That means that during your
-    career as a computer programmer you will also have to seek information individually. The material exercises include
+    to computer programming. In fact, no book in existence contains all the essentials. This means that during your
+    career as a computer programmer you will also have to search for information by yourself. The exercises also include
     some instructions on where and how to find useful information.</p>
 
     <p>There are also a bunch of screencasts (i.e. instructional videos), which allow you to follow the construction of
-    program rather than just reading the full example at once.</p>
+    programs rather than just reading ready made examples.</p>
         </div>
     </section>
     <section class="viikkoraja" id="1">
@@ -79,43 +79,24 @@
         <div class="viikkoraja-mooc" id="Week 1" deadline=" " data-first-chapter-index="1"
         data-first-exercise-index="1" data-first-week-index="1" data-first-chapter-index-mooc="1"
         data-first-exercise-index-mooc="1" data-first-week-index-mooc="1" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
-            <h2 id="ensimmäinen_ohjelma">The first program</h2>
-
-            <p>Modern computer programming takes place almost with no exceptions in an Integrated Development
-            Environment (IDE). This Development Environment includes some functionalities that help the programmer. The
-            Development Environment does not create the program for you, but it can for example give hints of easily
-            spotted errors in program code and helps you to understand the program structure better.</p>
-
-            <p>During this course we use an IDE called NetBeans. Check the <a href="netbeans-english.html">guide</a> on
-            how to use NetBeans and the exercise robot.</p>
-
-            <h3>Starting to program in the Development Environment</h3>
-
-            <p>The guides on how to start programming in NetBeans are in the same place as the previous guide. In the
-            future we will give out more guides on how to use NetBeans. The Development Environment might seem a bit
-            confusing at first, but do not worry! NetBeans is quite easy to use in the end. You will learn the basics
-            in 5 minutes and during this course you will continue to learn more step by step. When this course is
-            finished you have become a true power user of NetBeans!</p>
-
             <h2>The program and the source code</h2>
 
             <h3>Source code</h3>
 
-            <p>A program is made up of <em>source code</em>. A computer generally runs <em>commands</em> in the source
-            code from <em>top to bottom</em> and <em>from left to right</em>. The source code is saved in a textual
+            <p>A computer program is composed of commands written in the <em>source code</em>. A computer generally runs <em>commands</em> in the source
+            code from <em>top to bottom</em> and <em>from left to right</em>. Source code is saved in a textual
             format and will be <em>executed</em> somehow.</p>
 
             <h3>Commands</h3>
 
-            <p>Actually, a program is composed of commands written in the source code. Computers execute different
-            <em>operations</em>, or actions, based on the commands. For example, when printing the string (i.e. text)
-            "Hello world!" on the screen, <code>System.out.println</code> is the most important command.</p>
+            <p>Computers execute different <em>operations</em>, or actions, based on the commands. For example, when printing the text
+            "Hello world!" on the screen, it is done by the command <code>System.out.println</code>.</p>
 
 <pre class="sh_java">
 System.out.println("Hello world!");
 </pre>
 
-            <p>The <code>System.out.println</code> command prints the string given to inside the brackets onto the
+            <p>The <code>System.out.println</code> command prints the string given inside the brackets on the
             screen. The suffix <code>ln</code> is short for the word <i>line</i>. Therefore, this command prints out a
             line. This means that after the given string has been printed, the command will also print a line
             break.</p>
@@ -129,7 +110,7 @@ System.out.println("Hello world!");
             <code>java Hello</code> where Hello is the name of the original source code file.</p>
 
             <p>When using a modern development environment (more on this later), it will take care of compiling the
-            source code. When we choose to run the program, rhw development environment will compile and execute the
+            source code. When we choose to run the program, the development environment will compile and execute the
             program. All development environments compile source code while it is being written by the programmer,
             which means that simple errors will be noticed before executing the program.</p>
 
@@ -138,7 +119,7 @@ System.out.println("Hello world!");
             <h4>Semicolon</h4>
 
             <p>A semicolon <code>;</code> is used to separate different commands. The compiler and the interpreter both
-            ignore lines in the source code so we could write the entire program on a single line.</p>
+            ignore line breaks in the source code so we could write the entire program on a single line.</p>
 
             <p>In the example below we will use the <code>System.out.print</code> command, which is similar to the
             <code>System.out.println</code> command except that it will not print a line break after printing the
@@ -155,9 +136,9 @@ System.out.print("!");
 Hello world!
 </pre>
 
-            <p>Even though neither the compiler nor the interpreter need line breaks in the source code, they are very
-            important when considering other humans. Line breaks are required to divide source code in a clear manner.
-            This and other similar matters related to readability will emphasized throughout this course.</p>
+            <p>Even though neither the compiler nor the interpreter need line breaks in the source code, they are very important when considering 
+	    human readers of the source code. Line breaks are required to divide source code in a clear manner.
+            Readability of source code will be emphasized throughout this course.</p>
 
             <h4>Parameters (information passed to commands)</h4>
 
@@ -183,11 +164,11 @@ System.out.print(" and all the people of the world."); // We print more text to 
 </pre>
 
             <p>The last line of the example introduces a particularly handy use for comments: you can comment out code
-            instead of completely deleting it if you want to temporarily try something out.</p>
+            instead of completely deleting it if you want to temporarily try out something.</p>
 
-            <h3>3.5 More about printing</h3>
+            <h3>More about printing</h3>
 
-            <p>As we can tell from the examples above, there are two commands for printing.</p>
+            <p>As we can see from the examples above, there are two commands for printing.</p>
 
             <ul>
                 <li><code>System.out.print</code> prints the text without the line break at the end</li>
@@ -214,7 +195,7 @@ Third
 
             <h2>Main program body</h2>
 
-            <p>The body for a program named "Example" as follows:</p>
+            <p>The body for a program named "Example" is as follows:</p>
 
 <pre class="sh_java">
 public class Example {
@@ -251,28 +232,22 @@ public class Example {
             of the program.</p>
 
             <div class="help">
-                <p>For this course, we will use the <a href="http://netbeans.org/">NetBeans</a> development
-                environment. A guide for using NetBeans is available
-                    <!-- BEGIN MINI MOOC SNIP-->
-                    <a class="ahy" href="netbeans-english.html">here</a> 
-                    <!-- END MINI MOOC SNIP-->
-                    <!-- BEGIN MINI SNIP-->
-                    <a class="amooc" href="/ohjelmointi/ilmoittautuminen-ja-alkutoimet#nb">here</a>
-                    <!-- END MINI SNIP-->
+                <p>In this course, we will use the <a href="http://netbeans.org/">NetBeans</a> development
+                  environment. A guide for using NetBeans is available <a href="/programming-part1/registration-and-how-get-started#nb">here</a>.
                 </p>
             </div>
 
             <p>Until you become familiar with NetBeans, follow the guides and steps precisely. Most of the following
             exercises show what needs to be printed to the screen for the program to function correctly.</p>
 
-            <p><b>Note:</b> Do not do the examples by writing code and then clicking the test button. You should also
+            <p><b>Note:</b> Do not do the exercises by writing code and then clicking the test button. You should also
             execute the code manually (green arrow) and observe the result on the screen. This is especially useful if
             an exercise fails to pass the tests.</p>
 
             <div class="tehtavat">
-                <p>In the following exercises, we will practice using NetBeans and printing text to the screen.</p>
+                <p>In the following exercises, we will practice the use of NetBeans and printing of text on the screen.</p>
 
-                <p><b>Remember to read the <a>guide on using NetBeans</a> before you continue!</b></p>
+                <p><b>Remember to read the <a href="/programming-part1/registration-and-how-get-started#nb">guide on using NetBeans</a> before you continue!</b></p>
                 <p class="help">Please answer to our survey: <a href="http://oo-start.mooc.fi/english_mooc_participants/new">here</a>. It will take less than five minutes.</p>
 
                 <div class="tehtava">
@@ -315,7 +290,7 @@ Hello world!
                 </div>
 
                 <p><b>Note:</b> You probably wrote <code>System.out.println("...")</code> quite a few times.
-                Try to type only <i>sout</i> on an empty line in NetBeans instead and then press the <a href=
+                Try typing only <em>sout</em> on an empty line in NetBeans and then press the <a href=
                 "http://en.wikipedia.org/wiki/Tab_key">tab key</a>. What happened? This tip will save a lot of your
                 time in the future!</p>
             </div>
@@ -327,7 +302,7 @@ Hello world!
             <p>A <em>variable</em> is one of the most important concepts in computer programming. A variable should be
             imagined as a box in which you can store information. The information stored in a variable always has a
             type. These types include text (<em>String</em>), whole numbers (<em>int</em>), decimal numbers
-            (<em>double</em>), and truth value (<em>boolean</em>). A <em>value</em> can be assigned to a variable using
+            (<em>double</em>), and truth values (<em>boolean</em>). A <em>value</em> can be assigned to a variable using
             the equals sign (<code>=</code>).</p>
 
 <pre class="sh_java">
@@ -335,7 +310,7 @@ int months = 12;
 </pre>
 
             <p>In the statement above, we assign the value 12 to the variable named <em>months</em> whose data type is
-            whole number (<em>int</em>). The statement is read as "the variable <em>months</em> is assigned the
+            integer (<em>int</em>). The statement is read as "the variable <em>months</em> is assigned the
             <em>value</em> 12".</p>
 
             <p>The value of the variable can be appended to a string with the plus <code>+</code> sign as shown in the
@@ -350,7 +325,7 @@ double decimalNumber = 3.141592653;
 boolean isTrue = true;
 
 System.out.println("The variable's type is text. Its value is " + text);
-System.out.println("The variable's type is whole number. Its value is  " + wholeNumber);
+System.out.println("The variable's type is integer. Its value is  " + wholeNumber);
 System.out.println("The variable's type is decimal number. Its value is " + decimalNumber);
 System.out.println("The variable's type is truth value. Its value is " + isTrue);
 </pre>
@@ -359,7 +334,7 @@ System.out.println("The variable's type is truth value. Its value is " + isTrue)
 
 <pre>
 The variable's type is text. Its value is includes text
-The variable's type is whole number. Its value is 123
+The variable's type is integer. Its value is 123
 The variable's type is decimal number. Its value is 3.141592653
 The variable's type is truth value. Its value is true
 </pre>
@@ -369,17 +344,17 @@ The variable's type is truth value. Its value is true
 
 <pre class="sh_java">
 int wholeNumber = 123;
-System.out.println("The variable's type is whole number. Its value is  " + wholeNumber);
+System.out.println("The variable's type is integer. Its value is  " + wholeNumber);
 
 wholeNumber = 42;
-System.out.println("The variable's type is whole number. Its value is  " + wholeNumber);
+System.out.println("The variable's type is integer. Its value is  " + wholeNumber);
 </pre>
 
             <p>The output is:</p>
 
 <pre>
-The variable's type is whole number. Its value is 123
-The variable's type is whole number. Its value is 42
+The variable's type is integer. Its value is 123
+The variable's type is integer. Its value is 42
 </pre>
 
             <h3>Variable data types are immutable</h3>
@@ -392,7 +367,7 @@ String text = "yabbadabbadoo!";
 text = 42; // Does not work! :(
 </pre>
 
-            <p>Whole numbers values can be assigned to decimal number variables, because whole numbers are also
+            <p>Integer values can be assigned to decimal number variables, because whole numbers are also
             decimal numbers.</p>
 
 <pre class="sh_java">
@@ -472,7 +447,7 @@ int camelCase = 2;
 int camelCase = 5; // Not allowed, the variable camelCase is already defined!
 </pre>
 
-            <p>It is strongly recommended to name variables such that their purpose can be understood without comments
+            <p>It is strongly recommended to name variables so that their purpose can be understood without comments
             and without thinking. Variable names used in this course <strong>must</strong> be descriptive.</p>
 
             <h4>Valid variable names</h4>
@@ -500,9 +475,10 @@ int camelCase = 5; // Not allowed, the variable camelCase is already defined!
 <pre class="sh_java">
 int first = 2;   // variable of whole number type is assigned the value 2
 int second = 4;  // variable of whole number type is assigned the value 4
-int sum = first + second;  // variable of whole number type is assigned the value of first + second (which means 2 + 4)
+int sum = first + second;  // variable of whole number type is assigned the value of first + second
+                           //     (which means 2 + 4)
 
-System.out.println(sum); // the value of the variable sum is printed
+System.out.println(sum); // the value of the sum of variables is printed
 </pre>
 
 <pre class="sh_java">
@@ -610,7 +586,7 @@ System.out.println(quotinent);
 
             <div class="tehtavat">
                 <div class="tehtava">
-                    <h3 class="req">Seconds in an year</h3>
+                    <h3 class="req">Seconds in a year</h3>
 
                     <p>Create a program that counts how many seconds there are in a year. You can assume that a year
                     consists of 365 days (therefore the year is not a leap year).</p>
@@ -630,7 +606,7 @@ There are X seconds in a year.
             <p>Let us take a closer look on combining strings with the <code>+</code> operator.</p>
 
             <p>If the <code>+</code> operator is used between two strings, a new string is created with the two strings
-            combined. Note the clever use of a space character as a part of the "variables" below!</p>
+            combined. Note the clever use of space characters in the values of the variables below!</p>
 
 <pre class="sh_java">
 String greeting = "Hi ";
@@ -691,7 +667,7 @@ y has the value 5 and z has the value 6
                 <div class="tehtava">
                     <h3 class="req">Addition</h3>
 
-                    <p>Create a program used to calculate the sum of two numbers. At the beginning of the program two
+                    <p>Create a program to calculate the sum of two numbers. At the beginning of the program two
                     variables are introduced and those variables hold the numbers to be summed. Feel free to use other
                     variables if you need to.</p>
 
@@ -756,7 +732,8 @@ public class ProgramBody {
 
 <pre class="sh_java">
 System.out.print("What is your name? ");
-String name = reader.nextLine(); // Reads a line of input from the user and assigns it to the variable called name
+String name = reader.nextLine(); // Reads a line of input from the user and assigns it 
+                                 //     to the variable called name
 
 System.out.println("Hi, " + name);
 </pre>
@@ -766,7 +743,7 @@ What is your name? <span class="red">John</span>
 Hi, John
 </pre>
 
-            <p>The program above combined along with the main program body is below. The name of the program is
+            <p>The program above combined along with the main program body is shown below. The name of the program is
             <em>Greeting</em>, which means that it must be located in a file named <code>Greeting.java</code>. With
             NetBeans, you can follow the original <a href="%E2%80%9D%E2%80%9D">guide</a>, but be sure to change the
             program name from Hello to Greeting.</p>
@@ -779,15 +756,16 @@ public class Greeting {
     Scanner reader = new Scanner(System.in);
 
     System.out.print("Who is greeted: ");
-    String nimi = reader.nextLine(); // Reads a line of input from the user and assigns it to the variable called name
+    String nimi = reader.nextLine(); // Reads a line of input from the user and assigns it 
+                                     //     to the variable called name
 
     System.out.print("Hi " + name);
   }
 }
 </pre>
 
-            <p>When the program above is executed, you can type the input. The output tab in NetBeans (on the bottom)
-            looks like this when the program has finished (the user inputs the name "John").</p>
+            <p>When the program above is executed, you can type the input. The output tab in NetBeans (at the bottom)
+            looks as follows when the program has finished (the user inputs the name "John").</p>
 
 <pre>
 run:
@@ -798,12 +776,11 @@ BUILD SUCCESSFUL (total time: 6 seconds)
 
             <h3 id="syote_kokonaisluku">Reading integers</h3>
 
-            <p>Our Scanner tool is not good for reading integers, so we will use another special tool to convert a
-            string to an integer. The command <code>Integer.parseInt</code> converts the string given to it into an
-            integer. The command is given its parameter between brackets and it returns an integer that can be
-            assigned to a integer variable.</p>
+            <p>Our Scanner tool is not good for reading integers, so we will use another special tool to read an integer. The command <code>Integer.parseInt</code> converts the string given to it into an
+            integer. The command's parameter is given between brackets and it returns an integer that can be
+            assigned to an integer variable.</p>
 
-            <p>We are practically joining two commands together. First we read the input as a string from the user and
+            <p>Basically, we are joining two commands together. First we read the input as a string from the user and
             immediately give it to the command <code>Integer.parseInt</code>.</p>
 
 <!--
@@ -920,7 +897,7 @@ Division: 3 / 2 = 1.5
                     can use in your calculation.</p>
 
 <pre>
-Type the radius of the circle: <font color="red">20</font>
+Type the radius: <font color="red">20</font>
 
 Circumference of the circle: 125.66370614359172
 </pre>
@@ -934,8 +911,8 @@ Circumference of the circle: 125.66370614359172
                     <p><b>Tip:</b> When you write <code>Math.</code> (that is, Math followed by a dot) in NetBeans, it
                     shows you a bunch of available mathematical calculations. For example, <code>Math.cos(10)</code>
                     calculates the cosine of the number 10. Try to find a suitable tool in <code>Math</code> to
-                    complete this excerise! If you cannot find anything suitable or do not know how to do this
-                    exercise, you should skip exercise for now. We will focus on this later on in the course.</p>
+                    complete this exercise! If you cannot find anything suitable or do not know how to complete the
+                    exercise, skip the exercise for now. We will return to the matter later on.</p>
 
 <pre>
 Type a number: <font color="red">20</font>
@@ -963,7 +940,7 @@ Matti and Arto are 26 years old in total.
                 </div>
 
                 <div class="tehtava">
-                    <h3 class="req">NHL statistics, part1</h3>
+                    <h3 class="req">NHL statistics, part 1</h3>
 
                     <p>A ready-made component <code>NHLStatistics</code> is included along with the exercise files for
                     this excercise. It can be used to fetch and see NHL players' score data, including their number of
@@ -1011,7 +988,7 @@ Jason Pominville       BUF        41 14 + 29= 43   8
                     points they have gathered. The second command <code>NHLStatistics.top(10);</code> prints the ten
                     first players from the list. Any integer can be given as a parameter.</p>
 
-                    <p>Similarly the players can be printed ordered by the goals or serves they have made, or by
+                    <p>Similarly the players can be printed ordered by the goals or assists they have made, or by
                     penalty minutes they have been given. First, we call the command to sort the players:</p>
 
 <pre class="sh_java">
@@ -1024,12 +1001,12 @@ NHLStatistics.sortByPenalties();  // orders the players by penalty minutes
                     <p>After that the players are printed with the command <code>top</code> using the number of players
                     to be printed as its parameter.<br></p>
 
-                    <p>It is also possible to use the component to request the the statistics of a certain player:</p>
+                    <p>It is also possible to use the component to request the statistics of a certain player:</p>
 
 <pre class="sh_java">
-NHLStatistics.searchByPlayer("Jaromir Jagr");  // prints the statistics of Jaromir Jagr
-NHLStatistics.searchByPlayer("Koivu");         // prints the statistics of Mikko Koivu and Saku Koivu
-NHLStatistics.searchByPlayer("Teemu");         // prints the statistics of all players named Teemu
+NHLStatistics.searchByPlayer("Jaromir Jagr");  // prints stats of Jaromir Jagr
+NHLStatistics.searchByPlayer("Koivu");         // prints stats of Mikko Koivu and Saku Koivu
+NHLStatistics.searchByPlayer("Teemu");         // prints stats of all players named Teemu
 </pre>
 
                     <p>The component can also print the statistics of all players in a club:</p>
@@ -1043,15 +1020,15 @@ NHLStatistics.teamStatistics("NYR");  // Statistics of New York Rangers
 
                     <p>The name of the club must be given using the official three letter abbreviation. You can check
                     the abbreviations <a href="http://everything2.com/title/Ice+hockey+acronyms+and+abbreviations">here
-                    </a>, for example. The statistics component prints a list of the available abbreviations if you
-                    request the statistics of an invalid club.</p>
+                    </a>. The statistics component prints a list of the available abbreviations if you
+                    request the statistics of an invalid club.</p><
 
                     <p><strong>Create a program that does the following tasks into the main program body. The tasks
                     must be done in exactly the same order as listed below. Do the tasks in the program body one after
                     another without deleting tasks you have already done.</strong></p>
 
                     <p><b>Note:</b> When you first run the program, the execution might take a while because the
-                    information is downloaded from the internet. Execution should be quick after the first run.</p>
+                    information is downloaded from the web. Execution should be quick after the first run.</p>
 
                     <p>The program must do the following:</p>
 
@@ -1064,7 +1041,7 @@ NHLStatistics.teamStatistics("NYR");  // Statistics of New York Rangers
                         <li>Print the players in Anaheim Ducks (abbreviation: ANA) ordered by points</li>
                     </ul>
 
-                    <p>After you have sent the exercise for evaluation it has has been successfully submitted, you can
+                    <p>After you have successfully submitted the exercise, you can
                     play with the code as you wish!</p>
                 </div>
             </div>
@@ -1084,14 +1061,14 @@ if (number &gt; 10) {
 </pre>
 
             <p>The condition <code>(number &gt; 10)</code> evaluates into a truth value; either <em>true</em> or
-            <em>false</em>. So, in the end, the <code>if</code> command only handles truth values. The conditional
+            <em>false</em>. The <code>if</code> command only handles truth values. The conditional
             statement above is read as "if the number is greater than 10".</p>
 
             <p>Note that the <code>if</code> statement is not followed by semicolon as the condition path continues
             after the statement.</p>
 
             <p>After the condition, the opening brace <code>{</code> starts a new <em>block</em>, which is executed
-            if the condition is true. The <em>block</em> ends with a closing brace <code>}</code>. Block can be as
+            if the condition is true. The <em>block</em> ends with a closing brace <code>}</code>. Blocks can be as
             long as desired.</p>
 
             <p>The comparison operators are:</p>
@@ -1133,7 +1110,7 @@ if (number &gt; 0) {
 }
 </pre>
 
-            <p>The comparison operators can also be used outside the <code>if</code> statements. In that case the truth
+            <p>The comparison operators can also be used outside the <code>if</code> statements. In such case the truth
             value will be stored in a truth value variable.</p>
 
 <pre class="sh_java">
@@ -1155,7 +1132,7 @@ int second = 3;
 boolean isLesser = first &lt; second;
 
 if (isLesser) {
-    System.out.println("1 is less than 3!");
+    System.out.println(first + " is less than " + second + "!");
 }
 </pre>
 
@@ -1171,7 +1148,7 @@ if (isLesser) {
             located to the left of q key. When the block ends with the closing brace, indentation ends as well. The
             closing brace <code>}</code> should be on the same level as the original <code>if</code> statement.</p>
 
-            <p>Using indentation is crucial to the readability of program code. During this course and generally
+            <p>The use of indentation is crucial for the readability of program code. During this course and generally
             everywhere, you are expected to indent the code properly. NetBeans helps with the correct indentation.
             You can easily indent your program by pressing shift, alt, and f simultaneously.</p>
 
@@ -1221,21 +1198,20 @@ The number is not positive.
                 </div>
 
                 <div class="tehtava">
-                    <h3 class="req">Age of consent</h3>
+                    <h3 class="req">Age of majority</h3>
 
-                    <p>Create a program that asks for the user's age and tells whether the user has reached the age
-                    of consent (i.e. 18 years old or older).</p>
+                    <p>Create a program that asks for the user's age and tells whether the user has reached the age of majority (i.e. 18 years old or older).</p>
 
 <pre>
 How old are you? <font color="red">12</font>
 
-You have not reached the age of consent yet!
+You have not reached the age of majority yet!
 </pre>
 
 <pre>
 How old are you? <font color="red">32</font>
 
-You have reached the age of consent!
+You have reached the age of majority!
 </pre>
                 </div>
 
@@ -1285,9 +1261,9 @@ if (number == 1) {
 The number is three!
 </pre>
 
-            <p>Let us read the example above out loud: If number is one, print out "The number is one.".
+            <p>Let us read out loud the example above: If number is one, print out "The number is one.".
             Otherwise if the number is two, print out "The number is two.". Otherwise if the number is three,
-            print out "The number is three!". Otherwise print out "Quite a lot!"</p>
+            print out "The number is three!". Otherwise print out "Quite a lot!".</p>
 
             <h3>Comparing strings</h3>
 
@@ -1304,8 +1280,8 @@ if (text.equals("marzipan")) {
 }
 </pre>
 
-            <p>The <code>equals</code> command is always attached to the string variable to compare with a dot in
-            between. A string variable can also compared to another string variable.</p>
+            <p>The <code>equals</code> command is always attached to the string variable with a dot in
+            between. A string variable can also be compared to another string variable.</p>
 
 <pre class="sh_java">
 String text = "course";
@@ -1356,7 +1332,7 @@ The numbers are equal!
                 <div class="tehtava">
                     <h3 class="req">Grades and points</h3>
 
-                    <p>Create a program that gives out the course grade based on the following table.</p>
+                    <p>Create a program that gives the course grade based on the following table.</p>
 
                     <table border style="margin-left:50px">
                         <tr>
@@ -1407,7 +1383,7 @@ Grade: 5
 
             <h3>Logical operations</h3>
 
-            <p>The condition statements can also be more complicated using logical operations. The logical operations
+            <p>The condition statements can be made more complicated using logical operations. The logical operations
             are:</p>
 
             <ul>
@@ -1416,56 +1392,78 @@ Grade: 5
                 <li><code>!condition</code> is true if the condition is false.</li>
             </ul>
 
-<pre class="sh_java">
-int year = 2012;
-int month = 1;
-
-System.out.println("Courses that begin now:");
-
-if ( year == 2012 &amp;&amp; month == 1 ) {
-  System.out.println("Introduction to Programming");
-}
-
-if ( year == 2012 &amp;&amp; month == 3 ) {
-  System.out.println("Advanced Course in Programming");
-}
-</pre>
-
-<pre>
-Courses that begin now:
-Introduction to Programming
-</pre>
+            <p>Below we will use the AND operation <code>&amp;&amp;</code> to combine two individual conditions in
+            order to check if the value of the variable is greater than 4 <strong>and</strong> less than 11 (i.e. in
+            the range 5 - 10).</p>
 
 <pre class="sh_java">
-System.out.println("Is the number between 5-10: ");
+System.out.println("Is the number between 5-10?");
 int number = 7;
 
-if ( number &gt; 4 &amp;&amp; number &lt; 11 ) {
-  System.out.println("YES! :)");
+if (number &gt; 4 &amp;&amp; number &lt; 11) {
+    System.out.println("Yes! :)");
 } else {
-  System.out.println("No it was not :(")
+    System.out.println("Nope :(")
 }
 </pre>
 
 <pre>
-Is the number between 5-10: 
-YES! :)
+Is the number between 5-10?
+Yes! :)
 </pre>
+
+            <p>Next up is the OR operation <code>||</code>, which will be used to check if the value is less than 0
+            <strong>or</strong> greater than 100. The condition evaluates to true if the value fulfills either
+            condition.</p>
 
 <pre class="sh_java">
-System.out.println("Is the number either 1, 50 or 100: ");
-int selection = 50;
+System.out.println("Is the number less than 0 or greater than 100?");
+int number = 145;
 
-if ( selection == 1 || selection == 50 || selection == 100 ) {
-  System.out.println("Yes! :)");
+if (number &lt; 0 || number &gt; 100) {
+    System.out.println("Yes! :)");
 } else {
-  System.out.println("No it was not :(")
+    System.out.println("Nope :(")
 }
 </pre>
 
 <pre>
-Is the number either 1, 50 or 100: 
+Is the number less than 0 or greater than 100?
 Yes! :)
+</pre>
+
+            <p>Now we will use the negation operation <code>!</code> to negate the condition:</p>
+
+<pre class="sh_java">
+System.out.println("Is the string equal to 'milk'?");
+String text = "water";
+
+if (!(text.equals("milk"))) {  // true if the condition text.equals("milk") is false
+    System.out.println("No!");
+} else {
+    System.out.println("Yes")
+}
+</pre>
+
+<pre>
+Is the text equal to 'milk'?
+No!
+</pre>
+
+            <p>For complicated conditions, we often need brackets:</p>
+
+<pre class="sh_java">
+int number = 99;
+
+if ((number &gt; 0 &amp;&amp; number &lt; 10) || number &gt; 100 ) {
+    System.out.println("The number was in the range 1-9 or it was over 100"); 
+} else {
+    System.out.println("The number was equal to or less than 0 or it was in the range 10-99");
+}
+</pre>
+
+<pre>
+The number was equal to or less than 0 or it was in the range 10-99
 </pre>
 
             <div class="tehtavat">
@@ -1473,7 +1471,7 @@ Yes! :)
                     <h3 class="req">Age check</h3>
 
                     <p>Create a program that asks for the user's age and checks that it is reasonable (at least 0
-                    and not over 120).</p>
+                    and at most 120).</p>
 
 <pre>
 How old are you? <font color="red">10</font>
@@ -1516,8 +1514,7 @@ Impossible!
                         </tr>
                     </table>
 
-                    <p>The program will show the user a personal message or a notification, if the username or password
-                    does not match.</p>
+                    <p>The program should check for the username and password as follows:</p>
 
 <pre>
 Type your username: <font color="red">alex</font>
@@ -1536,15 +1533,17 @@ Type your username: <font color="red">emily</font>
 Type your password: <font color="red">dog</font>
 Your username or password was invalid!
 </pre>
+
+                    <p><b>Note:</b> Remember that you cannot compare strings with the <code>==</code> operation!</p>
                 </div>
 
                 <div class="tehtava">
                     <h3>Leap year</h3>
 
-                    <p>A year is a leap year, if it is divisible by four. But if the year is divisible by 100, it is a
+                    <p>A year is a leap year if it is divisible by 4. But if the year is divisible by 100, it is a
                     leap year only when it is also divisible by 400.</p>
 
-                    <p>Create a program that checks whether a year is a leap year.</p>
+                    <p>Create a program that checks whether the given year is a leap year.</p>
 
 <pre>
 Type a year: <font color="red">2011</font>
@@ -1568,91 +1567,91 @@ The year is a leap year.
                 </div>
             </div>
 
-            <h2 id="toiston_alkeet">Introduction to repetition</h2>
+            <h2 id="toiston_alkeet">Introduction to loops</h2>
 
-            <p>A selection clause helps us make programs that act on different conditions, i.e. if the username and
-            password match, for example the program lets the user log in and otherwise it does not.</p>
+            <p>Conditional statements allow us to execute different commands based on the conditions. For example, we
+            can let the user login only if the username and password are correct.</p>
 
-            <p>In addition to conditions we also need repetitions, we need the program to keep asking the user to input
-            a username and password until a matching pair is given.</p>
+            <p>In addition to conditions we also need repetitions. We may, for example, need to keep asking the user
+            to input a username and password until a valid pair is entered.</p>
 
-            <p>The most simple repetition is endless repetition. The following program will print out the string <em>I
-            know how to program!</em> endlessly or "an infinite number of times":</p>
-
-<pre class="sh_java">
-  while ( true ) {
-    System.out.println("I know how to program!");
-  }
-</pre>
-
-            <p>In the above example the command <code>while( true )</code> makes the whole command block (i.e. the code
-            inside these braces <code>{}</code>) to be repeated infinitely.</p>
-
-            <p>Infinite repetition is not usually the behavior we want from a program. A repetition can be interrupted
-            using the command <code>break</code> for example.</p>
+            <p>The most simple repetition is an infinite loop. The following code will print out the string <em>I
+            can program!</em> forever or "an infinite number of times":</p>
 
 <pre class="sh_java">
-  while ( true ) {
-    System.out.println("I know how to program!");
-
-    System.out.print("Continue? (no quits)? ");
-    String command = reader.nextLine();
-    if ( command.equals("no") ) {
-      break;
-    }
-  }
-  System.out.println("Thank you and see you again!");
+while (true) {
+    System.out.println("I can program!");
+}
 </pre>
 
-            <p>Now the repetition goes forward like this: first the program prints <em>I know how to program!</em> and
-            after that the program will ask the user if it should continue. If the user answers <em>no</em>, the
-            command <code>break</code> is executed and it stops the repetition. Now the printing command is executed
-            and it prints <em>Thank you and see you again!</em></p>
+            <p>In the example above, the <code>while (true)</code> command causes the associated block (i.e. the code
+            between the braces <code>{}</code>) to be <em>looped</em> (or repeated) infinitely.</p>
 
-<pre>
-I know how to program!
-Continue? (no quits)?<font color="red">yeah</font>
-I know how to program!
-Continue? (no quits)? <font color="red">jawohl</font>
-I know how to program!
-Continue? (no quits)? <font color="red">no</font>
-Thank you and see you again!
-</pre>
-
-            <p>Many different things can be done inside a repetition. Next we introduce a simple calculator. The
-            calculator calculates based on commands that the user enters. If the command is <em>quit</em>, a
-            <code>break</code> command will be executed and the repetition ends. After that the program asks the user
-            to type two numbers. If the command was <em>sum</em> the program calculates the sum of the two numbers and
-            prints it. If the command was <em>difference</em>, the program calculates the difference of the two numbers
-            and prints it. If the command entered is something else, the program says that it does not recognize the
+            <p>We generally do not want an infinite loop. The loop can be interrupted using e.g. the <code>break</code>
             command.</p>
 
 <pre class="sh_java">
-  System.out.println("welcome to the calculator");
+while (true) {
+    System.out.println("I can program!");
 
-  while ( true ) {    
-    System.out.print("enter a command (sum, difference, quit): ");
+    System.out.print("Continue? ('no' to quit)? ");
     String command = reader.nextLine();
-    if ( command.equals("quit") ) {
-      break;
+    if (command.equals("no")) {
+        break;
+    }
+}
+
+System.out.println("Thank you and see you later!");
+</pre>
+
+            <p>Now the loop progresses like this: First, the program prints <em>I can program!</em>. Then, the program
+            will ask the user if it should continue. If the user types <em>no</em>, the <code>break</code>
+            command is executed and the loop is interrupted and <em>Thank you and see you again!</em> is printed.</p>
+
+<pre>
+I can program!
+Continue? ('no' to quit)?<font color="red">yeah</font>
+I can program!
+Continue? ('no' to quit)? <font color="red">jawohl</font>
+I can program!
+Continue? ('no' to quit)? <font color="red">no</font>
+Thank you and see you again!
+</pre>
+
+            <p>Many different things can be done inside a loop. Next we create a simple calculator, which performs
+            calculations based on commands that the user enters. If the command is <em>quit</em>, the
+            <code>break</code> command will be executed to end the loop. Otherwise two numbers are asked. Then, if the
+            initial command was <em>sum</em>, the program calculates and prints the sum of the two numbers. If the
+            command was <em>difference</em>, the program calculates and prints the difference of the two numbers. If
+            the command was something else, the program reports that the command was unknown.</p>
+
+<pre class="sh_java">
+System.out.println("welcome to the calculator");
+
+while (true) {
+    System.out.print("Enter a command (sum, difference, quit): ");
+    String command = reader.nextLine();
+    if (command.equals("quit")) {
+        break;
     }
 
     System.out.print("enter the numbers");
     int first = Integer.parseInt(reader.nextLine());
     int second = Integer.parseInt(reader.nextLine());
 
-    if ( command.equals("sum") ) {     
-      int sum = first+second;
-      System.out.println( "The sum of the numbers " + sum );
-    } else if ( command.equals("difference") ) {     
-      int difference = first-second;
-      System.out.println( "The difference of the numbers " + erotus );
-    } else {     
-      System.out.println( "Unknown command" );
+    if (command.equals("sum") ) {
+        int sum = first + second;
+        System.out.println( "The sum of the numbers is " + sum );
+    } else if (command.equals("difference")) {
+        int difference = first - second;
+        System.out.println("The difference of the numbers is " + difference);
+    } else {
+        System.out.println("Unknown command");
     } 
 
-  }
-  System.out.println("thanks bye!");
+}
+
+System.out.println("Thanks, bye!");
 </pre><!-- screencast -->
 
             <div class="tehtavat">
@@ -1665,7 +1664,7 @@ Thank you and see you again!
 <pre>
 Type the password: <font color="red">turnip</font>
 Wrong!
-Type the password: <font color="red">rutabaga</font>
+Type the password: <font color="red">beetroot</font>
 Wrong!
 Type the password: <font color="red">carrot</font>
 Right!
@@ -1673,15 +1672,14 @@ Right!
 The secret is: jryy qbar!
 </pre>
 
-                    <p>Now we will create the program in three steps.</p>
+                    <p>The program will be done in three steps.</p>
 
                     <h4>Asking for the password</h4>
 
-                    <p>We have already defined a String variable named password, and set its value to carrot. You get
-                    it to your NetBeans with the exercise from the test server. Do not change the password! You should
-                    implement a feature, where the program asks the user to enter the password and then compares it
-                    with the value assigned to the variable <code>password</code>. Remember that there is a certain way
-                    to compare texts!!</p>
+                    <p>The initial exercise template defines the variable <code>String password</code> with a value of
+                    <code>carrot</code>. Do not change this password! You should make the program ask the user to enter
+                    a password and then compare it with the value in the variable <code>password</code>. Remember what
+                    that there is a special way to compare strings!</p>
 
 <pre>
 Type the password: <font color="red">turnip</font>
@@ -1694,21 +1692,21 @@ Right!
 </pre>
 
 <pre>
-Type the password: <font color="red">sweet potato</font>
+Type the password: <font color="red">potato</font>
 Wrong!
 </pre>
 
                     <h4>Asking for the password until the user gives the correct one</h4>
 
-                    <p>Change the program so that it asks the user to type a password until it gets the correct one.
-                    Implement the password query using a <code>while-true</code> repetition clause so that the only way
-                    to get out of the clause is giving a password that matches the one stored in the variable
-                    <code>password</code>.</p>
+                    <p>Modify the program so that it asks the user to type a password until it gets the correct one.
+                    Implement this using a <code>while-true</code> loop statement. The loop statement can be
+                    interrupted if and only if the entered password matches the value of the
+                    <code>password</code> variable.</p>
 
 <pre>
 Type the password: <font color="red">turnip</font>
 Wrong!
-Type the password: <font color="red">rutabaga</font>
+Type the password: <font color="red">beetroot</font>
 Wrong!
 Type the password: <font color="red">carrot</font>
 Right!
@@ -1717,7 +1715,7 @@ Right!
                     <h4>Secret message</h4>
 
                     <p>Add your own secret message to the program and show it to the user when the password is correct.
-                    Your message can be anything you like!</p>
+                    Your message can be whatever you want!</p>
 
 <pre>
 Type the password: <font color="red">turnip</font>
@@ -1731,16 +1729,16 @@ The secret is: jryy qbar!
 </pre>
 
                     <p>The secret above has been encrypted using the <a href="http://en.wikipedia.org/wiki/Rot13"
-                    target="_blank">Rot13</a> algorithm. During this course we will implement our own encrypting
+                    target="_blank">Rot13</a> algorithm. During this course we will implement our own encryption
                     program.</p>
                 </div>
 
                 <div class="tehtava">
                     <h3 class="req">Temperatures</h3>
 
-                    <p>You will get to your NetBeans a component called <code>Graph</code> along with your exercise
-                    files. <code>Graph</code> draws graphs based on numbers that are given to it. You can give it
-                    numbers the following way:</p>
+                    <p>You will get the <code>Graph</code> component along with the exercise template.
+                    <code>Graph</code> draws graphs based on numbers that are given to it. You can give it numbers
+                    as follows:</p>
 
 <pre class="sh_java">
 Graph.addNumber(13.0);
@@ -1750,65 +1748,65 @@ Graph.addNumber(13.0);
 
                     <h4>Asking for numbers</h4>
 
-                    <p>Create a program that asks the user to input floating point (or decimal) numbers
-                    (<code>double</code>) and then adds the numbers to the graph. Use the <code>while-true</code>
-                    structure again.</p>
+                    <p>Create a program that asks the user to input floating point numbers (<code>double</code>) and
+                    then adds the numbers to the graph. Use the <code>while-true</code> structure again.</p>
 
-                    <p><strong>Note:</strong> <code>double</code> can be read this way: <code>double number =
-                    Double.parseDouble( reader.nextLine() );</code></p>
+                    <p><b>Note:</b> To read a <code>double</code>, use: <code>double number =
+                    Double.parseDouble(reader.nextLine());</code></p>
 
                     <h4>Checking</h4>
 
-                    <p>Make your program better by checking that it does not add to the graph temperatures that are
-                    either under -30 degrees or over +40 degrees.</p>
+                    <p>Improve your program so that temperatures below -30 degrees or over +40 degrees are ignored and
+                    not added to the graph.</p>
                 </div>
 
                 <div class="tehtava">
                     <h3 class="req">NHL statistics, part 2</h3>
 
-                    <p>Let us continue using the NHL component and create another program that helps the user to ask
-                    for some statistics.</p>
+                    <p>We will continue using the NHL component introduced earlier and create a program that the user
+                    can use to query for statistics.</p>
 
-                    <p>The program is structured in the same manner as the previous Calculator example program. The
-                    program body is as follows:</p>
+                    <p>The program is structured similarly to the Calculator example program above. The program body
+                    is as follows:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) throws Exception {
-        Scanner reader = new Scanner(System.in);
+public static void main(String[] args) throws Exception {
+    Scanner reader = new Scanner(System.in);
 
-        System.out.println("NHL statistics service");
-        while ( true ) {
-            System.out.println("");
-            System.out.print("command (points, goals, assists, penalties, player, club, quit): ");
-            String command = reader.nextLine();
+    System.out.println("NHL statistics service");
+    while (true) {
+        System.out.println("");
+        System.out.print("command (points, goals, assists, penalties, player, club, quit): ");
+        String command = reader.nextLine();
 
-            if ( command.equals("quit")) {
-                break;
-            }
+        if (command.equals("quit")) {
+            break;
+        }
 
-            if ( command.equals("points")) {
-                // print the top ten playes sorted by points
-            } else if ( command.equals("goals")) {
-                // print the top ten players sorted by goals
-            } else if ( command.equals("assists")) {
-                //  print the top ten players sorted by assists
-            } else if ( command.equals("penalties")) {
-                //  print the top ten players sorted by penalties
-            } else if ( command.equals("player")) {
-                // ask the user first which player's statistics are needed and then print them
-            } else if ( command.equals("club")) {
-               // ask the user first which club's statistics are needed and then print them
-               // note: when printing statistics they should be ordered by points (so that the players with the most points come in first)
-            }
+        if (command.equals("points")) {
+            // print the top ten playes sorted by points
+        } else if (command.equals("goals")) {
+            // print the top ten players sorted by goals
+        } else if (command.equals("assists")) {
+            // print the top ten players sorted by assists
+        } else if (command.equals("penalties")) {
+            // print the top ten players sorted by penalties
+        } else if (command.equals("player")) {
+            // ask the user for the player name and print the statistics for that player
+        } else if (scommand.equals("club")) {
+            // ask the user for the club abbreviation and print the statistics for the club
+            // note: the statistics should be sorted by points 
+            //     (players with the most points are first)
         }
     }
+}
 </pre>
 
                     <p>The program asks the user to give commands and then executes the operation that is associated
-                    with the given command. Commands are: <em>points, goals, assists, penalties, player, club,
+                    with the given command. The commands are: <em>points, goals, assists, penalties, player, club,
                     quit</em>.</p>
 
-                    <p>The places where you should write code are marked with comments in the program body.</p>
+                    <p>You should write code in the parts marked with comments.</p>
 
                     <p>Here is an example demonstrating the program in action:</p>
 
@@ -1843,9 +1841,8 @@ Henrik Zetterberg      DET        41  8 + 24= 32  14
 command (points, goals, assists, penalties, player, club): <font color="red">quit</font>
 </pre>
 
-                    <p>Please note that when you first run the program, the execution might take a while. That is
-                    because the server giving out the statistics information might be sleeping and waking it up takes
-                    some time. After the first run the execution should be quick.</p>
+                    <p><b>Note:</b> When you first run the program, the execution might take a while because the
+                    information is downloaded from the internet. Execution should be quick after the first run.</p>
                 </div>
             </div>
         </div>
@@ -1856,32 +1853,32 @@ command (points, goals, assists, penalties, player, club): <font color="red">qui
             Week 2
         </div>
 
-        <div class="viikkoraja-mooc" id="Week 2" deadline="unlocks when 85% of week 1 is completed" unlock="unlocks when 85% of week 1 is completed" data-first-chapter-index="11"
+        <div class="viikkoraja-mooc" id="Week 2" deadline="unlocks when 85% of week 1 done" unlock="unlocks when 85% of week 1 done" data-first-chapter-index="11"
         data-first-exercise-index="25" data-first-week-index="2" data-first-chapter-index-mooc="11"
         data-first-exercise-index-mooc="25" data-first-week-index-mooc="2" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
             <h2>Changing variables</h2>
 
-            <p>Usually when we have an existing variable we want to change its value. This can be achieved using a
-            basic assignment clause. In the next example we raise the value of the variable <code>age</code> by
+            <p>Usually we want to change the value of an existing variable. This can be done using the normal
+            assignment statement. In the next example, we increase the value of the variable <code>age</code> by
             one:</p>
 
 <pre class="sh_java">
 int age = 1;
 
-System.out.println( age );    // prints 1
-age = age + 1;                // the new value of age is the old value of age + 1    
-System.out.println( age );    // prints 2
+System.out.println(age);  // prints 1
+age = age + 1;            // the new value of age is the old value of age + 1    
+System.out.println(age);  // prints 2
 </pre>
 
-            <p>The command <code>age = age + 1</code> increments the value of the variable <code>age</code> by one. It
-            is also possible to increment a variable by one this way:</p>
+            <p>The <code>age = age + 1</code> statement increments the value of the variable <code>age</code> by one.
+            It is also possible to increment a variable by one this way:</p>
 
 <pre class="sh_java">
 int age = 1;
 
-System.out.println( age );    // prints 1
-age++;                        // means the same as age = age + 1
-System.out.println( age );    // prints 2
+System.out.println(age);  // prints 1
+age++;                    // means the same as age = age + 1
+System.out.println(age);  // prints 2
 </pre>
 
             <p>Another example:</p>
@@ -1889,23 +1886,23 @@ System.out.println( age );    // prints 2
 <pre class="sh_java">
 int length = 100;
 
-System.out.println( length );   // prints 100
+System.out.println(length);  // prints 100
 length = length - 50;    
-System.out.println( length );   // prints 50
+System.out.println(length);  // prints 50
 length = length * 2;
-System.out.println( length );   // prints 100 
+System.out.println(length);  // prints 100 
 length = length / 4;
-System.out.println( length );   // prints 25
-length--;                       // means the same as length = length-1;
-System.out.println( length );   // prints 24
+System.out.println(length);  // prints 25
+length--;                    // means the same as length = length - 1;
+System.out.println(length);  // prints 24
 </pre>
 
             <div id="viikko2" class="tehtavat">
                 <div class="tehtava">
                     <h3>Sum of three numbers</h3>
 
-                    <p>Create a program that asks the user for three numbers and then prints their sum. Make sure your
-                    program has the following structure::</p>
+                    <p>Create a program that asks the user for three numbers and then prints their sum. Use the
+                    following structure in your program:</p>
 
 <pre class="sh_java">
 Scanner reader = new Scanner(System.in);
@@ -1913,9 +1910,9 @@ int sum = 0;
 int read;
 
 // WRITE YOUR PROGRAM HERE
-// USE ONLY 3 VARIABLES, sum, reader AND read!
+// USE ONLY THE VARIABLES sum, reader AND read!
 
-System.out.println("Sum: "+sum);
+System.out.println("Sum: " + sum);
 </pre>
 
 <pre>
@@ -1930,9 +1927,8 @@ Sum: 21
                 <div class="tehtava">
                     <h3>Sum of many numbers</h3>
 
-                    <p>Create a program that reads numbers from the user and prints their sum. The program will stop
-                    asking the user to type a number when user enters the number 0. Use the following program body
-                    given by the exercise robot:</p>
+                    <p>Create a program that reads numbers from the user and prints their sum. The program should stop
+                    asking for numbers when user enters the number 0. The program should be structured like this:</p>
 
 <pre class="sh_java">
 Scanner reader = new Scanner(System.in);
@@ -1945,9 +1941,10 @@ while (true) {
 
     // DO SOMETHING HERE
 
-    System.out.println("Sum now: "+sum);
+    System.out.println("Sum now: " + sum);
 }
-System.out.println("Sum in the end: "+sum);
+
+System.out.println("Sum in the end: " + sum);
 </pre>
 
                     <p>The program should work as follows:</p>
@@ -1967,35 +1964,34 @@ Sum in the end: 7
                 </div>
             </div>
 
-            <h2 id="lisaa_toistoa">More repetition</h2>
+            <h2 id="lisaa_toistoa">More loops</h2>
 
-            <p>We have previously learned to create a repeating program with the <code>while(true)</code> command.
-            Programs we have made have been repeating certain commands until they reach a <code>break</code>
-            command.</p>
+            <p>Previously we have learned to use repetition using the <code>while (true)</code> loop, which repeats
+            commands until the <code>break</code> command is used.</p>
 
-            <p>A <code>break</code> command is not the only way to end repetition. A common structure for a repetition
-            command is <code>while (condition)</code>, where the condition can be any truth clause. That means the
-            condition can be exactly like conditions for an <code>if</code> command.</p>
+            <p>The <code>break</code> command is not the only way to end the loop. A common structure for a loop
+            is <code>while (condition)</code>, where the condition can be any statement that evaluates to a truth
+            value. This means that the condition works exactly like conditions for an <code>if</code> statements.</p>
 
-            <p>In the following example our program prints the numbers 1, 2, …, 10. When the value of the variable
-            <code>number</code> grows to be over 10, the condition of the <code>while</code> structure becomes false
-            and executing the block ends.</p>
+            <p>In the following example, we print the numbers 1, 2, …, 10. When the value of the variable
+            <code>number</code> increases to be over 10, the condition of the <code>while</code> statement is no longer
+            true so the loop ends.</p>
 
 <pre class="sh_java">
 int number = 1;
 
 while (number &lt; 11) {
   System.out.println(number);
-  number++;    // number++ means the same as number = number + 1
+  number++;  // number++ means the same as number = number + 1
 }
 </pre>
 
-            <p>Read the above example "as long as the variable number is less than 11, print the variable and
+            <p>The example above can be read "as long as the variable number is less than 11, print the variable and
             increment it by one".</p>
 
-            <p>In the code above the variable <code>number</code> was incremented each time the block was executed. The
-            change can be anything, meaning that the variable used in the boolean condition does not always need to be
-            incremented, as we can see in the following example:</p>
+            <p>Above, the variable <code>number</code> was incremented on each iteration of the loop. The change can be
+            anything, meaning that the variable used in the condition does not always need to be incremented. For
+            example:</p>
 
 <pre class="sh_java">
 int number = 1024;
@@ -2007,38 +2003,34 @@ while (number &gt;= 1) {
 </pre><!-- screencast -->
 
             <div>
-                <big><big><b>A couple of tips on using NetBeans</b></big></big>
+                <big><big><b>A few NetBeans tips</b></big></big>
 
                 <ul>
-                    <li>You can find all the NetBeans tips <a href="">here</a>
-                    </li>
-
+                    <li>You can find all the NetBeans tips <a href="">here</a>.</li>
                     <li>
-                        <b>Using auto-complete</b>
+                        <b>Auto-completion of your code</b>
 
-                        <p>There is a really useful tool in NetBeans called auto-complete. If you have, for example, a
-                        variable <code>String familyName;</code> in your code, you do not need to always write it all.
-                        See what happens when you type <code>s</code> and after that press ctrl and space
-                        simultaniously. Similarly NetBeans can auto-complete other names as well, for example to get
-                        the command <code>while</code> you need to type only w and press ctrl and space...</p>
+                        <p>If you have, for example, the variable <code>String familyName;</code> in your code, you do
+                        not need to always write <code>familyName</code>. Try what happens when you type in
+                        <code>f</code> and then press CTRL and space simultaneously. You can also use auto-completion
+                        with commands like <code>while</code> by typing in <code>w</code> and then CTRL + space...</p>
                     </li>
-
                     <li>
                         <b>sout</b>
 
                         <p>Remember also that you can get the text <em>System.out.println("")</em> by typing
-                        <em>sout</em> and pressing the <em>tabulator</em> key (located to the left of the q key)</p>
+                        <em>sout</em> and pressing the <em>tab</em> key (located to the left of the q key)</p>
                     </li>
                 </ul>
             </div>
 
             <div class="tehtavat">
-                <p>Complete the following exercises using the while structure:</p>
+                <p>Complete the following exercises using the <code>while</code> statement:</p>
 
                 <div class="tehtava">
                     <h3 class="req">From one to a hundred</h3>
 
-                    <p>Create a program that prints the integers (whole numbers) 1–100.</p>
+                    <p>Create a program that prints the integers (whole numbers) from 1 to 100.</p>
 
                     <p>The program output should be:</p>
 
@@ -2056,7 +2048,7 @@ while (number &gt;= 1) {
                 <div class="tehtava">
                     <h3 class="req">From hundred to one</h3>
 
-                    <p>Create a program that prints the integers (whole numbers) 100–1.</p>
+                    <p>Create a program that prints the integers (whole numbers) from 100 to 1.</p>
 
                     <p>The program output should be:</p>
 
@@ -2070,8 +2062,8 @@ while (number &gt;= 1) {
 1
 </pre>
 
-                    <p><strong>Hint:</strong> assign the variable you use as a helper variable in the repetition clause
-                    the value 100 and then in each iteration subtract one from the current value.</p>
+                    <p><b>Tip:</b> Assign the variable you use in the condition of the loop a initial value of 100 and
+                    then subtract one on each iteration of the loop.</p>
                 </div>
 
                 <div class="tehtava">
@@ -2093,7 +2085,7 @@ while (number &gt;= 1) {
                 <div class="tehtava">
                     <h3 class="req">Up to a certain number</h3>
 
-                    <p>Create a program that prints all whole numbers from 1 to the number the user types.</p>
+                    <p>Create a program that prints all whole numbers from 1 to the number the user enters.</p>
 
 <pre>
 Up to what number? <font color="red">3</font>
@@ -2111,14 +2103,15 @@ Up to what number? <font color="red">5</font>
 5
 </pre>
 
-                    <p><strong>Hint:</strong> the number you read from the user now works as the upper limit in the
-                    boolean condition needed by the while structure. Remember that in Java <code>a &lt;= b</code> means
-                    <em>a is less or equal to b</em>.</p>
-
+                    <p><b>Tip:</b> The number you read from the user now works as the upper limit in the condition of
+                    the <code>while</code> statement. Remember that in Java <code>a &lt;= b</code> means <em>a is less
+                    than or equal to b</em>.</p>
+		</div>
+		<div class="tehtava">
                     <h3>Lower limit and upper limit</h3>
 
                     <p>Create a program that asks the user for the first number and the last number and then prints all
-                    the numbers in between those two.</p>
+                    numbers between those two.</p>
 
 <pre>
 First: <font color="red">5</font>
@@ -2136,14 +2129,14 @@ First: <font color="red">16</font>
 Last: <font color="red">12</font>
 </pre>
 
-                    <p><em>Note!</em> remember that the lower limit and the upper limit can also be negative!</p>
-                </div>
+                    <p><b>Note:</b> Remember that the lower and upper limits can also be negative!</p>
             </div>
+        </div>
 
             <h3>Assignment operations</h3>
 
-            <p>Because changing the value of a variable is a very common operation, there are certain assignment
-            operations for that in Java.</p>
+            <p>Because changing the value of a variable is a very common operation, Java has special assignment
+            operations for it.</p>
 
 <pre class="sh_java">
 int length = 100;
@@ -2152,28 +2145,27 @@ lenght += 10;  // same as length = length + 10;
 length -= 50;  // same as length = length - 50;
 </pre>
 
-            <p>When the assignment operation is done to an existing variable, it is written as <code>variable type of
-            change = change</code>, for example <code>variable += 5</code>. Note that you must always tell the type of
-            the variable before you can assign any value to it. This means that when we want a new variable into use we
-            must first introduce it. Introducing a variable is done by specifying the variable type and the name of the
-            variable.</p>
+            <p>When performing the assignment operation on an existing variable, it is written as
+            <code>variable operation= change</code>, for example <code>variable += 5</code>. Note that a variable must
+            be defined before you can assign a value to it. Defining a variable is done by specifying the variable
+            type and the name of the variable.</p>
 
-            <p>The following example will not work, because the type of the variable <code>length</code> has not been
-            specified.</p>
+            <p>The following example will not work because the type of the variable <code>length</code> has not been
+            defined.</p>
 
 <pre class="sh_java">
-length = length + 100;   // not working!
-length += 100;           // not working!
+length = length + 100;  // error!
+length += 100;          // error!
 </pre>
 
-            <p>When the type is specified, the calculations start working correctly.</p>
+            <p>When the type is defined, the operations will also work.</p>
 
 <pre class="sh_java">
 int length = 0;
 length = length + 100;
 length += 100;
 
-// length now holds the value 200
+// the variable length now holds the value 200
 </pre>
 
             <p>There are also other assignment operations:</p>
@@ -2181,39 +2173,38 @@ length += 100;
 <pre class="sh_java">
 int length = 100;
 
-length *= 10; // same as length = 10 * length; 
-length /= 100; //same as length = length / 100;
-length %= 3;  // same as length = length % 3;
+length *= 10;   // same as length = length * 10; 
+length /= 100;  // same as length = length / 100;
+length %= 3;    // same as length = length % 3;
 
 // the variable length now holds the value 1
 </pre>
 
-            <p>Many programs contain a repetition, during which the program calculates a value for the variable, so
-            that the value depends on the repetition. The following program calculates 4*3 in a somewhat clumsy way as
-            a sum of 3+3+3+3:</p>
+            <p>Often during a loop, the value of a variable is calculated based on the repetition. The following
+            calculates 3*4 somewhat clumsily as a sum of 3+3+3+3:</p>
 
 <pre class="sh_java">
 int result = 0;
 
 int i = 0;
-while ( i &lt; 4 ) {
+while (i &lt; 4) {
    result = result + 3;
-   i++;   // means the same as i = i+1;
+   i++;  // means the same as i = i + 1;
 }
 </pre>
 
-            <p>In the beginning <code>result = 0</code>. During the repetition the value of the variable is incremented
-            by 3. And because there are 4 repetitions, the value of the variable is 3*4 in the end.</p>
+            <p>In the beginning <code>result = 0</code>. During the loop, the value of the variable is incremented
+            by 3 on each iteration. And because there are 4 iterations, the value of the variable is 3*4 in the end.</p>
 
-            <p>Using the assignment operator introduced before, we can achieve the same behavior also like this:</p>
+            <p>Using the assignment operator introduced above, we can achieve the same behavior as follows:</p>
 
 <pre class="sh_java">
 int result = 0;
 
 int i = 0;
-while ( i &lt; 4 ) {
-   result += 3;      // this is the same as result = result + 3;
-   i++;             // means the same as i = i+1;
+while (i &lt; 4) {
+   result += 3;  // this is the same as result = result + 3;
+   i++;          // means the same as i = i+1;
 }
 </pre>
 
@@ -2221,23 +2212,26 @@ while ( i &lt; 4 ) {
                 <div class="tehtava">
                     <h3 class="req">The sum of a set of numbers</h3>
 
-                    <p>Create a program that calculates the sum of n numbers, where n is a number given by the user.
-                    The program should add the numbers together one by one, like 1+2+3+...+n.</p>
+                    <p>Create a program that calculates the sum 1+2+3+…+n where n is a number entered by the user.</p>
 
                     <p>Example outputs:</p>
 
 <pre>
 Until what? <font color="red">3</font>
-Sum is 6   // calculated 1+2+3
+Sum is 6
 </pre>
+
+                    <p>The calculation above was: 1+2+3 = 6.</code>
 
 <pre>
 Until what? <font color="red">7</font>
-Sum is 28   // calculated 1+2+3+4+5+6+7
+Sum is 28
 </pre>
 
-                    <p><strong>Hint:</strong> Create a program using the <code>while</code> structure. Use a helper
-                    variable in your program to remember how many times the block has been executed. Use also another
+                    <p>The calculation above was: 1+2+3+4+5+6+7 = 28.</code>
+
+                    <p><b>Hint:</b> Create the program using the <code>while</code> statement. Use a helper variable
+                    in your program to remember how many times the block has been executed. Use also another
                     helper variable to store the sum. During each execution add the value of the helper variable that
                     counts the executions to the variable in which you should collect the sum.</p>
                 </div>
@@ -2245,8 +2239,9 @@ Sum is 28   // calculated 1+2+3+4+5+6+7
                 <div class="tehtava">
                     <h3 class="req">The sum between two numbers</h3>
 
-                    <p>Change the previous program so that the user gives the starting number and the ending number.
-                    You can assume that the user first gives the smaller number and then the greater number.</p>
+                    <p>Similar to the previous exercise, except that the program should ask for both the lower and
+                    upper bound. You can assume that the users first gives the smaller number and then the greater
+                    number.</p>
 
                     <p>Example outputs:</p>
 
@@ -2266,9 +2261,9 @@ The sum is 35
                 <div class="tehtava">
                     <h3>Factorial</h3>
 
-                    <p>Create a program that calculates the factorial of the number n. Factorial n! is calculated with
-                    the formula 1*2*3*...*n. For example 4! = 1*2*3*4 = 24. Additionally it is predefined that 0! =
-                    1.</p>
+                    <p>Create a program that calculates the factorial of the number n. The factorial n! is calculated
+                    using the formula 1*2*3*...*n. For example 4! = 1*2*3*4 = 24. Additionally, it is defined that
+                    0! = 1.</p>
 
                     <p>Example outputs:</p>
 
@@ -2287,14 +2282,14 @@ Factorial is 3628800
                     <h3>Sum of the powers</h3>
 
                     <p>Create a program that calculates the sum of
-                    2<sup>0</sup>+2<sup>1</sup>+2<sup>2</sup>+...+2<sup>n</sup>, where n is the number given by the
+                    2<sup>0</sup>+2<sup>1</sup>+2<sup>2</sup>+...+2<sup>n</sup>, where n is a number entered by the
                     user. The notation 2<sup>i</sup> means raising the number 2 to the power of i, for example
                     2<sup>4</sup> = 2*2*2*2 = 16. In Java we cannot write a<sup>b</sup> directly, but instead we can
                     calculate the power with the command <code>Math.pow(number, power)</code>. Note that the command
-                    returns a number of <code>double</code> type (i.e. a decimal / floating point number). A double can
-                    be transformed into an <code>integer</code> (i.e. whole number) this way: <code>int result = (int)
-                    Math.pow(2, 3)</code>. This command assigns the variable result the value that is the outcome of
-                    the calculation 2 to the power of 3.</p>
+                    returns a number of <code>double</code> type (i.e. floating point number). A double can be
+                    converted into the <code>int</code> type (i.e. whole number) as follows:
+                    <code>int result = (int)Math.pow(2, 3)</code>. This assigns the value of 2<sup>3</sup> to variable
+                    result.</p>
 
                     <p>Example outputs:</p>
 
@@ -2318,82 +2313,78 @@ The result is 255
 <pre class="sh_java">
 int i = 0;
 
-while( i&lt;10 ) {
+while (i &lt; 10) {
   System.out.println("Never again shall I program an eternal loop!");
 }
 </pre>
 
-            <p>The variable <code>i</code> that controls how many times the block is executed starts with the value 0
-            and the block should be executed until <code>i&lt;10</code>. But something funny happens here. Because the
-            variable <code>i</code> never gets a new value after it is introduced, it will never grow and thus the
-            boolean condition stays true forever.</p>
+            <p>The variable <code>i</code>, which determines the number of loop, is initially set to 0. The block is
+            supposed to be looped as long as the condition <code>i &lt; 10</code> is true. But something funny happens
+            here. Because the value of the variable <code>i</code> is never changed, the condition stays true forever.</p>
 
-            <h3>while and ending</h3>
+            <h3>Ending a while loop</h3>
 
-            <p>We have now made several repetition exercises, where the repetition condition looks roughly like
-            this:</p>
+            <p>So far, we have used the while loop with a structure similar to this:</p>
 
 <pre class="sh_java">
 int i = 1;
-while ( i &lt; 10 ) {
-  // ...
+while (i &lt; 10) {
+  // Some code.
   i++;
 }
 </pre>
 
-            <p>In the program body above the variable <code>i</code> remembers how many times the while block has been
-            executed and ending the repetition is based on checking what the value of <code>i</code> is.</p>
+            <p>With the structure above, the variable <code>i</code> remembers the number of times the the loop has
+            been executed. The condition to end the loop is based on comparing the value of <code>i</code>.</p>
 
-            <p>Let us remember for a while how the repetition is stopped. The decision on ending the repetition of a
-            code block does not need to be based on how many times the block has been executed. Next follows an example
-            where the program asks for the user's age. If the age is not between 5 and 85 years, program prints a
-            warning and asks for the age again. The condition for executing the while structure can be anything that
-            produces a boolean (truth value).</p>
+            <p>Let us now recall how a while loop is stopped. Ending a while loop does not need to always be based on
+            the number of loops. The next example program asks for the user's age. If the given age is not in the range
+            5-85, the program prints a message and asks for the user's age again. As you can see, the condition for the
+            while loop can be any expression that results in a boolean (truth value).</p>
 
 <pre class="sh_java">
 System.out.println("Type your age: ");
 
 int age = Integer.parseInt(reader.nextLine());
 
-while( age &lt; 5 || age  &gt; 85 ) {   // age less than 5 OR greater than 85
-  System.out.println("You are lying!");
-  if ( age &lt; 5 ) {
-      System.out.println("You are so young that you cannot know how to write!");   
-  } else if ( age &gt; 85 ) {
-      System.out.println("You are so old that you cannot know how to use a computer!");   
-  } 
+while (age &lt; 5 || age &gt; 85) {  // age less than 5 OR greater than 85
+    System.out.println("You are lying!");
+    if (age &lt; 5) {
+        System.out.println("You are so young that you cannot know how to write!");   
+    } else if (age &gt; 85) {
+        System.out.println("You are so old that you cannot know how to use a computer!");   
+    } 
 
-  System.out.println("Type your age again: ");
-  age = Integer.parseInt(reader.nextLine();
+    System.out.println("Type your age again: ");
+    age = Integer.parseInt(reader.nextLine();
 }
 
-System.out.println("Your age is "+ age);
+System.out.println("Your age is " + age);
 </pre>
 
-            <p>The program with the same functionality could have also been done using the old faithful
-            <code>while(true)</code> structure:</p>
+            <p>The program could have also been implemented using the good old <code>while (true)</code> structure:</p>
 
 <pre class="sh_java">
 System.out.println("Type your age ");
 
-while( true ) {   
-  int age = Integer.parseInt(reader.nextLine());
+while (true) {
+    int age = Integer.parseInt(reader.nextLine());
 
-  if ( age &gt;= 5 &amp;&amp; age &lt;= 85 ) {   // age between 5 AND 85
-    break;                              // ending the repetition
-  }
+    if (age &gt;= 5 &amp;&amp; age &lt;= 85) {  // age between 5 AND 85
+        break;  // end the loop
+    }
 
-  System.out.println("You are lying!");
-  if ( age &lt; 5 ) {
-      System.out.println("You are so young that you cannot know how to write!");   
-  } else {  // that means age is over 85
-      System.out.println("You are so old that you cannot know how to use a computer!");   
-  } 
+    System.out.println("You are lying!");
+    if (age &lt; 5) {
+        System.out.println("You are so young that you cannot know how to write!");   
+    } else {  // that means age is over 85
+        System.out.println("You are so old that you cannot know how to use a computer!");   
+    } 
 
-  System.out.println("Type your age again: ");
+    System.out.println("Type your age again: ");
 }
 
-System.out.println("Your age is "+ age);
+System.out.println("Your age is " + age);
 </pre>
 
             <div class="tehtavat">
@@ -2789,7 +2780,6 @@ Hi John 24 years, greetings from the world of methods!
             that means putting the text together) <code>name1 + " " + name2</code>. The value for that
             concatenation is <i>Anne Green</i>. In the second case we get the parameter value from the String
             concatenation <code>"John " + age + " years"</code>.</p>
-        </div>
 
         <h3>Many parameters</h3>
 
@@ -2852,7 +2842,7 @@ public static void main(String[] args) {
 Hi Anthony, greetings from the world of methods!
 Hi Anthony, greetings from the world of methods!
 Hi Anthony, greetings from the world of methods!
-ja
+and
 Hi Martin, greetings from the world of methods!
 Hi Martin, greetings from the world of methods!
 </pre><!-- screencast -->
@@ -2951,7 +2941,7 @@ public static void main(String[] args) {
 
                 <p>Create the method <code>printTriangle(int size)</code> that prints a triangle using the printStars
                 method using the mehtods <code>printWhitespaces</code> and <code>printStars</code>. <b>Note:</b> do not
-                print anythin in the method itself, just call the helper methods to do the actual printing.</p>
+                print anything in the method itself, just call the helper methods to do the actual printing.</p>
 
                 <p>For example, the method call <code>printTriangle(4)</code> has the following output:</p>
 
@@ -2967,7 +2957,7 @@ public static void main(String[] args) {
                 <p>Create the method <code>xmasTree(int height)</code> that prints a Christmas tree using the mehtods
                 <code>printWhitespaces</code> and <code>printStars</code>. A Christmas tree consists of a triangle of
                 given height and a stand. The stand is two stars tall and three stars wide and it is located at the
-                middle of the triangle bottom. <b>Note:</b> do not print anythin in the method itself, just call the
+                middle of the triangle bottom. <b>Note:</b> do not print anything in the method itself, just call the
                 helper methods to do the actual printing.</p>
 
                 <p>The method call <code>xmasTree(4)</code>, for example, has the following output:</p>
@@ -3008,7 +2998,7 @@ public static void main(String[] args) {
 
 <pre>
 Guess a number: <font color="red">73</font>
-The number is smaller, guesses made: 1
+The number is lesser, guesses made: 1
 Guess a number: <font color="red">22</font>
 The number is greater, guesses made: 2
 Guess a number: <font color="red">51</font>
@@ -3018,7 +3008,7 @@ The number is greater, guesses made: 4
 Guess a number: <font color="red">68</font>
 The number is greater, guesses made: 5
 Guess a number: <font color="red">71</font>
-The number is smaller, guesses made: 6
+The number is lesser, guesses made: 6
 Guess a number: <font color="red">70</font>
 Congratulations, your guess is correct!
 </pre>
@@ -3028,7 +3018,7 @@ Congratulations, your guess is correct!
                 <p>The program that comes from the exercise robot contains a command called <code>drawNumber</code>
                 that draws a number that is something between 0 and 100 (and both 0 and 100 are possible). Create a
                 program that draws a number and then the user has the chance to guess once what that number is. The
-                program needs to print "The number is smaller", "The number is greater" or
+                program needs to print "The number is lesser", "The number is greater" or
                 "Congratulations, your guess is correct!" depending on the number the user typed.</p>
 
 <pre>
@@ -3038,7 +3028,7 @@ The number is greater
 
 <pre>
 Guess a number: <font color="red">66</font>
-The number is smaller
+The number is lesser
 </pre>
 
 <pre>
@@ -3059,7 +3049,7 @@ Congratulations, your guess is correct!
 Guess a number: <font color="red">55</font>
 The number is greater
 Guess a number: <font color="red">85</font>
-The number is smaller
+The number is lesser
 Guess a number: <font color="red">77</font>
 The number is greater
 Guess a number: <font color="red">81</font>
@@ -3078,7 +3068,7 @@ Congratulations, your guess is correct!
 Guess a number: <font color="red">55</font>
 The number is greater, guesses made: 1
 Guess a number: <font color="red">85</font>
-The number is smaller, guesses made: 2
+The number is lesser, guesses made: 2
 Guess a number: <font color="red">77</font>
 The number is greater, guesses made: 3
 Guess a number: <font color="red">81</font>
@@ -3297,6 +3287,7 @@ Thank you for playing!
 </pre>
             </div>
         </div>
+        </div>
     </section>
 
     <section class="viikkoraja" id="3">
@@ -3304,7 +3295,7 @@ Thank you for playing!
             Week 3
         </div>
 
-        <div class="viikkoraja-mooc" id="Week 3"  deadline="unlocks when 85% of week 2 is completed" unlock="unlocks when 85% of week 2 is completed" data-first-chapter-index="1"
+        <div class="viikkoraja-mooc" id="Week 3"  deadline="unlocks when 85% of week 2 done" unlock="unlocks when 85% of week 2 done" data-first-chapter-index="1"
         data-first-exercise-index="15" data-first-week-index="3" data-first-chapter-index-mooc="15"
         data-first-exercise-index-mooc="43" data-first-week-index-mooc="43" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
             <h2>More about methods</h2>
@@ -3503,7 +3494,7 @@ public static double average(int number1, int number2, int number3) {
 }
 </pre>
 
-            <p>Screencast aiheesta: TODO</p><!-- screencast -->
+            <!-- <p>Screencast aiheesta: TODO</p>   screencast -->
 
             <div class="tehtavat">
                 <div class="tehtava">
@@ -3600,7 +3591,7 @@ Greatest: 7
                     <p>Place the method in the following program body:</p>
 
 <pre class="sh_java">
-publicp static double average(int number1, int number2, int number3, int number4) {
+public static double average(int number1, int number2, int number3, int number4) {
     // write your code here
 }
 
@@ -3668,7 +3659,7 @@ char character = word.charAt(3);
 System.out.println("The 4th character of the word is " + character); //prints "e"
 </pre>
 
-            <p>The characters in a string are numbered (ot more technically speaking strings are indexed) starting from
+            <p>The characters in a string are numbered (or more technically speaking strings are indexed) starting from
             0. Because of that we can reach the last character in a string from the number (or index) "the length
             of the word minus one", or <code>word.charAt(word.length()-1)</code>. The following example will make
             the program crash, because we are trying to get a character from an index that does not exist.</p>
@@ -3860,7 +3851,7 @@ System.out.println("Harry " + endpart); // prints "Harry Poppins"
 <pre class="sh_java">
 String word = "aesthetically";
 
-int index = word.indexOf("tic"); // index value will be 1
+int index = word.indexOf("tic"); // index value will be 6
 System.out.println(word.substring(index)); //prints "tically"
 
 index = word.indexOf("ally"); //index value will be 9
@@ -3871,7 +3862,7 @@ System.out.println(index); //prints -1
 System.out.println(word.substring(index)); //error!
 </pre>
 
-            <p>Screencast aiheesta: TODO</p><!-- screencast -->
+            <!-- <p>Screencast aiheesta: TODO</p>   screencast -->
 
             <div class="tehtavat">
                 <div class="tehtava">
@@ -3905,7 +3896,7 @@ Result: mple
 </pre>
 
 <pre>
-Type a word: <font color="red">esimerkki</font>
+Type a word: <font color="red">example</font>
 Length of the end part: <font color="red">6</font>
 Result: xample
 </pre>
@@ -4094,7 +4085,7 @@ public class ListProgram {
 
             <p>When the list is created, two strings are added by calling the list method <code>add</code>. The list
             will not run out of space, so theoretically the list can contain any number of Strings (as long as they fit
-            in the "machines" memory.</p>
+            in the "machines" memory).</p>
 
             <p>Internally an ArrayList is -- as its name suggests -- a list. The added strings automatically go to the
             end of the ArrayList.</p>
@@ -4220,7 +4211,7 @@ Barto is not on the teachers list
         teachers.add("Matt");
 
         int place = 0;
-        while ( place &lt; teachers.size() )  // do you remember why place &lt;= teachers.size() does not work?
+        while ( place &lt; teachers.size() )  // remember why place &lt;= teachers.size() doesn't work?
             System.out.println( teachers.get(place) );
             place++;
         }
@@ -4230,13 +4221,13 @@ Barto is not on the teachers list
             <p>Now the printing works regardless of the number of items on the list.</p>
 
             <p>Using a while repetition sentence and "self indexing" the list places is not usually the best
-            way to go through a list. A much more recommendable way is to use the for-each repetition described
+            way to go through a list. A much more recommended way is to use the for-each repetition described
             below.</p>
 
             <h3>for-each</h3>
 
             <p>Even though usually the command is referred to as for-each, the real name of the command is only
-            <code>for</code>. There are two versions of for, the traditional and the "for-each". The later is
+            <code>for</code>. There are two versions of for, the traditional and the "for-each". The latter is
             used now.</p>
 
             <p>Going through ArrayList items with for-each is like child's play:</p>
@@ -4269,7 +4260,7 @@ Barto is not on the teachers list
             <p>Even though the <code>for</code> command might seem a bit strange at first, you should definitely get
             used to using it!</p>
 
-            <p>Screencast aiheesta: TODO</p>
+            <!-- <p>Screencast aiheesta: TODO</p>   screencast -->
 
             <div class="tehtavat">
                 <div class="tehtava">
@@ -4325,7 +4316,7 @@ Type a word: <font color="red">celery</font>
 Type a word: <font color="red">turnip</font>
 Type a word: <font color="red">rutabaga</font>
 Type a word: <font color="red">celery</font>
-You gave twice the word celery
+You gave the word celery twice
 </pre>
 
                     <p><b>Hint:</b> Remember that ArrayList has the method <code>.contains()</code></p>
@@ -4334,7 +4325,7 @@ You gave twice the word celery
             <h3>Ordering, reversing and shuffling a list</h3>
 
             <p>Items on an ArrayList are easy to order by size. Ordering by size means an alphabetic order when the
-            list is of String type. Ordering happens like this::</p>
+            list is of String type. Ordering happens like this:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -4739,7 +4730,7 @@ public class Main {
     } 
 } 
 </pre>
-        </div>
+
 
         <div class="tehtavat">
             <div class="tehtava">
@@ -4771,8 +4762,10 @@ public static void main(String[] args) {
 
 <pre>
  
-The lengths of the Strings: [3, 3, 10, 27] 
+The lengths of the Strings: [5, 3, 10, 27] 
 </pre>
+            </div>
+            <div class="tehtava">
 
                 <h3>The greatest</h3>
 
@@ -4803,6 +4796,8 @@ public static void main(String[] args) {
  
 The greatest number is: 7 
 </pre>
+            </div>
+            <div class="tehtava">
 
                 <h3>The variance</h3>
 
@@ -4850,7 +4845,7 @@ The variance is: 5.666667
         <h2>Using truth values</h2>
 
         <p>A variable of truth value type (i.e. <code>boolean</code> can only have two values: <em>true</em> or
-        <em>false</em>. Here is an example on how to use boolean variables:</p>
+        <em>false</em>). Here is an example on how to use boolean variables:</p>
 
 <pre class="sh_java">
  
@@ -4891,7 +4886,7 @@ The variance is: 5.666667
         <code>==true</code>, writing just the name of the variable is enough!</p>
 
         <p>If we want to check if the boolean variable holds the value false, we can check that using a negation
-        operation (i.e. an exclamation mark:</p>
+        operation (i.e. an exclamation mark):</p>
 
 <pre class="sh_java">
  
@@ -4919,7 +4914,7 @@ The variance is: 5.666667
             } 
         } 
 
-        // if one of the numbers on the list had a value that was under 0, noNegatives becomes false.
+        // if one of the numbers on the list had a value that's under 0, noNegatives becomes false.
 
         return noNegative; 
     } 
@@ -5087,6 +5082,7 @@ The text is not a palindrome!
 </pre>
             </div>
         </div>
+    </div>
     </section>
 
     <section class="viikkoraja" id="4">
@@ -5094,7 +5090,7 @@ The text is not a palindrome!
             Week 4
         </div>
 
-        <div class="viikkoraja-mooc" id="Week 4"  deadline="unlocks when 85% of week 3 is completed" unlock="unlocks when 85% of week 3 is completed" data-first-chapter-index="20"
+        <div class="viikkoraja-mooc" id="Week 4"  deadline="unlocks when 85% of week 3 done" unlock="unlocks when 85% of week 3 done" data-first-chapter-index="20"
         data-first-exercise-index="70" data-first-week-index="4" data-first-chapter-index-mooc="20"
         data-first-exercise-index-mooc="70" data-first-week-index-mooc="4" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
             <div class="week" data-week-number="4">
@@ -5223,17 +5219,19 @@ public static int addThreeAndReturn(int incremented) {
 
 <pre class="sh_java">
  
-    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;(); 
-    numbers.add(4); 
-    numbers.add(3); 
-    numbers.add(7); 
-    numbers.add(3); 
+    public static void main(String[] args) { 
+        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;(); 
+        numbers.add(4); 
+        numbers.add(3); 
+        numbers.add(7); 
+        numbers.add(3); 
 
-    System.out.println(numbers); // prints [4,3,7,3] 
+        System.out.println(numbers); // prints [4,3,7,3] 
 
-    removeFirst(numbers); 
+        removeFirst(numbers); 
 
-    System.out.println(numbers); // prints [3,7,3] 
+        System.out.println(numbers); // prints [3,7,3] 
+    }
 </pre>
 
                 <p>Unlike a parameter of <code>int</code> type, a list will not be copied and therefore the method
@@ -5324,7 +5322,7 @@ public static int addThreeAndReturn(int incremented) {
                     habits."</em></li>
                 </ul>
 
-                <p>We are now, at the latest, taking the first steps towards that goal.</p>
+                <p>We are now taking the first steps towards those goals.</p>
 
                 <h3>Well indented and "breathing" code</h3>
 
@@ -5713,7 +5711,7 @@ System.out.println(bartosSwissAccount);
                         <h4>Your first account</h4>
 
                         <p><b>Note:</b> there is a different exercise template for each of the sub-exercises.
-                        For this exercise use the template 057.1</p>
+                        For this exercise use the template 072.1</p>
 
                         <p>Create a program that creates an account with the balance of 100.0, deposits 20.0 and prints
                         the account. <strong>Note!</strong> do all the steps described in the exercise exactly in the
@@ -5722,7 +5720,7 @@ System.out.println(bartosSwissAccount);
                         <h4>Your first money transfer</h4>
 
                         <p><b>Note:</b> there is a different exercise template for each of the sub-exercises.
-                        For this exercise use the template 057.2</p>
+                        For this exercise use the template 072.2</p>
 
                         <p>Create a program that:</p>
 
@@ -5742,7 +5740,7 @@ System.out.println(bartosSwissAccount);
                         <h4>Money transfers</h4>
 
                         <p><b>Note:</b> there is a different exercise template for each of the sub-exercises.
-                        For this exercise use the template 057.3</p>
+                        For this exercise use the template 072.3</p>
 
                         <p>In the above program you made a money transfer from one person to another. Let us next
                         create a method that does the same!</p>
@@ -6941,8 +6939,8 @@ Brian: The card has 73.5 euros
     }
 
     public double bodyMassIndex(){
-        double heightDividedByZero = this.height / 100.0;
-        return this.weight / ( heightDividedByZero * heightDividedByZero );
+        double heightDividedByHundred = this.height / 100.0;
+        return this.weight / ( heightDividedByHundred * heightDividedByHundred );
     }
 
     // ...
@@ -6959,8 +6957,8 @@ Brian: The card has 73.5 euros
 
 <pre class="sh_java">
     public static void main(String[] args) {
-        Person matti = new Henkilo("Matti");
-        Person john = new Henkilo("John");
+        Person matti = new Person("Matti");
+        Person john = new Person("John");
 
         matti.setHeight(180);
         matti.setWeight(86);
@@ -7228,7 +7226,7 @@ public class Main {
 <pre class="sh_java">
 public class Main {
     public static void main(String[] args)  {
-        Scanner lukija = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in);
         BoundedCounter seconds = new BoundedCounter(59);
         BoundedCounter minutes = new BoundedCounter(59);
         BoundedCounter hours = new BoundedCounter(23);
@@ -7329,7 +7327,7 @@ public class Main {
 
                 <p>Objects can also call ins own methods. Let us assume we'd like to include body mass index in the
                 string representation of the person objects. Instead of calculating the body mass index in the toString
-                method, a better idea is to call the method <code>bodyMassInded</code> from the <code>toString</code>
+                method, a better idea is to call the method <code>bodyMassIndex</code> from the <code>toString</code>
                 method:</p>
 
 <pre class="sh_java">
@@ -7432,7 +7430,7 @@ public class NumberStatistics {
         // initialize here the object variable amountOfNumbers
     }
 
-    public void addnumber(int luku) {
+    public void addnumber(int number) {
         // code here
     }
 
@@ -8065,7 +8063,7 @@ word now: __SSA
             Week 5
         </div>
 
-        <div class="viikkoraja-mooc" id="Week 5"  deadline="unlocks when 80% of week 4 is completed" unlock="unlocks when 80% of week 4 is completed" data-first-chapter-index="24"
+        <div class="viikkoraja-mooc" id="Week 5"  deadline="unlocks when 80% of week 4 done" unlock="unlocks when 80% of week 4 done" data-first-chapter-index="24"
         data-first-exercise-index="84" data-first-week-index="5" data-first-chapter-index-mooc="24"
         data-first-exercise-index-mooc="84" data-first-week-index-mooc="5" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
             <h2>More about objects and classes</h2>
@@ -8359,7 +8357,7 @@ Pekka, age 35 years
         System.out.println( pekka );
 
         Person person = pekka;
-        henkilo.becomeOlder(25);
+        person.becomeOlder(25);
 
         System.out.println( pekka );
     }
@@ -8378,7 +8376,7 @@ Pekka, age 49 years
 
             <p>The command <code>Person person = pekka;</code> makes it so that <code>person</code> begins to refer to
             the same object that <code>pekka</code> refers to. So a copy of the object isn't born, but instead both
-            of the variables refer to the same object. With the command <code>Person henkilo = pekka;</code> a <em>copy
+            of the variables refer to the same object. With the command <code>Person person = pekka;</code> a <em>copy
             of the wire</em> is born. As a picture (Note: in the picture p refers to the variable pekka, and h to the
             variable person in the main program. The variable names have also been abbreviated in some of the following
             pictures.):</p>
@@ -8396,7 +8394,7 @@ Pekka, age 49 years
         System.out.println( pekka );
 
         Person person = pekka;
-        henkilo.becomeOlder(25);
+        person.becomeOlder(25);
 
         System.out.println( pekka );
 
@@ -8428,7 +8426,7 @@ Pekka Mikkola, age 24 years
         System.out.println( pekka );
 
         Person person = pekka;
-        henkilo.becomeOlder(25);
+        person.becomeOlder(25);
 
         System.out.println( pekka );
 
@@ -8468,7 +8466,7 @@ null
         System.out.println( pekka );
 
         Person person = null;
-        System.out.println( henkilo.weightIndex() );
+        System.out.println( person.weightIndex() );
     }
 </pre>
 
@@ -9002,7 +9000,7 @@ public class Person {
    Person juhana = new Person("Juhana")
 
    if ( pekka.getAge() &gt; juhana.getAge() ) {
-       System.out.println( pekka.getName() + " if older than " + juhana.getName() );
+       System.out.println( pekka.getName() + " is older than " + juhana.getName() );
    }
 </pre>
 
@@ -9044,7 +9042,7 @@ public class Person {
     // ...
 
     public boolean olderThan(Person compared) {
-        if ( this.ika &gt; compared.age ) {
+        if ( this.age &gt; compared.age ) {
             return true;
         }
 
@@ -9054,7 +9052,7 @@ public class Person {
 </pre>
 
             <p>Even though <code>age</code> is a <code>private</code> object variable, we can read the value of the
-            variable by writing <code>compared.age</code>. This is because <code>private</code> methods can be read in
+            variable by writing <code>compared.age</code>. This is because <code>private</code> variables can be read in
             all methods that the class in question contains. Note that the syntax resembles the calling of a method of
             an object. Unlike with calling a method, we refer to a field of an object, in which case we don't write
             the parentheses.</p>
@@ -9064,7 +9062,7 @@ public class Person {
             <p>Another example of the same theme. Let's create a class, with which we can represent dates.</p>
 
             <p>Within an object the date is represented with three objct variables. Let's also make a method with
-            which we can compare wheather the date is earlier than the date that is given as a parameter:</p>
+            which we can compare whether the date is earlier than the date that is given as a parameter:</p>
 
 <pre class="sh_java">
 public class MyDate {
@@ -9473,7 +9471,8 @@ public class Clock {
     private BoundedCounter seconds;
 
     public Clock(int hoursAtBeginning, int minutesAtBeginning, int secondsAtBeginning) {
-      // the counters that represent hours, minutes and seconds are created and set to have the correct initial values
+      // the counters that represent hours, minutes and seconds are created and
+      // set to have the correct initial values
     }
 
     public void tick(){
@@ -9903,7 +9902,8 @@ public Counter {
   }
 
   public Counter clone(){
-     // lets create a new counter object, that gets as its initial value the value of the counter that is being cloned
+     // lets create a new counter object, that gets as its initial value 
+     // the value of the counter that is being cloned
      Counter clone = new Counter(this.value);
 
      // return the clone to the caller
@@ -10310,12 +10310,12 @@ Steve, born 9.2.2012
             Week 6
         </div>
 
-        <div class="viikkoraja-mooc" id="Week 6"  deadline="unlocks when 80% of week 5 is completed" unlock="unlocks when 80% of week 5 is completed" data-first-chapter-index="25"
+        <div class="viikkoraja-mooc" id="Week 6"  deadline="unlocks when 80% of week 5 done" unlock="unlocks when 80% of week 5 done" data-first-chapter-index="25"
         data-first-exercise-index="94" data-first-week-index="6" data-first-chapter-index-mooc="25"
         data-first-exercise-index-mooc="94" data-first-week-index-mooc="6" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
             <h2>A quick recap</h2>
 
-            <p>Let us start week 6 with two assignment that use the most important topics of week 5. You might want to
+            <p>Let us start week 6 with two assignments that use the most important topics of week 5. You might want to
             read chapter 24.10 before assignment 94 and chapters 24.6 and 24.12 before assignment 95.</p>
 
             <div class="tehtavat">
@@ -10340,7 +10340,7 @@ public static void main(String[] args) {
 }
 </pre>
 
-                    <p>Output is:</p>
+                    <p>The output is:</p>
 
 <pre>
 Pekka Mikkola
@@ -10349,13 +10349,13 @@ Pekka Mikkola  number: 040-123123
 Pekka Mikkola  number: 050-333444
 </pre>
 
-                    <p>So you have to implement the class the following:</p>
+                    <p>So you have to implement the following class:</p>
 
                     <ul>
                         <li>the method <code>public String toString()</code>, which returns the string representation
                         formulated as the above example shows</li>
 
-                        <li>constructor that sets person name and phone number</li>
+                        <li>constructor that sets the person name and phone number</li>
 
                         <li><code>public String getName()</code>, that returns the name</li>
 
@@ -10367,7 +10367,7 @@ Pekka Mikkola  number: 050-333444
 
                     <h4>Adding persons to Phonebook</h4>
 
-                    <p>Program the class <code>Phonebook</code> that store s<code>Person</code>-objects using an
+                    <p>Program the class <code>Phonebook</code> that stores <code>Person</code>-objects using an
                     ArrayList. At this stage you'll need the following methods:</p>
 
                     <ul>
@@ -10390,7 +10390,7 @@ public static void main(String[] args) {
     phonebook.printAll();
 </pre>
 
-                    <p>output should be:</p>
+                    <p>the output should be:</p>
 
 <pre>
 Pekka Mikkola  number: 040-123123
@@ -10398,10 +10398,10 @@ Edsger Dijkstra  number: 045-456123
 Donald Knuth  number: 050-222333
 </pre>
 
-                    <h4>Searching numbers from the phonebooks</h4>
+                    <h4>Searching for numbers from the phonebooks</h4>
 
                     <p>Extend the class Phonebook with the method <code>public String searchNumber(String name)</code>,
-                    that returns the phone number corresponding to the given name. If the searched person is not known
+                    that returns the phone number corresponding to the given name. If the sought person is not known
                     the string "number not known" is returned.</p>
 
                     <p>Example code:</p>
@@ -10431,9 +10431,9 @@ number not known
                 <div class="tehtava">
                     <h3>Money</h3>
 
-                    <p>In a previous assignment we stored the balance of LyyraCard using a double variable. In reality
+                    <p>In a previous assignment we stored the balance of a LyyraCard using a double variable. In reality
                     money should not be represented as a double since the double arithmetics is not accurate. A better
-                    idea would be to implement a class that represent money. We'll start with the folowing the
+                    idea would be to implement a class that represents money. We'll start with the folowing 
                     class skeleton:</p>
 
 <pre class="sh_java">
@@ -10469,7 +10469,7 @@ public class Money {
                     <p>Notice that the instance variables <code>euros</code> and <code>cents</code> have been defined
                     as <code>final</code> meaning that once the variables have been set, the value of those can not be
                     chaged. An object value of which can not be changed is said to be <em>immutable</em>. If we need to
-                    e.g. calculate the sum of two money-objects, we need to create a new money-object that represented
+                    e.g. calculate the sum of two money objects, we need to create a new money object that represents
                     the sum of the originals.</p>
 
                     <p>In the following we'll create three methods that are needed in operating with money.</p>
@@ -10477,7 +10477,7 @@ public class Money {
                     <h4>Plus</h4>
 
                     <p>Let us start by implementing the method <code>public Money plus(Money added)</code>, that
-                    returns a <em>new Money-ohject</em> that has a value equal to the sum of the object for which the
+                    returns a <em>new Money object</em> that has a value equal to the sum of the object for which the
                     method was called and the object given as parameter.</p>
 
                     <p>Examples of the method usage:</p>
@@ -10492,8 +10492,10 @@ public class Money {
   System.out.println(b);  // 5.00e
   System.out.println(c);  // 15.00e
 
-  a = a.plus(c);          // NOTE: new Money-object is created and reference to that is assigned to variable a
-                          //       the Money object 10.00e that variable a used to hold, is not referenced anymore
+  a = a.plus(c);          // NOTE: new Money-object is created and reference to that 
+                          //           is assigned to variable a.
+                          //       The Money object 10.00e that variable a used to hold
+                          //           is not referenced anymore
 
   System.out.println(a);  // 25.00e
   System.out.println(b);  // 5.00e
@@ -10503,7 +10505,7 @@ public class Money {
                     <h4>less</h4>
 
                     <p>Create the method <code>public boolean less(Money compared)</code>, that returns true if the
-                    object for which the method was called is at less valuable than the object given as parameter.</p>
+                    object for which the method was called is less valuable than the object given as parameter.</p>
 
 <pre class="sh_java">
   Money a = new Money(10,0);
@@ -10518,9 +10520,9 @@ public class Money {
                     <h4>Minus</h4>
 
                     <p>And finally create the method <code>public Money minus(Money decremented)</code>, that returns a
-                    <em>new Money-ohject</em> that has a value equal to the object for which the method was called
+                    <em>new Money ohject</em> that has a value equal to the object for which the method was called
                     minus the object given as parameter. If the value would be negative, the resulting Money object
-                    should have value 0.</p>
+                    should have the value 0.</p>
 
                     <p>Examples of the method usage:</p>
 
@@ -10546,8 +10548,8 @@ public class Money {
 
             <h3>Character strings are immutable</h3>
 
-            <p>The String-objects of Java, as with the Money-class's objects, are inchangeable, <em>immutable</em>.
-            If for example a new object is concatenated to the end of a character string with the +-operator, the
+            <p>The String objects of Java, as with the Money class objects, are unchangeable, <em>immutable</em>.
+            If for example a new object is concatenated to the end of a character string with the + operator, the
             original character string doesn't become longer, but a new character string object is born:</p>
 
 <pre class="sh_java">
@@ -10557,7 +10559,7 @@ characterString + "tail";
 System.out.println( characterString );  // test
 </pre>
 
-            <p>We see that the character string cannot be changed, but we can put the value of the new character string
+            <p>We see that the character string cannot be changed, but we can add the value of the new character string
             - that was born from concatenation - to the old variable:</p>
 
 <pre class="sh_java">
@@ -10582,23 +10584,23 @@ Despite the ease of use of ArrayList the programs you write sometimes have a nee
             of course the list grows so large that it makes the program take up all the memory that is reserved for
             it), for example.</p>
 
-            <p><em>Array</em> is an object, that can be understood as a serie of <em>pigeonholes</em> for values. The
+            <p><em>Array</em> is an object that can be understood as a serie of <em>pigeonholes</em> for values. The
             <em>length</em> or <em>size</em> of an array is the number of spots in that array - the number of items you
             can put in the array. The values of an array are called <em>cells</em> of the array. Unlike with
-            ArrayLists, the size of the array (the amount of cells in an array) cannot be changed, growing a array
+            ArrayLists, the size of the array (the amount of cells in an array) cannot be changed, growing an array
             always requires creating a new array and copying the cells of the old array to the new one.</p>
 
-            <p>An array can be created in two ways. Lets take a look at the way in which we give content for the array
-            at creation. An array of the integer type, that consists of 3 cells, is defined as follows:</p>
+            <p>An array can be created in two ways. Let's take a look at the way in which we give content to the array
+            at creation. An array of the integer type that consists of 3 cells is defined as follows:</p>
 
 <pre class="sh_java">
 int[] numbers = {100, 1, 42};
 </pre>
 
-            <p>The type of the Array-object is denoted as<code>int[]</code>, which stands for an array, of which's
-            cells are of the type <code>int</code>. In the example the name of the array-object is <code>numbers</code>
-            and it holds 3 numbers values <code>{100, 1, 42}</code>. The array is formatted with a block, in which the
-            values to be inserted to the array are separated by commas.</p>
+            <p>The type of the Array object is denoted as<code>int[]</code>, which stands for an array, the cells of which
+             are of the type <code>int</code>. In the example the name of the array-object is <code>numbers</code>
+            and it holds 3 number values <code>{100, 1, 42}</code>. The array is formatted with a block, in which the
+            values to be inserted into the array are separated by commas.</p>
 
             <p>The values of the array can be of any variable type that we've seen earlier. Below we've first
             introduced an array containing character strings and then an array containing floating numbers.</p>
@@ -10608,8 +10610,8 @@ String[] characterStringArray = {"Matti P.", "Matti V."};
 double[] floatingNumberArray = {1.20, 3.14, 100.0, 0.6666666667};
 </pre>
 
-            <p>The cells of the array are refferred to with <em>indexes</em>, that are integers. The index tells the
-            spot of the cell in the array. The first item in an array is in the spot 0, the next one in the spot 1, and
+            <p>The cells of the array are referred to with <em>indexes</em> that are integers. The index tells the
+            position of the cell in the array. The first item in an array is in position 0, the next one in position 1, and
             so forth. When inspecting a certain value of an array, the index is given after the name of the array
             object in brackets.</p>
 
@@ -10627,8 +10629,8 @@ System.out.println(numbers[2]);    // prints the number in the array's index 2, 
             as getting from a certain index of an array. Only the notation - the syntax - is different when dealing
             with arrays.</em></p>
 
-            <p>Setting an individual value to a certain spot in an array happens the same way as with regular
-            variables, only with arrays the index has to be also told. The index is told inside of brackets.</p>
+            <p>Setting an individual value to a certain position in an array happens the same way as with regular
+            variables, only with arrays the index also has to be mentioned. The index is mentioned inside brackets.</p>
 
 <pre class="sh_java">
 int[] numbers = {100,1,42};
@@ -10636,23 +10638,23 @@ int[] numbers = {100,1,42};
 numbers[0] = 1;    // setting value 1 to index 0
 numbers[1] = 101;  // setting value 101 to index 1
 
-// numbers-array now looks like {1,101,42}
+// the numbers array now looks like {1,101,42}
 </pre>
 
-            <p>If an index points <em>past an array</em>, that is to a cell that doesn't exist we will get an
+            <p>If an index points <em>past an array</em>, that is, to a cell that doesn't exist, we will get an
             error: <em>ArrayIndexOutOfBoundsException</em>, which means that the index that we pointed at doesn't
             exist. So we cannot refer to a cell that is past the array - to an index that is smaller than 0, or larger
-            or equals to the size of the array.</p>
+            or equals the size of the array.</p>
 
-            <p>We'll notice, that the array clearly is related to ArrayList. As with lists, also in arrays the
-            cells are in certain place within them!</p>
+            <p>We'll notice that the array clearly is related to ArrayList. Arrays, as with lists, have
+ their cells in a certain order!</p>
 
             <h3>Iteration of an array</h3>
 
-            <p>The size of an array-object can be found out by typing <code>array.length</code> to the code, notice
+            <p>The size of an array object can be found out by typing <code>array.length</code> into the code, notice
             that you don't use parentheses with this one. <code>array.length()</code> does not work!</p>
 
-            <p>Iterating through the cells of an array is easy to implement with help of the
+            <p>Iterating through the cells of an array is easy to implement with the help of the
             <code>while</code>-command:</p>
 
 <pre class="sh_java">
@@ -10667,7 +10669,7 @@ while (i &lt; numbers.length ) {
 
             <p>With the help of variable <code>i</code> we go through the indexes 0, 1, 2, 3, and 4, and print the
             value of the variable in each cell. First <code>numbers[0]</code> gets printed, then
-            <code>numbers[1]</code> and so forth. The variable <code>i</code> stops getting growed when the array has
+            <code>numbers[1]</code> and so forth. The variable <code>i</code> stops getting increased when the array has
             been iterated through, that is when <code>i</code>'s value is equal to the length of the array.</p>
 
             <p>When iterating through an array it isn't always necessary to list the indexes of it, the only
@@ -10695,11 +10697,11 @@ for (String name : names) {
             <p><strong>Notice:</strong> when using a for-each-type of loop you cannot set values to the cells of the
             array! With the format of the for-sentence we inspect next that can be done too.</p>
 
-            <h3>Another form of the for-command</h3>
+            <h3>Another form of the for command</h3>
 
-            <p>So far when doing loops, we've used while and the for-each form of the for-sentence. Another form of
+            <p>So far when doing loops, we've used while and the for-each form of the for sentence. Another form of
             the for-loop exists, which is handy especially when handling arrays. In the following we print the numbers
-            0, 1 and 2 with a for-loop:</p>
+            0, 1 and 2 with a for loop:</p>
 
 <pre class="sh_java">
 for (int i = 0; i &lt; 3; i++ ) {
@@ -10717,7 +10719,7 @@ while ( i &lt; 3 ) {  // condition
 }
 </pre>
 
-            <p>a for-command, as shown in <code>for (int i = 0; i &lt; 3; i++ )</code> above, has three parts to it:
+            <p>a for command, as shown in <code>for (int i = 0; i &lt; 3; i++ )</code> above, has three parts to it:
             <em>formatting the loop variables; condition; updating the loop variables</em>:</p>
 
             <ul>
@@ -10726,17 +10728,17 @@ while ( i &lt; 3 ) {  // condition
                 the beginning of a for run.</li>
 
                 <li>In the second part the condition is defined, which defines how long the code is run in the code
-                block that is related to the for-loop. In our example the condition was <code>i &lt; 3</code>. The
+                block that is related to the for loop. In our example the condition was <code>i &lt; 3</code>. The
                 validity of the condition is checked <em>before each round of the loop</em>. The condition works
-                exactly the same as the a condition of a while-loop works.</li>
+                exactly the same as the a condition of a while loop works.</li>
 
                 <li>The third part, which in our example is <code>i++</code> , is always run once at the end of each
                 round of the loop.</li>
             </ul>
 
-            <p>Compared to <em>while</em>, <em>for</em> is a little clearer way of implementing loops of which's
+            <p>Compared to <em>while</em>, <em>for</em> is a slightly clearer way of implementing loops of whose
             amount of runs is based on, for example, growing a counter. When going through an array the case is usually
-            exactly this. In the following we print the contents of the <code>numbers</code>-array with for:</p>
+            exactly this. In the following we print the contents of the <code>numbers</code> array with for:</p>
 
 <pre class="sh_java">
 int[] numbers = {1, 3, 5, 9, 17, 31, 57, 105};
@@ -10746,8 +10748,8 @@ for(int i = 3; i &lt; 7; i++) {
 }
 </pre>
 
-            <p>Naturally with for you don't have to start from 0 and the iteration can be done 'from top to
-            down'. For example the cells in indexes 6, 5, 4, and 3 can be printed like this:</p>
+            <p>Naturally with for you don't have to start from 0 and the iteration can be done 'from top
+            down'. For example, the cells in indexes 6, 5, 4, and 3 can be printed like this:</p>
 
 <pre class="sh_java">
 int[] numbers = {1, 3, 5, 9, 17, 31, 57, 105};
@@ -10769,15 +10771,15 @@ for (int i = 0; i &lt; numbers.length; i++ ) {
 }
 </pre>
 
-            <p>Notice, that in the condition <code>i &lt; numbers.length</code> we compare the calue of the
-            loopvariable to the length we get from the array. The condition should not in any case be
-            "hardcoded" as, for example, <code>i &lt; 5</code> because often then length of the array
+            <p>Notice, that in the condition <code>i &lt; numbers.length</code> we compare the value of the
+            loop variable to the length we get from the array. The condition should not in any case be
+            "hardcoded" as, for example, <code>i &lt; 5</code> because often the length of the array
             can't be known for sure beforehand.</p>
 
             <h3>Array as a parameter</h3>
 
-            <p>Arrays can be used -just as any other object - as a parameter to a method. Notice, that as with all
-            objects the method gets a reference to a array, so all changes done to the content of the array in the
+            <p>Arrays can be used - just as any other objects - as a parameters to a method. Notice that, as with all
+            objects, the method gets a reference to an array, so all changes done to the content of the array in the
             method also show up in the main program.</p>
 
 <pre class="sh_java">
@@ -10797,19 +10799,18 @@ public static void  main(String[] args) {
 }
 </pre>
 
-            <p>As we already now, the name of the parameter within a method can be freely chosen. The name does not
-            need to be the same as in the one used in calling it. Above the array is called <code>integerArray</code>
-            within the method and the caller of the method knows the array as <code>numbers</code>. <!-- CAST61-->
-             <a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=mpfbaukh-4Y" height="300" target=
-            "_blank"><img src="img/youtube.jpg"></a> <!--
-<p><iframe allowfullscreen="" frameborder="0"  height="450" width="700" src="http://www.youtube.com/embed/mpfbaukh-4Y"></iframe></p>
---></p>
+            <p>As we already know, the name of the parameter within a method can be freely chosen. The name does not
+            need to be the same as in the one used in calling it. Above, the array is called <code>integerArray</code>
+            within the method and the caller of the method knows the array as <code>numbers</code>.
+
+<!-- CAST61-->
+</p>
 
             <div class="tehtavat">
                 <div class="tehtava">
                     <h3 class="req">Sum of the array</h3>
 
-                    <p>Implement the method <code>public static sum(int[] array)</code>, that returns the sum of the
+                    <p>Implement the method <code>public static sum(int[] array)</code>, which returns the sum of the
                     numbers in the array given as parameter.</p>
 
                     <p>Program skeleton:</p>
@@ -10828,14 +10829,14 @@ public class Main {
 }
 </pre>
 
-                    <p>Output should be:</p>
+                    <p>The output should be:</p>
 
 <pre>
 15
 </pre>
 
-                    <p><b>NOTE:</b> in this and some of the following assignments method are <code>static</code> as the
-                    they used to be in the assignments for the weeks 2 and 3. The reason for this is that the methods
+                    <p><b>NOTE:</b> in this and some of the following assignments methods are <code>static</code> as the
+                    they used to be in the assignments for weeks 2 and 3. The reason for this is that the methods
                     are not instance methods, i.e. not operating with instance variables of objects, instead they are
                     working at "class level" and operating just with the values and objects given as
                     parameter. In chapter 31 we'll elaborate more on the question whether a method should be static
@@ -10845,8 +10846,8 @@ public class Main {
                 <div class="tehtava">
                     <h3 class="req">Elegant printing of an array</h3>
 
-                    <p>Implement the method <code>public static int printElegantly(int[] array)</code>, that prints the
-                    numbers in the array at the same row. In the printout all the numbers should be separated with
+                    <p>Implement the method <code>public static int printElegantly(int[] array)</code>, which prints the
+                    numbers in the array on the same row. In the printout all the numbers should be separated with
                     comma and whitespace and there should not be a comma trailing the last number.</p>
 
                     <p>Program skeleton:</p>
@@ -10864,7 +10865,7 @@ public class Main {
 }
 </pre>
 
-                    <p>Output should be:</p>
+                    <p>The output should be:</p>
 
 <pre>
 5, 1, 3, 4, 2
@@ -10874,9 +10875,9 @@ public class Main {
 
             <h3>Creating a new array</h3>
 
-            <p>If the size of the array isn't always the same, that is if it's size depends on, for example on
-            user input the previously introduced way of creating arrays will not do. It is also possible to creat a
-            table so that it's size is defined with the help of a variable:</p>
+            <p>If the size of the array isn't always the same, that is, if its size depends on 
+            user input for example, the previously introduced way of creating arrays will not do. It is also possible to create a
+            table so that its size is defined with the help of a variable:</p>
 
 <pre class="sh_java">
 int cells = 99;
@@ -10889,7 +10890,7 @@ int[] array = new int[cells];
 
 <pre class="sh_java">
 int cells = 99;
-int[] array = new int[cells]; //creating an array of the size of the value in 'cells' variable
+int[] array = new int[cells]; //creating an array of the size of the value in the 'cells' variable
 
 if(array.length == cells) {
     System.out.println("The length of the array is " + cells);
@@ -10898,7 +10899,7 @@ if(array.length == cells) {
 }
 </pre>
 
-            <p>In the following example there is a program, that prompts the user the amount of values and subsequently
+            <p>In the following example there is a program that prompts for the user the amount of values and subsequently
             the values. After this the program prints the values in the same order again. The values given by the user
             are stored in the array.</p>
 
@@ -10937,8 +10938,8 @@ Values again:
 
             <h3 id="muita_palautustyyppeja">An array as the return value</h3>
 
-            <p>Since methods can return objects, they also can return arrays. This particular method that returns an
-            array looks like this -- notice that arrays can might as well be filled with objects.olioita.</p>
+            <p>Since methods can return objects, they can also return arrays. This particular method that returns an
+            array looks like this -- notice that arrays might as well contain objects.</p>
 
 <pre class="sh_java">
 public static String[] giveStringTable() {
@@ -10986,7 +10987,7 @@ public static void main(String[] args){
     }
 </pre>
 
-                    <p>As seen from the output, the change made to the copy does not affect the original:</p>
+                    <p>As seen in the output, the change made to the copy does not affect the original:</p>
 
 <pre>
 original: [1, 2, 3, 4]
@@ -10999,7 +11000,7 @@ copied: [99, 2, 3, 4]
                     array which contains the elements of the parameter but in reversed order. The parameter array must
                     remain the same.</p>
 
-                    <p>Eg. if the parameter contains values <em>5, 6, 7</em> the method returns <em>a new array</em>
+                    <p>E.g. if the parameter contains values <em>5, 6, 7</em> the method returns <em>a new array</em>
                     that contains the values <em>7, 6, 5</em>.</p>
 
                     <p>In the following an example of the usage:</p>
@@ -11015,7 +11016,7 @@ copied: [99, 2, 3, 4]
     }
 </pre>
 
-                    <p>Output should reveal that the parameter remains intact:</p>
+                    <p>The output should reveal that the parameter remains intact:</p>
 
 <pre>
 original: [1, 2, 3, 4]
@@ -11028,11 +11029,11 @@ reversed: [4, 3, 2, 1]
 
             <p>A piece of code that begins with a curly bracket <code>{</code> and ends with a curly bracket
             <code>}</code> is called a <em>block</em>. As we've already seen, blocks are used - among other things
-            - to denote the code of conditional and loop sentences. <em>An important feature of a bock, is that
+            - to denote the code of conditional and loop sentences. <em>An important feature of a block is that
             variables defined within it only exist within it.</em>.</p>
 
             <p>In the following example we define the string variable <code>stringDefinedWithinBlock</code> within the
-            block of a conditional sentence, which therefor will only exists within the block. The variable introduced
+            block of a conditional sentence, which therefor will only exist within the block. The variable introduced
             within the block cannot be printed outside of it!</p>
 
 <pre class="sh_java">
@@ -11057,8 +11058,8 @@ if( number == 5 ) {
 System.out.println(number); // prints 6
 </pre>
 
-            <p>You can have any kind of code within a block. For example a for-loop can have another for-loop within it
-            or say, a while loop. Lets inspect the following program:</p>
+            <p>You can have any kind of code within a block. For example, a for loop can have another for loop within it
+            or say, a while loop. Let's inspect the following program:</p>
 
 <pre class="sh_java">
 for(int i = 0; i &lt; 3; i++) {
@@ -11080,7 +11081,7 @@ for(int i = 0; i &lt; 3; i++) {
 2: 0 1 2
 </pre>
 
-            <p>So what happens in the program? If we only think about the outer for-loop, it's functionality is
+            <p>So what happens in the program? If we only think about the outer for loop, its functionality is
             easy to understand:</p>
 
 <pre class="sh_java">
@@ -11102,13 +11103,13 @@ for(int i = 0; i &lt; 3; i++) {
 2:
 </pre>
 
-            <p>The inner for-loop is also easy to understand separately. It prints out a <code>0 1 2</code>. When we
-            combine these two, we'll notice that the inner for-loop carries out it's print just before the
-            outer for-loop's carriage return.</p>
+            <p>The inner for loop is also easy to understand separately. It prints out <code>0 1 2</code>. When we
+            combine these two, we'll notice that the inner for loop carries out its print just before the
+            outer for loop's carriage return.</p>
 
-            <h3>variables defined outside of a for-loop as it's condition</h3>
+            <h3>variables defined outside of a for loop as its condition</h3>
 
-            <p>Lets inspect the following alteration to the previous example:</p>
+            <p>Let's inspect the following alteration to the previous example:</p>
 
 <pre class="sh_java">
 for(int i = 0; i &lt; 3; i++) {
@@ -11122,7 +11123,7 @@ for(int i = 0; i &lt; 3; i++) {
 }
 </pre>
 
-            <p>The amount of runs the inner for-loop does now depends on the value of the variable <code>i</code> of
+            <p>The amount of runs the inner for loop does now depends on the value of the variable <code>i</code> of
             the outer loop. So when <code>i=0</code> the inner loop prints 0, when <code>i=1</code> the inner loop
             prints 0 1. The entire output of the program is as follows:</p>
 
@@ -11160,12 +11161,12 @@ for(int i = 1; i &lt;= 10; i++) {
 10 20 30 40 50 60 70 80 90 100
 </pre>
 
-            <p>Top most row has the multiplication table of 1. In the beginning <code>i=1</code> and the inner
+            <p>The topmost row has the multiplication table of 1. At the beginning <code>i=1</code> and the inner
             loop's variable <code>j</code> gets the values 1...10. For each <code>i, j</code> value pair their
-            product is printed. So in the beginning <code>i=1, j=1</code>, then <code>i=1, j=2</code>, ..., <code>i=1,
+            product is printed. So at the beginning <code>i=1, j=1</code>, then <code>i=1, j=2</code>, ..., <code>i=1,
             j=10</code> next <code>i=2, j=1</code>, and so forth.</p>
 
-            <p>The multiplication table program can be of course cut in to smaller pieces too. We can define the
+            <p>Of course the multiplication table program can be cut in to smaller pieces, too. We can define the
             methods <code>public void printMultiplicationTableRow(int multiplier, int howManyTimes)</code> and
             <code>public void printMultiplicationTable(int upTo)</code>, in this case the structure of our program
             could be as follows:</p>
@@ -11203,10 +11204,10 @@ public class MultiplicationTable {
                 <div class="tehtava">
                     <h3>Array to stars</h3>
 
-                    <p>Implement the method <code>public static printArrayAsStars(int[] array)</code>, that prints a
+                    <p>Implement the method <code>public static printArrayAsStars(int[] array)</code>, which prints a
                     line with stars for each number in the array. The line length is determined by the number.</p>
 
-                    <p>The program skeletion:</p>
+                    <p>The program skeleton:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -11241,7 +11242,7 @@ public class Main {
                     <p>Let us implement a program that prints the Night sky. The sky has a star density. If the density
                     is e.g. <code>0.1</code>, roughly 10% of the sky is covered with stars.</p>
 
-                    <p>Stars print out as <code>*</code>-characters. Below an example which demonstrates how the
+                    <p>Stars print out as <code>*</code>-characters. Below an example that demonstrates how the
                     <code>NightSky</code> could be used when all the steps of the assignment are done.</p>
 
 <pre class="sh_java">
@@ -11275,14 +11276,14 @@ Number of stars: 36
 *       *   * *
 * ** **     *  
 Number of stars: 22
+
 </pre>
+
 
                     <p><strong>Note!</strong> in the assignment use the <code>for</code>-clause. Despite that the
                     previous chapter described nested loops, in this assignment we "hide" the nested loop
                     within a method.</p>
-                </div>
 
-                <div class="tehtava">
                     <h4>Class NightSky and a star line</h4>
 
                     <p>Create the class <code>NightSky</code>, that has three object variables: density
@@ -11290,21 +11291,21 @@ Number of stars: 22
                     have 3 constructors:</p>
 
                     <ul>
-                        <li><code>public NightSky(double density)</code> creates a NightSky-object with the given star
+                        <li><code>public NightSky(double density)</code> creates a NightSky object with the given star
                         density. Width gets the value <code>20</code> and height the value <code>10</code>.</li>
 
-                        <li><code>public NightSky(int width, int height)</code> creates a NightSky-object with the
+                        <li><code>public NightSky(int width, int height)</code> creates a NightSky object with the
                         given width and height. Density gets the value <code>0.1</code>.</li>
 
                         <li><code>public NightSky(double density, int width, int height)</code> creates a
                         NightSky-object with the given density, width and height</li>
                     </ul>
 
-                    <p>Add the class <code>NightSky</code> the method <code>printLine</code>, that prints one line of
+                    <p>Add to the class <code>NightSky</code> the method <code>printLine</code>, that prints one line of
                     starts. The line length is determined by the value of the instance variable <code>width</code> and
-                    the instance variable <code>density</code> determines the star propability. For each printed
+                    the instance variable <code>density</code> determines the star probability. For each printed
                     character you should use a <code>Random</code> object to decide if it prints out as a white space
-                    or a star. The method <code>nextDouble</code> is propably of the use now.</p>
+                    or a star. The method <code>nextDouble</code> will probably be of use now.</p>
 
                     <p>In the following an exampe:</p>
 
@@ -11316,9 +11317,7 @@ Number of stars: 22
 <pre>
             *  *                  *     
 </pre>
-                </div>
 
-                <div class="tehtava">
                     <h4>Printing the night sky</h4>
 
                     <p>Add the class <code>NightSky</code> the method <code>print</code>, that prints the night sky of
@@ -11336,9 +11335,7 @@ Number of stars: 22
   *     
     *   
 </pre>
-                </div>
 
-                <div class="tehtava">
                     <h4>Counting the number of the stars</h4>
 
                     <p>Add the class <code>NightSky</code> an instance variable starsInLastPrint (<code>int</code>) and
@@ -11372,51 +11369,51 @@ Number of stars: 3
 
             <h2>to static or not to static?</h2>
 
-            <p>When we started using objects, the material adviced to leave out the keyword 'static' when
-            defining their methods. However up until week 3 all of the methods had the keyword in them. So what is it
+            <p>When we started using objects, the material advised to leave out the keyword 'static' when
+            defining their methods. However, up until week 3 all of the methods included that keyword. So what is it
             all about?</p>
 
-            <p>The following example has a method <code>resetArray</code>, that works as it's name implies; it sets
+            <p>The following example has a method <code>resetArray</code>, that works as its name implies; it sets
             all of the cells of an array that it receives as a parameter to 0.</p>
 
 <pre class="sh_java">
 public class Program {
 
-  public static void resetArray(int[] taulukko) {
-    for ( int i=0; i &lt; taulukko.length; i++ )
-      taulukko[i] = 0;
+  public static void resetArray(int[] table) {
+    for ( int i=0; i &lt; table.length; i++ )
+      table[i] = 0;
   }
 
   public static void main(String[] args) {
     int[] values = { 1, 2, 3, 4, 5 };
 
-    for ( int luku : values ) {
-      System.out.print( luku + " " );  // tulostuu 1, 2, 3, 4, 5
+    for ( int number : values ) {
+      System.out.print( number + " " );  // prints 1, 2, 3, 4, 5
     }
 
     System.out.println();
 
     resetArray(t);
 
-    for ( int luku : values ) {
-      System.out.print( luku + " " );  // tulostuu 0, 0, 0, 0, 0
+    for ( int number : values ) {
+      System.out.print( number + " " );  // prints 0, 0, 0, 0, 0
     }
   }
 }
 </pre>
 
-            <p>We notice that the method definition has now the keyword <code>static</code>. The reason for that is
-            that the method does not operate on any object, instead it is a <em>class method</em> or in another words
+            <p>We notice that the method definition now has the keyword <code>static</code>. The reason for that is
+            that the method does not operate on any object, instead it is a <em>class method</em> or in other words
             <em>static methods</em>. In contrast to instance methods, static methods are not connected to any
-            particular object and thus the reference <code>this</code> is not valid within static methods. Static
-            method can operate only with data that is given it as parameter. The parameter of static method can
+            particular object and thus the reference <code>this</code> is not valid within static methods. A static
+            method can operate only with data that is given it as parameter. The parameter of a static method can
             naturally be an object.</p>
 
-            <p>Since static methods are not connected to any object, those can not be called through object name:
-            <code>objectName.methodName()</code> but should be called as in above example by using only the method
+            <p>Since static methods are not connected to any object, those can not be called through the object name:
+            <code>objectName.methodName()</code> but should be called as in the above example by using only the method
             name.</p>
 
-            <p>If static method is called from a different class, the call is of the form
+            <p>If the static method is called from a different class, the call is of the form
             <code>ClassName.staticMethodName()</code>. The below example demonstrates that:</p>
 
 <pre class="sh_java">
@@ -11433,7 +11430,7 @@ public class Program {
     ArrayHandling.resetArray(values);
 
     for ( int value : values ) {
-      System.out.print( luku + " " );  // prints: 0, 0, 0, 0, 0
+      System.out.print( number + " " );  // prints: 0, 0, 0, 0, 0
     }
   }
 }
@@ -11454,11 +11451,11 @@ public class ArrayHandling {
 
             <h3>When static methods should be used</h3>
 
-            <p>All object state handling methods should be defined as normal object methods. For example all of the
+            <p>All object state-handling methods should be defined as normal object methods. For example, all of the
             methods of the <code>Person, MyDate, Clock, Team, ...</code> classes we defined during the previous weeks
             should be defined as normal object methods, not as statics.</p>
 
-            <p>Lets get back to the <code>Person</code> class yet again. In the following is a part of the class's
+            <p>Lets get back to the <code>Person</code> class yet again. In the following is a part of the class
             definition. All of the object variables are referred to with the <code>this</code> keyword because we
             emphasize that we are handling the object variables 'within' the said object..</p>
 
@@ -11503,10 +11500,10 @@ public class Person {
 }
 </pre>
 
-            <p>As a result we'll get an error <i>non static variable age can not be referenced from static
+            <p>As a result we'll get an error <i>non-static variable age can not be referenced from static
             context</i>, which means that a static method cannot handle an object method.</p>
 
-            <p>So when a static method should be used then? Lets inspect the Person object handling example familiar
+            <p>So when should a static method be used then? Let us inspect the Person object handling an example familiar
             from chapter 23:</p>
 
 <pre class="sh_java">
@@ -11544,10 +11541,10 @@ public class Program {
 }
 </pre>
 
-            <p>We'll notice, that the piece of code that reports the matureness of persons is copy-pasted twice in
+            <p>We'll notice that the piece of code that reports the matureness of persons is copy-pasted twice in
             the program. It looks really bad!</p>
 
-            <p>Reporting the maturity of a person is an excellent candidate for a static method. Lets rewrite the
+            <p>Reporting the maturity of a person is an excellent candidate for a static method. Let's rewrite the
             Program using that method:</p>
 
 <pre class="sh_java">
@@ -11573,7 +11570,7 @@ public class Main {
     }
 
     private static void reportMaturity(Person person) {
-        if ( henkilo.isAdult() ) {
+        if ( person.isAdult() ) {
             System.out.println(person.getName() + " is an adult");
         } else {
             System.out.println(person.getName() + " is a minor");
@@ -11584,7 +11581,7 @@ public class Main {
 
             <p>The method <code>reportMaturity</code> is defined as static so it doesn't belong to any object,
             <strong>but</strong> the method receives a Person object as a parameter. The method is not defined within
-            the Person-class since even though it handles a Person object that it receives as a paramter, it is an
+            the Person-class since even though it handles a Person object that it receives as a parameter, it is an
             assistance method of the main program we just wrote. With the method we've made main more readable.</p>
 
             <div class="tehtavat">
@@ -11603,11 +11600,11 @@ public class Main {
                     <h4>Book</h4>
 
                     <p>Let us start with the class Book. The class has instance variables <code>title</code> for the
-                    book title, <code>publisher</code> for the name of the publisher publisher, and <code>year</code>
-                    for the publishing year. The tile and the publisher are of the type String and the publishing year
+                    book title, <code>publisher</code> for the name of the publisher, and <code>year</code>
+                    for the publishing year. The title and the publisher are of the type String and the publishing year
                     is represented as an integer.</p>
 
-                    <p>Implement now the class <code>Book</code>. The class should have the construcotr <code>public
+                    <p>Now implement the class <code>Book</code>. The class should have the constructor <code>public
                     Book(String title, String publisher, int year)</code> and methods <code>public String
                     title()</code>, <code>public String publisher()</code>, <code>public int year()</code> and
                     <code>public String toString()</code>.</p>
@@ -11623,7 +11620,7 @@ System.out.println(cheese.year());
 System.out.println(cheese);
 </pre>
 
-                    <p>Output should be:</p>
+                    <p>The output should be:</p>
 
 <pre>
 Cheese Problems Solved
@@ -11634,7 +11631,7 @@ Cheese Problems Solved, Woodhead Publishing, 2007
 
                     <h4>Library</h4>
 
-                    <p>Implemet the class <code>Library</code>, with constructr <code>public Library()</code> and
+                    <p>Implement the class <code>Library</code>, with constructor <code>public Library()</code> and
                     methods <code>public void addBook(Book newBook)</code> and <code>public void
                     printBooks()</code></p>
 
@@ -11654,7 +11651,7 @@ Library.addBook(new Book("Battle Axes", "Tom A. Hawk", 1851));
 Library.printBooks();
 </pre>
 
-                    <p>Output should be:</p>
+                    <p>The output should be:</p>
 
 <pre>
 Cheese Problems Solved, Woodhead Publishing, 2007
@@ -11664,7 +11661,7 @@ Battle Axes, Tom A. Hawk, 1851
 
                     <h4>Search functionality</h4>
 
-                    <p>Add the class <code>Library</code> the methods <code>public ArrayList&lt;Book&gt;
+                    <p>Add to the class <code>Library</code> the methods <code>public ArrayList&lt;Book&gt;
                     searchByTitle(String title)</code>, <code>public ArrayList&lt;Book&gt; searchByPublisher(String
                     publisher)</code> and <code>public ArrayList&lt;Book&gt; searchByYear(int year)</code>. The methods
                     return the list of books that match the given title, publisher or year.</p>
@@ -11686,7 +11683,7 @@ public class Library {
 </pre>
 
                     <p>Note: when you do the search by a string (title or publisher), do not look for exact matches
-                    (with the method <code>equals</code>) instead, use the method <code>contains</code> of the class
+                    (with the method <code>equals</code>) instead use the method <code>contains</code> of the class
                     <code>String</code>.</p>
 
                     <p>Example usage:</p>
@@ -11715,7 +11712,7 @@ for (Book Book: Library.searchByYear(1851)) {
 }
 </pre>
 
-                    <p>Output should be:</p>
+                    <p>The output should be:</p>
 
 <pre>
 Cheese Problems Solved, Woodhead Publishing, 2007
@@ -11729,17 +11726,17 @@ Battle Axes, Tom A. Hawk, 1851
 
                     <p>There are some minor problems with the implemented search functionality. One particular problem
                     is that the search differentiates upper and lower case letters. In the above example the search by
-                    title with the search term <code>"cheese"</code> produced an empty list as answer. Also
-                    the example where the search term contained extra white spaces did not give the expected answer.
+                    title with the search term <code>"cheese"</code> produced an empty list as answer. 
+                    The example where the search term contained extra white spaces did not give the expected answer, either.
                     We'd like the search functionality to be case insensitive and not disturbed by the extra white
                     spaces at the start or at the end of the search terms. We will implement a small helper library
                     <code>StringUtils</code> that will then be used in the Library for the more flexible search
                     functionality.</p>
 
-                    <p>Implement the calss <code>StringUtils</code> with a <strong>static</strong> method <code>public
+                    <p>Implement the class <code>StringUtils</code> with a <strong>static</strong> method <code>public
                     static boolean included(String word, String searched)</code>, which checks if the string
-                    <code>searched</code> is contained within the string <code>searched</code>. As described in the
-                    previous paragraph, the method should be case insensitive and should not care for trailing and
+                    <code>word</code> is contained within the string <code>searched</code>. As described in the
+                    previous paragraph, the method should be case insensitive and should not care about trailing and
                     ending white spaces in the string <code>searched</code>. If either of the strings is <em>null</em>,
                     the method should return <code>false</code>.</p>
 
@@ -11815,16 +11812,16 @@ The Stinky Cheese Man and Other Fairly Stupid Tales, Penguin Group, 1992
   }
 </pre>
 
-                    <p>If another object needs a scanner, you can pass is as constructor parameter and save in in
+                    <p>If another object needs a scanner, you can pass it as constructor parameter and save in
                     instance variable.</p>
 
                     <p><b>Note2:</b> Do not save anything in static variables. The main method is executed by the tests
                     multiple times so the use of static variables might cause problems.</p>
 
                     <p>The input of the program is a set of exam scores of a course. Each score is an integer. When -1
-                    is entered, the program stops asking further input.</p>
+                    is entered, the program stops asking for further input.</p>
 
-                    <p>Inputing the exam scores should work as follows:</p>
+                    <p>Inputting the exam scores should work as follows:</p>
 
 <pre>
 Type exam scores, -1 completes:
@@ -11856,10 +11853,10 @@ Acceptance percentage: 87.5
                     <p>Grade distribution is formed as follows:</p>
 
                     <ul>
-                        <li>Each exam score is mapped to an grade using the same formula as in exercise 18. If the
+                        <li>Each exam score is mapped to a grade using the same formula as in exercise 18. If the
                         score is not within the range 0-60 it is not taken into account.</li>
 
-                        <li>Number of grades are printed as stars, e.g. if there are 2 scores that correspond to grade
+                        <li>The number of grades are printed as stars, e.g. if there are 2 scores that correspond to grade
                         5, the line <em>5: **</em> is printed. If there are no scores that correspond to a particular
                         grade, as is the case with grade 4 in the above example, the printed line is <em>4:</em></li>
                     </ul>
@@ -11879,11 +11876,11 @@ Acceptance percentage: 87.5
 
                     <p><b>This assignment corresponds to three assignment points.</b></p>
 
-                    <p>In this assignment you are supposet to design and implement an observation database to a bird
-                    observer. The database contains birds, each of which have name and Latin name, both Strings.
+                    <p>In this assignment you are supposet to design and implement an observation database for a bird
+                    watcher. The database contains birds, each of which have a name and a Latin name, both Strings.
                     Database also tracks how many times each bird has been observed.</p>
 
-                    <p>Program should implement the following commands:</p>
+                    <p>The program should implement the following commands:</p>
 
                     <ul>
                         <li><code>Add</code> - adds a bird</li>
@@ -11897,9 +11894,9 @@ Acceptance percentage: 87.5
                         <li><code>Quit</code> - terminates the program</li>
                     </ul>
 
-                    <p>Pprogram should also handle the invalid inputs (see <code>Turing</code> below).</p>
+                    <p>The program should also handle the invalid inputs (see <code>Turing</code> below).</p>
 
-                    <p>Following an example how the program is supposed to work:</p>
+                    <p>The following is an example how the program is supposed to work:</p>
 
 <pre>
 ? <font color="red">Add</font>
@@ -11925,7 +11922,7 @@ Seagull (Dorkus Dorkus): 2 observations
 </pre>
 
                     <p><strong>Note</strong> you may structure your program freely, it is only required that the output
-                    of the program is as int the above example.</p>
+                    of the program is as in the above example.</p>
                 </div>
             </div>
 
@@ -11933,11 +11930,11 @@ Seagull (Dorkus Dorkus): 2 observations
 
             <p>We'll get back to arrays again.</p>
 
-            <h3>Sorting an array with ready-made tools of Java.</h3>
+            <h3>Sorting an array with the ready-made tools of Java.</h3>
 
             <p>As we've seen, there's all kinds of useful things already in Java. For example for handling
-            ArrayLists you can find many useful help methods from the class Collections. For arrays you find helpful
-            methods from the class <code>Arrays</code>. Sorting a table can be done with
+            ArrayLists you can find many useful help methods in the class Collections. For arrays you can find helpful
+            methods in the class <code>Arrays</code>. Sorting a table can be done with
             <code>Arrays.sort(array)</code>.</p>
 
             <p>Note: To be able to use the command you must have the following definition at the top of the program
@@ -11947,8 +11944,8 @@ Seagull (Dorkus Dorkus): 2 observations
 import java.util.Arrays;
 </pre>
 
-            <p><em>If you forget to write the <code>import</code>-line, NetBeans will offer help with writing it. Try
-            clicking the picture of the bulp that appears to the left from the line of code that is underlined with
+            <p><em>If you forget to write the <code>import</code> line, NetBeans will offer help with writing it. Try
+            clicking the picture of the "bulp" that appears to the left from the line of code that is underlined with
             red.</em></p>
 
             <p>The following program creates arrays and sorts the values in the array with the Arrays.sort
@@ -11972,8 +11969,8 @@ import java.util.Arrays;
             <h3>Implementation of a sorting algorithm</h3>
 
             <p>It's easy to sort an array with the ready-made tools of Java. The general knowledge of a program
-            requires knowing at least one sorting algorithm (or in other words, way to sort an array). Lets get
-            familiar with the "classic" sorting algorithm, choice sorting. Lets do this with a few
+            requires knowing at least one sorting algorithm (or in other words, a way to sort an array). Let's get
+            familiar with the "classic" sorting algorithm, choice sorting. Let's do this with a few
             excercise.</p>
 
             <div class="tehtavat">
@@ -11987,7 +11984,7 @@ import java.util.Arrays;
 
                     <p>Implement a method <code>smallest</code>, which returns the smallest value in the array.</p>
 
-                    <p>The frame of the methos is as follows:</p>
+                    <p>The frame of the method is as follows:</p>
 
 <pre class="sh_java">
 public static int smallest(int[] array) {
@@ -11995,7 +11992,7 @@ public static int smallest(int[] array) {
 }
 </pre>
 
-                    <p><b>NOTE:</b> You can't change the array that gets passed in to the method!</p>
+                    <p><b>NOTE:</b> You can't change the array that gets passed into the method!</p>
 
                     <p>The following code demonstrates the functionality of the method:</p>
 
@@ -12010,18 +12007,18 @@ smallest: 5
 
                     <h4 class="req">The index of the smallest</h4>
 
-                    <p>Implement a method <code>indexOfSmallest</code>, which returns the index of the smallest value
-                    in the array (the spot of the value in the array, that is).</p>
+                    <p>Implement a method <code>indexOfTheSmallest</code>, which returns the index of the smallest value
+                    in the array (the position of the value in the array, that is).</p>
 
                     <p>The frame of the method looks like this:</p>
 
 <pre class="sh_java">
-public static int indexOfSmallest(int[] array) {
+public static int indexOfTheSmallest(int[] array) {
     // code goes here
 }
 </pre>
 
-                    <p><b>NOTE:</b> You can't change the array that gets passed in to the method as a
+                    <p><b>NOTE:</b> You can't change the array that gets passed into the method as a
                     parameter!</p>
 
                     <p>The following code demonstrates the functionality of the method:</p>
@@ -12029,32 +12026,32 @@ public static int indexOfSmallest(int[] array) {
 <pre class="sh_java">
 // indexes:   0  1  2  3  4
 int[] values = {6, 5, 8, 7, 11};
-System.out.println("Index of the smallest: " + indexOfSmallest(values));
+System.out.println("Index of the smallest: " + indexOfTheSmallest(values));
 </pre>
 
 <pre>
 Index of the smallest: 1
 </pre>
 
-                    <p>The smallest value of the table is 2 and it's index (it's location) in the array is 1.
+                    <p>The smallest value of the table is 2 and its index (its location) in the array is 1.
                     Remember that the numbering of an array begins from 0.</p>
 
                     <h4 class="req">Index of the smallest at the end of an array</h4>
 
-                    <p>Implement a method <code>indexOfSmallestStartingFrom</code>, which works just like the method of
-                    the previous assignment, but only takes in to consideration the end of an array starting from a
-                    certain index. The method gets in addition to the array an index, from which the search for the
-                    smallest will be started from.</p>
+                    <p>Implement a method <code>indexOfTheSmallestStartingFrom</code>, which works just like the method of
+                    the previous assignment, but only takes into consideration the end of an array starting from a
+                    certain index. In addition to the array the method gets as parameter an index, from which the search for the
+                    smallest will be started.</p>
 
                     <p>The frame of the method is as follows:</p>
 
 <pre class="sh_java">
-public static int indexOfSmallestStartingFrom(int[] array, int index) {
+public static int indexOfTheSmallestStartingFrom(int[] array, int index) {
     // write the code here
 }
 </pre>
 
-                    <p><b>NOTE:</b> You can't change the array that gets passed in to the method as a
+                    <p><b>NOTE:</b> You can't change the array that gets passed into the method as a
                     parameter!</p>
 
                     <p>The following code demonstrates the functionality of the method:</p>
@@ -12062,9 +12059,9 @@ public static int indexOfSmallestStartingFrom(int[] array, int index) {
 <pre class="sh_java">
 // indexes:    0  1  2  3   4
 int[] values = {-1, 6, 9, 8, 12};
-System.out.println(indexOfSmallestStartingFrom(values, 1));
-System.out.println(indexOfSmallestStartingFrom(values, 2));
-System.out.println(indexOfSmallestStartingFrom(values, 4));
+System.out.println(indexOfTheSmallestStartingFrom(values, 1));
+System.out.println(indexOfTheSmallestStartingFrom(values, 2));
+System.out.println(indexOfTheSmallestStartingFrom(values, 4));
 </pre>
 
 <pre>
@@ -12074,14 +12071,14 @@ System.out.println(indexOfSmallestStartingFrom(values, 4));
 </pre>
 
                     <p>In the example, the first method call finds the index of the smallest value starting from index
-                    1. Starting from index 1 the smallest value is 6, and it's index is 1. Respectively the second
+                    1. Starting from index 1 the smallest value is 6, and its index is 1. Respectively the second
                     method call looks for the index of the smallest value starting from index 2. In this case the
-                    smallest value is 8 and it's index is 3. The last call starting from the last cell of the
+                    smallest value is 8 and its index is 3. The last call starts from the last cell of the
                     array, in this case there is no other cells so the smallets value is in index 4.</p>
 
                     <h4 class="req">Swapping values</h4>
 
-                    <p>Create a method <code>swap</code>, to which will be passed an array and two of it's indexes.
+                    <p>Create a method <code>swap</code>, to which will be passed an array and two of its indexes.
                     The method swaps the values in the indexes around.</p>
 
                     <p>The frame of the method looks like this:</p>
@@ -12093,7 +12090,7 @@ public static void swap(int[] array, int index1, int index2) {
 </pre>
 
                     <p>The following showcases the functionality of the method. In printing the array we'll use the
-                    Arrays.toString-method which formats the array in to a string:</p>
+                    Arrays.toString-method which formats the array into a string:</p>
 
 <pre class="sh_java">
 int[] values = {3, 2, 5, 4, 8};
@@ -12116,9 +12113,9 @@ System.out.println( Arrays.toString(values) );
                     <h4 class="req">Sorting</h4>
 
                     <p>Now we've got a set of useful methods, with which we can implement a sorting algorithm known
-                    as exchange sorting.</p>
+                    as selection sorting.</p>
 
-                    <p>The idea of exchange sorting is this:</p>
+                    <p>The idea of selection sorting is this:</p>
 
                     <ul>
                         <li>Move the smallest number of the array to index 0.</li>
@@ -12151,7 +12148,7 @@ System.out.println( Arrays.toString(values) );
                     contents of the array before sorting and after each round to be able to make sure that the
                     algorithm works correctly.</p>
 
-                    <p>Frame of the method:</p>
+                    <p>Body of the method:</p>
 
 <pre class="sh_java">
 public static void sort(int[] array) {
@@ -12185,8 +12182,8 @@ sort(values);
 
             <h2>Searching</h2>
 
-            <p>In addition to sorting, another very typical problem that a programmer runs in to is finding a certain
-            value from an array. Earlier, we've implemented methods that search for values in lists and arrays. In
+            <p>In addition to sorting, another very typical problem that a programmer runs into is finding a certain
+            value in an array. Earlier, we've implemented methods that search for values in lists and arrays. In
             the case of arrays, values and strings can be searched for in the following way:</p>
 
 <pre class="sh_java">
@@ -12211,13 +12208,13 @@ sort(values);
   }
 </pre>
 
-            <p>An implementation like this is the best we've been able to do so far. The downside if the method is,
-            that if the array has a very large amount of values in it, the search will take a lot of time. In the worst
+            <p>An implementation like this is the best we've been able to do so far. The downside of the method is
+            that, if the array has a very large amount of values in it, the search will take a lot of time. In the worst
             case scenario the method goes through every single cell in the array. This means that going through an
             array that has 16777216 cells does 16777216 cell inspections.</p>
 
             <p>On the other hand, if the values in an array are <i>ordered by size</i>, the search can be done in a
-            notably faster way by applying a technique called <i>binary search</i>. Lets investigate the idea of binary
+            notably faster way by applying a technique called <i>binary search</i>. Let's investigate the idea of binary
             search with this array:</p>
 
 <pre>
@@ -12225,8 +12222,8 @@ sort(values);
 // values     -7  -3   3   7   11  15   17  21  24  28  30
 </pre>
 
-            <p>Lets assume that we want to find the value 17. Lets utilize the information that the values of the array
-            are in order instead of going through the array from the beginning. Lets inspect the middle cell of the
+            <p>Let's assume that we want to find the value 17. Let's utilize the information that the values of the array
+            are in order instead of going through the array from the beginning. Let's inspect the middle cell of the
             array. The middle cell is 5 (the largest index 10 divided by two). The middle cell is marked with the
             asterisk:</p>
 
@@ -12236,12 +12233,12 @@ sort(values);
 // values     -7  -3   3   7   11  15   17  21  24  28  30
 </pre>
 
-            <p>At the middle is the value 15, that was not the value we were looking for. We're looking for the
-            value 17, so since the cells of the array are in a size order, the value cannot be on the left side of the
+            <p>At the middle is the value 15, which was not the value we were looking for. We're looking for the
+            value 17, so since the cells of the array are ordered by size, the value cannot be on the left side of the
             15. So we can determine that all indexes that are smaller or equal to 5 do not have the value we are
             looking for.</p>
 
-            <p>The area that we are searching for the value we want to find can now be limited to values that are on
+            <p>The area where we are searching for the value we want to find can now be limited to values that are on
             the right side of the index 5, or in other words, in the indexes [6, 10] (6, 7, 8, 9, 10). In the following
             the part of the array is greyed where the searched value cannot be:</p>
 
@@ -12250,7 +12247,7 @@ sort(values);
 // values      <font color="lightgrey">-7  -3   3   7  11   15</font>   17   21  24  28  30
 </pre>
 
-            <p>Next, lets inspect the middle index of the area that we have left; the middle index of indexes 6-10. The
+            <p>Next, let's inspect the middle index of the area that we have left; the middle index of indexes 6-10. The
             middle index can be found by getting the sum of the smallest and largest index and dividing it by two:
             (6+10)/2 = 16/2 = 8. The index 8 is marked with the asterisk below.</p>
 
@@ -12260,9 +12257,9 @@ sort(values);
 // values      <font color="lightgrey">-7  -3   3   7  11   15</font>   17   21  24  28  30
 </pre>
 
-            <p>In index 8, we have the value 24, that was not the value we were looking for. Because the values in the
-            array are in a size order the value we are searching for can not, in any case, be on the right side of the
-            calue 24. We can deduce that all indexes that are larger or equal to 8 can not contain the value we are
+            <p>In index 8, we have the value 24, which was not the value we were looking for. Because the values in the
+            array are ordered by size, the value we are searching for can not, in any case, be on the right side of the
+            value 24. We can deduce that all indexes that are larger or equal to 8 can not contain the value we are
             looking for. The search area gets narrowed down again, the greyed areas have been dealt with:</p>
 
 <pre>
@@ -12271,7 +12268,7 @@ sort(values);
 "lightgrey">24  28  30</font>
 </pre>
 
-            <p>The search continues. Lets inspect the middle index of the area that we have left to search, that is the
+            <p>The search continues. Let's inspect the middle index of the area that we have left to search, that is, the
             middle index of indexes 6-7. The middle index can again be found out by getting the sum of the smallest and
             largest index of the search area and then dividing it by two: (6+7)/2 = 6.5, which is rounded down to 6.
             The spot has been marked with the asterisk.</p>
@@ -12286,7 +12283,7 @@ sort(values);
 
             <p>In the index 6 we have the value 17, which is the same as the value we've been looking for. We can
             stop the search and report that the value we searched for is in the array. If the value wouldn't have
-            been in the array - for example if the searched for value would've been 16 - the search area would have
+            been in the array - for example if the searched-for value would've been 16 - the search area would have
             eventually been reduced to nothing.</p>
 
 <pre>
@@ -12307,7 +12304,7 @@ sort(values);
 </pre>
 
             <p>With the help of binary search we look for cells by always halving the inspected area. This enables us
-            to search in a very efficient way. For example, an array that has 16 cells, can be divided in half up to 4
+            to search in a very efficient way. For example, an array of size 16 can be divided in half up to 4
             times, so 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1. On the other hand, an array that has 16777216 cells can be
             halved up to 24 times. This means that with binary search we only need to inspect up to 24 cells in an
             array that has 16777216 cells in order to find our desired cell.</p>
@@ -12317,57 +12314,56 @@ sort(values);
             how many times a number can be halved. Respectively the base two logarithm of the nubmer 4294967296
             (<code>log<sub>2</sub> 4294967296</code>) is 32. This means that searching from a sorted array of
             4294967296 different values would only take up to 32 cell inspections. Efficiency is an essential part of
-            computer science. For example, the first year course 'data structures' of computer sciences focuses
-            to implementing efficient data structures.</em></p>
+            computer science.</em></p>
 
             <div class="tehtavat">
                 <div class="tehtava">
                     <h3 class="req">Guessing game</h3>
 
-                    <p>In this assignment we'll make an AI, which guesses the number the palyer is thinking about.
-                    The AI assumes that the number is between <em>lowerLimit</em>...<em>upperLimit</em>. The started of
+                    <p>In this assignment we'll make an AI, which guesses the number the player is thinking about.
+                    The AI assumes that the number is between <em>lowerLimit</em>...<em>upperLimit</em>. The start of
                     the game provides these limits to the method as parameters that makes the game happen. The AI asks
-                    the player questions in the format "Is your number greater than X?" and deducts the
+                    the player questions in the format "Is your number greater than X?" and deduce the
                     correct answer from the answers the player gives.</p>
 
                     <p>The AI keeps track of the search area with the help of the variables lowerLimit and upperLimit.
                     The AI always asks if the player's number is greater than the average of these two numbers, and
                     based on the answers the search area gets halved each time. In the end the lowerLimit and
-                    upperLimit are the same and the number the user is thinking has been revealed.</p>
+                    upperLimit are the same and the number the user is thinking of has been revealed.</p>
 
-                    <p>In the following example the user choses the number 44:</p>
+                    <p>In the following example the user chooses the number 44:</p>
 
 <pre>
 Think of a number between 1...100.
-I promise you that I can guess the number you are thinking with 7 questions.
+I promise you that I can guess the number you are thinking of with 7 questions.
 
 Next I'll present you a series of questions. Answer them honestly.
 
-Is your number larger than 50? (y/n)
-<font color="red">e</font>
-Is your number larger than 25? (y/n)
-<font color="red">k</font>
-Is your number larger than 38? (y/n)
-<font color="red">k</font>
-Is your number larger than 44? (y/n)
-<font color="red">e</font>
-Is your number larger than 41? (y/n)
-<font color="red">k</font>
-Is your number larger than 43? (y/n)
-<font color="red">k</font>
-The number you're thinking is 44.
+Is your number greater than 50? (y/n)
+<font color="red">n</font>
+Is your number greater than 25? (y/n)
+<font color="red">y</font>
+Is your number greater than 38? (y/n)
+<font color="red">y</font>
+Is your number greater than 44? (y/n)
+<font color="red">n</font>
+Is your number greater than 41? (y/n)
+<font color="red">y</font>
+Is your number greater than 43? (y/n)
+<font color="red">y</font>
+The number you're thinking of is 44.
 </pre>
 
                     <p>In the above example the possible value range is first 1...100. When the user tells the program
-                    that the number is not greater than 50 the possible range is 1...50. When the user tells that the
+                    that the number is not greater than 50 the possible range is 1...50. When the user says that the
                     number is greater than 25, the range is 26...50. The deduction proceeds in the same fashion until
                     the number 44 is reached.</p>
 
-                    <p>In accordance to the principles of halving, or binary search the possible search area is halved
+                    <p>In accordance to the principles of halving, or binary search, the possible search area is halved
                     after each question in which case the number of required questions is small. Even between the
                     numbers 1...100000 it shouldn't take more than 20 questions.</p>
 
-                    <p>Program skeleton of the class <code>GuessingGame</code> that implements the is the
+                    <p>The program skeleton of the class <code>GuessingGame</code> that implements this is the
                     following:</p>
 
 <pre class="sh_java">
@@ -12392,26 +12388,22 @@ public class GuessingGame {
 
         System.out.println("Think of a number between " + lowerLimit + "..." + upperLimit + ".");
 
-        System.out.println("I promise you that I can guess the number you are thinking with " + maxQuestions + " questions.");
+        System.out.println("I promise you that I can guess the number you are thinking of with " + maxQuestions + " questions.");
         System.out.println("");
-        System.out.println("Next I'll present you a series of questions. Answer them honestly.");
+        System.out.println("Next I'll present you with a series of questions. Answer them honestly.");
         System.out.println("");
     }
 
-    // an helper method:
+    // a helper method:
     public static int howManyTimesHalvable(int number) {
         // we create a base two logarithm  of the given value
-        // more info on logarithms can be found for example here:
-
-        // http://www02.oph.fi/etalukio/pitka_matematiikka/kurssi8/maa8_teoria7.html
-
         // Below we swap the base number to base two logarithms!
         return (int) (Math.log(number) / Math.log(2)) + 1;
     }
 }
 </pre>
 
-                    <p>The game is started in following manner:</p>
+                    <p>The game is started the in following manner:</p>
 
 <pre class="sh_java">
     GuessingGame game = new GuessingGame();
@@ -12425,11 +12417,11 @@ public class GuessingGame {
 
                     <h4>Is greater than</h4>
 
-                    <p>Implement the method <code>public boolean isGreaterThan(Scanner reader, int value)</code>, which
+                    <p>Implement the method <code>public boolean isGreaterThan(int value)</code>, which
                     presents the user with a question:</p>
 
 <pre>
-"Is your number larger than <em>given value</em>? (y/n)"
+"Is your number greater than <em>given value</em>? (y/n)"
 </pre>
 
                     <p>The method returns the value <code>true</code> if the user replies "y", otherwise
@@ -12440,7 +12432,7 @@ public class GuessingGame {
 <pre class="sh_java">
     GuessingGame game = new GuessingGame();
 
-    System.out.println(game.isGreaterThan(reader, 32));
+    System.out.println(game.isGreaterThan(32));
 </pre>
 
 <pre>
@@ -12452,8 +12444,8 @@ true
                     <h4>Average</h4>
 
                     <p>Implement the method <code>public int average(int firstNumber, int secondNumber)</code>, which
-                    calculates the average of the given values. Notice that Java rounds floating numbers automatically
-                    down, in our case this is perfectly fine.</p>
+                    calculates the average of the given values. Notice that Java rounds floating numbers down automatically,
+                    in our case this is perfectly fine.</p>
 
 <pre class="sh_java">
     GuessingGame game = new GuessingGame();
@@ -12485,26 +12477,27 @@ true
 
 <pre>
 Think of a number between 1...4.
-I promise you that I can guess the number you are thinking with 2 questions.
+I promise you that I can guess the number you are thinking of with 2 questions.
 
-Next I'll present you a series of questions. Answer them honestly.
+Next I'll present you with a series of questions. Answer them honestly.
 
-Is your number larger than 2? (y/n)
+Is your number greater than 2? (y/n)
 <font color="red">k</font>
-Is your number larger than 3? (y/n)
+Is your number greater than 3? (y/n)
 <font color="red">k</font>
-The number you're thinking is 4.
+The number you're thinking of is 4.
 </pre>
-
+		</div>
+		<div class="tehtava">
                     <h3>Implementation of binary search</h3>
 
                     <p>The template you get from the test automaton has a start for an implementation of binary search.
                     The class <code>BinarySearch</code> holds a method <code>public static boolean search(int[] array,
-                    int searchedValue)</code>, of which's job is to figure out, by using binary search, if the
-                    value given as a parameter is in the sorted array that is also given as a parameter.</p>
+                    int searchedValue)</code>, the job of which is to figure out, by using binary search, if the
+                    value given as a parameter is in the sorted array that is also given as parameter.</p>
 
                     <p>The method <code>search</code> does not work yet, however. Finish the method's
-                    implementation in to a real binary search.</p>
+                    implementation into a real binary search.</p>
 
                     <p>For testing, a separate main program can be found in the class <code>Main</code>, which has a
                     frame like this:</p>
@@ -12557,8 +12550,8 @@ Value 99 is not in the array
 
             <h2>About arrays and objects</h2>
 
-            <p>If need be, any type of object can be put in to an array. In the following, an example of an array to
-            which will be put <em>Person</em>-objects:</p>
+            <p>If need be, any type of object can be put into an array. In the following, an example of an array into
+            which will be put <em>Person</em> objects:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -12580,8 +12573,8 @@ Value 99 is not in the array
     }
 </pre>
 
-            <p>First we create an array that can hold 3 Person objects. We put Pekka to slot 0, Antti to 1 and Juhana
-            to 2. We age all by 30 years and check all of their matureness with the help of the method from the
+            <p>First we create an array that can hold 3 Person objects. We put Pekka in slot 0, Antti in 1 and Juhana
+            in 2. We age all by 30 years and check all of their matureness with the help of the method from the
             previous chapter.</p>
 
             <p>The same example with ArrayLists:</p>
@@ -12610,11 +12603,11 @@ Value 99 is not in the array
     }
 </pre>
 
-            <p>In most situations it's better to use ArrayList intead of an array. However the can be cases where
-            array is adequate and is simpler to use.</p>
+            <p>In most situations it's better to use ArrayList intead of an array. However there can be cases where
+            an array is adequate and is simpler to use.</p>
 
-            <p>A week always consists of seven days. It would be meaningful to form out of exactly 7 Day objects. Since
-            there's always 7 Day objects, an array will suit the situation mighty fine:</p>
+            <p>A week always consists of seven days. It would be meaningful to form it out of exactly 7 Day objects. Since
+            there's always 7 Day objects, an array will suit the situation very well:</p>
 
 <pre class="sh_java">
 public class Day {
@@ -12634,10 +12627,9 @@ public class Week {
 }
 </pre>
         </div>
-
-        <!-- BEGIN MOOC SNIP -->
-        <p>this is not visible at mooc.fi</p>
-        <!-- END MOOC SNIP -->
+<!-- BEGIN MOOC SNIP -->
+<p>not visible</p>
+<!-- END MOOC SNIP -->
     </section>
 </body>
 </html>

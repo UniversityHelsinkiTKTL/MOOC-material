@@ -83,21 +83,20 @@
 
             <h3>Source code</h3>
 
-            <p>A program is made up of <em>source code</em>. A computer generally runs <em>commands</em> in the source
-            code from <em>top to bottom</em> and <em>from left to right</em>. The source code is saved in a textual
+            <p>A computer program is composed of commands written in the <em>source code</em>. A computer generally runs <em>commands</em> in the source
+            code from <em>top to bottom</em> and <em>from left to right</em>. Source code is saved in a textual
             format and will be <em>executed</em> somehow.</p>
 
             <h3>Commands</h3>
 
-            <p>Actually, a program is composed of commands written in the source code. Computers execute different
-            <em>operations</em>, or actions, based on the commands. For example, when printing the string (i.e. text)
-            "Hello world!" on the screen, <code>System.out.println</code> is the most important command.</p>
+            <p>Computers execute different <em>operations</em>, or actions, based on the commands. For example, when printing the text
+            "Hello world!" on the screen, it is done by the command <code>System.out.println</code>.</p>
 
 <pre class="sh_java">
 System.out.println("Hello world!");
 </pre>
 
-            <p>The <code>System.out.println</code> command prints the string given to inside the brackets onto the
+            <p>The <code>System.out.println</code> command prints the string given inside the brackets on the
             screen. The suffix <code>ln</code> is short for the word <i>line</i>. Therefore, this command prints out a
             line. This means that after the given string has been printed, the command will also print a line
             break.</p>
@@ -120,7 +119,7 @@ System.out.println("Hello world!");
             <h4>Semicolon</h4>
 
             <p>A semicolon <code>;</code> is used to separate different commands. The compiler and the interpreter both
-            ignore lines in the source code so we could write the entire program on a single line.</p>
+            ignore line breaks in the source code so we could write the entire program on a single line.</p>
 
             <p>In the example below we will use the <code>System.out.print</code> command, which is similar to the
             <code>System.out.println</code> command except that it will not print a line break after printing the
@@ -137,9 +136,9 @@ System.out.print("!");
 Hello world!
 </pre>
 
-            <p>Even though neither the compiler nor the interpreter need line breaks in the source code, they are very
-            important when considering other humans. Line breaks are required to divide source code in a clear manner.
-            This and other similar matters related to readability will emphasized throughout this course.</p>
+            <p>Even though neither the compiler nor the interpreter need line breaks in the source code, they are very important when considering 
+	    human readers of the source code. Line breaks are required to divide source code in a clear manner.
+            Readability of source code will be emphasized throughout this course.</p>
 
             <h4>Parameters (information passed to commands)</h4>
 
@@ -165,11 +164,11 @@ System.out.print(" and all the people of the world."); // We print more text to 
 </pre>
 
             <p>The last line of the example introduces a particularly handy use for comments: you can comment out code
-            instead of completely deleting it if you want to temporarily try something out.</p>
+            instead of completely deleting it if you want to temporarily try out something.</p>
 
-            <h3>3.5 More about printing</h3>
+            <h3>More about printing</h3>
 
-            <p>As we can tell from the examples above, there are two commands for printing.</p>
+            <p>As we can see from the examples above, there are two commands for printing.</p>
 
             <ul>
                 <li><code>System.out.print</code> prints the text without the line break at the end</li>
@@ -196,7 +195,7 @@ Third
 
             <h2>Main program body</h2>
 
-            <p>The body for a program named "Example" as follows:</p>
+            <p>The body for a program named "Example" is as follows:</p>
 
 <pre class="sh_java">
 public class Example {
@@ -233,7 +232,8 @@ public class Example {
             of the program.</p>
 
             <div class="help">
-                <p>For this course, we will use the <a href="http://netbeans.org/">NetBeans</a> development
+                <p>In this course, we will use the <a href="http://netbeans.org/">NetBeans</a> development
+
                   environment. A guide for using NetBeans is available <a href="/programming-part1/registration-and-how-get-started#nb">here</a>.
                 </p>
             </div>
@@ -241,12 +241,12 @@ public class Example {
             <p>Until you become familiar with NetBeans, follow the guides and steps precisely. Most of the following
             exercises show what needs to be printed to the screen for the program to function correctly.</p>
 
-            <p><b>Note:</b> Do not do the examples by writing code and then clicking the test button. You should also
+            <p><b>Note:</b> Do not do the exercises by writing code and then clicking the test button. You should also
             execute the code manually (green arrow) and observe the result on the screen. This is especially useful if
             an exercise fails to pass the tests.</p>
 
             <div class="tehtavat">
-                <p>In the following exercises, we will practice using NetBeans and printing text to the screen.</p>
+                <p>In the following exercises, we will practice the use of NetBeans and printing of text on the screen.</p>
 
                 <p><b>Remember to read the <a href="/programming-part1/registration-and-how-get-started#nb">guide on using NetBeans</a> before you continue!</b></p>
                 <p class="help">Please answer to our survey: <a href="http://oo-start.mooc.fi/english_mooc_participants/new">here</a>. It will take less than five minutes.</p>
@@ -291,7 +291,7 @@ Hello world!
                 </div>
 
                 <p><b>Note:</b> You probably wrote <code>System.out.println("...")</code> quite a few times.
-                Try to type only <i>sout</i> on an empty line in NetBeans instead and then press the <a href=
+                Try typing only <em>sout</em> on an empty line in NetBeans and then press the <a href=
                 "http://en.wikipedia.org/wiki/Tab_key">tab key</a>. What happened? This tip will save a lot of your
                 time in the future!</p>
             </div>
@@ -303,7 +303,7 @@ Hello world!
             <p>A <em>variable</em> is one of the most important concepts in computer programming. A variable should be
             imagined as a box in which you can store information. The information stored in a variable always has a
             type. These types include text (<em>String</em>), whole numbers (<em>int</em>), decimal numbers
-            (<em>double</em>), and truth value (<em>boolean</em>). A <em>value</em> can be assigned to a variable using
+            (<em>double</em>), and truth values (<em>boolean</em>). A <em>value</em> can be assigned to a variable using
             the equals sign (<code>=</code>).</p>
 
 <pre class="sh_java">
@@ -311,7 +311,7 @@ int months = 12;
 </pre>
 
             <p>In the statement above, we assign the value 12 to the variable named <em>months</em> whose data type is
-            whole number (<em>int</em>). The statement is read as "the variable <em>months</em> is assigned the
+            integer (<em>int</em>). The statement is read as "the variable <em>months</em> is assigned the
             <em>value</em> 12".</p>
 
             <p>The value of the variable can be appended to a string with the plus <code>+</code> sign as shown in the
@@ -326,7 +326,7 @@ double decimalNumber = 3.141592653;
 boolean isTrue = true;
 
 System.out.println("The variable's type is text. Its value is " + text);
-System.out.println("The variable's type is whole number. Its value is  " + wholeNumber);
+System.out.println("The variable's type is integer. Its value is  " + wholeNumber);
 System.out.println("The variable's type is decimal number. Its value is " + decimalNumber);
 System.out.println("The variable's type is truth value. Its value is " + isTrue);
 </pre>
@@ -335,7 +335,7 @@ System.out.println("The variable's type is truth value. Its value is " + isTrue)
 
 <pre>
 The variable's type is text. Its value is includes text
-The variable's type is whole number. Its value is 123
+The variable's type is integer. Its value is 123
 The variable's type is decimal number. Its value is 3.141592653
 The variable's type is truth value. Its value is true
 </pre>
@@ -345,17 +345,17 @@ The variable's type is truth value. Its value is true
 
 <pre class="sh_java">
 int wholeNumber = 123;
-System.out.println("The variable's type is whole number. Its value is  " + wholeNumber);
+System.out.println("The variable's type is integer. Its value is  " + wholeNumber);
 
 wholeNumber = 42;
-System.out.println("The variable's type is whole number. Its value is  " + wholeNumber);
+System.out.println("The variable's type is integer. Its value is  " + wholeNumber);
 </pre>
 
             <p>The output is:</p>
 
 <pre>
-The variable's type is whole number. Its value is 123
-The variable's type is whole number. Its value is 42
+The variable's type is integer. Its value is 123
+The variable's type is integer. Its value is 42
 </pre>
 
             <h3>Variable data types are immutable</h3>
@@ -368,7 +368,7 @@ String text = "yabbadabbadoo!";
 text = 42; // Does not work! :(
 </pre>
 
-            <p>Whole numbers values can be assigned to decimal number variables, because whole numbers are also
+            <p>Integer values can be assigned to decimal number variables, because whole numbers are also
             decimal numbers.</p>
 
 <pre class="sh_java">
@@ -448,7 +448,7 @@ int camelCase = 2;
 int camelCase = 5; // Not allowed, the variable camelCase is already defined!
 </pre>
 
-            <p>It is strongly recommended to name variables such that their purpose can be understood without comments
+            <p>It is strongly recommended to name variables so that their purpose can be understood without comments
             and without thinking. Variable names used in this course <strong>must</strong> be descriptive.</p>
 
             <h4>Valid variable names</h4>
@@ -479,7 +479,7 @@ int second = 4;  // variable of whole number type is assigned the value 4
 int sum = first + second;  // variable of whole number type is assigned the value of first + second
                            //     (which means 2 + 4)
 
-System.out.println(sum); // the value of the variable sum is printed
+System.out.println(sum); // the value of the sum of variables is printed
 </pre>
 
 <pre class="sh_java">
@@ -587,7 +587,7 @@ System.out.println(quotinent);
 
             <div class="tehtavat">
                 <div class="tehtava">
-                    <h3 class="req">Seconds in an year</h3>
+                    <h3 class="req">Seconds in a year</h3>
 
                     <p>Create a program that counts how many seconds there are in a year. You can assume that a year
                     consists of 365 days (therefore the year is not a leap year).</p>
@@ -607,7 +607,7 @@ There are X seconds in a year.
             <p>Let us take a closer look on combining strings with the <code>+</code> operator.</p>
 
             <p>If the <code>+</code> operator is used between two strings, a new string is created with the two strings
-            combined. Note the clever use of a space character as a part of the "variables" below!</p>
+            combined. Note the clever use of space characters in the values of the variables below!</p>
 
 <pre class="sh_java">
 String greeting = "Hi ";
@@ -668,7 +668,7 @@ y has the value 5 and z has the value 6
                 <div class="tehtava">
                     <h3 class="req">Addition</h3>
 
-                    <p>Create a program used to calculate the sum of two numbers. At the beginning of the program two
+                    <p>Create a program to calculate the sum of two numbers. At the beginning of the program two
                     variables are introduced and those variables hold the numbers to be summed. Feel free to use other
                     variables if you need to.</p>
 
@@ -744,7 +744,7 @@ What is your name? <span class="red">John</span>
 Hi, John
 </pre>
 
-            <p>The program above combined along with the main program body is below. The name of the program is
+            <p>The program above combined along with the main program body is shown below. The name of the program is
             <em>Greeting</em>, which means that it must be located in a file named <code>Greeting.java</code>. With
             NetBeans, you can follow the original <a href="%E2%80%9D%E2%80%9D">guide</a>, but be sure to change the
             program name from Hello to Greeting.</p>
@@ -765,8 +765,8 @@ public class Greeting {
 }
 </pre>
 
-            <p>When the program above is executed, you can type the input. The output tab in NetBeans (on the bottom)
-            looks like this when the program has finished (the user inputs the name "John").</p>
+            <p>When the program above is executed, you can type the input. The output tab in NetBeans (at the bottom)
+            looks as follows when the program has finished (the user inputs the name "John").</p>
 
 <pre>
 run:
@@ -777,12 +777,11 @@ BUILD SUCCESSFUL (total time: 6 seconds)
 
             <h3 id="syote_kokonaisluku">Reading integers</h3>
 
-            <p>Our Scanner tool is not good for reading integers, so we will use another special tool to convert a
-            string to an integer. The command <code>Integer.parseInt</code> converts the string given to it into an
-            integer. The command is given its parameter between brackets and it returns an integer that can be
-            assigned to a integer variable.</p>
+            <p>Our Scanner tool is not good for reading integers, so we will use another special tool to read an integer. The command <code>Integer.parseInt</code> converts the string given to it into an
+            integer. The command's parameter is given between brackets and it returns an integer that can be
+            assigned to an integer variable.</p>
 
-            <p>We are practically joining two commands together. First we read the input as a string from the user and
+            <p>Basically, we are joining two commands together. First we read the input as a string from the user and
             immediately give it to the command <code>Integer.parseInt</code>.</p>
 
 <!--
@@ -913,8 +912,8 @@ Circumference of the circle: 125.66370614359172
                     <p><b>Tip:</b> When you write <code>Math.</code> (that is, Math followed by a dot) in NetBeans, it
                     shows you a bunch of available mathematical calculations. For example, <code>Math.cos(10)</code>
                     calculates the cosine of the number 10. Try to find a suitable tool in <code>Math</code> to
-                    complete this exercise! If you cannot find anything suitable or do not know how to do this
-                    exercise, you should skip exercise for now. We will focus on this later on in the course.</p>
+                    complete this exercise! If you cannot find anything suitable or do not know how to complete the
+                    exercise, skip the exercise for now. We will return to the matter later on.</p>
 
 <pre>
 Type a number: <font color="red">20</font>
@@ -990,7 +989,7 @@ Jason Pominville       BUF        41 14 + 29= 43   8
                     points they have gathered. The second command <code>NHLStatistics.top(10);</code> prints the ten
                     first players from the list. Any integer can be given as a parameter.</p>
 
-                    <p>Similarly the players can be printed ordered by the goals or serves they have made, or by
+                    <p>Similarly the players can be printed ordered by the goals or assists they have made, or by
                     penalty minutes they have been given. First, we call the command to sort the players:</p>
 
 <pre class="sh_java">
@@ -1003,7 +1002,7 @@ NHLStatistics.sortByPenalties();  // orders the players by penalty minutes
                     <p>After that the players are printed with the command <code>top</code> using the number of players
                     to be printed as its parameter.<br></p>
 
-                    <p>It is also possible to use the component to request the the statistics of a certain player:</p>
+                    <p>It is also possible to use the component to request the statistics of a certain player:</p>
 
 <pre class="sh_java">
 NHLStatistics.searchByPlayer("Jaromir Jagr");  // prints stats of Jaromir Jagr
@@ -1022,7 +1021,7 @@ NHLStatistics.teamStatistics("NYR");  // Statistics of New York Rangers
 
                     <p>The name of the club must be given using the official three letter abbreviation. You can check
                     the abbreviations <a href="http://everything2.com/title/Ice+hockey+acronyms+and+abbreviations">here
-                    </a>, for example. The statistics component prints a list of the available abbreviations if you
+                    </a>. The statistics component prints a list of the available abbreviations if you
                     request the statistics of an invalid club.</p><
 
                     <p><strong>Create a program that does the following tasks into the main program body. The tasks
@@ -1030,7 +1029,7 @@ NHLStatistics.teamStatistics("NYR");  // Statistics of New York Rangers
                     another without deleting tasks you have already done.</strong></p>
 
                     <p><b>Note:</b> When you first run the program, the execution might take a while because the
-                    information is downloaded from the internet. Execution should be quick after the first run.</p>
+                    information is downloaded from the web. Execution should be quick after the first run.</p>
 
                     <p>The program must do the following:</p>
 
@@ -1043,7 +1042,7 @@ NHLStatistics.teamStatistics("NYR");  // Statistics of New York Rangers
                         <li>Print the players in Anaheim Ducks (abbreviation: ANA) ordered by points</li>
                     </ul>
 
-                    <p>After you have sent the exercise for evaluation it has has been successfully submitted, you can
+                    <p>After you have successfully submitted the exercise, you can
                     play with the code as you wish!</p>
                 </div>
             </div>
@@ -1063,14 +1062,14 @@ if (number &gt; 10) {
 </pre>
 
             <p>The condition <code>(number &gt; 10)</code> evaluates into a truth value; either <em>true</em> or
-            <em>false</em>. So, in the end, the <code>if</code> command only handles truth values. The conditional
+            <em>false</em>. The <code>if</code> command only handles truth values. The conditional
             statement above is read as "if the number is greater than 10".</p>
 
             <p>Note that the <code>if</code> statement is not followed by semicolon as the condition path continues
             after the statement.</p>
 
             <p>After the condition, the opening brace <code>{</code> starts a new <em>block</em>, which is executed
-            if the condition is true. The <em>block</em> ends with a closing brace <code>}</code>. Block can be as
+            if the condition is true. The <em>block</em> ends with a closing brace <code>}</code>. Blocks can be as
             long as desired.</p>
 
             <p>The comparison operators are:</p>
@@ -1112,7 +1111,7 @@ if (number &gt; 0) {
 }
 </pre>
 
-            <p>The comparison operators can also be used outside the <code>if</code> statements. In that case the truth
+            <p>The comparison operators can also be used outside the <code>if</code> statements. In such case the truth
             value will be stored in a truth value variable.</p>
 
 <pre class="sh_java">
@@ -1134,7 +1133,7 @@ int second = 3;
 boolean isLesser = first &lt; second;
 
 if (isLesser) {
-    System.out.println("1 is less than 3!");
+    System.out.println(first + " is less than " + second + "!");
 }
 </pre>
 
@@ -1150,7 +1149,7 @@ if (isLesser) {
             located to the left of q key. When the block ends with the closing brace, indentation ends as well. The
             closing brace <code>}</code> should be on the same level as the original <code>if</code> statement.</p>
 
-            <p>Using indentation is crucial to the readability of program code. During this course and generally
+            <p>The use of indentation is crucial for the readability of program code. During this course and generally
             everywhere, you are expected to indent the code properly. NetBeans helps with the correct indentation.
             You can easily indent your program by pressing shift, alt, and f simultaneously.</p>
 
@@ -1263,9 +1262,9 @@ if (number == 1) {
 The number is three!
 </pre>
 
-            <p>Let us read the example above out loud: If number is one, print out "The number is one.".
+            <p>Let us read out loud the example above: If number is one, print out "The number is one.".
             Otherwise if the number is two, print out "The number is two.". Otherwise if the number is three,
-            print out "The number is three!". Otherwise print out "Quite a lot!"</p>
+            print out "The number is three!". Otherwise print out "Quite a lot!".</p>
 
             <h3>Comparing strings</h3>
 
@@ -1282,8 +1281,8 @@ if (text.equals("marzipan")) {
 }
 </pre>
 
-            <p>The <code>equals</code> command is always attached to the string variable to compare with a dot in
-            between. A string variable can also compared to another string variable.</p>
+            <p>The <code>equals</code> command is always attached to the string variable with a dot in
+            between. A string variable can also be compared to another string variable.</p>
 
 <pre class="sh_java">
 String text = "course";
@@ -1334,7 +1333,7 @@ The numbers are equal!
                 <div class="tehtava">
                     <h3 class="req">Grades and points</h3>
 
-                    <p>Create a program that gives out the course grade based on the following table.</p>
+                    <p>Create a program that gives the course grade based on the following table.</p>
 
                     <table border style="margin-left:50px">
                         <tr>
@@ -1385,7 +1384,7 @@ Grade: 5
 
             <h3>Logical operations</h3>
 
-            <p>The condition statements can also be more complicated using logical operations. The logical operations
+            <p>The condition statements can be made more complicated using logical operations. The logical operations
             are:</p>
 
             <ul>
@@ -1413,11 +1412,9 @@ if (number &gt; 4 &amp;&amp; number &lt; 11) {
 Is the number between 5-10?
 Yes! :)
 </pre>
-
             <p>Next up is the OR operation <code>||</code>, which will be used to check if the value is less than 0
             <strong>or</strong> greater than 100. The condition evaluates to true if the value fulfills either
             condition.</p>
-
 <pre class="sh_java">
 System.out.println("Is the number less than 0 or greater than 100?");
 int number = 145;
@@ -1606,8 +1603,7 @@ while (true) {
 System.out.println("Thank you and see you later!");
 </pre>
 
-            <p>Now the loop progresses like this: First, the program prints <em>I can program!</em>. Then, the program
-            program will ask the user if it should continue. If the user types in <em>no</em>, the <code>break</code>
+            <p>Now the loop progresses like this: First, the program prints <em>I can program!</em>. Then, the program will ask the user if it should continue. If the user types <em>no</em>, the <code>break</code>
             command is executed and the loop is interrupted and <em>Thank you and see you again!</em> is printed.</p>
 
 <pre>
@@ -1702,7 +1698,8 @@ Wrong!
 
                     <p>Modify the program so that it asks the user to type a password until it gets the correct one.
                     Implement this using a <code>while-true</code> loop statement. The loop statement can be
-                    interrupted only if and only if the entered password matches the is equal to the value of the
+                    interrupted if and only if the entered password matches the value of the
+
                     <code>password</code> variable.</p>
 
 <pre>
@@ -1731,7 +1728,7 @@ The secret is: jryy qbar!
 </pre>
 
                     <p>The secret above has been encrypted using the <a href="http://en.wikipedia.org/wiki/Rot13"
-                    target="_blank">Rot13</a> algorithm. During this course we will implement our own encrypting
+                    target="_blank">Rot13</a> algorithm. During this course we will implement our own encryption
                     program.</p>
                 </div>
 
@@ -1739,7 +1736,7 @@ The secret is: jryy qbar!
                     <h3 class="req">Temperatures</h3>
 
                     <p>You will get the <code>Graph</code> component along with the exercise template.
-                    <code>Graph</code> draws graphs based on numbers that are given to it. You can give it numbers in
+                    <code>Graph</code> draws graphs based on numbers that are given to it. You can give it numbers
                     as follows:</p>
 
 <pre class="sh_java">
@@ -1804,7 +1801,7 @@ public static void main(String[] args) throws Exception {
 }
 </pre>
 
-                    <p>So the program asks the user to give commands and then executes the operation that is associated
+                    <p>The program asks the user to give commands and then executes the operation that is associated
                     with the given command. The commands are: <em>points, goals, assists, penalties, player, club,
                     quit</em>.</p>
 

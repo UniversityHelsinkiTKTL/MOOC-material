@@ -1857,7 +1857,7 @@ command (points, goals, assists, penalties, player, club): <font color="red">qui
         data-first-exercise-index-mooc="25" data-first-week-index-mooc="2" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
             <h2>Changing variables</h2>
 
-            <p>Usually we want to change the value of an existing variable. This can be done using the normal
+            <p>We usually want to change the value of an existing variable. This can be done using the normal
             assignment statement. In the next example, we increase the value of the variable <code>age</code> by
             one:</p>
 
@@ -1870,7 +1870,7 @@ System.out.println(age);  // prints 2
 </pre>
 
             <p>The <code>age = age + 1</code> statement increments the value of the variable <code>age</code> by one.
-            It is also possible to increment a variable by one this way:</p>
+            It is also possible to increment a variable by one as bellow:</p>
 
 <pre class="sh_java">
 int age = 1;
@@ -1965,16 +1965,16 @@ Sum in the end: 7
 
             <h2 id="lisaa_toistoa">More loops</h2>
 
-            <p>Previously we have learned to use repetition using the <code>while (true)</code> loop, which repeats
+            <p>we have previously learned to use repetition using the <code>while (true)</code> loop, which repeats
             commands until the <code>break</code> command is used.</p>
 
-            <p>The <code>break</code> command is not the only way to end the loop. A common structure for a loop
-            is <code>while (condition)</code>, where the condition can be any statement that evaluates to a truth
-            value. This means that the condition works exactly like conditions for an <code>if</code> statements.</p>
+            <p>The <code>break</code> command is not the only way to end a loop. A common structure for a loop
+            is <code>while (condition)</code>, where the condition can be any statement with a truth
+            value. This means that the condition works exactly like conditions in an <code>if</code> statements.</p>
 
             <p>In the following example, we print the numbers 1, 2, …, 10. When the value of the variable
-            <code>number</code> increases to be over 10, the condition of the <code>while</code> statement is no longer
-            true so the loop ends.</p>
+            <code>number</code> increases above 10, the condition of the <code>while</code> statement is no longer
+            true and the loop ends.</p>
 
 <pre class="sh_java">
 int number = 1;
@@ -1988,7 +1988,7 @@ while (number &lt; 11) {
             <p>The example above can be read "as long as the variable number is less than 11, print the variable and
             increment it by one".</p>
 
-            <p>Above, the variable <code>number</code> was incremented on each iteration of the loop. The change can be
+            <p>Above, the variable <code>number</code> was incremented in each iteration of the loop. Generally the change can be
             anything, meaning that the variable used in the condition does not always need to be incremented. For
             example:</p>
 
@@ -2012,12 +2012,12 @@ while (number &gt;= 1) {
                         <p>If you have, for example, the variable <code>String familyName;</code> in your code, you do
                         not need to always write <code>familyName</code>. Try what happens when you type in
                         <code>f</code> and then press CTRL and space simultaneously. You can also use auto-completion
-                        with commands like <code>while</code> by typing in <code>w</code> and then CTRL + space...</p>
+                        with commands like <code>while</code> by typing in <code>w</code> and then CTRL + space.</p>
                     </li>
                     <li>
                         <b>sout</b>
 
-                        <p>Remember also that you can get the text <em>System.out.println("")</em> by typing
+                        <p>Remember that you can get the text <em>System.out.println("")</em> by typing
                         <em>sout</em> and pressing the <em>tab</em> key (located to the left of the q key)</p>
                     </li>
                 </ul>
@@ -2179,8 +2179,8 @@ length %= 3;    // same as length = length % 3;
 // the variable length now holds the value 1
 </pre>
 
-            <p>Often during a loop, the value of a variable is calculated based on the repetition. The following
-            calculates 3*4 somewhat clumsily as a sum of 3+3+3+3:</p>
+            <p>Often during a loop, the value of a variable is calculated based on repetition. The following program
+            calculates 3*4 somewhat clumsily as the sum 3+3+3+3:</p>
 
 <pre class="sh_java">
 int result = 0;
@@ -2193,7 +2193,7 @@ while (i &lt; 4) {
 </pre>
 
             <p>In the beginning <code>result = 0</code>. During the loop, the value of the variable is incremented
-            by 3 on each iteration. And because there are 4 iterations, the value of the variable is 3*4 in the end.</p>
+            by 3 on each iteration. Because there are 4 iterations, the value of the variable is 3*4 in the end.</p>
 
             <p>Using the assignment operator introduced above, we can achieve the same behavior as follows:</p>
 
@@ -2304,7 +2304,7 @@ The result is 255
                 </div>
             </div>
 
-            <h3>Infinite loop</h3>
+            <h3>Infinite loops</h3>
 
             <p>One of the classic errors in programming is to accidentally create an infinite loop. In the next example
             we try to print "Never again shall I program an eternal loop!" 10 times:</p>
@@ -2317,9 +2317,8 @@ while (i &lt; 10) {
 }
 </pre>
 
-            <p>The variable <code>i</code>, which determines the number of loop, is initially set to 0. The block is
-            supposed to be looped as long as the condition <code>i &lt; 10</code> is true. But something funny happens
-            here. Because the value of the variable <code>i</code> is never changed, the condition stays true forever.</p>
+            <p>The variable <code>i</code>, which determines is supposed to index the loops, is initially set to 0. The block is
+            looped as long as the condition <code>i &lt; 10</code> is true. But something funny happens. Because the value of the variable <code>i</code> is never changed, the condition stays true forever.</p>
 
             <h3>Ending a while loop</h3>
 
@@ -2336,8 +2335,8 @@ while (i &lt; 10) {
             <p>With the structure above, the variable <code>i</code> remembers the number of times the the loop has
             been executed. The condition to end the loop is based on comparing the value of <code>i</code>.</p>
 
-            <p>Let us now recall how a while loop is stopped. Ending a while loop does not need to always be based on
-            the number of loops. The next example program asks for the user's age. If the given age is not in the range
+            <p>Let us now recall how a while loop is stopped. Ending a while loop does not always need to be based on
+            the amount of loops. The next example program asks for the user's age. If the given age is not in the range
             5-85, the program prints a message and asks for the user's age again. As you can see, the condition for the
             while loop can be any expression that results in a boolean (truth value).</p>
 
@@ -2361,7 +2360,7 @@ while (age &lt; 5 || age &gt; 85) {  // age less than 5 OR greater than 85
 System.out.println("Your age is " + age);
 </pre>
 
-            <p>The program could have also been implemented using the good old <code>while (true)</code> structure:</p>
+            <p>The program could also have been implemented using the good old <code>while (true)</code> structure:</p>
 
 <pre class="sh_java">
 System.out.println("Type your age ");
@@ -2392,10 +2391,10 @@ System.out.println("Your age is " + age);
 
                     <p>This set of exercises will form one larger program when put together. We create the program by
                     adding features exercise by exercise. If you do not finish all the exercises you can still send
-                    them to be reviewed by the exercise robot. You can do that by clicking the "submit"
+                    them to be reviewed by the exercise robot. To do that, click the "submit"
                     button, which has a picture of an arrow and is located on the right of the testing button. Even
-                    though the exercise robot complains about tests that consider the exercises you have not done, you
-                    will still get points for the parts you completed.</p>
+                    though the exercise robot complains about tests in the incomplete exercises, you
+                    will still get points for the parts you have completed.</p>
 
                     <p>Note: from now on every sub-exercise of a larger exercise (like 36.1) has the same value as an
                     exercise without sub-exercises. It means that exercise 36 as a whole corresponds to five normal
@@ -2434,7 +2433,7 @@ The sum is 11
                     <h4 class="req">Summing and counting the numbers</h4>
 
                     <p>Develop your number reading and summing program by adding the following feature: the program
-                    should also print how many numbers the user typed (without the number -1).</p>
+                    should print how many numbers the user typed (without the number -1).</p>
 
 <pre>
 Type numbers:
@@ -2450,7 +2449,7 @@ How many numbers: 3
                     <h4 class="req">Counting the average</h4>
 
                     <p>Develop your number reading, summing and counting program by adding the following feature: the
-                    program should also print the average of the numbers the user typed (without the number -1).</p>
+                    program should print the average of the numbers the user typed (without the number -1).</p>
 
 <pre>
 Type numbers:
@@ -2466,7 +2465,7 @@ Average: 3.666666666666
 
                     <h4 class="req">Even and odd numbers</h4>
 
-                    <p>Develop your program by adding the following feature: the program should also print the number
+                    <p>Develop your program by adding the following feature: the program should print the number
                     of even and odd numbers that the user typed (without the number -1).</p>
 
 <pre>
@@ -2495,35 +2494,35 @@ Odd numbers: 1
                 <p>When you are programming something, no matter if it is an exercise or a project of your own, it is
                 advised to do it in very tiny pieces. Do not ever try to solve the whole problem in one go. Start with
                 something easy, something you know that you can do. In this recent set of exercises, for example, we
-                focused first on stopping the program when the user types -1. When one part of the program is made and
-                working, we can move on to working out the solution for the next sub-problem of the big main
+                focused first on stopping the program when the user types -1. When one part of the program is complete and
+                working, we can move on to work out the solution for the next sub-problem of the big main
                 problem.</p>
 
-                <p>Part of the exercises on this course are sliced into smaller pieces like the set of exercises we
-                just introduced. Usually the pieces need to be sliced again into smaller pieces considering the
-                programming solution. It is advised that you execute the whole program after almost every new line of
-                code you have written. That way you can make sure that your solution is going in the right and working
+                <p>Some of the exercises in this course are sliced into smaller pieces like the set of exercises we
+                just introduced. Usually the pieces need to be sliced again into smaller pieces depeding on the
+                problem. It is advised that you execute the whole program after almost every new line of
+                code you write. This enables you to be sure that your solution is going in the right and working
                 direction.</p>
                 <hr>
             </div>
 
             <h2 id="metodit1">Methods</h2>
 
-            <p>We have now used many different commands in Java, including assignment, calculations, comparison, if
+            <p>We have so far used many different commands of Java: assignment, calculations, comparison, if
             structures and while structures. We have been using a "command" <code>System.out.println()</code>
-            to print. We can count the maximum of two numbers with the help of the "command"
+            to print text. We can also count the maximum of two numbers with the help of the "command"
             <code>Math.max()</code>. We are also familiar with <code>reader.nextLine()</code>, usually seen together
             with <code>Integer.parseInt()</code>.</p>
 
-            <p>If we take a closer look we notice that those commands differ from if and while (etc). The first
+            <p>If we take a closer look, we notice that those commands differ from if and while (etc). The first
             difference is that after the command there are brackets () and sometimes an input for the command inside
-            those brackets. Actually the commands ending with brackets are not called commands but
+            those brackets. Actually, the commands ending with brackets are not called commands, but
             <strong>methods</strong>.</p>
 
-            <p>Technically a method is a piece of code that can be called from different places of the program code.
+            <p>Technically speaking, a method is a piece of code that can be called from different places of the program code.
             The line of code <code>System.out.println("I am a parameter given to the method!")</code> means
             that we call a method that actually handles the printing. After the method has been executed we go back
-            where we called the method and continue executing. The input given to the method inside the brackets is
+            to where we called the method, and continue executing. The input given to the method inside the brackets is
             called a <i>method parameter</i>.</p>
 
             <p>In addition to a parameter, the method can also have a return value, for example, a familiar line of
@@ -2537,18 +2536,18 @@ int number = Integer.parseInt( reader.nextLine() );
             has the integer typed by the user as a return value. Next the outer method <code>Integer.parseInt</code> is
             called. As a parameter for that method there is the string of characters that was received from the
             <code>reader.nextLine</code> method as a return value. The return value for the method
-            <code>Integer.parseInt</code> is the string of characters transformed into an integer (number).</p>
+            <code>Integer.parseInt</code> is the string of characters transformed into an integer (whole number).</p>
 
             <p>Method names also seem to include a dot, for example <code>reader.nextLine()</code>. Actually the method
             name starts after the dot, here it is <code>nextLine()</code>. The first part of the command that comes
-            before the dot shows whose method is in question, here the method belongs to the reader. So we have the
-            <em>reader's</em> method <em>nextLine</em>. Later we will learn more precisely about the method owner
+            before the dot shows whose method is in question. Here the method belongs to the reader, which means that we have the
+            <em>reader's</em> method <em>nextLine</em>. Later we will learn more precisely about the owner of the method
             (or the name on the left side of the dot). An attentive reader will notice that the method
             <code>System.out.println()</code> has two dots. Here, the method name is println and
             <code>System.out</code> is the owner of the method. Roughly <code>System.out</code> means the computer
             monitor.</p>
 
-            <p>This far we have been using ready-made methods from Java libraries. Next we will learn how to do our own
+            <p>This far we have been using ready-made methods from Java libraries. Next we will learn how to create our own
             methods.</p>
 
             <h2 id="metodit">Self-written methods</h2>
@@ -2556,11 +2555,11 @@ int number = Integer.parseInt( reader.nextLine() );
             <p>This far we have been using a programming style where code is written (and read and executed) from top
             to bottom.</p>
 
-            <p>Before it was mentioned that "a method is a piece of code that can be called from different places
+            <p>It was mentioned before that "a method is a piece of code that can be called from different places
             of the program code". Ready-made methods of Java have been used since our very first program.</p>
 
-            <p>In addition to using these ready-made methods the programmer can write their own methods for the program
-            to call. In the real world it is really exceptional if the program does not include any self-written
+            <p>In addition to using these ready-made methods  programmers can write their own methods for programs
+            to call. In the real world, it is really exceptional if the program does not include any self-written
             methods. From now on almost every program we create during this course will include self-written
             methods.</p>
 
@@ -2606,10 +2605,10 @@ public static void greet() {
 }
 </pre>
 
-            <p>In order to define a new method we need to write two things. In the first row of the method definition
-            there is the method name, here it is <i>greet</i>. On the left side of the name there are definitions
-            <code>public static void</code>. On the next line there is the code block, marked by the braces ({ and })
-            and inside it there is the method's code, or the commands that will be executed when the method is
+            <p>In order to define a new method we need to write two things. In the first row of the method definition,
+            you will find the name of the method, in this case <i>greet</i>. On the left side of the name you will find the definitions
+            <code>public static void</code>. On the next line, the code block marked by the braces ({ and }).
+            Inside it, the method's code, or the commands that will be executed when the method is
             called. Our method <code>greet</code> only writes one line of text to the screen.</p>
 
             <p>It is easy to call a self-written method. It happens by writing the method name, brackets () and a
@@ -2640,7 +2639,7 @@ public class ProgramBody {
 }
 </pre>
 
-            <p>When the program is executed, we see the following output::</p>
+            <p>When the program is executed, we see the following output:</p>
 
 <pre>
 Let us try if we can get to the method world:
@@ -2652,17 +2651,17 @@ Greetings from the world of methods!
 </pre>
 
             <p>What is noteworthy here is the execution order of the program code. The execution starts with the main
-            program's (or main's) code lines, from top to bottom, one by one. When the code line to be executed
-            happens to be a method call, the lines of code in the method block are executed again one by one, and when
-            the method block ends the execution continues from the place where the method was called. To be exact, the
+            program's (or main's) lines of code, from top to bottom, one by one. When the line of code to be executed
+            happens to be a method call, the lines of code in the method block are executed again one by one. When
+            the method block ends, the execution continues from the place where the method was called. To be exact, the
             execution continues from the next line after the original method call.</p>
 
             <p>To be even more exact, the main program is also a method. When the program starts, the operation system
-            calls for the main method. That means that the main method is the program starting point and the execution
-            starts from the first code line of main. And the program execution ends when it reaches the end of
+            calls for the main method. That means that the main method is the starting point of the program and the execution
+            starts from the first code line of main. The program execution ends when it reaches the end of
             main.</p>
 
-            <p>From now on when we introduce methods we will not point out that they need to be written in the right
+            <p>From now on when we introduce methods, we will not point out that they need to be written in the right
             place inside the program code. For example, a method cannot be defined inside another method.</p>
 
             <div class="tehtavat">
@@ -2727,9 +2726,9 @@ In the beginning there were the swamp, the hoe and Java.
 
             <h3>Method parameters</h3>
 
-            <p>We can make our methods more useful by giving some <em>parameters</em> to it! Parameters are variables
-            that we can define in the first line of method inside the brackets, just after the method name. When the
-            method is called, the parameters get their values at that point.</p>
+            <p>We can make our methods more useful by giving it <em>parameters</em>! Parameters are variables
+            that we define inside brackets in the first line, just after the method name. When the
+            method is called, the parameters are assigned values.</p>
 
             <p>In the next example we define a method with a parameter, its name will be <code>greet</code> and its
             parameter will be a variable of the type String called <code>name</code>.</p>
@@ -2776,13 +2775,13 @@ Hi John 24 years, greetings from the world of methods!
 
             <p>In both cases the method has only one parameter. The value for the parameter is calculated before
             calling the method. In the first case the parameter value comes from the String concatenation (a cool word
-            that means putting the text together) <code>name1 + " " + name2</code>. The value for that
+            that means putting the text together) <code>name1 + " " + name2</code>. The value for the
             concatenation is <i>Anne Green</i>. In the second case we get the parameter value from the String
             concatenation <code>"John " + age + " years"</code>.</p>
 
         <h3>Many parameters</h3>
 
-        <p>A method can be defined to have more than one parameter. In that case the parameters are always given in the
+        <p>A method can be defined to have more than one parameter. In this case, the parameters are always listed in the
         same order.</p>
 
 <pre class="sh_java">
@@ -2810,8 +2809,8 @@ Hi Matt, greetings from Alabama from Nevada
 
         <h3>Method calling another method</h3>
 
-        <p>main is not the only one that is able to call methods. Methods can also call each other! Let us create a
-        method <code>greetManyTimes</code> that greets the user many times using the help of the method
+        <p>Methods can also be called outside of main. Methods can call each other! Let us create a
+        method <code>greetManyTimes</code> that greets the user many times getting assistance from the method
         <code>greet</code>:</p>
 
 <pre class="sh_java">
@@ -2878,9 +2877,8 @@ public static void main(String[] args) {
 *********
 </pre>
 
-                <p><b>Note:</b> you can return the exercises that contain many parts to the exercise robot even though
-                you are not finished with all parts. In that case the robot complains about the tests that consider
-                undone parts of the exercise, but gives you the points for all passing tests.</p>
+                <p><b>Note:</b> you can return exercises that contain many parts to the exercise robot even though
+                you are not finished with all parts. In that case, the robot complains about tests in the unfinished parts of the exercise, but gives you points for all tests that pass.</p>
 
                 <h4>Printing a square</h4>
 
@@ -2895,7 +2893,7 @@ public static void main(String[] args) {
 </pre>
 
                 <p><b>Note:</b> in order to complete the exercise it is not enough that the outprint looks good. Inside
-                the printSquare method the printing needs to be done using the printStars method.</p>
+                the printSquare method the printing must be done using the printStars method.</p>
 
                 <p>When you are in the middle of making your program, you should verify the correctness of your methods
                 by writing some test code into your main method.</p>
@@ -2931,15 +2929,14 @@ public static void main(String[] args) {
                 <h4 class="req">Printing stars and whitespaces</h4>
 
                 <p>Create a method <code>printWhitespaces(int size)</code> that prints the given amount of whitespaces.
-                Method does not print a line break</p>
+                Them method should not print a line break.</p>
 
-                <p>You also need to reimplement or copy here the method <code>printStars(int size)</code> from the
+                <p>Reimplement or copy the method <code>printStars(int size)</code> from the
                 previous exercise.</p>
 
                 <h4>Printing a right-aligned triangle</h4>
 
-                <p>Create the method <code>printTriangle(int size)</code> that prints a triangle using the printStars
-                method using the mehtods <code>printWhitespaces</code> and <code>printStars</code>. <b>Note:</b> do not
+                <p>Create the method <code>printTriangle(int size)</code> that prints a triangle using the mehtods <code>printWhitespaces</code> and <code>printStars</code>. <b>Note:</b> do not
                 print anything in the method itself, just call the helper methods to do the actual printing.</p>
 
                 <p>For example, the method call <code>printTriangle(4)</code> has the following output:</p>
@@ -2955,8 +2952,8 @@ public static void main(String[] args) {
 
                 <p>Create the method <code>xmasTree(int height)</code> that prints a Christmas tree using the mehtods
                 <code>printWhitespaces</code> and <code>printStars</code>. A Christmas tree consists of a triangle of
-                given height and a stand. The stand is two stars tall and three stars wide and it is located at the
-                middle of the triangle bottom. <b>Note:</b> do not print anything in the method itself, just call the
+                given height and a stand. The stand is two stars tall and three stars wide and it is located in the
+                center of the bottom of the triangle. <b>Note:</b> do not print anything in the method itself, just call the
                 helper methods to do the actual printing.</p>
 
                 <p>The method call <code>xmasTree(4)</code>, for example, has the following output:</p>
@@ -2987,7 +2984,7 @@ public static void main(String[] args) {
         ***
 </pre>
 
-                <p><em>Second note:</em> Heights under 3 do not need to work!</p>
+                <p><em>Second note:</em> You don't need to worry about heights below 3!</p>
             </div>
 
             <div class="tehtava">
@@ -3014,10 +3011,10 @@ Congratulations, your guess is correct!
 
                 <h4>Guessing a number</h4>
 
-                <p>The program that comes from the exercise robot contains a command called <code>drawNumber</code>
-                that draws a number that is something between 0 and 100 (and both 0 and 100 are possible). Create a
-                program that draws a number and then the user has the chance to guess once what that number is. The
-                program needs to print "The number is lesser", "The number is greater" or
+                <p>The program that comes with the exercise contains a command called <code>drawNumber</code>. It
+                draws a number, which is in the range 0 to 100 (both 0 and 100 are possible). Create a
+                program that draws a number. Then the user has the chance to guess once, what the number is. The
+                program should to print "The number is lesser", "The number is greater" or
                 "Congratulations, your guess is correct!" depending on the number the user typed.</p>
 
 <pre>
@@ -3042,7 +3039,7 @@ Congratulations, your guess is correct!
                 <code>drawNumber</code> command <em>before the repetition</em>. Why? What happens if you draw the
                 number inside the repetition?</p>
 
-                <p>In the example below the command call <code>drawNumber</code> returned the value 83.</p>
+                <p>In the example below, the command call <code>drawNumber</code> returned the value 83.</p>
 
 <pre>
 Guess a number: <font color="red">55</font>
@@ -3059,8 +3056,7 @@ Congratulations, your guess is correct!
 
                 <h4>Counting the guesses</h4>
 
-                <p>Develop your program by adding the following functionality: the program needs to include an int type
-                of a variable that is used to count the guesses the user has made. The program should always print the
+                <p>Develop your program by adding the following functionality: the program needs to include a variable of type int, which is used to count the guesses the user has made. The program should always print the
                 number of guesses along with the answer.</p>
 
 <pre>
@@ -3134,14 +3130,13 @@ Congratulations, your guess is correct!
 
                 <p>The exercise is completed in small steps.</p>
 
-                <h4>A repetition sentence and ending the repetition</h4>
+                <h4>A repetition statement and ending the repetition</h4>
 
-                <p>Create a repetition sentence in the program. That works as a base for the rest of the user
-                interface. Ask the user to give the command inside the repetition. If the command is "quit",
-                break the repetition.</p>
+                <p>Create a repetition statement (loop) in the program that works as a base for the rest of the user
+                interface. Ask the user to submit the command inside the repetition loop. If the command is "quit",
+                break the loop.</p>
 
-                <p>Use the command <code>hangman.gameOn</code> as the condition for the while structure. It means that
-                the repetition should be like:</p>
+                <p>Use the command <code>hangman.gameOn</code> as the condition for the while structure. The repetition should look like:</p>
 
 <pre class="sh_java">
 while (hangman.gameOn()) {
@@ -3150,9 +3145,9 @@ while (hangman.gameOn()) {
 }
 </pre>
 
-                <p>Next week we will really understand what this peculiar-looking condition is about.</p>
+                <p>In the following set of exercises, we will find out what this peculiar-looking condition for ending the loop is about.</p>
 
-                <p>This far the program should have the following output:</p>
+                <p>This far the program should produce the following output:</p>
 
 <pre>
 ************
@@ -3201,11 +3196,11 @@ Thank you for playing!
 
                 <h4>Making a guess</h4>
 
-                <p>If the user types in a single letter as a command, use it to make a guess. Guessing a letter happens
+                <p>If the user types in a single letter as a command, use it to make a guess. Guessing a letter occures
                 with the method <code>hangman.guess(command)</code>. The guessing command has its own printing
-                functionality that it uses to print more information about the guess.</p>
+                functionality, which it uses to print more information about the guess.</p>
 
-                <p><b>Hint:</b> finding out that the command is a single letter happens like this:</p>
+                <p><b>Hint:</b> finding out if the command is a single letter is done as follows:</p>
 
 <pre class="sh_java">
 String command = reader.nextLine();
@@ -3240,7 +3235,7 @@ Thank you for playing!
                 call the method <code>printMenu</code>. Note that the method <code>printMenu</code> is not in the
                 Hangman game but in your own program.</p>
 
-                <p><b>Note:</b> checking if the string is empty happens like this:</p>
+                <p><b>Note:</b> checking if the string is empty is done as follows:</p>
 
 <pre class="sh_java">
 String winnie = "the pooh";
@@ -3254,7 +3249,7 @@ if(winnie.isEmpty()) {
                 <h4>Printing the man and the word</h4>
 
                 <p>If the user has not typed the command <code>quit</code>, you should call the Hangman game commands
-                <code>hangman.printMan()</code> and <code>hangman.printWord()</code> at the end of the repetition.</p>
+                <code>hangman.printMan()</code> and <code>hangman.printWord()</code> at the end of the loop.</p>
 
 <pre>
 ...

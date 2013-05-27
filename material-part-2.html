@@ -5499,33 +5499,33 @@ public class Checkout {
 
 
 <div>
-<big><big><b>Muutama NetBeans-vihje</b></big></big>	
+<big><big><b>NetBeans Tips</b></big></big>	
 
 <ul>
-<li> Kaikki NetBeans-vihjeet löytyvät <a href="../ohpe/netbeans.html">täältä</a> </li>
+<li>All NetBeans tips can be found <a href="../ohpe/netbeans.html">here</a> </li>
 <p></p>
 
 <li> <b>Implement all abstract methods</b>
 
 <p>
-Oletetaan että ohjelmassasi on rajapinta <code>Rajapinta</code>, ja olet tekemässä rajapinnan toteuttavaa luokkaa <code>Luokka</code>. Joudut näkemään hieman vaivaa kirjoittaessasi toteuttavaan luokkaan rajapinnan määrittelemien metodien esittelyrivit.
+Let us suppose that your program contains the interface <code>Interface</code>, and you are building the class <code>Class</code> which implements the interface. It will be annoying to write the declaration raws of all the interface methods.
 </p>
 
-<p>On kuitenkin mahdollista pyytää NetBeansia täydentämään automaattisesti metodirungot toteuttavalle luokalle. Kun olet määritellyt luokan toteuttavan rajapinnan, eli kirjoittanut</p>
+<p>However it is possible to ask NetBeans to fill in the method bodies automatically. When you have defined the interface a class should implement, i.e. when you have written</p>
 
 <pre class="sh_java">
 public class Luokka implements Rajapinta {
 }
 </pre>
 
-<p>NetBeans värjää luokan nimen punaisella. Mene rivin vasemmassa reunassa olevan lamppusymbolin kohdalle, klikkaa ja valitse <em>Implement all abstract methods</em> ja metodirungot ilmestyvät koodiin!</p>
+<p>NetBeans paints the class name red. If you go to lamp icon on the left corner of the raw, click, and choose <em>Implement all abstract methods</em>, the method bodies will appear in your code!</p>
 
 </li>
 
 <li> <b>Clean and Build</b>
 
 <p>
-Tietyissä tilanteissa NetBeans saattaa mennä sekaisin ja yrittää ajaa koodista versiota johon ei ole huomioitu kaikkia koodiin kirjoitettuja muutoksia. Yleensä huomaat tilanteen siten, että jotain "outoa" vaikuttaa tapahtuvan. Ongelman korjaa usein <em>Clean and build</em> -operaation suorittaminen. Operaatio löytyy Run-valikosta ja sen voi suorittaa myös painamalla <em>harja ja vasara</em> -symbolia. Clean and build poistaa koodista olemassa olevat käännetyt versiot ja tekee uuden käännöksen.
+Sometimes, NetBeans may get confused and try to run a code version without noticing all the corrected changes made to it. Usually you notice it because something "strange" happens. Usually, you can fix the problem by using <em>Clean and build</em> operation. The operation is found in the Run menu, and you can execute it also by clicking on the <em>brush and hammer</em> symbol. Clean and build deletes the translated versions of the code and generates a new translation.
 </p>
 
 </li>
@@ -5726,139 +5726,138 @@ lisaaPienia(List esineet, Muuttolaatikko laatikko):
 -->
 </div>
 
-<h2>Poikkeustilanteet</h2>
+<h2>Exceptions</h2>
 
-    <p>Poikkeustilanteet ovat tilanteita joissa ohjelman suoritus ei ole edennyt toivotusti. Ohjelma on saattanut esimerkiksi kutsua <em>null</em>-viitteeseen liittyvää metodia, jolloin käyttäjälle <em>heitetään</em> poikkeus <code>NullPointerException</code>. Jos yritämme hakea taulukon ulkopuolella olevaa indeksiä, käyttäjälle heitetään poikkeus <code>IndexOutOfBoundsException</code>. Kaikki poikkeukset ovat tyyppiä <code>Exception</code>.</p>
+    <p>Exceptions are such situations where the program executions is different from our expectations. For instance, the program may have called a method of a <em>null</em> reference, in which case the user is <em>thrown</em> a <code>NullPointerException</code>. If we try to retrieve a index outside a table, the user is thrown a <code>IndexOutOfBoundsException</code>. All of them are a type of <code>Exception</code>.</p>
 
-    <p>Poikkeukset käsitellään <code>try { } catch (Exception e) { }</code> -lohkorakenteella. Avainsanan <code>try</code> aloittaman lohkon sisällä on <em>mahdollisesti</em> poikkeuksen heittävä ohjelmakoodi. Avainsanan <code>catch</code> aloittaman lohkon sisällä taas määritellään mitä tehdään jos try-lohkossa suoritettavassa koodissa tapahtuu poikkeus. Catch-lauseelle määritellään kiinniotettavan poikkeuksen tyyppi (<code>catch (Exception e)</code>).</p>
+    <p>We deal with exception using the block <code>try { } catch (Exception e) { }</code>. The code contained within the brackets which follow the keyword <code>try</code> can <em>possibly</em> through an exception. The keyword the code within the brackets which follow the keyword <code>catch</code> defines what should happen when the try-code throws an exception. We also define the type of the exception we want to catch (<code>catch (Exception e)</code>).</p>
 
 <pre class="sh_java">
     try {
-        // poikkeuksen mahdollisesti heittävä ohjelmakoodi
+        // code which can throw an exception
     } catch (Exception e) {
-        // lohko johon päädytään poikkeustilanteessa
+        // code which is executed in case of exception
     }
 </pre>
 
-    <p>characterStringn numeroksi muuttava <code>Integer</code>-luokan <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html#parseInt(java.lang.String)" target="_blank">parseInt</a></code>-metodi heittää poikkeuksen <code>NumberFormatException</code> jos sille parametrina annettu characterString ei ole muunnettavissa numeroksi. Toteutetaan ohjelma, joka yrittää muuntaa käyttäjän syöttämän characterStringn numeroksi.</p>
+    <p>The <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html#parseInt(java.lang.String)" target="_blank">parseInt</a></code> method of class <code>Integer</code> which turns a string into a number can throw a <code>NumberFormatException</code> if its string parameter cannot be turned into a number. Now we implement a program which tries to turn into a number a user input string.</p>
 
 <pre class="sh_java">
     Scanner lukija = new Scanner(System.in);
-    System.out.print("Syötä numero: ");
+    System.out.print("Write a number: ");
 
-    int numero = Integer.parseInt(reader.nextLine());
+    int num = Integer.parseInt(reader.nextLine());
 </pre>
 
 <pre>
-Syötä numero: <font color="red">tatti</font>
+Write a number: <font color="red">tatti</font>
 <font color="red">Exception in thread "..." java.lang.NumberFormatException: For input string: "tatti"</font>
 </pre>
 
-    <p>Yllä oleva ohjelma heittää poikkeuksen kun käyttäjä syöttää virheellisen numeron. Ohjelman suoritus päättyy virhetilanteeseen, eikä suoritusta voi enää jatkaa. Lisätään ohjelmaan poikkeuskäsittely. Kutsu, joka saattaa heittää poikkeuksen asetetaan <code>try</code>-lohkon sisään, ja virhetilanteessa tapahtuva toiminta <code>catch</code>-lohkon sisään. </p>
+    <p>The program above throws an exception because the user digits an erroneous number. The program execution ends up with a malfuntion, and it cannot continue. We add an exception management statement to our program. The call, which may throw an exception is written into the <code>try</code> block, and the action which takes place in case of exception is written into the <code>catch</code> block.</p>
 
 <pre class="sh_java">
-    Scanner lukija = new Scanner(System.in);
+    Scanner reader = new Scanner(System.in);
 
-    System.out.print("Syötä numero: ");
+    System.out.print("Write a number: ");
 
     try {
-        int numero = Integer.parseInt(reader.nextLine());
+        int num = Integer.parseInt(reader.nextLine());
     } catch (Exception e) {
-        System.out.println("Et syöttänyt kunnollista numeroa.");
+        System.out.println("You haven't written a proper number.");
     }
 </pre>
 
 <pre>
-Syötä numero: <font color="red">5</font>
+Write number: <font color="red">5</font>
 </pre>
 
 <pre>
-Syötä numero: <font color="red">enpäs!</font>
-Et syöttänyt kunnollista numeroa.
+Write number: <font color="red">oh no!</font>
+You haven't written a proper number
 </pre>
 
-    <p>Avainsanan <code>try</code> määrittelemän lohkon sisältä siirrytään <code>catch</code>-lohkoon heti poikkeuksen tapahtuessa.  Visualisoidaan tätä lisäämällä tulostuslause <code>try</code>-lohkossa metodia <code>Integer.parseInt</code> kutsuvan rivin jälkeen.</p>
+    <p>In case of exception, we move from the chunk of code defined by the <code>try</code> keyword to the <code>catch</code> chunk. Let's see this by adding a print statement after the <code>Integer.parseInt</code> line in the <code>try</code> chunk.</p>
 
 <pre class="sh_java">
-    Scanner lukija = new Scanner(System.in);
+    Scanner reader = new Scanner(System.in);
 
-    System.out.print("Syötä numero: ");
+    System.out.print("Write a number: ");
 
     try {
-        int numero = Integer.parseInt(reader.nextLine());
-        System.out.println("Hienosti syötetty!");
+        int num = Integer.parseInt(reader.nextLine());
+        System.out.println("Looks good!");
     } catch (Exception e) {
-        System.out.println("Et syöttänyt kunnollista numeroa.");
+        System.out.println("You haven't written a proper number.");
     }
 </pre>
 
 
 <pre>
-Syötä numero: <font color="red">5</font>
-Hienosti syötetty!
+Write a number: <font color="red">5</font>
+Looks good!
 </pre>
 
 <pre>
-Syötä numero: <font color="red">enpäs!</font>
-Et syöttänyt kunnollista numeroa.
+Write a number: <font color="red">I won't!</font>
+you haven't written a proper number.
 </pre>
 
-    <p>Ohjelmalle syötetty characterString <code>enpäs!</code> annetaan parametrina <code>Integer.parseInt</code>-metodille, joka heittää poikkeuksen jos parametrina saadun characterStringn muuntaminen luvuksi epäonnistuu. Huomaa että <code>catch</code>-lohkossa oleva koodi suoritetaan <em>vain</em> poikkeustapauksissa -- muulloin ohjelma ei pääse sinne.</p>
+    <p>String <code>I won't!<code> I given as parameter to the method <code>Integer.parseInt</code>, which throws an exception if the String parameter can't be changed into a number. Note that the code in the <code>catch</code> chunk is executed <em>only</em> in case of exception -- otherwise the program do not arrive till there.</p>
 
-    <p>Tehdään luvun muuntajasta hieman hyödyllisempi: Tehdään siitä metodi, joka kysyy numeroa yhä uudestaan kunnes käyttäjä syöttää oikean numeron. Metodista pääsee pois <em>vain</em> jos käyttäjä syöttää oikean luvun.</p>
+    <p>Let's make something more useful out of our number translator: let's do a method which keeps on asking to type a number till the user does it. The user can return <em>only</em> if they have typed the right number.</p>
 
 <pre class="sh_java">
-public int lueLuku(Scanner lukija) {
+public int lueLuku(Scanner reader) {
     while (true) {
-        System.out.print("Syötä numero: ");
+        System.out.print("Write a number: ");
 
         try {
-            int numero = Integer.parseInt(reader.nextLine());
-            return numero;
+            int num = Integer.parseInt(reader.nextLine());
+            return num;
         } catch (Exception e) {
-            System.out.println("Et syöttänyt kunnollista numeroa.");
+            System.out.println("You haven't written a proper number.");
         }
     }
 }
 </pre>
 
-    <p>Metodin <code>lueLuku</code> kutsuminen voisi toimia esimerkiksi seuraavasti</p>
+    <p>The method <code>readNumber</code> could work in the following way:</p>
 
 <pre>
-Syötä numero: <font color="red">enpäs!</font>
-Et syöttänyt kunnollista numeroa.
-Syötä numero: <font color="red">Matilla on ovessa tatti.</font>
-Et syöttänyt kunnollista numeroa.
-Syötä numero: <font color="red">43</font>
+Write a number: <font color="red">I won't!</font>
+You haven't written a proper number.
+Write a number: <font color="red">Matti has got a mushroom on his door.</font>
+You haven't written a proper number.
+Write a number: <font color="red">43</font>
 
 </pre>
 
 
-<h3>Poikkeusten heittäminen</h3>
+<h3>Throwing Exceptions</h3>
 
-    <p>Metodit ja konstruktorit voivat <em>heittää</em> poikkeuksia. Heitettäviä poikkeuksia on karkeasti ottaen kahdenlaisia. On poikkeuksia jotka on pakko käsitellä, ja on poikkeuksia joita ei ole pakko käsitellä. Pakosti käsiteltävät poikkeukset käsitellään joko <code>try-catch</code> -lohkossa, tai <em>heittämällä ne ulos metodista</em>. </p>
+    <p>Methods and constructors can <em>throw</em> exceptions. So far, there are two kinds of exceptions which can be thrown. There are the ones which have to be handled, and the ones which don't have to be dealt with. When we have to handle the exceptions, we do it either in a <code>try-catch</code> chunk, or <em>throwing them from a method</code></em>. </p>
 
-<p>
-Ohjelmoinnin perusteiden tehtävän <em>kellosta olio</em> bonusversiossa kerrottiin, että ohjelma saadaan viivyttämään itseään sekunnin verran kutsumalla komentoa <code>Thread.sleep(1000)</code>. Komento saattaa heittää poikkeuksen, joka on <em>pakko</em> käsitellä. Poikkeuksen käsittely siis tapahtuu  <code>try-catch</code> -lauseella, seuraavassa esimerkissä olemme välittämättä mahdollisista poikkeustilanteista ja jätimme <code>catch</code>-lohkon tyhjäksi:</p>
+<p>In the clock excercise of Introduction to Programming, we explained that we can stop our program of one second, by calling the method <code>Thread.sleep(1000)</code>. The method may throw an exception, which we <em>must</em> deal with. In fact, we handle the exeption using the <code>try-catch</code> sentence; in the following example we skip the exception, and we leave empty the <code>catch</code> chunk.</p>
 
 <pre class="sh_java">
     try {
-        // nukutaan 1000 millisekuntia
+        // we sleep for 1000 milliseconds
         Thread.sleep(1000);
     } catch (Exception e) {
-        // ei tehdä mitään poikkeustilanteessa
+        // In case of exception, we do not do anything.
     }
 </pre>
 
-    <p>Metodeissa on myös mahdollista jättää poikkeus itse käsittelemättä ja <em>siirtää vastuu</em> poikkeuksen käsittelystä metodin kutsujalle. Vastuun siirto tapahtuu heittämällä poikkeus metodista eteenpäin sanomalla <code>throws Exception</code>.</p>
+    <p>It is also possible to avoid handling the exeptions in a method, and <em>delegate the responsibility</em> to the method caller. We delegate the responsibility of a method by using the statement <code>throws Exception</code>.</p>
 
 <pre class="sh_java">
-    public void nuku(int sekuntia) <strong>throws Exception</strong> {
-        Thread.sleep(sekuntia * 1000);   // nyt try-catchia ei tarvita!
+    public void sleep(int sec) <strong>throws Exception</strong> {
+        Thread.sleep(sec * 1000);   // now we don't need the try-catch block
     }
 </pre>
 
-    <p>Nyt metodia <code>nuku</code>-kutsuvan metodin tulee joko käsitellä poikkeus <code>try-catch</code> -lohkossa, tai siirtää poikkeuksen käsittelyn vastuuta eteenpäin heittää poikkeus eteenpäin. Joskus poikkeuksen käsittelyä pakoillaan viimeiseen asti, ja <code>main</code>-metodikin heittää poikkeuksen käsiteltäväksi eteenpäin:</p> 
+    <p>The <code>sleep</code> method is called in another method. Now, this other method can either handle the exeption in a <code>try-catch</code> block or delegate the responsibility forward. Sometimes, we delegate the responsibility of handling an exeption, till the very end, and even the <code>main</code> method delegates it:</p> 
 <pre class="sh_java">
 public class MainProgram {
    public static void main(String[] args) throws Exception {
@@ -5867,43 +5866,43 @@ public class MainProgram {
 }
 </pre>
 
-<p>Tällöin poikkeus päätyy Javan virtuaalikoneelle, joka keskeyttää ohjelman suorituksen poikkeukseen johtavan virheen tapahtuessa.</p>
+<p>In such cases, the exception ends up in Java's virtual machine, which interrupts the program in case there is an error which causes the problem.</p>
 
-    <p>Osa poikkeuksista, kuten <code>Integer.parseInt</code>-metodin heittämä <code>NumberFormatException</code>, on sellaisia joihin ohjelmoijan ei ole pakko varautua. Poikkeukset, joihin käyttäjän ei tarvitse varautua ovat aina myös tyyppiä tyyppiä <code>RuntimeException</code>, palaamme siihen <em>miksi</em> muuttujilla voi olla useita eri tyyppejä tarkemmin ensi viikolla.</p>
+    <p>There are some exeptions which the programmer does not always have to address, such as the <code>NumberFormatException</code> which is thrown by <code>Integer.parseInt</code>. Also the <code>RuntimeException</code>s do not always require to be addressed; next week we will go back to <em>why</em> variables can have more than one type.</p>
 
-    <p>Voimme itse heittää poikkeuksen lähdekoodista <code>throw</code>-komennolla. Esimerkiksi <code>NumberFormatException</code>-luokasta luodun poikkeuksen heittäminen tapahtuisi komennolla <code>throw new NumberFormatException()</code>.</p>
+    <p>We can throw an exception ourself from the source code using the <code>throw</code> statement. For instance, if we want to throw an examption which was created in the class <code>NumberFormatException</code>, we could use the statement <code>throw new NumberFormatException()</code>.</p>
 
-    <p>Eräs poikkeus johon käyttäjän ei ole pakko varautua on <code>IllegalArgumentException</code>. Poikkeuksella <code>IllegalArgumentException</code> kerrotaan että metodille tai konstruktorille annettujen parametrien arvot ovat <em>vääränlaiset</em>. IllegalArgumentException-poikkeusta käytetään esimerkiksi silloin kun halutaan varmistaa että parametreilla on tietyt arvot. Luodaan luokka <code>Arvosana</code>, joka saa konstruktorin parametrina kokonaislukutyyppisen arvosanan.</p>
+    <p>Another exception which hasn't got to be addressed is <code>IllegalArgumentException</code>. With <code>IllegalArgumentException</code> we know that a method or a constructor has received an <em>illegal</em> value as parameter. For instance, we use the IllegalArgumentException when we want to make sure that a parameter has received particular values. We create the class <code>Grade</code> whose constructor has got a integer parameter: the grade.</p>
 
 <pre class="sh_java">
-public class Arvosana {
-    private int arvosana;
+public class Grade {
+    private int grade;
 
-    public Arvosana(int arvosana) {
-        this.arvosana = arvosana;
+    public Grade(int grade) {
+        this.grade = grade;
     }
 
-    public int getArvosana() {
-        return this.arvosana;
+    public int getGrade() {
+        return this.grade;
     }
 }
 </pre>
 
-    <p>Haluamme seuraavaksi <em>validoida</em> Arvosana-luokan konstruktorin parametrina saadun arvon. Arvosanan tulee olla aina välillä 0-5. Jos arvosana on jotain muuta, haluamme <em>heittää poikkeuksen</em>. Lisätään <code>Arvosana</code>-luokan konstruktoriin ehtolause, joka tarkistaa onko arvosana arvovälin 0-5 ulkopuolella. Jos on, heitetään poikkeus <code>IllegalArgumentException</code> sanomalla <code>throw new IllegalArgumentException("Arvosanan tulee olla välillä 0-5");</code>.</p>
+    <p>Next, we want to validate the value of the constructor parameter of our Grade class. The grades in Finland are from 0 to 5. If the grate is something else, we want to <em>throw an exception</em>. We can add an if statement to our <code>Grade</code> class constructor, which checks whether the grade is outside range 0-5. If so, we throw an <code>IllegalArgumentException</code> telling <code>throw new IllegalArgumentException("The grade has to be between 0-5");</code>.</p>
 
 <pre class="sh_java">
-public class Arvosana {
-    private int arvosana;
+public class Grade {
+    private int grade;
 
-    public Arvosana(int arvosana) {
-        if (arvosana &lt; 0 || arvosana &gt; 5) {
-            throw new IllegalArgumentException("Arvosanan tulee olla välillä 0-5");
+    public Grade(int grade) {
+        if (grade &lt; 0 || grade &gt; 5) {
+            throw new IllegalArgumentException("The grade has to be between 0-5");
         }
         this.arvosana = arvosana;
     }
 
-    public int getArvosana() {
-        return this.arvosana;
+    public int getGrade() {
+        return this.grade;
     }
 }
 </pre>
@@ -6077,61 +6076,61 @@ mittaukset: [-10, -4, 5]
 
 
 
-<h3>Poikkeukset ja rajapinnat</h3>
+<h3>Exceptions and Interfaces</h3>
 
-    <p>Rajapintaluokilla ei ole metodirunkoa, mutta metodimäärittely on vapaasti rajapinnan suunnittelijan toteutettavissa. Rajapintaluokat voivat määritellä myös poikkeusten heiton. Esimerkiksi seuraavan rajapinnan <code>Tiedostopalvelin</code> toteuttavat luokat heittävät <em>mahdollisesti</em> poikkeuksen <code>lataa</code>- ja <code>tallenna</code>-metodissa.</p>
+    <p>Interfaces do not have a method body, but the method definition can be freely chosen when the developer implements the interface. Interfaces can also define the exceptions throw. For instance, the classes which implement the following <code>FileServer</code> can <em>possibly</em> throw an examption in their methods <code>download</code> and <code>save</code>.</p>
 
 <pre class="sh_java">
-public interface Tiedostopalvelin {
-    String lataa(String tiedosto) throws Exception;
-    void tallenna(String tiedosto, String characterString) throws Exception;
+public interface FileServer {
+    String download(String file) throws Exception;
+    void save(String file, String string) throws Exception;
 }
 </pre>
 
-    <p>Jos rajapinta määrittelee metodeille <code>throws Exception</code>-määreet, eli että metodit heittävät mahdollisesti poikkeuksen, tulee samat määreet olla myös rajapinnan toteuttavassa luokassa. Luokan ei kuitenkaan ole pakko heittää poikkeusta kuten alla olevasta esimerkistä näkee.</p>
+    <p>If an interface defines the <code>throws Exception</code> attributes for the methods -- i.e. the methods may throw an exeption -- the classes which implement the interface must be defined in the same way. However, they do not have to throw an exception, as it becomes clear in the following example.</p>
 
 <pre class="sh_java">
-public class Tekstipalvelin implements Tiedostopalvelin {
+public class TextServer implements FileServer {
 
     private Map&lt;String, String&gt; data;
 
-    public Tekstipalvelin() {
+    public TextServer() {
         this.data = new HashMap&lt;String, String&gt;();
     }
 
     @Override
-    public String lataa(String tiedosto) throws Exception {
-        return this.data.get(tiedosto);
+    public String download(String file) throws Exception {
+        return this.data.get(file);
     }
 
     @Override
-    public void tallenna(String tiedosto, String characterString) throws Exception {
-        this.data.put(tiedosto, characterString);
+    public void save(String file, String string) throws Exception {
+        this.data.put(file, stirng);
     }
 }
 </pre>
 
-<h3>Poikkeuksen tiedot</h3>
+<h3>The Exception Information</h3>
 
-    <p>Poikkeusten käsittelytoiminnallisuuden sisältämä <code>catch</code>-lohko määrittelee catch-osion sisällä poikkeuksen johon varaudutaan <code>catch (<em>Exception e</em>)</code>. Poikkeuksen tiedot tallennetaan <code>e</code>-muuttujaan.</p>
+    <p>The <code>catch</code> block tells how we handle an exception, and it tells us what exeption we should be prepared for: <code>catch (<em>Exception e</em>)</code>. The exception information is saved into the <code>e</code> variable.</p>
 
 <pre class="sh_java">
     try {
-        // ohjelmakoodi, joka saattaa heittää poikkeuksen
+        // the code, which may throw an exception
     } catch (Exception e) {
-        // poikkeuksen tiedot ovat tallessa muuttujassa e
+        // the exception information is saved into the variable e
     }
 </pre>
 
-    <p>Luokka <code>Exception</code> tarjoaa hyödyllisiä metodeja. Esimerkiksi metodi <code>printStackTrace()</code> tulostaa <em>polun</em>, joka kertoo mistä päädyttiin poikkeukseen. Tutkitaan seuraavaa metodin <code>printStackTrace()</code> tulostamaa virhettä.</p>
+    <p>The class <code>Exception</code> can provide useful methods. For instance, the method <code>printStackTrace()</code> prints a <em>path</em> which tells us where the exception came from. Let's check the following error printed by the method <code>printStackTrace()</code>.</p>
 
 <pre>
 Exception in thread "main" java.lang.NullPointerException
-  at pakkaus.Luokka.tulosta(Luokka.java:43)
-  at pakkaus.Luokka.main(Luokka.java:29)
+  at package.Class.print(Class.java:43)
+  at package.Class.main(Class.java:29)
 </pre>
 
-    <p>Poikkeuspolun lukeminen tapahtuu alhaalta ylöspäin. Alimpana on ensimmäinen kutsu, eli ohjelman suoritus on alkanut luokan <code>Luokka</code> metodista <code>main()</code>. Luokan <code>Luokka</code> main-metodin rivillä 29 on kutsuttu metodia <code>tulosta()</code>. Metodin <code>tulosta</code> rivillä 43 on tapahtunut poikkeus <code>NullPointerException</code>. Poikkeuksen tiedot ovatkin hyvin hyödyllisiä virhekohdan selvittämisessä.</p>
+    <p>Reading the stack trace happens button up. The lowest is the first call, i.e. the program execution has started from the <code>main()</code> method of class <code>Class</code>. At line 29 of the main method of <code>Class</code>, we called the method <code>print()</code>. Line 43 of the method <code>print</code> caused a <code>NullPointerException</code>. Exception information are extremely important to find out the origin of a problem.</p>
 
 
 <h2>Tiedoston lukeminen</h2>

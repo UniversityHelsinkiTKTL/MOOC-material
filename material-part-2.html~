@@ -4988,15 +4988,15 @@ Päivitetään käyttöliittymää
 
     <h3>A Concrete Directory Construction</h3>
 
-    <p>All the projects which are can be seen are stored in your computer <em><a href="http://en.wikipedia.org/wiki/File_system" target="_blank">file system</a></em>. Each project has got its own directory (folder) which contains the directories and files of the project.</p>
+    <p>All the projects which can be seen are stored in your computer <em><a href="http://en.wikipedia.org/wiki/File_system" target="_blank">file system</a></em>. Each project has got its own directory (folder) which contains the project directories and files.</p>
 
-    <p>In the project directory <code>src</code> there is the program source code. If a class package is a library, it is located in the directory <code>library</code> of the project source code directory <code>src</code>. If you are interested in it, it is possible to have a look at the concrete project structure in NetBeans, by reaching the <em>Files</em> tab which is next to the <em>Projects</em> tab. If you can't see the <em>Files</em> tab, you can display it by choosing <em>Files</em> from the <em>Window</em> menu.</p>
+    <p>The project directory <code>src</code> contains the program source code. If a class package is a library, it is located in the directory <code>library</code> of the project source code directory <code>src</code>. If you are interested in it, it is possible to have a look at the concrete project structure in NetBeans, by going to the <em>Files</em> tab which is next to the <em>Projects</em> tab. If you can't see the <em>Files</em> tab, you can display it by choosing <em>Files</em> from the <em>Window</em> menu.</p>
 
     <p>Application development is usually done through the <em>Projects</em> tab, where NetBeans has hidden the project files which the programmer doesn't have to care about.</p>
 
     <h3>Visibility Definitions and Packages</h3>
 
-    <p>We have already managed to know two visibility definitions. The method and variables with the visibility definition <code>private</code> are visible only inside the class that defines them. They cannot be used outside the class. Differently, the method and variables visibility definition <code>public</code> are available to any class.</p>
+    <p>We have already managed to know two visibility definitions. The method and variables with the visibility definition <code>private</code> are visible only inside the class that defines them. They cannot be used outside the class. Differently, the method and variables with visibility definition <code>public</code> are visible for any class.</p>
 
 <pre class="sh_java">
 package library.ui;
@@ -5024,7 +5024,7 @@ public class UserInterface {
 
     <p>The object constructor and <code>start</code> method of the above class <code>UserInterface</code> can be called from whatever program. The method <code>printTitle</code> and the variable <code>reader</code> can be used only inside their class.</p>
 
-    <p>When want to assign package visibility to a variable or a method, we do not need to use any prefix. We can modify the example above assigning package visibility to the method <code>printTitle</code>.</p>
+    <p>When we want to assign package visibility to a variable or a method, we do not need to use any prefix. We can modify the example above assigning package visibility to the method <code>printTitle</code>.</p>
 
 <pre class="sh_java">
 package library.ui;
@@ -5089,7 +5089,7 @@ public class Main {
 
 <h2>Many Interfaces, and Interface Flexibility</h2>
 
-    <p>Last week we were introduced to interfaces. An interface defines one or more methods which have to be implemented by the class which implement the interface. The interfaces can be stored into packages like any other class. For instance, the interface <code>Identifiable</code> below is located in the package <code>application.domain</code>, and it defines that the classes which implement it have to implement the method <code>public String getID()</code>.</p>
+    <p>Last week we were introduced to interfaces. An interface defines one or more methods which have to be implemented in the class which implements the interface. The interfaces can be stored into packages like any other class. For instance, the interface <code>Identifiable</code> below is located in the package <code>application.domain</code>, and it defines that the classes which implement it have to implement the method <code>public String getID()</code>.</p>
 
 <pre class="sh_java">
 package application.domain;
@@ -5110,7 +5110,7 @@ public class Person implements Identifiable {
 
     public Person(String name, String id) {
         this.name = name;
-        this.henkilotunnus = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -5134,9 +5134,9 @@ public class Person implements Identifiable {
 </pre>
 
 
-    <p>Interface strength is that they are also <em>types</em>. All the object which come from classes that implement an interface also have that interface's type. This effictively helps us to build our applications.</p>
+    <p>An interface strength is that interfaces are also <em>types</em>. All the objects which are created from classes that implement an interface also have that interface's type. This effictively helps us to build our applications.</p>
 
-    <p>We creae the class <code>Register</code>, which we can use to search for people against their names. In addition to retrieve single people, <code>Register</code> provides a method to retrieve a list with all the people.</p>
+    <p>We create the class <code>Register</code>, which we can use to search for people against their names. In addition to retrieve single people, <code>Register</code> provides a method to retrieve a list with all the people.</p>
 
 <pre class="sh_java">
 public class Register {
@@ -5211,7 +5211,7 @@ public class Person implements Identifiable, Comparable&lt;Person&gt; {
 }
 </pre>
 
-    <p>Now we can add the method sortAndGetEverything to the register:</p>
+    <p>Now, we can ad to the registerd the method sortAndGetEverything:</p>
 
 <pre class="sh_java">
     public List&lt;Identifiable&gt; sortAndGetAll() {
@@ -5221,7 +5221,7 @@ public class Person implements Identifiable, Comparable&lt;Person&gt; {
     }
 </pre>
 
-<p>However, we notice that our solution does not work. Because the people are recorded into the register as if their type was <code>Identifiable</code>, Person must implement the interface <code>Comparable&lt;Identifiable&gt;</code> so that our register could sort people with its method <code>Collections.sort()</code>. This means we have to modify Person's interface:</p>
+<p>However, we notice that our solution does not work. Because the people are recorded into the register as if their type was <code>Identifiable</code>, Person has to implement the interface <code>Comparable&lt;Identifiable&gt;</code> so that our register could sort people with its method <code>Collections.sort()</code>. This means we have to modify Person's interface:</p>
 
 <pre class="sh_java">
 public class Person implements Identifiable, Comparable&lt;Identifiable&gt; {
@@ -5236,7 +5236,7 @@ public class Person implements Identifiable, Comparable&lt;Identifiable&gt; {
 
 <p>Now our solution works!</p>
 
-<p>Our Register is unaware of the real type of the objects we record. We can use the class Register to record objects of different type thank Person, as long as the object class implements the interface <code>Identifiable</code>. For instance, below we use the register to manage shop sales:</p>
+<p>Our Register is unaware of the real type of the objects we record. We can use the class Register to record objects of different types than Person, as long as the object class implements the interface <code>Identifiable</code>. For instance, below we use the register to manage shop sales:</p>
 
 <pre class="sh_java">
 public class Sale implements Identifiable {
@@ -5269,8 +5269,7 @@ product.increaseStock(100);
 product.changePrice(23);
 </pre>
 
-<p>The class <code>Register</code> is quite universal now that is not dependent on concrete classes. Whatever class which implements the interface <code>Identifiable</code> is compatible with Register. The method <code>get
-Eli olemme tehneet luokasta <code>Rekisteri</code> melko yleiskäyttöisen pitämällä sen riippumattomana konkreettisista luokista. Mikä tähänsa luokka, joka toteuttaa rajapinnan <code>Tunnistettava</code> on rekisterin kanssa käyttökelpoinen. However, the metodin <code>sortAndGetEverything</code> can only work if we implement the interface Comparable&lt;Identifiable&gt;.</p>
+<p>The class <code>Register</code> is quite universal now that it is not dependent on concrete classes. Whatever class which implements <code>Identifiable</code> is compatible with Register. However, the metodi <code>sortAndGetEverything</code> can only work if we implement the interface Comparable&lt;Identifiable&gt;.</p>
 
 
 
@@ -5301,7 +5300,7 @@ public class PersonRegister {
     <p>What about if we wanted to order our list in alphabetic order?</p>
 
 
-    <p>One class can implement various different interfaces; in addition to <code>Identifiable</code> the class <code>Person</code> can implement the interface we saw last week, <code>Comparable</code>. We can implement different interfaces by deviding them with a comma (<code>public class ... implements <em>FirstInterface</em>, <em>SecondInterface</em> ...</code>). When we implement many interfaces, we also have to implement all the methods they require. In the following example, <code>Person</code> implements the interface <code>Comparable</code>.</p>
+    <p>One class can implement various different interfaces; in addition to <code>Identifiable</code> the class <code>Person</code> can implement the interface we saw last week, <code>Comparable</code>. We can implement different interfaces by separating their names with a comma (<code>public class ... implements <em>FirstInterface</em>, <em>SecondInterface</em> ...</code>). When we implement many interfaces, we also have to implement all the methods they require. In the following example, <code>Person</code> implements the interface <code>Comparable</code>.</p>
 
 <pre class="sh_java">
 package application.domain;
@@ -5350,7 +5349,7 @@ public class Person implements Identifiable, Comparable&lt;Person&gt; {
 
     <h3>Check-out Example</h3>
 
-    <p>In the following section, we can reason about the product identification operations of a market check-out. We can suppose that the products have a barcode, a name, and a price. A <code>Product</code> object implements the already defined interface <code>Identifiable</code>.</p>
+    <p>In this section, we can reason about the product identification operations of a shop check-out. We can suppose that the products have a barcode, a name, and a price. A <code>Product</code> object implements the already defined interface <code>Identifiable</code>.</p>
 
 <pre class="sh_java">
 package application.domain;
@@ -5393,13 +5392,13 @@ public class BarcodeReader {
         this.products = products;
     }
 
-    public Tuote tunnista(Identifiable identifiable) {
+    public Product identify(Identifiable identifiable) {
         return this.products.get(identifiable.getID());
     }
 }
 </pre>
 
-    <p>A BarcodeReader object returns a <code>Product</code> object is its barcode is found in the BarcodeReader HashMap. With the following example, we create a check-out which uses the barcode reader to add products to the purchase list. The class has got the method <code>public void buy</code> which is given an instance of <code>Identifiable</code> as parameter. The purchase adds to the purchase list the objects which are recognised by the barcode reader. If an object is not recognised, nothing happens. The method <code>printPurchases</code> prints the name of the purchased products.</p>
+    <p>A BarcodeReader object returns a <code>Product</code> object if the barcode is found in the BarcodeReader HashMap. In the following example, we create a check-out which uses the barcode reader to add products to the purchase list. The class has got the method <code>public void buy</code> which is given an instance of <code>Identifiable</code> as parameter. The purchase adds to the purchase list the objects which are recognised by the barcode reader. If an object is not recognised, nothing happens. The method <code>printPurchases</code> prints the name of the purchased products.</p>
 
 <pre class="sh_java">
 package application.domain;
@@ -5413,7 +5412,7 @@ public class Cashout {
         this.products = new ArrayList&lt;Product&gt;();
     }
 
-    public void osta(Identifiable identifiable) {
+    public void buy(Identifiable identifiable) {
         Product identified = this.reader.identify(identifiable);
         if (identified == null) {
             return;
@@ -5430,12 +5429,12 @@ public class Cashout {
 }
 </pre>
 
-    <p>At this point we notice that it is extremely unconvenient to read products if they are printed in succession according to when they were added. We modify the printout to list the products in aplphabetic order. We add the interface <code>Comparable</code> to <code>Product</code> to sort our products in alphabetic order.</p>
+    <p>At this point we notice that it is extremely unconvenient to read products if they are printed in succession according to when they were added. We modify the printout so that it will list the products in aplphabetic order. We add the interface <code>Comparable</code> to <code>Product</code> to sort our products in alphabetic order.</p>
 
 <pre class="sh_java">
 package application.domain;
 
-public class Product implements Identifiable, Comparable&lt;Tuote&gt; {
+public class Product implements Identifiable, Comparable&lt;Product&gt; {
     private String barcode;
     private String name;
     private int price;
@@ -5466,7 +5465,7 @@ public class Product implements Identifiable, Comparable&lt;Tuote&gt; {
 }
 </pre>
 
-    <p>We can still modify our cashout implementation so that our products were sorted if need be. Notice that the products only have to be sorted when products <em>are purchased</em>. A purchase is the only situation where the order of the products in the list can possibly change. If we do so, the purchases are always sorted when we call the method <code>printPurchases</code>.</p>
+    <p>We can still modify our cashout implementation so that our products are sorted if need be. Notice that the products only have to be sorted when products <em>are purchased</em>. A purchase is possibly the only situation where the order of the products in the list can change. If we do so, the purchases are always sorted when we call the method <code>printPurchases</code>.</p>
 
 <pre class="sh_java">
 package application.domain;
@@ -5500,33 +5499,33 @@ public class Checkout {
 
 
 <div>
-<big><big><b>Muutama NetBeans-vihje</b></big></big>	
+<big><big><b>NetBeans Tips</b></big></big>	
 
 <ul>
-<li> Kaikki NetBeans-vihjeet löytyvät <a href="../ohpe/netbeans.html">täältä</a> </li>
+<li>All NetBeans tips can be found <a href="../ohpe/netbeans.html">here</a> </li>
 <p></p>
 
 <li> <b>Implement all abstract methods</b>
 
 <p>
-Oletetaan että ohjelmassasi on rajapinta <code>Rajapinta</code>, ja olet tekemässä rajapinnan toteuttavaa luokkaa <code>Luokka</code>. Joudut näkemään hieman vaivaa kirjoittaessasi toteuttavaan luokkaan rajapinnan määrittelemien metodien esittelyrivit.
+Let us suppose that your program contains the interface <code>Interface</code>, and you are building the class <code>Class</code> which implements the interface. It will be annoying to write the declaration raws of all the interface methods.
 </p>
 
-<p>On kuitenkin mahdollista pyytää NetBeansia täydentämään automaattisesti metodirungot toteuttavalle luokalle. Kun olet määritellyt luokan toteuttavan rajapinnan, eli kirjoittanut</p>
+<p>However it is possible to ask NetBeans to fill in the method bodies automatically. When you have defined the interface a class should implement, i.e. when you have written</p>
 
 <pre class="sh_java">
 public class Luokka implements Rajapinta {
 }
 </pre>
 
-<p>NetBeans värjää luokan nimen punaisella. Mene rivin vasemmassa reunassa olevan lamppusymbolin kohdalle, klikkaa ja valitse <em>Implement all abstract methods</em> ja metodirungot ilmestyvät koodiin!</p>
+<p>NetBeans paints the class name red. If you go to lamp icon on the left corner of the raw, click, and choose <em>Implement all abstract methods</em>, the method bodies will appear in your code!</p>
 
 </li>
 
 <li> <b>Clean and Build</b>
 
 <p>
-Tietyissä tilanteissa NetBeans saattaa mennä sekaisin ja yrittää ajaa koodista versiota johon ei ole huomioitu kaikkia koodiin kirjoitettuja muutoksia. Yleensä huomaat tilanteen siten, että jotain "outoa" vaikuttaa tapahtuvan. Ongelman korjaa usein <em>Clean and build</em> -operaation suorittaminen. Operaatio löytyy Run-valikosta ja sen voi suorittaa myös painamalla <em>harja ja vasara</em> -symbolia. Clean and build poistaa koodista olemassa olevat käännetyt versiot ja tekee uuden käännöksen.
+Sometimes, NetBeans may get confused and try to run a code version without noticing all the corrected changes made to it. Usually you notice it because something "strange" happens. Usually, you can fix the problem by using <em>Clean and build</em> operation. The operation is found in the Run menu, and you can execute it also by clicking on the <em>brush and hammer</em> symbol. Clean and build deletes the translated versions of the code and generates a new translation.
 </p>
 
 </li>
@@ -5727,55 +5726,55 @@ lisaaPienia(List esineet, Muuttolaatikko laatikko):
 -->
 </div>
 
-<h2>Poikkeustilanteet</h2>
+<h2>Exceptions</h2>
 
-    <p>Poikkeustilanteet ovat tilanteita joissa ohjelman suoritus ei ole edennyt toivotusti. Ohjelma on saattanut esimerkiksi kutsua <em>null</em>-viitteeseen liittyvää metodia, jolloin käyttäjälle <em>heitetään</em> poikkeus <code>NullPointerException</code>. Jos yritämme hakea taulukon ulkopuolella olevaa indeksiä, käyttäjälle heitetään poikkeus <code>IndexOutOfBoundsException</code>. Kaikki poikkeukset ovat tyyppiä <code>Exception</code>.</p>
+    <p>Exceptions are such situations where the program executions is different from our expectations. For instance, the program may have called a method of a <em>null</em> reference, in which case the user is <em>thrown</em> a <code>NullPointerException</code>. If we try to retrieve a index outside a table, the user is thrown a <code>IndexOutOfBoundsException</code>. All of them are a type of <code>Exception</code>.</p>
 
-    <p>Poikkeukset käsitellään <code>try { } catch (Exception e) { }</code> -lohkorakenteella. Avainsanan <code>try</code> aloittaman lohkon sisällä on <em>mahdollisesti</em> poikkeuksen heittävä ohjelmakoodi. Avainsanan <code>catch</code> aloittaman lohkon sisällä taas määritellään mitä tehdään jos try-lohkossa suoritettavassa koodissa tapahtuu poikkeus. Catch-lauseelle määritellään kiinniotettavan poikkeuksen tyyppi (<code>catch (Exception e)</code>).</p>
+    <p>We deal with exception using the block <code>try { } catch (Exception e) { }</code>. The code contained within the brackets which follow the keyword <code>try</code> can <em>possibly</em> through an exception. The keyword the code within the brackets which follow the keyword <code>catch</code> defines what should happen when the try-code throws an exception. We also define the type of the exception we want to catch (<code>catch (Exception e)</code>).</p>
 
 <pre class="sh_java">
     try {
-        // poikkeuksen mahdollisesti heittävä ohjelmakoodi
+        // code which can throw an exception
     } catch (Exception e) {
-        // lohko johon päädytään poikkeustilanteessa
+        // code which is executed in case of exception
     }
 </pre>
 
-    <p>characterStringn numeroksi muuttava <code>Integer</code>-luokan <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html#parseInt(java.lang.String)" target="_blank">parseInt</a></code>-metodi heittää poikkeuksen <code>NumberFormatException</code> jos sille parametrina annettu characterString ei ole muunnettavissa numeroksi. Toteutetaan ohjelma, joka yrittää muuntaa käyttäjän syöttämän characterStringn numeroksi.</p>
+    <p>The <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html#parseInt(java.lang.String)" target="_blank">parseInt</a></code> method of class <code>Integer</code> which turns a string into a number can throw a <code>NumberFormatException</code> if its string parameter cannot be turned into a number. Now we implement a program which tries to turn into a number a user input string.</p>
 
 <pre class="sh_java">
     Scanner lukija = new Scanner(System.in);
-    System.out.print("Syötä numero: ");
+    System.out.print("Write a number: ");
 
-    int numero = Integer.parseInt(reader.nextLine());
+    int num = Integer.parseInt(reader.nextLine());
 </pre>
 
 <pre>
-Syötä numero: <font color="red">tatti</font>
+Write a number: <font color="red">tatti</font>
 <font color="red">Exception in thread "..." java.lang.NumberFormatException: For input string: "tatti"</font>
 </pre>
 
-    <p>Yllä oleva ohjelma heittää poikkeuksen kun käyttäjä syöttää virheellisen numeron. Ohjelman suoritus päättyy virhetilanteeseen, eikä suoritusta voi enää jatkaa. Lisätään ohjelmaan poikkeuskäsittely. Kutsu, joka saattaa heittää poikkeuksen asetetaan <code>try</code>-lohkon sisään, ja virhetilanteessa tapahtuva toiminta <code>catch</code>-lohkon sisään. </p>
+    <p>The program above throws an exception because the user digits an erroneous number. The program execution ends up with a malfuntion, and it cannot continue. We add an exception management statement to our program. The call, which may throw an exception is written into the <code>try</code> block, and the action which takes place in case of exception is written into the <code>catch</code> block.</p>
 
 <pre class="sh_java">
-    Scanner lukija = new Scanner(System.in);
+    Scanner reader = new Scanner(System.in);
 
-    System.out.print("Syötä numero: ");
+    System.out.print("Write a number: ");
 
     try {
-        int numero = Integer.parseInt(reader.nextLine());
+        int num = Integer.parseInt(reader.nextLine());
     } catch (Exception e) {
-        System.out.println("Et syöttänyt kunnollista numeroa.");
+        System.out.println("You haven't written a proper number.");
     }
 </pre>
 
 <pre>
-Syötä numero: <font color="red">5</font>
+Write number: <font color="red">5</font>
 </pre>
 
 <pre>
-Syötä numero: <font color="red">enpäs!</font>
-Et syöttänyt kunnollista numeroa.
+Write number: <font color="red">oh no!</font>
+You haven't written a proper number
 </pre>
 
     <p>Avainsanan <code>try</code> määrittelemän lohkon sisältä siirrytään <code>catch</code>-lohkoon heti poikkeuksen tapahtuessa.  Visualisoidaan tätä lisäämällä tulostuslause <code>try</code>-lohkossa metodia <code>Integer.parseInt</code> kutsuvan rivin jälkeen.</p>

@@ -5777,88 +5777,87 @@ Write number: <font color="red">oh no!</font>
 You haven't written a proper number
 </pre>
 
-    <p>Avainsanan <code>try</code> määrittelemän lohkon sisältä siirrytään <code>catch</code>-lohkoon heti poikkeuksen tapahtuessa.  Visualisoidaan tätä lisäämällä tulostuslause <code>try</code>-lohkossa metodia <code>Integer.parseInt</code> kutsuvan rivin jälkeen.</p>
+    <p>In case of exception, we move from the chunk of code defined by the <code>try</code> keyword to the <code>catch</code> chunk. Let's see this by adding a print statement after the <code>Integer.parseInt</code> line in the <code>try</code> chunk.</p>
 
 <pre class="sh_java">
-    Scanner lukija = new Scanner(System.in);
+    Scanner reader = new Scanner(System.in);
 
-    System.out.print("Syötä numero: ");
+    System.out.print("Write a number: ");
 
     try {
-        int numero = Integer.parseInt(reader.nextLine());
-        System.out.println("Hienosti syötetty!");
+        int num = Integer.parseInt(reader.nextLine());
+        System.out.println("Looks good!");
     } catch (Exception e) {
-        System.out.println("Et syöttänyt kunnollista numeroa.");
+        System.out.println("You haven't written a proper number.");
     }
 </pre>
 
 
 <pre>
-Syötä numero: <font color="red">5</font>
-Hienosti syötetty!
+Write a number: <font color="red">5</font>
+Looks good!
 </pre>
 
 <pre>
-Syötä numero: <font color="red">enpäs!</font>
-Et syöttänyt kunnollista numeroa.
+Write a number: <font color="red">I won't!</font>
+you haven't written a proper number.
 </pre>
 
-    <p>Ohjelmalle syötetty characterString <code>enpäs!</code> annetaan parametrina <code>Integer.parseInt</code>-metodille, joka heittää poikkeuksen jos parametrina saadun characterStringn muuntaminen luvuksi epäonnistuu. Huomaa että <code>catch</code>-lohkossa oleva koodi suoritetaan <em>vain</em> poikkeustapauksissa -- muulloin ohjelma ei pääse sinne.</p>
+    <p>String <code>I won't!<code> I given as parameter to the method <code>Integer.parseInt</code>, which throws an exception if the String parameter can't be changed into a number. Note that the code in the <code>catch</code> chunk is executed <em>only</em> in case of exception -- otherwise the program do not arrive till there.</p>
 
-    <p>Tehdään luvun muuntajasta hieman hyödyllisempi: Tehdään siitä metodi, joka kysyy numeroa yhä uudestaan kunnes käyttäjä syöttää oikean numeron. Metodista pääsee pois <em>vain</em> jos käyttäjä syöttää oikean luvun.</p>
+    <p>Let's make something more useful out of our number translator: let's do a method which keeps on asking to type a number till the user does it. The user can return <em>only</em> if they have typed the right number.</p>
 
 <pre class="sh_java">
-public int lueLuku(Scanner lukija) {
+public int lueLuku(Scanner reader) {
     while (true) {
-        System.out.print("Syötä numero: ");
+        System.out.print("Write a number: ");
 
         try {
-            int numero = Integer.parseInt(reader.nextLine());
-            return numero;
+            int num = Integer.parseInt(reader.nextLine());
+            return num;
         } catch (Exception e) {
-            System.out.println("Et syöttänyt kunnollista numeroa.");
+            System.out.println("You haven't written a proper number.");
         }
     }
 }
 </pre>
 
-    <p>Metodin <code>lueLuku</code> kutsuminen voisi toimia esimerkiksi seuraavasti</p>
+    <p>The method <code>readNumber</code> could work in the following way:</p>
 
 <pre>
-Syötä numero: <font color="red">enpäs!</font>
-Et syöttänyt kunnollista numeroa.
-Syötä numero: <font color="red">Matilla on ovessa tatti.</font>
-Et syöttänyt kunnollista numeroa.
-Syötä numero: <font color="red">43</font>
+Write a number: <font color="red">I won't!</font>
+You haven't written a proper number.
+Write a number: <font color="red">Matti has got a mushroom on his door.</font>
+You haven't written a proper number.
+Write a number: <font color="red">43</font>
 
 </pre>
 
 
-<h3>Poikkeusten heittäminen</h3>
+<h3>Throwing Exceptions</h3>
 
-    <p>Metodit ja konstruktorit voivat <em>heittää</em> poikkeuksia. Heitettäviä poikkeuksia on karkeasti ottaen kahdenlaisia. On poikkeuksia jotka on pakko käsitellä, ja on poikkeuksia joita ei ole pakko käsitellä. Pakosti käsiteltävät poikkeukset käsitellään joko <code>try-catch</code> -lohkossa, tai <em>heittämällä ne ulos metodista</em>. </p>
+    <p>Methods and constructors can <em>throw</em> exceptions. So far, there are two kinds of exceptions which can be thrown. There are the ones which have to be handled, and the ones which don't have to be dealt with. When we have to handle the exceptions, we do it either in a <code>try-catch</code> chunk, or <em>throwing them from a method</code></em>. </p>
 
-<p>
-Ohjelmoinnin perusteiden tehtävän <em>kellosta olio</em> bonusversiossa kerrottiin, että ohjelma saadaan viivyttämään itseään sekunnin verran kutsumalla komentoa <code>Thread.sleep(1000)</code>. Komento saattaa heittää poikkeuksen, joka on <em>pakko</em> käsitellä. Poikkeuksen käsittely siis tapahtuu  <code>try-catch</code> -lauseella, seuraavassa esimerkissä olemme välittämättä mahdollisista poikkeustilanteista ja jätimme <code>catch</code>-lohkon tyhjäksi:</p>
+<p>In the clock excercise of Introduction to Programming, we explained that we can stop our program of one second, by calling the method <code>Thread.sleep(1000)</code>. The method may throw an exception, which we <em>must</em> deal with. In fact, we handle the exeption using the <code>try-catch</code> sentence; in the following example we skip the exception, and we leave empty the <code>catch</code> chunk.</p>
 
 <pre class="sh_java">
     try {
-        // nukutaan 1000 millisekuntia
+        // we sleep for 1000 milliseconds
         Thread.sleep(1000);
     } catch (Exception e) {
-        // ei tehdä mitään poikkeustilanteessa
+        // In case of exception, we do not do anything.
     }
 </pre>
 
-    <p>Metodeissa on myös mahdollista jättää poikkeus itse käsittelemättä ja <em>siirtää vastuu</em> poikkeuksen käsittelystä metodin kutsujalle. Vastuun siirto tapahtuu heittämällä poikkeus metodista eteenpäin sanomalla <code>throws Exception</code>.</p>
+    <p>It is also possible to avoid handling the exeptions in a method, and <em>delegate the responsibility</em> to the method caller. We delegate the responsibility of a method by using the statement <code>throws Exception</code>.</p>
 
 <pre class="sh_java">
-    public void nuku(int sekuntia) <strong>throws Exception</strong> {
-        Thread.sleep(sekuntia * 1000);   // nyt try-catchia ei tarvita!
+    public void sleep(int sec) <strong>throws Exception</strong> {
+        Thread.sleep(sec * 1000);   // now we don't need the try-catch block
     }
 </pre>
 
-    <p>Nyt metodia <code>nuku</code>-kutsuvan metodin tulee joko käsitellä poikkeus <code>try-catch</code> -lohkossa, tai siirtää poikkeuksen käsittelyn vastuuta eteenpäin heittää poikkeus eteenpäin. Joskus poikkeuksen käsittelyä pakoillaan viimeiseen asti, ja <code>main</code>-metodikin heittää poikkeuksen käsiteltäväksi eteenpäin:</p> 
+    <p>The <code>sleep</code> method is called in another method. Now, this other method can either handle the exeption in a <code>try-catch</code> block or delegate the responsibility forward. Sometimes, we delegate the responsibility of handling an exeption, till the very end, and even the <code>main</code> method delegates it:</p> 
 <pre class="sh_java">
 public class MainProgram {
    public static void main(String[] args) throws Exception {
@@ -5867,58 +5866,58 @@ public class MainProgram {
 }
 </pre>
 
-<p>Tällöin poikkeus päätyy Javan virtuaalikoneelle, joka keskeyttää ohjelman suorituksen poikkeukseen johtavan virheen tapahtuessa.</p>
+<p>In such cases, the exception ends up in Java's virtual machine, which interrupts the program in case there is an error which causes the problem.</p>
 
-    <p>Osa poikkeuksista, kuten <code>Integer.parseInt</code>-metodin heittämä <code>NumberFormatException</code>, on sellaisia joihin ohjelmoijan ei ole pakko varautua. Poikkeukset, joihin käyttäjän ei tarvitse varautua ovat aina myös tyyppiä tyyppiä <code>RuntimeException</code>, palaamme siihen <em>miksi</em> muuttujilla voi olla useita eri tyyppejä tarkemmin ensi viikolla.</p>
+    <p>There are some exeptions which the programmer does not always have to address, such as the <code>NumberFormatException</code> which is thrown by <code>Integer.parseInt</code>. Also the <code>RuntimeException</code>s do not always require to be addressed; next week we will go back to <em>why</em> variables can have more than one type.</p>
 
-    <p>Voimme itse heittää poikkeuksen lähdekoodista <code>throw</code>-komennolla. Esimerkiksi <code>NumberFormatException</code>-luokasta luodun poikkeuksen heittäminen tapahtuisi komennolla <code>throw new NumberFormatException()</code>.</p>
+    <p>We can throw an exception ourself from the source code using the <code>throw</code> statement. For instance, if we want to throw an examption which was created in the class <code>NumberFormatException</code>, we could use the statement <code>throw new NumberFormatException()</code>.</p>
 
-    <p>Eräs poikkeus johon käyttäjän ei ole pakko varautua on <code>IllegalArgumentException</code>. Poikkeuksella <code>IllegalArgumentException</code> kerrotaan että metodille tai konstruktorille annettujen parametrien arvot ovat <em>vääränlaiset</em>. IllegalArgumentException-poikkeusta käytetään esimerkiksi silloin kun halutaan varmistaa että parametreilla on tietyt arvot. Luodaan luokka <code>Arvosana</code>, joka saa konstruktorin parametrina kokonaislukutyyppisen arvosanan.</p>
+    <p>Another exception which hasn't got to be addressed is <code>IllegalArgumentException</code>. With <code>IllegalArgumentException</code> we know that a method or a constructor has received an <em>illegal</em> value as parameter. For instance, we use the IllegalArgumentException when we want to make sure that a parameter has received particular values. We create the class <code>Grade</code> whose constructor has got a integer parameter: the grade.</p>
 
 <pre class="sh_java">
-public class Arvosana {
-    private int arvosana;
+public class Grade {
+    private int grade;
 
-    public Arvosana(int arvosana) {
-        this.arvosana = arvosana;
+    public Grade(int grade) {
+        this.grade = grade;
     }
 
-    public int getArvosana() {
-        return this.arvosana;
+    public int getGrade() {
+        return this.grade;
     }
 }
 </pre>
 
-    <p>Haluamme seuraavaksi <em>validoida</em> Arvosana-luokan konstruktorin parametrina saadun arvon. Arvosanan tulee olla aina välillä 0-5. Jos arvosana on jotain muuta, haluamme <em>heittää poikkeuksen</em>. Lisätään <code>Arvosana</code>-luokan konstruktoriin ehtolause, joka tarkistaa onko arvosana arvovälin 0-5 ulkopuolella. Jos on, heitetään poikkeus <code>IllegalArgumentException</code> sanomalla <code>throw new IllegalArgumentException("Arvosanan tulee olla välillä 0-5");</code>.</p>
+    <p>Next, we want to validate the value of the constructor parameter of our Grade class. The grades in Finland are from 0 to 5. If the grate is something else, we want to <em>throw an exception</em>. We can add an if statement to our <code>Grade</code> class constructor, which checks whether the grade is outside range 0-5. If so, we throw an <code>IllegalArgumentException</code> telling <code>throw new IllegalArgumentException("The grade has to be between 0-5");</code>.</p>
 
 <pre class="sh_java">
-public class Arvosana {
-    private int arvosana;
+public class Grade {
+    private int grade;
 
-    public Arvosana(int arvosana) {
-        if (arvosana &lt; 0 || arvosana &gt; 5) {
-            throw new IllegalArgumentException("Arvosanan tulee olla välillä 0-5");
+    public Grade(int grade) {
+        if (grade &lt; 0 || grade &gt; 5) {
+            throw new IllegalArgumentException("The grade has to be between 0-5");
         }
         this.arvosana = arvosana;
     }
 
-    public int getArvosana() {
-        return this.arvosana;
+    public int getGrade() {
+        return this.grade;
     }
 }
 </pre>
 
 <pre class="sh_java">
-    Arvosana arvosana = new Arvosana(3);
-    System.out.println(arvosana.getArvosana());
+    Grade grade = new Grade(3);
+    System.out.println(grade.getGrade());
 
-    Arvosana virheellinenArvo = new Arvosana(22);
-    // tapahtuu poikkeus, tästä ei jatketa eteenpäin
+    Grade wrongGrade = new Grade(22);
+    // it causes an exception, we don't continue
 </pre>
 
 <pre>
 3
-Exception in thread "..." java.lang.IllegalArgumentException: Arvosanan tulee olla välillä 0-5
+Exception in thread "..." java.lang.IllegalArgumentException: The grade has to be between 0-5
 </pre>
 
 
@@ -6077,202 +6076,201 @@ mittaukset: [-10, -4, 5]
 
 
 
-<h3>Poikkeukset ja rajapinnat</h3>
+<h3>Exceptions and Interfaces</h3>
 
-    <p>Rajapintaluokilla ei ole metodirunkoa, mutta metodimäärittely on vapaasti rajapinnan suunnittelijan toteutettavissa. Rajapintaluokat voivat määritellä myös poikkeusten heiton. Esimerkiksi seuraavan rajapinnan <code>Tiedostopalvelin</code> toteuttavat luokat heittävät <em>mahdollisesti</em> poikkeuksen <code>lataa</code>- ja <code>tallenna</code>-metodissa.</p>
+    <p>Interfaces do not have a method body, but the method definition can be freely chosen when the developer implements the interface. Interfaces can also define the exceptions throw. For instance, the classes which implement the following <code>FileServer</code> can <em>possibly</em> throw an examption in their methods <code>download</code> and <code>save</code>.</p>
 
 <pre class="sh_java">
-public interface Tiedostopalvelin {
-    String lataa(String tiedosto) throws Exception;
-    void tallenna(String tiedosto, String characterString) throws Exception;
+public interface FileServer {
+    String download(String file) throws Exception;
+    void save(String file, String string) throws Exception;
 }
 </pre>
 
-    <p>Jos rajapinta määrittelee metodeille <code>throws Exception</code>-määreet, eli että metodit heittävät mahdollisesti poikkeuksen, tulee samat määreet olla myös rajapinnan toteuttavassa luokassa. Luokan ei kuitenkaan ole pakko heittää poikkeusta kuten alla olevasta esimerkistä näkee.</p>
+    <p>If an interface defines the <code>throws Exception</code> attributes for the methods -- i.e. the methods may throw an exeption -- the classes which implement the interface must be defined in the same way. However, they do not have to throw an exception, as it becomes clear in the following example.</p>
 
 <pre class="sh_java">
-public class Tekstipalvelin implements Tiedostopalvelin {
+public class TextServer implements FileServer {
 
     private Map&lt;String, String&gt; data;
 
-    public Tekstipalvelin() {
+    public TextServer() {
         this.data = new HashMap&lt;String, String&gt;();
     }
 
     @Override
-    public String lataa(String tiedosto) throws Exception {
-        return this.data.get(tiedosto);
+    public String download(String file) throws Exception {
+        return this.data.get(file);
     }
 
     @Override
-    public void tallenna(String tiedosto, String characterString) throws Exception {
-        this.data.put(tiedosto, characterString);
+    public void save(String file, String string) throws Exception {
+        this.data.put(file, stirng);
     }
 }
 </pre>
 
-<h3>Poikkeuksen tiedot</h3>
+<h3>The Exception Information</h3>
 
-    <p>Poikkeusten käsittelytoiminnallisuuden sisältämä <code>catch</code>-lohko määrittelee catch-osion sisällä poikkeuksen johon varaudutaan <code>catch (<em>Exception e</em>)</code>. Poikkeuksen tiedot tallennetaan <code>e</code>-muuttujaan.</p>
+    <p>The <code>catch</code> block tells how we handle an exception, and it tells us what exeption we should be prepared for: <code>catch (<em>Exception e</em>)</code>. The exception information is saved into the <code>e</code> variable.</p>
 
 <pre class="sh_java">
     try {
-        // ohjelmakoodi, joka saattaa heittää poikkeuksen
+        // the code, which may throw an exception
     } catch (Exception e) {
-        // poikkeuksen tiedot ovat tallessa muuttujassa e
+        // the exception information is saved into the variable e
     }
 </pre>
 
-    <p>Luokka <code>Exception</code> tarjoaa hyödyllisiä metodeja. Esimerkiksi metodi <code>printStackTrace()</code> tulostaa <em>polun</em>, joka kertoo mistä päädyttiin poikkeukseen. Tutkitaan seuraavaa metodin <code>printStackTrace()</code> tulostamaa virhettä.</p>
+    <p>The class <code>Exception</code> can provide useful methods. For instance, the method <code>printStackTrace()</code> prints a <em>path</em> which tells us where the exception came from. Let's check the following error printed by the method <code>printStackTrace()</code>.</p>
 
 <pre>
 Exception in thread "main" java.lang.NullPointerException
-  at pakkaus.Luokka.tulosta(Luokka.java:43)
-  at pakkaus.Luokka.main(Luokka.java:29)
+  at package.Class.print(Class.java:43)
+  at package.Class.main(Class.java:29)
 </pre>
 
-    <p>Poikkeuspolun lukeminen tapahtuu alhaalta ylöspäin. Alimpana on ensimmäinen kutsu, eli ohjelman suoritus on alkanut luokan <code>Luokka</code> metodista <code>main()</code>. Luokan <code>Luokka</code> main-metodin rivillä 29 on kutsuttu metodia <code>tulosta()</code>. Metodin <code>tulosta</code> rivillä 43 on tapahtunut poikkeus <code>NullPointerException</code>. Poikkeuksen tiedot ovatkin hyvin hyödyllisiä virhekohdan selvittämisessä.</p>
+    <p>Reading the stack trace happens button up. The lowest is the first call, i.e. the program execution has started from the <code>main()</code> method of class <code>Class</code>. At line 29 of the main method of <code>Class</code>, we called the method <code>print()</code>. Line 43 of the method <code>print</code> caused a <code>NullPointerException</code>. Exception information are extremely important to find out the origin of a problem.</p>
 
 
-<h2>Tiedoston lukeminen</h2>
+<h2>Reading a File</h2>
 
-    <p>Huomattava osa ohjelmista käsittelee jollain tavalla tallennettua tietoa. Otetaan ensiaskeleet tiedostojen käsittelyyn Javassa. Javan API tarjoaa luokan <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">File</a>, jonka sisältö voidaan lukea kurssilla jo tutuksi tulleen <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a>-luokan avulla.</p>
+    <p>A relevant part of programming is related to stored files, in one way or in another. Let's take the first steps in Java file handling. Java's API provides the class <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">File</a>, whose contants can be read using the already known <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class.</p>
 
-    <p>Luokan <code>File</code> <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">API-kuvausta</a> lukiessamme huomaamme <code>File</code>-luokalla on konstruktori <code>File(String pathname)</code> (<em>Creates a new File instance by converting the given pathname string into an abstract pathname</em>). Voimme siis antaa avattavan tiedoston polun <code>File</code>-luokan konstruktorille.</p>
+    <p>If we read the desciption of the <code>File</code> <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">API</a> we notice the <code>File</code> class has got the constructor <code>File(String pathname)</code>, which <em>creates a new File instance by converting the given pathname string into an abstract pathname</em>. This means the <code>File</code> class constructor can be given the pathname of the file we want to open.</p>
 
-    <p><em>NetBeans-ohjelmointiympäristössä tiedostoille on oma välilehti nimeltä <em>Files</em>. Files-välilehdellä on määritelty kaikki projektiin liittyvät tiedostot. Jos projektin <em>juureen</em>, eli ei yhdenkään hakemiston sisälle, lisätään tiedosto, voidaan siihen viitata projektin sisältä suoraan tiedoston nimellä. Tiedosto-olion luominen tapahtuu antamalla sille parametrina polku tiedostoon, esimerkiksi seuraavasti</em></p>
+    <p><em>In the NetBeans programming environment, files have got their own tab called <em>Files</em>, which contains all our project files. If we add a file to a project <em>root</em> -- that is to say outside all folders -- we can refer to it by writing only the its name. We create a file object by fiving the file pathname to it as parameter:</em></p>
 
 <pre class="sh_java">
-    File tiedosto = new File("tiedoston-nimi.txt");
+    File file = new File("file-name.txt");
 </pre>
 
-    <p>Scanner-luokan konstruktorille voi antaa myös muita lukemislähteitä kuin <code>System.in</code>-syöttövirran. Lukemislähteenä voi olla näppäimistön lisäksi muun muassa tiedosto. Scanner tarjoaa tiedoston lukemiseen samat metodit kuin näppäimistöltä syötetyn syötteen lukemiseen. Seuraavassa esimerkissä avataan tiedosto ja tulostetaan kaikki tiedoston sisältämän tekstit <code>System.out.println</code>-komennolla Lopuksi tiedosto suljetaa komennolla <code>close</code>.</p>
+    <p><code>System.in</code> input stream is not the only reading source we can give to the constructor of a Scanner class. For instance, the reading source can be a file, in addition to the user keyboard. Scanner provides the same methods to read a keyboard input and a file. In the following example, we open a file and we print all the text contained in the file using the <code>System.out.println</code> statement. At the end, we close the file using the statement <code>close</code>.</p>
 
 <pre class="sh_java">
-        // tiedosto mistä luetaan
-        File tiedosto = new File("tiedosto.txt");
+        // The file we read
+        File file = new File("filename.txt");
 
-        Scanner lukija = new Scanner(tiedosto);
+        Scanner reader = new Scanner(file);
         while (reader.hasNextLine()) {
-            String rivi = reader.nextLine();
-            System.out.println(rivi);
+            String line = reader.nextLine();
+            System.out.println(line);
         }
 
         reader.close();
 </pre>
 
-    <p>Scanner-luokan konstruktori <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html#Scanner(java.io.File)" target="_blank">public Scanner(File source)</a></code> (<em>Constructs a new Scanner that produces values scanned from the specified file.</em>) heittää <code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/FileNotFoundException.html" target="_blank">FileNotFoundException</a></code>-poikkeuksen jos luettavaa tiedostoa ei löydy. Poikkeus <code>FileNotFoundException</code> ei ole tyyppiä <code>RuntimeException</code>, joten se tulee joko käsitellä tai heittää eteenpäin. Tässä vaiheessa riittää tietää että ohjelmointiympäristö kertoo jos sinun tulee käsitellä poikkeus erikseen. Luodaan ensin vaihtoehto, jossa poikkeus käsitellään tiedostoa avattaessa.</p>
+    <p>The Scanner class constructor <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html#Scanner(java.io.File)" target="_blank">public Scanner(File source)</a></code> (<em>Constructs a new Scanner that produces values scanned from the specified file.</em>) throws a <code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/FileNotFoundException.html" target="_blank">FileNotFoundException</a></code> when the specified file is not found. The <code>FileNotFoundException</code> is different than <code>RuntimeException</code>, and we have either to handle it or throw it forward. At this point, you only have to know that the programming environment tells you whether you have to handle the exception or not. Let's first create a try-catch block where we handle our file as soon as we open it.</p>
 
 <pre class="sh_java">
-    public void lueTiedosto(File tiedosto) {
-        // tiedosto mistä luetaan
-        Scanner lukija = null;
+    public void readFile(File f) {
+        // the file we read
+        Scanner reader = null;
 
         try {
-            lukija = new Scanner(tiedosto);
+            reader = new Scanner(f);
         } catch (Exception e) {
-            System.out.println("Tiedoston lukeminen epäonnistui. Virhe: " + e.getMessage());
-            return; // poistutaan metodista
+            System.out.println("We couldn't read the file. Error: " + e.getMessage());
+            return; // we exit the method
         }
 
         while (reader.hasNextLine()) {
-            String rivi = reader.nextLine();
-            System.out.println(rivi);
+            String line = reader.nextLine();
+            System.out.println(line);
         }
 
         reader.close();
     }
 </pre>
 
-    <p>Toinen vaihtoehto poikkeuksen käsittelyyn on poikkeuksen käsittelyvastuun siirtäminen metodin kutsujalle. Poikkeuksen käsittelyvastuu siirretään metodin kutsujalle lisäämällä metodiin määre <code>throws <em>PoikkeuksenTyyppi</em></code>, eli esimerkiksi <code>throws Exception</code> sillä kaikki poikkeukset ovat tyyppiä <code>Exception</code>. Kun metodilla on määre <code>throws Exception</code>, tietävät kaikki sitä kutsuvat että se saattaa heittää poikkeuksen johon tulee varautua.</p>
+    <p>Another option is to delegate the exception handling responsability to the method caller. We delegate the exception handling responsability by adding the definition <code>throws <em>ExceptionType</em></code> to the method. For instance, we can add <code>throws Exception</code> because the type of all exceptions is <code>Exception</code>. When a method has got the attribute <code>throws Exception</code>, whatever chunk of code which calls that method knows that it may throw an exception, and it should be prepared for it.</p>
 
 <pre class="sh_java">
-    public void lueTiedosto(File tiedosto) throws Exception {
-        // tiedosto mistä luetaan
-        Scanner lukija = new Scanner(tiedosto);
+    public void readFile(File f) throws Exception {
+        // the file we read
+        Scanner reader = new Scanner(f);
 
         while (reader.hasNextLine()) {
-            String rivi = reader.nextLine();
-            System.out.println(rivi);
+            String line = reader.nextLine();
+            System.out.println(line);
         }
 
         reader.close();
     }
 </pre>
 
-    <p>Esimerkki avaa tiedoston <code>tiedosto.txt</code> projektin juuripolusta ja tulostaa sen rivi riviltä käyttäjälle näkyville. Lopuksi lukija suljetaan, jolloin tiedosto myös suljetaan. Määre <code>throws Exception</code> kertoo että metodi saattaa heittää poikkeuksen. Samanlaisen määreen voi laittaa kaikkiin metodeihin jotka käsittelevät tiedostoja.</p>
+    <p>In the example, the method <code>readFile</code> receives a file as parameter, and prints all the file lines. At the end, the reader is closed, and the file is closed with it, too. The attribute <code>throws Exception</code> tells us that the method may throw an exception. Same kind of attributes can be added to all the methods that handle files.</p>
 
-    <p>Huomaa että <code>Scanner</code>-olio ei liitä rivinvaihtomerkkejä osaksi <code>nextLine</code>-metodin palauttamaa characterStringa. Yksi vaihtoehto tiedoston lukemiseen siten, että rivinvaihdot säilyvät, on lisätä jokaisen rivin jälkeen rivinvaihtomerkki:</p>
+    <p>Note that the <code>Scanner</code> object's method <code>nextLine</code> returns a string, but it does not return a new line at the end of it. If you want to read a file and still maintain the new lines, you can add a new line at the end of each line:</p>
 
 <pre class="sh_java">
-    public String lueTiedostocharacterStringon(File tiedosto) throws Exception {
-        // tiedosto mistä luetaan
-        Scanner lukija = new Scanner(tiedosto);
+    public String readFileString(File f) throws Exception {
+        // the file we read
+        Scanner reader = new Scanner(f);
 
-        String characterString = "";
+        String string = "";
 
         while (reader.hasNextLine()) {
-            String rivi = reader.nextLine();
-            characterString += rivi;
-            characterString += "\n";
+            String line = reader.nextLine();
+            string += line;
+            string += "\n";
         }
 
         reader.close();
-        return characterString;
+        return string;
     }
 </pre>
 
-    <p>Koska käytämme tiedoston lukemiseen <code>Scanner</code>-luokkaa, käytössämme on kaikki Scanner-luokan tarjoamat metodit. Esimerkiksi metodi <code>hasNext()</code> palauttaa totuusarvon <code>true</code>, jos luettavassa tiedostossa on vielä luettavaa jäljellä, ja metodi <code>next()</code> lukee seuraavan sanan metodin palauttamaan <code>String</code>-olioon. </p>
+    <p>Because we use the <code>Scanner</code> class to read files, we have all Scanner methods available for use. For instance the method <code>hasNext()</code> returns the boolean value <code>true</code> if the file contains something more to read, and the method <code>next()</code> reads the following word and returns a <code>String</code> object. </p>
 
-    <p>Seuraava ohjelma luo <code>Scanner</code>-olion, joka avaa tiedoston <code>tiedosto.txt</code>. Sen jälkeen se tulostaa joka viidennen sanan tiedostosta.</p>
+    <p>The following program creates a <code>Scanner</code> object which opens the file <code>file.txt</code>. Then, it prints every fifth word of the file.</p>
 
 <pre class="sh_java">
-        File tiedosto = new File("tiedosto.txt");
-        Scanner lukija = new Scanner(tiedosto);
+        File f = new File("file.txt");
+        Scanner reader = new Scanner(f);
 
-        int monesko = 0;
+        int whichNumber = 0;
         while (reader.hasNext()) {
-            monesko++;
-            String sana = reader.next();
+            whichNumber++;
+            String word = reader.next();
 
-            if (monesko % 5 == 0) {
-                System.out.println(sana);
+            if (whichNumber % 5 == 0) {
+                System.out.println(word);
             }
         }
 </pre>
 
-    <p>Alla on ensin luetun tiedoston sisältämä teksti ja sitten ohjelman tulostus</p>
+    <p>Below, you find the text contained in the file, followed by the program printout.</p>
 
 <pre>
-Poikkeukset (exceptions) ovat &quot;poikkeuksellisia tilanteita&quot; kesken normaalin ohjelmansuorituksen:
-tiedosto loppuu, characterString ei kelpaa kokonaisluvuksi, odotetun olion tilalla onkin null-arvo,
-taulukon indeksi menee ohjelmointivirheen takia sopimattomaksi, ...
+Exception handling is the process of responding to the occurrence, during computation, of exceptions – anomalous or exceptional events requiring special processing – often changing the normal flow of program execution. ...
 </pre>
 
 <pre>
-tilanteita&quot;
-loppuu,
-odotetun
-taulukon
-sopimattomaksi,
+process
+occurrence,
+–
+requiring
+changing
+program
 </pre>
 
-<h3>Merkistöongelmista</h3>
+<h3>Character Set Issues</h3>
 
-    <p>Tekstiä tiedostosta luettaessa (tai tiedostoon tallennettaessa) Java joutuu päättelemään käyttöjärjestelmän käyttämän merkistön. Merkistön tuntemusta tarvitaan sekä tekstin tallentamiseen tietokoneen kovalevylle binäärimuotoiseksi että binäärimuotoisen datan tekstiksi kääntämiseksi.</p>
+    <p>We we read a file text (or when we save something into a file), Java has to find out the character set used by the operating system. Knowledge of the character set is required both to save text on the computer harddisk in binary format, and to translate binary data into text.</p>
 
-    <p>Merkistöihin on kehitetty standardeja, joista "UTF-8" on nykyään yleisin. UTF-8 -merkistö sisältää sekä jokapäiväisessä käytössä olevien aakkosten että erikoisempien merkkien kuten Japanin kanji-merkistön tai shakkipelin nappuloiden tallentamiseen ja lukemiseen tarvittavat tiedot. Ohjelmointimielessä merkistöä voi hieman yksinkertaistaen ajatella hajautustauluna merkistä numeroon ja numerosta merkkiin. Merkistä numeroon oleva hajautustaulu kuvaa minkälaisena binäärilukuna kukin merkki tallennetaan tiedostoon. Numerosta merkkiin oleva hajautustaulu taas kuvaa miten tiedostoa luettaessa saadut values muunnetaan merkeiksi.</p>
+    <p>There have been developed standard character sets, and "UTF-8" is the most common nowadays. UTF-8 character set contains both the alphabet letters of everyday use and more particular characters such as the Japanese kanji characters or the information need to read and save the chess pawns. From a simplified programming angle, we could think a character set both as a character-number hashmap and a number-character hashmap. The character-number hashmap shows what binary number is used to save each character into a file. The number-character hashmap shows how we can translate into characters the values we obtain reading a file.</p>
 
-    <p>Lähes jokaisella käyttöjärjestelmävalmistajalla on myös omat standardinsa. Osa tukee ja haluaa osallistua avoimien standardien käyttöön, osa ei. Mikäli sinulla on ongelmia ääkkösellisten sanojen kanssa (eritoten mac ja windows käyttäjät) voit kertoa <code>Scanner</code>-oliota luodessa käytettävän merkistön. Tällä kurssilla käytämme aina merkistöä "UTF-8".</p>
+    <p>Almost each operating system producer has also got their own standards. Some support and want to contribute to the use of open source standards, some do not. If you have got problems with the use of Scandinavian characters such as ä and ö (expecially Mac and Windows users), you can tell which character set you want to use when you create a <code>Scanner</code> object. In this course, we always use the the "UTF-8" character set.</p>
 
-    <p>UTF-8 -merkistöä käyttävän tiedostoa lukevan Scanner-olion voi luoda seuraavasti:</p>
+    <p>You can create a Scanner object which to read a file which uses the UTF-8 character set in the following way:</p>
 
 <pre class="sh_java">
-    File tiedosto = new File("esimerkkitiedosto.txt");
-    Scanner lukija = new Scanner(tiedosto, "UTF-8");
+    File f = new File("examplefile.txt");
+    Scanner reader = new Scanner(f, "UTF-8");
 </pre>
 
-    <p>Toinen vaihtoehto merkistön asettamiseksi on ympäristömuuttujan käyttäminen. Macintosh ja Windows-käyttäjät voivat asettaa ympäristömuuttujan <code>JAVA_TOOL_OPTIONS</code> arvoksi characterStringn <code>-Dfile.encoding=UTF8</code>. Tällöin Java käyttää oletuksena aina UTF-8-merkistöä.</p>
+    <p>Anther thing you can do to set up a character set is using an environment variable. Macintosh and Windows users can set up an the value of the environment variable <code>JAVA_TOOL_OPTIONS</code> to the string <code>-Dfile.encoding=UTF8</code>. In such case, Java always uses UTF-8 characters as a default.</p>
 
 <div class="tehtavat">
   <h3>Rivit joilla sana</h3>
@@ -6423,72 +6421,70 @@ Koska sanalista on varsin pitkä, on projektissa testausta varten myös <code>pi
 
 
 
-<h2>Hajautustauluista ja joukoista</h2>
+<h2>Hashmaps and Sets</h2>
 
-<h3>Monta arvoa yhtä avainta kohti</h3>
+<h3>Many Values and One Key</h3>
 
-<p>Kuten muistamme, voi HashMapiin tallettaa tiettyä avainta kohti vaan yhden arvon. Seuraavassa esimerkissä tallennamme henkilöiden puhelinnumeroita HashMap:iin.</p>
+<p>As we remember, we can save only one value per key using HashMap. In the following examples we save people's mobile phone numbers in a HashMap.</p>
 
 <pre class="sh_java">
-  Map&lt;String, String&gt; puhelinnumerot = new HashMap&lt;String, String&gt;();
+  Map&lt;String, String&gt; phoneNumbers = new HashMap&lt;String, String&gt;();
 
-  puhelinnumerot.put("Pekka", "040-12348765");
+  phoneNumbers.put("Pekka", "040-12348765");
 
-  System.out.println( "Pekan numero: "+ puhelinnumerot.get("Pekka") );
+  System.out.println( "Pekka's number: "+ phoneNumbers.get("Pekka") );
 
-  puhelinnumerot.put("Pekka", "09-111333");
+  phoneNumbers.put("Pekka", "09-111333");
 
-  System.out.println( "Pekan numero: "+ puhelinnumerot.get("Pekka") );
+  System.out.println( "Pekka's number: "+ phoneNumbers.get("Pekka") );
 </pre>
 
-<p>Kuten odotettua, tulostus kertoo, että</p>
+<p>as expected, the printout tells us:</p>
 
 <pre>
-Pekan numero: 040-12348765
-Pekan numero: 09-111333
+Pekka's number: 040-12348765
+Pekka's number: 09-111333
 </pre>
 
-<p>Entä jos haluaisimmekin tallettaa yhtä avainta kohti useita arvoja, eli esim yhtä henkilöä kohti monta puhelinnumeroa? Onnistuuko se HashMap:in avulla? Kyllä, esim. tallettamalla HashMap:iin Stringien sijaan esim. ArrayList:eja arvoiksi, voidaan yhteen avaimeen "liittää" useampia oliota. Muutetaan puhelinnumeroiden talletustapaa seuraavasti:</p>
+<p>What about if we wanted to save various different values per one key, what about if a person had many phone numbers? Can we manage with an HashMap? Of course! For instance, instead of saving Strings as HashMap values we could save ArrayLists, mapping more than one object to one key. Let's change the way we save phone numbers as follows:</p>
 
 <pre class="sh_java">
-  Map&lt;String, ArrayList&lt;String&gt;&gt; puhelinnumerot = new HashMap&lt;String, ArrayList&lt;String&gt;&gt;();
+  Map&lt;String, ArrayList&lt;String&gt;&gt; phoneNumbers = new HashMap&lt;String, ArrayList&lt;String&gt;&gt;();
 </pre>
 
-<p>Nyt siis HashMapissa jokaiseen avaimeen littyy lista. Vaikka new-komento luokin HashMapin, on mapin sisälle talletettavat listatu luotava erikseen. Seuraavassa lisätään HashMapiin Pekalle kaksi numeroa ja tulostataan ne:</p>
+<p>Now, a list is mapped to each HashMap key. Even though the new command creates a HashMap, the list which will be saved inside has to be created separately. In the following example, we add two numbers to the HashMap for Pekka, and we print them:</p>
 
 <pre class="sh_java">
-  Map&lt;String, ArrayList&lt;String&gt;&gt; puhelinnumerot = new HashMap&lt;String, ArrayList&lt;String&gt;&gt;();
+  Map&lt;String, ArrayList&lt;String&gt;&gt; phoneNumbers = new HashMap&lt;String, ArrayList&lt;String&gt;&gt;();
 
-  // liitetään Pekka-nimeen ensin tyhjä ArrayList
-  puhelinnumerot.put( "Pekka", new  ArrayList&lt;String&gt;() );
+  // We add map an empty ArrayList to Pekka
+  phoneNumbers.put( "Pekka", new  ArrayList&lt;String&gt;() );
   
-  // ja lisätään Pekkaa vastaavalle listalle puhelinnumero
-  puhelinnumerot.get("Pekka").add("040-12348765");
+  // we add Pekka's number to the list
+  phoneNumbers.get("Pekka").add("040-12348765");
  
-  // ja lisätään toinenkin puhelinnumero
-  puhelinnumerot.get("Pekka").add("09-111333");
+  // and we add a second phone number
+  phoneNumbers.get("Pekka").add("09-111333");
 
-  System.out.println( "Pekan numerot: "+ puhelinnumerot.get("Pekka") );
+  System.out.println( "Pekka's numbers: "+ phoneNumbers.get("Pekka") );
 </pre>
 
-<p>Tulostuu</p>
+<p>Prints</p>
 
 <pre>
-Pekan numero: [040-12348765, 09-111333]
+Pekka's numbers: [040-12348765, 09-111333]
 </pre>
 
-<p>Määrittelimme muuttujan puhelinnumero tyypiksi <code>Map&lt;String, ArrayList&lt;String&gt;&gt;</code> eli Map jonka avaimena on characterString ja arvona characterStringja sisältävä lista. Konkreettinen toteutus, eli luotu olio oli HasMap. Olisimme voineet määritellä muuttujan myös seuraavasti:
+<p>We define the phone number type as <code>Map&lt;String, ArrayList&lt;String&gt;&gt;</code>, that is a Map whose key is a String and whose value is a list containing strings. The concrete implementation -- that is to say the created object -- was a HashMap. We could have defined a variable also in the following way:
 </p>
 
 <pre class="sh_java">
-Map&lt;String, List&lt;String&gt;&gt; puhelinnumero = new HashMap&lt;String, List&lt;String&gt;&gt;();
+Map&lt;String, List&lt;String&gt;&gt; phoneNumbers = new HashMap&lt;String, List&lt;String&gt;&gt;();
 </pre>
 
-<p>
-Eli nyt muuttujan tyyppi on Map, jonka avaimena on characterString ja arvona characterStringja sisältävä <code>List</code>, joka siis on rajapinta joka määrittelee listatoiminnallisuuden, esim. ArrayList toteuttaa tämän rajapinnan. Konkreettinen olio on HashMap.
-</p>
+<p>Now, the variable type is a Map, whose key is a String and value is a <code>List</code> containing strings. In fact, a List is an interface which defines the List functionality, and ArrayLists implement this interface, for instance. The concrete object is a HashMap.</p>
 
-<p>HashMap:iin talletettavat arvot siis ovat <code>List&lt;String&gt;</code>-rajapinnan toteuttavia konkreettisia olioita, esim. ArrayListeja. Eli lisäys HashMapiin tapahtuu edelleen seuraavasti:</p>
+<p>The values we save into the HashMap are concrete object which implement the interface <code>List&lt;String&gt;</code>, ArrayLists, for instance. Again, we can add values to the HashMap in the following way:</p>
 
 <pre class="sh_java">
   // liitetään Pekka-nimeen ensin tyhjä ArrayList

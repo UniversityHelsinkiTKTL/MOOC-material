@@ -5908,16 +5908,16 @@ public class Grade {
 </pre>
 
 <pre class="sh_java">
-    Arvosana arvosana = new Arvosana(3);
-    System.out.println(arvosana.getArvosana());
+    Grade grade = new Grade(3);
+    System.out.println(grade.getGrade());
 
-    Arvosana virheellinenArvo = new Arvosana(22);
-    // tapahtuu poikkeus, tästä ei jatketa eteenpäin
+    Grade wrongGrade = new Grade(22);
+    // it causes an exception, we don't continue
 </pre>
 
 <pre>
 3
-Exception in thread "..." java.lang.IllegalArgumentException: Arvosanan tulee olla välillä 0-5
+Exception in thread "..." java.lang.IllegalArgumentException: The grade has to be between 0-5
 </pre>
 
 
@@ -6133,145 +6133,144 @@ Exception in thread "main" java.lang.NullPointerException
     <p>Reading the stack trace happens button up. The lowest is the first call, i.e. the program execution has started from the <code>main()</code> method of class <code>Class</code>. At line 29 of the main method of <code>Class</code>, we called the method <code>print()</code>. Line 43 of the method <code>print</code> caused a <code>NullPointerException</code>. Exception information are extremely important to find out the origin of a problem.</p>
 
 
-<h2>Tiedoston lukeminen</h2>
+<h2>Reading a File</h2>
 
-    <p>Huomattava osa ohjelmista käsittelee jollain tavalla tallennettua tietoa. Otetaan ensiaskeleet tiedostojen käsittelyyn Javassa. Javan API tarjoaa luokan <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">File</a>, jonka sisältö voidaan lukea kurssilla jo tutuksi tulleen <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a>-luokan avulla.</p>
+    <p>A relevant part of programming is related to stored files, in one way or in another. Let's take the first steps in Java file handling. Java's API provides the class <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">File</a>, whose contants can be read using the already known <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class.</p>
 
-    <p>Luokan <code>File</code> <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">API-kuvausta</a> lukiessamme huomaamme <code>File</code>-luokalla on konstruktori <code>File(String pathname)</code> (<em>Creates a new File instance by converting the given pathname string into an abstract pathname</em>). Voimme siis antaa avattavan tiedoston polun <code>File</code>-luokan konstruktorille.</p>
+    <p>If we read the desciption of the <code>File</code> <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">API</a> we notice the <code>File</code> class has got the constructor <code>File(String pathname)</code>, which <em>creates a new File instance by converting the given pathname string into an abstract pathname</em>. This means the <code>File</code> class constructor can be given the pathname of the file we want to open.</p>
 
-    <p><em>NetBeans-ohjelmointiympäristössä tiedostoille on oma välilehti nimeltä <em>Files</em>. Files-välilehdellä on määritelty kaikki projektiin liittyvät tiedostot. Jos projektin <em>juureen</em>, eli ei yhdenkään hakemiston sisälle, lisätään tiedosto, voidaan siihen viitata projektin sisältä suoraan tiedoston nimellä. Tiedosto-olion luominen tapahtuu antamalla sille parametrina polku tiedostoon, esimerkiksi seuraavasti</em></p>
+    <p><em>In the NetBeans programming environment, files have got their own tab called <em>Files</em>, which contains all our project files. If we add a file to a project <em>root</em> -- that is to say outside all folders -- we can refer to it by writing only the its name. We create a file object by fiving the file pathname to it as parameter:</em></p>
 
 <pre class="sh_java">
-    File tiedosto = new File("tiedoston-nimi.txt");
+    File file = new File("file-name.txt");
 </pre>
 
-    <p>Scanner-luokan konstruktorille voi antaa myös muita lukemislähteitä kuin <code>System.in</code>-syöttövirran. Lukemislähteenä voi olla näppäimistön lisäksi muun muassa tiedosto. Scanner tarjoaa tiedoston lukemiseen samat metodit kuin näppäimistöltä syötetyn syötteen lukemiseen. Seuraavassa esimerkissä avataan tiedosto ja tulostetaan kaikki tiedoston sisältämän tekstit <code>System.out.println</code>-komennolla Lopuksi tiedosto suljetaa komennolla <code>close</code>.</p>
+    <p><code>System.in</code> input stream is not the only reading source we can give to the constructor of a Scanner class. For instance, the reading source can be a file, in addition to the user keyboard. Scanner provides the same methods to read a keyboard input and a file. In the following example, we open a file and we print all the text contained in the file using the <code>System.out.println</code> statement. At the end, we close the file using the statement <code>close</code>.</p>
 
 <pre class="sh_java">
-        // tiedosto mistä luetaan
-        File tiedosto = new File("tiedosto.txt");
+        // The file we read
+        File file = new File("filename.txt");
 
-        Scanner lukija = new Scanner(tiedosto);
+        Scanner reader = new Scanner(file);
         while (reader.hasNextLine()) {
-            String rivi = reader.nextLine();
-            System.out.println(rivi);
+            String line = reader.nextLine();
+            System.out.println(line);
         }
 
         reader.close();
 </pre>
 
-    <p>Scanner-luokan konstruktori <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html#Scanner(java.io.File)" target="_blank">public Scanner(File source)</a></code> (<em>Constructs a new Scanner that produces values scanned from the specified file.</em>) heittää <code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/FileNotFoundException.html" target="_blank">FileNotFoundException</a></code>-poikkeuksen jos luettavaa tiedostoa ei löydy. Poikkeus <code>FileNotFoundException</code> ei ole tyyppiä <code>RuntimeException</code>, joten se tulee joko käsitellä tai heittää eteenpäin. Tässä vaiheessa riittää tietää että ohjelmointiympäristö kertoo jos sinun tulee käsitellä poikkeus erikseen. Luodaan ensin vaihtoehto, jossa poikkeus käsitellään tiedostoa avattaessa.</p>
+    <p>The Scanner class constructor <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html#Scanner(java.io.File)" target="_blank">public Scanner(File source)</a></code> (<em>Constructs a new Scanner that produces values scanned from the specified file.</em>) throws a <code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/FileNotFoundException.html" target="_blank">FileNotFoundException</a></code> when the specified file is not found. The <code>FileNotFoundException</code> is different than <code>RuntimeException</code>, and we have either to handle it or throw it forward. At this point, you only have to know that the programming environment tells you whether you have to handle the exception or not. Let's first create a try-catch block where we handle our file as soon as we open it.</p>
 
 <pre class="sh_java">
-    public void lueTiedosto(File tiedosto) {
-        // tiedosto mistä luetaan
-        Scanner lukija = null;
+    public void readFile(File f) {
+        // the file we read
+        Scanner reader = null;
 
         try {
-            lukija = new Scanner(tiedosto);
+            reader = new Scanner(f);
         } catch (Exception e) {
-            System.out.println("Tiedoston lukeminen epäonnistui. Virhe: " + e.getMessage());
-            return; // poistutaan metodista
+            System.out.println("We couldn't read the file. Error: " + e.getMessage());
+            return; // we exit the method
         }
 
         while (reader.hasNextLine()) {
-            String rivi = reader.nextLine();
-            System.out.println(rivi);
+            String line = reader.nextLine();
+            System.out.println(line);
         }
 
         reader.close();
     }
 </pre>
 
-    <p>Toinen vaihtoehto poikkeuksen käsittelyyn on poikkeuksen käsittelyvastuun siirtäminen metodin kutsujalle. Poikkeuksen käsittelyvastuu siirretään metodin kutsujalle lisäämällä metodiin määre <code>throws <em>PoikkeuksenTyyppi</em></code>, eli esimerkiksi <code>throws Exception</code> sillä kaikki poikkeukset ovat tyyppiä <code>Exception</code>. Kun metodilla on määre <code>throws Exception</code>, tietävät kaikki sitä kutsuvat että se saattaa heittää poikkeuksen johon tulee varautua.</p>
+    <p>Another option is to delegate the exception handling responsability to the method caller. We delegate the exception handling responsability by adding the definition <code>throws <em>ExceptionType</em></code> to the method. For instance, we can add <code>throws Exception</code> because the type of all exceptions is <code>Exception</code>. When a method has got the attribute <code>throws Exception</code>, whatever chunk of code which calls that method knows that it may throw an exception, and it should be prepared for it.</p>
 
 <pre class="sh_java">
-    public void lueTiedosto(File tiedosto) throws Exception {
-        // tiedosto mistä luetaan
-        Scanner lukija = new Scanner(tiedosto);
+    public void readFile(File f) throws Exception {
+        // the file we read
+        Scanner reader = new Scanner(f);
 
         while (reader.hasNextLine()) {
-            String rivi = reader.nextLine();
-            System.out.println(rivi);
+            String line = reader.nextLine();
+            System.out.println(line);
         }
 
         reader.close();
     }
 </pre>
 
-    <p>Esimerkki avaa tiedoston <code>tiedosto.txt</code> projektin juuripolusta ja tulostaa sen rivi riviltä käyttäjälle näkyville. Lopuksi lukija suljetaan, jolloin tiedosto myös suljetaan. Määre <code>throws Exception</code> kertoo että metodi saattaa heittää poikkeuksen. Samanlaisen määreen voi laittaa kaikkiin metodeihin jotka käsittelevät tiedostoja.</p>
+    <p>In the example, the method <code>readFile</code> receives a file as parameter, and prints all the file lines. At the end, the reader is closed, and the file is closed with it, too. The attribute <code>throws Exception</code> tells us that the method may throw an exception. Same kind of attributes can be added to all the methods that handle files.</p>
 
-    <p>Huomaa että <code>Scanner</code>-olio ei liitä rivinvaihtomerkkejä osaksi <code>nextLine</code>-metodin palauttamaa characterStringa. Yksi vaihtoehto tiedoston lukemiseen siten, että rivinvaihdot säilyvät, on lisätä jokaisen rivin jälkeen rivinvaihtomerkki:</p>
+    <p>Note that the <code>Scanner</code> object's method <code>nextLine</code> returns a string, but it does not return a new line at the end of it. If you want to read a file and still maintain the new lines, you can add a new line at the end of each line:</p>
 
 <pre class="sh_java">
-    public String lueTiedostocharacterStringon(File tiedosto) throws Exception {
-        // tiedosto mistä luetaan
-        Scanner lukija = new Scanner(tiedosto);
+    public String readFileString(File f) throws Exception {
+        // the file we read
+        Scanner reader = new Scanner(f);
 
-        String characterString = "";
+        String string = "";
 
         while (reader.hasNextLine()) {
-            String rivi = reader.nextLine();
-            characterString += rivi;
-            characterString += "\n";
+            String line = reader.nextLine();
+            string += line;
+            string += "\n";
         }
 
         reader.close();
-        return characterString;
+        return string;
     }
 </pre>
 
-    <p>Koska käytämme tiedoston lukemiseen <code>Scanner</code>-luokkaa, käytössämme on kaikki Scanner-luokan tarjoamat metodit. Esimerkiksi metodi <code>hasNext()</code> palauttaa totuusarvon <code>true</code>, jos luettavassa tiedostossa on vielä luettavaa jäljellä, ja metodi <code>next()</code> lukee seuraavan sanan metodin palauttamaan <code>String</code>-olioon. </p>
+    <p>Because we use the <code>Scanner</code> class to read files, we have all Scanner methods available for use. For instance the method <code>hasNext()</code> returns the boolean value <code>true</code> if the file contains something more to read, and the method <code>next()</code> reads the following word and returns a <code>String</code> object. </p>
 
-    <p>Seuraava ohjelma luo <code>Scanner</code>-olion, joka avaa tiedoston <code>tiedosto.txt</code>. Sen jälkeen se tulostaa joka viidennen sanan tiedostosta.</p>
+    <p>The following program creates a <code>Scanner</code> object which opens the file <code>file.txt</code>. Then, it prints every fifth word of the file.</p>
 
 <pre class="sh_java">
-        File tiedosto = new File("tiedosto.txt");
-        Scanner lukija = new Scanner(tiedosto);
+        File f = new File("file.txt");
+        Scanner reader = new Scanner(f);
 
-        int monesko = 0;
+        int whichNumber = 0;
         while (reader.hasNext()) {
-            monesko++;
-            String sana = reader.next();
+            whichNumber++;
+            String word = reader.next();
 
-            if (monesko % 5 == 0) {
-                System.out.println(sana);
+            if (whichNumber % 5 == 0) {
+                System.out.println(word);
             }
         }
 </pre>
 
-    <p>Alla on ensin luetun tiedoston sisältämä teksti ja sitten ohjelman tulostus</p>
+    <p>Below, you find the text contained in the file, followed by the program printout.</p>
 
 <pre>
-Poikkeukset (exceptions) ovat &quot;poikkeuksellisia tilanteita&quot; kesken normaalin ohjelmansuorituksen:
-tiedosto loppuu, characterString ei kelpaa kokonaisluvuksi, odotetun olion tilalla onkin null-arvo,
-taulukon indeksi menee ohjelmointivirheen takia sopimattomaksi, ...
+Exception handling is the process of responding to the occurrence, during computation, of exceptions – anomalous or exceptional events requiring special processing – often changing the normal flow of program execution. ...
 </pre>
 
 <pre>
-tilanteita&quot;
-loppuu,
-odotetun
-taulukon
-sopimattomaksi,
+process
+occurrence,
+–
+requiring
+changing
+program
 </pre>
 
-<h3>Merkistöongelmista</h3>
+<h3>Character Set Issues</h3>
 
-    <p>Tekstiä tiedostosta luettaessa (tai tiedostoon tallennettaessa) Java joutuu päättelemään käyttöjärjestelmän käyttämän merkistön. Merkistön tuntemusta tarvitaan sekä tekstin tallentamiseen tietokoneen kovalevylle binäärimuotoiseksi että binäärimuotoisen datan tekstiksi kääntämiseksi.</p>
+    <p>We we read a file text (or when we save something into a file), Java has to find out the character set used by the operating system. Knowledge of the character set is required both to save text on the computer harddisk in binary format, and to translate binary data into text.</p>
 
-    <p>Merkistöihin on kehitetty standardeja, joista "UTF-8" on nykyään yleisin. UTF-8 -merkistö sisältää sekä jokapäiväisessä käytössä olevien aakkosten että erikoisempien merkkien kuten Japanin kanji-merkistön tai shakkipelin nappuloiden tallentamiseen ja lukemiseen tarvittavat tiedot. Ohjelmointimielessä merkistöä voi hieman yksinkertaistaen ajatella hajautustauluna merkistä numeroon ja numerosta merkkiin. Merkistä numeroon oleva hajautustaulu kuvaa minkälaisena binäärilukuna kukin merkki tallennetaan tiedostoon. Numerosta merkkiin oleva hajautustaulu taas kuvaa miten tiedostoa luettaessa saadut values muunnetaan merkeiksi.</p>
+    <p>There have been developed standard character sets, and "UTF-8" is the most common nowadays. UTF-8 character set contains both the alphabet letters of everyday use and more particular characters such as the Japanese kanji characters or the information need to read and save the chess pawns. From a simplified programming angle, we could think a character set both as a character-number hashmap and a number-character hashmap. The character-number hashmap shows what binary number is used to save each character into a file. The number-character hashmap shows how we can translate into characters the values we obtain reading a file.</p>
 
-    <p>Lähes jokaisella käyttöjärjestelmävalmistajalla on myös omat standardinsa. Osa tukee ja haluaa osallistua avoimien standardien käyttöön, osa ei. Mikäli sinulla on ongelmia ääkkösellisten sanojen kanssa (eritoten mac ja windows käyttäjät) voit kertoa <code>Scanner</code>-oliota luodessa käytettävän merkistön. Tällä kurssilla käytämme aina merkistöä "UTF-8".</p>
+    <p>Almost each operating system producer has also got their own standards. Some support and want to contribute to the use of open source standards, some do not. If you have got problems with the use of Scandinavian characters such as ä and ö (expecially Mac and Windows users), you can tell which character set you want to use when you create a <code>Scanner</code> object. In this course, we always use the the "UTF-8" character set.</p>
 
-    <p>UTF-8 -merkistöä käyttävän tiedostoa lukevan Scanner-olion voi luoda seuraavasti:</p>
+    <p>You can create a Scanner object which to read a file which uses the UTF-8 character set in the following way:</p>
 
 <pre class="sh_java">
-    File tiedosto = new File("esimerkkitiedosto.txt");
-    Scanner lukija = new Scanner(tiedosto, "UTF-8");
+    File f = new File("examplefile.txt");
+    Scanner reader = new Scanner(f, "UTF-8");
 </pre>
 
-    <p>Toinen vaihtoehto merkistön asettamiseksi on ympäristömuuttujan käyttäminen. Macintosh ja Windows-käyttäjät voivat asettaa ympäristömuuttujan <code>JAVA_TOOL_OPTIONS</code> arvoksi characterStringn <code>-Dfile.encoding=UTF8</code>. Tällöin Java käyttää oletuksena aina UTF-8-merkistöä.</p>
+    <p>Anther thing you can do to set up a character set is using an environment variable. Macintosh and Windows users can set up an the value of the environment variable <code>JAVA_TOOL_OPTIONS</code> to the string <code>-Dfile.encoding=UTF8</code>. In such case, Java always uses UTF-8 characters as a default.</p>
 
 <div class="tehtavat">
   <h3>Rivit joilla sana</h3>
@@ -6422,116 +6421,114 @@ Koska sanalista on varsin pitkä, on projektissa testausta varten myös <code>pi
 
 
 
-<h2>Hajautustauluista ja joukoista</h2>
+<h2>Hashmaps and Sets</h2>
 
-<h3>Monta arvoa yhtä avainta kohti</h3>
+<h3>Many Values and One Key</h3>
 
-<p>Kuten muistamme, voi HashMapiin tallettaa tiettyä avainta kohti vaan yhden arvon. Seuraavassa esimerkissä tallennamme henkilöiden puhelinnumeroita HashMap:iin.</p>
+<p>As we remember, we can save only one value per key using HashMap. In the following examples we save people's mobile phone numbers in a HashMap.</p>
 
 <pre class="sh_java">
-  Map&lt;String, String&gt; puhelinnumerot = new HashMap&lt;String, String&gt;();
+  Map&lt;String, String&gt; phoneNumbers = new HashMap&lt;String, String&gt;();
 
-  puhelinnumerot.put("Pekka", "040-12348765");
+  phoneNumbers.put("Pekka", "040-12348765");
 
-  System.out.println( "Pekan numero: "+ puhelinnumerot.get("Pekka") );
+  System.out.println( "Pekka's number: "+ phoneNumbers.get("Pekka") );
 
-  puhelinnumerot.put("Pekka", "09-111333");
+  phoneNumbers.put("Pekka", "09-111333");
 
-  System.out.println( "Pekan numero: "+ puhelinnumerot.get("Pekka") );
+  System.out.println( "Pekka's number: "+ phoneNumbers.get("Pekka") );
 </pre>
 
-<p>Kuten odotettua, tulostus kertoo, että</p>
+<p>as expected, the printout tells us:</p>
 
 <pre>
-Pekan numero: 040-12348765
-Pekan numero: 09-111333
+Pekka's number: 040-12348765
+Pekka's number: 09-111333
 </pre>
 
-<p>Entä jos haluaisimmekin tallettaa yhtä avainta kohti useita arvoja, eli esim yhtä henkilöä kohti monta puhelinnumeroa? Onnistuuko se HashMap:in avulla? Kyllä, esim. tallettamalla HashMap:iin Stringien sijaan esim. ArrayList:eja arvoiksi, voidaan yhteen avaimeen "liittää" useampia oliota. Muutetaan puhelinnumeroiden talletustapaa seuraavasti:</p>
+<p>What about if we wanted to save various different values per one key, what about if a person had many phone numbers? Can we manage with an HashMap? Of course! For instance, instead of saving Strings as HashMap values we could save ArrayLists, mapping more than one object to one key. Let's change the way we save phone numbers as follows:</p>
 
 <pre class="sh_java">
-  Map&lt;String, ArrayList&lt;String&gt;&gt; puhelinnumerot = new HashMap&lt;String, ArrayList&lt;String&gt;&gt;();
+  Map&lt;String, ArrayList&lt;String&gt;&gt; phoneNumbers = new HashMap&lt;String, ArrayList&lt;String&gt;&gt;();
 </pre>
 
-<p>Nyt siis HashMapissa jokaiseen avaimeen littyy lista. Vaikka new-komento luokin HashMapin, on mapin sisälle talletettavat listatu luotava erikseen. Seuraavassa lisätään HashMapiin Pekalle kaksi numeroa ja tulostataan ne:</p>
+<p>Now, a list is mapped to each HashMap key. Even though the new command creates a HashMap, the list which will be saved inside has to be created separately. In the following example, we add two numbers to the HashMap for Pekka, and we print them:</p>
 
 <pre class="sh_java">
-  Map&lt;String, ArrayList&lt;String&gt;&gt; puhelinnumerot = new HashMap&lt;String, ArrayList&lt;String&gt;&gt;();
+  Map&lt;String, ArrayList&lt;String&gt;&gt; phoneNumbers = new HashMap&lt;String, ArrayList&lt;String&gt;&gt;();
 
-  // liitetään Pekka-nimeen ensin tyhjä ArrayList
-  puhelinnumerot.put( "Pekka", new  ArrayList&lt;String&gt;() );
+  // We map an empty ArrayList to Pekka
+  phoneNumbers.put( "Pekka", new  ArrayList&lt;String&gt;() );
   
-  // ja lisätään Pekkaa vastaavalle listalle puhelinnumero
-  puhelinnumerot.get("Pekka").add("040-12348765");
+  // we add Pekka's number to the list
+  phoneNumbers.get("Pekka").add("040-12348765");
  
-  // ja lisätään toinenkin puhelinnumero
-  puhelinnumerot.get("Pekka").add("09-111333");
+  // and we add a second phone number
+  phoneNumbers.get("Pekka").add("09-111333");
 
-  System.out.println( "Pekan numerot: "+ puhelinnumerot.get("Pekka") );
+  System.out.println( "Pekka's numbers: "+ phoneNumbers.get("Pekka") );
 </pre>
 
-<p>Tulostuu</p>
+<p>Prints</p>
 
 <pre>
-Pekan numero: [040-12348765, 09-111333]
+Pekka's numbers: [040-12348765, 09-111333]
 </pre>
 
-<p>Määrittelimme muuttujan puhelinnumero tyypiksi <code>Map&lt;String, ArrayList&lt;String&gt;&gt;</code> eli Map jonka avaimena on characterString ja arvona characterStringja sisältävä lista. Konkreettinen toteutus, eli luotu olio oli HasMap. Olisimme voineet määritellä muuttujan myös seuraavasti:
+<p>We define the phone number type as <code>Map&lt;String, ArrayList&lt;String&gt;&gt;</code>, that is a Map whose key is a String and whose value is a list containing strings. The concrete implementation -- that is to say the created object -- was a HashMap. We could have defined a variable also in the following way:
 </p>
 
 <pre class="sh_java">
-Map&lt;String, List&lt;String&gt;&gt; puhelinnumero = new HashMap&lt;String, List&lt;String&gt;&gt;();
+Map&lt;String, List&lt;String&gt;&gt; phoneNumbers = new HashMap&lt;String, List&lt;String&gt;&gt;();
 </pre>
 
-<p>
-Eli nyt muuttujan tyyppi on Map, jonka avaimena on characterString ja arvona characterStringja sisältävä <code>List</code>, joka siis on rajapinta joka määrittelee listatoiminnallisuuden, esim. ArrayList toteuttaa tämän rajapinnan. Konkreettinen olio on HashMap.
-</p>
+<p>Now, the variable type is a Map, whose key is a String and value is a <code>List</code> containing strings. In fact, a List is an interface which defines the List functionality, and ArrayLists implement this interface, for instance. The concrete object is a HashMap.</p>
 
-<p>HashMap:iin talletettavat arvot siis ovat <code>List&lt;String&gt;</code>-rajapinnan toteuttavia konkreettisia olioita, esim. ArrayListeja. Eli lisäys HashMapiin tapahtuu edelleen seuraavasti:</p>
+<p>The values we save into the HashMap are concrete object which implement the interface <code>List&lt;String&gt;</code>, ArrayLists, for instance. Again, we can add values to the HashMap in the following way:</p>
 
 <pre class="sh_java">
-  // liitetään Pekka-nimeen ensin tyhjä ArrayList
-  puhelinnumerot.put( "Pekka", new  ArrayList&lt;String&gt;() );
+  // first, we map an empty ArrayList to Pekka
+  phoneNumbers.put( "Pekka", new  ArrayList&lt;String&gt;() );
 
   // ...
 </pre>
 
-<p>Jatkossa pyrkimyksemme on käyttää tyyppimäärittelyissä konkreettisten luokkien, esim. <code>HashMap</code> ja <code>ArrayList</code> sijaan niitä vastaavia rajapintoja <code>Map</code> ja <code>List</code>.</p>
+<p>In the future, instead of using concrete classes (such as <code>HashMap</code> and <code>ArrayList</code>, for instance), we will always try to use their respective interfaces <code>Map</code> and <code>List</code>.</p>
 
-<h3>Joukoista</h3>
+<h3>Sets</h3>
 
-    <p>Rajapinta <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html" target="_blank">Set</a></code> kuvaa joukon toiminnallisuutta. Toisin kuin listalla, on joukossa kutakin alkioita korkeintaan yksi kappale, eli yhtän samanlaista oliota ei ole kahdesti. Olioiden samankaltaisuuden tarkistaminen toteutetaan <code>equals</code> ja <code>hashCode</code> -metodeja käyttämällä. </p>
+    <p>Differently from lists, in a <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html" target="_blank">Set</a></code> there can be up to one same entry, that is to say the same object can not be contained twice in a set. The similarity between two objects is inspected using the methods <code>equals</code> and <code>hashCode</code>. </p>
 
-<p>Yksi rajapinnan <code>Set</code> toteuttava luokka on  <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashSet.html" target="_blank">HashSet</a></code>. Toteutetaan sen avulla luokka <code>Tehtavakirjanpito</code>, joka tarjoaa mahdollisuuden tehtävien kirjanpitoon ja tehtyjen tehtävien tulostamiseen. Oletetaan että tehtävät ovat aina kokonaislukuja.</p>
+<p>One of the classes which implement the <code>Set</code> interface is  <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashSet.html" target="_blank">HashSet</a></code>. Let's use it to implement the class <code>ExcerciseAccounting</code>, which allows us to keep an account of the excercise we do and to print them. Let's suppose the the excercises are always integers.</p>
 
 <pre class="sh_java">
-public class Tehtavakirjanpito {
-    private Set&lt;Integer&gt; tehdytTehtavat;
+public class ExcerciseAccounting {
+    private Set&lt;Integer&gt; doneExcercises;
 
-    public Tehtavakirjanpito() {
-        this.tehdytTehtavat = new HashSet&lt;Integer&gt;();
+    public ExcerciseAccounting() {
+        this.doneExcercises = new HashSet&lt;Integer&gt;();
     }
 
-    public void lisaa(int tehtava) {
-        this.tehdytTehtavat.add(tehtava);
+    public void add(int excercise) {
+        this.doneExcercises.add(excercise);
     }
 
-    public void tulosta() {
-        for (int tehtava: this.tehdytTehtavat) {
-            System.out.println(tehtava);
+    public void print() {
+        for (int excercise: this.doneExcercises) {
+            System.out.println(excercise);
         }
     }
 }
 </pre>
 
 <pre class="sh_java">
-        Tehtavakirjanpito kirjanpito = new Tehtavakirjanpito();
-        kirjanpito.lisaa(1);
-        kirjanpito.lisaa(1);
-        kirjanpito.lisaa(2);
-        kirjanpito.lisaa(3);
+        ExcerciseAccounting account = new ExcerciseAccounting();
+        account.add(1);
+        account.add(1);
+        account.add(2);
+        account.add(3);
 
-        kirjanpito.tulosta();
+        kirjanpito.print();
 </pre>
 
 <pre>
@@ -6540,52 +6537,52 @@ public class Tehtavakirjanpito {
 3
 </pre>
 
-    <p>Yllä oleva ratkaisu toimii tilanteessa, jossa emme tarvitse tietoa käyttäjistä eri käyttäjien tekemistä tehtävistä. Muutetaan tehtävien tallennuslogiikkaa siten, että tehtävät tallennetaan <em>käyttäjäkohtaisesti</em> hajautustaulua hyödyntäen. Käyttäjät tunnistetaan käyttäjän yksilöivällä characterStringlla (esimerkiksi opiskelijanumero), ja jokaiselle käyttäjälle on oma joukko tehdyistä tehtävistä.</p>
+    <p>The solution above is useful if we don't need information about the excercises done by each different user. We cam change the saving logic of the excercises in a way to have them save in relation to each user, using a HashMap. The users are recognised throw a unique string (for instance, their student number), and each user has got their own set of finished excercises.</p>
 
 <pre class="sh_java">
-public class Tehtavakirjanpito {
-    private Map&lt;String, Set&lt;Integer&gt;&gt; tehdytTehtavat;
+public class ExcerciseAccounting {
+    private Map&lt;String, Set&lt;Integer&gt;&gt; doneExcercises;
 
-    public Tehtavakirjanpito() {
-        this.tehdytTehtavat = new HashMap&lt;String, Set&lt;Integer&gt;&gt;();
+    public ExcerciseAccounting() {
+        this.doneExcercises = new HashMap&lt;String, Set&lt;Integer&gt;&gt;();
     }
 
-    public void lisaa(String kayttaja, int tehtava) {
-        // huomaa miten uudelle käyttäjälle on lisättävä HashMapiin ensin tyhjä tehtäväjoukko
-        if (!this.tehdytTehtavat.containsKey(kayttaja)) {
-            this.tehdytTehtavat.put(kayttaja, new HashSet&lt;Integer&gt;());
+    public void lisaa(String user, int excercise) {
+        // note that when we create a new user we have first to map an empty excercise set to it
+        if (!this.doneExcercises.containsKey(user)) {
+            this.doneExcercises.put(user, new HashSet&lt;Integer&gt;());
         }
 
-        // haetaan ensin käyttäjän tehtävät sisältävä joukko ja tehdään siihen lisäys
-        Set&lt;Integer&gt; tehdyt = this.tehdytTehtavat.get(kayttaja);
-        tehdyt.add(tehtava);
+        // first, we retrieve the set containing the user excercises and then we add an excercise to it
+        Set&lt;Integer&gt; finished = this.doneExcercises.get(user);
+        finished.add(user);
 
-        // edellinen olisi onnitunut myös ilman apumuuttujaa seuraavasti
-        //  this.tehdytTehtavat.get(kayttaja).add(tehtava);
+        // the previous would have worked out without helping variable in the following way:
+        //  this.doneExcercises.get(user).add(excercise);
     }
 
-    public void tulosta() {
-        for (String kayttaja: this.tehdytTehtavat.keySet()) {
-            System.out.println(kayttaja + ": " + this.tehdytTehtavat.get(kayttaja));
+    public void print() {
+        for (String user: this.doneExcercises.keySet()) {
+            System.out.println(user + ": " + this.doneExcercises.get(user));
         }
     }
 }
 </pre>
 
 <pre class="sh_java">
-        Tehtavakirjanpito kirjanpito = new Tehtavakirjanpito();
-        kirjanpito.lisaa("Mikael", 3);
-        kirjanpito.lisaa("Mikael", 4);
-        kirjanpito.lisaa("Mikael", 3);
-        kirjanpito.lisaa("Mikael", 3);
+        ExcerciseAccounting accounting = new ExcerciseAccounting();
+        accounting.lisaa("Mikael", 3);
+        accounting.lisaa("Mikael", 4);
+        accounting.lisaa("Mikael", 3);
+        accounting.lisaa("Mikael", 3);
 
-        kirjanpito.lisaa("Pekka", 4);
-        kirjanpito.lisaa("Pekka", 4);
+        accounting.lisaa("Pekka", 4);
+        accounting.lisaa("Pekka", 4);
 
-        kirjanpito.lisaa("Matti", 1);
-        kirjanpito.lisaa("Matti", 2);
+        accounting.lisaa("Matti", 1);
+        accounting.lisaa("Matti", 2);
 
-        kirjanpito.tulosta();
+        accounting.print();
 </pre>
 
 <pre>
@@ -6595,7 +6592,7 @@ Mikael: [3, 4]
 </pre>
 
 
-    <p>Huomaamme että käyttäjien nimet eivät tulostu esimerkissä	 järjestyksessä. Tämä selittyy sillä että <code>HashMap</code>-tyyppisessä hajautustaulussa alkioiden tallennus tapahtuu <code>hashCode</code>-metodin palauttaman hajautusarvon perusteella, eikä se liity millään tavalla alkioiden järjestykseen.</p>
+    <p>Note that the user names are not printed in order, in our example. This depends on the saving process of the <code>HashMap</code> entries, which happens through the value returned by the <code>hashCode</code> method, and does not involve the entry order in any way.</p>
  
 <div class="tehtavat">
 

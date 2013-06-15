@@ -579,7 +579,7 @@ int dividend = 3;
 int divider = 2;
 
 double quotient = dividend / divider * 1.0;
-System.out.println(quotinent);
+System.out.println(quotient);
 </pre>
 
             <p><big>From now on, make sure that you name your variables that follow good conventions like the variables
@@ -4882,7 +4882,7 @@ The variance is: 5.666667
 </pre>
 
 
-        <h3>A method that returns a truth value</h3>
+        <h3>Methods that return a truth value</h3>
 
         <p>Truth values come in especially handy when we want to write methods that check for validity. Let us create a
         method that checks if the list it gets as a parameter includes only positive numbers (here 0 is considered
@@ -4899,7 +4899,7 @@ The variance is: 5.666667
             } 
         } 
 
-        // if one of the numbers on the list had a value that's under 0, noNegatives becomes false.
+        // if one of the numbers on the list had a value that is below zero, noNegatives becomes false.
 
         return noNegative; 
     } 
@@ -4910,7 +4910,7 @@ The variance is: 5.666667
         assign the helper variable the value false. In the end the method returns the value of the helper variable. If
         no negative numbers were found, it has the value true, otherwise it has the value false.</p>
 
-        <p>The method is used like this:</p>
+        <p>The method is used as follows:</p>
 
 <pre class="sh_java">
  
@@ -4950,11 +4950,10 @@ The variance is: 5.666667
     } 
 </pre>
 
-        <h3>The command return and the ending of a method</h3>
+        <h3>The return command and ending a method</h3>
 
         <p>The execution of a method is stopped immediately when a command called <code>return</code> is executed.
-        Using that information to our advantage we can write the <code>allPositive</code> method a bit more
-        clearly.</p>
+        Using this information to our advantage, we write the <code>allPositive</code> method easier to understand.</p>
 
 <pre class="sh_java">
  
@@ -4973,15 +4972,15 @@ The variance is: 5.666667
 </pre>
 
         <p>When we are going through the list of numbers and we find a negative number, we can exit the method by
-        returning false. If there are no negative numbers on the list, we get to the end and therefore can return true.
-        We have now gotten rid of the helper variable inside the method!</p>
+        returning false. If there are no negative numbers on the list, we get to the end and therefore can return the value true.
+        We now got rid of the helper variable inside the method!</p>
 
         <div class="tehtavat">
             <div class="tehtava">
-                <h3 class="req">Is the number more than once on the list?</h3>
+                <h3 class="req">Is the number more than once in the list?</h3>
 
                 <p>Create the method <code>moreThanOnce</code> that gets a list of integers and an integer (i.e.
-                number) as parameters. If the number appears on the list <em>more than once</em> the method returns
+                number) as parameter. If the number appears on the list <em>more than once</em> the method returns
                 <code>true</code> and otherwise <code>false</code>.</p>
 
                 <p>The program body is the following:</p>
@@ -5025,7 +5024,7 @@ Type a number: <font color="red">3</font>
             <div class="tehtava">
                 <h3>Palindrome</h3>
 
-                <p>Create the method <code>palindrome</code> that checks if a string is a palindrome (the string reads
+                <p>Create the method <code>palindrome</code> that checks if a string is a palindrome (reads
                 the same forward and backward).</p>
 
                 <p>The method can use the method <code>reverse</code> (<a href="#e56">from assignment number 56.

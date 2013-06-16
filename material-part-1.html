@@ -5255,9 +5255,9 @@ public static int addThreeAndReturn(int incremented) {
                         <h3>Combining ArrayLists</h3>
 
                         <p>Create the method <code>public static void combine(ArrayList&lt;Integer&gt; first,
-                        ArrayList&lt;Integer&gt; second)</code> that inserts the items in the list called
-                        <code>second</code> to the list called <code>first</code>. The order of the items can be
-                        anything and the same item can appear on the list more than once. An example on using the
+                        ArrayList&lt;Integer&gt; second)</code> that inserts the items in a list called
+                        <code>second</code> to a list called <code>first</code>. The order of the items can be
+                        anything and the same item can appear in the list more than once. An example on using the
                         method:</p>
 
 <pre class="sh_java">
@@ -5279,7 +5279,7 @@ public static int addThreeAndReturn(int incremented) {
     System.out.println(list2); // prints [5, 10, 7] 
 </pre>
 
-                        <p>We can use the method <code>addAll</code> provided by the ArrayList class to add one list to
+                        <p>We can use the method <code>addAll</code> provided by the ArrayList class to add one list in
                         another list. The list gets the other list, whose items are to be added, as a parameter.</p>
                     </div>
 
@@ -5287,10 +5287,10 @@ public static int addThreeAndReturn(int incremented) {
                         <h3>Smart combining</h3>
 
                         <p>Create the method <code>smartCombine</code> that works like the previous
-                        <code>combine</code> method except that numbers can be on the list only once. So the method
+                        <code>combine</code> method except that numbers can be on the list only once. This means that the method
                         adds a new number to the list only if the list does not already contain that number. You might
                         find the method <code>contains</code> from the ArrayList class useful. You can use that method
-                        to check if a number is on the list.</p>
+                        to check if a number is in the list.</p>
                     </div>
                 </div>
 
@@ -5306,14 +5306,13 @@ public static int addThreeAndReturn(int incremented) {
                     habits."</em></li>
                 </ul>
 
-                <p>We are now taking the first steps towards those goals.</p>
+                <p>We are now taking the first steps towards becomming good programmers.</p>
 
                 <h3>Well indented and "breathing" code</h3>
 
-                <p>Let us take a look at a code that first adds numbers to a list and then prints the list items. After
-                that all instances of a certain number are removed from the list and the list gets printed.</p>
+                <p>Let us take a look at a code that first adds numbers to a list and then prints the items fo the list. Then all instances of a certain number are removed from the list and the list gets printed.</p>
 
-                <p>First we write the code badly and without indentations:</p>
+                <p>First, we write the code badly and without indentations:</p>
 
 <pre class="sh_java">
  
@@ -5337,7 +5336,7 @@ System.out.println(number);
 </pre>
 
                 <p>Even though the unindented code works, it is unpleasant to read. Let us indent the code (you can get
-                NetBeans to auto-indent your code by pressing alt+shift+f) and separate logical parts with line
+                NetBeans to auto-indent your code by pressing Alt+Shift+F) and separate logical parts with line
                 breaks:</p>
 
 <pre class="sh_java">
@@ -5370,17 +5369,17 @@ System.out.println(number);
         } 
 </pre>
 
-                <p>Now the code starts to make sense. For example, the printing and the number removal are two logical
+                <p>Now, the code starts to make sense. For example, the printing and the number removal are two logical
                 parts, therefore they are separated with line breaks. The code is <em>airy</em> and reading the code is
                 much more pleasant.</p>
 
-                <p>There are even comments in the code to help the reader understand what happens where!</p>
+                <p>There are even comments in the code to help the reader understand what happens and where!</p>
 
                 <h3>Getting rid of copy-paste with methods</h3>
 
-                <p>The original sin of a programmer is to create copy-paste code, which means using the same code in
-                multiple places by copy-pasting it around. In our example the printing of the list is done twice. The
-                code that handles the printing part should be separated as its own method and then call the method from
+                <p>What could be called the Original sin of a programmer is to create copy-paste code. This means using the same code in
+                multiple places by copy-pasting it around the source code. In our example, the printing of the list is done twice. The
+                code that handles the printing part should be separated as its own method. Then the printing method should be called from
                 the main program:</p>
 
 <pre class="sh_java">
@@ -5415,15 +5414,15 @@ System.out.println(number);
 
                 <h3>Slicing separate tasks into methods with descriptive names</h3>
 
-                <p>The code has become even more easy to read. A distinctively separate entity, the printing of the
+                <p>Now, the code has become even more easy to read. A distinctively separate entity, the printing of the
                 list is now a method that is easy to understand. By defining a new method the readability of the main
-                program has improved. Pay attention to the descriptive name of the method: the name says exactly what
-                the method does. Next we can remove the advising comments <em>here we print numbers</em> , because the
-                method name speaks for itself.</p>
+                program has improved. Pay attention to the descriptive name of the method: the name describes exactly what
+                the method does. Next, we can remove the advising comments <em>here we print numbers</em> , because the name of the
+                method speaks for itself.</p>
 
-                <p>There is still room for improvements in the program. The main program still looks a bit messy, since
+                <p>There is still room for improvements in writing the program. The main program still looks a bit messy, since
                 there is an "unaesthetic" code line that directly manipulates the list, in between the neat
-                method calls. Let us turn also that unaesthetic piece of code into a method:</p>
+                method calls. Let us turn that unaesthetic piece of code into a method:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -5455,12 +5454,12 @@ System.out.println(number);
     }
 </pre>
 
-                <p>In the example above we created a new descriptively named method out of a separate logical entity,
+                <p>In the example above, we created a new descriptively named method out of a separate logical entity,
                 i.e. removing all the instances of a certain number. The resulting main program is now very
                 understandable - almost like natural language. Both methods are very simple and easy to understand as
                 well.</p>
 
-                <p>Kent Beck might be proud of what we have accomplished. The code is easy to understand, easy to
+                <p>Kent Beck might be proud of what we have accomplished! The code is easy to understand, easy to
                 modify and does not include any copy-paste.</p><!--
 
 DEPRECATED
@@ -5541,12 +5540,12 @@ Alla oleva materiaali on nyt oikea. Sisältää jo koko ohpen. Mukaanlukien 1 jo
 
                 <h2 id="olio_ohjelmointi">Object-oriented programming</h2>
 
-                <p>Before we begin, here's a little intro to object-oriented programming.</p>
+                <p>Before we begin, here is a small introduction to object-oriented programming.</p>
 
-                <p>In procedural programming - which is the way of programming we've been studying so far - a
+                <p>In procedural programming - which is the way of programming we have been studying so far - a
                 program is divided in to smaller parts, methods. A method works as a separate part of a program and it
                 can be called from anywhere in the program. When a method is called, execution of the program moves to
-                the beginning of the called method. After execution of the method is done, the program will continue
+                the beginning of the called method. After the execution of the method is done, the program will continue
                 from where the method was called.</p>
 
                 <p>In object oriented programming, just like in procedural programming, we attempt to divide a program
@@ -5557,7 +5556,7 @@ Alla oleva materiaali on nyt oikea. Sisältää jo koko ohpen. Mukaanlukien 1 jo
 
                 <h3>Object</h3>
 
-                <p>We've used many of the ready-made objects in Java already. For example, <code>ArrayLists</code>
+                <p>We have already used many of the ready-made objects in Java. For example, <code>ArrayLists</code>
                 are objects. Each separate list consists of information related to it; that is, <i>the state of the
                 object</i>. Functionality is also contained in the list objects: the methods by which the state of the
                 object can be altered. As an example there's two ArrayList objects in the following piece of code,

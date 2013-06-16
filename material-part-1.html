@@ -5558,9 +5558,9 @@ Alla oleva materiaali on nyt oikea. Sisältää jo koko ohpen. Mukaanlukien 1 jo
 
                 <p>We have already used many of the ready-made objects in Java. For example, <code>ArrayLists</code>
                 are objects. Each separate list consists of information related to it; that is, <i>the state of the
-                object</i>. Functionality is also contained in the list objects: the methods by which the state of the
-                object can be altered. As an example there's two ArrayList objects in the following piece of code,
-                cities and <code>countries</code> :</p>
+                object</i>. Functionality is also contained in the ArrayList objects: the methods by which the state of the
+                object can be altered. As an example, there are two ArrayList objects in the following piece of code,
+                <code>cities</code> and <code>countries</code> :</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -5584,23 +5584,23 @@ Alla oleva materiaali on nyt oikea. Sisältää jo koko ohpen. Mukaanlukien 1 jo
                 <p>Both the <code>countries</code> object and the <code>cities</code> object live a life of their own.
                 The state of each is not related to the state of the other. For example, the state of the
                 <code>countries</code> object consists of the Strings "Finland", "Germany" and
-                "Netherlands" that are on the list, probably also the information of how many countries are
+                "Netherlands" that are in the list, probably also the information of how many countries are
                 in the list.</p>
 
                 <p>When doing a method call related to an object (for example,
                 <code>countries.add("Finland");</code>), the name of the object whose method is being called
-                goes to the left side of the period and to the right side goes the name of the method itself. When
-                asking how many Strings the <code>countries</code> list has we will call countries.size(), so we are
+                goes to the left side of the period sign (dot), and to the right side goes the name of the method itself. When
+                asking how many Strings the <code>countries</code> list contains, we call countries.size(). We are
                 calling the method <code>size</code> of the object <code>countries</code>. What the method returns
-                depends on the state of the object in question, other objects don't affect the execution of the
+                depends on the state of the object in question, other objects do not affect the execution of the
                 method in any way.</p>
 
-                <p>We've used the command <code>new</code> many times already. For example the creation of a list
-                (<code>ArrayList</code>) and the creation of a reader (<code>Scanner</code>) have happened with the
+                <p>We have used the command <code>new</code> many times already. For example, creation of a list
+                (<code>ArrayList</code>) and creation of a reader (<code>Scanner</code>) have been done using the
                 command <code>new</code>. The reason is that both of these are <em>classes</em> from which the object
-                is created. in Java, objects are always created with <code>new</code>, except in a few cases.</p>
+                is created. In Java, objects are always created with <code>new</code>, except in a few cases.</p>
 
-                <p>One of the cases where you don't always need to use <code>new</code> is in the construction of
+                <p>One of the cases where you do not always need to use <code>new</code> is in the construction of
                 Strings. The familiar way to create a String is actually an abbreviated way of using <code>new</code>.
                 A String can also be created with new just like any other object:</p>
 
@@ -5609,7 +5609,7 @@ Alla oleva materiaali on nyt oikea. Sisältää jo koko ohpen. Mukaanlukien 1 jo
         String anotherText = new String("more text");  
 </pre>
 
-                <p>Cases in which Java's ready-made parts call <code>new</code> out of sight of the programmer also
+                <p>Cases in which ready-made parts of Java call <code>new</code> out of sight of the programmer also
                 exist.</p>
 
                 <h3>Class</h3>

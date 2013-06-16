@@ -5078,11 +5078,11 @@ The text is not a palindrome!
         data-first-exercise-index="70" data-first-week-index="4" data-first-chapter-index-mooc="20"
         data-first-exercise-index-mooc="70" data-first-week-index-mooc="4" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
             <div class="week" data-week-number="4">
-                <h2>Methods and the copying of parameters</h2>
+                <h2>Methods and copying parameters</h2>
 
                 <p>Let us focus on a couple of details concerning methods.</p>
 
-                <p>In section 15 there was an example, in which we tried to change the value of a main program variable
+                <p>In section 15 was an example, in which we tried to change the value of a main program variable
                 inside a method.</p>
 
 <pre class="sh_java">
@@ -5098,12 +5098,12 @@ public static void addThree() {
 } 
 </pre>
 
-                <p>This program of ours does not work, because the method cannot access the main program variable
+                <p>This program of ours does not work. The reason is that the method cannot access the main program variable
                 <code>number</code>.</p>
 
-                <p>That is because main program variables are not visible to the methods. And more generally: no method
-                variable is visible to other methods. Because the main program <code>main</code> is also a method, this
-                holds for the main program as well. The only way to give information to a method is to use
+                <p>This is because main program variables are not visible to methods. More generally: no method
+                variable is visible to other methods. As the main program <code>main</code> is also a method, this constraint
+                holds for the main program as well. The only way to give information to a method is through
                 parameters.</p>
 
                 <p>Let us try to fix the above example by passing the main program variable <code>number</code> to the
@@ -5122,32 +5122,32 @@ public static addThree(int number) {
 } 
 </pre>
 
-                <p>The program still does not work the way we want. The method parameters are different variables than
-                the ones introduced in the main program. In the previous example the method increments a variable with
+                <p>Still, the program does not function the way we want. The method parameters are different variables than
+                the ones introduced in the main program. In the previous example, the method increments a variable with
                 the same name as the main program variable. The parameter has the same name, but is not the same as the
                 main program variable <code>number</code>.</p>
 
                 <p>When a parameter is given to a method, the value of the parameter <em>is copied into a new
-                variable</em> and that new variable is the one the method uses. In the example above the variable
-                <code>number</code> that was given to the method <code>addThree</code> as a parameter will be copied
-                and then the copy is actually handed out to the method to use. The method uses only a copy of the
+                variable</em> and that new variable is the one the method uses. In the example above, the variable
+                <code>number</code> that was given to the method <code>addThree</code> as a parameter, will be copied
+                and then the copy is actually handed out for the method to use. The method uses a copy of the
                 variable from the main program, not the original variable. The main program variable
                 <code>number</code> stays unchanged.</p>
 
                 <p>We can imagine that the main program method <code>main</code> and the method <code>addThree</code>
-                both work in their own parts of the computer memory. In the picture below there is a "box"
+                both work in their own parts of the computer memory. In the picture below, there is a "box"
                 for the value of the variable <code>number</code> of the main method. When the method is called, a new
-                "box" named <code>number</code> will be created and the main method variable
-                <code>number</code>'s value will be copied into it. In this example the number is 1. Both variables
+                "box" named <code>number</code> will be created and the main value of  the method variable
+                <code>number</code> will be copied into it. In this example, the number is 1. Both variables
                 that are called <code>number</code> are separate, therefore when the method <code>addThree</code>
                 changes the value of its own variable called <code>number</code> it does not affect the variable
                 <code>number</code> in the main program.</p>
 
                 <p>The picture below will demonstrate what happens.</p>
 
-                <p><img src="img/metodi1.png"></p>
+                <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/metodi1.png"></p>
 
-                <p>The method can still naturally pass information to the caller, that happens by using a return value
+                <p>The method can still naturally pass information to the caller, which happens by using a return value
                 (i.e. using a <code>return</code> command to return a variable with a value). We can get the previous
                 example to work by changing the code a little bit:</p>
 
@@ -5167,10 +5167,10 @@ public static int addThreeAndReturn(int number) {
 } 
 </pre>
 
-                <p>The method still uses the copy of the main program variable <code>number</code>. In the main program
+                <p>The method still uses the copy of the main program variable <code>number</code>. In the main program,
                 we assign the variable <code>number</code> the method return value as a new value, so that we can get
                 the change to take effect in the main program. Note that the name of the method variable plays no role
-                here. The code works exactly the same regardless of the names. Here follows an example:</p>
+                here. The code works exactly the same regardless of the variable names. Here follows an example:</p>
 
 <pre class="sh_java">
  
@@ -5188,10 +5188,10 @@ public static int addThreeAndReturn(int incremented) {
 } 
 </pre>
 
-                <p>We found out that the parameters in methods are different variables than the variables introduced in
+                <p>We have now found out that the parameters in methods are different variables than the variables introduced in
                 the method call. Only the parameter value gets copied from the caller to the method.</p>
 
-                <p>Unfortunately it is not that simple. If a method gets an <code>ArrayList</code> as a parameter, the
+                <p>Unfortunately this is not the whole story. If a method gets an <code>ArrayList</code> as a parameter, the
                 method sees the original list and all the changes the method makes will take effect everywhere.</p>
 
 <pre class="sh_java">
@@ -5225,29 +5225,29 @@ public static int addThreeAndReturn(int incremented) {
                 "box" like an <code>int</code>. The variable name in the example <code>numbers</code> is only
                 a <em>reference</em> that refers to the place where the ArrayList is. One way to visualize this is that
                 an <code>ArrayList</code> is connected with a wire. The name of the <code>ArrayList</code> is a
-                "wire", and the list itself is located "in the other end of the wire". When we give
-                the <code>ArrayList</code> to a method as a parameter we actually give the method a wire, and when the
-                method uses its parameter it finds the original list at the other end of it. Actually the main program
+                "wire", and the list itself is located "at the other end of the wire". When we give
+                the <code>ArrayList</code> to a method as a parameter, we actually give the method a wire. When the
+                method uses its parameter, it finds the original list at the other end of this wire. Actually the main program
                 and the method do have separate wires, but both wires have the same original list at the end of them
                 and all the changes will be made directly to the original list. During and after this week we will find
                 out that many things in Java are "connected with a wire".</p>
 
-                <p><img src="img/metodi-lanka.PNG" height="400"></p>
+                <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/metodi-lanka.PNG" height="400"></p>
 
                 <p>Note that again the parameter name inside the method can be anything. It does not need to be the
-                same as the name in the main program (or other method that calls it). In the example above the method
-                uses the name <code>list</code> but the method caller sees the same list with a different name,
+                same as the name in the main program (or other method that calls it). In the example above, the method
+                uses the name <code>list</code> but the method caller sees the same list with a different name:
                 <code>numbers</code>.</p>
 
-                <p>But why does the value of the parameter get copied and the original variable stay intact when the
-                parameter is of <code>int</code> type but the original list is given to the method when the parameter
+                <p>Now, you probably start to wonder why does the value of the parameter get copied and the original variable stay intact when the
+                parameter is of <code>int</code> type, but the original list is given to the method when the parameter
                 is of <code>ArrayList</code> type? In Java only the values of <strong><em>primitive data
                 types</em></strong> (which are <code>int</code>, <code>double</code>, <code>char</code>,
                 <code>boolean</code> and a couple of others that we have not yet discussed) get copied to the method.
                 When the method parameters are of other types only the <em>references</em> are copied to the method. A
                 reference is like a "wire", therefore the method can access the list using it directly. The
                 variables that are not of primitive data types are of <strong><em>reference data types</em></strong>
-                and are "wired" just like the ArrayList in the previous example. The method is given to the
+                and are "wired" just like the ArrayList in the previous example. The method is given the
                 wire and the method can access the parameter directly.</p>
 
                 <div id="viikko4" class="tehtavat">
@@ -5255,7 +5255,7 @@ public static int addThreeAndReturn(int incremented) {
                         <h3>Combining ArrayLists</h3>
 
                         <p>Create the method <code>public static void combine(ArrayList&lt;Integer&gt; first,
-                        ArrayList&lt;Integer&gt; second)</code> that inserts the items on the list called
+                        ArrayList&lt;Integer&gt; second)</code> that inserts the items in the list called
                         <code>second</code> to the list called <code>first</code>. The order of the items can be
                         anything and the same item can appear on the list more than once. An example on using the
                         method:</p>

@@ -5669,9 +5669,9 @@ Alla oleva materiaali on nyt oikea. Sisältää jo koko ohpen. Mukaanlukien 1 jo
                     <div class="tehtava">
                         <h3>Accounts</h3>
 
-                        <p>You get a ready-made class <code>Account</code> along with your exercise files. The object
-                        of the class <code>Account</code> represents a bank account, which has a balance (meaning some
-                        amount of money). The accounts are used like this:</p>
+                        <p>You are handed a ready-made class <code>Account</code> along with your exercise files. The object
+                        of the class <code>Account</code> represents a bank account that has a balance (meaning some
+                        amount of money). The accounts are used as follows:</p>
 
 <pre class="sh_java">
 Account bartosAccount = new Account("Barto's account",100.00);
@@ -5725,25 +5725,25 @@ System.out.println(bartosSwissAccount);
                         <p><b>Note:</b> there is a different exercise template for each of the sub-exercises.
                         For this exercise use the template 072.3</p>
 
-                        <p>In the above program you made a money transfer from one person to another. Let us next
+                        <p>In the above program, you made a money transfer from one person to another. Let us next
                         create a method that does the same!</p>
 
                         <p>Create the method <code>public static void transfer(Account from, Account to, double
                         howMuch)</code> in the given program body. The method transfers money from one account to
                         another. You do not need to check that the <code>from</code> account has enough balance.</p>
 
-                        <p>After doing that make sure that your <code>main</code> method does the following:</p>
+                        <p>After completing the above, make sure that your <code>main</code> method does the following:</p>
 
                         <ol>
-                            <li>Create an account <code>"A"</code> with the balance of 100.0</li>
+                            <li>Creates an account <code>"A"</code> with the balance of 100.0</li>
 
-                            <li>Create an account <code>"B"</code> with the balance of 0.0</li>
+                            <li>Creates an account <code>"B"</code> with the balance of 0.0</li>
 
-                            <li>Create an account <code>"C"</code> with the balance of 0.0</li>
+                            <li>Creates an account <code>"C"</code> with the balance of 0.0</li>
 
-                            <li>Transfer 50.0 from account A to account B</li>
+                            <li>Transfers 50.0 from account A to account B</li>
 
-                            <li>Transfer 25.0 from account B to account C</li>
+                            <li>Transfers 25.0 from account B to account C</li>
                         </ol>
                     </div>
                 </div>
@@ -5769,19 +5769,19 @@ System.out.println(bartosSwissAccount);
 <span class="sh_cbracket">}</span>
 </pre>
 
-                <p>We will create a new class in our project. In NetBeans this can be done in <em>projects</em> on the
-                left, from the right click menu select <em>new</em>, <em>java class</em>. We'll name the class in
+                <p>We will create a new class in our project. In NetBeans, this can be done in <em>projects</em> on the
+                left, from the right click menu select <em>new</em>, <em>java class</em>. We will name the class in
                 the dialog that pops up.</p>
 
-                <p>Just like with variables and methods the name of the class should always be as descriptive as
+                <p>Just as with variables and methods, the name of the class should always be as descriptive as
                 possible. Sometimes as a project progresses a class might transform into something different in order
-                meet the programmer's needs. In situations like this it's possible to rename your class with
+                meet the programmer's needs. In situations like this, it is possible to rename your class with
                 ease (<a href="http://www.cs.helsinki.fi/group/java/k12-preview/netbeans-english.html">see the NetBeans
                 guide</a>).</p>
 
-                <p>Lets create a class named <code>Person</code>. The class will exist in its own
-                <code>Person.java</code> file. So since the main program is in its own file the program now consists of
-                two files total. At first the class will be empty:</p>
+                <p>Let us create a class named <code>Person</code>. The class will exist in its own
+                <code>Person.java</code> file. Since the main program is in its own file the program now consists of
+                two files in total. At first the class will be empty:</p>
 
 <pre class="sh_java sh_sourceCode">
 <span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
@@ -5803,25 +5803,25 @@ System.out.println(bartosSwissAccount);
 <span class="sh_cbracket">}</span>
 </pre>
 
-                <p>Above we defined that all instances created from the <code>Person</code> class have a name and an
-                age. Defining the attributes happens a little like how it happens with normal variables. In this case
-                though there's the keyword <code>private</code> in front of them. This means that <code>name</code>
-                and <code>age</code> won't show outside of the object, but instead are hidden within it. Hiding
+                <p>Above, we defined that all instances created from the <code>Person</code> class have a name and an
+                age. Defining attributes is done in a quite similar fashion as with normal variables. In this case
+                though, there is the keyword <code>private</code> in front. This keyword means that <code>name</code>
+                and <code>age</code> will not show outside of the object, but are instead hidden within it. Hiding
                 things within an object is called <em>encapsulation</em>.</p>
 
                 <p>Variables defined within a class are called <i>object variables</i>, <i>object fields</i> or
                 <i>object attributes</i>. A beloved child has many names.</p>
 
-                <p>So, we've defined the schematics -- the class -- for the person object. All person objects have
+                <p>So, we have defined the schematics -- the class -- for the person object. All person objects have
                 the variables <code>name</code> and <code>age</code>. The 'state' of the objects is determined
                 by the values that have been set to its variables.</p>
 
                 <h3>Defining your own class - constructor, or "formatting the state"</h3>
 
                 <p>When an object is created its starting state is defined at the same time. Self-defined objects are
-                created for the most part in the same way as ready-made objects (<code>ArrayList</code>s for example)
-                are created. Objects are created with the <code>new</code> command. When creating an object it'd be
-                handy to be able to set the values of some of the variables of the object.</p>
+                created for the most part in the same way as ready-made objects (<code>ArrayList</code> objects for example)
+                are created. Objects are created with the <code>new</code> command. When creating an object it would be
+                handy to be able to set the values of some of the variables of that object.</p>
 
 <pre class="sh_java sh_sourceCode">
     <span class="sh_keyword">public</span> <span class="sh_keyword">static</span> <span class=
@@ -5834,10 +5834,10 @@ System.out.println(bartosSwissAccount);
     <span class="sh_cbracket">}</span>
 </pre>
 
-                <p>This can be achieved by defining the object creating method, <em>the constructor</em>. The
+                <p>This can be achieved by defining the method that creates the object, <em>the constructor</em>. The
                 constructor for the <code>Person</code> class that creates a new <code>Person</code> object has been
-                defined in the following. In the constructor the person that is being created gets 0 as its age and its
-                name it gets from the parameter of the constructor.</p>
+                defined in the following example. In the constructor, the person that is being created gets 0 as her age and her
+                name is received from the parameter of the constructor.</p>
 
 <pre class="sh_java sh_sourceCode">
 <span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
@@ -5864,23 +5864,23 @@ System.out.println(bartosSwissAccount);
                 Person("Bob");</code> Whenever an object is created from a class, the constructor of that
                 class is called.</p>
 
-                <p>A few notes: within the constructor there's a command <code>this.age = 0</code>. With it we set
-                a value of this particular object; we set the internal variable age of "this" object. Another
-                command is <code>this.name = initialName;</code>, again we give the internal variable name the String
-                that is defined in the constructor. The variables <code>age</code> and <code>name</code> show in the
-                constructor and elsewhere in the object automatically. They are referred to with the <code>this</code>
-                prefix. Due to the <code>private</code> modifier the variables can't be seen from outside the
+                <p>A few notes: within the constructor there is a command <code>this.age = 0</code>. Through it, we set
+                a value for this particular object; we define the internal variable age of "this" object. Another
+                command we use is <code>this.name = initialName;</code>. Again, we give the internal variable called name the String
+                that is defined in the constructor. The variables <code>age</code> and <code>name</code> are automatically visible in the
+                constructor and elsewhere in the object. They are referred to with the <code>this</code>
+                prefix. Due to the <code>private</code> modifier, the variables cannot be seen from outside the
                 object.</p>
 
-                <p>One more thing: if the programmer doesn't create a constructor for the class, Java will
-                automatically create a default one for it. A default constructor is a constructor that does nothing. So
-                if you for some reason don't need a constructor you don't need to write one.</p>
+                <p>One more thing: if the programmer does not create a constructor for her class, Java will
+                automatically create a default constructor for it. A default constructor is a constructor that does nothing. So,
+                if you for some reason do not need a constructor you do not need to write one.</p>
 
                 <h3>Class definition - methods</h3>
 
                 <p>We already know how to create and initialize objects. However, objects are useless if they cannot do
-                anything, so objects should have methods. Let us add to <code>Person</code> class a method that prints
-                the object to screen:</p>
+                anything. Therefore, objects should have methods. Let us add to the <code>Person</code> class a method that prints
+                the object on the screen:</p>
 
 <pre class="sh_java">
 public class Person {
@@ -5898,12 +5898,12 @@ public class Person {
 }
 </pre>
 
-                <p>As seen, the method is written within the class. The method name is prefixed with <code>public
+                <p>As seen above, the method is written within the class. The method name is prefixed with <code>public
                 void</code> since it is assumed that users of the object should be capable of using the method and the
                 method should not return anything. With objects the keyword <code>static</code> is not used in method
-                definitions. Next week we will clarify the reason behind that.</p>
+                definitions. Next week, we will clarify the reason behind that.</p>
 
-                <p>Inside the method <code>printPerson</code> there is a single line of code that uses the object
+                <p>Inside the method <code>printPerson</code>, there is a single line of code that uses the object
                 variables <code>name</code> and <code>age</code>. The prefix <code>this</code> is used to emphasize
                 that we are referring to the name and age of <em>this</em> object. All the object variables are visible
                 from all the methods of the object.</p>
@@ -5947,10 +5947,10 @@ Martin, age 0 years
                         <p>The class should have:</p>
 
                         <ul>
-                            <li>Constructor <code>public Product(String nameAtStart, double priceAtStart, int
+                            <li>A constructor <code>public Product(String nameAtStart, double priceAtStart, int
                             amountAtStart)</code></li>
 
-                            <li>Method <code>public void printProduct()</code> that prints a product in the following
+                            <li>A method <code>public void printProduct()</code> that prints a product in the following
                             form:
 
 <pre>
@@ -6012,13 +6012,13 @@ Andrew, age 0 years
 </pre>
 
                 <p>When born, both objects have age 0 due to the line <code>this.age = 0;</code> in the constructor.
-                Method <code>becomeOlder</code> of object <code>pekka</code> is called twice. As the output shows, this
+                The method <code>becomeOlder</code> of object <code>pekka</code> is called twice. As the output shows, this
                 causes the age of pekka to increase by two. It should be noted that when the method
-                <code>becomeOlder</code> is called to object <code>pekka</code>, the other object <code>andrew</code>
-                is not touched at all and he remains at age 0. So the state of an object is independent of the other
+                <code>becomeOlder</code> is called in the object <code>pekka</code>, the other object <code>andrew</code>
+                is not touched at all and he remains at age 0. The state of an object is independent of the other
                 objects!</p>
 
-                <p>Also the object methods can return a value to the caller of the method. Let us define a method that
+                <p>Also, the object methods can return a value to the caller of the method. Let us define a method that
                 can be used to ask for the age of a person:</p>
 
 <pre class="sh_java">
@@ -6032,7 +6032,7 @@ public class Person {
 </pre>
 
                 <p>Now the <code>void</code> in the method definition is replaced with <code>int</code> since the value
-                the method returns has the type integer. The following example demonstrates how the value returned by a
+                the method returns has the type integer. The following example demonstrates, how the value returned by a
                 method can be used:</p>
 
 <pre class="sh_java">
@@ -6073,14 +6073,14 @@ Pekka and Andrew total of 3 years old
                         <p>Implement the class <code>Multiplier</code> that has:</p>
 
                         <ul>
-                            <li>constructor <code>public Multiplier(int number)</code>.</li>
+                            <li>a constructor <code>public Multiplier(int number)</code>.</li>
 
-                            <li>method <code>public int multiply(int otherNumber)</code> that returns
+                            <li>a method <code>public int multiply(int otherNumber)</code> that returns
                             <code>otherNumber</code> multiplied by <code>number</code> (i.e., the constructor
                             parameter).</li>
                         </ul>
 
-                        <p>Example of the usage:</p>
+                        <p>Example of usage:</p>
 
 <pre class="sh_java">
 Multiplier threeMultiplier = new Multiplier(3);
@@ -6155,10 +6155,10 @@ value: 9
 value: 8
 </pre>
 
-                        <p>The constructor of <code>DecreasingCounter</code> gets as parameter the initial value of
-                        counter. In the example the constructor parameter is <code>10</code> which is then set to the
-                        object variable <code>this.value</code>. The value of the counter can be printed with method
-                        <code>printValue()</code>. The method <code>decrease()</code> should decrease the value of
+                        <p>The constructor of <code>DecreasingCounter</code> receives as parameter the initial value of
+                        the counter. In the example, the constructor parameter is <code>10</code>, which is then set to the
+                        object variable <code>this.value</code>. The value of the counter can be printed with the method
+                        <code>printValue()</code>. The method <code>decrease()</code> should decrease the value of the
                         counter by one.</p>
 
                         <h4>Implementing method decrease()</h4>
@@ -6204,7 +6204,7 @@ value: 0
                         <h4>Counter reset</h4>
 
                         <p>Implement the method <code>public void reset()</code> that sets the value of the counter to
-                        zero. Example of the usage:</p>
+                        zero. Example of usage:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -6232,7 +6232,7 @@ value: 0
 
                         <h4>Back to initial value</h4>
 
-                        <p>Implement the method <code>public void setInitial()</code>, that returns the counter to its
+                        <p>Implement the method <code>public void setInitial()</code>, which returns the counter to its
                         initial value:</p>
 
 <pre class="sh_java">
@@ -6274,7 +6274,7 @@ value: 100
                     <div class="tehtava">
                         <h3>Menu</h3>
 
-                        <p>In this assignment we will implement a class <code>Menu</code> that holds information about
+                        <p>In this assignment, we will implement a class <code>Menu</code> that holds information about
                         meals that are available in a cafeteria.</p>
 
                         <p>Our starting point is the following class skeleton:</p>
@@ -6294,19 +6294,19 @@ public class Menu {
 }
 </pre>
 
-                        <p>Menu objects store the information on meals using an object variable of type
+                        <p>Menu objects store the information of meals using an object variable of type
                         ArrayList&lt;String&gt;</p>
 
                         <h4>Adding a meal to menu</h4>
 
                         <p>Implement the method <code>public void addMeal(String meal)</code> that adds a new meal to
-                        the list <code>this.meals</code> of a Menu object. If the meal is already on the list, it
-                        shoulf not be added.</p>
+                        the list <code>this.meals</code> of a Menu object. If the meal is already in the list, it
+                        should not be added.</p>
 
                         <h4>Printing the menu</h4>
 
-                        <p>Implement the method <code>public void printMeals()</code>, that prints the meals on a menu.
-                        As example the output after three additions could be:</p>
+                        <p>Implement the method <code>public void printMeals()</code> that prints the meals in a menu.
+                        As an example, the output after three additions could be:</p>
 
 <pre>
 Hamburger
@@ -6316,8 +6316,8 @@ Sauerkraut
 
                         <h4>Clearing a menu</h4>
 
-                        <p>Implement the method <code>public void clearMenu()</code> that clears a menu, so after
-                        calling this method the menu should be empty. Class <code>ArrayList</code> has a method that is
+                        <p>Implement the method <code>public void clearMenu()</code> that clears a menu. After
+                        calling this method, the menu should be empty. Class <code>ArrayList</code> has a method that is
                         useful here. Within your method body write <code>meals.</code> and see how NetBeans helps you
                         by showing the available methods.</p>
                     </div>
@@ -6325,7 +6325,7 @@ Sauerkraut
 
                 <h3>The Person class grows</h3>
 
-                <p>Let us get back to working on the <code>Person</code> class. The current version of the class looks
+                <p>Let us get back to work on the <code>Person</code> class. The current version of the class looks
                 like this:</p>
 
 <pre class="sh_java sh_sourceCode">
@@ -6363,7 +6363,7 @@ Sauerkraut
 <span class="sh_cbracket">}</span>
 </pre>
 
-                <p>Let us create a method for person, with which we can figure out if a person is an adult. The method
+                <p>Let us create a method for person that can figure out if a person is an adult. The method
                 returns a boolean -- either <code>true</code> or <code>false</code>:</p>
 
 <pre class="sh_java sh_sourceCode">
@@ -6393,7 +6393,7 @@ Sauerkraut
 <span class="sh_cbracket">}</span>
 </pre>
 
-                <p>Lets test it:</p>
+                <p>Let us test it:</p>
 
 <pre class="sh_java sh_sourceCode">
     <span class="sh_keyword">public</span> <span class="sh_keyword">static</span> <span class=
@@ -6462,9 +6462,9 @@ minor: Andy, age 1 years
 adult: bob, age 30 years
 </pre>
 
-                <p>Let us tune up the solution a little further. Now a person can only be printed so that in addition
-                to the name, the age also gets printed out. In some cases we might only want the name of the object.
-                Let us tailor up a method for the purpose:</p>
+                <p>Let us tune up the solution a little further. Now, a person can only be printed in a manner where in addition
+                to the name, the age also gets printed. In some cases, we might only want to print the name of the object.
+                Let us tailor a method for this purpose:</p>
 
 <pre class="sh_java sh_sourceCode">
 <span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
@@ -6481,7 +6481,7 @@ adult: bob, age 30 years
 </pre>
 
                 <p>The method <code>getName</code> returns the object variable <code>name</code> to its caller. The
-                name of the method might seem a little odd (or not). In Java it is considered the 'correct' way
+                name of the method might seem a little odd (or not). In Java, it is considered the 'correct' way
                 to name an object-variable-returning method in this manner; as <code>getVariableName</code>. Methods
                 like these are often called 'getters'.</p>
 
@@ -6554,10 +6554,10 @@ bob is an adult
 
                 <h3>toString</h3>
 
-                <p>We've been partially guilty of a bad programming style; we've created a method with which
-                the object is printed, the <code>printPerson</code> one. The recommended way of doing this is by
-                defining a method that returns a "character string representation" of the object. In Java a
-                method returning a String representation is always called <code>toString</code>. Let us define this
+                <p>We have been guilty of bad programming style; we have created a method to that prints an object,
+		<code>printPerson</code>. The recommended way of doing this is by
+                defining a method that returns a "character string representation" of the object. In Java, a
+                method returning a String representation is called <code>toString</code>. Let us define this
                 method for person:</p>
 
 <pre class="sh_java sh_sourceCode">
@@ -6578,7 +6578,7 @@ bob is an adult
 </pre>
 
                 <p>The method <code>toString</code> works just like <code>printPerson</code>, but instead of printing
-                it returns the string representation, so the calls to the method can be used for printing at will.</p>
+                it the method returns the string representation. The call to the method can be used for printing it if necessary.</p>
 
                 <p>The method is used in a slightly surprising way:</p>
 
@@ -6615,9 +6615,9 @@ bob is an adult
     <span class="sh_cbracket">}</span>
 </pre>
 
-                <p>The principle is that <code>System.out.println</code>-method requests the string representation of
-                an object and then prints it. The string representation a returning <code>toString</code>-method
-                doesn't have to be written, since Java adds it automatically. When the programmer writes:</p>
+                <p>The principle is that the <code>System.out.println</code> method requests the string representation of
+                an object and then prints it. The returned string representation of the <code>toString</code> method
+                does not have to be written, as Java adds it automatically. When the programmer writes:</p>
 
 <pre class="sh_java sh_sourceCode">
         System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
@@ -6632,24 +6632,24 @@ bob is an adult
 "sh_function">toString</span><span class="sh_symbol">()</span> <span class="sh_symbol">);</span>
 </pre>
 
-                <p>This means that an object gets asked for its string representation. The string representation the
-                object returns gets printed out normally with the <code>System.out.println</code>-command.</p>
+                <p>What happens is that the object is asked for its string representation. The string representation the
+                object is returned and is printed normally with the <code>System.out.println</code> command.</p>
 
-                <p><b>We can get rid of the obsolete <code>printObject</code>-method.</b></p><!-- screencast -->
+                <p><b>We can get rid of the obsolete <code>printObject</code> method.</b></p><!-- screencast -->
 
                 <div class="tehtavat">
                     <div class="tehtava">
                         <h3>Lyyra-card</h3>
 
-                        <p>The University of Helsinki students use so-called Lyyra cards to pay for their meals in
-                        student cafeterias. In this assignment we implement class <code>LyyraCard</code> that simulates
+                        <p>The University of Helsinki students use a so-called Lyyra cards to pay for their meals in
+                        student cafeterias. In this assignment, we implement the class <code>LyyraCard</code> that simulates
                         the Lyyra card.</p>
 
                         <h4 class="req">Class skeleton</h4>
 
-                        <p>Start by adding to your project the class <code>LyyraCard</code>.</p>
+                        <p>Start by adding the class <code>LyyraCard</code> to your project.</p>
 
-                        <p>Then implement the <code>LyyraCard</code> a constructor that gets the starting balance of
+                        <p>Then implement the <code>LyyraCard</code> constructor that gets the starting balance of
                         the card as parameter. The card saves the balance in the object variable <code>balance</code>.
                         Implement also the <code>toString</code> method that returns a string of the form "The
                         card has X euros".</p>
@@ -6670,7 +6670,7 @@ public class LyyraCard {
 }
 </pre>
 
-                        <p>The following main-program can be used to test the program:</p>
+                        <p>The following main program can be used to test the program:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -6836,22 +6836,22 @@ The card has 10.0 euros
                         <p>Write a main method that does the following:</p>
 
                         <ul>
-                            <li>Create LyyraCard for Pekka with initial balance of 20 euros</li>
+                            <li>Creates a LyyraCard for Pekka with initial balance of 20 euros</li>
 
-                            <li>Create LyyraCard for Brian with initial balance of 30 euros</li>
+                            <li>Creates a LyyraCard for Brian with initial balance of 30 euros</li>
 
                             <li>Pekka buys gourmet lunch</li>
 
                             <li>Brian buys economical lunch</li>
 
-                            <li>cards are printed (both to their own row, starting with the name of the card
+                            <li>cards are printed (both on their own row, starting with the name of the card
                             owner)</li>
 
                             <li>Pekka loads 20 euros</li>
 
                             <li>Brian buys gourmet lunch</li>
 
-                            <li>cards are printed (both to their own row, starting with the name of the card
+                            <li>cards are printed (both on their own row, starting with the name of the card
                             owner)</li>
 
                             <li>Pekka buys economical lunch</li>
@@ -6860,7 +6860,7 @@ The card has 10.0 euros
 
                             <li>Brian loads 50 euros</li>
 
-                            <li>cards are printed (both to their own row, starting with the name of the card
+                            <li>cards are printed (both on their own row, starting with the name of the card
                             owner)</li>
                         </ul>
 

@@ -6893,11 +6893,13 @@ Brian: The card has 73.5 euros
                 <h3>More methods</h3>
 
                 <p>Let us continue with the class <code>Person</code>. We would be interested in knowing the <a href=
-                "http://en.wikipedia.org/wiki/Body_mass_index">body mass index</a> of a person. To calculate that
-                information we need to know their height and weight. We add for both the height and the weight object
-                variables and methods that can be used to assign the variables a value. After those are in place, we
-                can add also the method that calculates the body mass index. The class after the changes (only the
-                parts affected by the change shown):</p>
+                "http://en.wikipedia.org/wiki/Body_mass_index">body mass index</a> of a person. To calculate the index,
+                we need to know the height and weight of the person. We add for both height and weight object
+                variables and methods that can be used to assign the variables a value. When this is in place, we
+                add a method that calculates the body mass index.</p>
+
+		<p>Here is the class <code>Person</code> after the changes (only the
+                parts affected by the change are shown):</p>
 
 <pre class="sh_java">
    public class Person {
@@ -6930,10 +6932,10 @@ Brian: The card has 73.5 euros
 }      
 </pre>
 
-                <p>We added object variables <code>height</code> and <code>weight</code> and methods
+                <p>We added object variables <code>height</code> and <code>weight</code>, and methods
                 <code>setHeight</code> and <code>setWeight</code> that can be used to give values to the variables. In
-                naming the methods we follow the Java convention to call a method that just sets a new value to a
-                variable <code>setVariableName</code>, this type of methods are usually called <em>setter
+                naming the methods, we follow the Java convention to call a method that just sets a new value to a
+                variable <code>setVariableName</code>. This type of methods are usually called <em>setter
                 methods</em>.</p>
 
                 <p>The new methods in use:</p>
@@ -6979,9 +6981,9 @@ John, body mass index: on 20.897959183673468
     }
 </pre>
 
-                <p>Now the name <code>height</code> menans the parameter <em>height</em> and the identically named
+                <p>Now, the name <code>height</code> means the parameter <em>height</em> and the identically named
                 object variable is referred to as <code>this.height</code>. The following would not work since the
-                object variable <em>height</em> is not referred to at all in the code:</p>
+                object variable <em>height</em> is not at all referred to in the code:</p>
 
 <pre class="sh_java">
     public void setHeight(int height) {
@@ -6998,11 +7000,11 @@ John, body mass index: on 20.897959183673468
                 technique to control how a float number is printed is to use the command
                 <code>String.format</code>.</p>
 
-                <p>If <code>value</code> is float, the command <code>String.value( "%.2f", value )</code>
+                <p>If <code>value</code> is a float number, the command <code>String.value( "%.2f", value )</code>
                 returns a string where the value is rounded to contain 2 decimals. The number between dot and f defines
                 the amount of decimals shown.</p>
 
-                <p>So after changing the code to the following:</p>
+                <p>After changing the code, we have the following:</p>
 
 <pre class="sh_java">
     System.out.println( matti.getName() + ", body mass index: " + String.format( "%.2f", matti.bodyMassIndex() ) );
@@ -7016,8 +7018,8 @@ Matti,  body mass index: 26,54
 John,  body mass index: 20,90
 </pre>
 
-                <p>Method <code>String.format</code> is perhaps not the most flexible way that Java provides for
-                formatting float values but it is simple to use and suits our purposes well.</p>
+                <p>The method <code>String.format</code> is not the most flexible way provided by Java for
+                formatting float values, but it is simple to use and suits our purposes here well.</p>
 
                 <div class="tehtavat">
                     <div class="tehtava">
@@ -7031,20 +7033,20 @@ John,  body mass index: 20,90
                         <p>Implement class <code>BoundedCounter</code> with the following functionality:</p>
 
                         <ul>
-                            <li>counter has an object variable that remembers the <em>value</em> of the counter. The
+                            <li>A counter has an object variable that remembers the <em>value</em> of the counter. The
                             value is within the range 0..upperBound</li>
 
-                            <li>At the start the value is 0.</li>
+                            <li>In the beginning the value is 0.</li>
 
-                            <li>The upper bound of the value is defined by the constructor parameter</li>
+                            <li>The upper bound of the value is defined by the constructor parameter.</li>
 
                             <li>The method <code>next</code> increments the value of the counter. If the value would be
                             more that the upper limit, it wraps around and becomes zero.</li>
 
-                            <li>Method <code>toString</code> returns a string representation of the counter value.</li>
+                            <li>The method <code>toString</code> returns a string representation of the counter value.</li>
                         </ul>
 
-                        <p>The skeleton of the class is the following:</p>
+                        <p>The skeleton of the class is as follows:</p>
 
 <pre class="sh_java">
 public class BoundedCounter {
@@ -7065,7 +7067,7 @@ public class BoundedCounter {
 }
 </pre>
 
-                        <p><b>Note</b>: you can't return an integer value directly in method toString since the
+                        <p><b>Note</b>: you cannot return an integer value directly from the method toString since the
                         method should return a string. Integer variable <code>value</code> can be turned into a string
                         by prefixing it with an empty string: <code>"" + value</code>.</p>
 
@@ -7087,7 +7089,7 @@ public class Main {
 }
 </pre>
 
-                        <p>In the constructor a upper limit of 4 is given to the new counter object, so the value of
+                        <p>In the constructor, an upper limit of 4 is given to the new counter object. Now, the value of
                         the counter should be within the range 0...4. Note how the method <code>next</code> increases
                         the value until it hits the upper limit and becomes zero again:</p>
 
@@ -7108,7 +7110,7 @@ Value: 0
                         <h4 class="req">Printing the initial zero</h4>
 
                         <p>Imrove <code>toString</code> so that if the value of the counter is less than 10, it
-                        prefixes the value with 0. So if the value of the counter is e.g. 3, toString should produce
+                        prefixes the value with 0. If the value of the counter is e.g. 3, toString should produce
                         "03". If the value is at least 10, e.g. 12, the returned string would be
                         "12".</p>
 
@@ -7152,11 +7154,11 @@ value: 01
 
                         <h4 class="req">The first version of the clock</h4>
 
-                        <p>With two counter objects we can build a simple clock. Hours can be represented by a counter
+                        <p>With two counter objects it possible for us to build a simple clock. Hours can be represented by a counter
                         with upper bound 23 and minutes by a counter with upper bound 59. As we all know, when minutes
                         wrap around from 59 to 0, hours advance by one.</p>
 
-                        <p>First you should implement method <code>getValue</code> to counter class:</p>
+                        <p>First you should implement the method <code>getValue</code> for the counters in the class:</p>
 
 <pre class="sh_java">
     public int getValue() {
@@ -7200,11 +7202,11 @@ public class Main {
 
                         <h4 class="req">The second version of the clock</h4>
 
-                        <p>Firstly implement the method <code>setValue</code> to class <code>BoundedCounter</code>. The
-                        method should set the value of the parameter to the counter unless the parameter is less that
+                        <p>Firstly implement the method <code>setValue</code> to the class <code>BoundedCounter</code>. The
+                        method should set the value of the parameter to the counter unless the parameter is less than
                         zero or larger than the upper bound. In those cases, the method does not have any effect.</p>
 
-                        <p>Then add a seconds counter to your clock. The clock should now be like the following:</p>
+                        <p>Then add a seconds counter to your clock. The clock should now be as follows:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -7263,52 +7265,52 @@ public class Main {
 }
 </pre>
 
-                        <p>Now the clock goes on forever and the value is updated as it should be, once in a second. A
-                        second is waited with the command <code>Thread.sleep(1000);</code> The parameter in the command
+                        <p>Now, the clock goes on forever and the value is updated as it should be, once in a second. The clock estimates the duration of a
+                        second with the command <code>Thread.sleep(1000);</code> The parameter in the command
                         is the time to sleep in milliseconds. In order to use the sleep command, you should do an
                         addition to the definition of main: <code>public static void main(String[] args) <b>throws
                         Exception</b> {</code></p>
 
-                        <p>You can end the eternal clock by pressing the red box in the NetBeans console (i,e, the area
+                        <p>You can end the eternal clock by pressing the red box in the NetBeans console (i.e. the area
                         in NB where the output of programs gets printed).</p>
                     </div>
                 </div>
 
-                <p><big><b>Important notes regarding the use of objects. Make sure to read these.</b></big></p>
+                <p><big><b>Important notes regarding the use of objects. You should definately read these.</b></big></p>
 
-                <p>Object oriented programming is mostly about turning concepts into their own entities, or in other
-                words forming abstractions. One might think that it's pointless to create an object that only holds
+                <p>Object-oriented programming is mostly about turning concepts into their own entities, or in other
+                words forming abstractions. One might think that it is pointless to create an object that only holds
                 one number in it, and that the same could be achieved with simple <code>int</code> variables. This is
                 not the case. If a clock consists of just 3 int variables that are then increased, the program loses
                 some human readability. It becomes more difficult to "see" what the program is about. Earlier
                 in the material we mentioned the advice of the renown programmer Kent Beck: <em>"Any fool can
                 write code that a computer can understand. Good programmers write code that humans can
-                understand"</em>, since the hand of a clock is actually its own clearly definable concept, it is a
-                good idea to create it its own class - <code>BoundedCounter</code> - for the sake of human
+                understand"</em>, since the hand of a clock is its own clearly definable concept, it is a
+                good idea to create it an own class - <code>BoundedCounter</code> - for the sake of human
                 readability.</p>
 
-                <p>Turning a concept into a class of its own is a good idea for a lot of reasons. Firstly some details
-                (ie. when the counter makes a full round) can be hidden inside the class (<em>abstracted</em>). Instead
+                <p>Turning a concept into a class of its own is a good idea for a lot of reasons. Firstly, some details
+                (i.e. when the counter makes a full round) can be hidden inside the class (<em>abstracted</em>). Instead
                 of writing an if-clause and an assignment operation, it is enough that the user of the counter calls
-                the descriptively named method <code>next()</code>. In addition to clocks the created counter might be
+                the descriptively named method <code>next()</code>. In addition to clocks, the created counter might be
                 good for being used as a building block for other projects too, so a class made from a clear concept
-                can be very versatile. Another huge advantage we gain by writing code this way is that when the details
-                of the mechanics are hidden they can be changed if need be.</p>
+                can be very versatile. Another huge advantage we gain by writing code this way, is that when the details
+                of the mechanics are hidden, they can be changed if need be.</p>
 
                 <p>We established that a clock contains three hands, it consists of three concepts. Actually the clock
-                itself is a concept too and next week we'll make the class Clock, so we can create distinct Clock
-                objects. Clock will be an object which in the functionality is based on "simpler" objects,
-                the hands. This is the grand idea of object oriented programming: a program is built out of small,
+                itself is a concept too and next week we will make the class Clock. Then, we can create distinct Clock
+                objects. Clock will be an object which functionality is based on "simpler" objects,
+                the hands. This is the grand idea of object-oriented programming: a program is built out of small,
                 clearly defined co-operating objects.</p>
 
-                <p>Now we'll take some careful first steps in the object world. Towards the end of the course,
+                <p>Now, we will take some careful first steps in the object world. Towards the end of the course,
                 objects will start to come to you naturally and the idea of <em>programs being built out of small, well
                 defined, co-operating pieces</em> - which at this point might feel incomprehensible - will become
-                something you'll take for granted.</p>
+                something you will take for granted.</p>
 
                 <h3>Calling other methods within an object</h3>
 
-                <p>Objects can also call ins own methods. Let us assume we'd like to include body mass index in the
+                <p>Objects can also call its own methods. Let us assume we would like to include body mass index in the
                 string representation of the person objects. Instead of calculating the body mass index in the toString
                 method, a better idea is to call the method <code>bodyMassIndex</code> from the <code>toString</code>
                 method:</p>
@@ -7345,7 +7347,7 @@ public class Main {
                             statistics</li>
                         </ul>
 
-                        <p>Note that the class <em>should not store</em> the added numbers. At this stage it is enough
+                        <p>Note that the class <em>should not store</em> the added numbers. At this stage, it is enough
                         to remember how many added numbers there are, i.e. how many times the method
                         <code>addNumber</code> has been called.</p>
 
@@ -7456,9 +7458,9 @@ sum: 11
 average: 2.75
 </pre>
 
-                        <h4 class="req">Asking for the numbers from the user</h4>
+                        <h4 class="req">Asking for numbers from the user</h4>
 
-                        <p>Create a program that asks the user to input numbers of the type integer. When the user
+                        <p>Create a program that asks the user to input numbers of type integer. When the user
                         gives -1, the program stops and prints the sum of the given numbers (excluding the -1).</p>
 
                         <p><strong>Note:</strong> you should not make any changes to class NumberStatistics!</p>
@@ -7485,7 +7487,7 @@ sum: 15
                         the third the odd numbers. Remember also that you should not make any changes to class
                         NumberStatistics!</p>
 
-                        <p><b>The tests does not work if you do not create the objects in the order below!!</b></p>
+                        <p><b>The tests does not work if you do not create the objects in the order mentioned above!!</b></p>
 
                         <p>The program should work as follows:</p>
 
@@ -7505,9 +7507,9 @@ sum of odd: 5
 
                 <h2>Randomness</h2>
 
-                <p>When programming you may occasionally need to simulate random events. Situations such as the
+                <p>When programming, you may occasionally need to simulate random events. Situations such as the
                 unpredictability of weather, or surprising moves on the AI's part in a computer game can often be
-                simulated with random number generators, running on a computer. In Java there is a ready-made class
+                simulated with random number generators, running on a computer. In Java, there is a ready-made class
                 <code>Random</code>, which you can use in the following way:</p>
 
 <pre class="sh_java">
@@ -7527,9 +7529,9 @@ public class Randomizing {
 }
 </pre>
 
-                <p>In the code above you first create an instance of the class <code>Random</code>, with the keyword
+                <p>In the code above, you first create an instance of the class <code>Random</code> with the keyword
                 <code>new</code> -- exactly as when creating objects implementing other classes. An object of type
-                Random has the method <code>nextInt</code>, to which you can give an integer value as a parameter. The
+                Random has the method <code>nextInt</code> that can be given an integer value as parameter. The
                 method returns a random integer within the range <em>0..(the integer given as parameter- 1)</em>.</p>
 
                 <p>The printout of this program could be as follows:</p>
@@ -7547,10 +7549,10 @@ public class Randomizing {
 8
 </pre>
 
-                <p>We will need floating point numbers for example when dealing with probability calculations. In
-                computing probabilities are usually calculated with figures within the range [0..1]. An object of the
+                <p>We will need floating point numbers, for example when dealing with probability calculations. In
+                computing, probabilities are usually calculated with numbers within the range [0..1]. An object of the
                 class Random can return random floating point numbers with the method <code>nextDouble</code>.
-                Let's consider the following probabilities of weather conditions:</p>
+                Let us consider the following probabilities of weather conditions:</p>
 
                 <ul>
                     <li>Sleet with the probability 0.1 (10%)</li>
@@ -7560,7 +7562,7 @@ public class Randomizing {
                     <li>Sunny with the probability 0.6 (60%)</li>
                 </ul>
 
-                <p>Using the estimates above, let's create a weather forecaster.</p>
+                <p>Using the estimates above, let us create a weather forecaster.</p>
 
 <pre class="sh_java">
 import java.util.ArrayList;
@@ -7591,9 +7593,9 @@ public class WeatherForecaster {
 }
 </pre>
 
-                <p>The method <code>forecastTemperature</code> is interesting in many ways. Within this method we are
-                calling the method <code>this.random.nextGaussian()</code>, just like any other time we've called a
-                method in the previous examples. Interestingly, this method of the class Random returns a figure in
+                <p>The method <code>forecastTemperature</code> is interesting in many ways. Within this method, we are
+                calling the method <code>this.random.nextGaussian()</code>, just like any other time we have called a
+                method in the previous examples. Interestingly, this method of the class Random returns a value from the
                 <em>normal distribution</em> (if you have no interest in the different varieties of random figures,
                 that's okay!).</p>
 

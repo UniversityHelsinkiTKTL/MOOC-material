@@ -7605,12 +7605,12 @@ public class WeatherForecaster {
     }
 </pre>
 
-                <p>In the expression above, just as interesting is the section <code>(int)</code>. This part of the
+                <p>In the expression above, interesting is the section <code>(int)</code>. This part of the
                 expression changes the bracketed floating point number into an integer value. A corresponding method
                 transforms integer values into floating point numbers: <code>(double) integer</code>. This is called an
                 <em>explicit type conversion</em>.</p>
 
-                <p>Let's create a class with a main method that uses the class <code>WeatherForecaster</code>.</p>
+                <p>Let us create a class with a main method that uses the class <code>WeatherForecaster</code>.</p>
 
 <pre class="sh_java">
 public class Program {
@@ -7650,13 +7650,13 @@ Sun: Sunny -5 degrees.
                     <div class="tehtava">
                         <h3 id="e80" class="req">Rolling the dice</h3>
 
-                        <p>In the template is a class <code>Dice</code>, that has the following functionality:</p>
+                        <p>In the template is class <code>Dice</code> that has the following functionality:</p>
 
                         <ul>
                             <li>The constructor <code>Dice(int numberOfSides)</code> creates a new dice object that has
                             the amount of sides defined by the argument.</li>
 
-                            <li>The method <code>roll</code> tells the result of the roll (which depends on the number
+                            <li>The method <code>roll</code> tells the result of a roll (which depends on the number
                             of its sides)</li>
                         </ul>
 
@@ -7680,8 +7680,8 @@ public class Dice {
 
 </pre>
 
-                        <p>Expand the class <code>Dice</code> so that the dice returns with each roll a random number
-                        between <code>1...number of sides</code>. Here's a main program that tests the dice:</p>
+                        <p>Expand the class <code>Dice</code> so that with each roll the dice returns a random number
+                        between <code>1...number of sides</code>. Here is a main program that tests the dice:</p>
 
 <pre class="sh_java">
 public class Program {
@@ -7716,15 +7716,15 @@ public class Program {
                     <div class="tehtava">
                         <h3>Password randomizer</h3>
 
-                        <p>Your assignment is to expand the class <code>PasswordRandomizer</code>, which has the
+                        <p>Your assignment is to expand the class <code>PasswordRandomizer</code> that has the
                         following functionality:</p>
 
                         <ul>
                             <li>The constructor <code>PasswordRandomizer</code> creates a new object, which uses the
                             given password length.</li>
 
-                            <li>The method <code>createPassword</code> returns a new password which consists of symbols
-                            a-z and is of the length that is given as a parameter to the constructor</li>
+                            <li>The method <code>createPassword</code> returns a new password, which consists of symbols
+                            a-z and is of the length given as a parameter to the constructor</li>
                         </ul>
 
                         <p>The frame of the class is as follows:</p>
@@ -7787,25 +7787,25 @@ Password: dzaccatonjcqu
 Password: bpqmedlbqaopq
 </pre>
 
-                        <p><b>Tip1:</b> this is how you turn the integer <tt>number</tt> into a character:</p>
+                        <p><b>Tip 1:</b> this is how you turn the integer <tt>number</tt> into a character:</p>
 
 <pre class="sh_java">
 int number = 17;
 char symbol = "abcdefghijklmnopqrstuvxyz".charAt(number);
 </pre>
 
-                        <p><b>Tip2:</b> The tip in assignment 58 might be useful in this one too.</p>
+                        <p><b>Tip 2:</b> The tip in assignment 58 might be useful in this one too.</p>
                     </div>
 
                     <div class="tehtava">
                         <h3 id="e82">Lottery</h3>
 
                         <p>Your assignment is to expand the class <code>LotteryNumbers</code>, which draws the lottery
-                        numbers of the week. The numbers are 1 to 39 and a total of 7 is drawn. The numbers of the week
+                        numbers of the week. The numbers of the week
                         consist of 7 different numbers between 1 and 39. The class has the following functionality:</p>
 
                         <ul>
-                            <li>the constructor <code>LotteryNumbers</code> creates a new LotteryNumbers object which
+                            <li>the constructor <code>LotteryNumbers</code> creates a new LotteryNumbers object, which
                             contains the new drawn numbers</li>
 
                             <li>the method <code>numbers</code> returns the drawn numbers of this draw</li>
@@ -7885,14 +7885,14 @@ Lottery numbers:
                     <div class="tehtava">
                         <h3>Game logic for Hangman</h3>
 
-                        <p>Your friend designed a Hangman game that looks like the following:</p>
+                        <p>Your Finnish friend designed a Hangman game that looks like the following:</p>
 
-                        <p><img src="img/hirsipuu-tikkuukko.png"></p>
+                        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/hirsipuu-tikkuukko.png"></p>                    
+			
+			<p>Your friend has programmed the user interface and also a skeleton for the game logic. Now,
+                        she asks you to finish the remaining pieces of the game logic. <p>The Finnish words <i>sana</i>, <i>virheitä</i>, <i>viesti</i>, <i>hävisit</i> and <i>arvatut (kirjaimet)</i> translate into <i>word</i>, <i>(number of) faults</i>, <i>message</i>, <i>you lost</i> and <i>guessed (letters)</i> respectively.</p>
 
-                        <p>Your friend has programmed the user interface and also a skeleton for the game logic. Now
-                        she asks you to finish the remaining pieces of the game logic.</p>
-
-                        <p>Amongst other stuff with TMC you get the following skeleton for the class
+                        <p>Amongst other stuff, with TMC you get the following skeleton for the class
                         <code>HangmanLogic</code></p>
 
 <pre class="sh_java">
@@ -7902,7 +7902,7 @@ public class HangmanLogic {
     private String guessedLetters;
     private int numberOfFaults;
 
-    public HangmanLogic(String sana) {
+    public HangmanLogic(String word) {
         this.word = word.toUpperCase();
         this.guessedLetters = "";
         this.numberOfFaults = 0;
@@ -7949,7 +7949,7 @@ public class HangmanLogic {
 
                         <p><strong>Testing the code</strong></p>
 
-                        <p>The tmc-project includes <em>two</em> classes that help you in the testing. The class
+                        <p>The TMC project includes <em>two</em> classes that help you with testing. The class
                         <code>Main</code> starts the graphical version of the game. The class <code>TestProgram</code>
                         can be used to test the class <code>HangmanLogic</code>.</p>
 
@@ -7959,10 +7959,10 @@ public class HangmanLogic {
 
                         <p>When a user guesses a letter, the user interface calls method <code>guessLetter</code> which
                         is supposed to take care of action related to guessing a letter. First, it should check if the
-                        letter has already been guessed. In that case the method does not do anything.</p>
+                        letter has already been guessed. In that case, the method does not do anything.</p>
 
                         <p>The method increases the number of faults (<code>this.numberOfFaults</code>) if the word
-                        (<code>this.word</code>) does not contain the guessed letter. The letter is added among the
+                        (<code>this.word</code>) does not contain the guessed letter. Then the letter is added among the
                         already guessed letters (the object variable <code>this.guessedLetters</code>).</p>
 
                         <p>An example of how the method <code>guessLetter</code> should work:</p>
@@ -7988,9 +7988,9 @@ number of faults: 2
                         <h4>Creating the hidden word</h4>
 
                         <p>The Hangman user interface shows a hidden version of the word to the user. In the above
-                        figure the hidden word is METO_I. All the letters that the user has already guessed are shown
+                        figure, the hidden word is METO_I. All the letters that the user has already guessed are shown
                         in the hidden word but the rest of the letters are replaced with underscores. In this part of
-                        the assignment you should complete the method <code>hiddenWord</code> of Hangman logic that
+                        the assignment, you should complete the method <code>hiddenWord</code> of Hangman logic that
                         takes care of building the hidden word for the user interface.</p>
 
                         <p>Commands <code>while</code>, <code>charAt</code> and <code>contains</code> might be useful
@@ -8001,7 +8001,7 @@ char c = 'a';
 String aString = "" + c;
 </pre>
 
-                        <p>An example of how the method:</p>
+                        <p>An example of how the method works:</p>
 
 <pre class="sh_java">
 HangmanLogic l = new HangmanLogic("kissa");
@@ -8026,7 +8026,7 @@ number of faults: 2
 word now: __SSA
 </pre>
 
-                        <p>Now you can test the game by using class <code>Main</code>. You can change the guessed word
+                        <p>Now, you can test the game by using class <code>Main</code>. You can change the guessed word
                         by changing the constructor parameter of the game logic:</p>
 
 <pre class="sh_java">
@@ -8036,7 +8036,7 @@ word now: __SSA
 </pre>
 
                         <p>The game is played with the keyboard. You can end the game by pressing x in the upper left
-                        corner of the game window..</p>
+                        corner of the game window.</p>
                     </div>
                 </div>
             </div>

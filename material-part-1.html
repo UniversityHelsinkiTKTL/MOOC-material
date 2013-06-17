@@ -8055,7 +8055,7 @@ word now: __SSA
 
             <h3>Multiple constructors</h3>
 
-            <p>Let's return to the class that handles Persons again. The class <code>Person</code> currently looks
+            <p>Let us return to the class that handles Persons again. The class <code>Person</code> currently looks
             like this:</p>
 
 <pre class="sh_java">
@@ -8132,9 +8132,9 @@ public class Person {
     }
 </pre>
 
-            <p>We also want to create a person so that in addition to name, we can give an age as a parameter. This can
-            be achieved easily, since multiple constructors can exist. Let's make an alternative constructor. You
-            don't need to remove the old one.</p>
+            <p>We also want to create a person so that in addition to name, can be given an age as a parameter. This can
+            be achieved easily, since multiple constructors can exist. Let us make an alternative constructor. You
+            do not need to remove the old one.</p>
 
 <pre class="sh_java">
     public Person(String name) {
@@ -8152,7 +8152,7 @@ public class Person {
     }
 </pre>
 
-            <p>Now creating objects can be done in two different ways:</p>
+            <p>Now, creating objects can be done in two different ways:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -8170,23 +8170,23 @@ Esko, age 0 years
 </pre>
 
             <p>The technique in which a class has two constructors is called <em>constructor overloading</em>. A class
-            can have multiple constructors, which are different from one another by the parameter quanitities and/or
+            can have multiple constructors, which are different from one another according to parameter quanitities and/or
             types. However, it is not possible to create two different constructors that have exactly the same type of
-            parameters. We cannot add in a constructor <code>public Person(String name, int weight)</code> on top of
+            parameters. We cannot add a constructor <code>public Person(String name, int weight)</code> on top of
             the old ones, since it is impossible for Java to tell the difference between this one and the one in which
             the integer stands for the age.</p>
 
             <h3>Calling your own constructor</h3>
 
-            <p>But wait, in chapter 21 we noted that "copy-paste"-code isn't too great of an idea. When
-            we inspect the overloaded constructors above, we notice that they have the same things repeated in them.
-            We're not ok with this.</p>
+            <p>But wait, in chapter 21 we noted that "copy-paste" code is not too great of an idea! When
+            we inspect the overloaded constructors above, we notice that they have the same code repeated in them.
+            We are not ok with this.</p>
 
-            <p>The higher constructor actually is a special case of the constructor below it. What if the higher
-            constructor could 'call' the constructor below it? This can be done, since you can call another
+            <p>The old constructor actually is a special case of the new constructor. What if the old
+            constructor could 'call' the new constructor? This can be done, since you can call another
             constructor from within a constructor with <code>this</code>!</p>
 
-            <p>Let's change the higher constructor that itself does nothing, but only calls the constructor below
+            <p>Let us change the old constructor that does nothing, but only calls the new constructor below
             it and asks it to set the age to 0:</p>
 
 <pre class="sh_java">
@@ -8202,14 +8202,14 @@ Esko, age 0 years
     }
 </pre>
 
-            <p>Calling a class's own constructor <code>this(name, 0);</code> might seem a little peculiar. But we
-            can imagine that at the call it'll automatically copy-paste the code from the constructor below and
+            <p>Calling the own constructor of a class <code>this(name, 0);</code> might seem a little peculiar. But we
+            can imagine that during the call it will automatically copy-paste the code from the constructor below and
             that 0 is entered to the age parameter.</p>
 
             <h3>Overloading a method</h3>
 
-            <p>Just like constructors, methods can also be overloaded, multiple versions of a method can exist. Again
-            the parameter types of different versions have to be different. Let's create another version of the
+            <p>Just like constructors, methods can also be overloaded and multiple versions of a method can exist. Again,
+            the parameter types of different versions have to be different. Let us create another version of the
             <code>becomeOlder</code>, which enables aging the person the amount of years that is entered as a
             parameter:</p>
 
@@ -8223,7 +8223,7 @@ Esko, age 0 years
     }
 </pre>
 
-            <p>In the following "Pekka" is born as a 24-year old, ages one year, and then 10:</p>
+            <p>In the following, "Pekka" is born as a 24-year old, ages one year, and then 10:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -8244,7 +8244,7 @@ Pekka, age 25 years
 Pekka, age 35 years
 </pre>
 
-            <p>So now a person has two <code>becomeOlder</code> methods. The method that is chosen to be run depends on
+            <p>Now, a person has two <code>becomeOlder</code> methods. The method that is chosen to be run depends on
             the amount of parameters entered in to the method call. The method <code>becomeOlder</code> can also be run
             through the method <code>becomeOlder(int years)</code>:</p>
 
@@ -8265,7 +8265,7 @@ Pekka, age 35 years
 
                     <h4>Multiple constructors</h4>
 
-                    <p>Make a class <code>Counter</code>, that holds a number that can be decreased and increased. The
+                    <p>Make a class <code>Counter</code> that holds a number that can be decreased and increased. The
                     counter also has an optional <em>check</em> that prevents the counter from going below 0. The class
                     has to have the following constructors:</p>
 
@@ -8277,7 +8277,7 @@ Pekka, age 35 years
                         <li><code>public Counter(int startingValue)</code> creates a new counter with the given value.
                         The check on the new counter should be off.</li>
 
-                        <li><code>public Counter(boolean check)</code> creates a new counter with the starting value of
+                        <li><code>public Counter(boolean check)</code> creates a new counter with the starting value
                         0. The check is on if the parameter given to <code>check</code> was <code>true</code>.</li>
 
                         <li><code>public Counter()</code> creates a new counter with the starting value of 0 and with
@@ -8297,24 +8297,24 @@ Pekka, age 35 years
 
                     <h4>Alternative methods</h4>
 
-                    <p>Also create one parametered versions of the methods <code>increase</code> and
+                    <p>Create also a one parametered versions of the methods <code>increase</code> and
                     <code>decrease</code>:</p>
 
                     <ul>
                         <li><code>public void increase(int increaseAmount)</code> increases the value by the amount of
-                        the parameter. If the value of the parameter is negative, the value won't change.</li>
+                        the parameter. If the value of the parameter is negative, the value will not change.</li>
 
-                        <li><code>public void decrease(int decreaseAmount)</code> decreases the counter's value by
+                        <li><code>public void decrease(int decreaseAmount)</code> decreases the value of the counter by
                         the amount given by the parameter, but not below 0 if the check is on. If the value of the
-                        parameter is negative the value of the counter won't change.</li>
+                        parameter is negative, the value of the counter will not change.</li>
                     </ul>
                 </div>
             </div>
 
             <h3>Object is at the end of a wire</h3>
 
-            <p>In chapter 20 we noted that <code>ArrayList</code> is at the end of a wire. Also objects are 'at the
-            end of a wire'. What does this mean? Let's inspect the following example:</p>
+            <p>In chapter 20, we noted that <code>ArrayList</code> is at the end of a wire. Also objects are 'at the
+            end of a wire'. What does this mean? Let us inspect the following example:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
@@ -8325,14 +8325,14 @@ Pekka, age 35 years
 </pre>
 
             <p>When we run the sentence <code>Person pekka = new Person("Pekka", 24);</code> an object is
-            born. The object can be accessed through the variable <code>pekka</code>. Technically speaking the object
+            born. The object can be accessed through the variable <code>pekka</code>. Technically speaking, the object
             is not within the variable <code>pekka</code> (in the box 'pekka'), but <code>pekka</code> refers
-            to the object that was born. In other words the object is 'at the end of a wire' that is attached
+            to the object that was born. In other words, the object is 'at the end of a wire' that is attached
             to a variable named <code>pekka</code>. The concept could be visualized like this:</p>
 
-            <p><img src="img/lanka1.PNG"></p>
+            <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka1.PNG"></p>
 
-            <p>Let's add to the program a variable <code>person</code> of the type <code>Person</code> and set its
+            <p>Let us add to the program a variable <code>person</code> of the type <code>Person</code> and set its
             starting value to <code>pekka</code>. What happens now?</p>
 
 <pre class="sh_java">
@@ -8355,21 +8355,21 @@ Pekka, age 24 years
 Pekka, age 49 years
 </pre>
 
-            <p>So in the beginning Pekka was 24 years old, a Person object at the end of a wire attached to a
+            <p>In the beginning, Pekka was 24 years old. Then a Person object at the end of a wire attached to a
             <code>Person</code> variable is aged by 25 years and as a consequence of that Pekka becomes older!
-            What's going on here then?</p>
+            What is going on here?</p>
 
-            <p>The command <code>Person person = pekka;</code> makes it so that <code>person</code> begins to refer to
-            the same object that <code>pekka</code> refers to. So a copy of the object isn't born, but instead both
+            <p>The command <code>Person person = pekka;</code> makes <code>person</code> refer to
+            the same object that <code>pekka</code> refers to. So, a copy of the object is not born, but instead both
             of the variables refer to the same object. With the command <code>Person person = pekka;</code> a <em>copy
-            of the wire</em> is born. As a picture (Note: in the picture p refers to the variable pekka, and h to the
+            of the wire</em> is born. The same thing as a picture (Note: in the picture p refers to the variable pekka, and h to the
             variable person in the main program. The variable names have also been abbreviated in some of the following
             pictures.):</p>
 
-            <p><img src="img/lanka2.PNG"></p>
+            <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka2.PNG"></p>
 
-            <p>In the example "an unknown <code>person</code> steals Pekka's identity". In the following,
-            we've expanded the example so that a new object is created and <code>pekka</code> begins to refer to a
+            <p>In the example, "an unknown <code>person</code> steals Pekka's identity". In the following,
+            we have expanded the example so that a new object is created and <code>pekka</code> begins to refer to a
             new object:</p>
 
 <pre class="sh_java">
@@ -8396,10 +8396,10 @@ Pekka, age 49 years
 Pekka Mikkola, age 24 years
 </pre>
 
-            <p>The variable <code>pekka</code> refers to one object, but then begins to refer to another. Here's
+            <p>The variable <code>pekka</code> refers to one object, but then begins to refer to another. Here is
             the situation after running the previous line of code:</p>
 
-            <p><img src="img/lanka3.PNG"></p>
+            <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka3.PNG"></p>
 
             <p>Let's develop the example further by making <code>person</code> to refer to 'nothing', to
             <code>null</code>:</p>
@@ -8425,7 +8425,7 @@ Pekka Mikkola, age 24 years
 
             <p>After running that, the situation looks like this:</p>
 
-            <p><img src="img/lanka4.PNG"></p>
+            <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka4.PNG"></p>
 
             <p>Nothing refers to the second object. The object has become 'garbage'. Java's garbace
             collector cleans up the garbage every now and then by itself. If this didn't happen, the garbage would

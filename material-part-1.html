@@ -8428,11 +8428,11 @@ Pekka Mikkola, age 24 years
             <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka4.PNG"></p>
 
             <p>Nothing refers to the second object. The object has become 'garbage'. Java's garbace
-            collector cleans up the garbage every now and then by itself. If this didn't happen, the garbage would
+            collector cleans up the garbage every now and then by itself. If this did not happen, the garbage would
             pile up in the computer's memory until the execution of the program is done.</p>
 
-            <p>We notice when on the last line that we try to print 'nothing' (<code>null</code>) on the last
-            line. This is what happens:</p>
+            <p>We notice this on the last line whine we try to print 'nothing' (<code>null</code>) on the last
+            line:</p>
 
 <pre>
 Pekka, age 24 years
@@ -8465,18 +8465,18 @@ Java Result: 1</font>
 </pre>
 
             <p>Not good. This might be the first time in your life that you see the text <b>NullPointerException</b>.
-            But we can assure you that it won't be the last. NullPointerException is an exception state, when we
+            But we can assure you that it will not be the last. NullPointerException is an exception state, when we
             try to call methods of an object with the value <code>null</code>.</p>
 
             <h3>An object as a method parameter</h3>
 
-            <p>We've seen that a method can have, for example <code>int, double, String</code> or ArrayList as its
+            <p>We have seen that a method can have, for example <code>int, double, String</code> or ArrayList as its
             parameter. ArrayLists and character strings are objects, so as one might guess a method can take any type
-            of object as a parameter. Let's demonstrate this with an example.</p>
+            of object as a parameter. Let us demonstrate this with an example.</p>
 
             <p>People whose weight index exceeds a certain limit are accepted into the Weight Watchers. The limit is
-            not the same in all Weight Watchers associations. Let's make a class corresponding to the Weight
-            Watchers association. As the object is being created the lowest acceptance limit is passed to the
+            not the same in all Weight Watchers associations. Let us make a class corresponding to the Weight
+            Watchers association. As the object is being created, the lowest acceptance limit is passed to the
             constructor as a parameter.</p>
 
 <pre class="sh_java">
@@ -8490,9 +8490,9 @@ public class WeightWatchersAssociation {
 }
 </pre>
 
-            <p>Next we'll create a method, with which we can check if a person is accepted to the association, in
+            <p>Next we will create a method, with which we can check if a person is eligible to the association, in
             other words we check if a person's weight index is large enough. The method returns <code>true</code>
-            if the person that is passed in as a parameter is accepted and <code>false</code> if not.</p>
+            if the person that is passed in as a parameter is eligible and <code>false</code> if not.</p>
 
 <pre class="sh_java">
 public class WeightWatchersAssociation {
@@ -8509,10 +8509,10 @@ public class WeightWatchersAssociation {
 </pre>
 
             <p>The method <code>isAcceptedAsMember</code> of the WeightWatchersAssociation object gets a
-            <code>Person</code> object as its parameter (or more accurately the wire to the person). And then calls the
+            <code>Person</code> object as its parameter (or more accurately the wire to the person), and then calls the
             method <code>weightIndex</code> of the person that it received as a parameter.</p>
 
-            <p>In the following is a test main program in which a person object <code>matti</code> and then a person
+            <p>In the following, is a test main program in which a person object <code>matti</code> and a person
             object <code>juhana</code> is passed to the weight watchers association's method:</p>
 
 <pre class="sh_java">
@@ -8552,14 +8552,14 @@ Juhana is not accepted as a member
                 <big><big><b>A few NetBeans-tips</b></big></big>
 
                 <ul>
-                    <li>All NetBeans-tips are found <a href="netbeans-english.html">here</a>
+                    <li>All NetBeans-tips are found <a href="http://mooc.fi/programming-part1/instructions#netbeans">here</a>
                     </li>
 
                     <li>
                         <b>The automatic generating of constructors, getters and setters.</b>
 
                         <p>Go inside of the code block of the class, but outside of all methods and simultaneously
-                        press ctrl and space. If your class, for example, has an object variable <code>balance</code>,
+                        press Ctrl+Space. If your class, for example, has an object variable <code>balance</code>,
                         NetBeans will offer you the opportunity to generate the getter and setter methods, and a
                         constructor that sets a starting value for the object variable.</p>
                     </li>
@@ -8571,7 +8571,7 @@ Juhana is not accepted as a member
                 <div class="tehtava">
                     <h3>Reformatory</h3>
 
-                    <p>In this assignment we use the already given class <code>Person</code> and are supposed to build
+                    <p>In this assignment, we use the already given class <code>Person</code> and are supposed to build
                     a new class <code>Reformatory</code>. Reformatory objects do certain things to persons, e.g.
                     measure their weight and feed them.</p>
 

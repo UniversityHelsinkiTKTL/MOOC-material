@@ -8617,14 +8617,14 @@ Brian weight: 7 kilos
 Pekka weight: 85 kilos
 </pre>
 
-                    <h4>feeding a person</h4>
+                    <h4>Feeding a person</h4>
 
                     <p>In the previous part of the assignment, the method <code>weight</code> queried some information
                     from the parameter object by calling its method. It is also possible to change the state of the
                     parameter. Add to class Reformatory the method <code>public void feed(Person person)</code> that
                     increases the weight of its parameter by one.</p>
 
-                    <p>Next an example where first the weight of Pekka and Brian is measured and printed. Then
+                    <p>Next, an example where first the weight of Pekka and Brian is measured and printed. Then
                     Reformatory feeds Brian three times and after that the weights are measured and printed again.</p>
 
 <pre class="sh_java">
@@ -8688,7 +8688,7 @@ Pekka weight: 85 kilos
     }
 </pre>
 
-                    <p>output should be:</p>
+                    <p>the output should be:</p>
 
 <pre>
 total weights measured 0
@@ -8702,7 +8702,7 @@ total weights measured 6
 
                     <h4 class="req">The "stupid" Lyyra card</h4>
 
-                    <p>Last exercise set we implemented the class LyyraCard. The card had methods for paying economical
+                    <p>In the last set of exercises, we implemented the class LyyraCard. The card had methods for paying economical
                     and gourmet lunches and a method for loading money.</p>
 
                     <p>Last week's version of the card is however somehow problematic. The card knew the lunch
@@ -8711,7 +8711,7 @@ total weights measured 6
                     coffee? A change like these would mean that all the existing LyyraCards should be replaced with the
                     new ones with the right prices and/or new methods. This does not sound good at all!</p>
 
-                    <p>A better solution is to only store the balance on the card and have all the inteligence in a
+                    <p>A better solution is to store only the balance on the card and have all the inteligence in a
                     <em>cash register</em>.</p>
 
                     <p>We will soon program the cash register but let us start by completing the "stupid"
@@ -8762,7 +8762,7 @@ public class Main {
 }
 </pre>
 
-                    <p>output should be</p>
+                    <p>the output should be</p>
 
 <pre>
 money on the card 10.0
@@ -8774,11 +8774,11 @@ money on the card 2.0
 
                     <h4 class="req">Cash Register and paying with cash</h4>
 
-                    <p>In Unicafe a client pays either with cash or with a Lyyra Card. The personnel uses a cash
+                    <p>In Unicafe, a client pays either with cash or with a Lyyra Card. The personnel uses a cash
                     register to charge the client. Let us start by implementig the part of CashRegister that takes care
                     of cash payments.</p>
 
-                    <p>In following the skeleton of CashRegister that also has the information on how the methods
+                    <p>Below is the skeleton of CashRegister that also has the information on how the methods
                     should be implemented:</p>
 
 <pre class="sh_java">
@@ -8848,7 +8848,7 @@ money in register 1009.0 economical lunches sold: 2 gourmet lunches sold: 1
                     <h4 class="req">Paying with card</h4>
 
                     <p>Extend the cash register with methods to charge a lunch price from a Lyyra Card. See below how
-                    the methods should look and behave:</p>
+                    the methods should appear and behave:</p>
 
 <pre class="sh_java">
 public class CashRegister {    
@@ -8911,8 +8911,8 @@ money in register 1002.5 economical lunches sold: 2 gourmet lunches sold: 1
                     <h4 class="req">Loading money</h4>
 
                     <p>To complete the assignment, extend the cash register with a method that can be used to load cash
-                    to Lyyra-cards. When a certain amount is loaded to the card, the amount stored in the register
-                    increases correspondingly. Remember that the amount to load needs to be positive! The method
+                    to Lyyra Cards. When a certain amount is loaded to the card, the amount stored in the register
+                    increases correspondingly. Remember that the amount to be loaded needs to be positive! The method
                     skeleton:</p>
 
 <pre class="sh_java">
@@ -8921,7 +8921,7 @@ money in register 1002.5 economical lunches sold: 2 gourmet lunches sold: 1
     }   
 </pre>
 
-                    <p>And the last example main and its output:</p>
+                    <p>Example main and its output:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -8961,7 +8961,7 @@ money in register 1100.0 economical lunches sold: 0 gourmet lunches sold: 1
 
             <h3>Another object of the same type as a parameter to a method</h3>
 
-            <p>We'll keep on working with the <code>Person</code> class. As we can remember, persons know their
+            <p>We will keep on working with the <code>Person</code> class. As we recall, persons know their
             age:</p>
 
 <pre class="sh_java">
@@ -8976,8 +8976,8 @@ public class Person {
 }
 </pre>
 
-            <p>We want to compare the ages of two persons. The comparison can be done in a number of ways. We could
-            define a getter method <code>getAge</code> for a person and comparing two persons in that case would happen
+            <p>We want to compare ages of two persons. The comparison can be done in a number of ways. We could
+            define a getter method <code>getAge</code> for a person. Comparing two persons in that case would be done
             like this:</p>
 
 <pre class="sh_java">
@@ -8989,10 +8989,10 @@ public class Person {
    }
 </pre>
 
-            <p>We'll learn a slightly more object-oriented way to compare the ages of two people.</p>
+            <p>We will learn a slightly more object-oriented way to compare the ages of two people.</p>
 
-            <p>We'll create a method <code>boolean olderThan(Person compared)</code> for the Person class, with
-            which we can compare a certain person to a person that is given as a parameter.</p>
+            <p>We will create a method <code>boolean olderThan(Person compared)</code> for the Person class, with
+            which we can compare a certain person with a person that is given as a parameter.</p>
 
             <p>The method is meant to be used in the following way:</p>
 
@@ -9008,9 +9008,9 @@ public class Person {
         }
 </pre>
 
-            <p>Here we ask Pekka if he is older than Antti, Pekka replies true if he is, and false if he isn't. In
-            practice we call the method <code>olderThan</code> of the object that <code>pekka</code> refers to. And to
-            which we give as a parameter the object that <code>antti</code> refers to.</p>
+            <p>Here, we ask Pekka if he is older than Antti, Pekka replies true if he is, and false if he is not. In
+            practice, we call the method <code>olderThan</code> of the object that <code>pekka</code> refers to. For this method,
+	    we give as a parameter the object that <code>antti</code> refers to.</p>
 
             <p>The program prints:</p>
 
@@ -9038,16 +9038,16 @@ public class Person {
 
             <p>Even though <code>age</code> is a <code>private</code> object variable, we can read the value of the
             variable by writing <code>compared.age</code>. This is because <code>private</code> variables can be read in
-            all methods that the class in question contains. Note that the syntax resembles the calling of a method of
-            an object. Unlike with calling a method, we refer to a field of an object, in which case we don't write
+            all methods that the class in question contains. Note that the syntax resembles the call of a method of
+            an object. Unlike calling a method, we refer to a field of an object, in which case we do not write
             the parentheses.</p>
 
             <h3>The date as an object</h3>
 
-            <p>Another example of the same theme. Let's create a class, with which we can represent dates.</p>
+            <p>Another example of the same theme. Let us create a class, which can represent dates.</p>
 
-            <p>Within an object the date is represented with three objct variables. Let's also make a method with
-            which we can compare whether the date is earlier than the date that is given as a parameter:</p>
+            <p>Within an object, the date is represented with three object variables. Let us also make a method,
+            which can compare whether the date is earlier than a date that is given as a parameter:</p>
 
 <pre class="sh_java">
 public class MyDate {
@@ -9087,7 +9087,7 @@ public class MyDate {
 }
 </pre>
 
-            <p>Usage example:</p>
+            <p>Example of usage:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {

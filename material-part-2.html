@@ -3039,7 +3039,7 @@ Pekka
 Arto
 </pre>
 
-        <p><em>NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. You from the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
+        <p><em>NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
 
         <div class="tehtavat" id="viikko8">
 
@@ -8991,58 +8991,59 @@ public class StoreKeeper {
 
 <pre class="sh_java">
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        TiedostonKasittelija t = new TiedostonKasittelija();
+        FileManager f = new FileManager();
 
-        for (String rivi : t.lue("src/koesyote1.txt")) {
-            System.out.println(rivi);
+        for (String line : f.read("src/testinput1.txt")) {
+            System.out.println(line);
         }
     }
 </pre>
 
-<p>Tulostuksen pitäisi olla</p>
+<p>The print output should look like the following</p>
 
 <pre>
-eka
-toka
+first
+second
 </pre>
 
 
-<h4>Rivin kirjoittaminen tiedostoon</h4>
+<h4>Writing a Line</h4>
 
-<p>Täydennä projektipohjan mukana tuleva metodi <code>public void tallenna(String tiedosto, String teksti)</code>  sellaiseksi, että se tallentaa ensimmäisen parametrin määrittelemään tiedostoon toisena parametrina annetun characterStringn. Jos tiedosto on jo olemassa, kirjoitetaan vanhan version päälle.
+<p>Modify the method <code>public void save(String file, String text)</code> so that it would write the string of the second argument into the file of the first argument. If the file already exists, the string is written over the old version.
 </p>
 
 
-<h4>Rivin kirjoittaminen tiedostoo</h4>
+<h4>Writing a List</h4>
 
-<p>Täydennä projektipohjan mukana tuleva metodi <code>public void tallenna(String tiedosto, ArrayList<String> tekstit)</code> sellaiseksi, että se tallentaa ensimmäisen parametrin määrittelemään tiedostoon toisena parametrina annetun listan siten, että jokainen characterString tulee omalle rivilleen.  Jos tiedosto on jo olemassa, kirjoitetaan vanhan version päälle.
+<p>Modify the method <code>public void save(String file, ArrayList<String> texts)</code> so that it would write the strings of the second argument into the file of the first argument; each string of the array list has to go to its own line. If the file already exists, the strings are written over the old version.
+
 </p>
 
-    <h3>Muistava kahteen suuntaan kääntävä sanakirja</h3>
+    <h3>Two-Direction Dictionary</h3>
 
-    <p>Tässä tehtävässä laajennetaan aiemmin toteutettua sanakirjaa siten, että sanat voidaan lukea tiedostosta ja kirjoittaa tiedostoon. Sanakirjan tulee myös osata kääntää molempiin suuntiin, suomesta vieraaseen kieleen sekä toiseen suuntaan (tehtävässä oletetaan hieman epärealistisesti, että suomen kielessä ja vieraassa kielessä ei ole yhtään samalla tavalla kirjoitettavaa sanaa). Tehtävänäsi on luoda sanakirja luokkaan <code>MuistavaSanakirja</code> Toteuta luokka pakkaukseen <code>sanakirja</code>.</p>
+    <p>With this exercise, we develop the dictionary we implemented earlier, so that words can be both read and written into the file. Also, the dictionary has to translate in both directions, from Finnish into English and from Engish into Finnish (in this exercise, we suppose unofficially that Finnish and English do not have words which are spellt the same). Your task is creating th dictionary in the class <code>MindfulDictionary</code>. The class has to be implemented in the package <code>dictionary</code>.</p>
 
-<h4>Muistiton perustoiminnallisuus</h4>
+<h4>Forgetful Basic Functionality</h4>
 
-<p>Tee sanakirjalle parametriton konstruktori sekä metodit:</p>
+<p>Create a parameterless constructor, as well as the methods:</p>
 
  <ul>
-        <li><code>public void lisaa(String sana, String kaannos)</code></li>lisää sanan sanakirjaan. Jokaisella sanalla on vain yksi käännös, jos sama sana lisätään uudelleen, ei tapahdu mitään.<br/>
-        <li><code>public String kaanna(String sana)</code></li> palauttaa käännöksen annetulle sanalle, jos sanaa ei tunneta, palautetaan null<br/>
+        <li><code>public void add(String word, String translation)</code></li> adds a word to the dictionary. Each word has got only one translation; if the same word is added twice, nothing happens.<br/>
+        <li><code>public String translate(String word)</code></li> returns the word translation; if the word isn't recognised, it returns null<br/>
  </ul>
 
-<p>Sanakirjan tulee tässä vaiheessa toimia seuraavasti:</p>
+<p>At this point, the dictionary has to work in the following way:</p>
 
 <pre class="sh_java">
-MuistavaSanakirja sanakirja = new MuistavaSanakirja();
-sanakirja.lisaa("apina", "monkey");
-sanakirja.lisaa("banaani", "banana");
-sanakirja.lisaa("apina", "apfe");
+MindfulDictionary dict = new MindfulDictionary();
+dict.add("apina", "monkey");
+dict.add("banaani", "banana");
+dict.add("apina", "apfe");
 
-System.out.println( sanakirja.kaanna("apina") );
-System.out.println( sanakirja.kaanna("monkey") );
-System.out.println( sanakirja.kaanna("ohjelmointi") );
-System.out.println( sanakirja.kaanna("banana") );
+System.out.println( dict.translate("apina") );
+System.out.println( dict.translate("monkey") );
+System.out.println( dict.translate("programming") );
+System.out.println( dict.translate("banana") );
 </pre>
 
 <p>Tulostuu</p>
@@ -9054,30 +9055,30 @@ null
 banana
 </pre>
 
-<p>Kuten tulostuksesta ilmenee, käännöksen lisäämisen jälkeen sanakirja osaa tehdä käännöksen molempiin suuntiin.</p>
+<p>As you notice from the example, after adding a pair the dictionary can translate in both directions.</p>
 
-<h4>Sanojen poistaminen</h4>
+<h4>Removing Words</h4>
 
-<p>Lisää sanakirjalle metodi <code>public void poista(String sana)</code></li> joka poistaa annetun sanan ja sen käännöksen sanakirjasta.</p>
+<p>Add the method <code>public void remove(String word)</code></li>, which removes the given word and its translation from your dictionary.</p>
 
-<p>Sanakirjan tulee tässä vaiheessa toimia seuraavasti:</p>
+<p>At this point, the dictionary has to work in the following way:</p>
 
 <pre class="sh_java">
-MuistavaSanakirja sanakirja = new MuistavaSanakirja();
-sanakirja.lisaa("apina", "monkey");
-sanakirja.lisaa("banaani", "banana");
-sanakirja.lisaa("ohjelmointi", "programming");
-sanakirja.poista("apina");
-sanakirja.poista("banana");
+MindfulDictionary dict = new MindfulDictionary();
+dict.add("apina", "monkey");
+dict.add("banaani", "banana");
+dict.add("ohjelmointi", "programming");
+dict.remove("apina");
+dict.remove("banana");
 
-System.out.println( sanakirja.kaanna("apina") );
-System.out.println( sanakirja.kaanna("monkey") );
-System.out.println( sanakirja.kaanna("banana") );
-System.out.println( sanakirja.kaanna("banaani") );
-System.out.println( sanakirja.kaanna("ohjelmointi") );
+System.out.println( dict.translate("apina") );
+System.out.println( dict.translate("monkey") );
+System.out.println( dict.translate("banana") );
+System.out.println( dict.translate("banaani") );
+System.out.println( dict.translate("ohjelmointi") );
 </pre>
 
-<p>Tulostuu</p>
+<p>Prints</p>
 
 <pre>
 null
@@ -9087,15 +9088,15 @@ null
 programming
 </pre>
 
-<p>Poisto siis toimii myös molemmin puolin, alkuperäisen sanan tai sen käännöksen poistamalla, poistuu sanakirjasta tieto molempien suuntien käännöksestä. </p>
+<p>As you see, the delection happens in both ways: whether you remove a word or its translation, the dictionary loses the both the pieces of information. </p>
 
 
 
-<h4>Lataaminen tiedostosta</h4>
+<h4>Loading a File</h4>
 
-<p>Tee sanakirjalle konstruktori <code>public Sanakirja(String tiedosto)</code>  ja metodi <code>public boolean lataa()</code>, joka lataa sanakirjan konstruktorin parametrina annetun nimisestä tiedostosta. Jos tiedoston avaaminen tai lukeminen ei onnistu, palauttaa metodi false ja muuten true.</p>
+<p>Create the constructor <code>public Dictionary(String file)</code> and the method <code>public boolean load()</code>, which loads a file whose name is given as parameter in the dictionary constructor. If opening or reading the file does not work, the method returns false and otherwise true.</p>
 
-<p>Sanakirjatiedostossa yksi rivi sisältää sanan ja sen käännöksen merkillä ":" erotettuna. Tehtäväpohjan mukana tuleva testaamiseen tarkoitettu sanakirjatiedosto <code>src/sanat.txt</code> on sisällöltään seuraava: </p>
+<p>Each line of the dictionary file contains a word and its translation, devided by the character ":". Together with the exercise body, you find a dictionary file meant to help the tests. It looks like the following: </p>
 
 <pre>
 apina:monkey
@@ -9103,31 +9104,31 @@ alla oleva:below
 olut:beer
 </pre>
 
-<p>Lue sanakirjatiedosto rivi riviltä lukijan metodilla <code>nextLine</code>. Voit pilkkoa rivin String metodilla <code>split</code> seuraavasti:
+<p>Read the dictionary file line by line with the reader method <code>nextLine</code>. You can split the lines with the String method <code>split</code>, in the following way:</p>
 
 <pre class="sh_java">
-Scanner tiedostonLukija = new ...
-while ( tiedostonreader.hasNextLine() ){
-    String rivi = tiedostonreader.nextLine();
-    String[] osat = rivi.split(":");   // pilkotaan rivi :-merkkien kohdalta
+Scanner fileReader = new ...
+while ( fileReader.hasNextLine() ){
+    String line = fileReader.nextLine();
+    String[] parts = line.split(":");   // the line is split at :
     
-    System.out.println( osat[0] );     // ennen :-merkkiä ollut osa rivistä
-    System.out.println( osat[1] );     // :-merkin jälkeen ollut osa rivistä
+    System.out.println( parts[0] );     // the part of the line before :
+    System.out.println( parts[1] );     // the part of the line after :
 }
 </pre>
 
-<p>Sanakirjaa käytetään seuraavasti:</p>
+<p>The dictionary is used in the following way:</p>
 
 <pre class="sh_java">
-MuistavaSanakirja sanakirja = new MuistavaSanakirja("src/sanat.txt");
-sanakirja.lataa();
+MindfulDictionary dict = new MindfulDictionary("src/words.txt");
+dict.load();
 
-System.out.println( sanakirja.kaanna("apina") );
-System.out.println( sanakirja.kaanna("ohjelmointi") );
-System.out.println( sanakirja.kaanna("alla oleva") );
+System.out.println( dict.translate("apina") );
+System.out.println( dict.translate("ohjelmointi") );
+System.out.println( dict.translate("alla oleva") );
 </pre>
 
-<p>Tulostuu</p>
+<p>Printing</p>
 
 <pre>
 monkey
@@ -9136,38 +9137,38 @@ below
 </pre>
 
 
-<h4>Tallennus tiedostoon</h4>
+<h4>Saving Data</h4>
 
-    <p>Tee sanakirjalle metodi <code>public boolean talleta()</code>, jota kutsuttaessa sanakirjan sisältö kirjoitetaan konstruktorin parametrina annetun nimiseen tiedostoon. Jos tallennus ei onnistu, palauttaa metodi false ja muuten true. Sanakirjatiedostot tulee tallentaa ylläesitellyssä muodossa, eli ohjelman on osattava lukea itse kirjottamiaan tiedostoja.</p>
+    <p>Create the method <code>public boolean save()</code>; when the method is called, the dictionary contents are written into the file whose name was given as parameter to the constructor. The method returns false if the file can't be saved; otherwise it returns true. Dictionary files have to be saved in the form described above, meaning that the program has to be able to read its own files.</p>
 
-<p><strong>Huom:</strong> vaikka sanakirja osaa käännökset molempiin suuntiin, ei sanakirjatiedostoon tule kirjoittaa kuin toinen suunta. Eli jos sanakirja tietää esim. käännöksen <em>tietokone = computer</em>, tulee rivi:</p>
+<p><strong>Attention:</strong> even though the dictionary can translate in both directions, only one direction has to be stored into the dictionary file. For instance, if the dictionary knows that <em>tietokone = computer</em>, you have to write either the line:</p>
 
 <pre>
 tietokone:computer
 </pre>
 
-<p>tai rivi</p>
+<p>or the line</p>
 
 <pre>
 computer:tietokone
 </pre>
 
-<p>mutta ei molempia!</p>
+<p>but not both!</p>
 
-    <p>Talletus kannattanee hoitaa siten, että koko käännöslista kirjoitetaan uudelleen vanhan tiedoston päälle, eli materiaalissa esiteltyä <code>append</code>-komentoa ei kannata käyttää.</p>
+    <p>It may be useful to wirte the new translation list over the old file; in fact, the <code>append</code> command which came out in the material should not be used.</p>
 
-<p>Sanakirjan lopullista versiota on tarkoitus käyttää  seuraavasti:</p>
+<p>The final version of your dictionary should be used in the following way:</p>
 
 <pre class="sh_java">
-MuistavaSanakirja sanakirja = new MuistavaSanakirja("src/sanat.txt");
-sanakirja.lataa();
+MindfulDictionary dict = new MindfulDictionary("src/words.txt");
+dict.load();
 
-// käytä sanakirjaa
+// using the dictionary
 
-sanakirja.tallenna();
+dict.save();
 </pre>
 
-<p>Eli käytön aluksi ladataan sanakirja tiedostosta ja lopussa tallennetaan se takaisin tiedostoon jotta sanakirjaan tehdyt muutokset pysyvät voimassa seuraavallekin käynnistyskerralle.</p>
+<p>At the beginning we load the dictionary from our file, and we save it back in the end, so that the changes made to the dictionary will be available next time, too.</p>
 </div>
 
 
@@ -9307,11 +9308,11 @@ public class Main {
 
 <div class="tehtavat">
 
-<h3>Tervehtijä</h3>
+<h3>Greeter</h3>
 
-<p>Toteuta käyttöliittymä, joka näyttää tekstin "Moi!". Käyttöliittymän (eli JFrame-olion) leveyden tulee olla vähintään 400 ja korkeuden 100 ja otsikkona teksti "Swing on". Tehtävä tulee toteuttaa tehtäväpohjassa tulevaan käyttöliittymärunkoon.  JFrame-olion luominen ja näkyväksi asettamisen tulee tapahtua metodissa <code>run()</code>, tekstikomponentti lisätään käyttöliittymälle metodissa <code>luoKomponentit(Container container)</code>.</p>
+<p>Implement a user interface which displays the text "Hi!". The length of the user interface (i.e. of the JFrame object) has to be at least 400, its height 100, and its title should be "Swing on". The JFrame object should be created and become visible inside the method <code>run()</code>, and the text components are added to the user interface with the method <code>createComponents(Container container)</code>.</p>
 
-<p><strong>HUOM: Käyttöliittymien oliomuuttujia saa alustaa vain metodeissa tai konstruktorissa! Älä alusta oliomuuttujia suoraan määrittelyn yhteydessä.</strong></p>
+<p><strong>ATTENTION: The ui object variables have to be initiated in the methods or in the constructor! Do not initiate an object variable directly in its definition.</strong></p>
 </div>
 
 <h4>Buttons</h4>
@@ -9433,17 +9434,17 @@ public class Main {
 
 <div class="tehtavat">
 
-<h3>Kysely</h3>
+<h3>Survey</h3>
 
-<p>Toteuta tehtäväpohjaan käyttöliittymä, joka näyttää seuraavalta:</p>
+<p>Implement a user interface in the exercise body; the interface has to look like the following:</p>
 
 <p><img src="img-ohja/kali/157-kysely.png"/></p>
 
-<p>Käytä käyttöliittymän asettelijana luokkaa <code>BoxLayout</code>, komponentteina luokkia <code>JLabel</code>, <code>JRadioButton</code>, <code>JCheckBox</code> ja <code>JButton</code>.</p>
+<p>Use <code>BoxLayout</code> as layout manager for your user interface; the components are the classes <code>JLabel</code>, <code>JRadioButton</code>, <code>JCheckBox</code> and <code>JButton</code>.</p>
 
-<p>Käytä <code>ButtonGroup</code>-luokkaa varmistamaan että vaihtoehdot "Siksi" ja "Koska se on kivaa" eivät voi olla valittuina samaan aikaan.</p>
+<p>Use the class <code>ButtonGroup</code> to make sure the options "Siksi" and "Koska se on kivaa" cannot be chosen at the same time.</p>
 
-<p>Varmista että käyttöliittymä on niin iso, että käyttäjä voi klikata nappeja muuttamatta sen kokoa. Voit käyttää esimerkiksi leveytenä 200 pikseliä, korkeutena 300 pikseliä.</p>
+<p>Make sure that the user interface is big enough so that the user can click the buttons without resizing the interface. For instance, you can use 200 pixels for the length and 300 pixels for the height.</p>
 </div>
 
 
@@ -9567,17 +9568,17 @@ public class AreaCopier implements ActionListener {
 
 <div class="tehtavat">
 
-<h3>Ilmoitin</h3>
+<h3>Notice Board</h3>
 
-<p>Toteuta tehtäväpohjaan käyttöliittymä, joka näyttää seuraavalta.</p>
+<p>Implement a user interface in the exercise body; the interface has to look like the following:</p>
 
     <p><img src="img-ohja/kali/158-ilmoitin.png"/></p>
 
-<p>Ohjelman tulee koostua seuraavista pakkauksessa <code>ilmoitin</code> olevista luokista. Luokka <code>Ilmoitin</code> on käyttöliittymäluokka, joka käynnistetään <code>Main</code>-luokasta. Ilmoittimessa on käyttöliittymäkomponentteina <code>JTextField</code>, <code>JButton</code>, ja <code>JLabel</code>. Voit asetella käyttöliittymäkomponentit <code>GridLayout</code>-asettelijan avulla: kutsu <code>new GridLayout(3, 1)</code> luo uuden asettelijan, joka asettelee kolme käyttöliittymäelementtiä pystysuunnassa.</p>
+<p>The program has to be composed of the following classes, which are contained in the package <code>noticeboard</code>. The class <code>NoticeBoard</code> is the user interface class, and it is started from the <code>Main</code> class. The notice board has got various different components: <code>JTextField</code>, <code>JButton</code>, and <code>JLabel</code>. You can manage the layout of the ui components with <code>GridLayout</code>: the call <code>new GridLayout(3, 1)</code> creates a new layout manager, which sets up three ui elements vertically.</p>
 
-<p>Sovelluksessa tulee olla lisäksi luokka <code>TapahtumanKuuntelija</code>, joka toteuttaa rajapinnan <code>ActionListener</code>. Tapahtumankuuntelija liitetään nappiin ja sen tulee kopioida käyttöliittymässä olevan JTextField-kentän sisältö JLabel-kenttään napin painalluksen yhteydessä ja samalla tyhentää JTextField asettamalla sen sisällöksi "".</p>
+<p>The application also has to contain the class <code>ActionEventListener</code>, which implements the interface <code>ActionListener</code>. The action event listener is connected to the button, and when pressed, it has to copy the contents of the JTextField into JLabel. At the same time, it wipes the JTextField by setting its contents as "".</p>
 
-<p>Varmista että käyttöliittymä käynnistyy niin isona että jokaista nappulaa voi klikata.</p>
+<p>Make sure that the user interface is big enough to click on each button.</p>
 </div>
 
 <h3>Separating Application and UI Logic</h3>
@@ -9696,42 +9697,42 @@ public class UserInteface implements Runnable {
 <div class="tehtavat">
 <h3>Axe Click Effect</h3>
 
-<p>Tässä tehtävässä toteutetaan laskuri klikkausten laskemiseen. Tehtävässä sovelluslogiikka, eli laskeminen ja käyttöliittymälogiikka on erotettu toisistaan. Lopullisen sovelluksen tulee näyttää kutakuinkin seuraavalta. </p>
+<p>In this exercise we implement a calculator to count the number of clicks. In the exercise, the application logic (counting) and the ui logic are devided from each other. The final application should look like the following, so far. </p>
 
     <p><img src="img-ohja/kali/159-clickeffect.png"/></p>
 
-<h4>OmaLaskuri</h4>
+<h4>PersonalCalculator</h4>
 
-<p>Toteuta pakkaukseen <code>clicker.sovelluslogiikka</code> rajapinnan <code>Laskuri</code> toteuttava luokka <code>OmaLaskuri</code>. Luokan <code>OmaLaskuri</code> metodin <code>annaArvo</code> palauttama luku on aluksi 0. Kun metodia <code>kasvata</code> kutsutaan, kasvaa arvo aina yhdellä.</p>
+<p>Implement the class <code>PersonalCalculator</code> in the package <code>clicker.applicationlogic</code>; the class implements the interface <code>Calculator</code>. At first, the method <code>giveValue</code> of <code>PersonalCalculator</code> returns 0. Whenever the method <code>increase</code> is called, the value increases by one.</p>
 
-<p>Voit halutessasi testata luokan toimintaa seuraavan ohjelman avulla.</p>
+<p>If you want, you can test the class using the following program.</p>
 
 <pre class="sh_java">
-        Laskuri laskuri = new OmaLaskuri();
-        System.out.println("Arvo: " + laskuri.annaArvo());
-        laskuri.kasvata();
-        System.out.println("Arvo: " + laskuri.annaArvo());
-        laskuri.kasvata();
-        System.out.println("Arvo: " + laskuri.annaArvo());
+        Calculator calc = new OwnCalculator();
+        System.out.println("Value: " + calc.giveValue());
+        laskuri.increase();
+        System.out.println("Value: " + calc.giveValue());
+        laskuri.increase();
+        System.out.println("Value: " + calc.giveValue());
 </pre>
 
 <pre>
-Arvo: 0
-Arvo: 1
-Arvo: 2
+Value: 0
+Value: 1
+Value: 2
 </pre>
 
-<h4>KlikkaustenKuuntelija</h4>
+<h4>ClickListener</h4>
 
-<p>Toteuta pakkaukseen <code>clicker.kayttoliittyma</code> rajapinnan <code>ActionListener</code> toteuttava luokka <code>KlikkaustenKuuntelija</code>. Luokka <code>KlikkaustenKuuntelija</code> saa konstruktorin parametrina <code>Laskuri</code>-rajapinnan toteuttavan olion ja <code>JLabel</code>-olion.</p>
+<p>Implement the class <code>ClickListener</code> in the package <code>clicker.ui</code>; the class implements the interface <code>ActionListener</code>. <code>ClickListener</code> receives two objects as constructor parameters: an object which implements the interface <code>Calculator</code> and a <code>JLabel</code> object.</p>
 
-<p>Toteuta <code>actionPerformed</code>-metodi siten, että <code>Laskuri</code>-oliota kasvatetaan aluksi yhdellä, jonka jälkeen laskurin arvo asetetaan <code>JLabel</code>-olion tekstiksi. <code>JLabel</code>-olion tekstiä voidaan muuttaa metodilla <code>setText</code>.</p>
+<p>Implement the <code>actionPerformed</code> method so that the <code>Calculator</code> object increases by one at first, and after it, the calculator value is set as text of the <code>JLabel</code> object. The text of the <code>JLabel</code> object can be modified with the method <code>setText</code>.</p>
 
-<h4>Käyttöliittymä</h4>
+<h4>User Interface</h4>
 
-<p>Muokkaa luokkaa <code>Kayttoliittyma</code> siten, että käyttöliittymä saa konstruktorin parametrina <code>Laskuri</code>-olion, tarvitset uuden konstruktorin. Lisää käyttöliittymään tarvittavat käyttöliittymäkomponentit. Rekisteröi napille myös edellisessä osassa toteutettu tapahtumankuuntelija.</p>
+<p>Modify the class <code>UserInterface</code>; now the user interface has to receive a <code>Calculator</code> object as constructor parameter: you need a new constructor. Add the necessary ui components to your UserInterface. Also, set the action event listener you implemented in the previous section to the button.</p>
 
-<p>Käytä käyttöliittymäkomponenttien asetteluun <code>BorderLayout</code>-luokan tarjoamia toiminnallisuuksia. Muuta myös <code>Main</code>-luokkaa siten, että käyttöliittymälle annetaan <code>OmaLaskuri</code>-olio. Kun käyttöliittymässä olevaa <code>"Click!"</code>nappia on painettu kahdesti, sovellus näyttää kutakuinkin seuraavalta.</p>
+<p>Use the functionality provided by the class <code>BorderLayout</code> to manage the layout of the ui components. Also, change the <code>Main</cde> class so that the user interface is assigned a <code>PersonalCalculator</code> object. When the <code>"Click!"</code> button in the user interface has been pressed twice, the application looks like below, more or less.</p>
 
     <p><img src="img-ohja/kali/159-clickeffect-klikattu.png"/></p>
 
@@ -9801,29 +9802,29 @@ public class MenuPanel extends JPanel {
 <div class="tehtavat">
 <h3>Calculator</h3>
 
-<p>Tehtävässä on tarkoitus toteuttaa yksinkertainen laskin. Laskimen käyttöliittymän tulee olla seuraavanlainen:</p>
+<p>The goal of the exercise is creating a simple calculator. The calculator user interface has to look like the following:</p>
 
    <p><img src="img-ohja/laskin.png"/></p>
 
-<p>Tehtäväpohjan mukana tulee käynistyksen suorittava pääohjelma sekä graafisen käyttöliittymän sisältävä luokka <code>GraafinenLaskin</code>. Käyttöliittymän on oltava täsmälleen seuraavassa osassa kuvaillulla tavalla tehty, muuten saat vapaasti suunnitella ohjelman rakenteen.</p> 
+<p>Together with the exercise body, you find the main program which starts the calculator, as well as the class <code>GraphicCalculator</code> which contains a graphic user interface. The user interface has to follow exactly the following points, but you can plan the program structure as you wish.</p> 
 
-<h4>Layout kuntoon</h4>
+<h4>The Layout</h4>
 
-<p>Käyttöliittymän pohjana olevassa  <code>JFrame</code>:ssa tulee käyttää asettelijana <code>GridLayout</code>ia jossa on kolme riviä ja yksi sarake. Ylimpänä on tuloskenttävä toimiva  <code>JTextField</code>, jonka täytyy asettaa metodikutsulla <code>setEnabled(false)</code> "poissa päältä". Toisena on syötekenttänä toimiva  <code>JTextField</code>. Tuloskentässä on aluksi teksti 0 ja syötekenttä on tyhjä.</p>
+<p>You find a <code>JFrame</code> with the exercise body; you manage its layout using <code>GridLayout</code> with three lines and one column. <code>JTextField</code> has to be placed in the upper block and has to be used for the text output; it must be set off with the method call <code>setEnabled(false)</code>. The second block has to contain <code>JTextField</code> for the text input. Originally, the input field contains the text "0", and the input field is empty.</p>
 
-<p>Alimpana komponenttina sijaitsee <code>JPanel</code> jolla asettelijana <code>GridLayout</code>ia jossa on yksi rivi ja kolme saraketta. Panelissa on kolme <code>JButton</code>ia, joissa tekstit "+", "+" ja "Z".</p>
+<p>The lowest block has to contain <code>JPanel</code>, and this has to have the layout manager <code>GridLayout</code>, with one line and three columns. The panel has got three <code>JButton</code>s, with the texts "+", "+" and "Z".</p>
 
-<h4>Perustoiminnallisuus</h4>
+<h4>Basic Functionality</h4>
 
-<p>Laskimen toimintalogiikka on seuraava. Käyttäjän kirjottaessa syötekenttään luvun n ja painaessa <strong>+</strong>, lisätään tuloskentässä olevaan arvoon n ja päivitetään tuloskenttä uuteen arvoon. Vastaavasti käyttäjän kirjottaessa syötekenttään luvun n ja painaessa <strong>-</strong>, vähennetään tuloskentässä olevasta arvosta n ja päivitetään tuloskenttä uuteen arvoon. Jos käyttäjä painaa <strong>Z</strong>, nollautuu tuloskenttä.</p>
+<p>The calculator basic functionality is the following. When the user writes a number n into the input field and presses <strong>+</strong>, the value of the output field is added n and the output field is updated with a new value. Accordingly, when the user writes a number n into the input field and presses <strong>-</strong>, the value of the output field is decreased by n, and the output field is updated with the new value. If the user presses <strong>Z</strong>, the output field value is reset to zero.</p>
 
-<h4>Hienosäätö</h4>
+<h4>Cozy Management</h4>
 
-<p>Laajennetaan vielä ohjelmaa seuraavilla ominaisuuksissa:</p>
+<p>Let's extend our program with the following features:</p>
 <ul>
-<li>Jos tuloskentässä on 0, ei <strong>Z</strong>-nappia voi painaa, eli se tulee olla asetettu metodikutsulla <code>setEnabled(false)</code> "poissa päältä". Muissa tilanteissa napin tulee olla päällä.</li>
-<li>Kun käyttäjä painaa jotain napeista<strong>+, -, Z</strong> syötekenttä tyhjenee.</li>
-<li>Jos syötekenttässä oleva syöte ei ole kokonaisluku ja käyttäjjä painaa jotain napeista<strong>+, -, Z</strong> syötekenttä tyhjenee ja tuloskentän tila ei muutu (paitsi napin ollessa <strong></strong>).</li>
+<li>If the output field is 0, the user can't press the <strong>Z</strong> button, i.e. the button has to be set off with the method call <code>setEnabled(false)</code>. Otherwise, the button has to be on.</li>
+<li>When the user presses any of the buttons <strong>+, -, Z</strong> the input field is wiped.</li>
+<li>If the input value is not an integer and the user presses one of the buttons <strong>+, -, Z</strong>, the input field is wiped and the value of the output field does not change (unless the button is <strong>Z</strong>).</li>
 </ul>
 </div>
 
@@ -9898,13 +9899,13 @@ public class DrawingBoard extends JPanel {
 
 <div class="tehtavat">
 
-<h3>Piirtoalusta ja Piirtäminen</h3>
+<h3>Drawing and its Board</h3>
 
-<p>Tehtäväpohjassa on valmiina käyttöliittymä, johon on kytketty <code>JPanel</code>-luokan perivä luokka <code>Piirtoalusta</code>. Muuta luokan <code>Piirtoalusta</code> metodin <code>paintComponent</code> toteutusta siten, että se piirtää seuraavanlaisen kuvion. Saat käyttää tehtävässä vain <code>graphics</code>-olion <code>fillRect</code>-metodia.</p>
+<p>With the exercise body, you find a pre-made user interface, which is connected to the class <code>DrawingBoard</code>, which inherits <code>JPanel</code>. Modify the method <code>paintCOmponent</code> of <code>DrawingBoard</code> so that it would draw the following figure. You can only use the <code>fillRect</code> method of the <code>graphics</code> object, in this exercise.</p>
 
 <p><img src="img-ohja/smiley.gif"/></p>
 
-<p>Huom! Älä käytä enempää kuin viittä <code>fillRect</code>-kutsua. Kuvion ei tarvitse olla täsmälleen samanlainen kuin ylläoleva, testit kertovat kun piirtämäsi kuva on tarpeeksi lähellä haluttua kuvaa.</p>
+<p>Attention! Do not use more than five <code>fillRect</code> calls. The figure does not have to be identical to the one above, the tests tell you when your figure is close enough to the required one.</p>
 
 </div>
 
@@ -10129,110 +10130,107 @@ public class KeyboardListener implements KeyListener {
     <p><img src="img-ohja/kali/piirtoalusta-hahmo-liikkuu.png"/></p>
 
 <div class="tehtavat">
-<h3>Liikkuva kuvio</h3>
+<h3>A Moving Figure</h3>
 
-<p>Teemme ohjelman, jossa käyttäjä voi liikutella näppäimistön avulla ruudulle piirrettyjä kuvioita. Ohjelmassa tulee mukana käyttöliittymärunko, jota pääset muokkaamaan ohjelman edetessä.</p>
+<p>We create a program which allows the user to move the figures drawn on a board using their keyboard. Together with the program you find the body of a user interface, which you can modify as your program proceeds.</p>
 
-<p>Aluksi tehdään muutama luokka, joilla kuvioita hallitaan. Pääsemme myöhemmin piirtämään kuvioita ruudulle. Tee kaikki ohjelman luokat pakkaukseen <code>liikkuvakuvio</code>.</p>
+<p>At first, we create a couple of classes to manage the figures. Later on we will be able to draw the figures to our board. Create all the classes of the program in the package <code>movingfigure</code>.</p>
 
-<p>Tehtävässä käytetään perintää ja abstrakteja luokkia. Kertaa siis tarvittaessa values 18.1, 18.2 ja 18.5</p></p>
+<p>In this exercise we make use of both inheritance and abstract classe: go back to sections 18.1, 18.2, and 18.5, if you need.</p>
 
-<h4 class="req">Abstrakti luokka Kuvio</h4>
+<h4 class="req">Figure: an Abstract Class</h4>
 
-<p>Tee abstrakti luokka <code>Kuvio</code>. Kuviolla on oliomuuttujat <code>x</code> ja <code>y</code>, jotka kertovat kuvion sijainnin ruudulla sekä metodi <code>public void siirra(int dx, int dy)</code>, jonka avulla kuvion sijainti siirtyy parametrina olevien koordinaattisiirtymien verran. Esim. jos sijainti aluksi on (100,100), niin kutsun <code>siirra(10,-50)</code> jälkeen sijainti on (110, 50). Luokan konstruktorin <code>public Kuvio(int x, int y)</code> tulee asettaa kuviolle alkusijainti. Lisää luokalle myös metodit <code>public int getX()</code> ja <code>public int getY()</code>.</p>
+<p>Create the abstract class <code>Figure</code>. Figures have the object variables <code>x</code> and <code>y</code>, which tell the figure position on the board; they also have the method <code>public void move(int dx, int dy)</code>, which moves the figures according to the parameter coordinate movements. For instance, if the position is  (100,100), at the beginning, after calling the method <code>move(10,-50)</code> the position will be (110,50). The class constructor <code>public Figure(int x, int y)</code> has to define the original position of the figure. Additionally, implement also the methods <code>public int getX()</code> and <code>public int getY()</code>.</p>
 
-<p>Luokalla tulee olla myös abstrakti metodi <code>public abstract void piirra(Graphics graphics)</code>, jolla kuvio piirretään piirtoalustalle. Kuvion piirtämismetodi toteutetaan luokan <code>Kuvio</code> perivissä metodeissa.</p>
+<p>The class also has to have the abstract method <code>public abstract void draw(Graphics graphics)</code>, which draws the figure on the drawing board. The figure drawing method is implemented in the classes which inherit <code>Figure</code>.</p>
 
-<h4 class="req">Ympyra</h4>
+<h4 class="req">Circle</h4>
 
-<p>Tee luokka <code>Ympyra</code> joka perii Kuvion. Ympyrällä on <code>halkaisija</code> jonka arvon konstruktori <code>public Ympyra(int x, int y, int halkaisija)</code>. Sijainti tallennetaan yläluokassa määriteltyihin oliomuuttujiin. 
+<p>Create the class <code>Circle</code> which inherits Figure. Circle has a <code>trigger</code>, whose value is defined by the constructor <code>public Circle(int x, int y, int trigger)</code>. The Circle position is stored into the object variables defined in its parent class. 
 </p>
 
-<p>
-Ympyra määrittelee metodin <code>piirra</code> siten, että oikean kokoinen ympyrä piirretään koordinaattien osoittamaan paikkaan
-parametrina olevan <code>Graphics</code>-olion <code>fillOval</code>-metodia käyttäen, ympyrän sijaintia tulee käyttää metodin kahtena ensimmäisenä parametrina. Ota mallia Hahmo-esimerkin vastaavasta metodista.
-Graphics-olion metodien toimintaa kannattaa tutkia <a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html">Java API:sta.</a> 
+<p>The circle defines the method <code>draw</code> so that it would draw a circle of the right size, in the place defined by the coordinates, and using the method <code>fillOval</code> of the <code>Graphics</code> object; the first two parameters of the method are taken for the position of the circle. Take example from the relative method in the Avatar example. For more information about the methods of Graphics objects, you can have a look at <a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html">Java's API.</a> 
 </p>
 
-<h4 class="req">Piirtoalusta</h4>
+<h4 class="req">Drawing Board</h4>
 
-<p>Luo luokka <code>Piirtoalusta</code> joka perii luokan <code>JPanel</code>, mallia voit ottaa esimerkiksi edellisen tehtävän mukana tulleesta piirtoalustasta. Piirtoalusta saa konstruktorin parametrina <code>Kuvio</code>-tyyppisen olion. Korvaa luokan <code>JPanel</code> metodi <code>protected void paintComponent(Graphics g)</code> siten, että siinä kutsutaan ensin yläluokan <code>paintComponent</code>-metodia ja sitten piirtoalustalle asetetun kuvion <code>piirra</code>-metodia.</p>
+<p>Create the class <code>DrawingBoard</code> which inherits <code>JPanel</code>; you can take example from the drawing board in the previous exercise, for instance. DrawingBoard receives a <code>Figure</code> object as parameter. Override <code>JPanel</code>'s method <code>protected void paintComponent(Graphics g)</code> so that it calls firt the superclass' <code>paintComponent</code> method, and then the <code>draw</code> method of the figure which was assigned to the drawing board.</p>
 
-<p>Muokkaa luokkaa <code>Kayttoliittyma</code> siten, että se saa konstruktorin parametrina <code>Kuvio</code>-tyyppisen olion. Lisää käyttöliittymään Piirtoalusta <code>luoKomponentit(Container container)</code>-metodissa, anna piirtoalustalle konstruktorin parametrina käyttöliittymälle annettu kuvio.</p>
+<p>Modify the class <code>UserInterface</code> so that it would receive a <code>Figure</code> object as constructor parameter. Assign your DrawingBoard to the user interface together with the <code>createCompoenents(Container container)</code> method, and assign to the drawing board the figure which was given to the user interface as constructor parameter.</p>
 
-<p>Testaa lopuksi että seuraavalla esimerkkikoodilla ruudulle piirtyy ympyrä.</p>
+<p>Finally, test that the following sample code draws a circle on the screen.</p>
 
 <pre class="sh_java">
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Ympyra(50, 50, 250));
-        SwingUtilities.invokeLater(kayttoliittyma);
+        UserInterface ui = new UserInterface(new Circle(50, 50, 250));
+        SwingUtilities.invokeLater(ui);
 </pre>
 
 <p><img src="img-ohja/kali/liikkuvakuvio-ympyra.png"/></p>
 
 
 
-        <h4 class="req">Näppäimistöohjaus</h4>
+        <h4 class="req">KeyboardDirections</h4>
 
-<p>Laajennetaan piirtoalustaa siten, että kuviota voi liikutella nuolinäppäinten avulla. Luo rajapinnan <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyListener.html" target="_blank">KeyListener</a></code> toteuttava luokka <code>NappaimistonKuuntelija</code>. Luokan <code>NappaimistonKuuntelija</code> konstruktorin parametrit ovat luokan <code>Component</code> ilmentymä ja luokan <code>Kuvio</code> ilmentymä.</p>
+<p>Let's extend our drawing board, so that we could move the figures using our keyboard arrows. Create the class <code>KeyboardLsitener</code> which implements the interface <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyListener.html" target="_blank">KeyListener</a></code>. The class <code>KeyboardListener</code> has got two constructor parameters: an instance of the class <code>Component</code> and one of the class <code>Figure</code>.</p>
 
-<p>Luokan Component ilmentymä annetaan näppäimistönkuuntelijalle, jotta voimme päivittää halutun komponentin jokaisen näppäimenpainalluksen jälkeen uudestaan. Komponentin päivittäminen tapahtuu kutsumalla <code>Component</code> luokasta perityvää metodia <code>repaint</code>. Luokka Piirtoalusta on tyyppiä <code>Component</code> koska <code>Component</code> on luokan <code>JPanel</code> perivän luokan yläluokka.</p>
+<p>The instance of Component is given to the keyboard listener so that the component would be updated each time the keyboard is pressed. The component is updated with the method call <code>repaint</code>, which is inherited fromt he class <code>Component</code>. The type of the class DrawingBoard is <code>Component</code>, because <code>Component</code> is the parten class of <code>JPanel</code>.</p>
 
-<p>Toteuta rajapinnan <code>KeyListener</code> määrittelemä metodi <code>keyPressed(KeyEvent e)</code> siten, että käyttäjän painaessa nuolta vasemmalle kuvio siirtyy yhden pykälän vasemmalle. Oikealle painettaessa yksi oikealle. Ylös painettaessa yksi ylös, ja alas painettaessa yksi alas. Huomaa että y-akseli kasvaa ikkunan yläosasta alaspäin. Näppäinkoodit nuolinäppäimille ovat <code>KeyEvent.VK_LEFT</code>, <code>KeyEvent.VK_RIGHT</code>, <code>KeyEvent.VK_UP</code>, ja <code>KeyEvent.VK_DOWN</code>. Jätä muut rajapinnan <code>KeyListener</code> vaatimat metodit tyhjiksi.</p>
+<p>Implement the method <code>keyPressed(KeyEvent e)</code> of the interface <code>KeyListener</code>; when the user presses the left arrow, the figure moves one point left. Pressing right, the figure moves one point right. Pressing up it moves one point up, and pressing down the figure moves one point down. Note that the y axe grows from the upper side of the window downwards. The arrow key codes are <code>KeyEvent.VK_LEFT</code>, <code>KeyEvent.VK_RIGHT</code>, <code>KeyEvent.VK_UP</code>, and <code>KeyEvent.VK_DOWN</code>. Leave empty the other methods required by the interface <code>KeyListener</code>.</p>
 
 <p>Kutsu aina Component-luokan <code>repaint</code>-metodia näppäimistönkuuntelutapahtuman lopussa.</p>
 
 <p>Lisää näppäimistönkuuntelija Kayttoliittyma-luokan <code>lisaaKuuntelijat</code>-metodissa. Näppäimistönkuuntelija tulee liittää <code>JFrame</code>-olioon.</p>
 
 
-        <h4 class="req">Nelio ja Laatikko</h4>
+        <h4 class="req">Square and Box</h4>
 
 
-<p>Peri luokasta <code>Kuvio</code> luokat <code>Nelio</code> ja <code>Laatikko</code>. Neliöllä on konstruktori <code>public Nelio(int x, int y, int sivunPituus)</code>, laatikon konstruktori on muotoa <code>public Laatikko(int x, int y, int leveys, int korkeus)</code>. Käytä piirtämisessä graphics-olion <code>fillRect</code>-metodia.</p>
+<p>Let <code>Square</code> and <code>Box</code> inherit the class <code>Figure</code>. Square has got the constructor <code>public Square(int x, int y, int sideLength)</code>; the constructor of box is <code>public boc(int x, int y, int length, int height)</code>. Use the method <code>fillRect</code> of a graphic object to draw the figures.</p>
 
-<p>Varmista, että neliöt ja laatikot piirtyvät ja liikkuvat oikein Piirtoalustalla.</p>
+<p>Make sure that squares and boxes are drawn and move right on the DrawingBoard.</p>
 
 <pre class="sh_java">
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Nelio(50, 50, 250));
-        SwingUtilities.invokeLater(kayttoliittyma);
+        UserInterface ui = new UserInterface(new Square(50, 50, 250));
+        SwingUtilities.invokeLater(ui);
 </pre>
 
 <p><img src="img-ohja/kali/liikkuvakuvio-nelio.png"/></p>
 
 
 <pre class="sh_java">
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Laatikko(50, 50, 100, 300));
-        SwingUtilities.invokeLater(kayttoliittyma);
+        UserInterface ui = new UserInterface(new Box(50, 50, 100, 300));
+        SwingUtilities.invokeLater(ui);
 </pre>
 
 <p><img src="img-ohja/kali/liikkuvakuvio-laatikko.png"/></p>
 
-        <h4 class="req">Koostekuvio</h4>
+        <h4 class="req">CompoundFigure</h4>
 
-        <p>Peri luokasta <code>Kuvio</code> luokka <code>Koostekuvio</code>. Koostekuvio sisältää joukon muita kuvioita jotka se tallettaa ArrayList:iin. Koostekuviolla on metodi <code>public void liita(Kuvio k)</code> jonka avulla koostekuvioon voi liittää kuvio-olion. Koostekuviolla ei ole omaa sijaintia ja ei ole merkitystä mitä koostekuvio asettaa perimiensä x- ja y-koordinaatin arvoiksi. Koostekuvio piirtää itsensä pyytämällä osiaan piirtämään itsensä, koostekuvion siirtyminen tapahtuu samoin. Kuviolta peritty metodi <code>siirra</code> on siis ylikirjoitettava!</p>
+        <p>Let <code>CompoundFigure</code> inherit <code>Figure</code>. Compound figure contains other figures which are stored in an ArrayList. CompoundFigure has got the method <code>public void add(Figure f)</code>, which adds a new Figure object to the compound figure. Compound figures do not have their own position, and it is not important what values are assigned to x and y coordinates. Compound figures draw themselves by asking their parts to draw themselves; the same thing happens when a compound figure moves. This means that the inherited method <code>move</code> has to be overwritten!</p>
 
-        <p>Testaa että koostekuviosi piirtyy ja siirtyy oikein, esim. seuraavan koostekuvion avulla:</p>
+        <p>You can test whether your compound figure moves and is drawn well using the following code:</p>
 
 <pre class="sh_java">
-        Koostekuvio rekka = new Koostekuvio();
+        CompoundFigure truck = new CompoundFigure();
 
-        rekka.liita(new Laatikko(220, 110, 75, 100));
-        rekka.liita(new Laatikko(80, 120, 200, 100));
-        rekka.liita(new Ympyra(100, 200, 50));
-        rekka.liita(new Ympyra(220, 200, 50));
+        truck.add(new Box(220, 110, 75, 100));
+        truck.add(new Box(80, 120, 200, 100));
+        truck.add(new Circle(100, 200, 50));
+        truck.add(new Circle(220, 200, 50));
 
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(rekka);
-        SwingUtilities.invokeLater(kayttoliittyma);
+        UserInterface ui = new UserInterface(truck);
+        SwingUtilities.invokeLater(ui);
 </pre>
 
 <p><img src="img-ohja/kali/liikkuvakuvio-rekka.png"/></p>
 
 
 
-        <p>Huomaa miten <b>olioiden vastuut</b> jakautuvat tehtävässä. Jokainen Kuvio on vastuussa itsensä piirtämisestä ja siirtämisestä. Yksinkertaiset kuviot siirtyvät kaikki samalla tavalla. Jokaisen yksinkertaisen kuvion on itse hoidettava piirtymisestään. Koostekuvio siirtää itsensä pyytämällä osiaan siirtymään, samoin hoituu koostekuvion piirtyminen. Piirtoalusta tuntee Kuvio-olion joka siis voi olla mikä tahansa yksinkertainen kuvio tai koostekuvio, kaikki piirretään ja siirretään samalla tavalla. Piirtoalusta siis toimii samalla tavalla kuvion oikeasta tyypistä huolimatta, piirtoalustan ei tarvitse tietää kuvion yksityiskohdista mitään. Kun piirtoalusta kutsuu kuvion metodia <code>piirra</code> tai <code>siirra</code> <b>polymorfismin</b> ansiosta kutsutuksi tulee kuvion todellista tyyppiä vastaava metodi.</p>
+        <p>Note how the <b>object responsabilities are shared here</b>. Each Figure is in charge of drawing and moving itself. Simple figures all move in the same way. Each simple figure has to manage their own drawing themselves. Compound figures move by asking their parts to move, and the same thing happens when it comes to be drawn. The drawing board knows a Figure object which, in fact, can be whatever simple figure or a compound figure: they are all drawn and moved in the same way. In fact, the drawing board works correctly regardless of the real type of the figure; the drawing board does not have to know the details of the figure. When the drawing board calls the method <code>draw</code> or <code>move</code> of the figure, the method of the real type of the figure is called, thanks to <b>polymorphism</b>.</p>
 
-        <p>Huomionarvoista tehtävässä on se, että Koostekuvio voi sisältää mitä tahansa Kuvio-olioita, siis myös koostekuvioita! Luokkarakenne mahdollistaakin mielivaltaisen monimutkaisen kuvion muodostamisen ja kuvion siirtely ja piirtäminen tapahtuu aina täsmälleen samalla tavalla.</p>
+        <p>It's worth to notice that CompoundFigure can contain whatever Figure object, even another CompoundFigure! The class structure allows for highly complex figure formations, whereas figures move and draw themselves always in the same way.</p>
 
-        <p>Luokkarakennetta on myös helppo laajentaa, esim. perimällä Kuvio-luokasta uusia kuviotyyppejä: kolmio, piste, viiva, ym... Koostekuvio toimii ilman muutoksia myös uusien kuviotyyppien kanssa, samoin piirtoalusta ja käyttöliittymä.</p>
+        <p>The class structure can also be expanded easily; for instance, a compound figure would work without needing changes even if we created new types which inherit Figure (say Triangle, Point, Line, exc.), and the same thing would apply to the drawing board and user interface.</p>
 
 </div>
 
@@ -10244,221 +10242,226 @@ Graphics-olion metodien toimintaa kannattaa tutkia <a href="http://docs.oracle.c
 <div class="tehtavat">
 <h3>Game of Life</h3>
 
-<p>Tässä tehtäväsarjassa toteutetaan sovelluslogiikka Game of Life-pelille perimällä valmis sovellusrunko. Sovellusrunko on projektiin erikseen lisätyssä kirjastossa, joten sen lähdekoodit eivät ole nähtävissä.</p>
+<p>In this exercise, we implement the application logic of a Game of Life, inheriting a pre-made application body.The application body is in a library which has been added to the project singularly, and its source codes are not visible.</p>
 
-<p><b>HUOM:</b> tehtävä ei ole erityisen vaikea, mutta tehtävänanto saattaa aluksi vaikuttaa sekavalta. Lue ohje tarkasti uudelleen tai kysy apua jos et pääse alkuun. Tehtävä kannattaa ehdottomasti tehdä, sillä lopputulos on hieno!</p>
+<p><b>ATTENTION:</b> your task won't be extremely difficult, but the exercise descriptions may look a bit confusing, at first. Read the instruction carefully, or ask for help if you can't get started. The exercise is definitely worth of your energies, because the result is beautiful!</p>
 
-<p>Game of Life on matemaatikko John Conway'n kehittelemä yksinkertainen "populaatiosimulaattori", kts. <a href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a>.</p>
+<p>Game of Life is a simple "population simulator" which was developed by the mathematician John Conway; see <a href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a>.</p>
 
-<p>Game of Lifen säännöt ovat seuraavat:</p>
+<p>Game of Life rules:</p>
 <ul>
-<li>Jokainen elossa oleva solu, jolla on alle kaksi elossa olevaa naapuria kuolee.</li>
-<li>Jokainen elossa oleva solu, jolla on kaksi tai kolme elossa olevaa naapuria elää seuraavaan iteraatioon eli kierrokseen.</li>
-<li>Jokainen elossa oleva solu, jolla on yli kolme naapuria kuolee.</li>
-<li>Jokainen kuollut solu, jolla on tasan kolme elossa olevaa naapuria muuttuu eläväksi.</li>
+<li>Every living cell dies if they have less than two living neighbours.</li>
+<li>Every living cell keeps on living during the following iteration (i.e. turn) if they have two or three living neighbours.</li>
+<li>Every living cell dies if they have more than three living neighbours.</li>
+<li>Every dead cell is turned back to life if they have exactly three living neighbours.</li>
 </ul>
 
-<p>Abstrakti luokka <code>GameOfLifeAlusta</code> tarjoaa seuraavat toiminnot</p>
+<p>The abstract class <code>GameOfLifeBoard</code> provides the following funcionality</p>
 <ul>
-  <li><b>public GameOfLifeAlusta(int leveys, int korkeus)</b> luo määritellyn kokoisen pelialustan</li>
-  <li><b>public boolean[][] getAlusta()</b> tarjoaa pääsyn pelialustaan, joka on totuusarvoista koostuva kaksiulotteinen taulukko &ndash; kuten metodin paluuarvosta voi havaita! Palaamme kaksiulotteiseen taulukkoon tarkemmin sitä tarvitessamme.</li>
-  <li><b>public int getLeveys()</b> palauttaa alustan leveyden</li>
-  <li><b>public int getKorkeus()</b> palauttaa alustan korkeuden</li>
-  <li><b>public void pelaaKierros()</b> simuloi pelikierroksen</li>
+  <li><b>public GameOfLifeBoard(int length, int height)</b> creates a game board of the defined dimentions</li>
+  <li><b>public boolean[][] getBoard()</b> provides access to the game board, which is a bidimentional table containing boolean values &ndash; as you may guess from the method return value! We come back to bidimensional boards later on when needed.</li>
+  <li><b>public int getLength()</b> returns the board length</li>
+  <li><b>public int getHeight()</b> returns the board height</li>
+  <li><b>public void playTheTurn()</b> simulates a turn of the game</li>
 </ul>
 
-<p>Luokassa <code>GameOfLifeAlusta</code> on lisäksi määritelty seuraavat abstraktit metodit, <b>jotka sinun tulee toteuttaa</b>.<p>
+<p>The class <code>GameOfLifeBoard</code> has also got the following abstract method, <b>which you will have to implement</b>.<p>
 
 <ul>
-  <li><b>public abstract void muutaElavaksi(int x, int y)</b> muuttaa alkion koordinaatissa (x, y) eläväksi eli asettaa sille arvon <i>true</i>. Jos koordinaatit ovat alustan ulkopuolella ei tapahdu mitään.</li>
-  <li><b>public abstract void muutaKuolleeksi(int x, int y)</b> muuttaa alkion koordinaatissa (x, y) kuolleeksi eli asettaa sille arvon <i>false</i>. Jos koordinaatit ovat alustan ulkopuolella ei tapahdu mitään.</li>
-  <li><b>public abstract boolean onElossa(int x, int y)</b> kertoo onko koordinaatissa (x, y) oleva alkio elossa. Jos koordinaatit ovat alustan ulkopuolella, palautetaan <i>false.</i></li>
-  <li><b>public abstract void alustaSatunnaisetPisteet(double todennakoisyysPisteelle)</b> alustaa kaikki alustan alkiot siten, että kukin alkio on elävä todennäköisyydellä <i>todennakoisyysPisteelle.</i> Todennäköisyys annetaan double-arvona suljetulla välillä [0, 1]. Jos metodia kutsutaan arvolla 1, tulee jokaisen alkion olla elävä. Jos taas todennäköisyys on 0, tulee jokaisen alkion olla kuollut.</li>
-  <li><b>public abstract int getElossaOlevienNaapurienLukumaara(int x, int y)</b> kertoo elossa olevien naapureiden lukumäärän solulle pisteessä (x, y).</li>
-  <li><b>public abstract void hoidaSolu(int x, int y, int elossaOleviaNaapureita)</b> hoitaa solun (x, y) Game of Life -sääntöjen mukaan.</li>
+  <li><b>public abstract void turnToLiving(int x, int y)</b> animates the cell whose coordinates are (x, y), that is to say it assigns the value <i>true</i> to it. If the coordinates are outside the board, nothing happens.</li>
+  <li><b>public abstract void turnToDead(int x, int y)</b> kills the cell whose coordinates are (x, y), that is to say it assigns the value <i>false</i> to it. If the coordinates are outside the board, nothing happens.</li>
+  <li><b>public abstract boolean isAlive(int x, int y)</b> tells whether the cell at (x, y) is alive. If the coordinates are outside the board, the method returns <i>false.</i></li>
+  <li><b>public abstract void initiateRandomCells(double probabilityForEachCell)</b> initiates all the cells of the board: every cell is alive with a probability of <i>probabilityForEachCell.</i> The probability is a double value between [0, 1]. If a method is called with value 1, all the cells have to be alive. Accordingly, if the probability is 0, all the cells have to be dead.</li>
+  <li><b>public abstract int howManyLivingNeibours(int x, int y)</b> tells the number of living neighbours for the cell at (x, y).</li>
+  <li><b>public abstract void manageCell(int x, int y, int livingNeighbours)</b> managese the cell (x, y) according to the rules of the Game of Life.</li>
 </ul>
 
 
-<h4>GameOfLife-toteutus, vaihe 1</h4>
+<h4>GameOfLife implementation, Part 1</h4>
 
-<p>Luo pakkaukseen <code>game</code> luokka <code>OmaAlusta</code>, joka perii pakkauksessa <code>gameoflife</code> olevan luokan <code>GameOfLifeAlusta</code>. Huomaa että pakkausta <code>gameoflife</code> ei ole näkyvillä omassa projektissasi, vaan se tulee mukana luokkakirjastona. Toteuta luokalle <code>OmaAlusta</code> konstruktori <code>public OmaAlusta(int leveys, int korkeus)</code>, joka kutsuu yläluokan konstruktoria annetuilla parametreilla:</p>
+<p>Create the class <code>PersonalBoard</code> into the package <code>game</code>; PersonalBoard inherits the class <code>GameOfLifeBoard</code> which is in the package <code>gameoflife</code>. Note that the package <code>gameoflife</code> is not visible in your project, but it comes together with the class library. In the class <code>PersonalBoard</code>, implement the constructor <code>public PersonalBoard(int length, int height)</code>, which calls the superclass constructor with the given parameters:</p>
 
 <pre class="sh_java">
-import gameoflife.GameOfLifeAlusta;
+import gameoflife.GameOfLifeBoard;
 
-public class OmaAlusta extends GameOfLifeAlusta {
+public class PersonalBoard extends GameOfLifeBoard {
 
-    public OmaAlusta(int leveys, int korkeus) {
-        super(leveys, korkeus);
+    public PersonalBoard(int length, int height) {
+        super(length, height);
     }
 
     // ..
 </pre>
 
-<p>Voit ensin korvata kaikki abstraktit metodit ei-abstrakteilla metodeilla, jotka eivät kuitenkaan vielä tee mitään järkevää. Mutta koska ne eivät ole abstrakteja, tästä luokasta voi luoda ilmentymiä, toisin kuin abstraktista luokasta GameOfLifeAlusta.</p>
+<p>You can first replace all the abstract methods with non-abstract ones, which do not do anything particular anyway, so far. However, because the methods are not abstract, this class can create instances, differently than the abstract class GameOfLifeBoard.</p>
 
-<p>Toteuta seuraavat metodit</p>
+<p>Implement the following methods</p>
 <ul>
-  <li><b>public void muutaElavaksi(int x, int y)</b> muuttaa alkion koordinaatissa (x, y) eläväksi eli asettaa sille arvon <i>true</i></li>
-  <li><b>public void muutaKuolleeksi(int x, int y)</b> muuttaa alkion koordinaatissa (x, y) kuolleeksi eli asettaa sille arvon <i>false</i></li>
-  <li><b>public boolean onElossa(int x, int y)</b> kertoo onko koordinaatissa (x, y) oleva alkio elossa. Jos koordinaatit ovat alustan ulkopuolella, palautetaan <i>false.</i></li>
+  <li><b>public abstract void turnToLiving(int x, int y)</b> animates the cell whose coordinates are (x, y), that is to say it assigns the value <i>true</i> to it. If the coordinates are outside the board, nothing happens.</li>
+  <li><b>public abstract void turnToDead(int x, int y)</b> kills the cell whose coordinates are (x, y), that is to say it assigns the value <i>false</i> to it. If the coordinates are outside the board, nothing happens.</li>
+  <li><b>public abstract boolean isAlive(int x, int y)</b> tells whether the cell at (x, y) is alive. If the coordinates are outside the board, the method returns <i>false.</i></li>
 </ul>
 
-<p><b>Vihje:</b> Pääset yläluokassa olevaan kaksiulotteiseen taulukkoon käsiksi yläluokan tarjoaman metodin <code>getAlusta()</code> avulla. Kaksiulotteisia taulukoita käytetään kuten yksiulotteisia taulukoita, mutta taulukoille annetaan kaksi indeksiä. Ensimmäinen indeksi kertoo leveyskohdan, toinen indeksi korkeuskohdan. Esimerkiksi seuraava ohjelmapätkä luo ensin 10 x 10 -kokoisen taulukon, ja tulostaa sitten taulukon indeksissä 3, 1 olevan arvon.</p>
+<p><b>Hint:</b> You have access to the bidimentional table of the superclass throw the superclass method <code>getBoard()</code>. Bidimentional tables are used as normal tables, but they are assigned two indexes. The first index tells 
+
+IL PUNTO SULL'ASCISSA
+
+and the second tells
+
+IL PUNTO SULL'ORDINATA. For instance, the following program chunk creates a 10X10 table, and prints the value at (3,1).</p>
 
 <pre class="sh_java">
-boolean[][] arvot = new boolean[10][10];
-System.out.println(arvot[3][1]);
+boolean[][] values = new boolean[10][10];
+System.out.println(values[3][1]);
 </pre>
 
-<p>Vastaavasti OmaAlusta-luokassa voidaan tulostaa yläluokasta saadun taulukon arvo indeksissä x, y seuraavasti:</p>
+<p>Accordingly, we can print the value at (x,y) of our PersonalBoard's superclass, in the following way:</p>
 
 <pre class="sh_java">
-boolean[][] alusta = getAlusta();
-System.out.println(alusta[x][y]);
+boolean[][] board = getBoard();
+System.out.println(board[x][y]);
 </pre>
 
-<p>Ja indeksiin x,y voidaan asettaa esim. arvo true seuraavasti:</p>
+<p>And an index (x,y) can be assigned a value in the following way:</p>
 
 <pre class="sh_java">
-boolean[][] alusta = getAlusta();
-alusta[x][y] = true;
+boolean[][] board = getBoard();
+board[x][y] = true;
 </pre>
 
-<p>Tai suoraan käyttämättä apumuuttujaa:</p>
+<p>Or straight, using a helping variable:</p>
 
 <pre class="sh_java">
-getAlusta()[x][y] = true;    
+getBoard()[x][y] = true;    
 </pre>
 
 
-<p>Testaa toteutustasi seuraavalla testiohjelmalla.</p>
+<p>Test your implementation with the following program.</p>
 <pre class="sh_java">
 package game;
 
-import gameoflife.komentorivi.KomentoriviGameOfLife;
+import gameoflife.commandline.CommandLineGameOfLife;
 
 public class Main {
     public static void main(String[] args) {
-        OmaAlusta alusta = new OmaAlusta(7, 5);
+        PersonalBoard board = new PersonalBoard(7, 5);
 
-        alusta.muutaElavaksi(2, 0);
-        alusta.muutaElavaksi(4, 0);
+        board.turnToLiving(2, 0);
+        board.turnToLiving(4, 0);
 
-        alusta.muutaElavaksi(3, 3);
-        alusta.muutaKuolleeksi(3, 3);
+        board.turnToLiving(3, 3);
+        board.turnToLiving(3, 3);
 
-        alusta.muutaElavaksi(0, 2);
-        alusta.muutaElavaksi(1, 3);
-        alusta.muutaElavaksi(2, 3);
-        alusta.muutaElavaksi(3, 3);
-        alusta.muutaElavaksi(4, 3);
-        alusta.muutaElavaksi(5, 3);
-        alusta.muutaElavaksi(6, 2);
+        board.turnToLiving(0, 2);
+        board.turnToLiving(1, 3);
+        board.turnToLiving(2, 3);
+        board.turnToLiving(3, 3);
+        board.turnToLiving(4, 3);
+        board.turnToLiving(5, 3);
+        board.turnToLiving(6, 2);
 
-        KomentoriviGameOfLife gom = new KomentoriviGameOfLife(alusta);
-        gom.pelaa();
+        CoomandLineGameOfLife gom = new CoomandLineGameOfLife(board);
+        gom.play();
     }
 }
 </pre>
 <p>
 
-Tulostuksen pitäisi olla seuraavanlainen:
+The printout should look like the following:
 
 <pre>
-Paina enter jatkaaksesi, muut lopettaa: &lt;enter&gt;
+Press enter to continue, otherwise quit: &lt;enter&gt;
 
   X X
 
 X     X
  XXXXX
 
-Paina enter jatkaaksesi, muut lopettaa: <font color="red">stop</font>
-Kiitos!
+Press enter to continue, otherwise quit: <font color="red">stop</font>
+Thanks!
 </pre>
 <p>
 
-<h4>GameOfLife-toteutus, vaihe 2</h4>
+<h4>GameOfLife implementation, Part 2</h4>
 
-<p>Toteuta metodi <b>alustaSatunnaisetPisteet(double todennakoisyysPisteelle)</b>, joka alustaa kaikki alkiot siten, että kukin alkio on elävä todennäköisyydellä <i>todennakoisyysPisteelle</i>. Todennäköisyys annetaan metodille suljetulla välillä [0, 1] olevana double-tyyppisenä parametrina.</p>
+<p>Implement the method <b>public abstract void initiateRandomCells(double probabilityForEachCell)</b> initiates all the cells of the board: every cell is alive with a probability of <i>probabilityForEachCell.</i> The probability is a double value between [0, 1]. </p>
 
-<p>Testaa metodia. Arvolla 0.0 ei pitäisi olla yhtään elossa olevaa solua, arvolla 1.0 kaikkien solujen tulisi olla elossa (eli näkyä X-merkkisinä). Arvolla 0.5 noin puolet soluista on eläviä.</p>
+<p>Test the method. Given the value 0.0, there should be no cell alive; given the value 1.0, all the cells should be alive (i.e. visible in the form of X characters). With the value 0.5, around fifty precent of the cells should be alive.</p>
 
 <pre class="sh_java">
-        OmaAlusta alusta = new OmaAlusta(3, 3);
-        alusta.alustaSatunnaisetPisteet(1.0);
+        PersonalBoard board = new PersonalBoard(3, 3);
+        board.initiateRandomCells(1.0);
 
-        KomentoriviGameOfLife gom = new KomentoriviGameOfLife(alusta);
-        gom.pelaa();
+        CoomandLineGameOfLife gom = new CoomandLineGameOfLife(board);
+        gom.play();
 </pre>
 
 <pre>
-Paina enter jatkaaksesi, muut lopettaa: &lt;enter&gt;
+Press enter to continue, otherwise quit: &lt;enter&gt;
 
 XXX
 XXX
 XXX
-Paina enter jatkaaksesi, muut lopettaa: <font color="red">stop</font>
-Kiitos!
+Press enter to continue, otherwise quit: <font color="red">stop</font>
+Thanks!
 </pre>
 
 
-<h4>GameOfLife-toteutus, vaihe 3</h4>
+<h4>GameOfLife Implementation, part 3</h4>
 
-<p>Toteuta metodi <b>getElossaOlevienNaapurienLukumaara(int x, int y),</b> joka laskee elossa olevien naapurien lukumäärän. Keskellä
-taulukkoa olevalla solulla on yhteensä kahdeksan naapuria, reunassa olevalla solulla 5, kulmassa olevalla 3. </p>
+<p>Implement the method <b>howManyLivingNeibours(int x, int y),</b> which calculates the number of neighbour cells which are alive. Central cells have eight neighbours, the ones on the side have five, and the ones in the corner have only three. </p>
 
-<p>Testaa metodia seuraavilla lauseilla (voit keksiä myös muita testitapauksia!):</p>
+<p>Test the method with the following sentences (of course, you can create your own test instances!):</p>
 
 <pre class="sh_java">
-OmaAlusta alusta = new OmaAlusta(7, 5);
+PersonalBoard board = new PersonalBoard(7, 5);
 
-alusta.muutaElavaksi(0, 1);
-alusta.muutaElavaksi(1, 0);
-alusta.muutaElavaksi(1, 2);
-alusta.muutaElavaksi(2, 2);
-alusta.muutaElavaksi(2, 1);
+board.turnToLiving(0, 1);
+board.turnToLiving(1, 0);
+board.turnToLiving(1, 2);
+board.turnToLiving(2, 2);
+board.turnToLiving(2, 1);
 
-System.out.println("Elossa naapureita (0,0): " + alusta.getElossaOlevienNaapurienLukumaara(0, 0));
-System.out.println("Elossa naapureita (1,1): " + alusta.getElossaOlevienNaapurienLukumaara(1, 1));
+System.out.println("Neighbours alive (0,0): " + board.howManyLivingNeibours(0, 0));
+System.out.println("Neighbours alive (1,1): " + board.howManyLivingNeibours(1, 1));
 </pre>
 <p>
 
-Tulostuksen pitäisi olla seuraavanlainen:
+The print output should look like the following:
 <pre>
-Elossa naapureita (0,0): 2
-Elossa naapureita (1,1): 5
+Neighbours alive (0,0): 2
+Neighbours alive (1,1): 5
 </pre>
 
 
-<h4>GameOfLife-toteutus, vaihe 4</h4>
+<h4>GameOfLife Implementation, Part 4</h4>
 
-<p>Jäljellä on vielä metodin <b>hoidaSolu(int x, int y, int elossaOleviaNaapureita)</b> toteuttaminen. GameOfLife-pelin säännöthän olivat seuraavat:</p>
+<p>Only one method is missing: <b>manageCell(int x, int y, int livingNeighbours)</b>. Game of Life rules were the following:</p>
 
 <ul>
-  <li>Jokainen elossa oleva solu, jolla on alle kaksi elossa olevaa naapuria kuolee.</li>
-  <li>Jokainen elossa oleva solu, jolla on kaksi tai kolme elossa olevaa naapuria elää seuraavaan iteraatioon eli kierrokseen.</li>
-  <li>Jokainen elossa oleva solu, jolla on yli kolme naapuria kuolee.</li>
-  <li>Jokainen kuollut solu, jolla on tasan kolme elossa olevaa naapuria muuttuu eläväksi.</li>
+<li>Every living cell dies if they have less than two living neighbours.</li>
+<li>Every living cell keeps on living during the following iteration (i.e. turn) if they have two or three living neighbours.</li>
+<li>Every living cell dies if they have more than three living neighbours.</li>
+<li>Every dead cell is turned back to life if they have exactly three living neighbours.</li>
 </ul>
 
-<p>Toteuta metodi <code>hoidaSolu(int x, int y, int elossaOleviaNaapureita)</code> ylläolevien sääntöjen mukaan. Kannattaa ohjelmoida ja testata yksi sääntö kerrallaan!</p>
+<p>Implement the method <code>manageCell(int x, int y, int livingNeighbours)</code> according to the following rules. It's good to program and test one rule at one time!</p>
 
-<p>Kun olet saanut kaikki valmiiksi, voit testata ohjelman toimintaa seuraavalla graafisella simulaattorilla.</p>
+<p>When you are done with all the rule, you can test the program with the following graphic simulator.</p>
 
 <pre class="sh_java">
 package game;
 
-import gameoflife.Simulaattori;
+import gameoflife.Simulator;
 
 public class Main {
 
     public static void main(String[] args) {
-        OmaAlusta alusta = new OmaAlusta(100, 100);
-        alusta.alustaSatunnaisetPisteet(0.7);
+        PersonalBoard board = new PersonalBoard(100, 100);
+        board.initiateRandomCells(0.7);
 
-        Simulaattori simulaattori = new Simulaattori(alusta);
-        simulaattori.simuloi();
+        Simulator simulator = new Simulator(board);
+        simulator.simulate();
     }
 }
 </pre>
@@ -10672,63 +10675,63 @@ The form is right.
 
 <NEXTWEEK></NEXTWEEK>
 
-<h3>Säännölliset lausekkeet</h3>
+<h3>Regular Expressions</h3>
 
-<p>Harjoitellaan hieman säännöllisten lausekkeiden käyttöä. Tehtävät tehdään oletuspakkauksessa olevaan luokkaan <code>MainProgram</code>.</h3>
+<p>Let's train to use regural expressions. The exercises are done in the <code>MainProgram</code> class of the default package .</h3>
 
-<h4 class="req">Viikonpäivä</h4>
+<h4 class="req">Week Days</h4>
 
-<p>Tee säännöllisen lausekkeen avulla luokalle <code>MainProgram</code> metodi <code>public static boolean onViikonpaiva(String characterString)</code>, joka palauttaa <code>true</code> jos sen parametrina saama characterString viikonpäivän lyhenne (ma, ti, ke, to, pe, la tai su).</p>
+<p>Create the method <code>public static boolean isAWeekDay(String string)</code> in the class <code>MainProgram</code>, using regular expressions. The method returns <code>true</code> if its parameter string is the abbreviation of a week day (mon, tue, wed, thu, fri, sat or sun).</p>
 
-<p>Esimerkkitulostuksia metodia käyttävästä ohjelmasta:</p>
+<p>The following is a sample print output of the method:</p>
 
 <pre>
-Anna characterString: <font color="red">ti</font>
-Muoto on oikea.
+Give a string: <font color="red">ti</font>
+The form is fine.
 </pre>
 
 <pre>
-Anna characterString: <font color="red">abc</font>
-Muoto ei ole oikea.
+Give a string: <font color="red">abc</font>
+The form is wrong.
 </pre>
 
-<h4 class="req">Vokaalitarkistus</h4>
+<h4 class="req">Vowel Inspection</h4>
 
-<p>Tee luokalle <code>MainProgram</code> metodi <code>public static boolean kaikkiVokaaleja(String characterString)</code> joka tarkistaa säännöllisen lausekkeen avulla ovatko parametrina olevan characterStringn kaikki merkit vokaaleja. </p>
+<p>Create the method <code>public static boolean allVowels(String string)</code> in the class <code>MainProgram</code>, which makes use of regular expressions and checks whether the String argument contains only vowel characters. </p>
 
-<p>Esimerkkitulostuksia metodia käyttävästä ohjelmasta:</p>
-
-<pre>
-Anna characterString: <font color="red">aie</font>
-Muoto on oikea.
-</pre>
+<p>The following is a sample print output of the method:</p>
 
 <pre>
-Anna characterString: <font color="red">ane</font>
-Muoto ei ole oikea.
-</pre>
-
-<h4 class="req">Kellonaika</h4>
-
-<p>Säännölliset lausekkeet sopivat tietynlaisiin tilanteisiin. Joissain tapaukseesa lausekkeista tulee liian monimutkaisia, ja characterStringn "sopivuus" kannattaa tarkastaa muulla tyylillä tai voi olla tarkoituksenmukaista käyttää säännöllisiä lausekkeita vain osaan tarkastuksesta.</p>
-
-<p>Tee luokalle <code>MainProgram</code> metodi <code>public static boolean kellonaika(String characterString)</code>  ohjelma, joka tarkistaa säännöllisen lausekkeen avulla onko parametrina oleva characterString muotoa <code>tt:mm:ss</code> oleva kellonaika (tunnit, minuutit ja sekunnit kaksinumeroisina). Tässä metodissa saat käyttää säännöllisten lausekkeiden lisäksi mitä tahansa muutakin tekniikkaa.</p>
-
-<p>Esimerkkitulostuksia metodia käyttävästä ohjelmasta:</p>
-
-<pre>
-Anna characterString: <font color="red">17:23:05</font>
-Muoto on oikea.
+Give a string: <font color="red">aie</font>
+The form is fine.
 </pre>
 
 <pre>
-Anna characterString: <font color="red">abc</font>
-Muoto ei ole oikea.
+Give a string: <font color="red">ane</font>
+The form is wrong.
+</pre>
+
+<h4 class="req">Clock Time</h4>
+
+<p>Regual expressions suit in particular situations. In some cases, the expressions become too complicate and it may be useful to check the "regularity" of a string in a different way, or it may be appropriate to use regular expressions to manage only a part of the inspection.</p>
+
+<p>Create the method <code>public static boolean clockTime(String string)</code> in the class <code>MainProgram</code>, which makes use of regular expressions and checks whether the String argument conforms with the clock time <code>hh:mm:ss</code> (two-digit hours, minutes, and seconds). In this exercise you can use whatever tecnique, in addition to regular expressions.</p>
+
+<p>The following is a sample print output of the method:</p>
+
+<pre>
+Give a string: <font color="red">17:23:05</font>
+The form is fine.
 </pre>
 
 <pre>
-Anna characterString: <font color="red">33:33:33</font>
-Muoto ei ole oikea.
+Give a string: <font color="red">abc</font>
+The form is wrong.
+</pre>
+
+<pre>
+Give a string: <font color="red">33:33:33</font>
+The form is wrong.
 </pre>
 
 </div>
@@ -10986,77 +10989,77 @@ public class Hand {
 
 <div class="tehtavat">
 
-<h3>Enum ja Iteraattori</h3>
+<h3>Enum and Iterator</h3>
 
-<p>Tehdään ohjelma pienen yrityksen henkilöstön hallintaan.</p>
+<p>Let's create a program to manage the staff personnel of a small business.</p>
 
-<h4>Koulutus</h4>
+<h4>Education</h4>
 
-<p>Tee pakkaukseen <code>henkilosto</code> lueteltu tyyppi eli enum <code>Koulutus</code> jolla on tunnukset <code>FT</code> (tohtori), <code>FM</code> (maisteri), <code>LuK</code> (kandidaatti), <code>FilYO</code> (ylioppilas).</p>
+<p>Create the enumerated type, or enum, <code>Education</code> in the package <code>staffpersonnel</code>. The enum has got the titles <code>D</code> (doctor), <code>M</code> (master), <code>B</code> (bachelor), <code>GRAD</code> (graduate).</p>
 
 <h4>Person</h4>
 
-<p>Tee pakkaukseen <code>henkilosto</code> luokka Luokka <code>Person</code>. Henkilölle annetaan konstruktorin parametrina annettava nimi ja koulutus. Henkilöllä on myös koulutuksen kertova metodi <code>public Koulutus getKoulutus()</code> sekä alla olevan esimerkin mukaista jälkeä tekevä <code>toString</code>-metodi.</p>
+<p>Create the class <code>Person</code> in <code>staffpersonnel</code>. Person is assigned a name and an education title as constructor parameters. Person has also a method to communicate their education, <code>public Education getEducation()</code>, as well as a <code>toString</code> method which returns the person information following the example below.</p>
 
 <pre class="sh_java">
-    Person arto = new Person("Arto", Koulutus.FT);
+    Person arto = new Person("Arto", EDUCATION.D);
     System.out.println(arto);
 </pre>
 
 <pre>
-Arto, FT
+Arto, D
 </pre>
 
 
-<h4>Tyontekijat</h4>
+<h4>Employees</h4>
 
-<p>Tee pakkaukseen <code>henkilosto</code> luokka Luokka <code>Tyontekijat</code>. Työntekijät-olio sisältää listan Person-olioita. Luokalla on parametriton konstruktori ja seuraavat metodit:</p>
+<p>Create the class <code>Employees</code> in <code>staffpersonnel</code>. An Employees object contains a list of Person objects. The class has a parameterless constructor plus the following methods:</p>
 
 <ul>
-  <li><code>public void lisaa(Person lisattava)</code> lisää parametrina olevan henkilön työntekijäksi</li>
-  <li><code>public void lisaa(List&lt;Person&gt; lisattavat)</code> lisää parametrina olevan listan henkilöitä työntekijöiksi</li>
-  <li><code>public void tulosta()</code> tulostaa kaikki työntekijät</li>
-  <li><code>public void tulosta(Koulutus koulutus)</code> tulostaa työntekijät joiden koulutus on sama kuin parametrissa määritelty koulutus</li>
+  <li><code>public void add(Person new)</code> adds the parameter person to the employees</li>
+  <li><code>public void add(List&lt;Person&gt; news)</code> adds the parameter list of people to the employees</li>
+  <li><code>public void print()</code> prints all the employees</li>
+  <li><code>public void print(Education edu)</code> prints all the employees, who have the same education as the one specified as parameter</li>
 </ul>
 
-<p><strong>HUOM:</strong> Luokan <code>Tyontekijat</code> <code>tulosta</code>-metodit on toteutettava iteraattoria käyttäen!</p>
+<p><strong>ATTENTION:</strong> The <code>Print</code> method of the class <code>Employees</code> have to be implemented using an iterator!</p>
 
-<h4>Irtisanominen</h4>
+<h4>Firing</h4>
 
-<p>Tee luokalle <code>Tyontekijat</code> metodi <code>public void irtisano(Koulutus koulutus)</code> joka poistaa Työntekijöiden joukosta kaikki henkilöt joiden koulutus on sama kuin metodin parametrina annettu.</p>
+<p>Create the method <code>public void fire(Education edu)</code> in the class <code>Employees</code>. The method deletes all the employees whose education is the same as the method argument.</p>
 
-<p><strong>HUOM:</strong> toteuta metodi iteraattoria käyttäen!</p>
+<p><strong>ATTENTION:</strong> implement the method using an iterator!</p>
 
-<p>Seuraavassa esimerkki luokan käytöstä:</p>
+<p>Below, you find an example of the class usage:</p>
 
 <pre class="sh_java">
 Public class MainProgram {
 
     public static void main(String[] args) {
-        Tyontekijat yliopisto = new Tyontekijat();
-        yliopisto.lisaa(new Person("Matti", Koulutus.FT));
-        yliopisto.lisaa(new Person("Pekka", Koulutus.FilYO));
-        yliopisto.lisaa(new Person("Arto", Koulutus.FT));
+        Employees university = new Employees();
+        university.add(new Person("Matti", Education.D));
+        university.add(new Person("Pekka", Education.GRAD));
+        university.add(new Person("Arto", Education.D));
 
-        yliopisto.tulosta();
+        university.print();
 
-        yliopisto.irtisano(Koulutus.FilYO);
+        university.fire(Education.GRAD);
 
         System.out.println("==");
 
-        yliopisto.tulosta();
+        university.print();
 }
 </pre>
 
 <p>Tulostuu:</p>
 
 <pre>
-Matti, FT
-Pekka, FilYO
-Arto, FT
+Matti, D
+Pekka, GRAD
+Arto, D
 ==
-Matti, FT
-Arto, FT
+Matti, D
+Arto, D
 </pre>
 
 </div>
@@ -11155,192 +11158,189 @@ Green
 
 <div class="tehtavat">
 
-<h3>Elokuvien suosittelija</h3>
+<h3>Film Reference</h3>
 
-<p>Hiljattain Suomeen rantautunut <a href="https://signup.netflix.com/" target="_blank">Netflix</a> lupasi lokakuussa 2006 miljoona dollaria henkilölle tai ryhmälle, joka kehittäisi ohjelman, joka on 10% parempi elokuvien suosittelussa kuin heidän oma ohjelmansa. Kilpailu ratkesi syyskuussa 2009 (<a href="http://www.netflixprize.com/" target="_blank">http://www.netflixprize.com/</a>).</p>
+<p>Recently, in October 2006 after arriving to Finland, <a href="https://signup.netflix.com/" target="_blank">Netflix</a> promised one million dollars to the person or group of people who developed a program, which would be 10% better than their own program. The challange was met September 2009 (<a href="http://www.netflixprize.com/" target="_blank">http://www.netflixprize.com/</a>).</p>
 
-<p>Rakennetaan tässä tehtävässä ohjelma elokuvien suositteluun. Alla on sen toimintaesimerkki:</p>
+<p>With this exercise, we create a program to recommend films. Below, you see how it should work:</p>
 
 <pre class="sh_java">
-    ArvioRekisteri arviot = new ArvioRekisteri();
+    EvaluationRegister votes = new EvaluationRegister();
 
-    Elokuva tuulenViemaa = new Elokuva("Tuulen viemää");
-    Elokuva hiljaisetSillat = new Elokuva("Hiljaiset sillat");
-    Elokuva eraserhead = new Elokuva("Eraserhead");
+    Film goneWithTheWind = new Elokuva("Gone with the Wind");
+    Film bridgesOfMadisonCounty = new Elokuva("The Bridges of Madison County");
+    Film eraserhead = new Elokuva("Eraserhead");
 
-    Person matti = new Person("Matti");
-    Person pekka = new Person("Pekka");
-    Person mikke = new Person("Mikke");
-    Person thomas = new Person("Thomas");
+    Film matti = new Person("Matti");
+    Film pekka = new Person("Pekka");
+    Film mikke = new Person("Mikke");
+    Film thomas = new Person("Thomas");
 
-    arviot.lisaaArvio(matti, tuulenViemaa, Arvio.HUONO);
-    arviot.lisaaArvio(matti, hiljaisetSillat, Arvio.HYVA);
-    arviot.lisaaArvio(matti, eraserhead, Arvio.OK);
+    votes.addVote(matti, goneWithTheWind, Arvio.BAD);
+    votes.addVote(matti, bridgesOfMadisonCounty, Arvio.GOOD);
+    votes.addVote(matti, eraserhead, Arvio.FINE);
 
-    arviot.lisaaArvio(pekka, tuulenViemaa, Arvio.OK);
-    arviot.lisaaArvio(pekka, hiljaisetSillat, Arvio.HUONO);
-    arviot.lisaaArvio(pekka, eraserhead, Arvio.VALTTAVA);
+    votes.addVote(pekka, goneWithTheWind, Arvio.FINE);
+    votes.addVote(pekka, bridgesOfMadisonCounty, Arvio.BAD);
+    votes.addVote(pekka, eraserhead, Arvio.MEDIOCRE);
 
-    arviot.lisaaArvio(mikke, eraserhead, Arvio.HUONO);
+    votes.addVote(mikke, eraserhead, Arvio.GOOD);
     
 
-    Suosittelija suosittelija = new Suosittelija(arviot);
-    System.out.println(thomas + " suositus: " + 
-            suosittelija.suositteleElokuva(thomas));
-    System.out.println(mikke + " suositus: " + 
-            suosittelija.suositteleElokuva(mikke));
+    Reference reference = new Reference(votes);
+    System.out.println(thomas + "'s recommendation: " + 
+            reference.recommendFilm(thomas));
+    System.out.println(mikke + "'s recommendation: " + 
+            reference.recommendFilm(mikke));
 </pre>
 
 <pre>
-Thomas suositus: Hiljaiset sillat
-Mikke suositus: Tuulen viemää
+Thomas's recommendation: The Bridges of Madison County
+Mikke's recommendation: Gone with the Wind
 </pre>
 
-<p>Ohjelma osaa suositella elokuvia niiden yleisen arvion perusteella, sekä henkilökohtaisten henkilön antaminen arvioiden perusteella. Lähdetään rakentamaan ohjelmaa.</p>
+<p>The program is able to recommend films both according to their common appraisal and according to the votes given by a specific person. Let's start to build our program.</p>
 
-<h4>Person ja Elokuva</h4>
+<h4>Person and Film</h4>
 
-<p>Luo pakkaus <code>suosittelija.domain</code> ja lisää sinne luokat <code>Person</code> ja <code>Elokuva</code>. Kummallakin luokalla on julkinen konstruktori <code>public <em>Luokka</em>(String name)</code>, sekä metodi <code>public String getName()</code>, joka palauttaa konstruktorissa saadun nimen.</p>
+<p>Create the package <code>reference.domain</code>, and there you add the classes <code>Person</code> and <code>Film</code>. Both classes have a public constructor <code>public <em>Class</em>(String name)</code>, as well as the method <code>public String getName()</code>, which returns the name received with the argument.</p>
 
 <pre class="sh_java">
-    Person henkilo = new Person("Pekka");
-    Elokuva elokuva = new Elokuva("Eraserhead");
+    Person p = new Person("Pekka");
+    Film f = new Film("Eraserhead");
 
-    System.out.println(henkilo.getName() + " ja " + elokuva.getName());
+    System.out.println(p.getName() + " ja " + f.getName());
 </pre>
 
 <pre>
 Pekka ja Eraserhead
 </pre>
 
-<p>Lisää luokille myös <code>public String toString()</code>-metodi, joka palauttaa konstruktorissa parametrina annetun nimen, sekä korvaa metodit <code>equals</code> ja <code>hashCode</code>.</p>
+<p>Also add the method <code>public String toString()</code> which returns the name received with the argument, as well as the method <code>equals</code> and <code>hashCode</code>.</p>
 
-<p>
-Korvaa <code>equals</code> siten että samuusvertailu tapahtuu oliomuuttujan <code>nimi</code> perusteella. Katso mallia luvusta 45.1. Luvussa 45.2. on ohje metodin <code>hashCode</code> korvaamiselle. Ainakin HashCode kannattaa generoida automaattisesti luvun lopussa olevan ohjeen mukaan:</p> 
+<p>Override <code>equals</code> so that the equivalence is checked according to the object variable <code>name</code>. Look at the example in section 45.1. In Section 45.2 there are guidelines to override <code>hashCode</code> methods. At least, you'd better generate the HashCode automatically, following the instructions at the end of the section:</p> 
 
 <p>
 <em>
-NetBeans tarjoaa metodien equals ja hashCode automaattisen luonnin. Voit valita valikosta Source -> Insert Code, ja valita aukeavasta listasta equals() and hashCode(). Tämän jälkeen NetBeans kysyy oliomuuttujat joita metodeissa käytetään.</em>
+NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em>
 </p>
 
-<p><strong>Huom:</strong> virheiden etsimisen helpottamiseksi kannattaa ehkä toteuttaa henkilölle ja elokuvalle toString-metodit. Testit eivät niitä vaadi.</p>
+<p><strong>Attention:</strong> to help finding mistakes, you may want to implement toString methods to Person and Film, but the tests do not require them.</p>
 
-<h4>Arvio</h4>
+<h4>Vote</h4>
 
-<p>Luo pakkaukseen <code>suosittelija.domain</code> lueteltu tyyppi <code>Arvio</code>. Enum-luokalla <code>Arvio</code> on julkinen metodi <code>public int getArvo()</code>, joka palauttaa arvioon liittyvän arvon. Arviotunnusten ja niihin liittyvien arvosanojen tulee olla seuraavat:</p>
+<p>Create the enumerated type <code>Vote</code> in <code>reference.domain</code>. The enum class <code>Vote</code> has a public method <code>public int getValue()</code>, which returns the value of the vote. The value names and their grades have to be the following:</p>
 
 <p>
 <table style="padding-left:2em">
-  <tr><th>Tunnus</th><th>Arvo</th></tr>
-  <tr><td>HUONO</td><td>-5</td></tr>
-  <tr><td>VALTTAVA</td><td>-3</td></tr>
-  <tr><td>EI_NAHNYT</td><td>0</td></tr>
-  <tr><td>NEUTRAALI</td><td>1</td></tr>
-  <tr><td>OK</td><td>3</td></tr>
-  <tr><td>HYVA</td><td>5</td></tr>
+  <tr><th>Vote</th><th>Value</th></tr>
+  <tr><td>BAD</td><td>-5</td></tr>
+  <tr><td>MEDIOCRE</td><td>-3</td></tr>
+  <tr><td>NOT_WATCHED</td><td>0</td></tr>
+  <tr><td>NEUTRAL</td><td>1</td></tr>
+  <tr><td>FINE</td><td>3</td></tr>
+  <tr><td>GOOD</td><td>5</td></tr>
 </table>
 </p>
 
-<p>Luokkaa voi käyttää seuraavasti:</p>
+<p>The class could be used in the following way:</p>
 <pre class="sh_java">
-    Arvio annettu = Arvio.HYVA;
-    System.out.println("Arvio " + annettu + ", arvo " + annettu.getArvo());
-    annettu = Arvio.NEUTRAALI;
-    System.out.println("Arvio " + annettu + ", arvo " + annettu.getArvo());
+    Vote given = Vote.GOOD;
+    System.out.println("Vote " + given + ", value " + given.getValue());
+    given = Value.NEUTRAL;
+    System.out.println("Vote " + given + ", value " + given.getValue());
 </pre>
 
 <pre>
-Arvio HYVA, arvo 5
-Arvio NEUTRAALI, arvo 1
+Vote GOOD, value 5
+Vote NEUTRAL, value 1
 </pre>
 
-<h4>ArvioRekisteri, osa 1</h4>
+<h4>VoteRegister, Part 1</h4>
 
-<p>Aloitetaan arvioiden varastointiin liittyvän palvelun toteutus.</p>
+<p>Let's get started with the implementation necessary t store the votes.</p>
 
-<p>Luo pakkaukseen <code>suosittelija</code> luokka <code>ArvioRekisteri</code>, jolla on konstruktori <code>public ArvioRekisteri()</code> sekä seuraavat metodit:</p>
+<p>Create the class <code>VoteRegister</code> in the package <code>reference</code>; the class has the constructor <code>public VoteRegister()</code>, as well as the following methods:</p>
 
 <ul>
-  <li><code>public void lisaaArvio(Elokuva elokuva, Arvio arvio)</code> lisää arviorekisteriin parametrina annetulle elokuvalle uuden arvion. Samalla elokuvalla voi olla useita samanlaisiakin arvioita.</li>
-  <li><code>public List&lt;Arvio&gt; annaArviot(Elokuva elokuva)</code> palauttaa elokuvalle lisätyt arviot listana.</li>
-  <li><code>public Map&lt;Elokuva, List&lt;Arvio&gt;&gt; elokuvienArviot()</code> palauttaa mapin, joka sisältää arvioidut elokuvat avaimina. Jokaiseen elokuvaan liittyy lista, joka sisältää elokuvaan lisatyt arviot.</li>
+  <li><code>public void addVote(Elokuva film, Vote vote)</code> adds a new vote to the parameter film. THe same film can have various same votes.</li>
+  <li><code>public List&lt;Vote&gt; getVotes(Film film)</code> returns a list of the votes which were added in connection to a film.</li>
+  <li><code>public Map&lt;Film, List&lt;Vote&gt;&gt; filmVotes()</code> returns a map whose keys are the evaluated films. Each film is associated to a list containing the votes for that film.</li>
 </ul>
 
-<p>Testaa metodien toimintaa seuraavalla lähdekoodilla:</p>
+<p>Test the methods with the following source code:</p>
 
 <pre class="sh_java">
-    Elokuva hiljaisetSillat = new Elokuva("Hiljaiset sillat");
-    Elokuva eraserhead = new Elokuva("Eraserhead");
+    Film bridgesOfMadisonCounty = new Film("The Bridges of Madison County");
+    Film eraserhead = new Film("Eraserhead");
 
-    ArvioRekisteri rekisteri = new ArvioRekisteri();
-    rekisteri.lisaaArvio(eraserhead, Arvio.HUONO);
-    rekisteri.lisaaArvio(eraserhead, Arvio.HUONO);
-    rekisteri.lisaaArvio(eraserhead, Arvio.HYVA);
+    VoteRegister reg = new VoteRegister();
+    reg.addVote(eraserhead, Vote.BAD);
+    reg.addVote(eraserhead, Vote.BAD);
+    reg.addVote(eraserhead, Vote.GOOD);
 
-    rekisteri.lisaaArvio(hiljaisetSillat, Arvio.HYVA);
-    rekisteri.lisaaArvio(hiljaisetSillat, Arvio.OK);
+    reg.addVote(bridgesOfMadisonCounty, Vote.GOOD);
+    reg.addVote(bridgesOfMadisonCounty, Vote.FINE);
 
-    System.out.println("Kaikki arviot: " + rekisteri.elokuvienArviot());
-    System.out.println("Arviot Eraserheadille: " + rekisteri.annaArviot(eraserhead));
+    System.out.println("All votes: " + reg.filmVotes());
+    System.out.println("Votes for Eraserhead: " + reg.getVotes(eraserhead));
 </pre>
 
 <pre>
-Kaikki arviot: {Hiljaiset sillat=[HYVA, OK], Eraserhead=[HUONO, HUONO, HYVA]}
+All votes: {The Bridges of Madison County=[HYVA, OK], Eraserhead=[BAD, BAD, GOOD]}
 Arviot Eraserheadille: [HUONO, HUONO, HYVA]
 </pre>
 
 
-<h4>ArvioRekisteri, osa 2</h4>
+<h4>VoteRegister, Part 2</h4>
 
-<p>Lisätään seuraavaksi mahdollisuus henkilökohtaisten arvioiden lisääiseen.</p>
+<p>Let's make possible to add personal votes.</p>
 
-<p>Lisää luokkaan <code>ArvioRekisteri</code> seuraavat metodit:</p>
+<p>Add the following methods to the class <code>VoteRegister</code>:</p>
 
 <ul>
-  <li><code>public void lisaaArvio(Person henkilo, Elokuva elokuva, Arvio arvio)</code> lisää parametrina annetulle elokuvalle tietyn henkilön tekemän arvion. Sama henkilö voi arvioida tietyn elokuvan vain kertaalleen. Henkilön tekemä arvio tulee myös lisätä kaikkiin elokuviin liittyviin arvioihin.</li>
-  <li><code>public Arvio haeArvio(Person henkilo, Elokuva elokuva)</code> palauttaa parametrina annetun henkilön tekemän arvion parametrina annetulle elokuvalle. Jos henkilö ei ole arvioinut kyseistä elokuvaa, palauta arvio <code>Arvio.EI_NAHNYT</code>.</li>
- <li><code>public Map&lt;Elokuva, Arvio&gt; annaPersonnArviot(Person henkilo)</code> palauttaa hajautustaulun, joka sisältää henkilön tekemät arviot. Hajautustaulun avaimena on arvioidut elokuvat, arvoina arvioituihin elokuviin liittyvät arviot.</li> 
- <li><code>public List&lt;Person&gt; arvioijat()</code> palauttaa listan henkilöistä jotka ovat arvioineet elokuvia.</li></ul>
+  <li><code>public void addVote(Person person, Film film, Vote vote)</code> adds the vote of a specific film to the paramter person. The same person can recommend a specific film only once. The person vote has also to be added to the votes connected to all the films.</li>
+  <li><code>public Vote getVote(Person person, Film film)</code> returns the vote the paramater person has assigned to the parameter film. If the person hasn't evaluated such film, the method returns <code>Vote.NOT_WATCHED</code>.</li>
+ <li><code>public Map&lt;Film, Vote&gt; getPersonalVotes(Person person)</code> returns a HashMap which contains the person's votes. The HashMap keys are the evaluated films, and their values are the votes of these films.</li> 
+ <li><code>public List&lt;Person&gt; references()</code> returns a list of the people who have evaluate the films.</li></ul>
 
-<p>Henkilöiden tekemät arviot kannattanee tallentaa hajautustauluun, jossa avaimena on henkilö. Arvona hajautustaulussa on toinen hajautustaulu, jossa avaimena on elokuva ja arvona arvio.</p>
+<p>People's votes should be stored into a HashMap, and the people should act as keys. The values of the HashMap is another HashMap, whose keys are films and whose values are votes.</p>
 
-<p>Testaa paranneltua <code>ArvioRekisteri</code>-luokkaa seuraavalla lähdekoodipätkällä:</p>
+<p>Test your improved <code>VoteRegister</code> with the following source code:</p>
 
 <pre class="sh_java">
-    ArvioRekisteri arviot = new ArvioRekisteri();
+    VoteRegister votes = new VoteRegister();
 
-    Elokuva tuulenViemaa = new Elokuva("Tuulen viemää");
-    Elokuva eraserhead = new Elokuva("Eraserhead");
+    Film goneWithTheWind = new Film("Gone with the Wind");
+    Film eraserhead = new Film("Eraserhead");
 
     Person matti = new Person("Matti");
     Person pekka = new Person("Pekka");
 
-    arviot.lisaaArvio(matti, tuulenViemaa, Arvio.HUONO);
-    arviot.lisaaArvio(matti, eraserhead, Arvio.OK);
+    votes.addVote(matti, goneWithTheWind, Vote.BAD);
+    votes.addVote(matti, eraserhead, Vote.NICE);
 
-    arviot.lisaaArvio(pekka, tuulenViemaa, Arvio.OK);
-    arviot.lisaaArvio(pekka, eraserhead, Arvio.OK);
+    votes.addVote(pekka, goneWithTheWind, Vote.NICE);
+    votes.addVote(pekka, eraserhead, Vote.NICE);
 
-    System.out.println("Arviot Eraserheadille: " + arviot.annaArviot(eraserhead));
-    System.out.println("Matin arviot: " + arviot.annaPersonnArviot(matti));
-    System.out.println("Arvioijat: " + arviot.arvioijat());
+    System.out.println("Votes for Eraserhead: " + votes.getVotes(eraserhead));
+    System.out.println("Matti's votes: " + votes.getPersonalVotes(matti));
+    System.out.println("References: " + votes.references());
 </pre>
 
 <pre>
-Arviot Eraserheadille: [OK, OK]
-Matin arviot: {Tuulen viemää=HUONO, Eraserhead=OK}
-Arvioijat: [Pekka, Matti]
+Votes for Eraserhead: [NICE, NICE]
+Matti's votes: {Gone with the Wind=BAD, Eraserhead=OK}
+References: [Pekka, Matti]
 </pre>
 
-<p>Luodaan seuraavaksi muutama apuluokka arviointien helpottamiseksi.</p>
+<p>Next, we create a couple of helping classes to help evaluation.</p>
 
 <h4>PersonComparator</h4>
 
-<p>Luo pakkaukseen <code>suosittelija.comparator</code> luokka <code>PersonComparator</code>. Luokan <code>PersonComparator</code> tulee toteuttaa rajapinta <code>Comparator&lt;Person&gt;</code>, ja sillä pitää olla konstruktori <code>public PersonComparator(Map&lt;Person, Integer&gt; henkiloidenSamuudet)</code>. Luokkaa <code>PersonComparator</code> käytetään myöhemmin henkilöiden järjestämiseen henkilöön liittyvän luvun perusteella.</p>
+<p>Create the class <code>PersonComparator</code> in the package <code>reference.comparator</code>. The class <code>PersonComparator</code> has to implement the interface <code>Comparator&lt;Person&gt;</code>, and it has to have the constructor <code>public PersonComparator(Map&lt;Person, Integer&gt; peoplesIdentities)</code>. The class <code>PersonComparator</code> is used later on to sort people according to their number.</p>
 
-<p>PersonComparator-luokan tulee mahdollistaa henkilöiden järjestäminen henkilöön liittyvän luvun perusteella.</p>
-
-<p>Testaa luokan toimintaa seuraavalla lähdekoodilla:</p>
+<p>Test the class with the following source code:</p>
 
 <pre class="sh_java">
     Person matti = new Person("Matti");
@@ -11348,175 +11348,173 @@ Arvioijat: [Pekka, Matti]
     Person mikke = new Person("Mikke");
     Person thomas = new Person("Thomas");
 
-    Map&lt;Person, Integer&gt; henkiloidenSamuudet = new HashMap&lt;Person, Integer&gt;();
-    henkiloidenSamuudet.put(matti, 42);
-    henkiloidenSamuudet.put(pekka, 134);
-    henkiloidenSamuudet.put(mikke, 8);
-    henkiloidenSamuudet.put(thomas, 82);
+    Map&lt;Person, Integer&gt; peoplesIdentities = new HashMap&lt;Person, Integer&gt;();
+    peoplesIdentities.put(matti, 42);
+    peoplesIdentities.put(pekka, 134);
+    peoplesIdentities.put(mikke, 8);
+    peoplesIdentities.put(thomas, 82);
     
-    List&lt;Person&gt; henkilot = Arrays.asList(matti, pekka, mikke, thomas);
-    System.out.println("Henkilöt ennen järjestämistä: " + henkilot);
+    List&lt;Person&gt; ppl = Arrays.asList(matti, pekka, mikke, thomas);
+    System.out.println("People before sorting: " + ppl);
 
-    Collections.sort(henkilot, new PersonComparator(henkiloidenSamuudet));
-    System.out.println("Henkilöt järjestämisen jälkeen: " + henkilot);
+    Collections.sort(ppl, new PersonComparator(peoplesIdentities));
+    System.out.println("People after sorting: " + ppl);
 </pre>
 
 <pre>
-Henkilöt ennen järjestämistä: [Matti, Pekka, Mikke, Thomas]
-Henkilöt järjestämisen jälkeen: [Pekka, Thomas, Matti, Mikke]
+People before sorting: [Matti, Pekka, Mikke, Thomas]
+People after sorting: [Pekka, Thomas, Matti, Mikke]
 </pre>
 
-<h4>ElokuvaComparator</h4>
+<h4>FilmComparator</h4>
 
 
-<p>Luo pakkaukseen <code>suosittelija.comparator</code> luokka <code>ElokuvaComparator</code>. Luokan <code>ElokuvaComparator</code> tulee toteuttaa rajapinta <code>Comparator&lt;Elokuva&gt;</code>, ja sillä pitää olla konstruktori <code>public ElokuvaComparator(Map&lt;Elokuva, List&lt;Arvio&gt;&gt; arviot)</code>. Luokkaa <code>ElokuvaComparator</code> käytetään myöhemmin elokuvien järjestämiseen niiden arvioiden perusteella.</p>
+<p>Create the class <code>FilmComparator</code> in the package <code>reference.comparator</code>. The class <code>FilmComparator</code> has to implement the interface <code>Comparator&lt;Film&gt;</code>, and it has to have the constructor <code>public FilmComparator(Map&lt;Film, List&lt;Vote&gt;&gt; votes)</code>. The class <code>FilmComparator</code> will be used later on to sort films according to their votes.</p>
 
-<p>ElokuvaComparator-luokan tulee tarjota mahdollisuus elokuvien järjestäminen niiden saamien arvosanojen keskiarvon perusteella. Korkeimman keskiarvon saanut elokuva tulee ensimmäisenä, matalimman keskiarvon saanut viimeisenä.</p>
+<p>The class FilmComparator has to allow for film sorting according to the avarage of the vote values they have received. The films with the greatest avarage should be placed first, and the ones with the smallest avarage should be the last.</p>
 
-<p>Testaa luokan toimintaa seuraavalla lähdekoodilla:</p>
+<p>Test the class with the following source code:</p>
 
 <pre class="sh_java">
-    ArvioRekisteri arviot = new ArvioRekisteri();
+    VoteRegister votes = new VoteRegister();
 
-    Elokuva tuulenViemaa = new Elokuva("Tuulen viemää");
-    Elokuva hiljaisetSillat = new Elokuva("Hiljaiset sillat");
-    Elokuva eraserhead = new Elokuva("Eraserhead");
+    Film goneWithTheWind = new Film("Gone with the Wind");
+    Film bridgesOfMadisonCounty = new Film("The Bridges of Madison County");
+    Film eraserhead = new Film("Eraserhead");
 
     Person matti = new Person("Matti");
     Person pekka = new Person("Pekka");
     Person mikke = new Person("Mikke");
 
-    arviot.lisaaArvio(matti, tuulenViemaa, Arvio.HUONO);
-    arviot.lisaaArvio(matti, hiljaisetSillat, Arvio.HYVA);
-    arviot.lisaaArvio(matti, eraserhead, Arvio.OK);
+    votes.addVote(matti, goneWithTheWind, Vote.BAD);
+    votes.addVote(matti, bridgesOfMadisonCounty, Vote.GOOD);
+    votes.addVote(matti, eraserhead, Vote.FINE);
 
-    arviot.lisaaArvio(pekka, tuulenViemaa, Arvio.OK);
-    arviot.lisaaArvio(pekka, hiljaisetSillat, Arvio.HUONO);
-    arviot.lisaaArvio(pekka, eraserhead, Arvio.VALTTAVA);
+    votes.addVote(pekka, goneWithTheWind, Vote.FINE);
+    votes.addVote(pekka, bridgesOfMadisonCounty, Vote.BAD);
+    votes.addVote(pekka, eraserhead, Vote.MEDIOCRE);
 
-    arviot.lisaaArvio(mikke, eraserhead, Arvio.HUONO);
+    votes.addVote(mikke, eraserhead, Vote.BAD);
 
-    Map&lt;Elokuva, List&lt;Arvio&gt;&gt; elokuvienArviot = arviot.elokuvienArviot();
+    Map&lt;Film, List&lt;Vote&gt;&gt; filmVotes = votes.filmVotes();
 
-    List&lt;Elokuva&gt; elokuvat = Arrays.asList(tuulenViemaa, hiljaisetSillat, eraserhead);
-    System.out.println("Elokuvat ennen järjestämistä: " + elokuvat);
+    List&lt;Film&gt; films = Arrays.asList(goneWithTheWind, bridgesOfMadisonCounty, eraserhead);
+    System.out.println("The films before sorting: " + films);
 
-    Collections.sort(elokuvat, new ElokuvaComparator(elokuvienArviot));
-    System.out.println("Elokuvat järjestämisen jälkeen: " + elokuvat);
+    Collections.sort(films, new FilmComparator(filmVotes));
+    System.out.println("The films after sorting: " + films);
 </pre>
 
 <pre>
-Elokuvat ennen järjestämistä: [Tuulen viemää, Hiljaiset sillat, Eraserhead]
-Elokuvat järjestämisen jälkeen: [Hiljaiset sillat, Tuulen viemää, Eraserhead]
+The films before sorting: [Gone with the Wind, The Bridges of Madison County, Eraserhead]
+The films after sorting: [The Bridges of Madison County, Gone with the Wind, Eraserhead]
 </pre>
 
 
-<h4>Suosittelija, osa 1</h4>
+<h4>Reference, Part 1</h4>
 
-<p>Toteuta pakkaukseen <code>suosittelija</code> luokka <code>Suosittelija</code>. Luokan <code>Suosittelija</code> konstruktori saa parametrinaan <code>ArvioRekisteri</code>-tyyppisen olion. Suosittelija käyttää arviorekisterissä olevia arvioita suositusten tekemiseen.</p>
+<p>Implement the class <code>Reference</code> in the package <code>reference</code>. The class <code>Refference</code> receives a <code>VoteRegister</code> object as constructor parameter. Reference uses the votes in the vote register to elaborate a recommendation.</p>
 
-<p>Toteuta luokalle metodi <code>public Elokuva suositteleElokuva(Person henkilo)</code>, joka suosittelee henkilölle elokuvia.
+<p>Implement the method <code>public Film recommendFilm(Person person)</code>, which implements films to people. Hint: you need three things to find out the most suitable film. These are at least the class <code>FilmComparator</code> which you created earlier on; the method <code>public Map&lt;Film, List&lt;Vote&gt;&gt; filmVotes()</code> of the class <code>VoteRegister</code>; and a list of the existing films.</p>
 
-Toteuta metodi ensin siten, että se suosittelee aina elokuvaa, jonka arvioiden arvosanojen keskiarvo on suurin. Vinkki: Tarvitset parhaan elokuvan selvittämiseen ainakin aiemmin luotua <code>ElokuvaComparator</code>-luokkaa, luokan <code>ArvioRekisteri</code> metodia <code>public Map&lt;Elokuva, List&lt;Arvio&gt;&gt; elokuvienArviot()</code>, sekä listaa olemassaolevista elokuvista.</p>
-
-<p>Testaa ohjelman toimimista seuraavalla lähdekoodilla:</p>
+<p>Test your program with the following source code:</p>
 
 <pre class="sh_java">
-    ArvioRekisteri arviot = new ArvioRekisteri();
+    VoteRegister votes = new VoteRegister();
 
-    Elokuva tuulenViemaa = new Elokuva("Tuulen viemää");
-    Elokuva hiljaisetSillat = new Elokuva("Hiljaiset sillat");
-    Elokuva eraserhead = new Elokuva("Eraserhead");
+    Film goneWithTheWind = new Film("Gone with the Wind");
+    Film bridgesOfMadisonCounty = new Film("The Bridges of Madison County");
+    Film eraserhead = new Film("Eraserhead");
 
     Person matti = new Person("Matti");
     Person pekka = new Person("Pekka");
-    Person mikke = new Person("Mikael");
+    Person mikke = new Person("Mikke");
 
-    arviot.lisaaArvio(matti, tuulenViemaa, Arvio.HUONO);
-    arviot.lisaaArvio(matti, hiljaisetSillat, Arvio.HYVA);
-    arviot.lisaaArvio(matti, eraserhead, Arvio.OK);
+    votes.addVote(matti, goneWithTheWind, Vote.BAD);
+    votes.addVote(matti, bridgesOfMadisonCounty, Vote.GOOD);
+    votes.addVote(matti, eraserhead, Vote.FINE);
 
-    arviot.lisaaArvio(pekka, tuulenViemaa, Arvio.OK);
-    arviot.lisaaArvio(pekka, hiljaisetSillat, Arvio.VALTTAVA);
-    arviot.lisaaArvio(pekka, eraserhead, Arvio.VALTTAVA);
+    votes.addVote(pekka, goneWithTheWind, Vote.FINE);
+    votes.addVote(pekka, bridgesOfMadisonCounty, Vote.BAD);
+    votes.addVote(pekka, eraserhead, Vote.MEDIOCRE);
 
-    Suosittelija suosittelija = new Suosittelija(arviot);
-    Elokuva suositeltu = suosittelija.suositteleElokuva(mikke);
-    System.out.println("Mikaelille suositeltu elokuva oli: " + suositeltu); 
+    Reference ref = new Reference(votes);
+    Film recommended = ref.recommendFilm(mikke);
+    System.out.println("The film recommended to Michael is: " + recommended); 
 </pre>
 
 <pre>
-Mikaelille suositeltu elokuva oli: Hiljaiset sillat
+The film recommended to Michael is: The Bridges of Madison County
 </pre>
 
-<p>Nyt tekemämme ensimmäinen vaihe toimii oikein ainoastaan henkilöille, jotka eivät ole vielä arvostelleet yhtään elokuvaa. Heidän elokuvamaustaanhan on mahdoton sanoa mitään ja paras arvaus on suositella heille keskimäärin parhaan arvosanan saanutta elokuvaa. </p>
+<p>Now, our first part works fine exclusively for people who have never evaluated any movie. In such cases, we can't say anything about their film tastes, and the best choice is recommending them the film which has received the hightest avarage among the votes.</p>
 
-<h4>Suosittelija, osa 2</h4>
+<h4>Reference, Part 2</h4>
 
-<p><em>Huom! Tehtävä on haastava. Kannattaa tehdä ensin muut tehtävät ja palata tähän myöhemmin. Voit palauttaa tehtäväsarjan TMC:hen vaikket saakaan tätä tehtävää tehdyksi, aivan kuten muidenkin tehtävien kohdalla.</em></p>
+<p><em>Attention! The exercise is challenging. First you should do the previous exercises and coming back to this one later. You can return the sequence of exercises in TMC; even though you don't get the point for this part, you'd get the points for the perious ones, as it is with all the exercises.</em></p>
 
-<p>Valitettavasti tämän osan virhediagnostiikkakaan ei ole samaa luokkaa kuin edellisissä kohdissa.</p>
+<p>Unfortunately, the error diagnostics of this part is not similar to the previous parts.</p>
 
-<p>Jos henkilöt ovat lisänneet omia suosituksia suosituspalveluun, tiedämme jotain heidän elokuvamaustaan. Laajennetaan suosittelijan toiminnallisuutta siten, että se luo henkilökohtaisen suosituksen jos henkilö on jo arvioinut elokuvia. Edellisessä osassa toteutettu toiminnallisuus tulee säilyttää: Jos henkilö ei ole arvioinut yhtäkään elokuvaa, hänelle suositellaan elokuva arvosanojen perusteella.</p>
+<p>If people have added their own preferences to the reference service, we know something about their film tastes. Let's extend the functionality of our reference to create a personal recommendation if the person has evaluated films. The functionality implemented in the previous part has to be preserved: if a person hasn't evaluated any film, we recommend them a film according to film votes.</p>
 
-<p>Henkilökohtaiset suositukset perustuvat henkilön tekemien arvioiden samuuteen muiden henkilöiden tekemien arvioiden kanssa. Pohditaan seuraavaa taulukkoa, missä ylärivillä on elokuvat, ja vasemmalla on arvioita tehneet henkilöt. Taulukon solut kuvaavat annettuja arvioita.</p>
+<p>Personal recommendations are based on the similarity between the person votes and other people's votes. Let's reason about it with the help of the following table; in the first line on the top there are films, and the people who voted are on the left. The brackets describe the votes given.</p>
 
 <p>
     <table style="padding-left:2em">
-      <tr><th>Person \ Elokuva</th><td>Tuulen viemää</td><td>Hiljaiset sillat</td><td>Eraserhead</td><td>Blues Brothers</td></tr>
-      <tr><td>Matti</td><td>HUONO (-5)</td><td>HYVA (5)</td><td>OK (3)</td><td>-</td></tr>
-      <tr><td>Pekka</td><td>OK (3)</td><td>-</td><td>HUONO (-5)</td><td>VALTTAVA (-3)</td></tr>
-      <tr><td>Mikael</td><td>-</td><td>-</td><td>HUONO (-5)</td><td>-</td></tr>
-      <tr><td>Thomas</td><td>-</td><td>HYVA (5)</td><td>-</td><td>HYVA (5)</td></tr>
+      <tr><th>Person \ Film</th><td>Gone with the Wind</td><td>The Bridges of Madison County</td><td>Eraserhead</td><td>Blues Brothers</td></tr>
+      <tr><td>Matti</td><td>BAD (-5)</td><td>GOOD (5)</td><td>FINE (3)</td><td>-</td></tr>
+      <tr><td>Pekka</td><td>FINE (3)</td><td>-</td><td>BAD (-5)</td><td>MEDIOCRE (-3)</td></tr>
+      <tr><td>Mikael</td><td>-</td><td>-</td><td>BAD (-5)</td><td>-</td></tr>
+      <tr><td>Thomas</td><td>-</td><td>GOOD (5)</td><td>-</td><td>GOOD (5)</td></tr>
     </table>
 </p>
 
-<p>Kun haluamme hakea Mikaelille sopivaa elokuvaa, tutkimme Mikaelin samuutta kaikkien muiden arvioijien kesken. Samuus lasketaan arvioiden perusteella: samuus on kummankin katsomien elokuvien arvioiden tulojen summa. Esimerkiksi Mikaelin ja Thomasin samuus on 0, koska Mikael ja Thomas eivät ole katsoneet yhtäkään samaa elokuvaa.</p>
+<p>If we want to find the suitable film for Mikael, we can explore the similarity between Mikael's and other people's preferences. The similarity is calculated based on the votes: as the sum of the products of the votes for the films watched by both. For instance, Mikael and Thomas's similarity is 0, because they haven't watched the same films.</p>
 
-<p>Mikaelin ja Pekan samuutta laskettaessa yhteisten elokuvien tulojen summa olisi 25. Mikael ja Pekka ovat katsoneet vain yhden yhteisen elokuvan, ja kumpikin antaneet sille arvosanan huono (-5).</p>
+<p>If we caluculate Mikael and Pekka's similarity, we find out that the sum of the products of the films they have in common is 25. Mikael and Pekka have both watched only one film, and they have both given it the grade bad (-5).</p>
 
 <pre>
 -5 * -5 = 25
 </pre>
 
-<p>Mikaelin ja Matin samuus on -15. Mikael ja Matti ovat myös katsoneet vain yhden yhteisen elokuvan. Mikael antoi elokuvalle arvosanan huono (-5), Matti antoi sille arvosanan ok (3).</p>
+<p>Mikael and Matti's similarity is -15. Mikael and Matti have also watched only one same film. Mikael gave the grade bad (-5) to the film, whereas Matti gave it the grade fine (3).</p>
 
 <pre>
 -5 * 3 = -15
 </pre>
 
-<p>Näiden perusteella Mikaelille suositellaan elokuvia Pekan elokuvamaun mukaan: suosituksena on elokuva Tuulen viemää.</p>
+<p>Based on that Mikael can be recommanded films according to Pekka's taste: the recommendation is Gone with the Wind.</p>
 
 
-<p>Kun taas haluamme hakea Matille sopivaa elokuvaa, tutkimme Matin samuutta kaikkien muiden arvioijien kesken. Matti ja Pekka ovat katsoneet kaksi yhteistä elokuvaa. Matti antoi Tuulen viemälle arvosanan huono (-5), Pekka arvosanan OK (3). Elokuvalle Eraserhead Matti antoi arvosanan OK (3), Pekka arvosanan huono (-5). Matin ja Pekan samuus on siis -30.</p>
+<p>On the other hand, if we want to find a suitable film for Matti, we have to find the similarity between Matti and everyone else. Matti and Pekka have watched two same films. Matti gave Tuulen viemälle the grade bad (-5), Pekka the grade fine (3). Matti gave fine (3) to Eraserhead, and Pekka gave bad (-5). Matti and Pekka's similarity is -30.</p>
 
 <pre>
 -5 * 3 + 3 * -5 = -30
 </pre>
 
-<p>Matin ja Mikaelin samuus on edellisestä laskusta tiedetty -15. Samuudet ovat symmetrisia.</p>
+<p>Matti and Mikael's similarity is -15, which we know according to out previous calculations. Similarities are simmetrical.</p>
 
-<p>Matti ja Thomas ovat katsoneet Tuulen viemää, ja kumpikin antoi sille arvosanan hyvä (5). Matin ja Thomaksen samuus on siis 25.</p>
+<p>Matti and Thomas have watched Gone with the Wind, and they both gave it the grade good (5). Matti and Thomas's similarity is 25, then.</p>
 
 <pre>
 5 * 5 = 25
 </pre>
 
-<p>Matille tulee siis suositella elokuvia Thomaksen elokuvamaun mukaan: suosituksena olisi Blues Brothers.</p>
+<p>Matti has to be recommended a film according to Thomas' taste: the recommendation will be the Blues Brothers.</p>
 
-<p>Toteuta yllä kuvattu suosittelumekanismi. Jos henkilölle ei löydy yhtään suositeltavaa elokuvaa, tai henkilö, kenen elokuvamaun mukaan elokuvia suositellaan on arvioinut elokuvat joita henkilö ei ole vielä katsonut huonoiksi, välttäviksi tai neutraaleiksi, palauta metodista <code>suositteleElokuva</code> arvo <code>null</code>. Edellisessä tehtävässä määritellyn lähestymistavan tulee toimia jos henkilö ei ole lisännyt yhtäkään arviota.</p>
+<p>Implement the recommendation mechanism described above. The method should <code>recommendFilm</code> should return <code>null</code> in two cases: if you cannot find any film to recommend; if you find a, say, person1 whose film taste is appropriate to recommend films to, say, person2, but person1 has judge bad, mediocre, or neutral, all the films person2 hasn't watched, yet. The approach described above has to work also if the person hasn't added any vote.</p>
 
-<p>Älä suosittele elokuvia, jonka henkilö on jo nähnyt.</p>
+<p>Do not suggest films which have already been watched.</p>
 
-<p>Voit testata ohjelmasi toimintaa seuraavalla lähdekoodilla:</p>
+<p>You can test your program with the following source code:</p>
 
 <pre class="sh_java">
-    ArvioRekisteri arviot = new ArvioRekisteri();
+    VoteRegister votes = new VoteRegister();
 
-    Elokuva tuulenViemaa = new Elokuva("Tuulen viemää");
-    Elokuva hiljaisetSillat = new Elokuva("Hiljaiset sillat");
-    Elokuva eraserhead = new Elokuva("Eraserhead");
-    Elokuva bluesBrothers = new Elokuva("Blues Brothers");
+    Film goneWithTheWind = new Film("Gone with the Wind");
+    Film bridgesOfMadisonCounty = new Film("The Bridges of Madison County");
+    Film eraserhead = new Film("Eraserhead");
+    Film bluesBrothers = new Film("Blues Brothers");
 
     Person matti = new Person("Matti");
     Person pekka = new Person("Pekka");
@@ -11524,34 +11522,34 @@ Mikaelille suositeltu elokuva oli: Hiljaiset sillat
     Person thomas = new Person("Thomas");
     Person arto = new Person("Arto");
 
-    arviot.lisaaArvio(matti, tuulenViemaa, Arvio.HUONO);
-    arviot.lisaaArvio(matti, hiljaisetSillat, Arvio.HYVA);
-    arviot.lisaaArvio(matti, eraserhead, Arvio.OK);
+    votes.addVote(matti, goneWithTheWind, Vote.BAD);
+    votes.addVote(matti, bridgesOfMadisonCounty, Vote.GOOD);
+    votes.addVote(matti, eraserhead, Vote.FINE);
 
-    arviot.lisaaArvio(pekka, tuulenViemaa, Arvio.OK);
-    arviot.lisaaArvio(pekka, eraserhead, Arvio.HUONO);
-    arviot.lisaaArvio(pekka, bluesBrothers, Arvio.VALTTAVA);
+    votes.addVote(pekka, goneWithTheWind, Vote.FINE);
+    votes.addVote(pekka, eraserhead, Vote.BAD);
+    votes.addVote(pekka, bluesBrothers, Vote.MEDIOCRE);
     
-    arviot.lisaaArvio(mikke, eraserhead, Arvio.HUONO);
+    votes.addVote(mikke, eraserhead, Vote.BAD);
     
-    arviot.lisaaArvio(thomas, bluesBrothers, Arvio.HYVA);
-    arviot.lisaaArvio(thomas, hiljaisetSillat, Arvio.HYVA);
+    votes.addVote(thomas, bluesBrothers, Vote.GOOD);
+    votes.addVote(thomas, bridgesOfMadisonCounty, Vote.GOOD);
 
-    Suosittelija suosittelija = new Suosittelija(arviot);
-    System.out.println(thomas + " suositus: " + suosittelija.suositteleElokuva(thomas));
-    System.out.println(mikke + " suositus: " + suosittelija.suositteleElokuva(mikke));
-    System.out.println(matti + " suositus: " + suosittelija.suositteleElokuva(matti));
-    System.out.println(arto + " suositus: " + suosittelija.suositteleElokuva(arto));
+    Reference ref = new Reference(votes);
+    System.out.println(thomas + " recommendation: " + ref.recommendFilm(thomas));
+    System.out.println(mikke + " recommendation: " + ref.recommendFilm(mikke));
+    System.out.println(matti + " recommendation: " + ref.recommendFilm(matti));
+    System.out.println(arto + " recommendation: " + ref.recommendFilm(arto));
 </pre>
 
 <pre>
-Thomas suositus: Eraserhead
-Mikael suositus: Tuulen viemää
-Matti suositus: Blues Brothers
-Arto suositus: Hiljaiset sillat
+Thomas recommendation: Eraserhead
+Mikael recommendation: Gone with the Wind
+Matti recommendation: Blues Brothers
+Arto recommendation: The Bridges of Madison County
 </pre>
 
-<p>Miljoona käsissä? Ei ehkä vielä. Kursseilla Johdatus tekoälyyn ja Johdatus koneoppimiseen opitaan lisää tekniikoita oppivien järjestelmien rakentamiseen.</p>
+<p>Have we made one million bucks? Not yet, maybe. In the course Introduction to Artificial Intelligence and Machine Learning we learn more tecniques to build learning programs.</p>
 
 </div>
 
@@ -11592,222 +11590,220 @@ Arto suositus: Hiljaiset sillat
 
 <div class="tehtavat">
 
-<h3>JoustavatHakuehdot</h3>
+<h3>Flexible Filtering Critiria</h3>
 
-<p>Muutamassa tehtävässä (mm. ohpen kirjasto ja ohjan sanatutkimus) törmäsimme tilanteeseen jossa houduimme filtteröimään listasta olioita jotain hakuehtoa vastaavat oliot, esim. sanatutkimuksessa metodit <code>zSisaltava, lLoppuiset, palindromit, kaikkiVoksSis</code> tekivät oleellisesti saman asian: kävivät läpi tiedoston sisällön sana kerrallaan ja tarkastivat jokaisen sanan kohdalla päteekö sille tietty ehto ja jos pätee, ottivat sanan talteen. Koska kaikkien metodien ehto oli erilainen, ei toisteisuutta tehtävissä osattu poistaa vaan kaikkien koodi oli ehtoa vaille "copypastea". </p>
+<p>In some exercises (see Library in Introduction to Programming, and Word Inspection in Advanced Programming), we have run into such situations where we had to filter out list objects according to particular criteria; for instance, in Word Inspection the methods <code>wordsContainingZ, wordsEndingInL, palyndroms, wordsWhichContainAllVowels</code> all to the same same thing: they go through the file content one word after the other, and they make sure that the specific filtering criteria are satisfied, in which case they store the word. Because the method criteria are different, we haven't been able to get rid of this repetition, and the code of all those methods made wide use of copypaste.</p>
 
-<p>Tässä tehtävässä teemme ohjelman, jonka avulla on mahdollista fitlteröidä rivejä <a href="">Project Guttenbergin</a> sivuilta löytyvistä kirjoista. Seuraavassa esimerkkinä Dostojevskin Rikos ja rangaistus. Haluamme, että erilaisia filtteröintiehtoja on monelaisia ja että filtteröinti voi tapahtua myös eri ehtojen kombinaationa. Ohjelman rakenteen pitää myös mahdollistaa uusien ehtojen lisääminen myöhemmin.</p>
+<p>With this exercise, we create a program to filter the lines of the books found on the <a href="">Project Guttenberg</a> pages. In the following example we analyse Dostojevski's Crime and Punishment. We want to have various different filtering criteria, and that it would be possible to filter according to different criteria combinations. The program structure should also allow for adding new criteria later on.</p>
 
-<p>Sopiva ratkaisu tilanteeseen filtteröintiehtojen määritteleminen omina rajapinnan <code>Ehto</code>toteuttavina olioina. Seuraavassa rajapinnan määritelmä:</p>
+<p>A suitable solution to the problem, is defining the filtering criteria as objects of their own which implement the interface <code>Criterium</code>. The interface definition is below:</p>
 
 <pre class="sh_java">
-public interface Ehto {
-    boolean toteutuu(String rivi);
+public interface Criterium {
+    boolean implement(String line);
 }
 </pre>
 
-<p>Seuraavassa eräs rajapinnan toteuttava filtteriluokka:</p>
+<p>A filtering class which implements the interface:</p>
 
 <pre class="sh_java">
-public class SisaltaaSanan implements Ehto {
+public class ContainsPassword implements Criterium {
 
-    String sana;
+    String word;
 
-    public SisaltaaSanan(String sana) {
-        this.sana = sana;
+    public ContainsPassword(String word) {
+        this.word = word;
     }
 
     @Override
-    public boolean toteutuu(String rivi) {
-        return rivi.contains(sana);
+    public boolean implements(String line) {
+        return line.contains(word);
     }    
 }
 </pre>
 
-<p>Luokan oliot ovat siis hyvin yksinkertaisia, ne muistavat konstruktorin parametrina annetun sanan. Olion ainoalta metodilta voi kysyä toteutuuko ehto parametrina olevalle characterStringlle, ja ehdon toteutuminen tarkoittaa olion tapauksessa sisältääkö characterString olion mustaman sanan.</p>
+<p>The class objects are quite simple, in fact, and they only remember the word given as constructor parameter. The only method of the object can be asked whether the criterium complies to the parameter String; if so, this means that the object contains the word stored into the String object.</p>
 
-<p>Tehtäväpohjan mukana saat valmiina luokan <code>GutenbergLukija</code> jonka avulla voit tutkia kirjojen rivejä filtteröitynä parametrina annetun hakuehdon perusteella:</p>
+<p>Together with the excercise body, you find the pre-made class <code>GutenbergReader</code>, which helps you to analyse book lines according to the filtering criteria geven as parameter:</p>
 
 <pre class="sh_java">
-public class GutenbergLukija {
+public class GutenbergReader {
 
-    private List&lg;String&gt; sanat;
+    private List&lg;String&gt; words;
 
-    public GutenbergLukija(String osoite) throws IllegalArgumentException {
-        // kirjan verkosta hakeva koodi
+    public GutenbergReader(String address) throws IllegalArgumentException {
+        // the code which retrieves the book from the Internet
     }
     
-    public List&lg;String&gt; rivitJoilleVoimassa(Ehto ehto){
-        List&lg;String&gt; ehdonTayttavat = new ArrayList&lg;String&gt;();
+    public List&lg;String&gt; linesWhichComplyWith(Ctriterium c){
+        List&lg;String&gt; complayers = new ArrayList&lg;String&gt;();
         
-        for (String rivi : sanat) {
-            if ( ehto.toteutuu(rivi)) {
-                ehdonTayttavat.add(rivi);
+        for (String line : words) {
+            if ( c.implements(line)) {
+                complayers.add(line);
             }
         }
         
-        return ehdonTayttavat;
+        return complayers;
     }
 }
 </pre>
 
-<p>Seuraavassa tulostetaan Rikoksesta ja rangaistuksesta kaikki rivit joilla esiintyy sana "beer":</p>
+<p>With the following code, we print all the lines in Crime and Punishment which contain the word "beer":</p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
-    String osoite = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
-    GutenbergLukija kirja = new GutenbergLukija(osoite);
+    String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
+    GutenbergReader book = new GutenbergReader(address);
 
-    Ehto ehto = new SisaltaaSanan("beer");
+    Criterium criterium = new ContainsWord("beer");
         
-    for (String rivi : kirja.rivitJoilleVoimassa(ehto)) {
-        System.out.println(rivi);
+    for (String line : book.linesWhichComplyWith(criterium)) {
+        System.out.println(line);
     }
 }
 </pre>
 
-<h4>Kaikki sanat</h4>
+<h4>All Words</h4>
 
-<p>Tee rajapinnan <code>ehto</code> toteuttava luokka <code>KaikkiRivit</code> joka kelpuuttaa jokaisen rivin.</p>
+<p>Create the class <code>AllLines</code> which implements <code>Criterium</code>, which accepts all the lines. This and the other classes of the exercise have to be implemented in the package <code>reader.criteria</code>.</p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
-    String osoite = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
-    GutenbergLukija kirja = new GutenbergLukija(osoite);
+    String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
+    GutenbergReader book = new GutenbergReader(address);
 
-    Ehto ehto = new KaikkiRivit();
+    Criterium criterium = new AllLines();
         
-    for (String rivi : kirja.rivitJoilleVoimassa(ehto)) {
-        System.out.println(rivi);
+    for (String line : book.linesWhichComplyWith(criterium)) {
+        System.out.println(line);
     }
 }
 </pre>
 
-<h4>Loppuu huuto- tai kysymysmerkkiin</h4>
+<h4>Ends with Question or Exclamation Mark</h4>
 
-<p>Tee rajapinnan <code>ehto</code> toteuttava luokka <code>LoppuuHuutoTaiKysymysmerkkiin</code> joka kelpuuttaa ne rivit, joiden viimeinen merkki on huuto- tai kysymysmerkki.</p>
+<p>Implement class <code>EndsWithQuestionOrExclamationMark</code>, which implements the interface <code>Criterium</code> and accepts the lines whose last character is a question or an exclamation mark.</p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
-    String osoite = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
-    GutenbergLukija kirja = new GutenbergLukija(osoite);
+    String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
+    GutenbergReader book = new GutenbergReader(address);
 
-    Ehto ehto = new LoppuuHuutoTaiKysymysmerkkiin();
+     Criterium criterium = new EndsWithQuestionOrExclamationMark();
         
-    for (String rivi : kirja.rivitJoilleVoimassa(ehto)) {
-        System.out.println(rivi);
+    for (String line : book.linesWhichComplyWith(criterium)) {
+        System.out.println(line);
     }
 }
 </pre>
 
-<p><strong>Muistutus:</strong> merkkien vertailu Javassa tapahtuu == operaattorilla:</p>
+<p><strong>Reminder:</strong> you compare character in Java with the == operator:</p>
 
 <pre class="sh_java">
 String name = "pekka";
 
-// HUOM: 'p' on merkki eli char p, "p" taas merkkojono jonka ainoa merkki on p
-if ( nimi.charAt(0) == 'p' ) {
-    System.out.println("alussa p");
+// ATTENTION: 'p' is a character, that is to say char p; differently, "p" is a String, whose only character is p
+if ( name.charAt(0) == 'p' ) {
+    System.out.println("beginning with p");
 } else {
-    System.out.println("alussa jokin muu kuin p");
+    System.out.println("beginning with something else than p");
 }
 </pre>
 
-<h4>Pituus vähintää</h4>
+<h4>Longer Than</h4>
 
-<p>Tee rajapinnan <code>ehto</code> toteuttava luokka <code>PituusVahintaan</code> joka oliot kelpuuttavat ne rivit, joiden pituus on vähintään olion konstruktorin parametrina annettu luku.</p>
+<p>Implement the class <code>LongerThan</code>, which implements the interface <code>Criterium</code> and accepts the lines whose length is greater than the number received as constructor parameter.</p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
-    String osoite = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
-    GutenbergLukija kirja = new GutenbergLukija(osoite);
+    String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
+    GutenbergReader book = new GutenbergReader(address);
 
-    Ehto ehto = new PituusVahintaan(40);
+     Criterium criterium = new LongerThan(40);
         
-    for (String rivi : kirja.rivitJoilleVoimassa(ehto)) {
-        System.out.println(rivi);
+    for (String line : book.linesWhichComplyWith(criterium)) {
+        System.out.println(line);
     }
 }
 </pre>
 
-<h4>molemmat</h4>
+<h4>Both</h4>
 
-<p>Tee rajapinnan <code>ehto</code> toteuttava luokka <code>Molemmat</code>. Luokan oliot saavat konstruktorin parametrina kaksi rajapinnan <code>Ehto</code> toteuttavaa olioa. Molemmat-olio kelpuuttavat ne rivit, jotka sen molemmat konstruktorissa saamat ehdot kelpuuttavat.
-Seuraavassa tulostetaan kaikki huuto- tai kysymysmerkkiin loppuvat rivit jotka sisältävät sanan "beer".
+<p>Create the class <code>Both</code> which implements the interface <code>Criterium</code>. The objects of this class receive two objects as constructor parameter, both implementing the interface <code>Criterium</code>. <code>Both</code> objects accept the lines which comply with both the criteria received as constructor parameters. We print below all the lines which end with a question or an exclamation mark and that contain the word "beer".
 </p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
-    String osoite = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
-    GutenbergLukija kirja = new GutenbergLukija(osoite);
+    String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
+    GutenbergReader book = new GutenbergReader(address);
 
-    Ehto ehto = new Molemmat(
-                    new LoppuuHuutoTaiKysymysmerkkiin(),
-                    new SisaltaaSanan("beer")
+    Criterium criterium = new Both(
+                    new EndsWithQuestionOrExclamationMark(),
+                    new ContainsWord("beer")
                 );
 
-    for (String rivi : kirja.rivitJoilleVoimassa(ehto)) {
-        System.out.println(rivi);
+    for (String line : book.linesWhichComplyWith(criterium)) {
+        System.out.println(line);
     }
 }
 </pre>
 
-<h4>negaatio</h4>
+<h4>Negation</h4>
 
-<p>Tee rajapinnan <code>ehto</code> toteuttava luokka <code>Ei</code>. Luokan oliot saav parametrina rajapinna <code>Ehto</code> toteuttavaavan olioan. Ei-olio kelpuuttavat ne rivit, joita sen parametrina saama ehto ei kelpuuta.
-Seuraavassa tulostetaan rivit, joiden pituus vähemmän kuin 10.
+<p>Create the class <code>Not</code> which implement the interface <code>Criterium</code> and accepts the lines, which don't comply with the criterium received as parameter. We print below the lines whose length is less than 10.
 </p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
-    String osoite = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
-    GutenbergLukija kirja = new GutenbergLukija(osoite);
+    String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
+    GutenbergReader book = new GutenbergReader(address);
 
-    Ehto ehto = new Ei( new PituusVahintaan(10) );
+    Criterium criterium = new Not( new LongerThan(10) );
       
-    for (String rivi : kirja.rivitJoilleVoimassa(ehto)) {
-        System.out.println(rivi);
+    for (String line : book.linesWhichComplyWith(criterium)) {
+        System.out.println(line);
     }
 }
 </pre>
 
-<h4>vähintään yksi</h4>
+<h4>At Least One</h4>
 
-<p>Tee rajapinnan <code>ehto</code> toteuttava luokka <code>VahintaanYksi</code>. Luokan oliot saavat konstruktorin parametrina mielivaltaisen määtän rajapinnan <code>Ehto</code> toteuttavaa olioa, konstruktorissa siis käytetävä vaihtuvanmittaista parametrilistaa. VahintaanYksi-olio kelpuuttavat ne rivit, jotka vähintään yksi sen konstruktoriparametrina saamista ehdoista kelpuuttaa. Seuraavassa tulostetaan rivit jotka sisältävät sanan jonkun sanoista "beer", "milk" tai "oil".
+<p>Create the class <code>AtLeastOne</code> which implements the interface <code>Criterium</code>. The objects of this class receive as parameter an optional amount of objects which implement the interface <code>Criterium</code>; this means that the constructor receives a list of variable length as parameter. <code>AtLeastOne</code> objects accept the lines which comply with at least one of the criteria received as constructor parameter. We print below the lines which contain one ot the words "beer", "milk" or "oil".
 </p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
-    String osoite = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
-    GutenbergLukija kirja = new GutenbergLukija(osoite);
+    String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
+    GutenbergReader book = new GutenbergReader(address);
 
-    Ehto ehto = new VahintaanYksi(
-                    new SisaltaaSanan("beer"),
-                    new SisaltaaSanan("milk"),
-                    new SisaltaaSanan("oil")
+    Criterium criterium =new AtLeastOne(
+                    new ContainsTheWord("beer"),
+                    new ContainsTheWord("milk"),
+                    new ContainsTheWord("oil")
                 );
 
-    for (String rivi : kirja.rivitJoilleVoimassa(ehto)) {
-        System.out.println(rivi);
+    for (String line : book.linesWhichComplyWith(criterium)) {
+        System.out.println(line);
     }
 }
 </pre>
 
-<p>Huomaa, että ehtoja voi kombinoida mielivaltaisesti. Seuraavassa ehto, joka hyväksyy rivit joilla on vähintään yksi sanoista "beer", "milk" tai "oil" ja jotka ovat pituudeltaan 20-30 merkkiä.</p>
+<p>Note that the criteria can be combined as prefered. You find below a criterium which accepts the lines which have at least one of the words "beer", "milk" and "oil" and whose length is between 20-30 characters.</p>
 
 <pre class="sh_java">
-    Ehto sanat = new VahintaanYksi(
-                    new SisaltaaSanan("beer"),
-                    new SisaltaaSanan("milk"),
-                    new SisaltaaSanan("oil")
+    Criterium words = new AtLeastOne(
+                    new ContainsWord("beer"),
+                    new ContainsWord("milk"),
+                    new ContainsWord("oil")
                 );
 
-    Ehto oikeaPituus = new Molemmat(
-                         new PituusVahintaan(20),
-                         new Ei( new PituusVahintaan(31)),
+    Criterium rightLength = new Both(
+                         new LongerThan(20),
+                         new Not( new LongerThan(31)),
                        );
 
-    Ehto halutut = new Molemmat(sanat, oikeaPituus);
+    Criterium wanted = new Both(words, reightLength);
 </pre>
 
 </div>
@@ -11848,7 +11844,7 @@ public static void main(String[] args) {
 <div class="tehtavat">
 <h3>String builder</h3>
 
-<p>Edellisen kaltaisissa tilanteissa onkin paremi käyttää characterStringn muodostamisessa <code>StringBuilder</code>-olioita. Toisin kuin Stringint, StringBuilderit eivät ole immutabeleja, ja yhtä StringBuilderolioa voi muokata. Tutustu StringBuilderin API-kuvaukseen (löydät sen esim googlaamalla stringbuilder java api 6) ja muuta tehtäväpohjassa oleva metodi <code>public static String muotoile(int[] t)</code> toimimaan StringBuilderia käyttäen seuraavaan tapaan:</p>
+<p>In situations like the previous one, it is better to use <code>StringBuilder</code> objects when it comes to building strings. Differently from Strings, StringBUilders are immutable. Get acquainted with the description of the StringBuilder API (you find it googing from stringbuilder java api 6) and modify the method in the exercise body, <code>public static String build(int[] t)</code>, so that it would use StringBuilder and work in the following way:</p>
 
 <pre>
 {
@@ -11858,7 +11854,7 @@ public static void main(String[] args) {
 }
 </pre>
 
-<p>Eli aaltosulkeet tulevat omalle rivilleen. Taulukon alkioita tulostetaan 4 per rivi ja rivin ensimmäistä edeltää välilyönti. Pilkun jälkeen ennen seuraavaa numeroa tulee olla tasan yksi välilyönti.</p>
+<p>The curly brakets are on their own lines. There are up to four values in each line of the table, and the first value requires an initial space. Before each number, and after the comma there must be exaactly one space.</p>
 
 </div>
 
@@ -11868,73 +11864,73 @@ public static void main(String[] args) {
 
 <div class="tehtavat">
 
-<h3>Matopeli</h3>
+<h3>Worm Game</h3>
 
 
-<p>Tässä tehtävässä luodaan rakenteet ja osa toiminnallisuudesta seuraavannäköiseen matopeliin.</p>
+<p>In this exercise, we create the structure and functionality for the following worm game.</p>
 
     <p><img src="img-ohja/kali/170-matopeli.png"/></p>
 
-<h4>Pala ja Omena</h4>
+<h4>Piece and Apple</h4>
 
-<p>Luo pakkaukseen <code>matopeli.domain</code> luokka <code>Pala</code>. Luokalla <code>Pala</code> on konstruktori <code>public Pala(int x, int y)</code>, joka saa palan sijainnin parametrina. Lisäksi luokalla <code>Pala</code> on seuraavat metodit.</p>
-
-<ul>
-  <li><code>public int getX()</code> palauttaa Palan konstruktorissa saadun x-koordinaatin.</li>
-  <li><code>public int getY()</code> palauttaa Palan konstruktorissa saadun y-koordinaatin.</li>
-  <li><code>public boolean osuu(Pala pala)</code> palauttaa true jos oliolla on sama x- ja y-koordinaatti kuin parametrina saadulla Pala-luokan ilmentymällä.</li>
-  <li><code>public String toString()</code> palauttaa palan sijainnin muodossa <code>(x,y)</code>. Esim. <code>(5,2)</code> kun x-koordinaatin arvo on 5 ja y-koordinaatin arvo on 2.</li>
-</ul>
-
-<p>Toteuta pakkaukseen <code>matopeli.domain</code> myös luokka <code>Omena</code>. Peri luokalla Omena luokka <code>Pala</code>.</p>
-
-
-<h4>Mato</h4>
-
-<p>Toteuta pakkaukseen <code>matopeli.domain</code> luokka <code>Mato</code>. Luokalla <code>Mato</code> on konstruktori <code>public Mato(int alkuX, int alkuY, Suunta alkusuunta)</code>, joka luo uuden madon jonka suunta on parametrina annettu <code>alkusuunta</code>. Mato koostuu listasta <code>Pala</code>-luokan ilmentymiä. Huom: enum <code>Suunta</code> löytyy valmiina pakkauksesta <code>Matopeli</code>.</p>
-
-<p>Mato luodaan yhden palan pituisena, mutta madon "aikuispituus" on kolme. Madon tulee kasvaa yhdellä aina kun se liikkuu. Kun madon pituus on kolme, se kasvaa isommaksi vain syödessään.</p>
-
-<p>Toteuta madolle seuraavat metodit</p>
+<p>Create the class <code>Piece</code> in <code>wormgame.domain</code>. The class <code>Piece</code> has the constructor <code>public Piece(int x, int y)</code>, which receives the position of the piece as parameter. Moreover, the class <code>Piece</code> has the following methods.</p>
 
 <ul>
-  <li><code>public Suunta getSuunta()</code> palauttaa madon suunnan.</li>
-  <li><code>public void setSuunta(Suunta suunta)</code> asettaa madolle uuden suunnan. Mato liikkuu uuteen suuntaan kun metodia <code>liiku</code> kutsutaan seuraavan kerran.</li>
-  <li><code>public int getPituus()</code> palauttaa madon pituuden. Madon pituuden tulee olla sama kuin <code>getPalat()</code>-metodikutsun palauttaman listan alkioiden määrä.</li>
-  <li><code>public List&lt;Pala&gt; getPalat()</code> palauttaa listan pala-olioita, joista mato koostuu. Palat ovat listalla järjestyksessä, siten että pää sijaitsee listan lopussa.</li>
-  <li><code>public void liiku()</code> liikuttaa matoa yhden palan verran eteenpäin.</li>
-  <li><code>public void kasva()</code> kasvattaa madon kokoa yhdellä. Madon kasvaminen tapahtuu seuraavan <code>liiku</code>-metodikutsun yhteydessä. Sitä seuraaviin liiku-kutsuihin kasvaminen ei enää vaikuta.</li>
-  <li><code>public boolean osuu(Pala pala)</code> tarkistaa osuuko mato parametrina annettuun palaan. Jos mato osuu palaan, eli joku madon pala osuu metodille parametrina annettuun palaan, tulee metodin palauttaa arvo <code>true</code>. Muuten metodi palauttaa arvon <code>false</code>.</li>
-  <li><code>public boolean osuuItseensa()</code> tarkistaa osuuko mato itseensä. Jos mato osuu itseensä, eli joku sen pala osuu johonkin toiseen sen palaan, metodi palauttaa arvon <code>true</code>. Muuten metodi palauttaa arvon <code>false</code>.</li>
+  <li><code>public int getX()</code> returns the x coordinate of the piece, which was assigned in the constructor.</li>
+  <li><code>public int getY()</code> returns the y coordinate of the piece, which was assigned in the constructor.</li>
+  <li><code>public boolean runsInto(Piece piece)</code> returns true if the object has the same coordinates as the Piece instance received as paramater.</li>
+  <li><code>public String toString()</code> returns the piece position following the pattern <code>(x,y)</code>. For instance. <code>(5,2)</code> if the value of x is 5 and the value of y is 2.</li>
 </ul>
 
-<p>Metodien <code>public void kasva()</code> ja <code>public void liiku()</code> toiminnallisuus tulee toteuttaa siten, että mato kasvaa vasta seuraavalla liikkumiskerralla.</p>
+<p>Also implement the class <code>Apple</code> in <code>wormgame.domain</code>, and let Apple inherit <code>Piece</code>.</p>
 
-<p>Liikkuminen kannattaa toteuttaa siten, että madolle luodaan liikkuessa aina uusi pala. Uuden palan sijainti riippuu madon kulkusuunnasta: vasemmalle mennessä uuden palan sijainti on edellisen pääpalan sijainnista yksi vasemmalle, eli sen x-koordinaatti on yhtä pienempi. Jos uuden palan sijainti on edellisen pääpalan alapuolella, eli madon suunta on alas, tulee uuden palan y-koordinaatin olla yhtä isompi kuin pääpalan y-koordinaatti (käytämme siis piirtämisestä tuttua koordinaattijärjestelmää, jossa y-akseli on kääntynyt).</p>
 
-<p>Liikkuessa uusi pala lisätään listalle, ja viimeisin poistetaan listan lopusta. Tällöin jokaisen palan koordinaatteja ei tarvitse päivittää erikseen. Toteuta kasvaminen siten, että palaa viimeisintä palaa ei poisteta jos metodia <code>kasva</code> on juuri kutsuttu.</p>
+<h4>Worm </h4>
 
-<p>Huom! Kasvata matoa aina sen liikkuessa jos sen pituus on pienempi kuin 3.</p>
+<p>Implement the class <code>Worm</code> in the package <code>wormgame.domain</code>. The class <code>Worm</code> has the constructor <code>public Worm(int originalX, int originalY, Suunta originalDirection)</code>, which creates a new worm whose direction is the parameter <code>originalDirection</code>. Worm is composed of a list of instances of the class <code>Piece</code>. Attention: the pre-made enum <code>Direction</code> can be found in the package <code>wormgame</code>.</p>
+
+<p>When it's created, Worm's length is one, but its "mature" lenght is three. Worm has to grow by one piece while it moves. When its length is three, Worm grows only by eating.</p>
+
+<p>Implement the following methods</p>
+
+<ul>
+  <li><code>public Suunta getDirection()</code> return's Worm's direction.</li>
+  <li><code>public void setDirection(Direction dir)</code> sets a new direction for the worm. The worm starts to move in the new direction when the method <code>move</code> is called again.</li>
+  <li><code>public int getLength()</code> returns the Worm's length. The Worm's length has to be equal to the length of the list returned by the method <code>getPieces()</code>.</li>
+  <li><code>public List&lt;Piece&gt; getPieces()</code> returns a list of Piece objects which the worm is composed of. The pieces in the list are in order, with the worm head at the end of the list.</li>
+  <li><code>public void move()</code> moves the worm one piece forward.</li>
+  <li><code>public void grow()</code> grows the worm by one piece. The worm grows together with the following <code>move</code> method call; after the first move method call the worm does not grow any more.</li>
+  <li><code>public boolean runsInto(Piece piece)</code> checks whether the worm runs into the parameter piece. If so -- that is, if a piece of the worm runs into the parameter piece -- the method returns the value <code>true</code>; otherwise it returns <code>false</code>.</li>
+  <li><code>public boolean runsIntoItself()</code> check whether the worm runs into itself. If so -- that is, if one of the worm's pieces runs into another piece -- the method returns the value <code>true</code>. Otherwise it returns <code>false</code>.</li>
+</ul>
+
+<p>The functionality of <code>public void grow()</code> and <code>public void move()</code> has to be implemented so that the worm grows only with the following move.</p>
+
+<p>Motion should be implemented in a way that the worm is always given a new piece. The position of the new piece depends on the moving direction: if moving left, the new piece location should on the left of the head piece, i.e. the x coordinate of the head should be smaller by one. If the location of the new piece is under the old head -- if the worm's direction is down, the y coordinate of the new piece should be by one bigger than the y coordinate of the head (when we draw, we will have to get accustometd to a coordinate system where the y axe is reverse).</p>
+
+<p>When the worm moves, a new piece is added to the list, and the last piece is deleted from the end of the list. In this way, you don't need to update the coordinates of each single piece. Implement the growth so that the last piece is deleted if the <code>grow</code> method has just been called.</p>
+
+<p>Attention! The worm has to grow constantly if its length is less than 3.</p>
 
 <pre class="sh_java">
-        Mato mato = new Mato(5, 5, Suunta.OIKEA);
-        System.out.println(mato.getPalat());
-        mato.liiku();
-        System.out.println(mato.getPalat());
-        mato.liiku();
-        System.out.println(mato.getPalat());
-        mato.liiku();
-        System.out.println(mato.getPalat());
+        Worm worm = new Worm(5, 5, Direction.RIGHT);
+        System.out.println(worm.getPieces());
+        worm.move();
+        System.out.println(worm.getPieces());
+        worm.move();
+        System.out.println(worm.getPieces());
+        worm.move();
+        System.out.println(worm.getPieces());
         
-        mato.kasva();
-        System.out.println(mato.getPalat());
-        mato.liiku();
-        System.out.println(mato.getPalat());
+        worm.grow();
+        System.out.println(worm.getPieces());
+        worm.move();
+        System.out.println(worm.getPieces());
 
-        mato.setSuunta(Suunta.VASEN);
-        System.out.println(mato.osuuItseensa());
-        mato.liiku();
-        System.out.println(mato.osuuItseensa());
+        worm.setSuunta(Direction.LEFT);
+        System.out.println(worm.runsIntoItself());
+        worm.move();
+        System.out.println(worm.runsIntoItself());
 </pre>
 
 <pre>
@@ -11948,87 +11944,87 @@ false
 true
 </pre>
 
-<h4>Matopeli, osa 1</h4>
+<h4>Worm Game, Part 1</h4>
 
-<p>Muokataan seuraavaksi pakkauksessa <code>matopeli.peli</code> olevaa matopelin toiminnallisuutta kapseloivaa luokka <code>Matopeli</code>. Matopeli-luokka perii luokan <code>Timer</code>, joka tarjoaa ajastustoiminnallisuuden pelin päivittämiseen. Luokka <code>Timer</code> vaatii toimiakseen <code>ActionListener</code>-rajapinnan toteuttavan luokan. Olemme toteuttaneet luokalla <code>Matopeli</code> rajapinnan <code>ActionListener</code>.</p>
+<p>Let's modify the class <code>WormGame</code> which is contained in <code>wormgame.game</code>, and encapsulates the functionality of the game. The class WormGame inherits the class <code>Timer</code>, which provites the time functionality to update the game. In order to work, the class <code>Timer</code> requires a class which implements the interface <code>ActionListener</code>, and we have implemented it in <code>WormGame</code>.</p>
 
-<p>Muokkaa matopelin konstruktorin toiminnallisuutta siten, että konstruktorissa luodaan peliin liittyvä <code>Mato</code>. Luo mato siten, että sijainti riippuu Matopeli-luokan konstruktorissa saaduista parametreista. Madon x-koordinaatin tulee olla <code>leveys / 2</code>, y-koordinaatin <code>korkeus / 2</code> ja suunnan <code>Suunta.ALAS</code>.</p>
+<p>Modify the functionality of Matopeli's constructor so that the game's <code>Worm</code> is created in the constructor. Create the worm so that the position of the worm depends on the parameters received in the constructor of the class WormGame. The worm's x coordinate has to be <code>length / 2</code>, the y coordinate <code>height / 2 </code>, and the direction <code>Direction.DOWN</code>.</p>
 
-<p>Luo konstruktorissa myös omena. Konstruktorissa luotavan omenan sijainnin tulee olla satunnainen, kuitenkin niin että omenan x-koordinaatti on aina välillä <code>[0, leveys[</code>, ja y-koordinaatti välillä <code>[0, korkeus[</code>.</p>
+<p>Also create an apple inside the constructor. The apple coordinates have to be random, but the apple x coordinate has to be contained between <code>[0, length[</code>, and the y coordinate between <code>[0, height[</code>.</p>
 
-<p>Lisää matopeliin lisäksi seuraavat metodit</p>
+<p>Also add the following methods to the worm:</p>
 <ul>
-  <li><code>public Mato getMato()</code> palauttaa matopelin madon.</li>
-  <li><code>public void setMato(Mato mato)</code> asettaa matopeliin metodin parametrina olevan madon. Jos metodia <code>getMato</code> kutsutaan madon asetuksen jälkeen, tulee metodin <code>getMato</code> palauttaa viite <em>samaan</em> matoon.</li>
-  <li><code>public Omena getOmena</code> palauttaa matopelin omenan.</li>
-  <li><code>public void setOmena(Omena omena)</code> asettaa matopeliin metodin parametrina olevan omenan. Jos metodia <code>getOmena</code> kutsutaan omenan asetuksen jälkeen, tulee metodin <code>getOmena</code> palauttaa viite <em>samaan</em> omenaan.</li>
+  <li><code>public Mato getWorm()</code> returns the WormGame worm.</li>
+  <li><code>public void setWorm(Worm worm)</code> sets on the game the method parameter worm. If the method <code>getWorm</code> is called after the worm has been set up, it has to return a referece to the <em>same</em> worm.</li>
+  <li><code>public Omena getApple</code> returns the apple of the WormGame.</li>
+  <li><code>public void setApple(Apple apple)</code> sets the method parameter apple on the worm game. If the method <code>getApple</code> is called after the apple has been set up, it has to return a reference to the <em>same</em> apple.</li>
 </ul>
 
 
 
-<h4>Matopeli, osa 2</h4>
+<h4>Worm Game, Part 2</h4>
 
-<p>Muokkaa metodin <code>actionPerformed</code>-toiminnallisuutta siten, että metodissa toteutetaan seuraavat askeleet annetussa järjestyksessä.</p>
+<p>Modify the functionality of the method <code>actionPerformed</code> so that it would implement the following tasks in the given order.</p>
 
 <ol>
-  <li>Liikuta matoa</li>
-  <li>Jos mato osuu omenaan, syö omena ja kutsu madon kasva-metodia. Arvo peliin uusi omena.</li>
-  <li>Jos mato törmää itseensä, aseta muuttujan <code>jatkuu</code> arvoksi <code>false</code></li>
-  <li>Kutsu rajapinnan <code>Paivitettava</code> toteuttavan muuttujan <code>paivitettava</code> metodia <code>paivita</code>.</li>
-  <li>Kutsu Timer-luokalta perittyä <code>setDelay</code>-metodia siten, että pelin nopeus kasvaa suhteessa madon pituuteen. Kutsu <code>setDelay(1000 / <em>mato</em>.getPituus());</code> käy hyvin: kutsussa oletetaan että olet määritellyt oliomuuttujan nimeltä <code>mato</code>.</li>
+  <li>Move the worm</li>
+  <li>If the worm runs into the apple, it eats the apple and calls the grow method. A new apple is randomly created.</li>
+  <li>If the worm runs into itself, the variable <code>continue</code> is assigned the value <code>false</code></li>
+  <li>Call <code>update</code>, which is a method of the variable <code>updatable</code> which implements the interface <code>Updatable</code>.</li>
+  <li>Call the <code>setDelay</code> method which is inherited from the Timer class. The game velocity should grow with respect to the worm length. The call <code>setDelay(1000 / <em>worm</em>.getLength());</code> will work for it: in the call we expect that you have defined the object variable <code>worm</code>.</li>
 </ol>
 
-<p>Aletaan seuraavaksi rakentamaan käyttöliittymäkomponentteja.</p>
+<p>Let's start next to build our user interface components.</p>
 
-<h4>Näppäimistön kuuntelija</h4>
+<h4>Keybord listener</h4>
 
-<p>Toteuta pakkaukseen <code>matopeli.gui</code> luokka <code>Nappaimistonkuuntelija</code>. Luokalla on konstruktori <code>public Nappaimistonkuuntelija(Mato mato)</code>, ja se toteuttaa rajapinnan <code>KeyListener</code>. Korvaa metodi <code>keyPressed</code> siten, että nuolinäppäintä ylös painettaessa madolle asetetaan suunta ylös. Nuolinäppäintä alas painettaessa madolle asetetaan suunta alas, vasemmalle painettaessa suunta vasen, ja oikealle painettaessa suunta oikea.</p>
+<p>Implement the class <code>KeyboardListener</code> in <code>wormgame.gui</code>. The class has the constructor <code>public KeyboardListener(Worm worm)</code>, and it implements the interface <code>KeyListener</code>. Replace the method <code>keyPressed</code> so that the worm is assigned direction up when the up arrow key. Respectively, the worm is assigned the directions down, left, or right, when the user presses the down, left, or right arrow key.</p>
 
-<h4>Piirtoalusta</h4>
+<h4>DrawingBoard</h4>
 
-<p>Toteuta pakkaukseen <code>matopeli.gui</code> luokka <code>Piirtoalusta</code>, joka perii luokan <code>JPanel</code>. Piirtoalusta saa konstruktorin parametrina luokan <code>Matopeli</code> ilmentymän sekä int-tyyppisen muuttujan <code>palanSivunPituus</code>. Muuttuja <code>palanSivunPituus</code> kertoo minkä levyinen ja korkuinen yksittäinen pala on.</p>
+<p>Create the class <code>DrawingBoard</code> in <code>wormgame.gui</code>. The <code>DrawingBoard</code> inherits the class <code>JPanel</code>, and its constructor receives an instance of the class <code>WormGame</code> and the int variable <code>pieceLength</code> as parameters. The variable <code>pieceLength</code> tells the dimention of the pieces; length and height of the pieces are equal.</p>
 
-<p>Korvaa luokalta <code>JPanel</code> peritty metodi <code>paintComponent</code> siten, että piirrät metodissa <code>paintComponent</code> madon ja omenan. Käytä madon piirtämiseen Graphics-olion tarjoamaa <code>fill3DRect</code>-metodia. Madon värin tulee olla valkoinen (<code>Color.WHITE</code>). Omenan piirtämisessä tulee käyttää Graphics-olion tarjoamaa <code>fillOval</code>-metodia. Omenan värin tulee olla punainen (<code>Color.RED</code>).</p>
+<p>Replace the <code>paintComponent</code> method which was inherited from the class <code>JPanel</code> so that the method draws the worm and the apple. Use the Graphics object's <code>fill3DRect</code> method to draw the worm. The worm colour has to be white (<code>Color.WHITE</code>). The apple has to be drawn with the Graphics object's <code>fillOval</code> method, and its colour has to be red.</p>
 
-<p>Toteuta luokalla <code>Piirtoalusta</code> myös rajapinta <code>Paivitettava</code>. Paivitettava-rajapinnan määrittelemän metodin <code>paivita</code> tulee kutsua JPanel-luokan <code>repaint</code>-metodia.</p>
+<p>Also implement the interface <code>Updatable</code> in <code>DrawingBoard</code>. The method <code>update</code> of Updatable has to call the <code>repaint</code> method of the class JPanel.</p>
 
-<h4>Kayttoliittyma</h4>
+<h4>User Interface</h4>
 
-<p>Muuta luokkaa <code>Kayttoliittyma</code> siten, että käyttöliittymä sisältää piirtoalustan. Metodissa <code>luoKomponentit</code> tulee luoda piirtoalustan ilmentymä ja lisätä se container-olioon. Luo metodin <code>luoKomponentit</code> lopussa luokan <code>Nappaimistokuuntelija</code> ilmentymä, ja lisää se frame-olioon.</p>
+<p>Modify the class <code>UserInterface</code> to contain DrawingBoard. In the method <code>createComponents</code>, you have to create an instance of DrawingBoard and add it into the Container object. Create an instance of <code>KeyboardListener</code> at the end of <code>createComponents</code>, and add it to the Frame object.</p>
 
-<p>Lisää luokalle <code>Kayttoliittyma</code> myös metodi <code>public Paivitettava getPaivitettava()</code>, joka palauttaa metodissa <code>luoKomponentit</code> luotavan piirtoalustan.</p>
+<p>Also add the method <code>public Updatable getUpdatable()</code> to the class <code>UserInterface</code>, returning the drawing board which was created in <code>createComponents</code>.</p>
 
-<p>Voit käynnistää käyttöliittymän <code>Main</code>-luokassa seuraavasti. Ennen pelin käynnistystä odotamme että käyttöliittymä luodaan. Kun käyttöliittymä on luotu, se kytketään matopeliin ja matopeli käynnistetään.</p>
+<p>You can start the user interface from the <code>Main</code> class in the following way. Before the game starts, we wait that the user interface is created. When the user interface is created, it gets connected to the worm game and the game gets started.</p>
 
 <pre class="sh_java">
-        Matopeli matopeli = new Matopeli(20, 20);
+        WormGame game = new WormGame(20, 20);
 
-        Kayttoliittyma kali = new Kayttoliittyma(matopeli, 20);
-        SwingUtilities.invokeLater(kali);
+        USerInterface ui = new USerInterface(game, 20);
+        SwingUtilities.invokeLater(ui);
 
-        while (kali.getPaivitettava() == null) {
+        while (ui.getUpdatable() == null) {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
-                System.out.println("Piirtoalustaa ei ole vielä luotu.");
+                System.out.println("The drawing board hasn't been created yet.");
             }
         }
 
-        matopeli.setPaivitettava(kali.getPaivitettava());
-        matopeli.start();
+        game.setUpdatable(ui.getUpdatable());
+        game.start();
 </pre>
 
 </div>
 
-<h2>Kurssipalaute</h2>
+<h2>Course Feedback</h2>
 
 <div class="tehtavat">
 
-<h3>Kurssipalaute</h3>
+<h3>Course Feedback</h3>
 
-<p>Olemme saaneet paljon arvokasta palautetta TMC:n kautta. Näin kurssin viimeisenä kysymyksenä haluaisimme koko kurssin sisältöä koskevan palautteen. Anna palaute täyttämällä <a href="https://ilmo.cs.helsinki.fi/kurssit/servlet/Valinta">täältä</a> löytyvälomake. Palaute on anonyymi.</p> 
+<p>We have received a lot of valuable feedback through TMC. Therefore, as your last task in the course we would like to have feedback on the course in general. Give feeback by filling <a href="https://ilmo.cs.helsinki.fi/kurssit/servlet/Valinta">this</a> form. The feeback is anonymous.</p> 
 
-<p>Jotta saat merkatuksi tämän tehtävän, aja tehtävän TMC-testit ja lähetä tehtävä palvelimelle. </p>
+<p>In order to receive the points of this excercise, run the TMC tests and send the exercise to our server. </p>
 
 </div>
 

@@ -461,9 +461,9 @@ Money on Maija's accounts: 10000
 
 <h3>The structure of a program</h3>
 
-	<p>A program should be clear and easy to understand for both the original writer and others. The most important aspects of a clear program are class structure and good naming conventions. Each class should have a single, clearly defined responsibility. Methods are used to reduce repetition and to create a structure for the internal functionality of the class. A method should also have a clear responsibility to ensure it stays short and simple. Methods that do many things should be divided into smaller helper methods, which are called by the original method. A good programmer writes code that can be understood even weeks after it was originally written.</p>
+    <p>A program should be clear and easy to understand for both the original writer and others. The most important aspects of a clear program are class structure and good naming conventions. Each class should have a single, clearly defined responsibility. Methods are used to reduce repetition and to create a structure for the internal functionality of the class. A method should also have a clear responsibility to ensure it stays short and simple. Methods that do many things should be divided into smaller helper methods, which are called by the original method. A good programmer writes code that can be understood even weeks after it was originally written.</p>
 
-	<p>Good, understandable code uses descriptive naming of variables, methods and classes, and consistent indentation. Let's look at the example below, a small program for buying and selling goods. Even though the only thing available is carrots, with no bookkeeping, the user interface could be extended to use a storage class to keep track of items.
+    <p>Good, understandable code uses descriptive naming of variables, methods and classes, and consistent indentation. Let's look at the example below, a small program for buying and selling goods. Even though the only thing available is carrots, with no bookkeeping, the user interface could be extended to use a storage class to keep track of items.
 
 <pre class="sh_java">
 public class UserInterface {
@@ -511,7 +511,7 @@ public class UserInterface {
 }
 </pre>
 
-	<p>This example has numerous problems. The first problem is the long <code>start</code> method. It can be shortened by moving most of the command handling to a separate method.</p>
+    <p>This example has numerous problems. The first problem is the long <code>start</code> method. It can be shortened by moving most of the command handling to a separate method.</p>
 
 <pre class="sh_java">
 public class UserInterface {
@@ -565,7 +565,7 @@ public class UserInterface {
 }
 </pre>
 
-	<p><code>handleCommand</code> still has some repetition for reading the user input. Both buying and selling first print a character string with the question, then take input from the user. If the input is incorrect (other than "carrot"), "Item not found!" is printed. We will create a new method, <code>public String readInput(String question)</code>, to handle this. Note that if the program used some other object to keep track of inventory, we would compare user input to the inventory's contents instead.</p>
+    <p><code>handleCommand</code> still has some repetition for reading the user input. Both buying and selling first print a character string with the question, then take input from the user. If the input is incorrect (other than "carrot"), "Item not found!" is printed. We will create a new method, <code>public String readInput(String question)</code>, to handle this. Note that if the program used some other object to keep track of inventory, we would compare user input to the inventory's contents instead.</p>
 
 <pre class="sh_java">
 public class UserInterface {
@@ -612,7 +612,7 @@ public class UserInterface {
 }
 </pre>
 
-	<p>The program is now divided into appropriate parts. There are still a few things, other than implementing more methods, we can do to improve readability. The <code>start</code> method has an <code>if</code> branch that ends in <code>break</code>, which exits the loop. We can remove the unnecessary <code>else</code> branch, simply moving the <code>handleCommand</code> method to be called after the if statement. The program still works exactly as before, but the method is now shorter and easier to read. A similar situation exists in the <code>readInput</code> method, so we will clean it up too.</p>
+    <p>The program is now divided into appropriate parts. There are still a few things, other than implementing more methods, we can do to improve readability. The <code>start</code> method has an <code>if</code> branch that ends in <code>break</code>, which exits the loop. We can remove the unnecessary <code>else</code> branch, simply moving the <code>handleCommand</code> method to be called after the if statement. The program still works exactly as before, but the method is now shorter and easier to read. A similar situation exists in the <code>readInput</code> method, so we will clean it up too.</p>
 
 <pre class="sh_java">
 public class UserInterface {
@@ -660,7 +660,7 @@ public class UserInterface {
 </pre>
 
 
-	<p>Dividing a program into smaller parts, like we did above, is called <em>refactoring</em>. It does not change how the program works, but the internal structure is changed to be more clear and easier to maintain. The current version is much more clear than the original one, but it can be improved further. For example, <code>handleCommand</code> can be further divided into two different methods, one for handling buying and the other for selling.</p>
+    <p>Dividing a program into smaller parts, like we did above, is called <em>refactoring</em>. It does not change how the program works, but the internal structure is changed to be more clear and easier to maintain. The current version is much more clear than the original one, but it can be improved further. For example, <code>handleCommand</code> can be further divided into two different methods, one for handling buying and the other for selling.</p>
 
 <pre class="sh_java">
 public class UserInterface {
@@ -715,27 +715,27 @@ public class UserInterface {
 }
 </pre>
 
-	<p>The program now has a clear structure with descriptively named methods. Every method is short and has a small task to handle. Note that refactoring the code did not add any new functionality, it merely changed the way the program works internally.</p>
+    <p>The program now has a clear structure with descriptively named methods. Every method is short and has a small task to handle. Note that refactoring the code did not add any new functionality, it merely changed the way the program works internally.</p>
 
         <h3>Programming and the importance of practicing</h3>
 
-	<p>As far as we know, nobody has yet learned programming by listening to lectures. To develop the skill required in programming, it is essential to practice both what you have learned earlier and things that are new to you. Programming can be compared to speaking languages or playing an instrument, both of which can only be learned by doing. Master violinists are probably not good at playing <em>only</em> because they practice a lot. Playing an instrument is fun, which makes one more motivated to practice. The same applies to programming.</p>
+    <p>As far as we know, nobody has yet learned programming by listening to lectures. To develop the skill required in programming, it is essential to practice both what you have learned earlier and things that are new to you. Programming can be compared to speaking languages or playing an instrument, both of which can only be learned by doing. Master violinists are probably not good at playing <em>only</em> because they practice a lot. Playing an instrument is fun, which makes one more motivated to practice. The same applies to programming.</p>
 
         <p>As Linus Torvalds said, <em>"Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program"</em>.</p>
 
-	<p>Dr. Luukkainen has written a list of instructions for new programmers to follow when learning to program. Follow this advice to become a great programmer!</p>
+    <p>Dr. Luukkainen has written a list of instructions for new programmers to follow when learning to program. Follow this advice to become a great programmer!</p>
 
         <ul>
           <li> Take small steps
             <ul>
-	      <li> Divide the problem you are trying to solve into smaller parts and solve them <strong>one at a time</strong> </li>
+          <li> Divide the problem you are trying to solve into smaller parts and solve them <strong>one at a time</strong> </li>
               <li> Keep testing that your solution is moving in the right direction, ensuring that you have solved the current part correctly</li>
           </ul></li>
           <li> Keep the code as clean as you can
             <ul>
               <li> use proper indentation </li>
               <li> use descriptive names for variables, methods, classes, everything</li>
-	      <li> keep all methods short, including <code>main</code> </li>
+          <li> keep all methods short, including <code>main</code> </li>
               <li> write methods that only do one thing </li>
               <li> <strong>remove all copy-paste code by refactoring (or don't copy and paste code in the first place!)</strong></li>
               <li> replace "bad" and unclear code with clean, easy to read code </li>
@@ -746,9 +746,9 @@ public class UserInterface {
 
         <h3>Visibility</h3>
 
-	<p>Until now, we have been using two different keywords to define the <em>visibility</em> of methods and instance variables. <code>public</code> makes the method or instance variable visible and accessable to everyone. Methods and constructors are usually marked as public, so that they can be called from outside the class.</p>
+    <p>Until now, we have been using two different keywords to define the <em>visibility</em> of methods and instance variables. <code>public</code> makes the method or instance variable visible and accessable to everyone. Methods and constructors are usually marked as public, so that they can be called from outside the class.</p>
 
-	<p>Declaring a method or instance variable <code>private</code> hides it from the outside, making it only accessible from inside the same class.</p>
+    <p>Declaring a method or instance variable <code>private</code> hides it from the outside, making it only accessible from inside the same class.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -772,7 +772,7 @@ public class Book {
 }
 </pre>
 
-	<p>The instance variables in the Book class above can only be accessed with the public methods <code>getName</code> and <code>getContents</code>. Fields declared as private are only accessible in code inside the class. Methods can also be declared as private, which prevents them from being called outside the class.</p>
+    <p>The instance variables in the Book class above can only be accessed with the public methods <code>getName</code> and <code>getContents</code>. Fields declared as private are only accessible in code inside the class. Methods can also be declared as private, which prevents them from being called outside the class.</p>
 
 
         <p>Now it's time to start practicing!</p>
@@ -994,7 +994,7 @@ command: <font color="red">end</font>
 
   <p>Finish the bodies for the methods <code>sum</code>, <code>difference</code>, <code>product</code> and <code>stasistics</code>. All of them are to be of the type <code>private void</code> which means that the methods are available only for internal use in the calculator.</p>
 
-  <p>Add an instance variable of the type <code>Reader</code> for the calculator and create the reader in the constructor. <em>The calculator may not have a separate Scanner type variable!</em></p>
+  <p>Add an instance variable of the type <code>Reader</code> for the calculator and create the reader in the constructor. <em>The calculator may not have a separate Scanner-type variable!</em></p>
 
   <h4>Implementation of the application logic</h4>
 
@@ -1049,34 +1049,34 @@ Calculations done 1
 </div>
 
 
-<h2>Primitive and reference type variables</h2>
+<h2>Primitive- and reference-type variables</h2>
 
-        <p>Java is a strongly typed language, what this means is that all of it's variables have a <em>type</em>. The types of the variables can be divided in to two categories: <strong>primitive type and reference type variables</strong>. Both types of variables have their own "slot", which holds the information belonging to them. Primitive type variables hold the concrete <em>value</em> in their slot, while the reference type variables hold a <em>reference</em> to a concrete <em>object</em>.</p>
+        <p>Java is a strongly typed language, what this means is that all of it's variables have a <em>type</em>. The types of the variables can be divided in to two categories: <strong>primitive-type and reference-type variables</strong>. Both types of variables have their own "slot", which holds the information belonging to them. Primitive-type variables hold the concrete <em>value</em> in their slot, while the reference-type variables hold a <em>reference</em> to a concrete <em>object</em>.</p>
 
-        <h3>Primitive type variables</h3>
+        <h3>Primitive-type variables</h3>
 
-        <p>The value of a primitive type variable is saved in a slot created for the variable. Each primitive type variable has it's own slot and it's own value. A variable's slot is created when it is introduced (<code>int number;</code>, for example). A value is set to a slot with the assignment operation <code>=</code>. Below is an example of the introduction of a primitive type int (integer) variable and setting of it's value in the same expression.</p>
+        <p>The value of a primitive type variable is saved in a slot created for the variable. Each primitive-type variable has it's own slot and it's own value. A variable's slot is created when it is introduced (<code>int number;</code>, for example). A value is set to a slot with the assignment operation <code>=</code>. Below is an example of the introduction of a primitive-type int (integer) variable and setting of it's value in the same expression.</p>
 
 <pre class="sh_java">
 int number = 42;
 </pre>
 
-        <p>Primtive type variables, among others, are <code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code> and more rarely used <code>short</code>, <code>float</code>, <code>byte</code> and <code>long</code>. Also <code>void</code> is a primitive type, but it doesn't have it's own slot or value. The void type is used when we want to express that a method doesn't return a value.</p>
+        <p>Primtive type variables, among others, are <code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code> and more rarely used <code>short</code>, <code>float</code>, <code>byte</code> and <code>long</code>. Also <code>void</code> is a primitive-type, but it doesn't have it's own slot or value. The void-type is used when we want to express that a method doesn't return a value.</p>
 
-    <p>Next we introduce two primitive type variables and set values to them.</p>
+    <p>Next we introduce two primitive-type variables and set values to them.</p>
 
 <pre class="sh_java">
 int five = 5;
 int six = 6;
 </pre>
 
-        <p>The primitive type variables introduced above are named <code>five</code> and <code>six</code>. When introducing the variable <code>five</code> the value 5 is set to the <em>slot</em> that was created for it (<code>int five = 5;</code>).  When introducing the variable <code>six</code> the value 6 is set to the <em>slot</em> that was created for it (<code>int six = 6;</code>). The variables <code>five</code> and <code>six</code> are both of the type <code>int</code>, or integers.</p>
+        <p>The primitive-type variables introduced above are named <code>five</code> and <code>six</code>. When introducing the variable <code>five</code> the value 5 is set to the <em>slot</em> that was created for it (<code>int five = 5;</code>).  When introducing the variable <code>six</code> the value 6 is set to the <em>slot</em> that was created for it (<code>int six = 6;</code>). The variables <code>five</code> and <code>six</code> are both of the type <code>int</code>, or integers.</p>
 
-        <p>Primitive type variables can be visualized as boxes that both have the values belonging to them saved in to them:</p>
+        <p>Primitive-type variables can be visualized as boxes that both have the values belonging to them saved in to them:</p>
 
         <p><img src="img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen.png" /></p>
 
-        <p>Next lets inspect how the values of primitive type variables get copied.</p>
+        <p>Next lets inspect how the values of primitive-type variables get copied.</p>
 
 <pre class="sh_java">
 int five = 5;
@@ -1180,15 +1180,15 @@ if(Math.abs(distance) &lt; 0.0001) {
 }
 </pre>
 
-<h3>Reference Type Variables</h3>
+<h3>Reference-Type Variables</h3>
 
-        <p>Reference type variables memorize the information which has been assigned to them "on the other end of the line". Reference type variables contain a reference to the location where the information is stored. Differently from primitive type variables, reference type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Another substantial difference between primitive type and reference type variables is that various different reference type variables can point to the same object.</p>
+        <p>Reference-type variables memorize the information which has been assigned to them "on the other end of the line". Reference-type variables contain a reference to the location where the information is stored. Differently from primitive-type variables, reference-type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Another substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
 
 <!--
-        <p>Reference type variables are objects which are created through the <code>new</code> keyword. The value of a reference type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to that object. The reference is stored within the variable, and it becomes its value.</p> 
+        <p>Reference-type variables are objects which are created through the <code>new</code> keyword. The value of a reference-type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to that object. The reference is stored within the variable, and it becomes its value.</p> 
 -->
 
-<p>Let us have a look at two reference type variables. In the following examples we make use of the class <em>Calculator</em>:</p>
+<p>Let us have a look at two reference-type variables. In the following examples we make use of the class <em>Calculator</em>:</p>
 
 <pre class="sh_java">
 public class Calculator {
@@ -1215,21 +1215,21 @@ Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 </pre>
 
-        <p>In the examples we first create a reference type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is assigned to the <code>bonusCalculator</code> variable through the <code>=</code> equal sign. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information. </p>
+        <p>In the examples we first create a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is assigned to the <code>bonusCalculator</code> variable through the <code>=</code> equal sign. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information. </p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit.png" /></p>
 
-        <p>Next, let us have a look at how a referene type object is duplicated.</p>
+        <p>Next, let us have a look at how a referene-type object is duplicated.</p>
 
 <pre class="sh_java">
 Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
 bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator type object which received the value 6 in its constructor is copied to the variable  bonusCalculator
+                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable  bonusCalculator
 </pre>
 
-        <p>When we copy a reference type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable duplicates, too. In this case, a reference to the <code>axeCalculator</code> variable slot is copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
+        <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable duplicates, too. In this case, a reference to the <code>axeCalculator</code> variable slot is copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-3.png" /></p>
 
@@ -1240,7 +1240,7 @@ Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
 bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator type object which received the value 6 in its constructor is copied to the variable 
+                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable 
 
 axeCalculator = new Calculator(10); // a new reference is assigned to the axeCalculator variable 
                               // which points to the object created by the command new Laskuri(10)
@@ -1248,21 +1248,21 @@ axeCalculator = new Calculator(10); // a new reference is assigned to the axeCal
 // the bonusCalculator variable still contains a reference to the Calculator object which received value 6 in its parameter
 </pre>
 
-        <p>In these examples, we do the same operations which were shown in the assignment example in the primitive type variables section. In the very last example, we copied the reference of reference type variables, whereas in the primitive type variables section we copied the value of primitive type variables. In both cases, we copy the contents of a slot: the primitive type variable slot contains a value, whereas the reference type variable slot contains a reference.</p>
+        <p>In these examples, we do the same operations which were shown in the assignment example in the primitive-type variables section. In the very last example, we copied the reference of reference-type variables, whereas in the primitive-type variables section we copied the value of primitive-type variables. In both cases, we copy the contents of a slot: the primitive-type variable slot contains a value, whereas the reference-type variable slot contains a reference.</p>
 
         <p>At the end of the previous example no variable points to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes such useless objects from time to time. Our final situation looks like the following:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-2.png" /></p>
 
-        <p>Let us have a look to a third example still, and let us focus on an essencial difference between primitive type and reference type variables.</p>
+        <p>Let us have a look to a third example still, and let us focus on an essencial difference between primitive-type and reference-type variables.</p>
 
 <pre class="sh_java">
 Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
 bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator type object which received the value 6 in its constructor is copied to the variable 
+                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable 
 
 axeCalculator.increaseValue(); // we increase by one the value of the object referenced by axeCalculator
 
@@ -1281,7 +1281,7 @@ System.out.println(axeCalculator.getValue());
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-4.png" /></p>
 
-        <p>In the following example, three reference type variables all point to the same <code>Calculator</code> object.</p>
+        <p>In the following example, three reference-type variables all point to the same <code>Calculator</code> object.</p>
 
 <pre class="sh_java">
 Calculator bonus = new Calculator(5);
@@ -1289,7 +1289,7 @@ Calculator ihq = bonus;
 Calculator lennon = bonus;
 </pre>
 
-        <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls all modify the same object. To tell it once again: when reference type variables are copied, their references also duplicate. The same concept in a picture:</p>
+        <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls all modify the same object. To tell it once again: when reference-type variables are copied, their references also duplicate. The same concept in a picture:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-5.png" /></p>
@@ -1308,9 +1308,9 @@ lennon = new Calculator(3);
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-6.png" /></p>
 
-        <h4>A Reference Type Variables and Method Parameters</h4>
+        <h4>A Reference-Type Variables and Method Parameters</h4>
 
-        <p>When a reference type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original type variables, we copy the reference, and not their value. In fact, we can we can modify the object behind the reference even form within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
+        <p>When a reference-type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original-type variables, we copy the reference, and not their value. In fact, we can we can modify the object behind the reference even form within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
 
 <pre class="sh_java">
 public void addToCalculator(Calculator calculator, int amount) {
@@ -1320,7 +1320,7 @@ public void addToCalculator(Calculator calculator, int amount) {
 }
 </pre>
 
-        <p>We give two parameters to the method <code>addToCalculator</code> – a reference type value and an original type variable. The contents of both variable slots are copied to method parameter slots. The reference type parameter <code>calculator</code> receives a copy of a reference, whereas the original type parameter <code>amount</code> receives the copy of value. The method will call the <code>increaseValue()</code> method of the <code>Calculator</code> type parameter, and it will do it as many times as the value of the <code>amount</code> variable. Let us analise the method call more deeply.</p>
+        <p>We give two parameters to the method <code>addToCalculator</code> – a reference-type value and an original-type variable. The contents of both variable slots are copied to method parameter slots. The reference-type parameter <code>calculator</code> receives a copy of a reference, whereas the original-type parameter <code>amount</code> receives the copy of value. The method will call the <code>increaseValue()</code> method of the <code>Calculator</code>-type parameter, and it will do it as many times as the value of the <code>amount</code> variable. Let us analise the method call more deeply.</p>
 
 <pre class="sh_java">
 int times = 10;
@@ -1330,20 +1330,20 @@ addToCalculator(bonus, times);
 // the bonus variable value is now 20
 </pre>
 
-        <p>In the example, we call the <code>addToCalculator</code> method whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference type variable <code>bonus</code> and the value of the original type variable <code>times</code> – which is <code>10</code> – are copied as parameters whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the <code>increaseValue()</code> method of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
+        <p>In the example, we call the <code>addToCalculator</code> method whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference-type variable <code>bonus</code> and the value of the original-type variable <code>times</code> – which is <code>10</code> – are copied as parameters whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the <code>increaseValue()</code> method of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
 
 
         <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-7.png" /></p>
 
         <p><em>The method contains variables which are completely separated from the main program!</em></p>
 
-        <p>As far as the reference type variable is concerned, a reference duplicates and it is given to the method, and the variable inside the method will still point to the same object. As far as the original type variable is concerned, a value is copied, and the variable inside the method will have its completely independent value.</p>
+        <p>As far as the reference-type variable is concerned, a reference duplicates and it is given to the method, and the variable inside the method will still point to the same object. As far as the original-type variable is concerned, a value is copied, and the variable inside the method will have its completely independent value.</p>
 
-        <p>The method recognises the calculator which the <code>bonus</code> variable points to, and the alterations made by the method have a direct impact on the object. The situation is different with original type variables, and the method only receives a copy of the value of the <code>times</code> variable. In fact, it is not possible to modify the value of original type variables directly within a method.</p>
+        <p>The method recognises the calculator which the <code>bonus</code> variable points to, and the alterations made by the method have a direct impact on the object. The situation is different with original-type variables, and the method only receives a copy of the value of the <code>times</code> variable. In fact, it is not possible to modify the value of original-type variables directly within a method.</p>
 
-        <h4>A method which returns a reference type variable</h4>
+        <h4>A method which returns a reference-type variable</h4>
 
-        <p>When a method returns a reference type variable, it returns the reference to an object located elsewhere. Once the reference is returned by a method, it can be assigned to a variable in the same way as a normal assignment would happen, through the equal sign (=). Let us have a look at the method <code>public Calculator createCalculator(int startValue)</code>, which creates a new reference type variable.</p>
+        <p>When a method returns a reference-type variable, it returns the reference to an object located elsewhere. Once the reference is returned by a method, it can be assigned to a variable in the same way as a normal assignment would happen, through the equal sign (=). Let us have a look at the method <code>public Calculator createCalculator(int startValue)</code>, which creates a new reference-type variable.</p>
 
 <pre class="sh_java">
 public Calculator createCalculator(int startValue) {
@@ -1351,14 +1351,14 @@ public Calculator createCalculator(int startValue) {
 }
 </pre>
 
-    <p>The creteCalculator method creates an object and returns its <code>newCalculator</code> reference. By calling the method, we always create a new object. In the following example we create two different <code>Calculator</code> type objects.</p>
+    <p>The creteCalculator method creates an object and returns its <code>newCalculator</code> reference. By calling the method, we always create a new object. In the following example we create two different <code>Calculator</code>-type objects.</p>
 
 <pre class="sh_java">
 Calculator bonus  = createCalculator(10);
 Calculator lennon = createCalculator(10);
 </pre>
 
-        <p>The method <code>createCalculator</code> always creates a new <code>Calculator</code> type object. With the first call, <code>Calculator bonus  = createCalculator(10);</code> we assign the method return reference to the <code>bonus</code> variable. With the second call, we create another reference and we assign it to the <code>lennon</code> variable. The variables <code>bonus</code> and <code>lennon</code> do not contain the same reference because the method creates a new object in both cases, and it returns the reference to that particular object.</p>
+        <p>The method <code>createCalculator</code> always creates a new <code>Calculator</code>-type object. With the first call, <code>Calculator bonus  = createCalculator(10);</code> we assign the method return reference to the <code>bonus</code> variable. With the second call, we create another reference and we assign it to the <code>lennon</code> variable. The variables <code>bonus</code> and <code>lennon</code> do not contain the same reference because the method creates a new object in both cases, and it returns the reference to that particular object.</p>
 
 
         <h2 id="stat_ja_ei">Static and Non-Static</h2>
@@ -1379,7 +1379,7 @@ public class HslPrices {
 }
 </pre>
 
-        <p>The keyword <code>final</code> in the variable definition tells that once we assign a value to a variable, we can not assign a new one to it. Final type variables are constant, and they always have to have a value. For instance, the class variable which tells the greatest integer, <code>Integer.MAX_VALUE</code>, is a constant class variable.</p>
+        <p>The keyword <code>final</code> in the variable definition tells that once we assign a value to a variable, we can not assign a new one to it. Final-type variables are constant, and they always have to have a value. For instance, the class variable which tells the greatest integer, <code>Integer.MAX_VALUE</code>, is a constant class variable.</p>
 
         <p>Once we have the class presented above, <code>HslPrices</code>, all the programs which need the single or tram-ticket price can have access to it through the class <code>HslPrices</code>. With the next example, we present the class <code>Person</code>, which has the method <code>enoughMoneyForSingleTicket()</code>, which makes use of the ticket price found in the class <code>HslPrices</code>.</p>
 
@@ -1472,7 +1472,7 @@ public class Person {
 }
 </pre>
 
-    <p>When we create a new instance of class <em>Person</em>, we also initialize its variables. If we do not initialize the reference type variable <code>name</code>, it receives value <em>null</em>. Let us add the <em>constructor</em> and a couple of methods to our class <em>Person</em>.</p>
+    <p>When we create a new instance of class <em>Person</em>, we also initialize its variables. If we do not initialize the reference-type variable <code>name</code>, it receives value <em>null</em>. Let us add the <em>constructor</em> and a couple of methods to our class <em>Person</em>.</p>
 
 <pre class="sh_java">
 public class Person {
@@ -1509,7 +1509,7 @@ public class Person {
 }
 </pre>
 
-    <p>The constructor <code>Person(String name, double money)</code> creates a new Person object, and it returns its reference. The method <code>getName()</code> returns the reference to a <code>name</code> object, and the <code>getMoney()</code> method returs the original type variable <code>money</code>. The method <code>addMoney(double amount)</code> receives as parameter an amount of money, and it adds it to the <code>money</code> object variable if the parameter's value is greater than 0.</p>
+    <p>The constructor <code>Person(String name, double money)</code> creates a new Person object, and it returns its reference. The method <code>getName()</code> returns the reference to a <code>name</code> object, and the <code>getMoney()</code> method returs the original-type variable <code>money</code>. The method <code>addMoney(double amount)</code> receives as parameter an amount of money, and it adds it to the <code>money</code> object variable if the parameter's value is greater than 0.</p>
 
     <p>Object methods are called through their object reference. The following code example creates a new Person object, increases its money, and prints its name, at the end. Note that the method calls follow the pattern <code>objectName.methodName()</code></p>
 
@@ -1872,7 +1872,7 @@ public class Main {
 
     <p>Java's <code>HashMap</code> class capsulates - or hides - the way it works, and it returns made-up methods ready to use.</p>
 
-    <p>When we create a HashMap we need two <em>type parameters</em>, a type for the key variable, and a type for the stored object. The following example uses a <code>String</code> type object as key, and a <code>String</code> type object as the stored object.</p>
+    <p>When we create a HashMap we need two <em>type parameters</em>, a type for the key variable, and a type for the stored object. The following example uses a <code>String</code>-type object as key, and a <code>String</code>-type object as the stored object.</p>
 
 
 <pre class="sh_java">
@@ -1988,7 +1988,7 @@ public class Book {
 }
 </pre>
 
-        <p>In the following example, we create a HashMap which makes use of the book name - a String type object - and stores the references which point to <code>Book</code>-objects.</p>
+        <p>In the following example, we create a HashMap which makes use of the book name - a String-type object - and stores the references which point to <code>Book</code>-objects.</p>
 
 <pre class="sh_java">
 HashMap&lt;String, Book&gt; bookCollection = new HashMap&lt;String, Book&gt;();
@@ -2152,27 +2152,27 @@ public class Library {
     <p>Among the programming principles, there is the so called <em>DRY</em> principle (Don't Repeat Yourself), according to which we try to avoid repeting the same code in different places. Turning a string to lower case, and its <em>trimming</em> - that is to say removing white spaces from the beginning and the end of a string - would have recourred various different times without the <code>stringCleaner()</code> method. We hardly notice we are repeating the same code before we have written it, in which case it eventually ends up there. This is not bad, however. The most important thing is that we clean our code as soon as we notice the need.</p>
 
 
-    <h3>Orignial Type Variables in a HashMap</h3>
+    <h3>Orignial-Type Variables in a HashMap</h3>
 
-    <p>Both HashMap keys and stored objects are referece type variables. If we want to use an original type variable as key or stored value, we can use their reference type equivalent. Some are introduced below.</p>
+    <p>Both HashMap keys and stored objects are referece-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.</p>
 
     <p>
       <table>
-        <tr><th>Original type</th><th>Reference type equivalent</th><tr>
+        <tr><th>Original-type</th><th>Reference-type equivalent</th><tr>
         <tr><td>int</td><td><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html" target="_blank">Integer</a></td></tr>
         <tr><td>double</td><td><a href="docs.oracle.com/javase/6/docs/api/java/lang/Double.html" target="_blank">Double</a></td></tr>
         <tr><td>char</td><td><a href="docs.oracle.com/javase/6/docs/api/java/lang/Character.html" target="_blank">Character</a></td></tr>
       </table>
     </p>
 
-        <p>In fact, Java automatically capsulates original type values and translates them into reference type values when that is needed. Even though the number <code>1</code> is an original type variable, it can be used as an <code>Integer</code> key directly in the following way.</p>
+        <p>In fact, Java automatically capsulates original-type values and translates them into reference-type values when that is needed. Even though the number <code>1</code> is an original-type variable, it can be used as an <code>Integer</code> key directly in the following way.</p>
 
 <pre class="sh_java">
 HashMap&lt;Integer, String&gt; table = new HashMap&lt;Integer, String&gt;();
 table.put(1, "Be!");
 </pre>
 
-        <p>In Java, the automatic translation of original type variables into reference type ones is called <em>auto-boxing</em>, i.e. allocation into a slot. The same process also works in the opposite way. We can create a method which returns a HashMap containing an Integer. In the following example, the automatic translation happens inside the method <code>addTwitch</code>.</p>
+        <p>In Java, the automatic translation of original-type variables into reference-type ones is called <em>auto-boxing</em>, i.e. allocation into a slot. The same process also works in the opposite way. We can create a method which returns a HashMap containing an Integer. In the following example, the automatic translation happens inside the method <code>addTwitch</code>.</p>
 
 
 <pre class="sh_java">
@@ -2193,7 +2193,7 @@ public class TwitchRegister {
 }
 </pre>
 
-        <p>Even though the HashMap contains Integer objects, Java can also translate certain reference type variables into their original type equivalent. For instance, <code>Integer</code> objects can be translated into <code>int</code> values, if needed. However, this can be misleading! If we try to translate a null reference into a number, we receive the <em>java.lang.reflect.InvocationTargetException</em> error. When we make use of this automatic translation, we have to be sure that the value we want to translate is not null. The above <code>lastTwitch</code> method must be fixed in the following way.</p>
+        <p>Even though the HashMap contains Integer objects, Java can also translate certain reference-type variables into their original-type equivalent. For instance, <code>Integer</code> objects can be translated into <code>int</code> values, if needed. However, this can be misleading! If we try to translate a null reference into a number, we receive the <em>java.lang.reflect.InvocationTargetException</em> error. When we make use of this automatic translation, we have to be sure that the value we want to translate is not null. The above <code>lastTwitch</code> method must be fixed in the following way.</p>
 
 <pre class="sh_java">
     public int lastTwitch(String name) {
@@ -3249,7 +3249,7 @@ Practice makes perfect. Make up your own fun project.
 
   <ul>
     <li> the method <code>int getDaysLeft()</code> which returns the number of days left on service</li>
-    <li> the method <code>void work()</code>, which reduces the working days by one. The working days number can not become negative.</li>	
+    <li> the method <code>void work()</code>, which reduces the working days by one. The working days number can not become negative.</li>  
   </ul>
 
 <pre class="sh_java">
@@ -3564,7 +3564,7 @@ public class Box {
    public class Factory {
       public Factory(){
           // Attention: it is not necessary to write an empty constructor if there are no other constructors in the class. 
-	  // In such cases, Java creates a default constructor, i.e a constructor without parameter 
+      // In such cases, Java creates a default constructor, i.e a constructor without parameter 
       }
 
        public Item produceNew(){
@@ -5068,7 +5068,7 @@ public class Main {
         Scanner reader = new Scanner(System.in);
         UserInterface userInterface = new UserInterface(reader);
 
-        userInterface.printTitle(); // it doesn't work	!
+        userInterface.printTitle(); // it doesn't work  !
     }
 }
 </pre>
@@ -5485,7 +5485,7 @@ public class Checkout {
 
 
 <div>
-<big><big><b>NetBeans Tips</b></big></big>	
+<big><big><b>NetBeans Tips</b></big></big>  
 
 <ul>
 <li>All NetBeans tips can be found <a href="../ohpe/netbeans.html">here</a> </li>

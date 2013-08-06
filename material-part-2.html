@@ -10,7 +10,7 @@
 
     <script type="text/javascript" src="javascripts/jquery-1.7.1.min.js"></script>
 
-    <script type="text/javascript" src="javascripts/exercises-test.js"></script>
+    <script type="text/javascript" src="javascripts/exercises2.js"></script>
     <script type="text/javascript" src="javascripts/common-new.js"></script>
 
     <script type="text/javascript" src="javascripts/jquery.easing.js"></script>
@@ -28,6 +28,9 @@
     </div>
 
     <p><strong><big>Note for the reader</big></strong></p>
+
+    <section class="viikkoraja" id="0">
+    <div div class="viikkoraja-mooc" id="Huomautus lukijalle" tekija="Arto Vihavainen, Matti Luukkainen">
 
     <p>This is direct continuation to the programming basics course <a href="../ohpe/index.html">material</a>.</p>
 
@@ -47,11 +50,12 @@
 
 
     <p><em>Note!</em> On this course we use a programming environment known as <a href="http://netbeans.org/">NetBeans</a>. The instructions for using NetBeans and the assignment server can be found <a href="netbeans.html">here</a>.</p>
+</div>
+</section>
 
-<div class="tyhja"></div>
-
-<div class="viikkoraja">Week 1</div>
-
+<section class="viikkoraja" id="1" >
+  <div class="viikkoraja">Week1</div>
+  <div class="viikkoraja-mooc" id="Week 7" deadline="DL: 14.4.2013 23.59" data-first-chapter-index="33" data-first-exercise-index="108" data-first-week-index="7"  data-first-chapter-index-mooc="33" data-first-exercise-index-mooc="108" data-first-week-index-mooc="7" tekija="Arto Vihavainen, Matti Luukkainen">
 
 
 <h2>Recapping the programming basics</h2>
@@ -96,35 +100,35 @@
     <p>The functionality of programs is built with the help of control structures. Control structures make different functions possible depending on the variables of the program. Below, an example of an <code>if - else if - else</code> control structure, in which a different function is made depending on result of the comparison. In the example a string <code>Accelerate</code> is printed if the value of the variable <code>speed</code> is smaller than 110, the string <code>Break</code> if the <code>speed</code> is greater than 120, and the string <code>Cruising</code> in other cases.</p>
 
 <pre class="sh_java">
-        int speed = 105;
+int speed = 105;
 
-        if (speed < 110) {
-            System.out.println("Accelerate");
-        } else if (speed > 120) {
-            System.out.println("Break");
-        } else {
-            System.out.println("Cruising");
-        }
+if (speed < 110) {
+    System.out.println("Accelerate");
+} else if (speed > 120) {
+    System.out.println("Break");
+} else {
+    System.out.println("Cruising");
+}
 </pre>
 
         <p>Because in the example above the value of the variable <code>speed</code> is 105, the program will always print the string <code>Accelerate</code>. Remember that the comparison of strings is done with the <code>equals</code> method that belongs to the string. Below is an example in which an object created from Java's <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class is used to read the input of a user. The program checks if the strings entered by the user are equal.</p>
 
 <pre class="sh_java">
-        Scanner reader = new Scanner(System.in);
+Scanner reader = new Scanner(System.in);
 
-        System.out.print("Enter the first string: ");
-        String first = reader.nextLine();
+System.out.print("Enter the first string: ");
+String first = reader.nextLine();
 
-        System.out.print("Enter the second string: ");
-        String second = reader.nextLine();
+System.out.print("Enter the second string: ");
+String second = reader.nextLine();
 
-        System.out.println();
+System.out.println();
 
-        if (first.equals(second)) {
-            System.out.println("The strings you entered are the same!");
-        } else {
-            System.out.println("The strings you entered weren't the same!");
-        }
+if (first.equals(second)) {
+    System.out.println("The strings you entered are the same!");
+} else {
+    System.out.println("The strings you entered weren't the same!");
+}
 </pre>
 
         <p>The functionality of the program depends on the user's input. Below is an example; the red text is user input.</p>
@@ -282,13 +286,13 @@ Hip!
 
 <pre class="sh_java">
         public static void printStars(int times) {
-            for (int i = 0; i < kertaa; i++) {
+            for (int i = 0; i &lt; kertaa; i++) {
                 System.out.print("*");
             }
             System.out.println();
         }
 </pre>
-
+        <!-- TODO: tranaslate -->
         <p>Metodia hyödyntäessä aiemmin kauhistusta aihettanut esimerkkimme näyttää seuraavalta.</p>
 
 <pre class="sh_java">
@@ -300,6 +304,7 @@ Hip!
         printStars(characterString.length());
         System.out.println(characterString);
         printStars(characterString.length());
+
 </pre>
 
 
@@ -778,9 +783,7 @@ public class Book {
         <p>Now it's time to start practicing!</p>
 
 <div class="tehtavat" id="viikko7">
-
-<NEXTWEEK></NEXTWEEK>
-
+    <div class="tehtava">
    <h3>Smileys</h3>
 
   <p>Create the support method <code>private static void printWithSmileys(String characterString)</code> for the class <code>Smileys</code> which comes with the assignment template. The method is to print the given character string surrounded with smileys. Use the character string <code>:)</code> as the smiley.</p>
@@ -814,7 +817,8 @@ printWithSmileys("87.");
 </pre>
 
   <p>It's a good idea to first think how many smileys should be printed for a character string of a certain length. The length of a character string can be found out with the method <code>length</code> which belongs to it. A loop is helpful for printing the top and bottom smiley rows, the middle row can be handled with a normal print command. You can check if a length is an odd number with the help of a remainder <code>characterString.length() % 2 == 1</code>.</p>
-
+</div>
+<div class="tehtava">
 <h3>character string changer</h3>
 
   <p>In this assignment we create a character string changer, which consists of two classes. The class <code>Changer</code> turns a single character to another one. The Changer holds a number of Changes and changes character strings with the help of Change objects it holds.</p>
@@ -893,7 +897,7 @@ printWithSmileys("87.");
 
 <pre>
   aalio ala lyo, oolia laikkyy
-</pre>
+</pre><!-- TODO -->
 
 <p><strong>Tip:</strong> It's a good idea to store the Changes to a list object variable of Changer (in the same fashion as on the basics course we stored players to a team, phone numbers to a phone book or books to a library, for example) A Changer is executed so that the changes are done to the character string one at a time as in the following example:</p>
 
@@ -919,7 +923,8 @@ printWithSmileys("87.");
 import java.util.ArrayList;    // imports ArrayList
 import java.util.*;            // imports all tools from java.util, including ArrayList, Scanner ja Random
 </pre>
-
+</div>
+<div class="tehtava">
 <h3>Calculator</h3>
 
   <p>In this assignment, we make a similiar simple calculator that we already had in the material of programming basics' week 1. This time however, we pay attention to the structure of the program. Especially we will make the <em>main</em>-method (the main program) very light. The main program method doesn't actually do anything else than just start the program:</p>
@@ -1047,6 +1052,7 @@ Calculations done 1
 <p><strong>Bonus assignment (not tested):</strong> Reading the user input is repeated in the same way in all three operation implementing methods. Remove the repetition from your code with the help of a support method. The method can return the two values asked from the user in an array, for example.</p>
 
 </div>
+</div>
 
 
 <h2>Primitive- and reference-type variables</h2>
@@ -1074,7 +1080,7 @@ int six = 6;
 
         <p>Primitive-type variables can be visualized as boxes that both have the values belonging to them saved in to them:</p>
 
-        <p><img src="img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen.png" /></p>
+        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen.png" /></p>
 
         <p>Next lets inspect how the values of primitive-type variables get copied.</p>
 
@@ -1090,7 +1096,7 @@ six = 64; // the variable 'six' now holds the value 64
 
         <p>Above we introduce the variables <code>five</code> and <code>six</code> and we set values to them. After this the value held in the slot of the variable <code>six</code> is copied to the slot of the variable <code>five</code> (<code>five = six;</code>). If the value of the variable <code>six</code> is changed after this point the value in the variable <code>five</code> remains unaffected: the value of the variable <code>five</code> is in it's own slot and is not related to the value in the slot of the variable <code>six</code> in any way. The end situation as a picture.</p>
 
-        <p><img src="img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen-64.png" /></p>
+        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen-64.png" /></p>
 
         <h4>Primitive type variable as a method parameter and return value</h4>
 
@@ -1217,7 +1223,7 @@ Calculator axeCalculator = new Calculator(6);
 
         <p>In the examples we first create a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is assigned to the <code>bonusCalculator</code> variable through the <code>=</code> equal sign. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information. </p>
 
-        <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit.png" /></p>
+        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit.png" /></p>
 
         <p>Next, let us have a look at how a referene-type object is duplicated.</p>
 
@@ -1231,7 +1237,7 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
 
         <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable duplicates, too. In this case, a reference to the <code>axeCalculator</code> variable slot is copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
 
-        <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-3.png" /></p>
+        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-3.png" /></p>
 
         <p>Let us continue with the example above and let us set a new reference to the variable <code>axeCalculator</code>; this new reference will point to a new object created by the command <code>new Calculator(10)</code>.</p>
 
@@ -1253,7 +1259,7 @@ axeCalculator = new Calculator(10); // a new reference is assigned to the axeCal
         <p>At the end of the previous example no variable points to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes such useless objects from time to time. Our final situation looks like the following:</p>
 
 
-        <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-2.png" /></p>
+        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-2.png" /></p>
 
         <p>Let us have a look to a third example still, and let us focus on an essencial difference between primitive-type and reference-type variables.</p>
 
@@ -1279,7 +1285,7 @@ System.out.println(axeCalculator.getValue());
 
         <p>The situation might be clear if we look at the following picture. The method <code>axeCalculator.increaseValue()</code> increases by one the <code>value</code> variable of the object pointing to the <code>axeCalculator</code> variable. Because <code>bonusCalculator</code> points to the same object, the method <code>bonusCalculator.getValue()</code> returns the same value which was increased by the method <code>axeCalculator.increaseValue()</code>.</p>
 
-        <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-4.png" /></p>
+        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-4.png" /></p>
 
         <p>In the following example, three reference-type variables all point to the same <code>Calculator</code> object.</p>
 
@@ -1292,7 +1298,7 @@ Calculator lennon = bonus;
         <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls all modify the same object. To tell it once again: when reference-type variables are copied, their references also duplicate. The same concept in a picture:</p>
 
 
-        <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-5.png" /></p>
+        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-5.png" /></p>
 
         <p>Let us focus again on duplication with one example.</p>
 
@@ -1306,7 +1312,7 @@ lennon = new Calculator(3);
 
         <p>The modification of the <code>lennon</code> variable contents – that is to say the change of reference – does not affect the references of either <code>bonus</code> or <code>ihq</code>. Always when we assign a value to a variable, we change the contents of only that variable's own slot. The same concept in a picture:</p>
 
-        <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-6.png" /></p>
+        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-6.png" /></p>
 
         <h4>A Reference-Type Variables and Method Parameters</h4>
 
@@ -1333,7 +1339,7 @@ addToCalculator(bonus, times);
         <p>In the example, we call the <code>addToCalculator</code> method whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference-type variable <code>bonus</code> and the value of the original-type variable <code>times</code> – which is <code>10</code> – are copied as parameters whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the <code>increaseValue()</code> method of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
 
 
-        <p><img src="img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-7.png" /></p>
+        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-7.png" /></p>
 
         <p><em>The method contains variables which are completely separated from the main program!</em></p>
 
@@ -1568,6 +1574,7 @@ public class ... {
 
 
 <div class="tehtavat">
+    <div class="tehtava">
   <h3>Thing, Suitcase, and Container</h3>
 
   <p>In these exercises, we create the classes <code>Thing</code>, <code>Suitcase</code>, and <code>Container</code>, and we train to use objects which contain other objects.</p>
@@ -1860,6 +1867,7 @@ public class Main {
 </pre>
 
 </div>
+</div>
 
     <h2 id="hashmap">HashMap</h2>
 
@@ -1924,7 +1932,7 @@ null
 </pre>
 
 <div class="tehtavat">
-
+<div class="tehtava">
   <h3>Nicknames</h3>
 
   <p>Create a <code>HashMap&lt;String,String&gt;</code> object in the <code>main</code> method. Store the following people's names and nicknames into the HashMap, the name being the key and the nickname its value. Use only lower case letters.</p>
@@ -1940,7 +1948,7 @@ null
 <p>The tests require you write lower case names.</p>
 
 </div>
-
+</div>
         <h3 id="kirjastotietokanta">Book Search through HashMap</h3>
 
         <p>Let us go deeper into HashMap workings with the help of the following example. Books can be retrived based on their name, which acts as book key. If we find a book for the given name, we obtain the respective reference, as well as the book details. Let us create the example class <code>Book</code>, which has a name and the book contents as object variables.</p>
@@ -2208,6 +2216,7 @@ public class TwitchRegister {
 
 
 <div class="tehtavat">
+<div class="tehtava">
   <h3>Promissory Note</h3>
 
   <p>Create the class <code>Promissory Note</code> with the following functionlity:</p>
@@ -2251,7 +2260,8 @@ public class TwitchRegister {
 <pre>
 10.5
 </pre>
-
+</div>
+<div class="tehtava">
   <h3>Dictionary</h3>
 
   <p>In this exercise, we implement a dictionary which can be used to retrieve the English translation of Finnish words. We implement our dictionary using the <code>HashMap</code> data structure.</p>
@@ -2413,7 +2423,7 @@ Cheers!
 </pre>
 
 </div>
-
+</div>
 
 <h2>Towards Automatic Tests</h2>
 
@@ -2482,6 +2492,8 @@ Command: Cheers!
         <p>NetBeans is able to show a class API, if needed. If you write a class name and add the relative import sentence, you can right click on the class name and and choose <em>Show Javadoc</em>. This opens the class API description in your browser.</p>
 
 <div class="tehtavat">
+    <p class="mooc-pakollinen"></p>
+<div class="tehtava">
   <h3>Airport</h3>
 
   <p>Every week, you will find one or more larger exercises, where you can design freely the program structure, the appearance of the user interface and the requred commands are predefined. The first exercise which you can design freely in Advanced Programming is <em>Airport</em>.</p>
@@ -2587,12 +2599,16 @@ Choose operation:
 
 <p><b>Still another remark:</b> in order to make your tests work, your program has to create only one Scanner object. Also, avoid using static variables: the tests execute your program many different times, and the static variable values left from the previous execution would possibly disturb them!</p>
 </div>
+</div>
+</div>
+</section>
 
 
 
-<div class="tyhja"></div>
+<section class="viikkoraja" id="2" >
+  <div class="viikkoraja">Week2</div>
+  <div class="viikkoraja-mooc" id="Week 8" deadline="21.4.2013 23.59" data-first-chapter-index="38" data-first-exercise-index="116" data-first-week-index="8"  data-first-chapter-index-mooc="39" data-first-exercise-index-mooc="116" data-first-week-index-mooc="8" tekija="Arto Vihavainen, Matti Luukkainen">
 
-<div class="viikkoraja">Week 2</div>
 
 <h2 id="object">Object</h2>
 
@@ -2679,7 +2695,7 @@ Scanner reader = new Scanner(System.in);
 System.out.print("Write password: ");
 String password = reader.nextLine();
 
-if(password.equals("password")) {
+if (password.equals("password")) {
     System.out.println("Right!");
 } else {
     System.out.println("Wrong!");
@@ -3042,6 +3058,7 @@ Arto
         <p><em>NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
 
         <div class="tehtavat" id="viikko8">
+            <div class="tehtava">
 
 <NEXTWEEK></NEXTWEEK>
 
@@ -3134,7 +3151,7 @@ Jürgen
 </ul>
 
 </div>
-
+</div>
         <h2 id="rajapinta">Interface</h2>
 
         <p><em>Interface</em> is an instrument we have to define the functionality our classes should have. Interfaces are defined as normal Java classes, but instead of the definition "<code>public class ...</code>", we write "<code>public interface ...</code>". The interfaces influence class behaviour by defining the method names and return values, but they <em>do not contain method implementation</em>. The access modifier is not specified, because it is always <code>public</code>. Let us have a look at the interface <em>Readable</em>, which defines whether an object can be read.</p>
@@ -3228,7 +3245,7 @@ public class EBook implements Readable {
     sivut.add("Practice makes perfect. Make up your own fun project.");
 
     EBook book = new EBook("Programming Hints.", pages);
-    for(int page = 0; page < book.howManyPages(); page++) {
+    for(int page = 0; page &lt; book.howManyPages(); page++) {
         System.out.println(book.read());
     }
 </pre>
@@ -3242,6 +3259,7 @@ Practice makes perfect. Make up your own fun project.
 </pre>
 
 <div class="tehtavat">
+    <div class="tehtava">
 
 <h3>NationalService</h3>
 
@@ -3267,7 +3285,7 @@ public interface NationalService {
 
 <p>Create the class <code>MilitaryService</code> which implements your <code>NationalService</code> interface. The class constructor has got one parameter, defining the days of service (<code>int daysLeft</code>).</p>
 </div>
-
+</div>
 
 <h3>An Interface as Variable Type</h3>
 
@@ -3290,7 +3308,7 @@ public interface NationalService {
     pages.add("A method can call itself.");
 
     Readable book = new EBook("Recursion Principles", pages);
-    for(int page = 0; page < book.howManyPages(); page++) {
+    for(int page = 0; page &lt; book.howManyPages(); page++) {
         System.out.println(book.read());
     }
 </pre>
@@ -3419,7 +3437,7 @@ Joel has got got 2 messages to read
 
 <pre class="sh_java">
     NumberList joelList = new NumberList();
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i &lt; 1000; i++) {
         joelList.lisaa(new SMS("matti", "have you already written the tests?"));
     }
 
@@ -3446,6 +3464,7 @@ Joel has got 0 messages to read
         <p><em>At this point, there are a lot of references; it would be good to draw down the objects and try to grasp how the <code>read</code> method call connected to <code>mikaelList</code> works!</em></p>
 
 <div class="tehtavat">
+    <div class="tehtava">
 
   <h3>Boxes and Things</h3>
 
@@ -3555,6 +3574,7 @@ public class Box {
 
   <p>Try this out: create a couple of boxes in your program, put things into the boxes and put smaller boxes into the bigger ones. Try also what happens when you put a box into itself. Why does it happen?</p>
 </div>
+</div>
 
 <h3>An Interface as Method Return Value</h3>
 
@@ -3642,7 +3662,7 @@ public class Box {
   <p><em>Using interfaces while programming permits us to reduce the number of dependences among our classes. In our example, Packer is not dependent on the classes which implement Item interface, it is only dependent on the interface itself. This allows us to add classes wihout having to change the class Packer, as long as they implement our interface. We can even add classes that implement the interface to the methods which make use of our packer without compromising the process. In fact, less dependences make it easy to extend a program.</em></p>
 
 
-
+<!--
 <p>We can imlement now the classes <code>PieceOfNews</code> and <code>NewsService</code>; the first reports a singular piece of news, and the second produces the news to be read. The code which makes use of our news service does not have to know the actual news implementation, and that is not even sensible. The only essencial thing is that the program is able to read the news. In fact, the news service can submit its news through the <code>Readable</code> interface.</p>
 
 <pre class="sh_java">
@@ -3806,9 +3826,9 @@ public class NewsService {
 
 
     <p><em>Coding to interface allows for reducing the dependences. If all the services which make use of our news service were coded to the interface Readable, they would not be dependent on any particular class which implements the Readable interface. In the wxamples above, the internal implementation of the news service can be modified so that the modifications would not affect the objects which make use of the news service, in any way.</em></p>
+-->
 
-
-
+<!-- TODO: tarkista onko sama kuin "Valmiit rajapinnat"-->
     <h3>Made-Up Interfaces</h3>
 
     <p>Java API offers a sensible number of made-up interfaces. Below, we get to know some of Java's most used interfaces: <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/List.html" target="_blank">List</a></code>, <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/Map.html" target="_blank">Map</a></code>, <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/Set.html" target="_blank">Set</a></code> and <code><a href="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html" target="_blank">Collection</a></code>.</p>
@@ -3946,6 +3966,7 @@ for(String value: translations.values()) {
     <p>In the following exercise we build an online shop, and we train to use classes through their interfaces.</p>
 
 <div class="tehtavat">
+    <div class="tehtava">
   <h3>Online Shop</h3>
 
   <p>Next, we create some programming components which are useful to manage an online shop.</p>
@@ -4254,6 +4275,7 @@ public class Shop {
 
   <p><em>Now you have done something! verkkokauppa.com!</em></p>
 </div>
+</div>
 
 <h2>Generics</h2>
 
@@ -4384,6 +4406,7 @@ public class ClubMember implements Comparable&lt;ClubMember&gt; {
 
 
 <div class="tehtavat">
+    <div class="tehtava">
 
   <h3>Poor last</h3>
 
@@ -4633,6 +4656,7 @@ Clubs A
 </pre>
 
 </div>
+</div>
 
 <h2>Collections</h2>
 
@@ -4683,6 +4707,8 @@ name: matti
 
 
 <div class="tehtavat">
+    <p class="mooc-pakollinen"></p>
+    <div class="tehtava">
 
 <h3>Ski Jumping</h3>
 
@@ -4777,6 +4803,7 @@ Position    Nimi
   <p><strong>The program has to start when we execute the main method in the example layout. Also, remember again that you can create only one Scanner object in your exercise.</strong></p>
 
 </div>
+</div>
 
     <p>A screencast where we create a bigger application using what we have learnt in the first two weeks:</p>
 
@@ -4787,10 +4814,13 @@ Position    Nimi
 -->
 
 
+</div>
+</section>
 
-<div class="tyhja"></div>
+<section class="viikkoraja" id="3" >
+  <div class="viikkoraja">Week3</div>
+  <div class="viikkoraja-mooc" id="Week 9" deadline="DL: 28.4.2013 23.59" data-first-chapter-index="42" data-first-exercise-index="124" data-first-week-index="9"  data-first-chapter-index-mooc="42" data-first-exercise-index-mooc="124" data-first-week-index-mooc="9" tekija="Arto Vihavainen, Matti Luukkainen">
 
-<div class="viikkoraja">Week 3</div>
 
 <h2>Single Responsibility Principle</h2>
 
@@ -4917,8 +4947,7 @@ Hello packageworld: The ABC of Packages!
     <p>From now on, in <em>all</em> our exercises we will use packages. Next, we will create our first packages ourselves.</p>
 
 <div class="tehtavat" id="viikko9">
-
-<NEXTWEEK></NEXTWEEK>
+<div class="tehtava">
 
   <h3>First Packages</h3>
 
@@ -4970,6 +4999,7 @@ The application logic works
 Updating the user interface
 </pre>
 
+</div>
 </div>
 
     <h3>A Concrete Directory Construction</h3>
@@ -5258,7 +5288,7 @@ product.changePrice(23);
 <p>The class <code>Register</code> is quite universal now that it is not dependent on concrete classes. Whatever class which implements <code>Identifiable</code> is compatible with Register. However, the metodi <code>sortAndGetEverything</code> can only work if we implement the interface Comparable&lt;Identifiable&gt;.</p>
 
 
-
+<!--
     <p>We create now the class <code>PersonRegister</code> which returns people using the interface <code>Identifiable</code>. In addition to retrieve individuals, <code>PersonRegister</code> provides a method to return a list with all the people.</p>
 
 <pre class="sh_java">
@@ -5330,8 +5360,8 @@ public class Person implements Identifiable, Comparable&lt;Person&gt; {
     }
 </pre>
 
-
-
+-->
+<!--
 
     <h3>Check-out Example</h3>
 
@@ -5483,11 +5513,13 @@ public class Checkout {
 }
 </pre>
 
+-->
 
 <div>
 <big><big><b>NetBeans Tips</b></big></big>  
 
 <ul>
+    <!-- TODO -->
 <li>All NetBeans tips can be found <a href="../ohpe/netbeans.html">here</a> </li>
 <p></p>
 
@@ -5519,6 +5551,7 @@ Sometimes, NetBeans may get confused and try to run a code version without notic
 </div>
 
 <div class="tehtavat">
+    <div class="tehtava">
 
   <h3>Moving</h3>
 
@@ -5710,6 +5743,7 @@ lisaaPienia(List esineet, Muuttolaatikko laatikko):
 </pre>
 
 -->
+</div>
 </div>
 
 <h2>Exceptions</h2>
@@ -5908,6 +5942,7 @@ Exception in thread "..." java.lang.IllegalArgumentException: The grade has to b
 
 
 <div class="tehtavat">
+    <div class="tehtava">
   <h3>Method Argument Validation</h3>
 
   <p>Let's train method argument validation with the help of the <code>IllegalArgumentException</code>. The excercise layout shows two classes <code>Person</code> and <code>Calculator</code>. Change the class in the following way:</p>
@@ -5919,6 +5954,8 @@ Exception in thread "..." java.lang.IllegalArgumentException: The grade has to b
   <h4>Calculator Validation</h4>
 
   <p>The <code>Calculator</code> methods have to be changed in the following way: the method <code>multiplication</code> has to work only if its parameter is not negative (greater than 0). The method <code>binomialCoefficient</code> has to work only if the parameters are not negative and the size of a subset is smaller than the set's size. If one of the methods receives invalid arguments when they are called, they have to throw a <code>IllegalArgumentException</code>.</p>
+</div>
+<div class="tehtava">
 
 <h3>Sensors and Temperature Measurement</h3>
 
@@ -6049,6 +6086,7 @@ the temperature in Helsinki area is -5 degrees
 readings: [-10, -4, 5]
 </pre>
 
+</div>
 </div>
 
 
@@ -6251,6 +6289,7 @@ program
     <p>Anther thing you can do to set up a character set is using an environment variable. Macintosh and Windows users can set up an the value of the environment variable <code>JAVA_TOOL_OPTIONS</code> to the string <code>-Dfile.encoding=UTF8</code>. In such case, Java always uses UTF-8 characters as a default.</p>
 
 <div class="tehtavat">
+    <div class="tehtava">
   <h3>Lines which Contain</h3>
 
 <p>Create the class <code>Printer</code>, its constructor <code>public Printer(String fileName)</code> which receives a String standing for the file name, and the method <code>public void printLinesWhichContain(String word)</code> which prints the file lines which contain the parameter word (<em>lower and upper case make difference in this excercise; for instance, "test" and "Test" are not the considered the same</em>); the lines are printed in the same order as they are inside the file.</p>
@@ -6312,8 +6351,8 @@ Sanoi vanha Väinämöinen
 </pre>
 
 <p>In the project, you also find the whole Kalevala; the file name is <code>src/kalevala.txt</code></p>
-
-
+</div>
+<div class="tehtava">
   <h3>File Analysis</h3>
 
   <p>In this exercise, we create an application to calculate the number of lines and characters.</p>
@@ -6356,7 +6395,8 @@ characters
 Lines: 3
 Characters: 74
 </pre>
-
+</div>
+<div class="tehtava">
   <h3>Word Inspection</h3>
 
   <p>Create the class WordInspection, which allows for different kinds of analyses on words. Implement the class in the package <code>wordinspection</code>.</p>
@@ -6391,8 +6431,7 @@ Characters: 74
 
   <p>Create the method <code>public List&lt;String&gt; wordsWhichContainAllVowels()</code>, which returns all the file words which contain all Finnish vowels (aeiouyäö). Such words are, for instance, myöhäiselokuva and ympäristönsuojelija.</p>
 </div>
-
-
+</div>
 
 
 
@@ -6572,7 +6611,7 @@ Mikael: [3, 4]
     <p>Note that the user names are not printed in order, in our example. This depends on the saving process of the <code>HashMap</code> entries, which happens through the value returned by the <code>hashCode</code> method, and does not involve the entry order in any way.</p>
  
 <div class="tehtavat">
-
+    <div class="tehtava">
 <h3>Multiple Entry Dictionary</h3>
 
 <p>Let's make an extended version of the dictionary of week 1. Your work is implementing the class the class <code>PersonalMultipleEntryDictionary</code>, which can save one or more entry for each word translated. The class has to implement the interface in the exercise source, <code>MultipleEntryDictionary</code>, with the following methods:</p>
@@ -6626,8 +6665,8 @@ null
 </div>
 
 
-
-<div class="tehtavat">
+<!-- TODO: Translate -->
+<div class="tehtava">
   <h3>Duplikaattien poistaja</h3>
 
   <p>Tehtävänäsi on toteuttaa pakkaukseen <code>tyokalut</code> luokka <code>OmaDuplikaattienPoistaja</code>, joka tallettaa annetut characterStringt siten, että annetuista characterStringista poistetaan samanlaiset characterStringt (eli duplikaatit). Lisäksi luokka pitää kirjaa duplikaattien määrästä. Luokan tulee toteuttaa tehtäväpohjassa annettu rajapinta <code>DuplikaattienPoistaja</code>, jossa on seuraavat toiminnot:</p>
@@ -6699,6 +6738,7 @@ Uniikit characterStringt: []
 </pre>
 
 </div>
+</div>
 
 <h3>One Object in Many Lists, a Map Construction or a Set</h3>
 
@@ -6738,6 +6778,8 @@ public class Booksto {
 <p>If an object is listed in different places at the same time (in a list, a set, or a map construction), you have to pay particular attention so to make sure the state of the different collections is consistent. For instance, if we decide to delete a book, it must be deleted from both maps as well as from the two lists which contain the books on loan and on the shelves.</p>
 
 <div class="tehtavat">
+    <p class="mooc-pakollinen"></p>
+    <div class="tehtava">
 
   <h3>Phone Search</h3>
 
@@ -6894,17 +6936,17 @@ command: <font color="red">x</font>
   <li>If a person is deleted, no search should retrieve them.</li>
 </ul>
 </div>
+</div>
+</div>
+</section>
 
-<div class="tyhja"></div>
 
 
-
-<div class="viikkoraja">Week 4</div>
-
+<section class="viikkoraja" id="4" >
+  <div class="viikkoraja">Week4</div>
+  <div class="viikkoraja-mooc" id="Week 10" deadline="DL: 5.5.2013 23.59" data-first-chapter-index="48" data-first-exercise-index="134" data-first-week-index="10"  data-first-chapter-index-mooc="48" data-first-exercise-index-mooc="134" data-first-week-index-mooc="10" tekija="Arto Vihavainen, Matti Luukkainen">
 <div class="tehtavat">
-
-
-<NEXTWEEK></NEXTWEEK>
+    <div class="tehtava">
 <h3>The Finnish Ringing Centre</h3>
 
 <p>In the sixth week of Introduction to Programming, we created an observation database for bird watching. Now we continue in the same vein, and this time, we create a program for the ringing centre to track of the places where the rung birds were observed.</p>
@@ -7002,6 +7044,7 @@ Larus argentatus (1980) observations: 0
 </pre>
 
 </div>
+</div>
 
 
 <h2>Object Polymorphism</h2>
@@ -7031,13 +7074,13 @@ Larus argentatus (1980) observations: 0
 
     <p>Variables have got their own type, and in addition to it they also have got the type of their parent classes and interfaces. The class <code>String</code> derives from the <code>Object</code> class, and therefore <code>String</code> objects are also <code>Object</code>-type. The class <code>Object</code> does not derive from the class <code>String</code>, and therefore <code>Object</code> variables are not automatically <code>String</code>-type. Let's dig deeper into the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html">String</a></code> class API documentation, expecially the upper part of the HTML page.</p>
 
-    <p><img src="img-ohja/perinta/string-api.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/perinta/string-api.png"/></p>
 
     <p>The String class API documentation starts with the common heading; this is followed by the lass package (<code>java.lang</code>). After the package you find the class name (<code>Class String</code>), and this is followed by the <em>inheritance hierarchy</em>.</p>
 
 <pre>
 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html">java.lang.Object</a>
-  <img src="img-ohja/perinta/perinta.gif"/><strong>java.lang.String</strong>
+  <img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/perinta/perinta.gif"/><strong>java.lang.String</strong>
 </pre>
 
     <p>The inheritance hierarchy lists the classes from which a class derives. The inherited classes are listed in hierarchical order, where the class we are analizing is the last one. As far as our String class inheritance hierarchy is concerned, we notice that the <code>String</code> class derives from the class <code>Object</code>. <em>In Java, each class can derive from one class, tops</em>; however, they can inherit features of more than one, undirectly.</p>
@@ -7139,6 +7182,7 @@ s
 </pre>
 
 <div class="tehtavat">
+    <div class="tehtava">
 
 <h3>Sets</h3>
 
@@ -7205,6 +7249,7 @@ x: 46; y: 52
 x: 19; y: 107
 </pre>
 </div>
+</div>
 
 <h2>Inheritance of Class Features</h2>
 
@@ -7216,9 +7261,9 @@ x: 19; y: 107
 
 <pre>
 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">java.lang.Object</a>
-  <img src="img-ohja/perinta/perinta.gif" /><a href="http://docs.oracle.com/javase/6/docs/api/java/util/AbstractCollection.html" target="_blank">java.util.AbstractCollection</a>&lt;E&gt;
-      <img src="img-ohja/perinta/perinta.gif" /><a href="http://docs.oracle.com/javase/6/docs/api/java/AbstractList.html" target="_blank">java.util.AbstractList</a>&lt;E&gt;
-          <img src="img-ohja/perinta/perinta.gif" /><strong>java.util.ArrayList&lt;E&gt;</strong>
+  <img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/perinta/perinta.gif" /><a href="http://docs.oracle.com/javase/6/docs/api/java/util/AbstractCollection.html" target="_blank">java.util.AbstractCollection</a>&lt;E&gt;
+      <img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/perinta/perinta.gif" /><a href="http://docs.oracle.com/javase/6/docs/api/java/AbstractList.html" target="_blank">java.util.AbstractList</a>&lt;E&gt;
+          <img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/perinta/perinta.gif" /><strong>java.util.ArrayList&lt;E&gt;</strong>
 </pre>
 
         <p>Each class can inherit one class, directly, Indirectly, a class can still inherit all the feauters its parent class. The class <code>ArrayList</code> inherits directly the class <code>AbstractList</code>, and indirectly the classes <code>AbstractCollection</code> and <code>Object</code>. In fact, the class <code>ArrayList</code> has got the methods <em>and</em> interfaces of <code>AbstractList</code>, <code>AbstractCollection</code> and <code>Object</code> at its disposal.</p>
@@ -7313,6 +7358,7 @@ volkswagen
 </pre>
 
 <div class="tehtavat">
+    <div class="tehtava">
   <h3>Person and their Heirs</h3>
 
   <h4 class="req">Person</h4>
@@ -7448,6 +7494,7 @@ Olli
   credits 0
 </pre>
 
+</div>
 </div>
 
    <h3>The Object Type defines the Called Method: Polimorphysm</h3>
@@ -7773,7 +7820,7 @@ public class Order {
     <p>Now, when we modify a customer, we only need to change their information; we don't have to do anything about the orders.</p>
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Container</h3>
 
 <p>Together with the exercise, you find the class <code>Container</code>, with the following constructor and methods:</p>
@@ -8066,6 +8113,7 @@ Fill the analysis so that it prints the greatest fluctuation and the history var
 </p>
 
 </div>
+</div>
 
 
 <h3>Inheritance, Interfaces, Both, or None?</h3>
@@ -8078,6 +8126,7 @@ Fill the analysis so that it prints the greatest fluctuation and the history var
 
 
 <div class="tehtavat">
+    <div class="tehtava">
 <h3>Farm Simulator</h3>
 
 <p>Dairy farms have got milking animals; they do not handle milk themselves, but milk trucks transport it to dairy factories which process it into a variety of milk products. Each dairy factory is specialised in one product type; for instance, a cheese factory produces cheese, a butter factory produces butter, and a milk factory produces milk.
@@ -8442,6 +8491,7 @@ Animals:
         Hento 0.0/34.0
 </pre>
 </div>
+</div>
 
 
 <h3>An Abstract Class</h3>
@@ -8522,7 +8572,7 @@ public class UserInterface {
 
     private void printOperations() {
         System.out.println("\t0: Quit");
-        for (int i = 0; i < this.operations.size(); i++) {
+        for (int i = 0; i &lt; this.operations.size(); i++) {
             String operationName = this.operations.get(i).getName();
             System.out.println("\t" + (i + 1) + ": " + operationName);
         }
@@ -8565,6 +8615,7 @@ Choice: <font color="red">0</font>
 
 
 <div class="tehtavat">
+    <div class="tehtava">
   <h3>Different Boxes</h3>
 
   <p>Together with the exercise body, you find the classes <code>Thing</code> and <code>Box</code>. The class <code>Box</code> is abstract, and it is programmed so that adding things always implies calling the method <code>add</code>. The <code>add</code> method, resposible of adding one thing, is abstract, and any box which inherits the class <code>Box</code> has to implement the method <code>add</code>. Your task is modifying the class <code>Thing</code> and implementing various different boxes based on <code>Box</code>.</p>
@@ -8653,6 +8704,7 @@ false
 
 
 </div>
+</div>
 
 <h3>Removing Objects from an ArrayList</h3>
 
@@ -8689,6 +8741,8 @@ false
 <p>The objects which have to be deleted are gathered together while we parse the list, and the remove operation is executed only after parsing the list.</p>
 
 <div class="tehtavat">
+    <p class="mooc-pakollinen"></p>
+    <div class="tehtava">
 
 <h3>Dungeon</h3>
 
@@ -8909,13 +8963,15 @@ YOU WIN
 </pre>
 
 
+
 </div>
+</div>
+</div>
+</section>
 
-<!-- BEGIN SNIP -->
-
-<div class="tyhja"></div>
-
-<div class="viikkoraja">Week 5</div>
+<section class="viikkoraja" id="11" >
+  <div class="viikkoraja">Week5</div>
+  <div class="viikkoraja-mooc" id="Week 11" deadline="DL: 12.5.2013 23.59" data-first-chapter-index="50" data-first-exercise-index="141" data-first-week-index="11"  data-first-chapter-index-mooc="50" data-first-exercise-index-mooc="141" data-first-week-index-mooc="11" tekija="Arto Vihavainen, Matti Luukkainen">
 
 <h2 id="tiedostostoon_kirjoitus">Writing to a File</h3>
 
@@ -8975,8 +9031,7 @@ public class StoreKeeper {
     <p>In most of the cases, instead of writing text at the end of a file with the method <code>append</code>, it is easier to write all the file again.</p>
 
 <div class="tehtavat">
-
-<NEXTWEEK></NEXTWEEK>
+    <div class="tehtava">
 <h3>File Manager</h3>
 
 <p>Together with the exercise body, you find the class <code>FileManager</code>, which contains the method bodies to read a write a file.</p>
@@ -9018,7 +9073,8 @@ second
 <p>Modify the method <code>public void save(String file, ArrayList<String> texts)</code> so that it would write the strings of the second argument into the file of the first argument; each string of the array list has to go to its own line. If the file already exists, the strings are written over the old version.
 
 </p>
-
+</div>
+<div class="tehtava">
     <h3>Two-Direction Dictionary</h3>
 
     <p>With this exercise, we develop the dictionary we implemented earlier, so that words can be both read and written into the file. Also, the dictionary has to translate in both directions, from Finnish into English and from Engish into Finnish (in this exercise, we suppose unofficially that Finnish and English do not have words which are spellt the same). Your task is creating th dictionary in the class <code>MindfulDictionary</code>. The class has to be implemented in the package <code>dictionary</code>.</p>
@@ -9170,7 +9226,7 @@ dict.save();
 
 <p>At the beginning we load the dictionary from our file, and we save it back in the end, so that the changes made to the dictionary will be available next time, too.</p>
 </div>
-
+</div>
 
 
 <h2 id="kalit">User Interfaces</h2>
@@ -9280,7 +9336,7 @@ public class Main {
 
 <p>When we execute the main method above, the user interface we have defined in the class <code>UserInterface</code> appears in our screen.</p>
 
-    <p><img src="img-ohja/kali/eka-kali.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/eka-kali.png"/></p>
 
 
 <h3>UI Components</h3>
@@ -9303,16 +9359,17 @@ public class Main {
 
 <p>As you see from the code above, JLabel shall display the text <code>"Text field!"</code>. When we execute the user interface, we see the following window.</p>
 
-    <p><img src="img-ohja/kali/kali-tekstikentta.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-tekstikentta.png"/></p>
 
 
 <div class="tehtavat">
-
+    <div class="tehtava">
 <h3>Greeter</h3>
 
 <p>Implement a user interface which displays the text "Hi!". The length of the user interface (i.e. of the JFrame object) has to be at least 400, its height 100, and its title should be "Swing on". The JFrame object should be created and become visible inside the method <code>run()</code>, and the text components are added to the user interface with the method <code>createComponents(Container container)</code>.</p>
 
 <p><strong>ATTENTION: The ui object variables have to be initiated in the methods or in the constructor! Do not initiate an object variable directly in its definition.</strong></p>
+</div>
 </div>
 
 <h4>Buttons</h4>
@@ -9326,7 +9383,7 @@ public class Main {
     }
 </pre>
 
-    <p><img src="img-ohja/kali/kali-nappi.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-nappi.png"/></p>
 
 <p>Next, we try to add both text and a button to our user interface.</p>
 
@@ -9341,7 +9398,7 @@ public class Main {
 
 <p>When we exectute the program we see the following user interface.</p>
 
-    <p><img src="img-ohja/kali/kali-tarve-asettelulle.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-tarve-asettelulle.png"/></p>
 
 <p>Only the last component we have added is visible, and our program does not work as we would expect. What is the problem, in fact?</p>
 
@@ -9370,7 +9427,7 @@ public class Main {
 
 <p>Notice that the button <code>"Center"</code> is not visible in our user interface because the button <code>"Default (Center)"</code> is assigned to its place by default. A container with the code above will look like the following.</p>
 
-    <p><img src="img-ohja/kali/layout-borderlayout.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/layout-borderlayout.png"/></p>
 
 <p>As for UI components, there are also many UI layout managers. Oracle has got a visual guide to learn more about UI layout managers at <a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html" target="_blank">http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html</a>. Below, we introduce the layout manager <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/BoxLayout.html" target="_blank">BoxLayout</a></code>.</a>
 
@@ -9391,7 +9448,7 @@ public class Main {
     }
 </pre>
 
-<p><img src="img-ohja/kali/boxlayout-x_axis.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/boxlayout-x_axis.png"/></p>
 
 <p>Setting up the components vertically does not require major changes. We modify the direction parameter of the <code>BoxLayout</code> constructor: <code>BoxLayout.Y_AXIS</code>.</p>
 
@@ -9406,7 +9463,7 @@ public class Main {
     }
 </pre>
 
-    <p><img src="img-ohja/kali/boxlayout-y_axis.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/boxlayout-y_axis.png"/></p>
 
 <p>Using the different layout managers, we can create user interfaces where the components are set up appropriately. Below, there is an example of user interface where the components are placed vertically. First there is some text, and then an optional selection. You can create a multiple-exclusion scope for a set of buttons -- meaning that turning "on" one of those buttons turns off all the others in the group -- using <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/ButtonGroup.html" target="_blank">ButtonGroup</a></code> and <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JRadioButton.html" target="_blank">JRadioButton</a></code>.</p>
 
@@ -9430,15 +9487,17 @@ public class Main {
 </pre>
 
 
-    <p><img src="img-ohja/kali/buttongroup-ruokavalio.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/buttongroup-ruokavalio.png"/></p>
 
 <div class="tehtavat">
+    <div class="tehtava">
+
 
 <h3>Survey</h3>
 
 <p>Implement a user interface in the exercise body; the interface has to look like the following:</p>
 
-<p><img src="img-ohja/kali/157-kysely.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/157-kysely.png"/></p>
 
 <p>Use <code>BoxLayout</code> as layout manager for your user interface; the components are the classes <code>JLabel</code>, <code>JRadioButton</code>, <code>JCheckBox</code> and <code>JButton</code>.</p>
 
@@ -9446,7 +9505,7 @@ public class Main {
 
 <p>Make sure that the user interface is big enough so that the user can click the buttons without resizing the interface. For instance, you can use 200 pixels for the length and 300 pixels for the height.</p>
 </div>
-
+</div>
 
 <h3>Managing Action Events</h3>
 
@@ -9483,7 +9542,7 @@ public class MessageListener implements ActionListener {
     }
 </pre>
 
-<p><img src="img-ohja/kali/kali-actionlistener-viestita.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-actionlistener-viestita.png"/></p>
 
 <p>When we press the button in our user interface we see the following message.</p>
 
@@ -9512,7 +9571,7 @@ Message received!
     }
 </pre>
 
-    <p><img src="img-ohja/kali/kopioija-alku.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kopioija-alku.png"/></p>
 
 <p>We want to implement our user interface so that the text in the left area would be copied into the right area when we press the <code>JButton</code>. This is possible by implementing an action event listener. Let's create the class <code>AreaCopier</code> which implements <code>ActionListener</code> and copies the text from one to the other JTextArea.</p>
 
@@ -9562,23 +9621,25 @@ public class AreaCopier implements ActionListener {
 
 <p>When we press the button, the text in the left area is copied into the right one.</p>
 
-    <p><img src="img-ohja/kali/kopioija-valmis.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kopioija-valmis.png"/></p>
 
 
 
 <div class="tehtavat">
+    <div class="tehtava">
 
 <h3>Notice Board</h3>
 
 <p>Implement a user interface in the exercise body; the interface has to look like the following:</p>
 
-    <p><img src="img-ohja/kali/158-ilmoitin.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/158-ilmoitin.png"/></p>
 
 <p>The program has to be composed of the following classes, which are contained in the package <code>noticeboard</code>. The class <code>NoticeBoard</code> is the user interface class, and it is started from the <code>Main</code> class. The notice board has got various different components: <code>JTextField</code>, <code>JButton</code>, and <code>JLabel</code>. You can manage the layout of the ui components with <code>GridLayout</code>: the call <code>new GridLayout(3, 1)</code> creates a new layout manager, which sets up three ui elements vertically.</p>
 
 <p>The application also has to contain the class <code>ActionEventListener</code>, which implements the interface <code>ActionListener</code>. The action event listener is connected to the button, and when pressed, it has to copy the contents of the JTextField into JLabel. At the same time, it wipes the JTextField by setting its contents as "".</p>
 
 <p>Make sure that the user interface is big enough to click on each button.</p>
+</div>
 </div>
 
 <h3>Separating Application and UI Logic</h3>
@@ -9628,7 +9689,7 @@ public interface PersonRecord {
 
 <p>After adding the information, our user interface looks like the following.</p>
 
-    <p><img src="img-ohja/kali/kali-henkilon-lisays.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-henkilon-lisays.png"/></p>
 
 <p>The action event listener has to know about the recording functionality (<code>PersonRecord</code> interface), as well as the fields it uses. Let's create the class <code>PersonRecordListener</code> which implements <code>ActionListener</code>. As constructor parameter, the class is assigned an object which implements the interface <code>PersonRecord</code>, as well as two <code>JTextField</code> objects which stand for the name and ID fields. In the method <code>actionPerformed</code> we create a new <code>Person</code> object and we record it using the <code>record</code> method of our <code>PersonRecord</code> object.</p>
 
@@ -9695,11 +9756,12 @@ public class UserInteface implements Runnable {
 </pre>
 
 <div class="tehtavat">
+    <div class="tehtava">
 <h3>Axe Click Effect</h3>
 
 <p>In this exercise we implement a calculator to count the number of clicks. In the exercise, the application logic (counting) and the ui logic are devided from each other. The final application should look like the following, so far. </p>
 
-    <p><img src="img-ohja/kali/159-clickeffect.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/159-clickeffect.png"/></p>
 
 <h4>PersonalCalculator</h4>
 
@@ -9734,8 +9796,9 @@ Value: 2
 
 <p>Use the functionality provided by the class <code>BorderLayout</code> to manage the layout of the ui components. Also, change the <code>Main</cde> class so that the user interface is assigned a <code>PersonalCalculator</code> object. When the <code>"Click!"</code> button in the user interface has been pressed twice, the application looks like below, more or less.</p>
 
-    <p><img src="img-ohja/kali/159-clickeffect-klikattu.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/159-clickeffect-klikattu.png"/></p>
 
+</div>
 </div>
 
 
@@ -9743,7 +9806,7 @@ Value: 2
 
 <p>Sometimes we end up in a situation, where the <code>Container</code> object provided by <code>JFrame</code> is not suitable enough for our UI layout. We may want our user interface to look different or to group up UI components according to their use. For instance, building a user interface like the one below would not be so easy, using only the <code>Container</code> object provided by the class <code>JFrame</code>.</p>
 
-   <p><img src="img-ohja/kali/jpanel-container.png"/></p>
+   <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/jpanel-container.png"/></p>
 
 <p>We can place Container objects inside each other. The class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JPanel.html" target="_blank">JPanel</a></code> (see also <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/panel.html" target="_blank">How to Use Panels</a>) allows for nested <code>Container</code> objects. It is possible to add UI components to a <code>JPanel</code> instance in the same way we add components to the <code>Container</code> instance of <code>JFrame</code> class. Moreover, it is possible to add an instance of <code>JPanel</code> to a <code>Container</code> object. This makes possible to use many <code>Container</code> objects to develop one user inteface.</p>
 
@@ -9800,11 +9863,12 @@ public class MenuPanel extends JPanel {
 <p>Note that in case you need an action event listener, the class <code>MenuPanel</code> must be given all the objects its need as parameter.</p>
 
 <div class="tehtavat">
+    <div class="tehtava">
 <h3>Calculator</h3>
 
 <p>The goal of the exercise is creating a simple calculator. The calculator user interface has to look like the following:</p>
 
-   <p><img src="img-ohja/laskin.png"/></p>
+   <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/laskin.png"/></p>
 
 <p>Together with the exercise body, you find the main program which starts the calculator, as well as the class <code>GraphicCalculator</code> which contains a graphic user interface. The user interface has to follow exactly the following points, but you can plan the program structure as you wish.</p> 
 
@@ -9826,6 +9890,7 @@ public class MenuPanel extends JPanel {
 <li>When the user presses any of the buttons <strong>+, -, Z</strong> the input field is wiped.</li>
 <li>If the input value is not an integer and the user presses one of the buttons <strong>+, -, Z</strong>, the input field is wiped and the value of the output field does not change (unless the button is <strong>Z</strong>).</li>
 </ul>
+</div>
 </div>
 
 <h2>Drawing</h2>
@@ -9858,7 +9923,7 @@ public class DrawingBoard extends JPanel {
 
 <p>When we start our user interface we see an empty screen, whose background colour is white. The size of the user interface below is set to 300x300 throgh the method <code>setPreferredSize</code>, and its title is <code>"Drawing Board"</code>.</p>
 
-    <p><img src="img-ohja/kali/piirtoalusta.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta.png"/></p>
 
 <p>Drawing on the board is possible using the methods provides by the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html" target="_blank">Graphics</a></code> object. Let's modify the method <code>paintComponent</code> of <code>DrawingBoard</code> and let's draw two rectangles using the method <code>fillRect</code> of the <code>Graphics</code> object.</p>
 
@@ -9876,7 +9941,7 @@ public class DrawingBoard extends JPanel {
 
 <p>As you notice from the picture, the coordinate system does not work as we are accustomed to.</p>
 
-    <p><img src="img-ohja/kali/piirtoalusta-suorakulmiot.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta-suorakulmiot.png"/></p>
 
 <p>Java's <code>Graphics</code> object (and most of other programming language libraries) expects the value of the y axis to grow downwards. The coordinate system origin, i.e. the point <code>(0,0)</code> is in the upper left corner: the Graphics object always knows the UI component where we draw, and it is able to define the location of the point to draw based on it. The location of the UI origin can become clear with the help of the following program. First we drow a green 10-pixel long, 200-pixel heigh rectangle which starts from the point (0,0). Then we draw a black 200-pixel long, 10-pixel heigh rextangle which starts from the point (0,0). The drawing colour is defined by the method <code>setColor</code> of our <code>Graphics</code> object.</p>
 
@@ -9893,20 +9958,22 @@ public class DrawingBoard extends JPanel {
     }
 </pre>
 
-    <p><img src="img-ohja/kali/piirtoalusta-koordinaatisto.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta-koordinaatisto.png"/></p>
 
 <p>Such coordinate system reversibility depends on the way user interface size is modified. When we modify the size of a user interface, this is reduced or increased by "dragging the bottom right corner"; in this way, the drawing on the screan would move while we change the UI size. Because the gird starts from the upper left corner, the drawing position is always the same, but the visible part changes.</p>
 
 <div class="tehtavat">
+    <div class="tehtava">
 
 <h3>Drawing and its Board</h3>
 
 <p>With the exercise body, you find a pre-made user interface, which is connected to the class <code>DrawingBoard</code>, which inherits <code>JPanel</code>. Modify the method <code>paintCOmponent</code> of <code>DrawingBoard</code> so that it would draw the following figure. You can only use the <code>fillRect</code> method of the <code>graphics</code> object, in this exercise.</p>
 
-<p><img src="img-ohja/smiley.gif"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/smiley.gif"/></p>
 
 <p>Attention! Do not use more than five <code>fillRect</code> calls. The figure does not have to be identical to the one above, the tests tell you when your figure is close enough to the required one.</p>
 
+</div>
 </div>
 
 <p>Let's extend our previous example and draw an independent avatar-object in our user inteface. Let's create the class <code>Avatar</code>; it has the coordinates of the point where it appears, and it is a circle with a 10-pixel diamiter. The location of the avatar can be changed by calling its <code>move</code> method.</p>
@@ -9995,7 +10062,7 @@ public class UserInterface implements Runnable {
         SwingUtilities.invokeLater(ui);
 </pre>
 
-    <p><img src="img-ohja/kali/piirtoalusta-hahmon-piirtaminen.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta-hahmon-piirtaminen.png"/></p>
 
 <p>In the user interface above, we see a ball-like Avatar.</p>
 
@@ -10127,9 +10194,10 @@ public class KeyboardListener implements KeyListener {
 
 <p>Now, our avatar's moves are visible also in the user interface. Whenever the user presses the keyboard, the user interface keyboard listener handles the call. At the end of each call, the <code>repaint</code> method of our drawing board is called, and the drawing board gets repainted.</p>
 
-    <p><img src="img-ohja/kali/piirtoalusta-hahmo-liikkuu.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta-hahmo-liikkuu.png"/></p>
 
 <div class="tehtavat">
+    <div class="tehtava">
 <h3>A Moving Figure</h3>
 
 <p>We create a program which allows the user to move the figures drawn on a board using their keyboard. Together with the program you find the body of a user interface, which you can modify as your program proceeds.</p>
@@ -10165,7 +10233,7 @@ public class KeyboardListener implements KeyListener {
         SwingUtilities.invokeLater(ui);
 </pre>
 
-<p><img src="img-ohja/kali/liikkuvakuvio-ympyra.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/liikkuvakuvio-ympyra.png"/></p>
 
 
 
@@ -10194,7 +10262,7 @@ public class KeyboardListener implements KeyListener {
         SwingUtilities.invokeLater(ui);
 </pre>
 
-<p><img src="img-ohja/kali/liikkuvakuvio-nelio.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/liikkuvakuvio-nelio.png"/></p>
 
 
 <pre class="sh_java">
@@ -10202,7 +10270,7 @@ public class KeyboardListener implements KeyListener {
         SwingUtilities.invokeLater(ui);
 </pre>
 
-<p><img src="img-ohja/kali/liikkuvakuvio-laatikko.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/liikkuvakuvio-laatikko.png"/></p>
 
         <h4 class="req">CompoundFigure</h4>
 
@@ -10222,7 +10290,7 @@ public class KeyboardListener implements KeyListener {
         SwingUtilities.invokeLater(ui);
 </pre>
 
-<p><img src="img-ohja/kali/liikkuvakuvio-rekka.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/liikkuvakuvio-rekka.png"/></p>
 
 
 
@@ -10233,13 +10301,14 @@ public class KeyboardListener implements KeyListener {
         <p>The class structure can also be expanded easily; for instance, a compound figure would work without needing changes even if we created new types which inherit Figure (say Triangle, Point, Line, exc.), and the same thing would apply to the drawing board and user interface.</p>
 
 </div>
-
+</div>
 
 <h3>Pre-made Application Frameworks</h3>
 
 <p>An application framework is a program which provides a baseline and a set of features to implement a particular application. One way to create an application framework is to create a class which provides pre-made features, so that classes can inherit it and build a particular application. Application frameworks are usually wide, and they are thought for a special purpose, for instance to program games or develop web-applications. Let's quickly get acquainted with a pre-made application library, by greating the application logic of a Game of Life.</p>
 
 <div class="tehtavat">
+    <div class="tehtava">
 <h3>Game of Life</h3>
 
 <p>In this exercise, we implement the application logic of a Game of Life, inheriting a pre-made application body.The application body is in a library which has been added to the project singularly, and its source codes are not visible.</p>
@@ -10467,10 +10536,14 @@ public class Main {
 </pre>
 
 </div>
+</div>
+</div>
+</section>
 
-<div class="tyhja"></div>
 
-<div class="viikkoraja">Week 6</div>
+<section class="viikkoraja" id="6" >
+  <div class="viikkoraja">Week6</div>
+  <div class="viikkoraja-mooc" id="Week 12" deadline="DL: 19.5.2013 23.59" data-first-chapter-index="53" data-first-exercise-index="151" data-first-week-index="12"  data-first-chapter-index-mooc="53" data-first-exercise-index-mooc="151" data-first-week-index-mooc="12" tekija="Arto Vihavainen, Matti Luukkainen">
 
 <h2>Some Useful Tecniques</h2>
 
@@ -10672,9 +10745,7 @@ The form is right.
 <p>With the help of squre brakets we can quickly define groups of charaters. The characters are written inside the brakets, and we can define an interval the help of a hyphen (-). For instance, <code>[145]</code> means the same as <code>(1|4|5)</code>, whereas <code>[2-36-9]</code> means the same as <code>(2|3|6|7|8|9)</code>. Accordingly, <code>[a-c]*</code> defines a regular expression with a string made only of characters <code>a</code>, <code>b</code> and <code>c</code>.</p>
 
 <div class="tehtavat">
-
-<NEXTWEEK></NEXTWEEK>
-
+    <div class="tehtava">
 <h3>Regular Expressions</h3>
 
 <p>Let's train to use regural expressions. The exercises are done in the <code>MainProgram</code> class of the default package .</h3>
@@ -10734,6 +10805,7 @@ Give a string: <font color="red">33:33:33</font>
 The form is wrong.
 </pre>
 
+</div>
 </div>
 
 
@@ -10988,6 +11060,7 @@ public class Hand {
 
 
 <div class="tehtavat">
+<div class="tehtava">
 
 <h3>Enum and Iterator</h3>
 
@@ -11062,6 +11135,7 @@ Matti, D
 Arto, D
 </pre>
 
+</div>
 </div>
 
 <h3>Loops and continue</h3>
@@ -11157,7 +11231,7 @@ Green
 
 
 <div class="tehtavat">
-
+<div class="tehtava">
 <h3>Film Reference</h3>
 
 <p>Recently, in October 2006 after arriving to Finland, <a href="https://signup.netflix.com/" target="_blank">Netflix</a> promised one million dollars to the person or group of people who developed a program, which would be 10% better than their own program. The challange was met September 2009 (<a href="http://www.netflixprize.com/" target="_blank">http://www.netflixprize.com/</a>).</p>
@@ -11552,6 +11626,7 @@ Arto recommendation: The Bridges of Madison County
 <p>Have we made one million bucks? Not yet, maybe. In the course Introduction to Artificial Intelligence and Machine Learning we learn more tecniques to build learning programs.</p>
 
 </div>
+</div>
 
 <h3>Variable Number of Method Parameters</h3>
 
@@ -11560,7 +11635,7 @@ Arto recommendation: The Bridges of Madison County
 <pre class="sh_java">
     public int sum(int... values) {
         int sum = 0;
-        for (int i = 0; i < values.length; i++) {
+        for (int i = 0; i &lt; values.length; i++) {
             sum += values[i];
         }
         return summa;
@@ -11589,6 +11664,7 @@ Arto recommendation: The Bridges of Madison County
 <p>An indefinite number of parameter values is used for instance when we want to create an interface which would not force the user to use a precise number of parameters. An alternative approach would be defining a list of that precise type as parameter. In this case, the objects can be assigned to the list before the method call, and the method can be called and given the list as parameter.</p>
 
 <div class="tehtavat">
+    <div class="tehtava">
 
 <h3>Flexible Filtering Critiria</h3>
 
@@ -11807,6 +11883,7 @@ public static void main(String[] args) {
 </pre>
 
 </div>
+</div>
 
 <h3>StringBuilder</h3>
 
@@ -11863,13 +11940,14 @@ public static void main(String[] args) {
 <p>The course starts to be over, and it's time for the ending zenit!</p>
 
 <div class="tehtavat">
+    <div class="tehtava">
 
 <h3>Worm Game</h3>
 
 
 <p>In this exercise, we create the structure and functionality for the following worm game.</p>
 
-    <p><img src="img-ohja/kali/170-matopeli.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/170-matopeli.png"/></p>
 
 <h4>Piece and Apple</h4>
 
@@ -12015,10 +12093,11 @@ true
 </pre>
 
 </div>
-
+</div>
 <h2>Course Feedback</h2>
 
 <div class="tehtavat">
+    <div class="tehtava">
 
 <h3>Course Feedback</h3>
 
@@ -12027,7 +12106,9 @@ true
 <p>In order to receive the points of this excercise, run the TMC tests and send the exercise to our server. </p>
 
 </div>
-
+</div>
+</div>
+</section>
 <div class="viikkoraja">Retired</div>
 
 <h3>Tiedostojen valitseminen käyttöliittymästä</h3>
@@ -12036,7 +12117,7 @@ true
 
 <p>JFileChooser poikkeaa tähän mennessä käyttämistämme käyttöliittymäkomponenteista siinä, että se avaa uuden ikkunan. Avautuvan ikkunan ulkonäkö riippuu hieman käyttöjärjestelmästä, esimerkiksi hieman vanhemmassa <a href="http://fedoraproject.org/" target="_blank">Fedora</a>-käyttöjärjestelmässä ikkuna on seuraavannäköinen.</p>
 
-<p><img src="img-ohja/kali/jfilechooser-kuva.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/jfilechooser-kuva.png"/></p>
 
 <p>JFileChooser-olio voidaan luoda missä tahansa. Olion metodille <code>showOpenDialog</code> annetaan parametrina käyttöliittymäkomponentti, johon se liittyy, esimerkiksi <code>JFrame</code>-luokan ilmentymä. Metodi <code>showOpenDialog</code> avaa tiedostonvalintaikkunan, ja palauttaa <code>int</code>-tyyppisen statuskoodin riippuen käyttäjän valinnasta. Luokassa <code>JFileChooser</code> on määritelty <code>int</code>-tyyppiset luokkamuuttujat, jotka kuvaavat statuskoodeja. Esimerkiksi onnistuneella valinnalla on arvo <code>JFileChooser.APPROVE_OPTION</code>.</p>
 
@@ -12087,7 +12168,7 @@ true
 
 <p>Luodaan ohjelma, joka mittaa kliksutteluvauhtia. Käyttöliittymä tulee näyttämään esimerkiksi seuraavalta.</p>
 
-<p><img src="img-ohja/kali/169-nopeustesti.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/169-nopeustesti.png"/></p>
 
 <h4 class="req">Oma luokka JButtonille</h4>
 
@@ -12135,7 +12216,7 @@ true
 
 <p>Käyttöliittymän pitäisi näyttää suunnilleen seuraavalta. Alla olevassa esimerkissä <code>JLabel</code>-oliossa ei ole mitään tekstiä.</p>
 
-    <p><img src="img-ohja/kali/161-tiedostonnaytin-alku.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/161-tiedostonnaytin-alku.png"/></p>
 
 
 <h4>Tiedoston lukeminen</h4>
@@ -12175,7 +12256,7 @@ public interface TiedostonLukija {
 
 <p>Kun tiedosto on avattu, tulee käyttöliittymän näyttää esimerkiksi seuraavalta.</p>
 
-    <p><img src="img-ohja/kali/161-tiedostonnaytin-avattu.png"/></p>
+    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/161-tiedostonnaytin-avattu.png"/></p>
 
 </div>
 
@@ -12637,7 +12718,7 @@ Jason Spezza;OTT;72;29;46;30 <br/>
         while (tilasto.onkoRivejaJaljella()) {
             String pelaajaRivina = tilasto.annaSeuraavaRivi();
             String[] pelaajaOsina = pelaajaRivina.split(";");
-            for (int j = 0; j < pelaajaOsina.length; j++) {
+            for (int j = 0; j &lt; pelaajaOsina.length; j++) {
                 System.out.print(pelaajaOsina[j] + " ");
             }
             System.out.println("");
@@ -13013,19 +13094,19 @@ public interface Pino {
 
 <p>NetBeansissa olevat ohjelmamme ovat tähän asti sijainneet aina <em>Source Packages</em>issa tai sen sisällä olevissa pakkauksissa. Ohjelman lähdekoodit tulevat aina kansioon <em>Source Packages</em>. Automaattisia testejä luodessa testit luodaan valikon <em>Test Packages</em> alle. Uusia JUnit-testejä voi luoda valitsemalla projektin oikealla hiirennapilla ja valitsemalla avautuvasta valikosta <code>New -> JUnit Test...</code>. Jos vaihtoehto JUnit test ei näy listassa, löydät sen valitsemalla <em>Other</em>.</p>
 
-<p><img src="img-ohja/testaus/new-junit-test.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/testaus/new-junit-test.png"/></p>
 
 <p>JUnit-testit sijaitsevat luokassa. Uutta testitiedostoa luodessa ohjelma pyytää testitiedoston nimen. Tyypillisesti nimeksi annetaan testattavan luokan tai toiminnallisuuden nimi. Luokan nimen tulee aina päättyä sanaan <code>Test</code>. Esimerkiksi alla luodaan testiluokka <code>PinoTest</code>, joka sijaitsee pakkauksessa <code>pino</code>. NetBeans haluaa luoda käyttöömme myös valmista runkoa testiluokalle -- joka käy hyvin.</p>
 
-<p><img src="img-ohja/testaus/pinotest.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/testaus/pinotest.png"/></p>
 
 <p>Jos NetBeans kysyy minkä JUnit-version haluat käyttöösi, valitse <code>JUnit 4.x</code>.</p>
 
-<p><img src="img-ohja/testaus/junit4.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/testaus/junit4.png"/></p>
 
 <p>Kun testiluokka <code>PinoTest</code> on luotu, näkyy se projektin valikon <em>Test Packages</em> alla.</p>
 
-<p><img src="img-ohja/testaus/pinotest-luotu.png"/></p>
+<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/testaus/pinotest-luotu.png"/></p>
 
 <p>Luokka <code>PinoTest</code> näyttää aluksi seuraavalta</p>
 

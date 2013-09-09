@@ -265,7 +265,7 @@ Hip!
 
     <p>Methods are a way of chopping up the functionality of a program into smaller entities. All Java programs start their execution from the <code>main</code> program method, which is defined with the statement <code>public static void main(String[] args)</code>. The statement defines a static method - that is a method which belongs to the class - which receives a character string array as its parameter.</p>
 
-    <p>The program defines methods to abstract the functionalities of the program. When programming, one should try to achieve a situation in which the program can be looked at from a <em>higher level</em>, in such a case the main method consists of calls to a group of self-defined, well-named methods. The methods then specify the functionality of the program and perhaps are based on calls to other methods.</p> 
+    <p>The program defines methods to abstract the functionalities of the program. When programming, one should try to achieve a situation in which the program can be looked at from a <em>higher level</em>, in such a case the main method consists of calls to a group of self-defined, well-named methods. The methods then specify the functionality of the program and perhaps are based on calls to other methods.</p>
 
     <p>Methods that are defined using the keyword <code>static</code> belong to the <em>class</em> that holds the method, and work as so-called support methods. The methods that are defined without the keyword <code>static</code> belong to the instances - <em>the objects</em> - created from the class and can modify the state of that individual object.</p>
 
@@ -633,7 +633,7 @@ public class UserInterface {
             if (command.equals("end")) {
                 break;
             }
-            
+
             handleCommand(command);
         }
     }
@@ -681,7 +681,7 @@ public class UserInterface {
             if (command.equals("end")) {
                 break;
             }
-            
+
             handleCommand(command);
         }
     }
@@ -860,14 +860,14 @@ printWithSmileys("87.");
 <pre class="sh_java">
   String word = "carrot";
 
-  String replacedA = ""; 
+  String replacedA = "";
   for ( int i=0; i &lt; word.length(); i++) {
      char character = word.charAt(i);
-     if ( character == 'a' ) {  
+     if ( character == 'a' ) {
         replacedA += '*'
      }  else {
         replacedA += character;
-     } 
+     }
   }
 
   System.out.println(replacedA);  // prints c*rrot
@@ -1006,9 +1006,9 @@ command: <font color="red">end</font>
 
 <pre class="sh_java">
     private void sum() {
-       System.out.print("value1: ");   
+       System.out.print("value1: ");
        int value1 = // read the value using the Reader-object
-       System.out.print("value2: "); 
+       System.out.print("value2: ");
        int value2 = // read the value using the Reader-object
        // print the value according to the example above
     }
@@ -1190,7 +1190,7 @@ if(Math.abs(distance) &lt; 0.0001) {
         <p>Reference-type variables memorize the information which has been assigned to them "on the other end of the line". Reference-type variables contain a reference to the location where the information is stored. Differently from primitive-type variables, reference-type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Another substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
 
 <!--
-        <p>Reference-type variables are objects which are created through the <code>new</code> keyword. The value of a reference-type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to that object. The reference is stored within the variable, and it becomes its value.</p> 
+        <p>Reference-type variables are objects which are created through the <code>new</code> keyword. The value of a reference-type variable is still assigned using the operator <code>=</code>; however, the <code>new</code> operator creates an object and returns the reference to that object. The reference is stored within the variable, and it becomes its value.</p>
 -->
 
 <p>Let us have a look at two reference-type variables. In the following examples we make use of the class <em>Calculator</em>:</p>
@@ -1245,9 +1245,9 @@ Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
 bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable 
+                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable
 
-axeCalculator = new Calculator(10); // a new reference is assigned to the axeCalculator variable 
+axeCalculator = new Calculator(10); // a new reference is assigned to the axeCalculator variable
                               // which points to the object created by the command new Laskuri(10)
 
 // the bonusCalculator variable still contains a reference to the Calculator object which received value 6 in its parameter
@@ -1267,7 +1267,7 @@ Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
 bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable 
+                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable
 
 axeCalculator.increaseValue(); // we increase by one the value of the object referenced by axeCalculator
 
@@ -1420,7 +1420,7 @@ if (matti.enoughMoneyForSingleTicket()) {
 }
 </pre>
 
-<p>Note the naming convention! All <em>constants</em>, i.e. all variable which are provided with the definition final, are written with CAPITAL_LETTERS_AND_UNDERLINE_CHARACTERS.</p> 
+<p>Note the naming convention! All <em>constants</em>, i.e. all variable which are provided with the definition final, are written with CAPITAL_LETTERS_AND_UNDERLINE_CHARACTERS.</p>
 
 <p>Static methods function analogously. For instance, the class <code>HslPrices</code> could <em>encapsulate</em> the variables and only provide <em>accessors</em>. We call accessors the methods which allow us to either read a variable value or to assign them a new one.</p>
 
@@ -1520,7 +1520,7 @@ public class Person {
 
 <pre class="sh_java">
 Person matti = new Person("Matti", 5.0);
-matti.addMoney(5); 
+matti.addMoney(5);
 
 if (matti.enoughMoneyForSingleTicket()) {
     System.out.println("I'll buy a single ticket.");
@@ -1989,7 +1989,7 @@ public class Book {
     }
 
     public String toString() {
-        return "Nimi: " + this.name + " (" + this.publishingYear + ")\n"
+        return "Name: " + this.name + " (" + this.publishingYear + ")\n"
                 + "Contents: " + this.contents;
     }
 }
@@ -2246,7 +2246,7 @@ public class TwitchRegister {
 
 <p>Be careful in a situation where you ask for the debt of a person who hasn't got debts. Go back to the final example of section 4.3, if you need!</p>
 
-  <p>Attention! The promissory note does not need to take into account old loans. When you set a new debt to a person who has got an old one, the old one is canceled.</p>  
+  <p>Attention! The promissory note does not need to take into account old loans. When you set a new debt to a person who has got an old one, the old one is canceled.</p>
 
 <pre class="sh_java">
   PromissoryNote mattisNote = new PromissoryNote();
@@ -2347,7 +2347,7 @@ cembalo = harpsichord
     for ( String key : wordPairs.keySet() ) {
         System.out.print( key + " " );
     }
- 
+
     // prints: monkey South sauerkraut
 </pre>
 
@@ -2491,7 +2491,7 @@ Command: Cheers!
         <p>NetBeans is able to show a class API, if needed. If you write a class name and add the relative import sentence, you can right click on the class name and and choose <em>Show Javadoc</em>. This opens the class API description in your browser.</p>
 
 <div class="tehtavat">
-    
+
 <div class="tehtava">
   <h3>Airport</h3>
 
@@ -2910,11 +2910,11 @@ if (!books.contains(objectBook)) {
 
 <pre class="sh_java">
         HashMap&lt;Book, String&gt; loaners = new HashMap&lt;Book, String&gt;();
-       
+
         Book objectbook = new Book("Objectbook", 2000);
         loaners.put( objectbook, "Pekka" );
         loaners.put( new Book("Test Driven Development",1999), "Arto" );
-        
+
         System.out.println( loaners.get( objectbook ) );
         System.out.println( loaners.get( new Book("Objectbook", 2000) );
         System.out.println( loaners.get( new Book("Test Driven Development", 1999) );
@@ -2930,7 +2930,7 @@ null
 
         <p>We can find the loaner by searching against the same object which was given as HashMap key with the <code>put</code> method. However, if our search item is the same book but a different object, we are not able to find its loaner and we are retured with a <em>null</em> reference. This is again due to the default implementation of the <code>hashCode</code> method of <code>Object</code> class. The default implementation creates an index based on the reference; this means that different objects with the same content receive different hashCode method outputs, and therefore it is not possible to find the right place of the object in the HashMap.</p>
 
-        <p>To be sure the HashMap worked in the way we want - i.e. it returned the loaner when the key is an object with the right <em>content</em> (not necessarily the same object as the original value) - the class which works as key must overwrite both the <code>equals</code> method and the <code>hashCode</code> method. The method must be overwritten in such a way, so that it would assign the same numeric value to all objects which have the same content. Some objects with different content may eventually be assigned the same hashCode; however, different content objects should be assigned the same hashCode as rarely as possible, if we want our HashMap to be efficient.</p> 
+        <p>To be sure the HashMap worked in the way we want - i.e. it returned the loaner when the key is an object with the right <em>content</em> (not necessarily the same object as the original value) - the class which works as key must overwrite both the <code>equals</code> method and the <code>hashCode</code> method. The method must be overwritten in such a way, so that it would assign the same numeric value to all objects which have the same content. Some objects with different content may eventually be assigned the same hashCode; however, different content objects should be assigned the same hashCode as rarely as possible, if we want our HashMap to be efficient.</p>
 
 <p>Previously, we have successfully used <code>String</code> objects as HashMap keys, and we can therefore say that the <code>String</code> class has got a <code>hashCode</code> implementation which works as expected. Let us <em>delegate</em> the calculation to the <code>String</code> object.</p>
 
@@ -3036,11 +3036,11 @@ public class Book {
 
 <pre class="sh_java">
         HashMap&lt;Book, String&gt; loaners = new HashMap&lt;Book, String&gt;();
-       
+
         Book objectbook = new Book("Objectbook", 2000);
         loaners.put( objectbook, "Pekka" );
         loaners.put( new Book("Test Driven Development",1999), "Arto" );
-        
+
         System.out.println( loaners.get( objectbook ) );
         System.out.println( loaners.get( new Book("Objectbook", 2000) );
         System.out.println( loaners.get( new Book("Test Driven Development", 1999) );
@@ -3121,7 +3121,7 @@ public class RegistrationPlate {
 <p>If equals hashCode have been implemented well, the printout should look like this:</p>
 
 <pre>
-Finnish: [FI ABC-123, FI UXE-465]   
+Finnish: [FI ABC-123, FI UXE-465]
 owners:
 Arto
 Jürgen
@@ -3266,7 +3266,7 @@ Practice makes perfect. Make up your own fun project.
 
   <ul>
     <li> the method <code>int getDaysLeft()</code> which returns the number of days left on service</li>
-    <li> the method <code>void work()</code>, which reduces the working days by one. The working days number can not become negative.</li>  
+    <li> the method <code>void work()</code>, which reduces the working days by one. The working days number can not become negative.</li>
   </ul>
 
 <pre class="sh_java">
@@ -3582,8 +3582,8 @@ public class Box {
 <pre class="sh_java">
    public class Factory {
       public Factory(){
-          // Attention: it is not necessary to write an empty constructor if there are no other constructors in the class. 
-      // In such cases, Java creates a default constructor, i.e a constructor without parameter 
+          // Attention: it is not necessary to write an empty constructor if there are no other constructors in the class.
+      // In such cases, Java creates a default constructor, i.e a constructor without parameter
       }
 
        public Item produceNew(){
@@ -3597,7 +3597,7 @@ public class Box {
                return new Book("Robert Martin", "Clean Code", 1 );
            } else {
                return new Book("Kent Beck", "Test Driven Development", 0.7);
-           }      
+           }
        }
    }
 </pre>
@@ -3606,7 +3606,7 @@ public class Box {
 
 <pre class="sh_java">
    public class Packer {
-       private Fabric fabric; 
+       private Fabric fabric;
 
        public Packer(){
             fabric = new Fabric();
@@ -3614,12 +3614,12 @@ public class Box {
 
        public Box giveABoxful() {
             Box box = new Box(100);
-             
+
             for ( int i=0; i &lt; 10; i++ ) {
                 Iteam newItem = fabric.produceNew();
                 box.add(newItem);
             }
-  
+
             return box;
        }
    }
@@ -3629,7 +3629,7 @@ public class Box {
 
 <pre class="sh_java">
    public class ChocolateBar implements Item {
-      // we don't need a constructor because Java is able to generate a default one! 
+      // we don't need a constructor because Java is able to generate a default one!
 
       public double weight(){
          return 0.2;
@@ -3637,7 +3637,7 @@ public class Box {
    }
 
    public class Fabric {
-      // we don't need a constructor because Java is able to generate a default one! 
+      // we don't need a constructor because Java is able to generate a default one!
 
        public Item produceNew(){
            Random random = new Random();
@@ -3652,7 +3652,7 @@ public class Box {
                return new Book("Kent Beck", "Test Driven Development", 0.7);
            } else {
                return new ChocolateBar();
-           }     
+           }
        }
    }
 </pre>
@@ -4009,7 +4009,7 @@ sugar: -99
   <p>Store product stocks in a similar <code>Map&lt;String, Integer&gt;</code> variable as the one you used for their prices. Fill the Storehouse with the following methods:</p>
 
   <ul>
-    <li><code>public int stocks(String product)</code> returns the number of stocks of the parameter product.</li>
+    <li><code>public int stock(String product)</code> returns the number of stocks of the parameter product.</li>
     <li><code>public boolean take(String product)</code> decreases the number of stocks of the parameter product by one, and it returns <em>true</em> if the object was available in the storehouse. If the product was not in the storehouse, the method returns <em>false</em>, the product stocks cannot go below zero.</li>
   </ul>
 
@@ -4407,7 +4407,7 @@ public class ClubMember implements Comparable&lt;ClubMember&gt; {
 <div class="tehtavat">
     <div class="tehtava">
 
-  <h3>Poor last</h3>
+  <h3>Rich First, Poor Last</h3>
 
   <p>You find the pre-made class Person. People have got name and salary information. Make Person implement the <code>Comparable</code> interface, so that the <code>compareTo</code> method would sort the people according to their salary -- rich first, poor last.</p>
 
@@ -4419,14 +4419,14 @@ public class ClubMember implements Comparable&lt;ClubMember&gt; {
   <p><b>Tip:</b> student names are Strings, the class String is <code>Comparable</code> itself. You can use the String's <code>compareTo</code> method when you implement your Student class. <code>String.compareTo</code> gives a different value to characters according to their case; because of this, String has also got the method <code>compareToIgnoreCase</code> which, in fact, ignores the case while comparing. You can use either of them, when you sort your students.</p>
 
 
-  <h3>Kortit ojennukseen</h3>
+  <h3>Sorting Cards</h3>
 
 <p>Together with the exercise layout, you find a class whose objects represent playing cards. Cards have got a value and a suit. Card values are <em>2, 3, ..., 10, J, Q, K </em> and <em>A</em>, and the suits are <em>Spades, Hearts, Diamonds</em> and <em>Clubs</em>. Value and suit are however shown as integers in the objects. Cards have also got a toString method, which is used to print the card value and suit in a "friendly way". </p>
 
 <p>Four constants -- that is <code>public static final</code> variables -- are defined in the class, so that the user didn't need to handle card's suits as numbers:</p>
 
 <pre class="sh_java">
-public class Kortti {
+public class Card {
     public static final int SPADES  = 0;
     public static final int DIAMONDS  = 1;
     public static final int HEARTS = 2;
@@ -4440,7 +4440,7 @@ public class Kortti {
 
 <pre class="sh_java">
   Card first = new Card(2, Card.DIAMONDS);
-  Card second = new Card(14, Card.CLUBS);  
+  Card second = new Card(14, Card.CLUBS);
   Card third = new Card(12, Card.HEARTS);
 
   System.out.println(first);
@@ -4460,7 +4460,7 @@ Q of Hearts
 
   <h4>Comparable Cards</h4>
 
-  <p>Make your Cards class Comparable. Implement the <code>compareTo</code> method so that cards would be sorted in ascending order according to their value. If the value of two classes have got the same values, we compare them against their suit in ascending order: <em>spades first, diamonds second, hearts third, and clubs last</em>.</p> 
+  <p>Make your Cards class Comparable. Implement the <code>compareTo</code> method so that cards would be sorted in ascending order according to their value. If the value of two classes have got the same values, we compare them against their suit in ascending order: <em>spades first, diamonds second, hearts third, and clubs last</em>.</p>
 
 <p>The smallest card would then be the two spades and the greatest would be the clubs ace.</p>
 
@@ -4476,10 +4476,10 @@ Q of Hearts
 <pre class="sh_java">
   Hand hand = new Hand();
 
-  hand.lisaa( new Card(2, Card.SPADES) );
-  hand.lisaa( new Card(14, Card.CLUBS) );
-  hand.lisaa( new Card(12, Card.HEARTS) );
-  hand.lisaa( new Card(2, Card.CLUBS) );
+  hand.add( new Card(2, Card.SPADES) );
+  hand.add( new Card(14, Card.CLUBS) );
+  hand.add( new Card(12, Card.HEARTS) );
+  hand.add( new Card(2, Card.CLUBS) );
 
   hand.print();
 </pre>
@@ -4502,12 +4502,12 @@ Q of Hearts
 <pre class="sh_java">
   Hand hand = new Hand();
 
-  hand.lisaa( new Card(2, Card.SPADES) );
-  hand.lisaa( new Card(14, Card.CLUBS) );
-  hand.lisaa( new Card(12, Card.HEARTS) );
-  hand.lisaa( new Card(2, Card.CLUBS) );
+  hand.add( new Card(2, Card.SPADES) );
+  hand.add( new Card(14, Card.CLUBS) );
+  hand.add( new Card(12, Card.HEARTS) );
+  hand.add( new Card(2, Card.CLUBS) );
 
-  hand.order(); 
+  hand.order();
 
   hand.print();
 </pre>
@@ -4530,16 +4530,16 @@ A of Clubs
 <pre class="sh_java">
   Hand hand1 = new Hand();
 
-  hand1.lisaa( new Card(2, Card.SPADES) );
-  hand1.lisaa( new Card(14, Card.CLUBS) );
-  hand1.lisaa( new Card(12, Card.HEARTS) );
-  hand1.lisaa( new Card(2, Card.CLUBS) );
+  hand1.add( new Card(2, Card.SPADES) );
+  hand1.add( new Card(14, Card.CLUBS) );
+  hand1.add( new Card(12, Card.HEARTS) );
+  hand1.add( new Card(2, Card.CLUBS) );
 
   Hand hand2 = new Hand();
 
-  hand2.lisaa( new Card(11, Card.DIAMONDS) );
-  hand2.lisaa( new Card(11, Card.CLUBS) );
-  hand2.lisaa( new Card(11, Card.HEARTS) );
+  hand2.add( new Card(11, Card.DIAMONDS) );
+  hand2.add( new Card(11, Card.CLUBS) );
+  hand2.add( new Card(11, Card.HEARTS) );
 
   int comparison = hand1.compareTo(hand2);
 
@@ -4548,7 +4548,7 @@ A of Clubs
     hand2.print();
   } else if ( comparison &gt; 0 ){
     System.out.println("the most valuable hand contains the cards");
-    hand1.print(); 
+    hand1.print();
   } else {
     System.out.println("the hands are equally valuable");
   }
@@ -4586,7 +4586,7 @@ public class SortAgainstSuit implements Comparator&lt;Card&gt; {
 <p>Sorting is still possible through the Collections' sort method. The method now receives as second parameter an object of the class that determines the sorting order:</p>
 
 <pre class="sh_java">
-  ArrayList&lt;Card&gt; cards = new ArrayList&lt;Card&gt;(); 
+  ArrayList&lt;Card&gt; cards = new ArrayList&lt;Card&gt;();
 
   cards.add( new Card(3, Card.CLUBS) );
   cards.add( new Card(2, Card.DIAMONDS) );
@@ -4595,8 +4595,8 @@ public class SortAgainstSuit implements Comparator&lt;Card&gt; {
   cards.add( new Card(2, Card.CLUBS) );
 
   SortAgainstSuit suitSorter = new SortAgainstSuit();
-  Collections.sort(cards, suitSorter ); 
-  
+  Collections.sort(cards, suitSorter );
+
   for (Card c : cards) {
     System.out.println( c );
   }
@@ -4615,7 +4615,7 @@ Clubs 2
 <p>The sorting object can also be created directly together with the sort call:</p>
 
 <pre class="sh_java">
-  Collections.sort(kortit, new SortAgainstSuit() ); 
+  Collections.sort(cards, new SortAgainstSuit() );
 </pre>
 <p>
 
@@ -4638,7 +4638,7 @@ Clubs 2
   hand.add( new Hand(7, Hand.HEARTS) );
   hand.add( new Hand(2, Hand.CLUBS) );
 
-  hand.sortAgainstSuit(); 
+  hand.sortAgainstSuit();
 
   hand.print();
 </pre>
@@ -4706,7 +4706,7 @@ name: matti
 
 
 <div class="tehtavat">
-    
+
     <div class="tehtava">
 
 <h3>Ski Jumping</h3>
@@ -4788,7 +4788,7 @@ Write "jump" to jump; otherwise you quit: <font color="red">quit</font>
 Thanks!
 
 Tournament results:
-Position    Nimi
+Position    Name
 1           Mikael (388 points)
             jump lengths: 95 m, 96 m, 63 m
 2           Mika (387 points)
@@ -5143,7 +5143,7 @@ public class Person implements Identifiable {
 
     @Override
     pulic toString(){
-        return this.name + " ID: " +this.id; 
+        return this.name + " ID: " +this.id;
     }
 }
 </pre>
@@ -5240,7 +5240,7 @@ public class Person implements Identifiable, Comparable&lt;Person&gt; {
 
 <pre class="sh_java">
 public class Person implements Identifiable, Comparable&lt;Identifiable&gt; {
-    // ... 
+    // ...
 
     @Override
     public int compareTo(Identifiable another) {
@@ -5515,7 +5515,7 @@ public class Checkout {
 -->
 
 <div>
-<big><big><b>NetBeans Tips</b></big></big>  
+<big><big><b>NetBeans Tips</b></big></big>
 
 <ul>
     <!-- TODO -->
@@ -5876,7 +5876,7 @@ Write a number: <font color="red">43</font>
     }
 </pre>
 
-    <p>The <code>sleep</code> method is called in another method. Now, this other method can either handle the exception in a <code>try-catch</code> block or delegate the responsibility forward. Sometimes, we delegate the responsibility of handling an exception, till the very end, and even the <code>main</code> method delegates it:</p> 
+    <p>The <code>sleep</code> method is called in another method. Now, this other method can either handle the exception in a <code>try-catch</code> block or delegate the responsibility forward. Sometimes, we delegate the responsibility of handling an exception, till the very end, and even the <code>main</code> method delegates it:</p>
 <pre class="sh_java">
 public class MainProgram {
    public static void main(String[] args) throws Exception {
@@ -6007,7 +6007,7 @@ true
 
 <p>Create the class <code>Thermometer</code> which implements the interface <code>Sensor</code>.</p>
 
-<p>At furst, the thermometer is off. When the <code>measure</code> method is called, if the thermometer is on it returns a random number between -30 and 30. If the thermometer is off, it throws an </code>IllegalStateException</code>. 
+<p>At furst, the thermometer is off. When the <code>measure</code> method is called, if the thermometer is on it returns a random number between -30 and 30. If the thermometer is off, it throws an </code>IllegalStateException</code>.
 </p>
 
 <h4>AvarageSensor</h4>
@@ -6025,20 +6025,20 @@ true
 
 <pre class="sh_java">
 public static void main(String[] args) {
-    Sensor kumpula = new Thermometer();         
+    Sensor kumpula = new Thermometer();
     kumpula.on();
     System.out.println("the temperature in Kumpula is "+kumpula.measure() + " degrees");
-    
-    Sensor kaisaniemi = new Thermometer();        
+
+    Sensor kaisaniemi = new Thermometer();
     Sensor helsinkiVantaa = new Thermometer();
-        
+
     AvarageSensor helsinkiArea = new AvarageSensor();
     helsinkiArea.addSensor(kumpula);
     helsinkiArea.lisaaSensori(kaisaniemi);
     helsinkiArea.lisaaSensori(helsinkiVantaa);
-        
+
     paakaupunki.on();
-    System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");     
+    System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
 }
 </pre>
 
@@ -6057,19 +6057,19 @@ the temperature in Helsinki area is -10 degrees
 
 <pre class="sh_java">
 public static void main(String[] args) {
-    Sensor kumpula = new Thermometer();         
-    Sensor kaisaniemi = new Thermometer();        
+    Sensor kumpula = new Thermometer();
+    Sensor kaisaniemi = new Thermometer();
     Sensor helsinkiVantaa = new Thermometer();
-        
+
     AvarageSensor helsinkiArea = new AvarageSensor();
     helsinkiArea.addSensor(kumpula);
     helsinkiArea.lisaaSensori(kaisaniemi);
     helsinkiArea.lisaaSensori(helsinkiVantaa);
-        
+
     helsinkiArea.on();
-    System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");     
-    System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");    
-    System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");    
+    System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
+    System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
+    System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
 
     System.out.println("readings: "+helsinkiArea.readings());
 }
@@ -6293,7 +6293,7 @@ program
 
 <p>Create the class <code>Printer</code>, its constructor <code>public Printer(String fileName)</code> which receives a String standing for the file name, and the method <code>public void printLinesWhichContain(String word)</code> which prints the file lines which contain the parameter word (<em>lower and upper case make difference in this excercise; for instance, "test" and "Test" are not the considered the same</em>); the lines are printed in the same order as they are inside the file.</p>
 
-<p>If the argument is an empty String, aa the file is printed.</p> 
+<p>If the argument is an empty String, aa the file is printed.</p>
 
 <p>If the file is not found, the constructor delagates the exemption with no need for a try-catch statement; the constructor simply has to be defined in the following way:</p>
 
@@ -6308,16 +6308,16 @@ public Printer {
 }
 </pre>
 
-<p>The file <em>textFile</em> has been place into the default package of your project to help the tests. When you define the file name of the constructor of Printer, you have to write <code>src/textfile.txt</code>. The file contains an extract of Kalevala, a Finnish epic poem:</p> 
+<p>The file <em>textFile</em> has been place into the default package of your project to help the tests. When you define the file name of the constructor of Printer, you have to write <code>src/textfile.txt</code>. The file contains an extract of Kalevala, a Finnish epic poem:</p>
 
 <pre>
 Siinä vanha Väinämöinen
-katseleikse käänteleikse 
+katseleikse käänteleikse
 Niin tuli kevätkäkönen
-näki koivun kasvavaksi 
+näki koivun kasvavaksi
 Miksipä on tuo jätetty
-koivahainen kaatamatta  
-Sanoi vanha Väinämöinen 
+koivahainen kaatamatta
+Sanoi vanha Väinämöinen
 </pre>
 
 <p>The following example shows what the program should do:</p>
@@ -6337,16 +6337,16 @@ Sanoi vanha Väinämöinen
 
 <pre>
 Siinä vanha Väinämöinen
-Sanoi vanha Väinämöinen 
+Sanoi vanha Väinämöinen
 -----
 -----
 Siinä vanha Väinämöinen
-katseleikse käänteleikse 
+katseleikse käänteleikse
 Niin tuli kevätkäkönen
-näki koivun kasvavaksi 
+näki koivun kasvavaksi
 Miksipä on tuo jätetty
-koivahainen kaatamatta  
-Sanoi vanha Väinämöinen 
+koivahainen kaatamatta
+Sanoi vanha Väinämöinen
 </pre>
 
 <p>In the project, you also find the whole Kalevala; the file name is <code>src/kalevala.txt</code></p>
@@ -6373,7 +6373,7 @@ Sanoi vanha Väinämöinen
 
   <p>You can decide yourself what to do if the constructor parameter file does not exist.</p>
 
-<p>The file <em>testFile</em> has been place into the test package of your project to help the tests. When you define the file name of the constructor of Analysis, you have to write <code>test/testfile.txt</code>. The file contains the following text:</p> 
+<p>The file <em>testFile</em> has been place into the test package of your project to help the tests. When you define the file name of the constructor of Analysis, you have to write <code>test/testfile.txt</code>. The file contains the following text:</p>
 
 <pre>
 there are 3 lines, and characters
@@ -6474,10 +6474,10 @@ Pekka's number: 09-111333
 
   // We map an empty ArrayList to Pekka
   phoneNumbers.put( "Pekka", new  ArrayList&lt;String&gt;() );
-  
+
   // we add Pekka's number to the list
   phoneNumbers.get("Pekka").add("040-12348765");
- 
+
   // and we add a second phone number
   phoneNumbers.get("Pekka").add("09-111333");
 
@@ -6608,7 +6608,7 @@ Mikael: [3, 4]
 
 
     <p>Note that the user names are not printed in order, in our example. This depends on the saving process of the <code>HashMap</code> entries, which happens through the value returned by the <code>hashCode</code> method, and does not involve the entry order in any way.</p>
- 
+
 <div class="tehtavat">
     <div class="tehtava">
 <h3>Multiple Entry Dictionary</h3>
@@ -6777,7 +6777,7 @@ public class Booksto {
 <p>If an object is listed in different places at the same time (in a list, a set, or a map construction), you have to pay particular attention so to make sure the state of the different collections is consistent. For instance, if we decide to delete a book, it must be deleted from both maps as well as from the two lists which contain the books on loan and on the shelves.</p>
 
 <div class="tehtavat">
-    
+
     <div class="tehtava">
 
   <h3>Phone Search</h3>
@@ -7016,7 +7016,7 @@ true
 
 <pre class="sh_java">
     RingingCentre kumpulaCentre = new RingingCentre();
-  
+
     kumpulaCentre.observe( new Bird("Rose Starling", "Sturnus roseus", 2012), "Arabia" );
     kumpulaCentre.observe( new Bird("Rose-Coloured Starling", "Sturnus roseus", 2012), "Vallila" );
     kumpulaCentre.observe( new Bird("European Herring Gull", "Larus argentatus", 2008), "Kumpulanmäki" );
@@ -7331,7 +7331,7 @@ combustion engine
 volkswagen
 </pre>
 
-        <p>As you notice, the class <code>Motor</code> has got the methods defined in <code>Component</code> at its disposal.</p> 
+        <p>As you notice, the class <code>Motor</code> has got the methods defined in <code>Component</code> at its disposal.</p>
 
         <h3>Private, Protected and Public</h3>
 
@@ -7498,7 +7498,7 @@ Olli
 
    <h3>The Object Type defines the Called Method: Polimorphysm</h3>
 
-    <p>The method which can be called are defined throw the variable type. For instance, if a <code>Student</code> object reference is saved into a <code>Person</code> variable, the object can use only the methods defined in the <code>Person</code> class:</p> 
+    <p>The method which can be called are defined throw the variable type. For instance, if a <code>Student</code> object reference is saved into a <code>Person</code> variable, the object can use only the methods defined in the <code>Person</code> class:</p>
 
 <pre class="sh_java">
    Person olli = new Student("Olli", "Ida Albergintie Street 1 00400 Helsinki");
@@ -7507,13 +7507,13 @@ Olli
    String.out.println( olli );   // olli.toString() IT WORKS!
 </pre>
 
-<p>If the object has many different types, it has available the methods defined by <em>all</em> types. For instance, a <code>Student</code> object has available the methods defined both in the class <code>Person</code> and in <code>Object</code>.</p> 
+<p>If the object has many different types, it has available the methods defined by <em>all</em> types. For instance, a <code>Student</code> object has available the methods defined both in the class <code>Person</code> and in <code>Object</code>.</p>
 
 <p>In the previous exercise, we were in the class <code>Student</code> and we replaced the <code>toString</code> method inherited from <code>Person</code> with a new version of it. Suppose we are using an object throw a type which is not its real, what version of the object method would we call, then? For instance, below there are two students whose references are saved into a Person and an Object variables. We call the <code>toString</code> method of both. What version of the method is executed: the one defined in Object, in Person, or in Student?</p>
 
 <pre class="sh_java">
    Person olli = new Student("Olli", "Ida Albergintie Street 1 00400 Helsinki");
-   String.out.println( olli );   
+   String.out.println( olli );
 
    Object liisa = new Opiskelija("Liisa", "Väinö Auerin Street 20 00500 Helsinki");
    String.out.println( liisa );
@@ -7552,7 +7552,7 @@ public class Point {
     public int manhattanDistanceFromOrigin(){
         return Math.abs(x)+Math.abs(y);
     }
-    
+
     protected String location(){
         return x+", "+y;
     }
@@ -7560,11 +7560,11 @@ public class Point {
     @Override
     public String toString() {
         return "("+this.distance()+") distance "+this.manhattanDistanceFromOrigin();
-    }    
+    }
 }
 </pre>
 
-<p>The <code>location</code> method is not supposed to be used outside its class, and its accessability field is protected, which means only subclasses can access it. For instance, if we use a <a href="http://wiki.gamegardens.com/Path_Finding_Tutorial">parth fiding algorythm</a>, the <a href="http://en.wiktionary.org/wiki/Manhattan_distance">Manhattan distance</a> is the distance of two points moving on a strictly horizontal and/or vertical path, along the coordinate system lines.</p> 
+<p>The <code>location</code> method is not supposed to be used outside its class, and its accessability field is protected, which means only subclasses can access it. For instance, if we use a <a href="http://wiki.gamegardens.com/Path_Finding_Tutorial">parth fiding algorythm</a>, the <a href="http://en.wiktionary.org/wiki/Manhattan_distance">Manhattan distance</a> is the distance of two points moving on a strictly horizontal and/or vertical path, along the coordinate system lines.</p>
 
 <p>A coloured point is similar to a point, except that it contains a string which tells us its colour. The class can be created by inheriting Point:</p>
 
@@ -7580,7 +7580,7 @@ public class ColouredPoint extends Point {
 
     @Override
     public String toString() {
-        return super.toString()+" colour: "+colour; 
+        return super.toString()+" colour: "+colour;
     }
 }
 </pre>
@@ -7592,12 +7592,12 @@ public class ColouredPoint extends Point {
 <pre class="sh_java">
 public class Main {
     public static void main(String[] args) {
-        List<Point> points = new ArrayList<Point>(); 
+        List<Point> points = new ArrayList<Point>();
         points.add(new Point(4, 8));
         points.add(new ColouredPoint(1, 1, "green"));
         points.add(new ColouredPoint(2, 5, "blue"));
         points.add(new Point(0, 0));
-        
+
         for (Point point : points) {
             System.out.println(point);
         }
@@ -7629,19 +7629,19 @@ public class 3DPoint extends Point {
     @Override
     protected String position() {
         return super.position()+", "+z;    // printing as "x, y, z"
-    }    
+    }
 
     @Override
     public int manhattanDistanceFromOrigin() {
         // first, we ask the superclass for the distance of x+y
         // and then we add the value of z to it
-        return super.manhattanDistanceFromOrigin()+Math.abs(z);   
-    }    
-    
+        return super.manhattanDistanceFromOrigin()+Math.abs(z);
+    }
+
     @Override
     public String toString() {
         return "("+this.distance()+") distance "+this.manhattanDistanceFromOrigin();
-    }    
+    }
 }
 </pre>
 
@@ -7651,13 +7651,13 @@ public class 3DPoint extends Point {
 public class Main {
 
     public static void main(String[] args) {
-        List<Piste> points = new ArrayList<Piste>(); 
+        List<Piste> points = new ArrayList<Piste>();
         points.add(new Point(4, 8));
         points.add(new ColouredPoint(1, 1, "green"));
         points.add(new Point(2, 5, "blue"));
         points.add(new 3DPoint(5, 2, 8));
         points.add(new Point(0, 0));
-        
+
         for (Point point : points) {
             System.out.println(point);
         }
@@ -7690,12 +7690,12 @@ public class 3DPoint extends Point {
     @Override
     protected String distance() {
         return super.distance()+", "+z;
-    }    
+    }
 
     @Override
     public int manhattanDistanceFromOrigin() {
         return super.manhattanDistanceFromOrigin()+Math.abs(z);
-    }      
+    }
 }
 </pre>
 
@@ -8711,7 +8711,7 @@ false
 
 <pre class="sh_java">
    // somewhere, with a definition like:
-   // ArrayList&ltObject&gt list = new ... 
+   // ArrayList&ltObject&gt list = new ...
 
    for ( Object object : list ) {
       if ( hasToBeRemoved(object) ) {
@@ -8724,7 +8724,7 @@ false
 
 <pre class="sh_java">
    // somewhere, with a definition like:
-   // ArrayList&ltObject&gt list = new ... 
+   // ArrayList&ltObject&gt list = new ...
 
    ArrayList&ltObject&gt toBeRemoved = new ArrayList&ltObject&gt();
 
@@ -8740,7 +8740,7 @@ false
 <p>The objects which have to be deleted are gathered together while we parse the list, and the remove operation is executed only after parsing the list.</p>
 
 <div class="tehtavat">
-    
+
     <div class="tehtava">
 
 <h3>Dungeon</h3>
@@ -9040,7 +9040,7 @@ public class StoreKeeper {
 <p>Implement the method <code>public ArrayList&lt;String&gt; read(String file)</code> to return the lines of the parameter file in ArrayList form, each file line being a String contained by the ArrayList.
 </p>
 
-<p>There are two text files to help testing the project: <code>src/testinput1.txt</code> ja <code>src/testinput2.txt</code>. The methods are supposed to be used in the following way: 
+<p>There are two text files to help testing the project: <code>src/testinput1.txt</code> ja <code>src/testinput2.txt</code>. The methods are supposed to be used in the following way:
 </p>
 
 <pre class="sh_java">
@@ -9166,7 +9166,7 @@ Scanner fileReader = new ...
 while ( fileReader.hasNextLine() ){
     String line = fileReader.nextLine();
     String[] parts = line.split(":");   // the line is split at :
-    
+
     System.out.println( parts[0] );     // the part of the line before :
     System.out.println( parts[1] );     // the part of the line after :
 }
@@ -9508,7 +9508,7 @@ public class Main {
 
 <h3>Managing Action Events</h3>
 
-<p>So far, even though our user interfaces are beautiful, they are quite boring: they do not react in any way according to the actions done on the interfaces.  
+<p>So far, even though our user interfaces are beautiful, they are quite boring: they do not react in any way according to the actions done on the interfaces.
 Tähänastiset graafiset käyttöliittymämme ovatvaikkakin hienoja hieman tylsiä: ne eivät reagoi millään tavalla käyttöliittymässä tehtyihin tapahtumiin. Such unresponsiveness does not depend on our user interface components, but on the fact we haven't provided them with any way to listen to action events.</p>
 
 <p>Action event listeners <em>listen</em> the UI components they are assigned to. Always when we perform an action on our UI components -- pressing a button, for instance -- the UI component calls a particular method of all the action event listeners assigned to it. Action event listeners are classes which implement a particular interface, and whose instances can be assigned to UI components. When an action event happens, the UI component goes through all its action event listeners, and calls the method defined by the interface.</p>
@@ -9869,7 +9869,7 @@ public class MenuPanel extends JPanel {
 
    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/laskin.png"/></p>
 
-<p>Together with the exercise body, you find the main program which starts the calculator, as well as the class <code>GraphicCalculator</code> which contains a graphic user interface. The user interface has to follow exactly the following points, but you can plan the program structure as you wish.</p> 
+<p>Together with the exercise body, you find the main program which starts the calculator, as well as the class <code>GraphicCalculator</code> which contains a graphic user interface. The user interface has to follow exactly the following points, but you can plan the program structure as you wish.</p>
 
 <h4>The Layout</h4>
 
@@ -10213,10 +10213,10 @@ public class KeyboardListener implements KeyListener {
 
 <h4 class="req">Circle</h4>
 
-<p>Create the class <code>Circle</code> which inherits Figure. Circle has a <code>trigger</code>, whose value is defined by the constructor <code>public Circle(int x, int y, int trigger)</code>. The Circle position is stored into the object variables defined in its parent class. 
+<p>Create the class <code>Circle</code> which inherits Figure. Circle has a <code>trigger</code>, whose value is defined by the constructor <code>public Circle(int x, int y, int trigger)</code>. The Circle position is stored into the object variables defined in its parent class.
 </p>
 
-<p>The circle defines the method <code>draw</code> so that it would draw a circle of the right size, in the place defined by the coordinates, and using the method <code>fillOval</code> of the <code>Graphics</code> object; the first two parameters of the method are taken for the position of the circle. Take example from the relative method in the Avatar example. For more information about the methods of Graphics objects, you can have a look at <a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html">Java's API.</a> 
+<p>The circle defines the method <code>draw</code> so that it would draw a circle of the right size, in the place defined by the coordinates, and using the method <code>fillOval</code> of the <code>Graphics</code> object; the first two parameters of the method are taken for the position of the circle. Take example from the relative method in the Avatar example. For more information about the methods of Graphics objects, you can have a look at <a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html">Java's API.</a>
 </p>
 
 <h4 class="req">Drawing Board</h4>
@@ -10370,7 +10370,7 @@ public class PersonalBoard extends GameOfLifeBoard {
   <li><b>public abstract boolean isAlive(int x, int y)</b> tells whether the cell at (x, y) is alive. If the coordinates are outside the board, the method returns <i>false.</i></li>
 </ul>
 
-<p><b>Hint:</b> You have access to the bidimentional table of the superclass throw the superclass method <code>getBoard()</code>. Bidimentional tables are used as normal tables, but they are assigned two indexes. The first index tells 
+<p><b>Hint:</b> You have access to the bidimentional table of the superclass throw the superclass method <code>getBoard()</code>. Bidimentional tables are used as normal tables, but they are assigned two indexes. The first index tells
 
 IL PUNTO SULL'ASCISSA
 
@@ -10400,7 +10400,7 @@ board[x][y] = true;
 <p>Or straight, using a helping variable:</p>
 
 <pre class="sh_java">
-getBoard()[x][y] = true;    
+getBoard()[x][y] = true;
 </pre>
 
 
@@ -10575,7 +10575,7 @@ if (num.matches("01[0-9]{7}")) {
 
 <pre class="sh_java">
     String string = "00";
-    
+
     if(string.matches("00|111|0000")) {
         System.out.println("The string was matched by some of the alternatives");
     } else {
@@ -10591,7 +10591,7 @@ The string was matched by some of the alternatives
 
 <pre class="sh_java">
     String string = "1111";
-    
+
     if(string.matches("00|111|0000")) {
         System.out.println("The string was matched by some of the alternatives");
     } else {
@@ -10629,12 +10629,12 @@ if (word.matches("look(|s|ed|ing|er)")) {
 <li>The symbol <strong><code>*</code></strong> stands for a repetition from 0 to n times, for instance<br/>
 <pre class="sh_java">
     String string = "trolololololo";
-    
+
     if(string.matches("trolo(lo)*")) {
         System.out.println("The form is right.");
     } else {
         System.out.println("The form is wrong.");
-    }       
+    }
 </pre>
 
 <pre>
@@ -10645,12 +10645,12 @@ The form is right.
 <li>The symbol <strong><code>+</code></strong> stands for a repetition from 1 to n times, for instance<br/>
 <pre class="sh_java">
     String string = "trolololololo";
-    
+
     if(characterString.matches("tro(lo)+")) {
         System.out.println("The form is right.");
     } else {
         System.out.println("The form is wrong.");
-    }       
+    }
 </pre>
 
 <pre>
@@ -10659,12 +10659,12 @@ The form is right.
 
 <pre class="sh_java">
     String characterString = "nänänänänänänänä Bätmään!";
-    
+
     if(characterString.matches("(nä)+ Bätmään!")) {
         System.out.println("The form is right.");
     } else {
         System.out.println("The form is wrong.");
-    }       
+    }
 </pre>
 
 <pre>
@@ -10675,12 +10675,12 @@ The form is right.
 <li>The symbol <strong><code>?</code></strong> stands for a repetition of 0 or 1 time, for instance<br/>
 <pre class="sh_java">
     String string = "You have accidentally the whole name";
-    
+
     if(characterString.matches("You have accidentally (deleted )?the whole name")) {
         System.out.println("The form is right.");
     } else {
         System.out.println("The form is wrong.");
-    }       
+    }
 </pre>
 
 <pre>
@@ -10691,12 +10691,12 @@ The form is right.
 <li>The symbol <strong><code>{a}</code></strong> stands for a repetition of <code>a</code> times, for instance<br/>
 <pre class="sh_java">
     String string = "1010";
-    
+
     if(string.matches("(10){2}")) {
         System.out.println("The form is right.");
     } else {
         System.out.println("The form is wrong.");
-    }       
+    }
 </pre>
 
 <pre>
@@ -10707,12 +10707,12 @@ The form is right.
 <li>The symbol <strong><code>{a,b}</code></strong> stands for a repetition from <code>a</code> to <code>b</code> times, for instance<br/>
 <pre class="sh_java">
     String string = "1";
-    
+
     if(string.matches("1{2,4}")) {
         System.out.println("The form is right.");
     } else {
         System.out.println("The form is wrong.");
-    }       
+    }
 </pre>
 
 <pre>
@@ -10723,12 +10723,12 @@ The form is right.
 <li>The symbol <strong><code>{a,}</code></strong> stands for a repetition from <code>a</code> to n times, for instance<br/>
 <pre class="sh_java">
     String string = "11111";
-    
+
     if(string.matches("1{2,}")) {
         System.out.println("The form is right.");
     } else {
         System.out.println("The form is wrong.");
-    }       
+    }
 </pre>
 
 <pre>
@@ -11050,7 +11050,7 @@ public class Hand {
         while (iterator.hasNext()) {
             if (iterator.next().getValue() &lt; value) {
                 // delete the object returned by the iterator with its previous method call
-                iterator.remove();   
+                iterator.remove();
             }
         }
     }
@@ -11143,7 +11143,7 @@ Arto, D
 
 <pre class="sh_java">
     List&lt;String&gt; names = Arrays.asList("Matti", "Pekka", "Arto");
-    
+
     for(String name: names) {
         if (name.equals("Arto")) {
             continue;
@@ -11162,7 +11162,7 @@ Pekka
 
 <pre class="sh_java">
     List&lt;Integer&gt; values = Arrays.asList(1, 3, 11, 6, 120);
-    
+
     for(int num: values) {
         if (luku > 4 && luku % 100 != 0 && num % 40 != 0) {
             System.out.println(num);
@@ -11181,7 +11181,7 @@ Pekka
         if (num % 40 == 0) {
             continue;
         }
-        
+
         System.out.println(num);
     }
 </pre>
@@ -11216,7 +11216,7 @@ public enum Colour {
     public String getName() {
         return this.name;
     }
-}  
+}
 </pre>
 
 <p>The enumerated value <code>Colour</code> can be used in the following way:</p>
@@ -11258,12 +11258,12 @@ Green
     votes.addVote(pekka, eraserhead, Arvio.MEDIOCRE);
 
     votes.addVote(mikke, eraserhead, Arvio.GOOD);
-    
+
 
     Reference reference = new Reference(votes);
-    System.out.println(thomas + "'s recommendation: " + 
+    System.out.println(thomas + "'s recommendation: " +
             reference.recommendFilm(thomas));
-    System.out.println(mikke + "'s recommendation: " + 
+    System.out.println(mikke + "'s recommendation: " +
             reference.recommendFilm(mikke));
 </pre>
 
@@ -11291,7 +11291,7 @@ Pekka ja Eraserhead
 
 <p>Also add the method <code>public String toString()</code> which returns the name received with the argument, as well as the method <code>equals</code> and <code>hashCode</code>.</p>
 
-<p>Override <code>equals</code> so that the equivalence is checked according to the object variable <code>name</code>. Look at the example in section 45.1. In Section 45.2 there are guidelines to override <code>hashCode</code> methods. At least, you'd better generate the HashCode automatically, following the instructions at the end of the section:</p> 
+<p>Override <code>equals</code> so that the equivalence is checked according to the object variable <code>name</code>. Look at the example in section 45.1. In Section 45.2 there are guidelines to override <code>hashCode</code> methods. At least, you'd better generate the HashCode automatically, following the instructions at the end of the section:</p>
 
 <p>
 <em>
@@ -11374,7 +11374,7 @@ Arviot Eraserheadille: [HUONO, HUONO, HYVA]
 <ul>
   <li><code>public void addVote(Person person, Film film, Vote vote)</code> adds the vote of a specific film to the paramter person. The same person can recommend a specific film only once. The person vote has also to be added to the votes connected to all the films.</li>
   <li><code>public Vote getVote(Person person, Film film)</code> returns the vote the paramater person has assigned to the parameter film. If the person hasn't evaluated such film, the method returns <code>Vote.NOT_WATCHED</code>.</li>
- <li><code>public Map&lt;Film, Vote&gt; getPersonalVotes(Person person)</code> returns a HashMap which contains the person's votes. The HashMap keys are the evaluated films, and their values are the votes of these films.</li> 
+ <li><code>public Map&lt;Film, Vote&gt; getPersonalVotes(Person person)</code> returns a HashMap which contains the person's votes. The HashMap keys are the evaluated films, and their values are the votes of these films.</li>
  <li><code>public List&lt;Person&gt; references()</code> returns a list of the people who have evaluate the films.</li></ul>
 
 <p>People's votes should be stored into a HashMap, and the people should act as keys. The values of the HashMap is another HashMap, whose keys are films and whose values are votes.</p>
@@ -11426,7 +11426,7 @@ References: [Pekka, Matti]
     peoplesIdentities.put(pekka, 134);
     peoplesIdentities.put(mikke, 8);
     peoplesIdentities.put(thomas, 82);
-    
+
     List&lt;Person&gt; ppl = Arrays.asList(matti, pekka, mikke, thomas);
     System.out.println("People before sorting: " + ppl);
 
@@ -11513,7 +11513,7 @@ The films after sorting: [The Bridges of Madison County, Gone with the Wind, Era
 
     Reference ref = new Reference(votes);
     Film recommended = ref.recommendFilm(mikke);
-    System.out.println("The film recommended to Michael is: " + recommended); 
+    System.out.println("The film recommended to Michael is: " + recommended);
 </pre>
 
 <pre>
@@ -11602,9 +11602,9 @@ The film recommended to Michael is: The Bridges of Madison County
     votes.addVote(pekka, goneWithTheWind, Vote.FINE);
     votes.addVote(pekka, eraserhead, Vote.BAD);
     votes.addVote(pekka, bluesBrothers, Vote.MEDIOCRE);
-    
+
     votes.addVote(mikke, eraserhead, Vote.BAD);
-    
+
     votes.addVote(thomas, bluesBrothers, Vote.GOOD);
     votes.addVote(thomas, bridgesOfMadisonCounty, Vote.GOOD);
 
@@ -11693,7 +11693,7 @@ public class ContainsPassword implements Criterium {
     @Override
     public boolean implements(String line) {
         return line.contains(word);
-    }    
+    }
 }
 </pre>
 
@@ -11709,16 +11709,16 @@ public class GutenbergReader {
     public GutenbergReader(String address) throws IllegalArgumentException {
         // the code which retrieves the book from the Internet
     }
-    
+
     public List&lg;String&gt; linesWhichComplyWith(Ctriterium c){
         List&lg;String&gt; complayers = new ArrayList&lg;String&gt;();
-        
+
         for (String line : words) {
             if ( c.implements(line)) {
                 complayers.add(line);
             }
         }
-        
+
         return complayers;
     }
 }
@@ -11732,7 +11732,7 @@ public static void main(String[] args) {
     GutenbergReader book = new GutenbergReader(address);
 
     Criterium criterium = new ContainsWord("beer");
-        
+
     for (String line : book.linesWhichComplyWith(criterium)) {
         System.out.println(line);
     }
@@ -11749,7 +11749,7 @@ public static void main(String[] args) {
     GutenbergReader book = new GutenbergReader(address);
 
     Criterium criterium = new AllLines();
-        
+
     for (String line : book.linesWhichComplyWith(criterium)) {
         System.out.println(line);
     }
@@ -11766,7 +11766,7 @@ public static void main(String[] args) {
     GutenbergReader book = new GutenbergReader(address);
 
      Criterium criterium = new EndsWithQuestionOrExclamationMark();
-        
+
     for (String line : book.linesWhichComplyWith(criterium)) {
         System.out.println(line);
     }
@@ -11796,7 +11796,7 @@ public static void main(String[] args) {
     GutenbergReader book = new GutenbergReader(address);
 
      Criterium criterium = new LongerThan(40);
-        
+
     for (String line : book.linesWhichComplyWith(criterium)) {
         System.out.println(line);
     }
@@ -11835,7 +11835,7 @@ public static void main(String[] args) {
     GutenbergReader book = new GutenbergReader(address);
 
     Criterium criterium = new Not( new LongerThan(10) );
-      
+
     for (String line : book.linesWhichComplyWith(criterium)) {
         System.out.println(line);
     }
@@ -11901,7 +11901,7 @@ public static void main(String[] args) {
             str += t[i];
             if (i != t.length - 1) {
                 str += ", ";
-        
+
             }
         }
 
@@ -11924,8 +11924,8 @@ public static void main(String[] args) {
 
 <pre>
 {
- 1, 2, 3, 4, 
- 5, 6, 7, 8, 
+ 1, 2, 3, 4,
+ 5, 6, 7, 8,
  9, 10
 }
 </pre>
@@ -11998,7 +11998,7 @@ public static void main(String[] args) {
         System.out.println(worm.getPieces());
         worm.move();
         System.out.println(worm.getPieces());
-        
+
         worm.grow();
         System.out.println(worm.getPieces());
         worm.move();
@@ -12100,7 +12100,7 @@ true
 
 <h3>Course Feedback</h3>
 
-<p>We have received a lot of valuable feedback through TMC. Therefore, as your last task in the course we would like to have feedback on the course in general. Give feeback by filling <a href="https://ilmo.cs.helsinki.fi/kurssit/servlet/Valinta">this</a> form. The feeback is anonymous.</p> 
+<p>We have received a lot of valuable feedback through TMC. Therefore, as your last task in the course we would like to have feedback on the course in general. Give feeback by filling <a href="https://ilmo.cs.helsinki.fi/kurssit/servlet/Valinta">this</a> form. The feeback is anonymous.</p>
 
 <p>In order to receive the points of this excercise, run the TMC tests and send the exercise to our server. </p>
 
@@ -12171,7 +12171,7 @@ true
 
 <h4 class="req">Oma luokka JButtonille</h4>
 
-<p>Toteuta pakkaukseen <code>nopeustesti</code> luokka <code>Nappi</code>, joka perii JButtonin. Luokalla <code>Nappi</code> tulee olla konstruktori <code>public Nappi(String text, Color aktiivinen, Color passiivinen)</code>. Konstruktorin parametrina saama characterString <code>text</code> tulee antaa parametrina yläluokan konstruktorille (kutsu <code>super(text)</code>).</p> 
+<p>Toteuta pakkaukseen <code>nopeustesti</code> luokka <code>Nappi</code>, joka perii JButtonin. Luokalla <code>Nappi</code> tulee olla konstruktori <code>public Nappi(String text, Color aktiivinen, Color passiivinen)</code>. Konstruktorin parametrina saama characterString <code>text</code> tulee antaa parametrina yläluokan konstruktorille (kutsu <code>super(text)</code>).</p>
 
 <p>Korvaa luokasta JButton peritty metodi <code>protected void paintComponent(Graphics g)</code> siten, että piirrät metodissa napin kokoisen värillisen ympyrän. Saat napin leveyden ja korkeuden JButton-luokalta perityistä metodeista <code>getWidth()</code> ja <code>getHeight()</code>. Kutsu korvatun metodin alussa yläluokan <code>paintComponent</code>-metodia.</p>
 

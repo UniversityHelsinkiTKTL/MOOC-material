@@ -1075,7 +1075,7 @@ int six = 6;
 
         <p>Primitive-type variables can be visualized as boxes that both have the values belonging to them saved in to them:</p>
 
-        <p><img src="img/advprog/primitive-five-and-six.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/primitive-five-and-six.png" /></p>
 
         <p>Next lets inspect how the values of primitive-type variables get copied.</p>
 
@@ -1091,7 +1091,7 @@ six = 64; // the variable 'six' now holds the value 64
 
         <p>Above we introduce the variables <code>five</code> and <code>six</code> and we set values to them. After this the value held in the slot of the variable <code>six</code> is copied to the slot of the variable <code>five</code> (<code>five = six;</code>). If the value of the variable <code>six</code> is changed after this point the value in the variable <code>five</code> remains unaffected: the value of the variable <code>five</code> is in it's own slot and is not related to the value in the slot of the variable <code>six</code> in any way. The end situation as a picture.</p>
 
-        <p><img src="img/advprog/primitive-five-and-six-64.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/primitive-five-and-six-64.png" /></p>
 
         <h4>Primitive type variable as a method parameter and return value</h4>
 
@@ -1218,7 +1218,7 @@ Calculator axeCalculator = new Calculator(6);
 
         <p>In the examples we first create a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is assigned to the <code>bonusCalculator</code> variable through the <code>=</code> equal sign. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information. </p>
 
-        <p><img src="img/advprog/reference-type-calculators.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators.png" /></p>
 
         <p>Next, let us have a look at how a referene-type object is duplicated.</p>
 
@@ -1232,7 +1232,7 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
 
         <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable duplicates, too. In this case, a reference to the <code>axeCalculator</code> variable slot is copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
 
-        <p><img src="img/advprog/reference-type-calculators-ref-changed.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators-ref-changed.png" /></p>
 
         <p>Let us continue with the example above and let us set a new reference to the variable <code>axeCalculator</code>; this new reference will point to a new object created by the command <code>new Calculator(10)</code>.</p>
 
@@ -1254,7 +1254,7 @@ axeCalculator = new Calculator(10); // a new reference is assigned to the axeCal
         <p>At the end of the previous example no variable points to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes such useless objects from time to time. Our final situation looks like the following:</p>
 
 
-        <p><img src="img/advprog/reference-type-calculators-3rd-object.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators-3rd-object.png" /></p>
 
         <p>Let us have a look to a third example still, and let us focus on an essencial difference between primitive-type and reference-type variables.</p>
 
@@ -1280,7 +1280,7 @@ System.out.println(axeCalculator.getValue());
 
         <p>The situation might be clear if we look at the following picture. The method <code>axeCalculator.increaseValue()</code> increases by one the <code>value</code> variable of the object pointing to the <code>axeCalculator</code> variable. Because <code>bonusCalculator</code> points to the same object, the method <code>bonusCalculator.getValue()</code> returns the same value which was increased by the method <code>axeCalculator.increaseValue()</code>.</p>
 
-        <p><img src="img/advprog/reference-type-calculators-val-changed.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators-val-changed.png" /></p>
 
         <p>In the following example, three reference-type variables all point to the same <code>Calculator</code> object.</p>
 
@@ -1293,7 +1293,7 @@ Calculator lennon = bonus;
         <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls all modify the same object. To tell it once again: when reference-type variables are copied, their references also duplicate. The same concept in a picture:</p>
 
 
-        <p><img src="img/advprog/three-calculators-1.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/three-calculators-1.png" /></p>
 
         <p>Let us focus again on duplication with one example.</p>
 
@@ -1307,7 +1307,7 @@ lennon = new Calculator(3);
 
         <p>The modification of the <code>lennon</code> variable contents – that is to say the change of reference – does not affect the references of either <code>bonus</code> or <code>ihq</code>. Always when we assign a value to a variable, we change the contents of only that variable's own slot. The same concept in a picture:</p>
 
-        <p><img src="img/advprog/three-calculators-2.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/three-calculators-2.png" /></p>
 
         <h4>A Reference-Type Variables and Method Parameters</h4>
 
@@ -1334,7 +1334,7 @@ addToCalculator(bonus, times);
         <p>In the example, we call the <code>addToCalculator</code> method whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference-type variable <code>bonus</code> and the value of the original-type variable <code>times</code> – which is <code>10</code> – are copied as parameters whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the <code>increaseValue()</code> method of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
 
 
-        <p><img src="img/advprog/refs-main-and-method-world.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/refs-main-and-method-world.png" /></p>
 
         <p><em>The method contains variables which are completely separated from the main program!</em></p>
 

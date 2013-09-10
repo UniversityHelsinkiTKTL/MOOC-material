@@ -5959,12 +5959,12 @@ Exception in thread "..." java.lang.IllegalArgumentException: The grade has to b
 <p>We have got the following interface available for our use:</p>
 
 <pre class="sh_java">
-public interface Senson {
+public interface Sensor {
     boolean itsOn();  // returns true if the sensor is on
     void on();       // switches the sensor on
-    void off();   // switches the sensor off
-    int measure();        // returns the sensor reading if the sensor is on
-                         // if the sensor is off, it throws an IllegalStateException
+    void off();      // switches the sensor off
+    int measure();   // returns the sensor reading if the sensor is on
+                     // if the sensor is off, it throws an IllegalStateException
 }
 </pre>
 
@@ -6006,18 +6006,18 @@ true
 <p>At furst, the thermometer is off. When the <code>measure</code> method is called, if the thermometer is on it returns a random number between -30 and 30. If the thermometer is off, it throws an </code>IllegalStateException</code>.
 </p>
 
-<h4>AvarageSensor</h4>
+<h4>AverageSensor</h4>
 
-<p>Create the class <code>AvarageSensor</code> which implements the interface </code>Sensor</code>.</p>
+<p>Create the class <code>AverageSensor</code> which implements the interface </code>Sensor</code>.</p>
 
-<p>An avarage sensor contains many sensors. In addition to the methods defined by the interface <code>Sensor</code>, the class has got the method <code>public void addSensor(Sensor additional)</code> which adds a new sensor to the AvarageSensor.</p>
+<p>An average sensor contains many sensors. In addition to the methods defined by the interface <code>Sensor</code>, the class has got the method <code>public void addSensor(Sensor additional)</code> which adds a new sensor to the AverageSensor.</p>
 
-<p>The avarage sensor is on when <em>all</em> its sensors are on. When the avarage sensor is switched on, all its sensors have to be switched on if they were not on already. When the avarage sensor is closed, at least one of its sensors as to be switched off. It's also possible that all its sensors are switched off.</p>
+<p>The average sensor is on when <em>all</em> its sensors are on. When the average sensor is switched on, all its sensors have to be switched on if they were not on already. When the average sensor is closed, at least one of its sensors as to be switched off. It's also possible that all its sensors are switched off.</p>
 
-<p>The <code>measure</code> method of our AvarageSensor returns the avarage of the readings of all its sensors (because the return value is <code>int</code>, the readings are rounded down as it is for integer division). If the <code>measure</code> method is called when the avarage sensor is off, of if the avarage sensor was not added any sensor, the method throws an <code>IllegalStateException</code>.
+<p>The <code>measure</code> method of our AverageSensor returns the average of the readings of all its sensors (because the return value is <code>int</code>, the readings are rounded down as it is for integer division). If the <code>measure</code> method is called when the average sensor is off, of if the average sensor was not added any sensor, the method throws an <code>IllegalStateException</code>.
 </p>
 
-<p>Below, you find an example of a sensor program (note that both the Thermometer and the AvarageSensor constructors are without parameter):</p>
+<p>Below, you find an example of a sensor program (note that both the Thermometer and the AverageSensor constructors are without parameter):</p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
@@ -6028,10 +6028,10 @@ public static void main(String[] args) {
     Sensor kaisaniemi = new Thermometer();
     Sensor helsinkiVantaa = new Thermometer();
 
-    AvarageSensor helsinkiArea = new AvarageSensor();
+    AverageSensor helsinkiArea = new AverageSensor();
     helsinkiArea.addSensor(kumpula);
-    helsinkiArea.lisaaSensori(kaisaniemi);
-    helsinkiArea.lisaaSensori(helsinkiVantaa);
+    helsinkiArea.addSensor(kaisaniemi);
+    helsinkiArea.addSensor(helsinkiVantaa);
 
     paakaupunki.on();
     System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
@@ -6045,11 +6045,11 @@ the temperature in Kumpula is -7 degrees
 the temperature in Helsinki area is -10 degrees
 </pre>
 
-<p><b>Note:</b> you'd better use a ConstantSensor object to test your avarage sensor!</p>
+<p><b>Note:</b> you'd better use a ConstantSensor object to test your average sensor!</p>
 
 <h4>All Readings</h4>
 
-<p>Add the method <code>public List&lt;Integer&gt; readings()</code> to your AvarageSensor; it return a list of the reading results of all the measurements executed through your AvarageSensor. Below is an example of how the method works: </p>
+<p>Add the method <code>public List&lt;Integer&gt; readings()</code> to your AverageSensor; it return a list of the reading results of all the measurements executed through your AverageSensor. Below is an example of how the method works: </p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
@@ -6057,10 +6057,10 @@ public static void main(String[] args) {
     Sensor kaisaniemi = new Thermometer();
     Sensor helsinkiVantaa = new Thermometer();
 
-    AvarageSensor helsinkiArea = new AvarageSensor();
+    AverageSensor helsinkiArea = new AverageSensor();
     helsinkiArea.addSensor(kumpula);
-    helsinkiArea.lisaaSensori(kaisaniemi);
-    helsinkiArea.lisaaSensori(helsinkiVantaa);
+    helsinkiArea.addSensor(kaisaniemi);
+    helsinkiArea.addSensor(helsinkiVantaa);
 
     helsinkiArea.on();
     System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
@@ -7951,7 +7951,7 @@ Juice: volume = 989.7, free space 10.299999999999955
 
 <li><b>public double minValue()</b> reutrns the smallest value in the container history. If the history is empty, the method returns 0.</li>
 
-<li><b>public double avarage()</b> reutrns the avarage of the values in the container history. If the history is empty, the method returns 0.</li>
+<li><b>public double average()</b> reutrns the average of the values in the container history. If the history is empty, the method returns 0.</li>
 
 </ul>
 
@@ -8098,7 +8098,7 @@ Product: Juice
 History: [1000.0, 988.7, 989.7]
 Greatest Product Amount: 1000.0
 Smallest Product Amount: 988.7
-Avarage: 992.8
+Average: 992.8
 </pre>
 <p>
 
@@ -8201,7 +8201,7 @@ public interface Alive {
 }
 </pre>
 
-<p>When a cow is milked, all their milk provision is taken to be processed. As long as a cow lives, their milk provision increases slowly. In Finland, milking cows produce 25-30 litres of milk every day, on the avarage. We simulate this by producing 0.7-2 litres every hour.
+<p>When a cow is milked, all their milk provision is taken to be processed. As long as a cow lives, their milk provision increases slowly. In Finland, milking cows produce 25-30 litres of milk every day, on the average. We simulate this by producing 0.7-2 litres every hour.
 </p>
 
 <p>If a cow is not given a name, they are assigned a random one from the list below.
@@ -11440,7 +11440,7 @@ People after sorting: [Pekka, Thomas, Matti, Mikke]
 
 <p>Create the class <code>FilmComparator</code> in the package <code>reference.comparator</code>. The class <code>FilmComparator</code> has to implement the interface <code>Comparator&lt;Film&gt;</code>, and it has to have the constructor <code>public FilmComparator(Map&lt;Film, List&lt;Vote&gt;&gt; votes)</code>. The class <code>FilmComparator</code> will be used later on to sort films according to their votes.</p>
 
-<p>The class FilmComparator has to allow for film sorting according to the avarage of the vote values they have received. The films with the greatest avarage should be placed first, and the ones with the smallest avarage should be the last.</p>
+<p>The class FilmComparator has to allow for film sorting according to the average of the vote values they have received. The films with the greatest average should be placed first, and the ones with the smallest average should be the last.</p>
 
 <p>Test the class with the following source code:</p>
 
@@ -11516,7 +11516,7 @@ The films after sorting: [The Bridges of Madison County, Gone with the Wind, Era
 The film recommended to Michael is: The Bridges of Madison County
 </pre>
 
-<p>Now, our first part works fine exclusively for people who have never evaluated any movie. In such cases, we can't say anything about their film tastes, and the best choice is recommending them the film which has received the hightest avarage among the votes.</p>
+<p>Now, our first part works fine exclusively for people who have never evaluated any movie. In such cases, we can't say anything about their film tastes, and the best choice is recommending them the film which has received the hightest average among the votes.</p>
 
 <h4>Reference, Part 2</h4>
 

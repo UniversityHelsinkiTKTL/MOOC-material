@@ -51,7 +51,7 @@
 
 <section class="viikkoraja" id="1" >
   <div class="viikkoraja">Week1</div>
-  <div class="viikkoraja-mooc" id="Week 7" deadline=" " data-first-chapter-index="33" data-first-exercise-index="108" data-first-week-index="7"  data-first-chapter-index-mooc="33" data-first-exercise-index-mooc="108" data-first-week-index-mooc="7" tekija="Arto Vihavainen, Matti Luukkainen">
+  <div class="viikkoraja-mooc" id="Week 1" deadline=" " data-first-chapter-index="33" data-first-exercise-index="108" data-first-week-index="7"  data-first-chapter-index-mooc="33" data-first-exercise-index-mooc="108" data-first-week-index-mooc="7" tekija="Arto Vihavainen, Matti Luukkainen">
 
 
 <h2>Recapping programming basics</h2>
@@ -1075,7 +1075,7 @@ int six = 6;
 
         <p>Primitive-type variables can be visualized as boxes that both have the values belonging to them saved in to them:</p>
 
-        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/primitive-five-and-six.png" /></p>
 
         <p>Next lets inspect how the values of primitive-type variables get copied.</p>
 
@@ -1091,7 +1091,7 @@ six = 64; // the variable 'six' now holds the value 64
 
         <p>Above we introduce the variables <code>five</code> and <code>six</code> and we set values to them. After this the value held in the slot of the variable <code>six</code> is copied to the slot of the variable <code>five</code> (<code>five = six;</code>). If the value of the variable <code>six</code> is changed after this point the value in the variable <code>five</code> remains unaffected: the value of the variable <code>five</code> is in it's own slot and is not related to the value in the slot of the variable <code>six</code> in any way. The end situation as a picture.</p>
 
-        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/alkeis-vs-viittaus-vitonen-ja-kutonen-64.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/primitive-five-and-six-64.png" /></p>
 
         <h4>Primitive type variable as a method parameter and return value</h4>
 
@@ -1218,7 +1218,7 @@ Calculator axeCalculator = new Calculator(6);
 
         <p>In the examples we first create a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is assigned to the <code>bonusCalculator</code> variable through the <code>=</code> equal sign. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information. </p>
 
-        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators.png" /></p>
 
         <p>Next, let us have a look at how a referene-type object is duplicated.</p>
 
@@ -1232,7 +1232,7 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
 
         <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable duplicates, too. In this case, a reference to the <code>axeCalculator</code> variable slot is copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
 
-        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-3.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators-ref-changed.png" /></p>
 
         <p>Let us continue with the example above and let us set a new reference to the variable <code>axeCalculator</code>; this new reference will point to a new object created by the command <code>new Calculator(10)</code>.</p>
 
@@ -1254,7 +1254,7 @@ axeCalculator = new Calculator(10); // a new reference is assigned to the axeCal
         <p>At the end of the previous example no variable points to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes such useless objects from time to time. Our final situation looks like the following:</p>
 
 
-        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-2.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators-3rd-object.png" /></p>
 
         <p>Let us have a look to a third example still, and let us focus on an essencial difference between primitive-type and reference-type variables.</p>
 
@@ -1280,7 +1280,7 @@ System.out.println(axeCalculator.getValue());
 
         <p>The situation might be clear if we look at the following picture. The method <code>axeCalculator.increaseValue()</code> increases by one the <code>value</code> variable of the object pointing to the <code>axeCalculator</code> variable. Because <code>bonusCalculator</code> points to the same object, the method <code>bonusCalculator.getValue()</code> returns the same value which was increased by the method <code>axeCalculator.increaseValue()</code>.</p>
 
-        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-4.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators-val-changed.png" /></p>
 
         <p>In the following example, three reference-type variables all point to the same <code>Calculator</code> object.</p>
 
@@ -1293,7 +1293,7 @@ Calculator lennon = bonus;
         <p>In the example, we create only one <code>Calculator</code> object, but all the three <code>Calculator</code> variables point to that same one. Therefore, <code>bonus</code>, <code>ihq</code>, and <code>lennon</code> method calls all modify the same object. To tell it once again: when reference-type variables are copied, their references also duplicate. The same concept in a picture:</p>
 
 
-        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-5.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/three-calculators-1.png" /></p>
 
         <p>Let us focus again on duplication with one example.</p>
 
@@ -1307,7 +1307,7 @@ lennon = new Calculator(3);
 
         <p>The modification of the <code>lennon</code> variable contents – that is to say the change of reference – does not affect the references of either <code>bonus</code> or <code>ihq</code>. Always when we assign a value to a variable, we change the contents of only that variable's own slot. The same concept in a picture:</p>
 
-        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-6.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/three-calculators-2.png" /></p>
 
         <h4>A Reference-Type Variables and Method Parameters</h4>
 
@@ -1334,7 +1334,7 @@ addToCalculator(bonus, times);
         <p>In the example, we call the <code>addToCalculator</code> method whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference-type variable <code>bonus</code> and the value of the original-type variable <code>times</code> – which is <code>10</code> – are copied as parameters whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the <code>increaseValue()</code> method of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
 
 
-        <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/vis/viittaustyyppiset-muuttujat-laskurit-7.png" /></p>
+        <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/refs-main-and-method-world.png" /></p>
 
         <p><em>The method contains variables which are completely separated from the main program!</em></p>
 
@@ -2600,9 +2600,9 @@ Choose operation:
 
 
 <!-- added not-released to the classname for those weeks not yet released -->
-<section class="viikkoraja-not-released" id="2" >
+<section class="viikkoraja" id="2" >
   <div class="viikkoraja">Week2</div>
-  <div class="viikkoraja-mooc" id="Week 8" deadline="unlocks when 85% of week 7 done " data-first-chapter-index="38" data-first-exercise-index="116" data-first-week-index="8"  data-first-chapter-index-mooc="39" data-first-exercise-index-mooc="116" data-first-week-index-mooc="8" tekija="Arto Vihavainen, Matti Luukkainen">
+  <div class="viikkoraja-mooc" id="Week 2" deadline="unlocks when 85% of week 1 done " data-first-chapter-index="38" data-first-exercise-index="116" data-first-week-index="8"  data-first-chapter-index-mooc="39" data-first-exercise-index-mooc="116" data-first-week-index-mooc="8" tekija="Arto Vihavainen, Matti Luukkainen">
 
 
 <h2 id="object">Object</h2>
@@ -3052,10 +3052,11 @@ Arto
 
         <p><em>NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
 
+        <NEXTWEEK></NEXTWEEK>
         <div class="tehtavat" id="viikko8">
             <div class="tehtava">
 
-<NEXTWEEK></NEXTWEEK>
+
 
 <h3>Car Registration Centre</h3>
 
@@ -4799,12 +4800,12 @@ Position    Name
 
 </div>
 </div>
-
+<!--
     <p>A screencast where we create a bigger application using what we have learnt in the first two weeks:</p>
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=LFxtwce8chM" height="300" target="_blank"><img src="img/youtube.jpg"/></a>
 
-<!--
+
     <p><iframe allowfullscreen="" frameborder="0"  height="450" width="700" src="http://www.youtube.com/embed/LFxtwce8chM"></iframe></p>
 -->
 
@@ -4814,7 +4815,7 @@ Position    Name
 
 <section class="viikkoraja-not-released" id="3" >
   <div class="viikkoraja">Week3</div>
-  <div class="viikkoraja-mooc" id="Week 9" deadline="unlocks when 85% of week 8 done " data-first-chapter-index="42" data-first-exercise-index="124" data-first-week-index="9"  data-first-chapter-index-mooc="42" data-first-exercise-index-mooc="124" data-first-week-index-mooc="9" tekija="Arto Vihavainen, Matti Luukkainen">
+  <div class="viikkoraja-mooc" id="Week 3" deadline="unlocks when 85% of week 2 done " data-first-chapter-index="42" data-first-exercise-index="124" data-first-week-index="9"  data-first-chapter-index-mooc="42" data-first-exercise-index-mooc="124" data-first-week-index-mooc="9" tekija="Arto Vihavainen, Matti Luukkainen">
 
 
 <h2>Single Responsibility Principle</h2>
@@ -6939,7 +6940,7 @@ command: <font color="red">x</font>
 
 <section class="viikkoraja-not-released" id="4" >
   <div class="viikkoraja">Week4</div>
-  <div class="viikkoraja-mooc" id="Week 10" deadline="unlocks when 85% of week 9 done " data-first-chapter-index="48" data-first-exercise-index="134" data-first-week-index="10"  data-first-chapter-index-mooc="48" data-first-exercise-index-mooc="134" data-first-week-index-mooc="10" tekija="Arto Vihavainen, Matti Luukkainen">
+  <div class="viikkoraja-mooc" id="Week 4" deadline="unlocks when 85% of week 3 done " data-first-chapter-index="48" data-first-exercise-index="134" data-first-week-index="10"  data-first-chapter-index-mooc="48" data-first-exercise-index-mooc="134" data-first-week-index-mooc="10" tekija="Arto Vihavainen, Matti Luukkainen">
 <div class="tehtavat">
     <div class="tehtava">
 <h3>The Finnish Ringing Centre</h3>
@@ -8964,9 +8965,9 @@ YOU WIN
 </div>
 </section>
 
-<section class="viikkoraja-not-released" id="11" >
+<section class="viikkoraja-not-released" id="5" >
   <div class="viikkoraja">Week5</div>
-  <div class="viikkoraja-mooc" id="Week 11" deadline="unlocks when 85% of week 10 done " data-first-chapter-index="50" data-first-exercise-index="141" data-first-week-index="11"  data-first-chapter-index-mooc="50" data-first-exercise-index-mooc="141" data-first-week-index-mooc="11" tekija="Arto Vihavainen, Matti Luukkainen">
+  <div class="viikkoraja-mooc" id="Week 5" deadline="unlocks when 85% of week 4 done " data-first-chapter-index="50" data-first-exercise-index="141" data-first-week-index="11"  data-first-chapter-index-mooc="50" data-first-exercise-index-mooc="141" data-first-week-index-mooc="11" tekija="Arto Vihavainen, Matti Luukkainen">
 
 <h2 id="tiedostostoon_kirjoitus">Writing to a File</h3>
 
@@ -10538,7 +10539,7 @@ public class Main {
 
 <section class="viikkoraja-not-released" id="6" >
   <div class="viikkoraja">Week6</div>
-  <div class="viikkoraja-mooc" id="Week 12" deadline="unlocks when 85% of week 11 done " data-first-chapter-index="53" data-first-exercise-index="151" data-first-week-index="12"  data-first-chapter-index-mooc="53" data-first-exercise-index-mooc="151" data-first-week-index-mooc="12" tekija="Arto Vihavainen, Matti Luukkainen">
+  <div class="viikkoraja-mooc" id="Week 6" deadline="unlocks when 85% of week 5 done " data-first-chapter-index="53" data-first-exercise-index="151" data-first-week-index="12"  data-first-chapter-index-mooc="53" data-first-exercise-index-mooc="151" data-first-week-index-mooc="12" tekija="Arto Vihavainen, Matti Luukkainen">
 
 <h2>Some Useful Tecniques</h2>
 

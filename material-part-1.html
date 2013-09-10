@@ -22,7 +22,7 @@
           $(".heading").click(function()      {
             $(this).next(".tehtava").slideToggle(200);
            });});
-    </script>
+    </script>f
 </head>
 
 <body>
@@ -757,7 +757,7 @@ public class Greeting {
     Scanner reader = new Scanner(System.in);
 
     System.out.print("Who is greeted: ");
-    String nimi = reader.nextLine(); // Reads a line of input from the user and assigns it 
+    String name = reader.nextLine(); // Reads a line of input from the user and assigns it 
                                      //     to the variable called name
 
     System.out.print("Hi " + name);
@@ -5296,16 +5296,17 @@ public static int addThreeAndReturn(int incremented) {
 
                 <h2>Instructions on code-writing and problem solving</h2>
 
-                <p>One of the leading software developers, <em>Kent Beck</em>, has said:</p>
+                <p>Two of the leading software developers, <em>Martin Fowler</em> and <em>Kent Beck</em> have said in the book <em>Refactoring: Improving the Design of Existing Code</em> that:</p>
 
                 <ul>
-                    <li><em>"Any fool can write code that a computer can understand. Good programmers write code
+                    <li>Fowler: <em>"Any fool can write code that a computer can understand. Good programmers write code
                     that humans can understand."</em></li>
 
-                    <li><em>"I'm not a great programmer, I'm just good programmer with great
+                    <li>Beck: <em>"I'm not a great programmer, I'm just good a programmer with great
                     habits."</em></li>
                 </ul>
 
+                <p>[Update: previously both quotes were credited to Kent Beck. Our thanks go to Esko Luontola <a href="http://sourceforge.net/p/mooc-issues/tickets/451/">for pointing out this mistake</a>]:</a>
                 <p>We are now taking the first steps towards becomming good programmers.</p>
 
                 <h3>Well indented and "breathing" code</h3>
@@ -9420,7 +9421,7 @@ Juhana, born 17.9.1985
             wire'. In other words a person has a reference to the objects stored in its object variables. The
             concept as a picture:</p>
 
-            <p><img src="img/person.PNG"></p>
+            <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/person.PNG"></p>
 
             <p>The main program now has two person programs at the ends of wires. The persons have a name and a
             birthdate. Because both are objects, both are at the ends of wires the person holds.</p>
@@ -12604,7 +12605,7 @@ public class Week {
     private Day[] days;
 
     public Week(){
-        days = new int[7];
+        days = new Day[7];
         days[0] = new Day("Monday");
         days[1] = new Day("Tuesday");
         // ...

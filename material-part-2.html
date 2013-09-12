@@ -836,7 +836,7 @@ printWithSmileys("87.");
 
   System.out.println(word);
 
-  Change Change2 = new Change('k', 'x');
+  Change Change2 = new Change('r', 'x');
   word = Change2.change(word);
 
   System.out.println(word);
@@ -845,8 +845,8 @@ printWithSmileys("87.");
 <p>The example above would print:</p>
 
 <pre>
-  porkkbnb
-  porxxbnb
+  cbrrot
+  cbxxot
 </pre>
 
 <p><strong>Tip:</strong> you can handle replacing characters in two ways, either with the help of a method in the class <code>String</code> (look for it yourself!) or by going through the character string character by character while forming the changed character string.</p>
@@ -883,8 +883,8 @@ printWithSmileys("87.");
 
 <pre class="sh_java">
   Changer scandiesAway = new Changer();
-  scandiesPois.addChange(new Change('ä', 'a'));
-  scandiesPois.addChange(new Change('ö', 'o'));
+  scandiesAway.addChange(new Change('ä', 'a'));
+  scandiesAway.addChange(new Change('ö', 'o'));
   System.out.println(scandiesAway.change("ääliö älä lyö, ööliä läikkyy"));
 </pre>
 

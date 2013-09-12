@@ -6419,9 +6419,9 @@ Characters: 74
 
   <p><em>Attention! If you read the file various different times in your program, you notice that your code contains a lot of copy-paste, so far. It would be useful to think whether it would be possible to read the file in an different place, maybe inside the constructor or as a method, which the constructor calls. In such case, the methods could use a list which was read before and then create a new list which suits their search criteria. In week 6, we will come back again with an ortodox way to eliminate copy-paste.</em></p>
 
-  <h4>Palyndroms</h4>
+  <h4>Palindromes</h4>
 
-  <p>Create the method <code>public List&lt;String&gt; palyndroms()</code>, which returns all the palyndrom words of the file. Such words are, for instance, ala and enne.</p>
+  <p>Create the method <code>public List&lt;String&gt; palindromes()</code>, which returns all the palindrome words of the file. Such words are, for instance, ala and enne.</p>
 
   <h4 class="req">All Vowels</h4>
 
@@ -11664,7 +11664,7 @@ Arto recommendation: The Bridges of Madison County
 
 <h3>Flexible Filtering Critiria</h3>
 
-<p>In some exercises (see Library in Introduction to Programming, and Word Inspection in Advanced Programming), we have run into such situations where we had to filter out list objects according to particular criteria; for instance, in Word Inspection the methods <code>wordsContainingZ, wordsEndingInL, palyndroms, wordsWhichContainAllVowels</code> all to the same same thing: they go through the file content one word after the other, and they make sure that the specific filtering criteria are satisfied, in which case they store the word. Because the method criteria are different, we haven't been able to get rid of this repetition, and the code of all those methods made wide use of copypaste.</p>
+<p>In some exercises (see Library in Introduction to Programming, and Word Inspection in Advanced Programming), we have run into such situations where we had to filter out list objects according to particular criteria; for instance, in Word Inspection the methods <code>wordsContainingZ, wordsEndingInL, palindromes, wordsWhichContainAllVowels</code> all to the same same thing: they go through the file content one word after the other, and they make sure that the specific filtering criteria are satisfied, in which case they store the word. Because the method criteria are different, we haven't been able to get rid of this repetition, and the code of all those methods made wide use of copypaste.</p>
 
 <p>With this exercise, we create a program to filter the lines of the books found on the <a href="">Project Guttenberg</a> pages. In the following example we analyse Dostojevski's Crime and Punishment. We want to have various different filtering criteria, and that it would be possible to filter according to different criteria combinations. The program structure should also allow for adding new criteria later on.</p>
 

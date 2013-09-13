@@ -6674,7 +6674,7 @@ null
   <p>
     <ul>
       <li><code>public void add(String characterString)</code></li> stores a characterString if it's not a duplicate.<br/>
-      <li><code>public int getAmountOfDetectedDuplicates()</code></li> returns the amount of detected duplicates.<br/>
+      <li><code>public int getNumberOfDetectedDuplicates()</code></li> returns the number of detected duplicates.<br/>
       <li><code>public Set&lt;String&gt; getUniqueCharacterStrings()</code></li> returns an object which implements the interface <code>Set&lt;String&gt;</code>. Object should have all unique characterStrings (no duplicates!). If there are no unique characterStrings, method returns an empty set.<br/>
       <li><code>public void empty()</code></li> removes stored characterStrings and resets the amount of detected duplicates.<br/>
     </ul>
@@ -6689,7 +6689,7 @@ import java.util.Set;
 
 public interface DuplicateRemover {
     void add(String characterString);
-    int getAmountOfDetectedDuplicates();
+    int getNumberOfDetectedDuplicates();
     Set&lt;String&gt; getUniqueCharacterStrings();
     void empty();
 }
@@ -6705,14 +6705,14 @@ public interface DuplicateRemover {
         remover.add("first");
 
         System.out.println("Current number of duplicates: " +
-            remover.getAmountOfDetectedDuplicates());
+            remover.getNumberOfDetectedDuplicates());
 
         remover.add("last");
         remover.add("last");
         remover.add("new");
 
         System.out.println("Current number of duplicates: " +
-            remover.getAmountOfDetectedDuplicates());
+            remover.getNumberOfDetectedDuplicates());
 
         System.out.println("Unique characterStrings: " +
             remover.getUniqueCharacterStrings());
@@ -6720,7 +6720,7 @@ public interface DuplicateRemover {
         remover.empty();
 
         System.out.println("Current number of duplicates: " +
-            remover.getAmountOfDetectedDuplicates());
+            remover.getNumberOfDetectedDuplicates());
 
         System.out.println("Unique characterStrings: " +
             remover.getUniqueCharacterStrings());

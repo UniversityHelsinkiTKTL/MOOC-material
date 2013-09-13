@@ -1642,17 +1642,17 @@ public class Main {
         Thing mobile = new Thing("Nokia 3210", 1);
         Thing brick = new Thing("Brick", 4);
 
-        Suitcase case = new Suitcase(5);
-        System.out.println(case);
+        Suitcase suitcase = new Suitcase(5);
+        System.out.println(suitcase);
 
         suitcase.addThing(book);
-        System.out.println(case);
+        System.out.println(suitcase);
 
         suitcase.addThing(mobile);
-        System.out.println(case);
+        System.out.println(suitcase);
 
         suitcase.addThing(brick);
-        System.out.println(case);
+        System.out.println(suitcase);
     }
 }
 </pre>
@@ -1697,7 +1697,7 @@ public class Main {
         Thing mobile = new Thing("Nokia 3210", 1);
         Thing brick = new Thing("Brick", 4);
 
-        Suitcase case = new Suitcase(10);
+        Suitcase suitcase = new Suitcase(10);
         suitcase.addThing(book);
         suitcase.addThing(mobile);
         suitcase.addThing(brick);
@@ -1757,7 +1757,7 @@ The heaviest thing: Brick (4 kg)
 
   <ul>
     <li> a constructor which is given the maximum weight limit</li>
-    <li> <code>public void addSuitcase(Suitcase case)</code>, which adds the suitcase in parameter to the container</li>
+    <li> <code>public void addSuitcase(Suitcase suitcase)</code>, which adds the suitcase in parameter to the container</li>
     <li> <code>public String toString()</code> which returns a string in the form "x suitcases (y kg)"</li>
   </ul>
 

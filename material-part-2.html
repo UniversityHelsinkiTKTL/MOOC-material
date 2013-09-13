@@ -1595,8 +1595,8 @@ public class Main {
         Thing book = new Thing("Happiness in Three Steps", 2);
         Thing mobile = new Thing("Nokia 3210", 1);
 
-        System.out.println("Book name: " + kirja.getName());
-        System.out.println("Book weight: " + kirja.getWeight());
+        System.out.println("Book name: " + book.getName());
+        System.out.println("Book weight: " + book.getWeight());
 
         System.out.println("Book: " + book);
         System.out.println("Mobile: " + mobile);
@@ -1645,13 +1645,13 @@ public class Main {
         Suitcase case = new Suitcase(5);
         System.out.println(case);
 
-        matkalaukku.lisaaTavara(book);
+        suitcase.addThing(book);
         System.out.println(case);
 
-        matkalaukku.lisaaTavara(mobile);
+        suitcase.addThing(mobile);
         System.out.println(case);
 
-        matkalaukku.lisaaTavara(brick);
+        suitcase.addThing(brick);
         System.out.println(case);
     }
 }
@@ -1698,9 +1698,9 @@ public class Main {
         Thing brick = new Thing("Brick", 4);
 
         Suitcase case = new Suitcase(10);
-        case.addThing(book);
-        case.addThing(mobile);
-        case.addThing(brick);
+        suitcase.addThing(book);
+        suitcase.addThing(mobile);
+        suitcase.addThing(brick);
 
         System.out.println("Your suitcase contains the following things:");
         case.printThings();
@@ -1725,7 +1725,7 @@ Total weight: 7 kg
 
   <p>Add now the method <code>heaviestThing</code> to your class <code>Suitcase</code>, returning the thing which weighs the most. If there are more than one thing with the same weight, the method can return whatever of them. The method has to return and object reference. If the suitcase is empty, the method returns <em>null</em>.</p>
 
-  <p>Seuraavassa on luokan käyttöesimerkki:</p>
+  <p>Here is an usage example of the class:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -1734,12 +1734,12 @@ public class Main {
         Thing mobile = new Thing("Nokia 3210", 1);
         Thing brick = new Thing("Brick", 4);
 
-        Suitcase case = new Suitcase(10);
-        case.addThing(book);
-        case.addThing(mobile);
-        case.addThing(brick);
+        Suitcase suitcase = new Suitcase(10);
+        suitcase.addThing(book);
+        suitcase.addThing(mobile);
+        suitcase.addThing(brick);
 
-        Thing heaviest = case.heaviestThing();
+        Thing heaviest = suitcase.heaviestThing();
         System.out.println("The heaviest thing: " + heaviest);
     }
 }
@@ -1844,7 +1844,7 @@ Brick (4 kg)
 <pre class="sh_java">
 public class Main {
     public static void main(String[] Container) {
-        Container container = new Lastiruuma(1000);
+        Container container = new Container(1000);
         addSuitcasesFullOfBricks(container);
         System.out.println(container);
     }

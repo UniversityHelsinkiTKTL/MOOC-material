@@ -291,7 +291,7 @@ Hip!
         <p>Metodia hyödyntäessä aiemmin kauhistusta aihettanut esimerkkimme näyttää seuraavalta.</p>
 
 <pre class="sh_java">
-        Scanner lukija = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in);
 
         System.out.print("Syötä characterString: ");
         String characterString = reader.nextLine();
@@ -2033,8 +2033,8 @@ Contents: ...
 
 <pre class="sh_java">
 String text = "Pride and Prejudice ";
-text = text.toLowerCase(); // the text is now "Pride and Prejudice "
-text = text.trim() // the text is now "Pride and Prejudice"
+text = text.toLowerCase(); // the text is now "pride and prejudice "
+text = text.trim() // the text is now "pride and prejudice"
 </pre>
 
     <p>Let us create the the class <code>Library</code>, which capsulates a HashMap containing books, and allows for book search regardless of its spelling. Let us add the methods <code>addBook(Book book)</code> and <code>removeBook(String bookName)</code> to our <code>Library</code> class. It's already clear that we would need various different methods to clean a string. Therefore, we can create a separate method called <code>private String stringCleaner(String string)</code>.</p>
@@ -2047,10 +2047,10 @@ public class Library {
         this.collection = new HashMap&lt;String, Book&gt;();
     }
 
-    public void lisaaBook(Book book) {
+    public void addBook(Book book) {
         String name = stringCleaner(book.getName());
 
-        if(this.collection.containsKey(nimi)) {
+        if(this.collection.containsKey(name)) {
             System.out.println("The book is already in the library!");
         } else {
             collection.put(name, book);
@@ -2214,7 +2214,7 @@ public class TwitchRegister {
 <div class="tehtava">
   <h3>Promissory Note</h3>
 
-  <p>Create the class <code>Promissory Note</code> with the following functionlity:</p>
+  <p>Create the class <code>PromissoryNote</code> with the following functionality:</p>
 
   <ul>
     <li> the constructor <code>public PromissoryNote()</code> creates a new promissory note</li>
@@ -2225,9 +2225,9 @@ public class TwitchRegister {
 <p>The class can be used in the following way:</p>
 
 <pre class="sh_java">
-  PromissoryNote mattiNote = new PromissoryNote();
-  mattiNote.setLoan("Arto", 51.5);
-  mattiNote.setLoan("Mikael", 30);
+  PromissoryNote mattisNote = new PromissoryNote();
+  mattisNote.setLoan("Arto", 51.5);
+  mattisNote.setLoan("Mikael", 30);
 
   System.out.println(setLoan.howMuchIsTheDebt("Arto"));
   System.out.println(setLoan.howMuchIsTheDebt("Joel"));
@@ -2246,10 +2246,10 @@ public class TwitchRegister {
 
 <pre class="sh_java">
   PromissoryNote mattisNote = new PromissoryNote();
-  mattiNote.setLoan("Arto", 51.5);
-  mattiNote.setLoan("Arto", 10.5);
+  mattisNote.setLoan("Arto", 51.5);
+  mattisNote.setLoan("Arto", 10.5);
 
-  System.out.println(mattiNote.howMuchIsTheDebt("Arto"));
+  System.out.println(mattisNote.howMuchIsTheDebt("Arto"));
 </pre>
 
 <pre>
@@ -2299,7 +2299,7 @@ null
     dictionary.add("banaani", "banana");
     System.out.println(dictionary.amountOfWords());
 
-    sanakirja.add("cembalo", "harpsichord");
+    dictionary.add("cembalo", "harpsichord");
     System.out.println(dictionary.amountOfWords());
 </pre>
 
@@ -2395,7 +2395,7 @@ Cheers!
     Scanner reader = new Scanner(System.in);
     Dictionary dict = new Dictionary();
 
-    TextUserInterface ui = new TextUserInterface(lukija, dict);
+    TextUserInterface ui = new TextUserInterface(reader, dict);
     ui.start();
 </pre>
 
@@ -5763,7 +5763,7 @@ lisaaPienia(List esineet, Muuttolaatikko laatikko):
     <p>The <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html#parseInt(java.lang.String)" target="_blank">parseInt</a></code> method of class <code>Integer</code> which turns a string into a number can throw a <code>NumberFormatException</code> if its string parameter cannot be turned into a number. Now we implement a program which tries to turn into a number a user input string.</p>
 
 <pre class="sh_java">
-    Scanner lukija = new Scanner(System.in);
+    Scanner reader = new Scanner(System.in);
     System.out.print("Write a number: ");
 
     int num = Integer.parseInt(reader.nextLine());
@@ -6651,7 +6651,7 @@ public interface MultipleEntryDictionary {
     dict.add("pii", "pi");
 
     System.out.println(dict.translate("kuusi"));
-    sanakirja.remove("pii");
+    dictionary.remove("pii");
     System.out.println(dict.translate("pii"));
 </pre>
 

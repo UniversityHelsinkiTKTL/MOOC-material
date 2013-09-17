@@ -7847,7 +7847,7 @@ public class Order {
      if a part of that amount fits but not the whole of it, the container is filled up
      and the left over is thrown away.</li>
 
-<li><b>public double getFromTheContainer(double amount)</b><br/>
+<li><b>public double takeFromTheContainer(double amount)</b><br/>
     We take the specified amount form the container, the method returns what we <b>receive</b>.
     If the specified amount is negative, nothing happens and zero is returned.
     If we ask for more than what there is in the container, the method returns all the contents.</li>
@@ -7880,7 +7880,7 @@ public class Order {
 <pre class="sh_java">
         ProductContainer juice = new ProductContainer("Juice", 1000.0);
         juice.addToTheContainer(1000.0);
-        juice.getFromTheContainer(11.3);
+        juice.takeFromTheContainer(11.3);
         System.out.println(juice.getName()); // Juice
         System.out.println(juice);           // volume = 988.7, space 11.3
 </pre>
@@ -7911,7 +7911,7 @@ volume = 988.7, free space 11.3
 <pre class="sh_java">
         ProductContainer juice = new ProductContainer("Juice", 1000.0);
         juice.addToTheContainer(1000.0);
-        juice.getFromTheContainer(11.3);
+        juice.takeFromTheContainer(11.3);
         System.out.println(juice.getName()); // Juice
         juice.addToTheContainer(1.0);
         System.out.println(juice);           // Juice: volume = 989.7, space 10.299999999999955
@@ -7984,9 +7984,9 @@ Juice: volume = 989.7, free space 10.299999999999955
 
 <ul>
 
-<li><b>public ProductContainerRecorder(String productName, double capacity, double originalVolume)</b>
+<li><b>public ProductContainerRecorder(String productName, double capacity, double initialVolume)</b>
      cretes a product container. The product name, capacity, and original volume are given as parameter.
-     <i>Record the orginigal volume both as the stored product orginial volume and as the first value of the container history.</i>
+     <i>Record the original volume both as the stored product original volume and as the first value of the container history.</i>
 
 <li><b>public String history()</b> returns the container history in the following form:
        <tt>[0.0, 119.2, 21.2]</tt>.  <i>Use the String printout form as it is.</i>
@@ -8003,7 +8003,7 @@ Example:
 <pre class="sh_java">
 // the well known way:
 ProductContainerRecorder juice = new ProductContainerRecorder("Juice", 1000.0, 1000.0);
-juice.getFromTheContainer(11.3);
+juice.takeFromTheContainer(11.3);
 System.out.println(juice.getName()); // Juice
 juice.addToTheContainer(1.0);
 System.out.println(juice);           // Juice: volume = 989.7, free space 10.3
@@ -8050,7 +8050,7 @@ Use example:
 <pre class="sh_java">
 // the well known way:
 ProductContainerRecorder juice = new ProductContainerRecorder("Juice", 1000.0, 1000.0);
-juice.getFromTheContainer(11.3);
+juice.takeFromTheContainer(11.3);
 System.out.println(juice.getName()); // Juice
 juice.addToTheContainer(1.0);
 System.out.println(juice);           // Juice: volume = 989.7, free space 10.3
@@ -8088,7 +8088,7 @@ Use example:
 </p>
 <pre class="sh_java">
 ProductContainerRecorder juice = new ProductContainerRecorder("Juice", 1000.0, 1000.0);
-juice.getFromTheContainer(11.3);
+juice.takeFromTheContainer(11.3);
 juice.addToTheContainer(1.0);
 //System.out.println(juice.history()); // [1000.0, 988.7, 989.7]
 
@@ -8101,9 +8101,11 @@ The method <i>printAnalysis</i> prints:
 <pre>
 Product: Juice
 History: [1000.0, 988.7, 989.7]
-Greatest Product Amount: 1000.0
-Smallest Product Amount: 988.7
+Greatest product amount: 1000.0
+Smallest product amount: 988.7
 Average: 992.8
+Greatest change: 11.299999999999955
+Variance: 39.129999999999676
 </pre>
 <p>
 

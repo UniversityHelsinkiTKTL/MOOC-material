@@ -8313,7 +8313,7 @@ Java Result: 1
             System.out.println(cow);
 
             System.out.println("Milking...");
-            lypsyrobotti.lypsa(cow);
+            milkingRobot.milk(cow);
             System.out.println("Bulk tank: " + tank);
             System.out.println("");
         }
@@ -8342,8 +8342,8 @@ Bulk tank: 14.0/2000.0
 </p>
 
   <ul>
-    <li><strong>public Cowhouse(BunkTank tank)</strong></li>
-    <li><strong>public BunkTank getBunkTank()</strong> returns the cowhouse bunk tank</li>
+    <li><strong>public Cowhouse(BulkTank tank)</strong></li>
+    <li><strong>public BulkTank getBulkTank()</strong> returns the cowhouse bulk tank</li>
     <li><strong>public void installMilkingRobot(MilkingRobot milkingRobot)</strong> installs a milking robot and connects it to the cowhouse bulk tank</li>
     <li><strong>public void takeCareOf(Cow cow)</strong> milks the parameter cow with the help of the milking robot, the method throws an <code>IllegalStateException</code> if the milking robot hasn't been installed</li>
     <li><strong>public void takeCareOf(Collection&lt;Cow&gt; cows)</strong> milks the parameter cows with the help of the milking robot, the method throws an <code>IllegalStateException</code> if the milking robot hasn't been installed</li>
@@ -8356,7 +8356,7 @@ Bulk tank: 14.0/2000.0
 </p>
 
 <pre class="sh_java">
-        Cowhouse cowhouse = new CowHouse(new BunkTank());
+        Cowhouse cowhouse = new CowHouse(new BulkTank());
         System.out.println("Cowhouse: " + cowhouse);
 
         MilkingRobot robot = new MilkingRobot();
@@ -8410,7 +8410,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-Cowhouse bunk tank: 0.0/2000.0
+Cowhouse bulk tank: 0.0/2000.0
 No cows.
 Esko is a tough guy!
 </pre>
@@ -8431,7 +8431,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-Cowhouse bunk tank: 0.0/2000.0
+Cowhouse bulk tank: 0.0/2000.0
 Animals:
         Naatti 0.0/19.0
         Hilke 0.0/30.0
@@ -8455,7 +8455,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-Cowhouse bunk tank: 0.0/2000.0
+Cowhouse bulk tank: 0.0/2000.0
 Animals:
         Heluna 2.0/17.0
         Rima 3.0/32.0
@@ -8486,7 +8486,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-Cowhouse bunk tank: 18.0/2000.0
+Cowhouse bulk tank: 18.0/2000.0
 Animals:
         Hilke 0.0/30.0
         Sylkki 0.0/35.0

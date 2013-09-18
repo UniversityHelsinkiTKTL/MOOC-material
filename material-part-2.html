@@ -8640,7 +8640,7 @@ public abstract class Box {
         }
     }
 
-    public abstract boolean isItContained(Thing thing);
+    public abstract boolean isInTheBox(Thing thing);
 }
 </pre>
 
@@ -8678,8 +8678,8 @@ false
         box.add(new Thing("Saludo", 5));
         box.add(new Thing("Pirkka", 5));
 
-        System.out.println(box.isItContained(new Thing("Saludo")));
-        System.out.println(box.isItContained(new Thing("Pirkka")));
+        System.out.println(box.isInTheBox(new Thing("Saludo")));
+        System.out.println(box.isInTheBox(new Thing("Pirkka")));
 </pre>
 
 <pre>
@@ -8688,15 +8688,15 @@ false
 </pre>
 
 
-        <p>Next, implement the class <code>BlackHoleBox</code> in the package <code>boxes</code>; the class inherits <code>Box</code>. BlackHoleBox has the constructor <code>public BlackHoleBox()</code>; any thing can be added to a black-hole box, but none will be found when you'll look for them. In other words, adding things must always woek, but the method <code>isItContained</code> has to return always false.</p>
+        <p>Next, implement the class <code>BlackHoleBox</code> in the package <code>boxes</code>; the class inherits <code>Box</code>. BlackHoleBox has the constructor <code>public BlackHoleBox()</code>; any thing can be added to a black-hole box, but none will be found when you'll look for them. In other words, adding things must always woek, but the method <code>isInTheBox</code> has to return always false.</p>
 
 <pre class="sh_java">
         BlackHoleBox laatikko = new BlackHoleBox();
         box.lisaa(new Thing("Saludo", 5));
         box.lisaa(new Thing("Pirkka", 5));
 
-        System.out.println(box.isItContained(new Thing("Saludo")));
-        System.out.println(box.isItContained(new Thing("Pirkka")));
+        System.out.println(box.isInTheBox(new Thing("Saludo")));
+        System.out.println(box.isInTheBox(new Thing("Pirkka")));
 </pre>
 
 <pre>

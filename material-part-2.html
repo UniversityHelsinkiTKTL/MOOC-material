@@ -8658,9 +8658,9 @@ public abstract class Box {
         coffeeBox.add(new Thing("Pirkka", 5));
         coffeeBox.add(new Thing("Kopi Luwak", 5));
 
-        System.out.println(coffeeBox.onkoLaatikossa(new Thing("Saludo")));
-        System.out.println(coffeeBox.onkoLaatikossa(new Thing("Pirkka")));
-        System.out.println(coffeeBox.onkoLaatikossa(new Thing("Kopi Luwak")));
+        System.out.println(coffeeBox.isInTheBox(new Thing("Saludo")));
+        System.out.println(coffeeBox.isInTheBox(new Thing("Pirkka")));
+        System.out.println(coffeeBox.isInTheBox(new Thing("Kopi Luwak")));
 </pre>
 
 <pre>
@@ -8691,9 +8691,9 @@ false
         <p>Next, implement the class <code>BlackHoleBox</code> in the package <code>boxes</code>; the class inherits <code>Box</code>. BlackHoleBox has the constructor <code>public BlackHoleBox()</code>; any thing can be added to a black-hole box, but none will be found when you'll look for them. In other words, adding things must always woek, but the method <code>isInTheBox</code> has to return always false.</p>
 
 <pre class="sh_java">
-        BlackHoleBox laatikko = new BlackHoleBox();
-        box.lisaa(new Thing("Saludo", 5));
-        box.lisaa(new Thing("Pirkka", 5));
+        BlackHoleBox box = new BlackHoleBox();
+        box.add(new Thing("Saludo", 5));
+        box.add(new Thing("Pirkka", 5));
 
         System.out.println(box.isInTheBox(new Thing("Saludo")));
         System.out.println(box.isInTheBox(new Thing("Pirkka")));

@@ -2636,7 +2636,7 @@ System.out.println(objectBook);
 
         <p>if we take an object of <code>Book</code> class and use it as the parameter of the method <code>System.out.println()</code>, our program does not print an error message. Our program does not crash, and instead of reading an error message, we notice an interesting print output. The print output contains the name of the lass, <code>Book</code>, plus an indefinite String which follows a @ character. Notice that when we call <code>System.out.println(objectBook)</code> Java calls <code>System.out.println(objectBook.toString())</code>, in fact, but this does not cause an error.</p>
 
-        <p>The explenation is related to the way Java classes are built. Each Java class automatically <em>inherits</em> the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code> class, which contains a set of methods that are useful to each Java class. Heritage means that our class has access to the features and functions defined in the inherited class. Among the others, the class <code>Object</code> contains the method <code>toString</code>, which is inherited by the classes we create.</p>
+        <p>The explanation is related to the way Java classes are built. Each Java class automatically <em>inherits</em> the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code> class, which contains a set of methods that are useful to each Java class. Heritage means that our class has access to the features and functions defined in the inherited class. Among the others, the class <code>Object</code> contains the method <code>toString</code>, which is inherited by the classes we create.</p>
 
         <p>The <code>toString</code> method inherited from the object class is not usually the one we'd want. That's why we will want to <em>replace</em> it with one we make personally. Let us add the method <code>public String toString()</code> to our <code>Book</code> class. This method will replace the <code>toString</code> method inherited from the <code>Object</code> class.</p>
 
@@ -2885,9 +2885,9 @@ The books are the same
         <p>Various different Java made-up methods make use of the <code>equals</code> method to implement their search functionality. For instance, the <code>contains</code> mehod of class <code>ArrayList</code> compares objects through the <code>equals</code> method. Let us continue to use the <code>Book</code> class we defied for our examples. If our objects do not implement the <code>equals</code> method, we can't use the <code>contains</code> method, for instance. Try out the code below in two different <code>book</code> classes. The first class implements the <code>equals</code> method, the other does not.</p>
 
 <pre class="sh_java">
-ArrayList&lt;Book&gt; kirjat = new ArrayList&lt;Book&gt;();
+ArrayList&lt;Book&gt; books = new ArrayList&lt;Book&gt;();
 Book objectBook = new Book("Objectbook", 2000);
-books.add(olioBook);
+books.add(objectBook);
 
 if (books.contains(objectBook)) {
     System.out.println("The object book was found.");

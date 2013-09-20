@@ -4116,18 +4116,18 @@ milk: 5
 
   <p>Finally, we can implement our shopping basket class!</p>
 
-  <p>The shopping basket stores its products as <em>Purchase objects</em>. The shopping basket has to have an object variable whose type is either <code>Map&lt;String, Ostos&gt;</code> or <code>List&lt;Ostos&gt;</code>. Do not create any other object variable for your shopping basket in addition to the Map or List needed to store purchases.</p>
+  <p>The shopping basket stores its products as <em>Purchase objects</em>. The shopping basket has to have an object variable whose type is either <code>Map&lt;String, Purchase&gt;</code> or <code>List&lt;Purchase&gt;</code>. Do not create any other object variable for your shopping basket in addition to the Map or List needed to store purchases.</p>
 
-  <p>Attention: if you store a Purchase object in a Map helping variable, it will be useful to use the Map method values() i this and in the following exercise; with it, it's easy to go through all the stored Purchase objects.</p>
+  <p>Attention: if you store a Purchase object in a Map helping variable, it will be useful to use the Map method values() in this and in the following exercise; with it, it's easy to go through all the stored Purchase objects.</p>
 
-  <p>Let's create a contructor without parameter for our shopping basket, as well as the following methods:</p>
+  <p>Let's create a constructor without parameter for our shopping basket, as well as the following methods:</p>
 
   <ul>
     <li><code>public void add(String product, int price)</code> adds a purchase to the shopping basket; the purchase is defined by the parameter product, and its price is the second parameter.</li>
     <li><code>public int price()</code> returns the shopping basket total price</li>
 </ul>
 
-<p>Esimerkki ostoksen käytöstä</p>
+<p>Example code of using basket</p>
 
 <pre class="sh_java">
         ShoppingBasket basket = new ShoppingBasket();
@@ -4135,7 +4135,7 @@ milk: 5
         basket.add("buttermilk", 2);
         basket.add("cheese", 5);
         System.out.println("basket price: " + basket.price());
-        kori.add("computer", 899);
+        basket.add("computer", 899);
         System.out.println("basket price: " + basket.price());
 </pre>
 
@@ -7317,7 +7317,7 @@ public class Motor extends Component {
 
         <p>The class definition <code>public class Motor extends Component</code> tells us that the class <code>Motor</code> inherits the functionality of <code>Component</code>. In the class <code>Motor</code>, we define the objet variable <code>motorType</code>.</p>
 
-        <p>The Motor class contructor is interesting. In the first line of the contructor we notice the keyword <code>super</code>, which is used to call the superclass constructor. The call <code>super(id,producer,description)</code> class the constructor <code>public Component(String id, String producer, String description)</code> which is defined in the class <code>Component</code>; in this way the superclass object variables are assigned a value. After doing this, we assign a value to the object variable <code>motorType</code>.</p>
+        <p>The Motor class constructor is interesting. In the first line of the constructor we notice the keyword <code>super</code>, which is used to call the superclass constructor. The call <code>super(id,producer,description)</code> class the constructor <code>public Component(String id, String producer, String description)</code> which is defined in the class <code>Component</code>; in this way the superclass object variables are assigned a value. After doing this, we assign a value to the object variable <code>motorType</code>.</p>
 
         <p>When the class <code>Motor</code> inherits the class <code>Component</code>, in receives all the methods provides by <code>Component</code>. It is possible to create an instance of the class <code>Motor</code> as it is for any other class.</p>
 
@@ -7340,7 +7340,7 @@ volkswagen
 
         <h3>Superclass</h3>
 
-        <p>The superclass constructor is defined by the <code>super</code> keyword. In fact, the call <code>super</code> is similar to the <code>this</code> contructor call. The call is given the values of the type required by the super class constructor parameter.</p>
+        <p>The superclass constructor is defined by the <code>super</code> keyword. In fact, the call <code>super</code> is similar to the <code>this</code> constructor call. The call is given the values of the type required by the super class constructor parameter.</p>
 
         <p>When we call the constructor, the variables defined in the super class are initialized. In fact, with constructor call happens the same thing as in normal constructor calls. Unless the superclass has got a constructor without parameter, in the subclass constructor call there must always be a call for its superclass constructor.</p>
 
@@ -9913,7 +9913,7 @@ public class DrawingBoard extends JPanel {
 }
 </pre>
 
-<p>The drawing board above does not contain concrete drawing functionality. In the contructor, we can define the colour of our drawing board to be white by calling its superclass' method <code>setBackground</code>. The method <code>setBackGround</code> receives an instance of the class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Color.html" target="_blank">Color</a></code> as parameter. The class <code>Color</code> contains the most common colours as class variables; for instance, you get the white colour using the class variable <code>Color.WHITE</code>.</p>
+<p>The drawing board above does not contain concrete drawing functionality. In the constructor, we can define the colour of our drawing board to be white by calling its superclass' method <code>setBackground</code>. The method <code>setBackGround</code> receives an instance of the class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Color.html" target="_blank">Color</a></code> as parameter. The class <code>Color</code> contains the most common colours as class variables; for instance, you get the white colour using the class variable <code>Color.WHITE</code>.</p>
 
 <p>The overridden <code>paintComponent</code> method calls the superclass' <code>paintComponent</code> method, and it does not do anything else. Let's add the drawing board to the <code>createComponents</code> method of class <code>UserInterface</code>. We use the user interface which was defined at the beginning of the section <a href="#58">58. User Interfaces</a>.</p>
 
@@ -11202,7 +11202,7 @@ Pekka
 
 <h4>Enumerated Type Constructor Parameters</h4>
 
-<p>Enumerated types can contain object variables. Object variable values have to be set up in the contructor of the class defined by enumerated type. Enum-type classes cannot have <code>public</code> constructors.</p>
+<p>Enumerated types can contain object variables. Object variable values have to be set up in the constructor of the class defined by enumerated type. Enum-type classes cannot have <code>public</code> constructors.</p>
 
 <pre class="sh_java">
 public enum Colour {

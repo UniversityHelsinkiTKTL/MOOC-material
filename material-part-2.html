@@ -3972,7 +3972,7 @@ for(String value: translations.values()) {
   <p>Create the class Storehouse with the following methods:</p>
 
   <ul>
-    <li><code>public void addProduct(String product, int price, int stocks)</code>, adding to the storehouse a product whose price and number of stocks are the parameter values</li>
+    <li><code>public void addProduct(String product, int price, int stock)</code>, adding to the storehouse a product whose price and number of stocks are the parameter values</li>
     <li><code>public int price(String product)</code> returns the price of the parameter product; if the product is not available in the storehouse, the method returns -99</li>
   </ul>
 
@@ -4006,28 +4006,28 @@ sugar: -99
   <p>Store product stocks in a similar <code>Map&lt;String, Integer&gt;</code> variable as the one you used for their prices. Fill the Storehouse with the following methods:</p>
 
   <ul>
-    <li><code>public int stock(String product)</code> returns the number of stocks of the parameter product.</li>
-    <li><code>public boolean take(String product)</code> decreases the number of stocks of the parameter product by one, and it returns <em>true</em> if the object was available in the storehouse. If the product was not in the storehouse, the method returns <em>false</em>, the product stocks cannot go below zero.</li>
+    <li><code>public int stock(String product)</code> returns the stock of the parameter product.</li>
+    <li><code>public boolean take(String product)</code> decreases the stock of the parameter product by one, and it returns <em>true</em> if the object was available in the storehouse. If the product was not in the storehouse, the method returns <em>false</em>, the product stock cannot go below zero.</li>
   </ul>
 
 
-  <p>An example of how to use the storehose now:</p>
+  <p>An example of how to use the storehouse now:</p>
 
 <pre class="sh_java">
         Storehouse store = new Storehouse();
         store.addProduct("coffee", 5, 1);
 
         System.out.println("stocks:");
-        System.out.println("coffee:  " + store.stocks("kahvi"));
-        System.out.println("sokeri: " + store.stocks("sokeri"));
+        System.out.println("coffee:  " + store.stock("coffee"));
+        System.out.println("sugar: " + store.stock("sugar"));
 
         System.out.println("we take a coffee " + store.take("coffee"));
         System.out.println("we take a coffee " + store.take("coffee"));
         System.out.println("we take sugar " + store.take("sugar"));
 
         System.out.println("stocks:");
-        System.out.println("coffee:  " + store.saldo("coffee"));
-        System.out.println("sugar: " + store.saldo("sugar"));
+        System.out.println("coffee:  " + store.stock("coffee"));
+        System.out.println("sugar: " + store.stock("sugar"));
 </pre>
 
 <p>Prints:</p>

@@ -281,19 +281,19 @@ Hip!
 
 <pre class="sh_java">
         public static void printStars(int times) {
-            for (int i = 0; i &lt; kertaa; i++) {
+            for (int i = 0; i &lt; times; i++) {
                 System.out.print("*");
             }
             System.out.println();
         }
 </pre>
-        <!-- TODO: tranaslate -->
-        <p>Metodia hyödyntäessä aiemmin kauhistusta aihettanut esimerkkimme näyttää seuraavalta.</p>
+
+        <p>When making use of a method, our previous (and hideous) example now looks like the following.</p>
 
 <pre class="sh_java">
         Scanner reader = new Scanner(System.in);
 
-        System.out.print("Syötä characterString: ");
+        System.out.print("Enter characterString: ");
         String characterString = reader.nextLine();
 
         printStars(characterString.length());

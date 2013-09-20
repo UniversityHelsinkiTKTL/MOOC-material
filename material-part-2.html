@@ -4207,7 +4207,7 @@ basket price: 11
 
 <h4>Shop</h4>
 
-  <p>Now, all the parts of our online shop are ready. Our online shop has got a storage house, which contains all products. We have got a shopping basket to manage all our costumers. Whenever a costumer chooses a purchase, we add it to the shopping basket if the product is available in our storage house. Meanwhile, the storage stocks are reduced by one.</p>
+  <p>Now, all the parts of our online shop are ready. Our online shop has got a storage house, which contains all products. We have got a shopping basket to manage all our customers. Whenever a customer chooses a purchase, we add it to the shopping basket if the product is available in our storage house. Meanwhile, the storage stocks are reduced by one.</p>
 
   <p>Below, you find a ready-made code body for your online shop. Create the class <code>Shop</code> to your project, and copy the code below into it.</p>
 
@@ -4224,10 +4224,10 @@ public class Shop {
         this.reader = reader;
     }
 
-    // the method to deal with a costumer in the shop
-    public void manage(String costumer) {
+    // the method to deal with a customer in the shop
+    public void manage(String customer) {
         ShoppingBasket basket = new ShoppingBasket();
-        System.out.println("Welcome to our shop " + costumer);
+        System.out.println("Welcome to our shop " + customer);
         System.out.println("below is our sale offer:");
 
         for (String product : store.products()) {
@@ -4254,7 +4254,7 @@ public class Shop {
 }
 </pre>
 
-<p>The following main program fills the shop storehouse and manages the costumer Pekka:</p>
+<p>The following main program fills the shop storehouse and manages the customer Pekka:</p>
 
 <pre class="sh_java">
     Storehouse store = new Storehouse();
@@ -4267,7 +4267,7 @@ public class Shop {
     shop.manage("Pekka");
 </pre>
 
-  <p>The shop is almost ready. There are comments in the method <code>public void manage(String costumer)</code>, showing the part that you should implement. In that point, implement the code to check whether the object the customer wants is available in the storehouse. If so, reduce the storehouse stocks by one unit, and add the product to the shopping basket.</p>
+  <p>The shop is almost ready. There are comments in the method <code>public void manage(String customer)</code>, showing the part that you should implement. In that point, implement the code to check whether the object the customer wants is available in the storehouse. If so, reduce the storehouse stocks by one unit, and add the product to the shopping basket.</p>
 
   <p><em>Now you have done something! verkkokauppa.com!</em></p>
 </div>

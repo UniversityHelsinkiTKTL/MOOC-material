@@ -4627,17 +4627,17 @@ A of Clubs
 
 <h4>Sort Against Suit</h4>
 
-<p>Add the method <code>public void sortAgainstSuit()</code> to the class <code>Hand</code>; when the method is called the hand cards are sorted according to the comparator of the last exercise. After sorting them, the cards are printed in order:</p>
+<p>Add the method <code>public void sortAgainstSuit()</code> to the class <code>Hand</code>; when the method is called the hand cards are sorted according to the comparator <code>SortAgainstSuitAndValue</code>. After sorting them, the cards are printed in order:</p>
 
 <pre class="sh_java">
   Hand hand = new Hand();
 
-  hand.add( new Hand(12, Hand.HEARTS) );
-  hand.add( new Hand(4, Hand.CLUBS) );
-  hand.add( new Hand(2, Hand.DIAMONDS) );
-  hand.add( new Hand(14, Hand.CLUBS) );
-  hand.add( new Hand(7, Hand.HEARTS) );
-  hand.add( new Hand(2, Hand.CLUBS) );
+  hand.add( new Hand(12, Card.HEARTS) );
+  hand.add( new Hand(4, Card.CLUBS) );
+  hand.add( new Hand(2, Card.DIAMONDS) );
+  hand.add( new Hand(14, Card.CLUBS) );
+  hand.add( new Hand(7, Card.HEARTS) );
+  hand.add( new Hand(2, Card.CLUBS) );
 
   hand.sortAgainstSuit();
 

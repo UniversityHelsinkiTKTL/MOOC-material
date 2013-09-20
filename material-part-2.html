@@ -3158,16 +3158,16 @@ public interface Readable {
 }
 </pre>
 
-        <p>The interface <code>Readable</code> defines the method <code>lue()</code>, which returns a string object. The classes which implement an interface decide <em>in which way</em> the methods defined in the interface have to be implemented, in the end. A class implements an interface by adding the keyword <em>implements</em> between the class and the interface name. Below, we create the class <code>SMS</code> which implements <code>Readable</code> interface.</p>
+        <p>The interface <code>Readable</code> defines the method <code>read()</code>, which returns a string object. The classes which implement an interface decide <em>in which way</em> the methods defined in the interface have to be implemented, in the end. A class implements an interface by adding the keyword <em>implements</em> between the class and the interface name. Below, we create the class <code>SMS</code> which implements <code>Readable</code> interface.</p>
 
 <pre class="sh_java">
 public class SMS implements Readable {
     private String sender;
     private String content;
 
-    public Tekstiviesti(String sender, String content) {
+    public SMS(String sender, String content) {
         this.sender = sender;
-        this.sisalto = content;
+        this.content = content;
     }
 
     public String getSender() {
@@ -3192,7 +3192,7 @@ public class EBook implements Readable {
     private ArrayList&lt;String&gt; pages;
     private int pageNumber;
 
-    public Sahkokirja(String name, ArrayList&lt;String&gt; pages) {
+    public EBook(String name, ArrayList&lt;String&gt; pages) {
         this.name = name;
         this.pages = pages;
         this.pageNumber = 0;
@@ -3227,7 +3227,7 @@ public class EBook implements Readable {
     SMS message = new SMS("ope", "Awesome stuff!");
     System.out.println(message.read());
 
-    ArrayList&lt;Tekstiviesti&gt; messages = new ArrayList&lt;Tekstiviesti&gt;();
+    ArrayList&lt;SMS&gt; messages = new ArrayList&lt;SMS&gt;();
     messages.add(new SMS("unknown number", "I hid the body.");
 </pre>
 
@@ -3235,10 +3235,10 @@ public class EBook implements Readable {
 
 <pre class="sh_java">
     ArrayList&lt;String&gt; pages = new ArrayList&lt;String&gt;();
-    sivut.add("Split your method into short clear chunks.");
-    sivut.add("Devide the user interface logic from the application logic.");
-    sivut.add("At first, always code only a small program which solves only a part of the problem.");
-    sivut.add("Practice makes perfect. Make up your own fun project.");
+    pages.add("Split your method into short clear chunks.");
+    pages.add("Devide the user interface logic from the application logic.");
+    pages.add("At first, always code only a small program which solves only a part of the problem.");
+    pages.add("Practice makes perfect. Make up your own fun project.");
 
     EBook book = new EBook("Programming Hints.", pages);
     for(int page = 0; page &lt; book.howManyPages(); page++) {
@@ -5828,7 +5828,7 @@ you haven't written a proper number.
     <p>Let's make something more useful out of our number translator: let's do a method which keeps on asking to type a number till the user does it. The user can return <em>only</em> if they have typed the right number.</p>
 
 <pre class="sh_java">
-public int lueLuku(Scanner reader) {
+public int readNumber(Scanner reader) {
     while (true) {
         System.out.print("Write a number: ");
 

@@ -4329,7 +4329,7 @@ public class Slot&lt;T&gt; {
 
     <h3>The Interface which Makes Use of Generics: Comparable</h3>
 
-    <p>In addition to normal interfaces, Java has got interfaces which make use of generics. The internal value types of generic interfaces are defined in the same way as for generic classes. Let us have a look at Java made-up <code><a href="http://java.sun.com/javase/6/docs/api/java/lang/Comparable.html">Comparable</a></code> interface. The <code>Comparable</code> interface defines the <code>compareTo</code> method, which returns the place of <code>this</code> object, in relation to the parameter obect (a negative number, 0, or a positive number). If <code>this</code> object is placed before the parameter object in the comparison order, the method returns a negative value, whereas it returns a positive value if it is placed after the parameter object. If the objects are placed at the same place in the comparison order, the method returns 0. With comparison order we mean the object order of magnitude defined by the programmer, i.e. the object order, when they are sorted with the sort method.</p>
+    <p>In addition to normal interfaces, Java has got interfaces which make use of generics. The internal value types of generic interfaces are defined in the same way as for generic classes. Let us have a look at Java made-up <code><a href="http://java.sun.com/javase/6/docs/api/java/lang/Comparable.html">Comparable</a></code> interface. The <code>Comparable</code> interface defines the <code>compareTo</code> method, which returns the place of <code>this</code> object, in relation to the parameter object (a negative number, 0, or a positive number). If <code>this</code> object is placed before the parameter object in the comparison order, the method returns a negative value, whereas it returns a positive value if it is placed after the parameter object. If the objects are placed at the same place in the comparison order, the method returns 0. With comparison order we mean the object order of magnitude defined by the programmer, i.e. the object order, when they are sorted with the sort method.</p>
 
     <p>One of the advantages of the <code>Comparable</code> interface is that it allows us to sort a list of Comparable type keys by using the standard library method <code>Collections.sort</code>, for instance. <code>Collections.sort</code> uses the <code>compareTo</code> method of a key list to define in which order these keys should be. We call <em>Natural Ordering</em> this ordering technique which makes use of the <code>compareTo</code> method.
 
@@ -4340,7 +4340,7 @@ public class ClubMember implements Comparable&lt;ClubMember&gt; {
     private String name;
     private int height;
 
-    public Clubmember(String name, int height) {
+    public ClubMember(String name, int height) {
         this.name = name;
         this.height = height;
     }
@@ -4383,7 +4383,7 @@ public class ClubMember implements Comparable&lt;ClubMember&gt; {
     <p>Sorting club members is easy, now.</p>
 
 <pre class="sh_java">
-    List&lt;Clubmember&gt; clubMembers = new ArrayList&lt;ClubMember&gt;();
+    List&lt;ClubMember&gt; clubMembers = new ArrayList&lt;ClubMember&gt;();
     clubMembers.add(new ClubMember("mikael", 182));
     clubMembers.add(new ClubMember("matti", 187));
     clubMembers.add(new ClubMember("joel", 184));
@@ -4518,7 +4518,7 @@ Q of Hearts
 <pre>
 2 of Spades
 2 of Clubs
-Q of Harts
+Q of Hearts
 A of Clubs
 </pre>
 
@@ -4647,12 +4647,12 @@ A of Clubs
 <p>Prints:</p>
 
 <pre>
-Diamond 2
-Hearts 7
-Hearts Q
-Clubs 2
-Clubs 4
-Clubs A
+2 of Diamonds
+7 of Hearts
+Q of Hearts
+2 of Clubs
+4 of Clubs
+A of Clubs
 </pre>
 
 </div>

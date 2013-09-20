@@ -4161,25 +4161,25 @@ milk: 1
 
 <h4>Only One Purchase Object for One Product</h4>
 
-  <p>Let's update our Shopping Basket; if the basket already contains the product which we add, we don't create a new Purchase object, but we update the Purchase object corresponding to the existing product by calling its method <em>updateAmount()</em>.</p>
+  <p>Let's update our Shopping Basket; if the basket already contains the product which we add, we don't create a new Purchase object, but we update the Purchase object corresponding to the existing product by calling its method <em>increaseAmount()</em>.</p>
 
-<p>Esimerkki:</p>
+<p>Example:</p>
 
 <pre class="sh_java">
         ShoppingBasket basket = new ShoppingBasket();
-        basket.add("maito", 3);
+        basket.add("milk", 3);
         basket.print();
         System.out.println("basket price: " + basket.price() +"\n");
 
-        basket.add("piimä", 2);
+        basket.add("buttermilk", 2);
         basket.print();
         System.out.println("basket price: " + basket.price() +"\n");
 
-        basket.add("maito", 3);
+        basket.add("milk", 3);
         basket.print();
         System.out.println("basket price: " + basket.price() +"\n");
 
-        basket.add("maito", 3);
+        basket.add("milk", 3);
         basket.print();
         System.out.println("basket price: " + basket.price() +"\n");
 </pre>
@@ -6984,7 +6984,7 @@ public class Bird {
 
 <p>Some birds have more than one English name (for instance, the Rose Starling is also known as Rose-Coloured Starling or Rose-Coloured Pastor); however, the Latin name is always unique. Create the methods <code>equals</code> and <code>hashCode-</code> in the class <code>Bird</code>; two Bird objects have to be understood as the same bird if their Latin bane and observation year are the same.</p>
 
-<p>Esimerkki:</code>
+<p>Example:</code>
 
 <pre>
     Bird bird1 = new Bird("Rose Starling", "Sturnus roseus", 2012);

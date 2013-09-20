@@ -2155,7 +2155,7 @@ public class Library {
     <p>Among the programming principles, there is the so called <em>DRY</em> principle (Don't Repeat Yourself), according to which we try to avoid repeting the same code in different places. Turning a string to lower case, and its <em>trimming</em> - that is to say removing white spaces from the beginning and the end of a string - would have recourred various different times without the <code>stringCleaner()</code> method. We hardly notice we are repeating the same code before we have written it, in which case it eventually ends up there. This is not bad, however. The most important thing is that we clean our code as soon as we notice the need.</p>
 
 
-    <h3>Orignial-Type Variables in a HashMap</h3>
+    <h3>Original-Type Variables in a HashMap</h3>
 
     <p>Both HashMap keys and stored objects are referece-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.</p>
 
@@ -2187,7 +2187,7 @@ public class TwitchRegister {
     }
 
     public void addTwitch(String name, int number) {
-        this.twitched.put(nimi, numero);
+        this.twitched.put(name, number);
     }
 
     public int lastTwitch(String name) {
@@ -8338,7 +8338,7 @@ Bulk tank: 14.0/2000.0
 
 <h4>Cowhouse</h4>
 
-<p>Cows are kept (and in this case milked) in cowhouses. The orignial cowhouses have room for one milking robot. Note that when milking robots are installed, they are connected to a specific cowhouse bulk tank. If a cowhouse does not have a milking robot, it can't be used to handle the cow, either. Implement the class <code>Cowhouse</code> with the following constructor and methods:
+<p>Cows are kept (and in this case milked) in cowhouses. The original cowhouses have room for one milking robot. Note that when milking robots are installed, they are connected to a specific cowhouse bulk tank. If a cowhouse does not have a milking robot, it can't be used to handle the cow, either. Implement the class <code>Cowhouse</code> with the following constructor and methods:
 </p>
 
   <ul>

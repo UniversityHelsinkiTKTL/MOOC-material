@@ -1195,7 +1195,7 @@ if(Math.abs(distance) &lt; 0.0001) {
 public class Calculator {
     private int value;
 
-    public Laskuri(int originalValue) { // Contructor
+    public Calculator(int originalValue) { // Contructor
         this.value = originalValue;
     }
 
@@ -1244,7 +1244,7 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
                            // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable
 
 axeCalculator = new Calculator(10); // a new reference is assigned to the axeCalculator variable
-                              // which points to the object created by the command new Laskuri(10)
+                              // which points to the object created by the command new Calculator(10)
 
 // the bonusCalculator variable still contains a reference to the Calculator object which received value 6 in its parameter
 </pre>
@@ -1375,8 +1375,8 @@ Calculator lennon = createCalculator(10);
 
 <pre class="sh_java">
 public class HslPrices {
-    public static final double SINGLETICKET_AUDULT = 2.50;
-    public static final double TRAMTICKET_AUDULT = 2.50;
+    public static final double SINGLETICKET_ADULT = 2.50;
+    public static final double TRAMTICKET_ADULT = 2.50;
 }
 </pre>
 
@@ -1393,7 +1393,7 @@ public class Person {
     // constructor
 
     public boolean enoughMoneyForSingleTicket() {
-        if(this.rahat >= HslPrices.SINGLETICKET_AUDULT) {
+        if(this.money >= HslPrices.SINGLETICKET_ADULT) {
             return true;
         }
 
@@ -1404,7 +1404,7 @@ public class Person {
 }
 </pre>
 
-<p>The method <code>public boolean enoughMoneyForSingleTicket()</code> compares the object variable <code>money</code> of class <code>Person</code> to the static variable <code>SINGLETICKET_AUDULT</code> of class <code>HslPrices</code>. The method <code>enoughMoneyForSingleTicket()</code> can be called only through an object reference. For instance:</p>
+<p>The method <code>public boolean enoughMoneyForSingleTicket()</code> compares the object variable <code>money</code> of class <code>Person</code> to the static variable <code>SINGLETICKET_ADULT</code> of class <code>HslPrices</code>. The method <code>enoughMoneyForSingleTicket()</code> can be called only through an object reference. For instance:</p>
 
 <pre class="sh_java">
 Person matti = new Person();
@@ -1422,15 +1422,15 @@ if (matti.enoughMoneyForSingleTicket()) {
 
 <pre class="sh_java">
 public class HslPrices {
-    public static final double SINGLETICKET_AUDULT = 2.50;
-    public static final double TRAMTICKET_AUDULT = 2.50;
+    public static final double SINGLETICKET_ADULT = 2.50;
+    public static final double TRAMTICKET_ADULT = 2.50;
 
   public static double getSingleTicketPrice() {   // Accessor
-    return SINGLETICKET_AUDULT;
+    return SINGLETICKET_ADULT;
   }
 
   public static double getTramTicketPrice() {   // Accessor
-    return TRAMTICKET_AUDULT;
+    return TRAMTICKET_ADULT;
   }
 }
 </pre>
@@ -9774,9 +9774,9 @@ public class UserInteface implements Runnable {
 <pre class="sh_java">
         Calculator calc = new OwnCalculator();
         System.out.println("Value: " + calc.giveValue());
-        laskuri.increase();
+        calc.increase();
         System.out.println("Value: " + calc.giveValue());
-        laskuri.increase();
+        calc.increase();
         System.out.println("Value: " + calc.giveValue());
 </pre>
 

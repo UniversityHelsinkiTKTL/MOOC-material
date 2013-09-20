@@ -3599,21 +3599,21 @@ public class Box {
    }
 </pre>
 
-<p>It is possible to use our Fabric without knowing precisely what kind of classes are present in it, as long as they all implement Item. Below you find the class <code>Packer</code> which can be used to get a boxful of items. The Packer knows the fabric which produces its Items:</p>
+<p>It is possible to use our Factory without knowing precisely what kind of classes are present in it, as long as they all implement Item. Below you find the class <code>Packer</code> which can be used to get a boxful of items. The Packer knows the factory which produces its Items:</p>
 
 <pre class="sh_java">
    public class Packer {
-       private Fabric fabric;
+       private Factory factory;
 
        public Packer(){
-            fabric = new Fabric();
+            factory = new Factory();
        }
 
        public Box giveABoxful() {
             Box box = new Box(100);
 
             for ( int i=0; i &lt; 10; i++ ) {
-                Iteam newItem = fabric.produceNew();
+                Item newItem = factory.produceNew();
                 box.add(newItem);
             }
 
@@ -3622,7 +3622,7 @@ public class Box {
    }
 </pre>
 
-<p>Because the packer doesn't know the classes which implement the Item interface, it is possble to add new classes which implement the interface without having to modify the packer. Below, we create a new class which implements our Item interface - <code>ChocolateBar</code>. Our Fabric was modified to produce chocolate bars in addition to books and CDs. The class <code>Packer</code> works fine with the extended fabric version, without having to change it.</p>
+<p>Because the packer doesn't know the classes which implement the Item interface, it is possble to add new classes which implement the interface without having to modify the packer. Below, we create a new class which implements our Item interface - <code>ChocolateBar</code>. Our Factory was modified to produce chocolate bars in addition to books and CDs. The class <code>Packer</code> works fine with the extended factory version, without having to change it.</p>
 
 <pre class="sh_java">
    public class ChocolateBar implements Item {
@@ -3633,7 +3633,7 @@ public class Box {
       }
    }
 
-   public class Fabric {
+   public class Factory {
       // we don't need a constructor because Java is able to generate a default one!
 
        public Item produceNew(){

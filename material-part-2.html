@@ -1675,8 +1675,8 @@ public class Main {
 <pre>
 empty (0 kg)
 1 thing (2 kg)
-2 tavaraa (3 kg)
-2 tavaraa (3 kg)
+2 things (3 kg)
+2 things (3 kg)
 </pre>
 
 <h4 class="req">Every Thing</h4>
@@ -1703,8 +1703,8 @@ public class Main {
         suitcase.addThing(brick);
 
         System.out.println("Your suitcase contains the following things:");
-        case.printThings();
-        System.out.println("Total weight: " + case.totalWeight() + " kg");
+        suitcase.printThings();
+        System.out.println("Total weight: " + suitcase.totalWeight() + " kg");
     }
 }
 </pre>

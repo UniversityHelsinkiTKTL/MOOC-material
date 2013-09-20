@@ -3130,9 +3130,9 @@ Jürgen
 <p>Implement the class <code>VehicleRegister</code> which has got the following methods:</p>
 
 <ul>
-<li><code>public boolean lisaa(RegistrationPlate truck, String owner)</code>, which adds the parameter owner of the car which corresponds to the parameter registration plate. The method returns true if the car had no owner; if the car had an owner already, the method returns false and it doesn't do anything</li>
-<li><code>public String get(RegistrationPlate truck)</code>, which returns the car owner which corresponds to the parameter register number. If the car was not registered, it returns <code>null</code></li>
-<li><code>public boolean delete(RegistrationPlate truck)</code>, which delete the information connected to the parameter registration plate. The method returns true if the information was deleted, and false if there was no information connetted to the parameter in the register.</li>
+<li><code>public boolean add(RegistrationPlate plate, String owner)</code>, which adds the parameter owner of the car which corresponds to the parameter registration plate. The method returns true if the car had no owner; if the car had an owner already, the method returns false and it doesn't do anything</li>
+<li><code>public String get(RegistrationPlate plate)</code>, which returns the car owner which corresponds to the parameter register number. If the car was not registered, it returns <code>null</code></li>
+<li><code>public boolean delete(RegistrationPlate plate)</code>, which delete the information connected to the parameter registration plate. The method returns true if the information was deleted, and false if there was no information connetted to the parameter in the register.</li>
 </ul>
 
 <p><strong>Attention:</strong> the vehicle register has to store the owner information into a <code>HashMap&lt;RegistrationPlate, String&gt; owners</code> object variable!</p>
@@ -3419,8 +3419,8 @@ public class NumberList implements Readable {
 
 <pre class="sh_java">
     NumberList myList = new NumberList();
-    joelList.lisaa(new SMS("matti", "have you already written the tests?"));
-    joelList.lisaa(new SMS("matti", "did you have a look at the submissions?"));
+    joelList.add(new SMS("matti", "have you already written the tests?"));
+    joelList.add(new SMS("matti", "did you have a look at the submissions?"));
 
     System.out.println("Joel has got " + joelList.howManyReadables() + " messages to read");
 </pre>
@@ -3434,7 +3434,7 @@ Joel has got got 2 messages to read
 <pre class="sh_java">
     NumberList joelList = new NumberList();
     for (int i = 0; i &lt; 1000; i++) {
-        joelList.lisaa(new SMS("matti", "have you already written the tests?"));
+        joelList.add(new SMS("matti", "have you already written the tests?"));
     }
 
     System.out.println("Joel has got " + joelList.howManyReadables() + " messages to read");
@@ -3482,24 +3482,24 @@ public interface ToBeStored {
 
 <pre class="sh_java">
     public static void main(String[] args) {
-        Book kirja1 = new Book("Fedor Dostojevski", "Crime and Punishment", 2);
-        Book kirja2 = new Book("Robert Martin", "Clean Code", 1);
-        Book kirja3 = new Book("Kent Beck", "Test Driven Development", 0.5);
+        Book book1 = new Book("Fedor Dostojevski", "Crime and Punishment", 2);
+        Book book2 = new Book("Robert Martin", "Clean Code", 1);
+        Book book3 = new Book("Kent Beck", "Test Driven Development", 0.5);
 
         CD cd1 = new CD("Pink Floyd", "Dark Side of the Moon", 1973);
         CD cd2 = new CD("Wigwam", "Nuclear Nightclub", 1975);
         CD cd3 = new CD("Rendezvous Park", "Closer to Being Here", 2012);
 
-        System.out.println(kirja1);
-        System.out.println(kirja2);
-        System.out.println(kirja3);
+        System.out.println(book1);
+        System.out.println(book2);
+        System.out.println(book3);
         System.out.println(cd1);
         System.out.println(cd2);
         System.out.println(cd3);
     }
 </pre>
 
-  <p>Tulostus:</p>
+  <p>Print output:</p>
 
 <pre>
 Fedor Dostojevski: Crime and Punishment
@@ -3522,13 +3522,13 @@ Rendezvous Park: Closer to Being Here (2012)
     public static void main(String[] args) {
         Box box = new Box(10);
 
-        box.lisaa( new Book("Fedor Dostojevski", "Crime and Punishment", 2) ) ;
-        box.lisaa( new Book("Robert Martin", "Clean Code", 1) );
-        box.lisaa( new Book("Kent Beck", "Test Driven Development", 0.7) );
+        box.add( new Book("Fedor Dostojevski", "Crime and Punishment", 2) ) ;
+        box.add( new Book("Robert Martin", "Clean Code", 1) );
+        box.add( new Book("Kent Beck", "Test Driven Development", 0.7) );
 
-        box.lisaa( new cd("Pink Floyd", "Dark Side of the Moon", 1973) );
-        box.lisaa( new cd("Wigwam", "Nuclear Nightclub", 1975) );
-        box.lisaa( new cd("Rendezvous Park", "Closer to Being Here", 2012) );
+        box.add( new cd("Pink Floyd", "Dark Side of the Moon", 1973) );
+        box.add( new cd("Wigwam", "Nuclear Nightclub", 1975) );
+        box.add( new cd("Rendezvous Park", "Closer to Being Here", 2012) );
 
         System.out.println( box );
     }
@@ -6563,7 +6563,7 @@ public class ExerciseAccounting {
         this.doneExercises = new HashMap&lt;String, Set&lt;Integer&gt;&gt;();
     }
 
-    public void lisaa(String user, int exercise) {
+    public void add(String user, int exercise) {
         // note that when we create a new user we have first to map an empty exercise set to it
         if (!this.doneExercises.containsKey(user)) {
             this.doneExercises.put(user, new HashSet&lt;Integer&gt;());
@@ -6587,16 +6587,16 @@ public class ExerciseAccounting {
 
 <pre class="sh_java">
         ExerciseAccounting accounting = new ExerciseAccounting();
-        accounting.lisaa("Mikael", 3);
-        accounting.lisaa("Mikael", 4);
-        accounting.lisaa("Mikael", 3);
-        accounting.lisaa("Mikael", 3);
+        accounting.add("Mikael", 3);
+        accounting.add("Mikael", 4);
+        accounting.add("Mikael", 3);
+        accounting.add("Mikael", 3);
 
-        accounting.lisaa("Pekka", 4);
-        accounting.lisaa("Pekka", 4);
+        accounting.add("Pekka", 4);
+        accounting.add("Pekka", 4);
 
-        accounting.lisaa("Matti", 1);
-        accounting.lisaa("Matti", 2);
+        accounting.add("Matti", 1);
+        accounting.add("Matti", 2);
 
         accounting.print();
 </pre>

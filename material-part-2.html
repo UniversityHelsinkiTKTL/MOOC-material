@@ -6271,7 +6271,7 @@ program
 
 <h3>Character Set Issues</h3>
 
-    <p>We we read a file text (or when we save something into a file), Java has to find out the character set used by the operating system. Knowledge of the character set is required both to save text on the computer harddisk in binary format, and to translate binary data into text.</p>
+    <p>When we read a text file (or when we save something into a file), Java has to find out the character set used by the operating system. Knowledge of the character set is required both to save text on the computer harddisk in binary format, and to translate binary data into text.</p>
 
     <p>There have been developed standard character sets, and "UTF-8" is the most common nowadays. UTF-8 character set contains both the alphabet letters of everyday use and more particular characters such as the Japanese kanji characters or the information need to read and save the chess pawns. From a simplified programming angle, we could think a character set both as a character-number hashmap and a number-character hashmap. The character-number hashmap shows what binary number is used to save each character into a file. The number-character hashmap shows how we can translate into characters the values we obtain reading a file.</p>
 
@@ -6292,9 +6292,9 @@ program
 
 <p>Create the class <code>Printer</code>, its constructor <code>public Printer(String fileName)</code> which receives a String standing for the file name, and the method <code>public void printLinesWhichContain(String word)</code> which prints the file lines which contain the parameter word (<em>lower and upper case make difference in this excercise; for instance, "test" and "Test" are not the considered the same</em>); the lines are printed in the same order as they are inside the file.</p>
 
-<p>If the argument is an empty String, aa the file is printed.</p>
+<p>If the argument is an empty String, all of the file is printed.</p>
 
-<p>If the file is not found, the constructor delagates the exemption with no need for a try-catch statement; the constructor simply has to be defined in the following way:</p>
+<p>If the file is not found, the constructor delegates the exception with no need for a try-catch statement; the constructor simply has to be defined in the following way:</p>
 
 <pre class="sh_java">
 public Printer {
@@ -6380,7 +6380,7 @@ because also line breaks are
 characters
 </pre>
 
-<p>Ohjelman toiminta testaustiedostolla:</p>
+<p>The following example shows what the program should do:</p>
 
 <pre class="sh_java">
     File file = new File("test/testfile.txt");
@@ -6408,12 +6408,12 @@ Characters: 74
 
   <p>Create the constructor <code>public WordInspection(File file)</code> to your WordInspection class. The constructor creates a new WordInspection object which inspects the given file.</p>
 
-  <p>Create the method <code>public int wordCount()</code>, which counts the file words and prints their number. In this part, you don't have to do anything with the words, you should only count how many there are. For this exercise, you can expect there is only one word in each raw.</p>
+  <p>Create the method <code>public int wordCount()</code>, which counts the file words and prints their number. In this part, you don't have to do anything with the words, you should only count how many there are. For this exercise, you can expect there is only one word in each row.</p>
 
 
   <h4 class="req">z</h4>
 
-  <p>Create the method <code>public List&lt;String&gt; wordsContainingZ()</code>, which returns all the file words which contain a z; for instance, jazz and zombi.</p>
+  <p>Create the method <code>public List&lt;String&gt; wordsContainingZ()</code>, which returns all the file words which contain a z; for instance, jazz and zombie.</p>
 
   <h4 class="req">Ending l</h4>
 
@@ -6427,7 +6427,7 @@ Characters: 74
 
   <h4 class="req">All Vowels</h4>
 
-  <p>Create the method <code>public List&lt;String&gt; wordsWhichContainAllVowels()</code>, which returns all the file words which contain all Finnish vowels (aeiouyäö). Such words are, for instance, myöhäiselokuva and ympäristönsuojelija.</p>
+  <p>Create the method <code>public List&lt;String&gt; wordsWhichContainAllVowels()</code>, which returns all the words of the file which contain all Finnish vowels (aeiouyäö). Such words are, for instance, myöhäiselokuva and ympäristönsuojelija.</p>
 </div>
 </div>
 

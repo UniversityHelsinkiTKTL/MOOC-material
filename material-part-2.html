@@ -4102,7 +4102,7 @@ milk
         System.out.println( purchase );
 </pre>
 
-<p>Tulostuu:</p>
+<p>Prints:</p>
 
 <pre>
 the total price of a purchase containing four milks is 8
@@ -4824,7 +4824,7 @@ Position    Name
 
 <h2>Single Responsibility Principle</h2>
 
-    <p>When we design bigger programs, we often reason about what class has do deal with what task. If we delegate the implementation of the whole program to one class, the result is inevitably chaos. A sector of software design, <em>object-oriented design</em>, includes the <em>Single Responsibility Principle</em>, which we should follow.</p>
+    <p>When we design bigger programs, we often reason about what class has to deal with what task. If we delegate the implementation of the whole program to one class, the result is inevitably chaos. A sector of software design, <em>object-oriented design</em>, includes the <em>Single Responsibility Principle</em>, which we should follow.</p>
 
     <p>The Single Responsibility Principle states that each class should have only one clear role. If the class has got one clear role, modifying that role is easy, and only one class will have to be modified. <em>Each class should have only one reason to be modified.</em>.</p>
 
@@ -4846,7 +4846,7 @@ public class Worker {
 }
 </pre>
 
-    <p>Even if the examples above do not show the concrete implementations, an alarm should go off. Our <code>Worker</code> class has got at least three different responsibilities. It represents a worker, it performes the role of a salary calculator, and the role of a working hour bookkeping system by reporting working hours. The class above should be split into three: one should represent the worker, another should represent the salary calculator, and the third should deal with time bookkeeping.</p>
+    <p>Even if the examples above do not show the concrete implementations, an alarm should go off. Our <code>Worker</code> class has got at least three different responsibilities. It represents a worker, it performes the role of a salary calculator, and the role of a working hour bookkeeping system by reporting working hours. The class above should be split into three: one should represent the worker, another should represent the salary calculator, and the third should deal with time bookkeeping.</p>
 
 <pre class="sh_java">
 public class Woker {
@@ -4890,7 +4890,7 @@ public class TimeBookkeeping {
 
     <p>Programming environments provide made-up tools for package management. So far, we have been creating classes and interfaces only in the <code>default package</code> of the <code>Source Packages</code> partition. In NetBeans, we can create a new package by clicking on <code>Source Packages</code>, and choosing <code>New -&gt; Java Package...</code>. In the created package, we can create classes in the same way as we do in the <code>default package</code>.</p>
 
-  <p>You can read the name of the package that contains a certain class is visible at the beginning of the source code files in the sentence <code>package <em>packageName</em></code> before the other statements. For instance, the below class <code>Implementation</code> is contained in the package <code>library</code>.</p>
+  <p>You can read the name of the package that contains a certain class at the beginning of the source code files in the sentence <code>package <em>packageName</em></code> before the other statements. For instance, the below class <code>Implementation</code> is contained in the package <code>library</code>.</p>
 
 <pre class="sh_java">
 package library;
@@ -4921,11 +4921,11 @@ public class Book {
 }
 </pre>
 
-  <p>We can uses the classes stored in our packages through the <code>import</code> statement. For instance, the class <code>Implementation</code>, which is contained in the package <code>library</code> could make use of a class stored in <code>library.domain</code> through the assignment <code>import kirjasto.domain.Book</code>.</p>
+  <p>We can uses the classes stored in our packages through the <code>import</code> statement. For instance, the class <code>Implementation</code>, which is contained in the package <code>library</code> could make use of a class stored in <code>library.domain</code> through the assignment <code>import library.domain.Book</code>.</p>
 
 
 <pre class="sh_java">
-package librart;
+package library;
 
 import library.domain.Book;
 
@@ -4967,7 +4967,7 @@ Hello packageworld: The ABC of Packages!
 
 <p>
   <ul>
-    <li>the constructor <code>public ApplicationLogic(UserInterface ui)</code></li>. It receives as parameter a class which implements the interface UserInterface. Note: your application logic has to see the interface and therefore to import it; in other words, the line <code>import mooc.ui.Kayttoliittyma</code> must appear at the beginning of he file<br/>
+    <li>the constructor <code>public ApplicationLogic(UserInterface ui)</code></li>. It receives as parameter a class which implements the interface UserInterface. Note: your application logic has to see the interface and therefore to import it; in other words, the line <code>import mooc.ui.UserInterface</code> must appear at the beginning of he file<br/>
     <li>the method <code>public void execute(int howManyTimes)</code></li> prints the string "The application logic works" as many times as it is defined by its parameter variable. After each "The application logic works" printout, the code has to call the <code>update()</code> method of the object which implements the interface <code>UserInterface</code> and which was assigned to the constructor as its parameter.<br/>
   </ul>
 </p>
@@ -5020,7 +5020,7 @@ package library.ui;
 public class UserInterface {
     private Scanner reader;
 
-    public Kayttoliittyma(Scanner reader) {
+    public UserInterface(Scanner reader) {
         this.reader = reader;
     }
 
@@ -5048,7 +5048,7 @@ package library.ui;
 public class UserInterface {
     private Scanner reader;
 
-    public Kayttoliittyma(Scanner reader) {
+    public UserInterface(Scanner reader) {
         this.reader = reader;
     }
 
@@ -5222,15 +5222,15 @@ public class Person implements Identifiable, Comparable&lt;Person&gt; {
 
     @Override
     public int compareTo(Person another) {
-        return this.getID().compareTo(toinen.getID());
+        return this.getID().compareTo(another.getID());
     }
 }
 </pre>
 
-    <p>Now, we can ad to the registerd the method sortAndGetEverything:</p>
+    <p>Now, we can add to the register method sortAndGetEverything:</p>
 
 <pre class="sh_java">
-    public List&lt;Identifiable&gt; sortAndGetAll() {
+    public List&lt;Identifiable&gt; sortAndGetEverything() {
         ArrayList&lt;Identifiable&gt; all = new ArrayList&lt;Identifiable&gt;(registered.values());;
         Collections.sort(all);
         return all;
@@ -5245,7 +5245,7 @@ public class Person implements Identifiable, Comparable&lt;Identifiable&gt; {
 
     @Override
     public int compareTo(Identifiable another) {
-        return this.getID().compareTo(toinen.getID());
+        return this.getID().compareTo(another.getID());
     }
 }
 </pre>
@@ -5261,7 +5261,7 @@ public class Sale implements Identifiable {
     private int stockBalance;
     private int price;
 
-    public Tuote(String name, String barcode) {
+    public Sale(String name, String barcode) {
         this.name = name;
         this.barcode = barcode;
     }
@@ -5285,7 +5285,7 @@ product.increaseStock(100);
 product.changePrice(23);
 </pre>
 
-<p>The class <code>Register</code> is quite universal now that it is not dependent on concrete classes. Whatever class which implements <code>Identifiable</code> is compatible with Register. However, the metodi <code>sortAndGetEverything</code> can only work if we implement the interface Comparable&lt;Identifiable&gt;.</p>
+<p>The class <code>Register</code> is quite universal now that it is not dependent on concrete classes. Whatever class which implements <code>Identifiable</code> is compatible with Register. However, the method <code>sortAndGetEverything</code> can only work if we implement the interface Comparable&lt;Identifiable&gt;.</p>
 
 
 <!--
@@ -5532,7 +5532,7 @@ Let us suppose that your program contains the interface <code>Interface</code>, 
 <p>However it is possible to ask NetBeans to fill in the method bodies automatically. When you have defined the interface a class should implement, i.e. when you have written</p>
 
 <pre class="sh_java">
-public class Luokka implements Rajapinta {
+public class Class implements Interface {
 }
 </pre>
 
@@ -5650,8 +5650,6 @@ number of boxes: 2
 
 <p>The packer has packed the things into two boxes, the first box has got the firts three things, whose total volume was 7, and the last thing in the list -- the circular saw, whose volume was 8 -- has gone to the third box. The tests do not set a limit to the number of boxes used by the packer; each thing could have been packed into a different box, and the printout would have been:</p>
 
-<p>Tulostuu:</p>
-
 <pre>
 number of boxes: 4
   things in the box: 2 dm^3
@@ -5750,7 +5748,7 @@ lisaaPienia(List esineet, Muuttolaatikko laatikko):
 
     <p>Exceptions are such situations where the program executions is different from our expectations. For instance, the program may have called a method of a <em>null</em> reference, in which case the user is <em>thrown</em> a <code>NullPointerException</code>. If we try to retrieve a index outside a table, the user is thrown a <code>IndexOutOfBoundsException</code>. All of them are a type of <code>Exception</code>.</p>
 
-    <p>We deal with exception using the block <code>try { } catch (Exception e) { }</code>. The code contained within the brackets which follow the keyword <code>try</code> can <em>possibly</em> through an exception. The keyword the code within the brackets which follow the keyword <code>catch</code> defines what should happen when the try-code throws an exception. We also define the type of the exception we want to catch (<code>catch (Exception e)</code>).</p>
+    <p>We deal with exception using the block <code>try { } catch (Exception e) { }</code>. The code contained within the brackets which follows the keyword <code>try</code> can <em>possibly</em> go through an exception. The keyword the code within the brackets which follow the keyword <code>catch</code> defines what should happen when the try-code throws an exception. We also define the type of the exception we want to catch (<code>catch (Exception e)</code>).</p>
 
 <pre class="sh_java">
     try {
@@ -5774,7 +5772,7 @@ Write a number: <font color="red">tatti</font>
 <font color="red">Exception in thread "..." java.lang.NumberFormatException: For input string: "tatti"</font>
 </pre>
 
-    <p>The program above throws an exception because the user digits an erroneous number. The program execution ends up with a malfuntion, and it cannot continue. We add an exception management statement to our program. The call, which may throw an exception is written into the <code>try</code> block, and the action which takes place in case of exception is written into the <code>catch</code> block.</p>
+    <p>The program above throws an exception because the user digits an erroneous number. The program execution ends up with a malfunction, and it cannot continue. We add an exception management statement to our program. The call, which may throw an exception is written into the <code>try</code> block, and the action which takes place in case of exception is written into the <code>catch</code> block.</p>
 
 <pre class="sh_java">
     Scanner reader = new Scanner(System.in);
@@ -5794,7 +5792,7 @@ Write number: <font color="red">5</font>
 
 <pre>
 Write number: <font color="red">oh no!</font>
-You haven't written a proper number
+You haven't written a proper number.
 </pre>
 
     <p>In case of exception, we move from the chunk of code defined by the <code>try</code> keyword to the <code>catch</code> chunk. Let's see this by adding a print statement after the <code>Integer.parseInt</code> line in the <code>try</code> chunk.</p>
@@ -5823,7 +5821,7 @@ Write a number: <font color="red">I won't!</font>
 you haven't written a proper number.
 </pre>
 
-    <p>String <code>I won't!</code> I given as parameter to the method <code>Integer.parseInt</code>, which throws an exception if the String parameter can't be changed into a number. Note that the code in the <code>catch</code> chunk is executed <em>only</em> in case of exception -- otherwise the program do not arrive till there.</p>
+    <p>String <code>I won't!</code> is given as parameter to the method <code>Integer.parseInt</code>, which throws an exception if the String parameter can't be changed into a number. Note that the code in the <code>catch</code> chunk is executed <em>only</em> in case of exception -- otherwise the program do not arrive till there.</p>
 
     <p>Let's make something more useful out of our number translator: let's do a method which keeps on asking to type a number till the user does it. The user can return <em>only</em> if they have typed the right number.</p>
 
@@ -5890,7 +5888,7 @@ public class MainProgram {
 
     <p>There are some exceptions which the programmer does not always have to address, such as the <code>NumberFormatException</code> which is thrown by <code>Integer.parseInt</code>. Also the <code>RuntimeException</code>s do not always require to be addressed; next week we will go back to <em>why</em> variables can have more than one type.</p>
 
-    <p>We can throw an exception ourself from the source code using the <code>throw</code> statement. For instance, if we want to throw an examption which was created in the class <code>NumberFormatException</code>, we could use the statement <code>throw new NumberFormatException()</code>.</p>
+    <p>We can throw an exception ourself from the source code using the <code>throw</code> statement. For instance, if we want to throw an exception which was created in the class <code>NumberFormatException</code>, we could use the statement <code>throw new NumberFormatException()</code>.</p>
 
     <p>Another exception which hasn't got to be addressed is <code>IllegalArgumentException</code>. With <code>IllegalArgumentException</code> we know that a method or a constructor has received an <em>illegal</em> value as parameter. For instance, we use the IllegalArgumentException when we want to make sure that a parameter has received particular values. We create the class <code>Grade</code> whose constructor has got a integer parameter: the grade.</p>
 
@@ -5908,7 +5906,7 @@ public class Grade {
 }
 </pre>
 
-    <p>Next, we want to validate the value of the constructor parameter of our Grade class. The grades in Finland are from 0 to 5. If the grate is something else, we want to <em>throw an exception</em>. We can add an if statement to our <code>Grade</code> class constructor, which checks whether the grade is outside range 0-5. If so, we throw an <code>IllegalArgumentException</code> telling <code>throw new IllegalArgumentException("The grade has to be between 0-5");</code>.</p>
+    <p>Next, we want to validate the value of the constructor parameter of our Grade class. The grades in Finland are from 0 to 5. If the grade is something else, we want to <em>throw an exception</em>. We can add an if statement to our <code>Grade</code> class constructor, which checks whether the grade is outside range 0-5. If so, we throw an <code>IllegalArgumentException</code> telling <code>throw new IllegalArgumentException("The grade has to be between 0-5");</code>.</p>
 
 <pre class="sh_java">
 public class Grade {
@@ -5918,7 +5916,7 @@ public class Grade {
         if (grade &lt; 0 || grade &gt; 5) {
             throw new IllegalArgumentException("The grade has to be between 0-5");
         }
-        this.arvosana = arvosana;
+        this.grade = grade;
     }
 
     public int getGrade() {
@@ -5965,7 +5963,7 @@ Exception in thread "..." java.lang.IllegalArgumentException: The grade has to b
 
 <pre class="sh_java">
 public interface Sensor {
-    boolean itsOn();  // returns true if the sensor is on
+    boolean isOn();  // returns true if the sensor is on
     void on();       // switches the sensor on
     void off();      // switches the sensor off
     int measure();   // returns the sensor reading if the sensor is on
@@ -5989,9 +5987,9 @@ public static void main(String[] args) {
   System.out.println( ten.measure() );
   System.out.println( minusFive.measure() );
 
-  System.out.println( ten.itsOn() );
+  System.out.println( ten.isOn() );
   ten.off();
-  System.out.println( ten.itsOn() );
+  System.out.println( ten.isOn() );
 }
 </pre>
 
@@ -6008,7 +6006,7 @@ true
 
 <p>Create the class <code>Thermometer</code> which implements the interface <code>Sensor</code>.</p>
 
-<p>At furst, the thermometer is off. When the <code>measure</code> method is called, if the thermometer is on it returns a random number between -30 and 30. If the thermometer is off, it throws an </code>IllegalStateException</code>.
+<p>At first, the thermometer is off. When the <code>measure</code> method is called, if the thermometer is on it returns a random number between -30 and 30. If the thermometer is off, it throws an </code>IllegalStateException</code>.
 </p>
 
 <h4>AverageSensor</h4>
@@ -6017,9 +6015,9 @@ true
 
 <p>An average sensor contains many sensors. In addition to the methods defined by the interface <code>Sensor</code>, the class has got the method <code>public void addSensor(Sensor additional)</code> which adds a new sensor to the AverageSensor.</p>
 
-<p>The average sensor is on when <em>all</em> its sensors are on. When the average sensor is switched on, all its sensors have to be switched on if they were not on already. When the average sensor is closed, at least one of its sensors as to be switched off. It's also possible that all its sensors are switched off.</p>
+<p>The average sensor is on when <em>all</em> its sensors are on. When the average sensor is switched on, all its sensors have to be switched on if they were not on already. When the average sensor is closed, at least one of its sensors has to be switched off. It's also possible that all its sensors are switched off.</p>
 
-<p>The <code>measure</code> method of our AverageSensor returns the average of the readings of all its sensors (because the return value is <code>int</code>, the readings are rounded down as it is for integer division). If the <code>measure</code> method is called when the average sensor is off, of if the average sensor was not added any sensor, the method throws an <code>IllegalStateException</code>.
+<p>The <code>measure</code> method of our AverageSensor returns the average of the readings of all its sensors (because the return value is <code>int</code>, the readings are rounded down as it is for integer division). If the <code>measure</code> method is called when the average sensor is off, or if the average sensor was not added any sensor, the method throws an <code>IllegalStateException</code>.
 </p>
 
 <p>Below, you find an example of a sensor program (note that both the Thermometer and the AverageSensor constructors are without parameter):</p>
@@ -6038,7 +6036,7 @@ public static void main(String[] args) {
     helsinkiArea.addSensor(kaisaniemi);
     helsinkiArea.addSensor(helsinkiVantaa);
 
-    paakaupunki.on();
+    helsinkiArea.on();
     System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
 }
 </pre>
@@ -6054,7 +6052,7 @@ the temperature in Helsinki area is -10 degrees
 
 <h4>All Readings</h4>
 
-<p>Add the method <code>public List&lt;Integer&gt; readings()</code> to your AverageSensor; it return a list of the reading results of all the measurements executed through your AverageSensor. Below is an example of how the method works: </p>
+<p>Add the method <code>public List&lt;Integer&gt; readings()</code> to your AverageSensor; it returns a list of the reading results of all the measurements executed through your AverageSensor. Below is an example of how the method works: </p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
@@ -6094,7 +6092,7 @@ readings: [-10, -4, 5]
 
 <h3>Exceptions and Interfaces</h3>
 
-    <p>Interfaces do not have a method body, but the method definition can be freely chosen when the developer implements the interface. Interfaces can also define the exceptions throw. For instance, the classes which implement the following <code>FileServer</code> can <em>possibly</em> throw an examption in their methods <code>download</code> and <code>save</code>.</p>
+    <p>Interfaces do not have a method body, but the method definition can be freely chosen when the developer implements the interface. Interfaces can also define the exceptions throw. For instance, the classes which implement the following <code>FileServer</code> can <em>possibly</em> throw an exception in their methods <code>download</code> and <code>save</code>.</p>
 
 <pre class="sh_java">
 public interface FileServer {
@@ -9104,7 +9102,7 @@ System.out.println( dict.translate("programming") );
 System.out.println( dict.translate("banana") );
 </pre>
 
-<p>Tulostuu</p>
+<p>Prints</p>
 
 <pre>
 monkey
@@ -10044,7 +10042,7 @@ public class UserInterface implements Runnable {
     private JFrame frame;
     private Avatar avatar;
 
-    public Kayttoliittyma(Avatar avatar) {
+    public UserInterface(Avatar avatar) {
         this.avatar = avatar;
     }
 
@@ -11126,7 +11124,7 @@ Public class MainProgram {
 }
 </pre>
 
-<p>Tulostuu:</p>
+<p>Prints:</p>
 
 <pre>
 Matti, D
@@ -12620,7 +12618,7 @@ String maalitMerkkeina = String.format("%2d", maalit);
 </pre>
 
 <p>
-Tulostuu:
+Prints:
 </p>
 
 <pre>

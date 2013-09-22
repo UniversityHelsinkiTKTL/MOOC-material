@@ -6551,7 +6551,7 @@ public class ExerciseAccounting {
 3
 </pre>
 
-    <p>The solution above is useful if we don't need information about the exercises done by each different user. We cam change the saving logic of the exercises in a way to have them save in relation to each user, using a HashMap. The users are recognised throw a unique string (for instance, their student number), and each user has got their own set of finished exercises.</p>
+    <p>The solution above is useful if we don't need information about the exercises done by each different user. We can change the saving logic of the exercises in a way to have them save in relation to each user, using a HashMap. The users are recognized through a unique string (for instance, their student number), and each user has got their own set of finished exercises.</p>
 
 <pre class="sh_java">
 public class ExerciseAccounting {
@@ -6567,9 +6567,9 @@ public class ExerciseAccounting {
             this.doneExercises.put(user, new HashSet&lt;Integer&gt;());
         }
 
-        // first, we retrieve the set containing the user exercises and then we add an exercise to it
+        // first, we retrieve the set containing the user's exercises and then we add an exercise to it
         Set&lt;Integer&gt; finished = this.doneExercises.get(user);
-        finished.add(user);
+        finished.add(exercise);
 
         // the previous would have worked out without helping variable in the following way:
         //  this.doneExercises.get(user).add(exercise);
@@ -6612,7 +6612,7 @@ Mikael: [3, 4]
     <div class="tehtava">
 <h3>Multiple Entry Dictionary</h3>
 
-<p>Let's make an extended version of the dictionary of week 1. Your work is implementing the class the class <code>PersonalMultipleEntryDictionary</code>, which can save one or more entry for each word translated. The class has to implement the interface in the exercise source, <code>MultipleEntryDictionary</code>, with the following methods:</p>
+<p>Let's make an extended version of the dictionary of week 1. Your task is to implement the class <code>PersonalMultipleEntryDictionary</code>, which can save one or more entry for each word translated. The class has to implement the interface in the exercise source, <code>MultipleEntryDictionary</code>, with the following methods:</p>
 
 <p>
   <ul>
@@ -6790,7 +6790,7 @@ public class Booksto {
 
 <ul>
   <li>1 adding a phone number to the relative person</li>
-  <li>2 person search by phone number</li>
+  <li>2 phone number search by person</li>
 </ul>
 
 <p>to receive two points we also require</p>
@@ -6802,7 +6802,7 @@ public class Booksto {
 <p>to receive three points also</p>
 
 <ul>
-  <li>4 adding a phone number to the relative person</li>
+  <li>4 adding an address to the relative person</li>
   <li>5 personal information search (search for a person's address and phone number)</li>
 </ul>
 
@@ -6887,7 +6887,7 @@ city: <font color="red">vantaa</font>
 
 command: <font color="red">5</font>
 whose information: <font color="red">jukka</font>
-  osoite: korsontie vantaa
+  address: korsontie vantaa
   phone number not found
 
 command: <font color="red">7</font>

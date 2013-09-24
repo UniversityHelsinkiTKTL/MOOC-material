@@ -2336,7 +2336,7 @@ apina = monkey
 cembalo = harpsichord
 </pre>
 
-<p><strong>Hint:</strong> you can go throw all HashMap keys using the method <code>keySet</code> in the following way:</p>
+<p><strong>Hint:</strong> you can go through all HashMap keys using the method <code>keySet</code> in the following way:</p>
 
 <pre class="sh_java">
     HashMap&lt;String, String&gt; wordPairs = new HashMap&lt;String, String&gt;();
@@ -2639,7 +2639,7 @@ Book objectBook = new Book("Object book", 2000);
 System.out.println(objectBook);
 </pre>
 
-        <p>if we take an object of <code>Book</code> class and use it as the parameter of the method <code>System.out.println()</code>, our program does not print an error message. Our program does not crash, and instead of reading an error message, we notice an interesting print output. The print output contains the name of the lass, <code>Book</code>, plus an indefinite String which follows a @ character. Notice that when we call <code>System.out.println(objectBook)</code> Java calls <code>System.out.println(objectBook.toString())</code>, in fact, but this does not cause an error.</p>
+        <p>if we take an object of <code>Book</code> class and use it as the parameter of the method <code>System.out.println()</code>, our program does not print an error message. Our program does not crash, and instead of reading an error message, we notice an interesting print output. The print output contains the name of the class, <code>Book</code>, plus an indefinite String which follows a @ character. Notice that when we call <code>System.out.println(objectBook)</code> Java calls <code>System.out.println(objectBook.toString())</code>, in fact, but this does not cause an error.</p>
 
         <p>The explanation is related to the way Java classes are built. Each Java class automatically <em>inherits</em> the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code> class, which contains a set of methods that are useful to each Java class. Heritage means that our class has access to the features and functions defined in the inherited class. Among the others, the class <code>Object</code> contains the method <code>toString</code>, which is inherited by the classes we create.</p>
 
@@ -6202,7 +6202,7 @@ Exception in thread "main" java.lang.NullPointerException
     }
 </pre>
 
-    <p>Another option is to delegate the exception handling responsability to the method caller. We delegate the exception handling responsability by adding the definition <code>throws <em>ExceptionType</em></code> to the method. For instance, we can add <code>throws Exception</code> because the type of all exceptions is <code>Exception</code>. When a method has got the attribute <code>throws Exception</code>, whatever chunk of code which calls that method knows that it may throw an exception, and it should be prepared for it.</p>
+    <p>Another option is to delegate the exception handling responsibility to the method caller. We delegate the exception handling responsibility by adding the definition <code>throws <em>ExceptionType</em></code> to the method. For instance, we can add <code>throws Exception</code> because the type of all exceptions is <code>Exception</code>. When a method has got the attribute <code>throws Exception</code>, whatever chunk of code which calls that method knows that it may throw an exception, and it should be prepared for it.</p>
 
 <pre class="sh_java">
     public void readFile(File f) throws Exception {
@@ -6985,7 +6985,7 @@ public class Bird {
 
 <p>The idea is implementing the funcionality for the ringing centre to track of the places where rung birds were observed and how many times they were. However, observation places and times are not stored in Bird objects, but in a separate HashMap, whose keys are Bird objects. As we remember from Week 2, in such cases we have to implement the methods <code>equals(Object other)</code> and <code>hashCode()</code> in the class <code>Bird</code>.</p>
 
-<p>Some birds have more than one English name (for instance, the Rose Starling is also known as Rose-Coloured Starling or Rose-Coloured Pastor); however, the Latin name is always unique. Create the methods <code>equals</code> and <code>hashCode-</code> in the class <code>Bird</code>; two Bird objects have to be understood as the same bird if their Latin bane and observation year are the same.</p>
+<p>Some birds have more than one English name (for instance, the Rose Starling is also known as Rose-Coloured Starling or Rose-Coloured Pastor); however, the Latin name is always unique. Create the methods <code>equals</code> and <code>hashCode-</code> in the class <code>Bird</code>; two Bird objects have to be understood as the same bird if their Latin name and observation year are the same.</p>
 
 <p>Example:</code>
 
@@ -7052,7 +7052,7 @@ Larus argentatus (1980) observations: 0
 
 <h2>Object Polymorphism</h2>
 
-    <p>Precedently, we have run into situations where variables had various different types, in addition to their own. For instance, in the section <a href="#45">45</a>, we noticed that <em>all</em> objects are <code>Object</code>-type. If and object is a particular type, we can also represent it as <code>Object</code>-type. For instance, <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" target="_blank">String</a></code> is also <code>Object</code>-type, and all <code>String</code> variables can be defined using <code>Object</code>.</p>
+    <p>Precedently, we have run into situations where variables had various different types, in addition to their own. For instance, in the section <a href="#45">45</a>, we noticed that <em>all</em> objects are <code>Object</code>-type. If an object is a particular type, we can also represent it as <code>Object</code>-type. For instance, <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" target="_blank">String</a></code> is also <code>Object</code>-type, and all <code>String</code> variables can be defined using <code>Object</code>.</p>
 
 <pre class="sh_java">
     String string = "string";
@@ -7079,7 +7079,7 @@ Larus argentatus (1980) observations: 0
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/perinta/string-api.png"/></p>
 
-    <p>The String class API documentation starts with the common heading; this is followed by the lass package (<code>java.lang</code>). After the package you find the class name (<code>Class String</code>), and this is followed by the <em>inheritance hierarchy</em>.</p>
+    <p>The String class API documentation starts with the common heading; this is followed by the class package (<code>java.lang</code>). After the package you find the class name (<code>Class String</code>), and this is followed by the <em>inheritance hierarchy</em>.</p>
 
 <pre>
 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html">java.lang.Object</a>
@@ -7090,7 +7090,7 @@ Larus argentatus (1980) observations: 0
 
     <p>You can think inheritance hierarchy as if it was a list of types, which the object has to implement.</p>
 
-    <p>The fact that all objects are <code>Object</code>-type helps programming. If we only need the features defined in the <code>Object</code> class in our method, we can use <code>Object</code> as method parameter. Because all objects are also Object-type, a method can be given <em>whatever</em> object as parameter. Let's create the method <code>printManyTimes</code>, which receves an <code>Object</code> variable as parameter, and the number of times this must be printed.</p>
+    <p>The fact that all objects are <code>Object</code>-type helps programming. If we only need the features defined in the <code>Object</code> class in our method, we can use <code>Object</code> as method parameter. Because all objects are also Object-type, a method can be given <em>whatever</em> object as parameter. Let's create the method <code>printManyTimes</code>, which receives an <code>Object</code> variable as parameter, and the number of times this must be printed.</p>
 
 <pre class="sh_java">
 public class Printer {
@@ -7116,8 +7116,8 @@ public class Printer {
     words.add("encapsulation");
     words.add("abstraction");
 
-    tulostin.printManyTimes(string, 2);
-    tulostin.printManyTimes(words, 3);
+    printer.printManyTimes(string, 2);
+    printer.printManyTimes(words, 3);
 </pre>
 
 <pre>
@@ -7256,11 +7256,11 @@ x: 19; y: 107
 
 <h2>Inheritance of Class Features</h2>
 
-    <p>Classes are for the programmer a way to clarify problematic concepts. With each class we create, we add new functionality to the programming language. The functionality is neaded to solve the problems we meet, and the solutions are born from the interaction among the objects we create. In object programming, an object is an independent unity which can change throw its methods. Objects are used together with each other; each object has got its own area of responsability. For instance, our user interface classes have been making use of <code>Scanner</code> objects, so far.</p>
+    <p>Classes are for the programmer a way to clarify problematic concepts. With each class we create, we add new functionality to the programming language. The functionality is needed to solve the problems we meet, and the solutions are born from the interaction among the objects we create. In object programming, an object is an independent unity which can change through its methods. Objects are used together with each other; each object has got its own area of responsibility. For instance, our user interface classes have been making use of <code>Scanner</code> objects, so far.</p>
 
-    <p>Each Java's class desced from the class <code>Object</code>, which means that each class we create has got all methods which are defined in <code>Object</code>. If we want to change the funtionality of the methods defined in <code>Object</code>, we have to <code>Override</code> them and define a new functionality in the created class.</p>
+    <p>Each Java's class descends from the class <code>Object</code>, which means that each class we create has got all methods which are defined in <code>Object</code>. If we want to change the functionality of the methods defined in <code>Object</code>, we have to <code>Override</code> them and define a new functionality in the created class.</p>
 
-<p>In addition to be possible to inherit the <code>Object</code> class, it is also possible to inherit other classes. If we check Java's <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/ArrayList.html" target="_blank">ArrayList</a></code> class API we notice that <code>ArrayList</code> inherits the class <code>AbstractList</code>. The class <code>AbstractList</code> inherits the class <code>AbstractCollection</code>, which desced from the class <code>Object</code>.</p>
+<p>In addition to be possible to inherit the <code>Object</code> class, it is also possible to inherit other classes. If we check Java's <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/ArrayList.html" target="_blank">ArrayList</a></code> class API we notice that <code>ArrayList</code> inherits the class <code>AbstractList</code>. The class <code>AbstractList</code> inherits the class <code>AbstractCollection</code>, which descended from the class <code>Object</code>.</p>
 
 <pre>
 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">java.lang.Object</a>
@@ -7280,7 +7280,7 @@ public class Component {
     private String producer;
     private String description;
 
-    public Osa(String id, String producer, String description) {
+    public Component(String id, String producer, String description) {
         this.id = id;
         this.producer = producer;
         this.description = description;
@@ -7318,7 +7318,7 @@ public class Motor extends Component {
 }
 </pre>
 
-        <p>The class definition <code>public class Motor extends Component</code> tells us that the class <code>Motor</code> inherits the functionality of <code>Component</code>. In the class <code>Motor</code>, we define the objet variable <code>motorType</code>.</p>
+        <p>The class definition <code>public class Motor extends Component</code> tells us that the class <code>Motor</code> inherits the functionality of <code>Component</code>. In the class <code>Motor</code>, we define the object variable <code>motorType</code>.</p>
 
         <p>The Motor class constructor is interesting. In the first line of the constructor we notice the keyword <code>super</code>, which is used to call the superclass constructor. The call <code>super(id,producer,description)</code> class the constructor <code>public Component(String id, String producer, String description)</code> which is defined in the class <code>Component</code>; in this way the superclass object variables are assigned a value. After doing this, we assign a value to the object variable <code>motorType</code>.</p>
 
@@ -7351,7 +7351,7 @@ volkswagen
 
 <h3>Calling the Superclass Methods</h3>
 
-        <p>The method defined in the superclass can always be called using the <code>super</code> prefix, in the same way we call the methods defined in this class throgh the <code>this</code> prefix. For instance, we can make use of a method which overrives the superclass <code>toString</code> method in the following way:</p>
+        <p>The method defined in the superclass can always be called using the <code>super</code> prefix, in the same way we call the methods defined in this class through the <code>this</code> prefix. For instance, we can make use of a method which overrives the superclass <code>toString</code> method in the following way:</p>
 
 <pre class="sh_java">
     @Override
@@ -7395,14 +7395,14 @@ Esko Ukkonen
 <pre class="sh_java">
     public static void main(String[] args) {
         Student olli = new Student("Olli", "Ida Albergintie Street 1 00400 Helsinki");
-        System.out.println(olli );
+        System.out.println(olli);
         System.out.println("credits " + olli.credits());
         olli.study();
         System.out.println("credits "+ olli.credits());
     }
 </pre>
 
-  <p>tuottaa tulostuksen:</p>
+  <p>Prints:</p>
 
 <pre>
 Olli
@@ -7500,9 +7500,9 @@ Olli
 </div>
 </div>
 
-   <h3>The Object Type defines the Called Method: Polimorphysm</h3>
-
-    <p>The method which can be called are defined throw the variable type. For instance, if a <code>Student</code> object reference is saved into a <code>Person</code> variable, the object can use only the methods defined in the <code>Person</code> class:</p>
+   <h3>The Object Type defines the Called Method: Polymorphism</h3>
+<!-- WTF -->
+    <p>The method which can be called is defined through the variable type. For instance, if a <code>Student</code> object reference is saved into a <code>Person</code> variable, the object can use only the methods defined in the <code>Person</code> class:</p>
 
 <pre class="sh_java">
    Person olli = new Student("Olli", "Ida Albergintie Street 1 00400 Helsinki");
@@ -7519,7 +7519,7 @@ Olli
    Person olli = new Student("Olli", "Ida Albergintie Street 1 00400 Helsinki");
    String.out.println( olli );
 
-   Object liisa = new Opiskelija("Liisa", "Väinö Auerin Street 20 00500 Helsinki");
+   Object liisa = new Student("Liisa", "Väinö Auerin Street 20 00500 Helsinki");
    String.out.println( liisa );
 </pre>
 
@@ -7536,7 +7536,7 @@ Liisa
 
 <p>As you see, the execution method is chosen based on its real type, that is the type of the variable which saved the reference!</p>
 
-    <p>More generally: <b>The execution method is always chosen based on the object real type, regardless of the variable type which is used. Objects are diverse, which means they can be used throgh different variable types. The execution method does always depend of the object actual type.</b> This diversity is called polymorphysm.</p>
+    <p>More generally: <b>The execution method is always chosen based on the object real type, regardless of the variable type which is used. Objects are diverse, which means they can be used through different variable types. The execution method does always depend of the object actual type.</b> This diversity is called polymorphysm.</p>
 
 <h3>Another Example: Points</h3>
 
@@ -7558,17 +7558,17 @@ public class Point {
     }
 
     protected String location(){
-        return x+", "+y;
+        return x + ", " + y;
     }
 
     @Override
     public String toString() {
-        return "("+this.distance()+") distance "+this.manhattanDistanceFromOrigin();
+        return "("+this.location()+") distance "+this.manhattanDistanceFromOrigin();
     }
 }
 </pre>
 
-<p>The <code>location</code> method is not supposed to be used outside its class, and its accessability field is protected, which means only subclasses can access it. For instance, if we use a <a href="http://wiki.gamegardens.com/Path_Finding_Tutorial">parth fiding algorythm</a>, the <a href="http://en.wiktionary.org/wiki/Manhattan_distance">Manhattan distance</a> is the distance of two points moving on a strictly horizontal and/or vertical path, along the coordinate system lines.</p>
+<p>The <code>location</code> method is not supposed to be used outside its class, and its accessability field is protected, which means only subclasses can access it. For instance, if we use a <a href="http://wiki.gamegardens.com/Path_Finding_Tutorial">path fiding algorithm</a>, the <a href="http://en.wiktionary.org/wiki/Manhattan_distance">Manhattan distance</a> is the distance of two points moving on a strictly horizontal and/or vertical path, along the coordinate system lines.</p>
 
 <p>A coloured point is similar to a point, except that it contains a string which tells us its colour. The class can be created by inheriting Point:</p>
 
@@ -7577,7 +7577,7 @@ public class ColouredPoint extends Point {
 
     private String colour;
 
-    public VariPiste(int x, int y, String colour) {
+    public ColouredPoint(int x, int y, String colour) {
         super(x, y);
         this.colour = colour;
     }
@@ -7631,25 +7631,25 @@ public class 3DPoint extends Point {
     }
 
     @Override
-    protected String position() {
-        return super.position()+", "+z;    // printing as "x, y, z"
+    protected String location() {
+        return super.location() + ", " + z;    // printing as "x, y, z"
     }
 
     @Override
     public int manhattanDistanceFromOrigin() {
         // first, we ask the superclass for the distance of x+y
         // and then we add the value of z to it
-        return super.manhattanDistanceFromOrigin()+Math.abs(z);
+        return super.manhattanDistanceFromOrigin() + Math.abs(z);
     }
 
     @Override
     public String toString() {
-        return "("+this.distance()+") distance "+this.manhattanDistanceFromOrigin();
+        return "(" + this.location() + ") distance " + this.manhattanDistanceFromOrigin();
     }
 }
 </pre>
 
-<p>A 3D point defines an object variable corresponding to the third coordinate, and it overrides the methods <code>position</code>, <code>manhattanDistanceFromOrigin</code> and <code>toString</code> so that they would take into account the tridimensionality. We can now extend the previous example and add 3D points to our list:</p>
+<p>A 3D point defines an object variable corresponding to the third coordinate, and it overrides the methods <code>location</code>, <code>manhattanDistanceFromOrigin</code> and <code>toString</code> so that they would take into account the tridimensionality. We can now extend the previous example and add 3D points to our list:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -7679,7 +7679,7 @@ public class Main {
 (0, 0) distance 0
 </pre>
 
-<p>We notice that the tridimentional point <code>toString</code> method is exactly the same as the point's toString. Could we leave the toString method untouched? Of course! A tridimensional point can be redused to the following:</p>
+<p>We notice that the tridimentional point <code>toString</code> method is exactly the same as the point's toString. Could we leave the toString method untouched? Of course! A tridimensional point can be reduced to the following:</p>
 
 <pre class="sh_java">
 public class 3DPoint extends Point {
@@ -7722,13 +7722,14 @@ public class 3DPoint extends Point {
 
           <h3>When Do We Have to Use Inheritance?</h3>
 
-          <p>Inheritance is a tool to build and qualify object hierarchy; a subclass is always a special instance of the superclass. If the class we want to create is a special instance of an already existent class, we can create it by inheriting the class which already exists. For instance in our auto components example, motro <em>is</em> a component, but the motor has got additional funtionality which not all the classes have.</p>
+          <p>Inheritance is a tool to build and qualify object hierarchy; a subclass is always a special instance of the superclass. If the class we want to create is a special instance of an already existent class, we can create it by inheriting the class which already exists. For instance in our auto components example, motor <em>is</em> a component, but the motor has got additional functionality which not all the classe
+          s have.</p>
 
           <p>Through inheritance, a subclass receives the superclass functionality. If a subclass does not need or use the inherited functionality, inheritance is not motivated. The inherited classes inherit the upperclass methods and interfaces, and therefore we can use a subclass for any purpose the superclass was used. It is good to stick to low inheritance hierarchy, because the more complex the inheritance hierarchy is, the more complex maintainance and further development will be. In general, if the hierarchy is higher than two or three, the program structure is usually to improve.</p>
 
           <p>It is good to think about inheritance use. For instance, if <code>Car</code> inherited classes like <code>Component</code> or <code>Motor</code>, that would be wrong. A car <em>contains</em> a motor and components, but a car is not a motor or a component. More generally, we can think that if an object owns or is composed of the other objects, inheritance is wrong.</p>
 
-          <p>Devoloping hierachy, you have to make sure the Single Responsibility Principle applies. There must be only one reason to change a  class. If you notice that the hierarchy increases a class responsabilities, that class must be divided into various different classes.</p>
+          <p>Devoloping hierachy, you have to make sure the Single Responsibility Principle applies. There must be only one reason to change a  class. If you notice that the hierarchy increases a class responsibilities, that class must be divided into various different classes.</p>
 
           <h4>An Example of Inheritance Misuse</h4>
 
@@ -7740,7 +7741,7 @@ public class Customer {
     private String name;
     private String address;
 
-    public Asiakas(String name, String address) {
+    public Customer(String name, String address) {
         this.name = name;
         this.address = address;
     }
@@ -7765,7 +7766,7 @@ public class Order extends Customer {
     private String product;
     private String amount;
 
-    public Tilaus(String product, String amount, String name, String address) {
+    public Order(String product, String amount, String name, String address) {
         super(name, address);
         this.product = product;
         this.amount = amount;
@@ -7785,11 +7786,11 @@ public class Order extends Customer {
 }
 </pre>
 
-  <p>The inheritance above is used erroneously. When a class inherits another, the subclass has to be a special instance of the superclass; order is not a special instance of customer. The misuse becomes apparent by braking the single responsibility principle: the class <code>Order</code> is responsible for both the customer and the order information maintenance.</p>
+  <p>The inheritance above is used erroneously. When a class inherits another, the subclass has to be a special instance of the superclass; order is not a special instance of customer. The misuse becomes apparent by breaking the single responsibility principle: the class <code>Order</code> is responsible for both the customer and the order information maintenance.</p>
 
   <p>The problem with the previous solution becomes apparent when we think of what would happen if a customer changes their own address.</p>
 
-  <p>With a change of address, we would have to change <em>each</em> Order object of the customer, which is a hint about a bad situation. A better solution would be encapsulating <code>Customer</code> as an object variable of <code>Order</code>. If we think more specifically about the order semantics this becomes clear. <em>An order has a customer</em>. Let's change the class <code>Order</code> so that it contained a reference to <code>Customer</code>.</p>
+  <p>With a change of address, we would have to change <em>each</em> Order object of the customer, which is a hint about a bad situation. A better solution would be encapsulating <code>Customer</code> as an object variable of <code>Order</code>. If we think more specifically about the order semantics this becomes clear. <em>An order has a customer</em>. Let's change the class <code>Order</code> so that it contains a reference to <code>Customer</code>.</p>
 
 <pre class="sh_java">
 public class Order {
@@ -7876,9 +7877,9 @@ public class Order {
 </ul>
 
 
-        <p><i>Remember in what whay the constructor can make use of its upper class constructor in its first line!</i></p>
+        <p><i>Remember in what way the constructor can make use of its upper class constructor in its first line!</i></p>
 
-        <p>Käyttöesimerkki:</p>
+        <p>Example:</p>
 
 <pre class="sh_java">
         ProductContainer juice = new ProductContainer("Juice", 1000.0);
@@ -7968,19 +7969,19 @@ Juice: volume = 989.7, free space 10.299999999999955
 <p>Implement analysis methods for your <code>ContainerHistory</code> class:</p>
 
 <ul>
-<li><b>public double greatestFluctuation()</b> returns the absolute value of the single greatest fluctuation in the container history (attention: a fluctuation of -5 is greater than 4). If the history is empty or it contains one value, the method returns zero. Absolute value is the distance of a number from zero. For instance the absolute value of 5.5 is -5.5, and the absolute value of 3.2 is 3.2.</li>
+<li><b>public double greatestFluctuation()</b> returns the absolute value of the single greatest fluctuation in the container history (attention: a fluctuation of -5 is greater than 4). If the history is empty or it contains one value, the method returns zero. Absolute value is the distance of a number from zero. For instance the absolute value of -5.5 is 5.5, and the absolute value of 3.2 is 3.2.</li>
 
 <li><b>public double variance()</b> returns the sample variance of the container history values. If the history is empty or it contains only one value, the method returns zero.</li>
 </ul>
 
-<p>You find guidelines to calculate the variance in <a href="http://en.wikipedia.org/wiki/Variance#Population_variance_and_sample_variance">Wikipedia</a>, in the population and sample variance section. For instance, the avrage of the numbers 3, 2, 7, and 2 is 3.5, and their sample variance is therefore ((3 - 3.5)² + (2 - 3.5)² + (7 - 3.5)² + (2 - 3.5)²)/(4 - 1) ˜ 5,666667.)</p>
+<p>You find guidelines to calculate the variance in <a href="http://en.wikipedia.org/wiki/Variance#Population_variance_and_sample_variance">Wikipedia</a>, in the population and sample variance section. For instance, the average of the numbers 3, 2, 7, and 2 is 3.5, and their sample variance is therefore ((3 - 3.5)² + (2 - 3.5)² + (7 - 3.5)² + (2 - 3.5)²)/(4 - 1) ˜ 5,666667.)</p>
 
 
 
 
 <h4 class="req">Product Container Recorder, Phase 1</h4>
 
-<p>Implement the class <code>ProductContainerRecorder</code> which inherits <code>PruductContainer</code>. In addition to the old methods, the new version provides services for the container history. The hisotry is handled with a  <code>ContainerHistory</code> object.
+<p>Implement the class <code>ProductContainerRecorder</code> which inherits <code>ProductContainer</code>. In addition to the old methods, the new version provides services for the container history. The hisotry is handled with a  <code>ContainerHistory</code> object.
 </p>
 
 <p>The public constructor and methods:</p>
@@ -7988,7 +7989,7 @@ Juice: volume = 989.7, free space 10.299999999999955
 <ul>
 
 <li><b>public ProductContainerRecorder(String productName, double capacity, double initialVolume)</b>
-     cretes a product container. The product name, capacity, and original volume are given as parameter.
+     creates a product container. The product name, capacity, and original volume are given as parameter.
      <i>Record the original volume both as the stored product original volume and as the first value of the container history.</i>
 
 <li><b>public String history()</b> returns the container history in the following form:
@@ -8012,8 +8013,8 @@ juice.addToTheContainer(1.0);
 System.out.println(juice);           // Juice: volume = 989.7, free space 10.3
 ...
 <b>// history() does not work properly, yet:</b>
-System.out.println(juice.historia()); // [1000.0]
-   // in fact, we only retrieve the orginal value which was given to the constructor...
+System.out.println(juice.history()); // [1000.0]
+   // in fact, we only retrieve the original value which was given to the constructor...
 ...
 </pre>
 
@@ -8030,7 +8031,7 @@ Juice: volume = 989.7, free space 10.299999999999955
 <h4 class="req">Product Container Recorder, Phase 2</h4>
 
 <p>
-<i>It's time to pick up history!</i> The first version of our history knew only the orginal value. Implement the following methods:
+<i>It's time to pick up history!</i> The first version of our history knew only the original value. Implement the following methods:
 </p>
 <ul>
 
@@ -9926,7 +9927,7 @@ public class DrawingBoard extends JPanel {
     }
 </pre>
 
-<p>When we start our user interface we see an empty screen, whose background colour is white. The size of the user interface below is set to 300x300 throgh the method <code>setPreferredSize</code>, and its title is <code>"Drawing Board"</code>.</p>
+<p>When we start our user interface we see an empty screen, whose background colour is white. The size of the user interface below is set to 300x300 through the method <code>setPreferredSize</code>, and its title is <code>"Drawing Board"</code>.</p>
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta.png"/></p>
 
@@ -10015,7 +10016,7 @@ public class Avatar {
 }
 </pre>
 
-<p>Let's modify our drawing board, giving it an instance of our <code>Avatar</code> as constructor parameter. The method <code>paintComponent</code> of <code>DrawingBoard</code> does not draw the character itself, but it delegates the responsability to the instance of the class <code>Avatar</code>.</p>
+<p>Let's modify our drawing board, giving it an instance of our <code>Avatar</code> as constructor parameter. The method <code>paintComponent</code> of <code>DrawingBoard</code> does not draw the character itself, but it delegates the responsibility to the instance of the class <code>Avatar</code>.</p>
 
 <pre class="sh_java">
 import java.awt.Color;
@@ -10299,7 +10300,7 @@ public class KeyboardListener implements KeyListener {
 
 
 
-        <p>Note how the <b>object responsabilities are shared here</b>. Each Figure is in charge of drawing and moving itself. Simple figures all move in the same way. Each simple figure has to manage their own drawing themselves. Compound figures move by asking their parts to move, and the same thing happens when it comes to be drawn. The drawing board knows a Figure object which, in fact, can be whatever simple figure or a compound figure: they are all drawn and moved in the same way. In fact, the drawing board works correctly regardless of the real type of the figure; the drawing board does not have to know the details of the figure. When the drawing board calls the method <code>draw</code> or <code>move</code> of the figure, the method of the real type of the figure is called, thanks to <b>polymorphism</b>.</p>
+        <p>Note how the <b>object responsibilities are shared here</b>. Each Figure is in charge of drawing and moving itself. Simple figures all move in the same way. Each simple figure has to manage their own drawing themselves. Compound figures move by asking their parts to move, and the same thing happens when it comes to be drawn. The drawing board knows a Figure object which, in fact, can be whatever simple figure or a compound figure: they are all drawn and moved in the same way. In fact, the drawing board works correctly regardless of the real type of the figure; the drawing board does not have to know the details of the figure. When the drawing board calls the method <code>draw</code> or <code>move</code> of the figure, the method of the real type of the figure is called, thanks to <b>polymorphism</b>.</p>
 
         <p>It's worth to notice that CompoundFigure can contain whatever Figure object, even another CompoundFigure! The class structure allows for highly complex figure formations, whereas figures move and draw themselves always in the same way.</p>
 
@@ -11164,7 +11165,7 @@ Matti
 Pekka
 </pre>
 
-<p>The <code>continue</code> statement is used expecially when we know the iterable variables have got values with which we do not want to handle at all. The classic manner of approach would be using an if statement, but the <code>continue</code> statement allows for another approach to handle with the values, which avoids intricracies and possibly helps legibility. Below, you find two examples, where we go throgh the numbers of a list. If the number is smaller than 5 and contains 100, or if it contains 40, it is not printed; otherwise it is.</p>
+<p>The <code>continue</code> statement is used expecially when we know the iterable variables have got values with which we do not want to handle at all. The classic manner of approach would be using an if statement, but the <code>continue</code> statement allows for another approach to handle with the values, which avoids intricracies and possibly helps legibility. Below, you find two examples, where we go through the numbers of a list. If the number is smaller than 5 and contains 100, or if it contains 40, it is not printed; otherwise it is.</p>
 
 <pre class="sh_java">
     List&lt;Integer&gt; values = Arrays.asList(1, 3, 11, 6, 120);

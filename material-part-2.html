@@ -7725,7 +7725,7 @@ public class 3DPoint extends Point {
 
           <p>It is good to think about inheritance use. For instance, if <code>Car</code> inherited classes like <code>Component</code> or <code>Motor</code>, that would be wrong. A car <em>contains</em> a motor and components, but a car is not a motor or a component. More generally, we can think that if an object owns or is composed of the other objects, inheritance is wrong.</p>
 
-          <p>Devoloping hierachy, you have to make sure the Single Responsibility Principle applies. There must be only one reason to change a  class. If you notice that the hierarchy increases a class responsabilities, that class must be devided into various different classes.</p>
+          <p>Devoloping hierachy, you have to make sure the Single Responsibility Principle applies. There must be only one reason to change a  class. If you notice that the hierarchy increases a class responsabilities, that class must be divided into various different classes.</p>
 
           <h4>An Example of Inheritance Misuse</h4>
 
@@ -8991,7 +8991,7 @@ YOU WIN
     <p>Both the <code>FileWriter</code> constructor and the <code>write</code> method may throw an exception, which has to be either handled or the responsibility has to be delegated to the calling method. The method which is given as parameter the file name and the text to write into it can look like the following.</p>
 
 <pre class="sh_java">
-public class Storekeeper {
+public class FileHandler {
 
     public void writeToFile(String fileName, String text) throws Exception {
         FileWriter writer = new FileWriter(fileName);
@@ -9003,19 +9003,19 @@ public class Storekeeper {
 
     <p>In the above <code>writeToFile</code> method, we first create a <code>FileWriter</code> object, which writes into the <code>fileName</code> file stored at the location specified as parameter. After this, we write into the file using the <code>write</code> method. The exception the constructor and <code>write</code> method can possibly throw has to be handled either with the help of a <code>try-catch</code> block or delegating the responsibility. In the method <code>writeToFile</code> the responsibility was delegated.</p>
 
-    <p>Let's create a <code>main</code> method where we call the <code>writeToFile</code> method of a <code>Storekeeper</code> object. The exception does not have to be handled in the <code>main</code> method either, but the method can declare to throw possibly an exception throw the definition <code>throws Exception</code>.</p>
+    <p>Let's create a <code>main</code> method where we call the <code>writeToFile</code> method of a <code>FileHandler</code> object. The exception does not have to be handled in the <code>main</code> method either, but the method can declare to throw possibly an exception throw the definition <code>throws Exception</code>.</p>
 
 <pre class="sh_java">
     public static void main(String[] args) throws Exception {
-        Storekeeper sk = new Storekeeper();
-        sk.writeToFile("diary.txt", "Dear Diary, today was a nice day.");
+        FileHandler handler = new FileHandler();
+        handler.writeToFile("diary.txt", "Dear Diary, today was a nice day.");
     }
 </pre>
 
-    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. THe method <code>append()</code> allow us to add text at the end of the already existing file, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>Storekeeper</code>; the method appends the text received as parameter to the end of the file.</p>
+    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. THe method <code>append()</code> allow us to add text at the end of the already existing file, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>FileHandler</code>; the method appends the text received as parameter to the end of the file.</p>
 
 <pre class="sh_java">
-public class StoreKeeper {
+public class FileHandler {
     public void writeToFile(String fileName, String text) throws Exception {
         FileWriter writer = new FileWriter(fileName);
         writer.write(text);
@@ -9104,7 +9104,7 @@ System.out.println( dict.translate("programming") );
 System.out.println( dict.translate("banana") );
 </pre>
 
-<p>Tulostuu</p>
+<p>Prints</p>
 
 <pre>
 monkey
@@ -9152,9 +9152,9 @@ programming
 
 <h4>Loading a File</h4>
 
-<p>Create the constructor <code>public Dictionary(String file)</code> and the method <code>public boolean load()</code>, which loads a file whose name is given as parameter in the dictionary constructor. If opening or reading the file does not work, the method returns false and otherwise true.</p>
+<p>Create the constructor <code>public MindfulDictionary(String file)</code> and the method <code>public boolean load()</code>, which loads a file whose name is given as parameter in the dictionary constructor. If opening or reading the file does not work, the method returns false and otherwise true.</p>
 
-<p>Each line of the dictionary file contains a word and its translation, devided by the character ":". Together with the exercise body, you find a dictionary file meant to help the tests. It looks like the following: </p>
+<p>Each line of the dictionary file contains a word and its translation, divided by the character ":". Together with the exercise body, you find a dictionary file meant to help the tests. It looks like the following: </p>
 
 <pre>
 apina:monkey
@@ -9761,7 +9761,7 @@ public class UserInteface implements Runnable {
     <div class="tehtava">
 <h3>Axe Click Effect</h3>
 
-<p>In this exercise we implement a calculator to count the number of clicks. In the exercise, the application logic (counting) and the ui logic are devided from each other. The final application should look like the following, so far. </p>
+<p>In this exercise we implement a calculator to count the number of clicks. In the exercise, the application logic (counting) and the ui logic are divided from each other. The final application should look like the following, so far. </p>
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/159-clickeffect.png"/></p>
 
@@ -10896,7 +10896,7 @@ public enum Suit {
 }
 </pre>
 
-<p>In its most basic from, <code>enum</code> lists its constant values devided by a comma. Enum constants are usually written in capital letters.</p>
+<p>In its most basic from, <code>enum</code> lists its constant values divided by a comma. Enum constants are usually written in capital letters.</p>
 
 <p>Enums are usually created in their own file, in the same way as classes and interfaces. In Netbeans, you can create a enum by clicking to <em>new/other/java/java enum</em> on your project name. </p>
 

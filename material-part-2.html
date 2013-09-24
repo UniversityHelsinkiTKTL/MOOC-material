@@ -61,7 +61,7 @@
 
     <h3>Program, commands and variables</h3>
 
-    <p>A computer program consists of a series of commands that a computer runs one at a time, from top to bottom. The commands always have a predefined structure and semantics. In Java - the programming language we use on the course - the commands are read from top to down, left to right. Programming courses are traditionally started by introducing a program that prints the string <code>Hello World!</code>. Below is a command written in Java that prints the <code>Hello World!</code> string.</p>
+    <p>A computer program consists of a series of commands that a computer runs one at a time, from top to bottom. The commands always have a predefined structure and semantics. In Java - the programming language we use in this course - the commands are read from top to bottom, left to right. Programming courses are traditionally started by introducing a program that prints the string <code>Hello World!</code>. Below is a command written in Java that prints the <code>Hello World!</code> string.</p>
 
 <pre class="sh_java">
         System.out.println("Hello World!");
@@ -79,20 +79,20 @@
 
     <p>The execution of the program above would happen one line at a time. First the line <code>int length;</code> is executed, in which the variable <code>length</code> is introduced. Next the line <code>length = 179;</code> is executed, in which we set the value <code>179</code> to the variable that was introduced on the previous line. After this the line <code>System.out.println(length);</code> is run, in which we call the print method we saw earlier. To this method we give the variable <code>length</code> as a parameter. The method prints the content - the value - of the variable <code>length</code>, which is <code>179</code>.</p>
 
-    <p>In the program above we really wouldn't have to introduce the variable <code>length</code> on one line and then set it's value on the next. The introduction of a variable and setting it's value can be done on the same line.</p>
+    <p>In the program above we really wouldn't have to introduce the variable <code>length</code> on one line and then set its value on the next. The introduction of a variable and setting its value can be done on the same line.</p>
 
 <pre class="sh_java">
         int length = 179;
 </pre>
 
-    <p>When executing the line above, the variable <code>length</code> is introduced and as it is introduced the value <code>179</code> is set to it.</p>
+    <p>When executing the above line, the variable <code>length</code> is introduced and as it is introduced the value <code>179</code> is set to it.</p>
 
     <p>In reality all information within a computer is represented as a series of bits - ones and zeros. Variables are an abstraction offered by the programming language with which we can handle different values more easily. The variables are used to store values and to maintain the state of the program. In Java, we have the primitive variable types <code>int</code> (integer), <code>double</code> (floating-point), <code>boolean</code> (truth value), <code>char</code> (character), and the reference variable types <code>String</code> (character string), <code>ArrayList</code> (array), and all classes. We'll return to primitive data type variables and to reference type variables and their differences later.</p>
 
 
 <h3>Comparing variables and reading input</h3>
 
-    <p>The functionality of programs is built with the help of control structures. Control structures make different functions possible depending on the variables of the program. Below, an example of an <code>if - else if - else</code> control structure, in which a different function is made depending on result of the comparison. In the example a string <code>Accelerate</code> is printed if the value of the variable <code>speed</code> is smaller than 110, the string <code>Break</code> if the <code>speed</code> is greater than 120, and the string <code>Cruising</code> in other cases.</p>
+    <p>The functionality of programs is built with the help of control structures. Control structures make different functions possible depending on the variables of the program. Below, an example of an <code>if - else</code> control structure, in which a different function is executed depending on the result of the comparison. In the example a string <code>Accelerate</code> is printed if the value of the variable <code>speed</code> is smaller than 110, the string <code>Break</code> if the <code>speed</code> is greater than 120, and the string <code>Cruising</code> in other cases.</p>
 
 <pre class="sh_java">
 int speed = 105;
@@ -106,7 +106,7 @@ if (speed < 110) {
 }
 </pre>
 
-        <p>Because in the example above the value of the variable <code>speed</code> is 105, the program will always print the string <code>Accelerate</code>. Remember that the comparison of strings is done with the <code>equals</code> method that belongs to the string. Below is an example in which an object created from Java's <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class is used to read the input of a user. The program checks if the strings entered by the user are equal.</p>
+        <p>Because in the example above the value of the variable <code>speed</code> is 105, the program will always print the string <code>Accelerate</code>. Remember that the comparison of strings is done with the <code>equals</code> method that belongs to the <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" target="_blank">String</a> class. Below is an example in which an object created from Java's <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class is used to read the input of a user. The program checks if the strings entered by the user are equal.</p>
 
 <pre class="sh_java">
 Scanner reader = new Scanner(System.in);
@@ -137,7 +137,7 @@ The strings you entered weren't the same!
 
 <h3>Loops</h3>
 
-        <p>Repetition is often required in programs. First we make a so-called while-true-break loop, which we run until the user inputs the string <code>password</code>. The statement <code>while(true)</code> begins the loop, which will then be repeated until it runs into the keyword <code>break</code>.</p>
+        <p>Repetition is often required in programs. First we make a so-called <code>while-true-break</code> loop, which we run until the user inputs the string <code>password</code>. The statement <code>while(true)</code> begins the loop, which will then be repeated until it runs into the keyword <code>break</code>.</p>
 
 <pre class="sh_java">
         Scanner reader = new Scanner(System.in);
@@ -162,7 +162,7 @@ Thanks!
 </pre>
 
 
-        <p>You can also pass a comparison to a while loop instead of the boolean <code>true</code>. Below, the user input is printed so that there's stars above and below it.</p>
+        <p>You can also pass a comparison to a <code>while</code> loop instead of the boolean <code>true</code>. Below, the user input is printed so that there are stars above and below it.</p>
 
 <pre class="sh_java">
         Scanner reader = new Scanner(System.in);
@@ -197,15 +197,15 @@ carrot
 
         <p>The example above should make you feel a little bad inside. The bad feelings are hopefully because you see that the example violates the rules learned in the programming basics. The example has unneccessary repetition which should be removed with the help of methods.</p>
 
-        <p>In addition to the while-loop we also have two versions of the for-loop at our disposal. The newer for-loop is used for going through lists.</p>
+        <p>In addition to the while-loop we also have two versions of the <code>for-loop</code> at our disposal. The newer <code>for-loop</code> is used for going through lists.</p>
 
 <pre class="sh_java">
-        ArrayList&lt;String&gt; greets = new ArrayList&lt;String&gt;();
-        greets.add("Hei");
-        greets.add("Hallo");
-        greets.add("Hi");
+        ArrayList&lt;String&gt; greetings = new ArrayList&lt;String&gt;();
+        greetings.add("Hei");
+        greetings.add("Hallo");
+        greetings.add("Hi");
 
-        for (String greet: greets) {
+        for (String greet: greetings) {
             System.out.println(greet);
         }
 </pre>
@@ -216,7 +216,7 @@ Hallo
 Hi
 </pre>
 
-        <p>The more traditional for-loop is used in situations similiar to where you would use a while-loop. It can, for example, be used to go through arrays. In the following example all values in the array <code>values</code> will be multiplied by two and then finally printed using the newer for-loop.</p>
+        <p>The more traditional <code>for-loop</code> is used in situations similar to where you would use a <code>while-loop</code>. It can, for example, be used to go through arrays. In the following example all values in the array <code>values</code> will be multiplied by two and then finally printed using the newer <code>for-loop.</code></p>
 
 <pre class="sh_java">
         int[] values = new int[] {1, 2, 3, 4, 5, 6};
@@ -239,7 +239,7 @@ Hi
 12
 </pre>
 
-        <p>The traditional for-loop is very useful in cases where we go through indices one at a time. The loop below will go through the characters of a character string one by one, and prints the character string <code>Hip!</code> every time we encounter the character <code>a</code>.</p>
+        <p>The traditional <code>for-loop</code> is very useful in cases where we go through indices one at a time. The loop below will go through the characters of a character string one by one, and prints the character string <code>Hip!</code> every time we encounter the character <code>a</code>.</p>
 
 <pre class="sh_java">
         String characterString = "saippuakauppias";
@@ -259,13 +259,13 @@ Hip!
 
 <h3>Methods</h3>
 
-    <p>Methods are a way of chopping up the functionality of a program into smaller entities. All Java programs start their execution from the <code>main</code> program method, which is defined with the statement <code>public static void main(String[] args)</code>. The statement defines a static method - that is a method which belongs to the class - which receives a character string array as its parameter.</p>
+    <p>Methods are a way of chopping up the functionality of a program into smaller entities. All Java programs start their execution from the <code>main</code> program method, which is defined with the statement <code>public static void main(String[] args)</code>. This statement defines a static method - that is a method which belongs to the <em>class</em> - which receives a character string array as its parameter.</p>
 
     <p>The program defines methods to abstract the functionalities of the program. When programming, one should try to achieve a situation in which the program can be looked at from a <em>higher level</em>, in such a case the main method consists of calls to a group of self-defined, well-named methods. The methods then specify the functionality of the program and perhaps are based on calls to other methods.</p>
 
     <p>Methods that are defined using the keyword <code>static</code> belong to the <em>class</em> that holds the method, and work as so-called support methods. The methods that are defined without the keyword <code>static</code> belong to the instances - <em>the objects</em> - created from the class and can modify the state of that individual object.</p>
 
-    <p>A method always has a visibility modifier (public, visible to 'everyone', or private, only visible within its class), a return type (void, returns nothing) and a name. In the following code we create a method which belongs to a class, <code>public static void print(String characterString, int times)</code>. This method prints a character string the defined amount of times. This time we use the method <code>System.out.print</code>, which works just like <code>System.out.println</code>, but doesn't print a linebreak.</p>
+    <p>A method always has a visibility modifier (<code>public</code>, visible to 'everyone', or <code>private</code>, only visible within its class), a return type (in the <code>main</code> method this is <code>void</code>, which returns nothing) and a name. In the following code we create a method which belongs to a class, <code>public static void print(String characterString, int times)</code>. This method prints a character string the defined amount of times. This time we use the method <code>System.out.print</code>, which works just like <code>System.out.println</code>, but doesn't print a linebreak.</p>
 
 <pre class="sh_java">
         public static void print(String characterString, int times) {
@@ -275,9 +275,9 @@ Hip!
         }
 </pre>
 
-    <p>The method above prints the character string it receives as a parameter, the amount of times the integer - which was also passed in as a parameter - says.</p>
+    <p>The method above prints the character string it receives as a parameter an amount of times equal to the integer - which was also passed in as a parameter.</p>
 
-    <p>In the chapter on loops we noticed that the code had some nasty copy-paste stuff in it. With the help of methods, we can move the printing of stars to a separate method. We create a method <code>public static void printStars(int times)</code>, which prints the amount of stars it receives as a parameter. The method uses a <code>for</code> loop instead of a <code>while</code>.</p>
+    <p>In the section on loops we noticed that the code had some nasty copy-paste stuff in it. With the help of methods, we can move the printing of stars to a separate method. We create a method <code>public static void printStars(int times)</code>, which prints the amount of stars it receives as a parameter. The method uses a <code>for</code> loop instead of a <code>while</code>.</p>
 
 <pre class="sh_java">
         public static void printStars(int times) {
@@ -315,9 +315,9 @@ public class HelloWorld {
 }
 </pre>
 
-    <p>In a program, classes are used to define concepts and functionalities related to those concepts. Objects can be created from a class which are the embodiments of the class. Every object belongs to a certain class has the same structure, but the variables belonging to the objects can be different. The methods of objects handle the state of the object, that is, the variables of the object.</p>
+    <p>In a program, classes are used to define concepts and functionalities related to those concepts. Objects can be created from a class and are the embodiments of that class. Every object that belongs to a certain class has the same structure, but the variables belonging to each objects can be different. The methods of objects handle the <em>state</em> of the object, that is, the variables of the object.</p>
 
-    <p>Let's inspect the class <code>Book</code> below; the class has the object variables name (String) and publishingYear (integer).</p>
+    <p>Let's inspect the class <code>Book</code> below; the class has the object variables <code>name</code> (String) and <code>publishingYear</code> (integer).</p>
 
 <pre class="sh_java">
         public class Book {
@@ -339,15 +339,15 @@ public class HelloWorld {
         }
 </pre>
 
-    <p>The definition in the beginning, <code>public class Book</code>, tells the name of the class. This is followed by the definitions of object variables. Object variables are variables which for each of the objects created from the class are their own -- the object variables of one object are unrelated to the state of the same variables of another object. It's usually appropriate to hide the object variables from the users of the class, to define the visibility modifier <em>private</em> for them. If the visibility modifier is set to <em>public</em>, the user of the object will be able to directly access the object variables.</p>
+    <p>The definition in the beginning, <code>public class Book</code>, tells the name of the class. This is followed by the definitions of object variables. Object variables are variables which for each of the objects created from the class are their own -- the object variables of one object are unrelated to the state of the same variables of another object. It's usually appropriate to hide the object variables from the users of the class, to define the visibility modifier <code>private</code> for them. If the visibility modifier is set to <code>public</code>, the user of the object will be able to directly access the object variables.</p>
 
-    <p>Objects are created from a class with a <em>constructor</em>. A constructor is a method that initializes an object (creates the variables belonging to the object) and executes the commands that are within the constructor. The constructor is always named the same as the class that has the constructor in it. In the constructor <code>public Book(String name, int publishingYear)</code> a new object is created from the class <code>Book</code> and it's variables are set to the values that were passed in as parameters.</p>
+    <p>Objects are created from a class with a <em>constructor</em>. A constructor is a method that initializes an object (creates the variables belonging to the object) and executes the commands that are within the constructor. The constructor is always named the same as the class that has the constructor in it. In the constructor <code>public Book(String name, int publishingYear)</code> a new object is created from the class <code>Book</code> and its variables are set to the values that were passed in as parameters.</p>
 
     <p>Two methods that handle the information in the object are also defined for the class above. The method <code>public String getName()</code> returns the name of the object in question. The method <code>public int getPublishingYear()</code> returns the publishing year of the object in question.</p>
 
     <h3>Object</h3>
 
-    <p>Objects are created with the help of the constructor that is defined within a class. In the program code the costructor is called with the <code>new</code> command, which returns a reference to the new object. Objects are instances created from classes. Let's inspect a program that creates two different books, after which it prints the values returned by the <code>getName</code> methods beloning to the objects.</p>
+    <p><em>Objects</em> are created with the help of the constructor that is defined within a class. In the program code the costructor is called with the <code>new</code> command, which returns a reference to the new object. Objects are instances created from classes. Let's inspect a program that creates two different books, after which it prints the values returned by the <code>getName</code> methods belonging to the objects.</p>
 
 <pre class="sh_java">
         Book senseAndSensibility = new Book("Sense and Sensibility", 1811);
@@ -362,7 +362,7 @@ Sense and Sensibility
 Pride and Prejudice
 </pre>
 
-    <p>So, each object has it's own internal state. The state is formed from object variables that belong to the object. Object variables can be both primitive type variables and reference type variables. If reference type variables belong to the objects, it is possible that other objects also refer to the same referenced objects! Let's visualize this with the bank example, in which there's accounts and persons.</p>
+    <p>So, each object has its own internal state. The state is formed from object variables that belong to the object. Object variables can be both primitive type variables and reference type variables. If reference type variables belong to the objects, it is possible that other objects also refer to the same referenced objects! Let's visualize this with the bank example, in which there are accounts and persons.</p>
 
 <pre class="sh_java">
         public class Account {
@@ -415,7 +415,7 @@ Pride and Prejudice
         }
 </pre>
 
-    <p>Each object created from the <code>Person</code> class has it's own name and it's own list of accounts. Next, let's create two persons and two accounts. One of the accounts is owned by only one person and the other one is shared.</p>
+    <p>Each object created from the <code>Person</code> class has its own name and its own list of accounts. Next, let's create two persons and two accounts. One of the accounts is owned by only one person and the other one is shared.</p>
 
 <pre class="sh_java">
         Person matti = new Person("Matti");
@@ -612,7 +612,7 @@ public class UserInterface {
 }
 </pre>
 
-    <p>The program is now divided into appropriate parts. There are still a few things, other than implementing more methods, we can do to improve readability. The <code>start</code> method has an <code>if</code> branch that ends in <code>break</code>, which exits the loop. We can remove the unnecessary <code>else</code> branch, simply moving the <code>handleCommand</code> method to be called after the if statement. The program still works exactly as before, but the method is now shorter and easier to read. A similar situation exists in the <code>readInput</code> method, so we will clean it up too.</p>
+    <p>The program is now divided into appropriate parts. There are still a few things, other than implementing more methods, we can do to improve readability. The <code>start</code> method has an <code>if</code> branch that ends in <code>break</code>, which exits the loop. We can remove the unnecessary <code>else</code> branch, simply moving the <code>handleCommand</code> method to be called after the <code>if</code> statement. The program still works exactly as before, but the method is now shorter and easier to read. A similar situation exists in the <code>readInput</code> method, so we will clean it up too.</p>
 
 <pre class="sh_java">
 public class UserInterface {
@@ -660,7 +660,7 @@ public class UserInterface {
 </pre>
 
 
-    <p>Dividing a program into smaller parts, like we did above, is called <em>refactoring</em>. It does not change how the program works, but the internal structure is changed to be more clear and easier to maintain. The current version is much more clear than the original one, but it can be improved further. For example, <code>handleCommand</code> can be further divided into two different methods, one for handling buying and the other for selling.</p>
+    <p>Dividing a program into smaller parts, like we did above, is called <em>refactoring</em>. It does not change how the program works, but the internal structure is changed to be more clear and easier to maintain. The current version is clearer than the original, but it can be improved further. For example, <code>handleCommand</code> can be further divided into two different methods, one for handling buying and the other for selling.</p>
 
 <pre class="sh_java">
 public class UserInterface {
@@ -909,7 +909,7 @@ printWithSmileys("87.");
         word = Change.change(word);
     }
 
-    System.out.println(word);  // tulostuu pårxxbnb
+    System.out.println(word);  // print pårxxbnb
 </pre>
 
 <p><strong>REMINDER</strong> when you add an ArrayList, a Scanner or a Random, Java doesn't recognize the class unless you "import" it by adding the following lines to the beginning:</p>
@@ -922,7 +922,7 @@ import java.util.*;            // imports all tools from java.util, including Ar
 <div class="tehtava">
 <h3>Calculator</h3>
 
-  <p>In this assignment, we make a similiar simple calculator that we already had in the material of programming basics' week 1. This time however, we pay attention to the structure of the program. Especially we will make the <em>main</em>-method (the main program) very light. The main program method doesn't actually do anything else than just start the program:</p>
+  <p>In this assignment, we make a simple calculator, similar to the one made in the material of programming basics' week 1. This time however, we pay attention to the structure of the program. Especially we will make the <em>main</em>-method (the main program) very light. The main program method doesn't actually do anything else than just start the program:</p>
 
 <pre class="sh_java">
 public class MainProgram {
@@ -998,7 +998,7 @@ command: <font color="red">end</font>
 
   <h4>Implementation of the application logic</h4>
 
-  <p>Now implement the methods <code>sum</code>, <code>difference</code> and <code>product</code> so that they work according to the example above. In the example first a command is asked from the user and then two values, then the desired operation is executed and the value of the operation is printed. Notice that asking the user for the values happens within the methods <code>sum</code>, <code>difference</code> and <code>product</code>! The methods use the Reader-object to ask the values, so the body of the methods is as follows:</p>
+  <p>Now implement the methods <code>sum</code>, <code>difference</code> and <code>product</code> so that they work according to the example above. In the example, first a command is asked from the user and then two values. The desired operation is then executed and the value of the operation is printed. Notice that asking the user for the values happens within the methods <code>sum</code>, <code>difference</code> and <code>product</code>! The methods use the Reader-object to ask the values, so the body of the methods is as follows:</p>
 
 <pre class="sh_java">
     private void sum() {
@@ -1052,17 +1052,17 @@ Calculations done 1
 
 <h2>Primitive- and reference-type variables</h2>
 
-        <p>Java is a strongly typed language, what this means is that all of it's variables have a <em>type</em>. The types of the variables can be divided in to two categories: <strong>primitive-type and reference-type variables</strong>. Both types of variables have their own "slot", which holds the information belonging to them. Primitive-type variables hold the concrete <em>value</em> in their slot, while the reference-type variables hold a <em>reference</em> to a concrete <em>object</em>.</p>
+        <p>Java is a strongly typed language, what this means is that all of its variables have a <em>type</em>. The types of the variables can be divided in to two categories: <strong>primitive-type and reference-type variables</strong>. Both types of variables have their own "slot", which holds the information belonging to them. Primitive-type variables hold the concrete <em>value</em> in their slot, while the reference-type variables hold a <em>reference</em> to a concrete <em>object</em>.</p>
 
         <h3>Primitive-type variables</h3>
 
-        <p>The value of a primitive type variable is saved in a slot created for the variable. Each primitive-type variable has it's own slot and it's own value. A variable's slot is created when it is introduced (<code>int number;</code>, for example). A value is set to a slot with the assignment operation <code>=</code>. Below is an example of the introduction of a primitive-type int (integer) variable and setting of it's value in the same expression.</p>
+        <p>The value of a primitive type variable is saved in a slot created for the variable. Each primitive-type variable has its own slot and its own value. A variable's slot is created when it is introduced (<code>int number;</code>, for example). A value is set to a slot with the assignment operator <code>=</code>. Below is an example of the introduction of a primitive-type <code>int</code> (integer) variable and setting of its value in the same expression.</p>
 
 <pre class="sh_java">
 int number = 42;
 </pre>
 
-        <p>Primtive type variables, among others, are <code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code> and more rarely used <code>short</code>, <code>float</code>, <code>byte</code> and <code>long</code>. Also <code>void</code> is a primitive-type, but it doesn't have it's own slot or value. The void-type is used when we want to express that a method doesn't return a value.</p>
+        <p>Primtive type variables, among others, are <code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code> and the more rarely used <code>short</code>, <code>float</code>, <code>byte</code> and <code>long</code>. Another primitive-type is <code>void</code>, but it doesn't have its own slot or value. The <code>void</code>-type is used when we want to express that a method doesn't return a value.</p>
 
     <p>Next we introduce two primitive-type variables and set values to them.</p>
 
@@ -1089,13 +1089,13 @@ six = 64; // the variable 'six' now holds the value 64
 // the variable 'five' still holds the value 6
 </pre>
 
-        <p>Above we introduce the variables <code>five</code> and <code>six</code> and we set values to them. After this the value held in the slot of the variable <code>six</code> is copied to the slot of the variable <code>five</code> (<code>five = six;</code>). If the value of the variable <code>six</code> is changed after this point the value in the variable <code>five</code> remains unaffected: the value of the variable <code>five</code> is in it's own slot and is not related to the value in the slot of the variable <code>six</code> in any way. The end situation as a picture.</p>
+        <p>Above we introduce the variables <code>five</code> and <code>six</code> and we set values to them. After this the value held in the slot of the variable <code>six</code> is copied to the slot of the variable <code>five</code> (<code>five = six;</code>). If the value of the variable <code>six</code> is changed after this point the value in the variable <code>five</code> remains unaffected: the value of the variable <code>five</code> is in its own slot and is not related to the value in the slot of the variable <code>six</code> in any way. The end situation as a picture:</p>
 
         <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/primitive-five-and-six-64.png" /></p>
 
         <h4>Primitive type variable as a method parameter and return value</h4>
 
-        <p>When a primitive type variable is passed to a method as a parameter, the method parameter is set to the value in the given variable's slot. In practice, the method parameters also have own slots to which the value is copied like in an assignment expressions. Let us consider the following method <code>addToValue(int value, int amount)</code>.</p>
+        <p>When a primitive type variable is passed to a method as a parameter, the method parameter is set to the value in the given variable's slot. In practice, the method parameters also have their own slots to which the value is copied, like in an assignment expression. Let us consider the following method <code>addToValue(int value, int amount)</code>.</p>
 
 <pre class="sh_java">
 public int addToValue(int value, int amount) {
@@ -1123,7 +1123,7 @@ addToValue(myValue, 15);
 
 <h4>Minimum and maximum values</h4>
 
-        <p>Each primitive data type can represent a specific range of values limited by its minimum and maximum value, which are the smallest and largest values representible by the type. This is because a predefined data size is used for the internal represetantion of the type in Java (and most other programming languages).</p>
+        <p>Each primitive data type can represent a specific range of values limited by its minimum and maximum value, which are the smallest and largest values representable by the type. This is because a predefined data size is used for the internal represetantion of the type in Java (and most other programming languages).</p>
 
         <p>The minimum and maximum values for a few Java primitive types are:</p>
 
@@ -1180,7 +1180,9 @@ if(Math.abs(distance) &lt; 0.0001) {
     System.out.println("Failed comparison!");
 }
 </pre>
-
+<pre>
+Successful comparison!
+</pre>
 <h3>Reference-Type Variables</h3>
 
         <p>Reference-type variables memorize the information which has been assigned to them "on the other end of the line". Reference-type variables contain a reference to the location where the information is stored. Differently from primitive-type variables, reference-type variable do not have a limited scope because their value or <em>information</em> is stored at the referenced location. Another substantial difference between primitive-type and reference-type variables is that various different reference-type variables can point to the same object.</p>
@@ -1216,7 +1218,7 @@ Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 </pre>
 
-        <p>In the examples we first create a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the <code>new</code> operator, and we return a referece to the object that has been so created. The reference which is returned is assigned to the <code>bonusCalculator</code> variable through the <code>=</code> equal sign. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information. </p>
+        <p>In the examples we first create a reference-type variable called <code>bonusCalculator</code>. The <code>new</code> operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the <code>new</code> operator, and we return a reference to the object that has been so created. The reference which is returned is assigned to the <code>bonusCalculator</code> variable through the <code>=</code> equal sign. The same thing happens with the variable called <code>axeCalculator</code>. If we want to think about it with pictures, we can imagine a reference-type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information. </p>
 
         <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators.png" /></p>
 
@@ -1227,10 +1229,11 @@ Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
 bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable  bonusCalculator
+                                 // that is to say, a reference to a Calculator-type object which received the value 6 in its constructor
+                                 // is copied to the variable bonusCalculator
 </pre>
 
-        <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable duplicates, too. In this case, a reference to the <code>axeCalculator</code> variable slot is copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
+        <p>When we copy a reference-type variable (see above <code>bonusCalculator =  axeCalculator;</code>), the reference to the variable duplicates as well. In this case, a reference to the <code>axeCalculator</code> variable slot is copied to the <code>bonusCalculator</code> variable slot. Now, both the objects point to the same place!</p>
 
         <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators-ref-changed.png" /></p>
 
@@ -1241,10 +1244,11 @@ Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
 bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable
+                                 // that is to say, a reference to a Calculator-type object which received the value 6 in its constructor
+                                 // is copied to the variable
 
 axeCalculator = new Calculator(10); // a new reference is assigned to the axeCalculator variable
-                              // which points to the object created by the command new Calculator(10)
+                                    // which points to the object created by the command new Calculator(10)
 
 // the bonusCalculator variable still contains a reference to the Calculator object which received value 6 in its parameter
 </pre>
@@ -1256,14 +1260,15 @@ axeCalculator = new Calculator(10); // a new reference is assigned to the axeCal
 
         <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/reference-type-calculators-3rd-object.png" /></p>
 
-        <p>Let us have a look to a third example still, and let us focus on an essencial difference between primitive-type and reference-type variables.</p>
+        <p>Let us have a look to a third example still, and let us focus on an essential difference between primitive-type and reference-type variables.</p>
 
 <pre class="sh_java">
 Calculator bonusCalculator = new Calculator(5);
 Calculator axeCalculator = new Calculator(6);
 
 bonusCalculator = axeCalculator; // the reference contained by the variable axeCalculator is copied to the variable bonusCalculator
-                           // that is to say a reference to a Calculator-type object which received the value 6 in its constructor is copied to the variable
+                                 // that is to say, a reference to a Calculator-type object which received the value 6 in its constructor
+                                 // is copied to the variable
 
 axeCalculator.increaseValue(); // we increase by one the value of the object referenced by axeCalculator
 
@@ -1295,7 +1300,7 @@ Calculator lennon = bonus;
 
         <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/three-calculators-1.png" /></p>
 
-        <p>Let us focus again on duplication with one example.</p>
+        <p>Let's use this example to focus on duplication once more.</p>
 
 <pre class="sh_java">
 Calculator bonus = new Calculator(5);
@@ -1305,13 +1310,13 @@ Calculator lennon = bonus;
 lennon = new Calculator(3);
 </pre>
 
-        <p>The modification of the <code>lennon</code> variable contents – that is to say the change of reference – does not affect the references of either <code>bonus</code> or <code>ihq</code>. Always when we assign a value to a variable, we change the contents of only that variable's own slot. The same concept in a picture:</p>
+        <p>The modification of the <code>lennon</code> variable contents – that is to say the change of reference – does not affect the references of either <code>bonus</code> or <code>ihq</code>. When we assign a value to a variable, we <em>only</em> change the contents of that variable's own slot. The same concept in a picture:</p>
 
         <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/three-calculators-2.png" /></p>
 
         <h4>A Reference-Type Variables and Method Parameters</h4>
 
-        <p>When a reference-type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original-type variables, we copy the reference, and not their value. In fact, we can we can modify the object behind the reference even form within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
+        <p>When a reference-type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original-type variables, we copy the reference and not their value. In fact, we can we can modify the object behind the reference even from within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
 
 <pre class="sh_java">
 public void addToCalculator(Calculator calculator, int amount) {
@@ -1321,7 +1326,7 @@ public void addToCalculator(Calculator calculator, int amount) {
 }
 </pre>
 
-        <p>We give two parameters to the method <code>addToCalculator</code> – a reference-type value and an original-type variable. The contents of both variable slots are copied to method parameter slots. The reference-type parameter <code>calculator</code> receives a copy of a reference, whereas the original-type parameter <code>amount</code> receives the copy of value. The method will call the <code>increaseValue()</code> method of the <code>Calculator</code>-type parameter, and it will do it as many times as the value of the <code>amount</code> variable. Let us analise the method call more deeply.</p>
+        <p>We give two parameters to the method <code>addToCalculator</code> – a reference-type value and an original-type variable. The contents of both variable slots are copied to method parameter slots. The reference-type parameter <code>calculator</code> receives a copy of a reference, whereas the original-type parameter <code>amount</code> receives the copy of value. The method will call the <code>increaseValue()</code> method of the <code>Calculator</code>-type parameter, and it will do it as many times as the value of the <code>amount</code> variable. Let us analyze the method call a little more deeply.</p>
 
 <pre class="sh_java">
 int times = 10;
@@ -1331,7 +1336,7 @@ addToCalculator(bonus, times);
 // the bonus variable value is now 20
 </pre>
 
-        <p>In the example, we call the <code>addToCalculator</code> method whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference-type variable <code>bonus</code> and the value of the original-type variable <code>times</code> – which is <code>10</code> – are copied as parameters whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the <code>increaseValue()</code> method of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
+        <p>In the example we call the <code>addToCalculator</code> method, whose given variables are <code>bonus</code> and <code>times</code>. This means that the reference of the reference-type variable <code>bonus</code> and the value of the original-type variable <code>times</code>  (which is <code>10</code>) are copied as parameters whose names are <code>calculator</code> and <code>amount</code>, respectively. The method executes the <code>increaseValue()</code> method of the <code>calculator</code> variable a number of times which equals the value of <code>amount</code>. See the following picture:</p>
 
 
         <p><img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/advprog/refs-main-and-method-world.png" /></p>
@@ -1365,13 +1370,13 @@ Calculator lennon = createCalculator(10);
         <h2 id="stat_ja_ei">Static and Non-Static</h2>
 
 
-        <p>Let us go back to a topic which we introduced in the 30th section of Introduction to Programming, and let us go deeper into into. The static or non-static nature of a variable or of a method depends on their scope. Static methods are always related to their class, whereas non-static methods can modify the variables of the object itself.</p>
+        <p>Let's further investigate a topic we introduced in the 30th section of Introduction to Programming. The static or non-static nature of a variable or of a method depends on their scope. Static methods are always related to their class, whereas non-static methods can modify the variables of the object itself.</p>
 
         <h3>Static, Class Libraries and Final</h3>
 
         <p>The methods which receive the definition static are not related to objects but to classes. it is possible to define class-specific variables by adding the word <code>static</code> to their name. For instance, <code>Integer.MAX_VALUE</code>, <code>Long.MIN_VALUE</code> and <code>Double.MAX_VALUE</code> are all static methods. Static methods are called via their class name, for instance <code>ClassName.variable</code> or <code>ClassName.method()</code>.</p>
 
-        <p>We call class library that class which contains common-use methods and variables. For instance, Java <code>Math</code> class is a class library. It provides the <code>Math.PI</code> variable, inter alia. Often, creating your own class libraries can prove useful. Helsinki Regional Transport Authority (Finnish: Helsingin Seudun Liikenne, HSL) could use a class library to keep its ticket prices at its fingertips.</p>
+        <p>We call <em>class library</em> a class which contains common-use methods and variables. For instance, Java <code>Math</code> class is a class library. It provides the <code>Math.PI</code> variable, inter alia. Often, creating your own class libraries can prove useful. Helsinki Regional Transport Authority (Finnish: Helsingin Seudun Liikenne, HSL) could use a class library to keep its ticket prices at its fingertips.</p>
 
 <pre class="sh_java">
 public class HslPrices {
@@ -1510,7 +1515,7 @@ public class Person {
 }
 </pre>
 
-    <p>The constructor <code>Person(String name, double money)</code> creates a new Person object, and it returns its reference. The method <code>getName()</code> returns the reference to a <code>name</code> object, and the <code>getMoney()</code> method returs the original-type variable <code>money</code>. The method <code>addMoney(double amount)</code> receives as parameter an amount of money, and it adds it to the <code>money</code> object variable if the parameter's value is greater than 0.</p>
+    <p>The constructor <code>Person(String name, double money)</code> creates a new Person object, and it returns its reference. The method <code>getName()</code> returns the reference to a <code>name</code> object, and the <code>getMoney()</code> method returns the original-type variable <code>money</code>. The method <code>addMoney(double amount)</code> receives as parameter an amount of money, and it adds it to the <code>money</code> object variable if the parameter's value is greater than 0.</p>
 
     <p>Object methods are called through their object reference. The following code example creates a new Person object, increases its money, and prints its name, at the end. Note that the method calls follow the pattern <code>objectName.methodName()</code></p>
 
@@ -1529,7 +1534,7 @@ if (matti.enoughMoneyForSingleTicket()) {
 
     <h4>Class Methods</h4>
 
-    <p>Non-static class methods can be also called without specifing the object affix which indicates the class. In the following example, the <code>toString()</code> method points to the class <code>Person</code>, which calls the object method <code>getName()</code>.</p>
+    <p>Non-static class methods can be also called without specifying the object which indicates the class. In the following example, the <code>toString()</code> method points to the class <code>Person</code>, which calls the object method <code>getName()</code>.</p>
 
 <pre class="sh_java">
 public class Person {
@@ -1541,9 +1546,9 @@ public class Person {
 }
 </pre>
 
-    <p>The <code>toString()</code> method calls the class method <code>getName()</code>, which belongs to the object in question. The <code>this</code> affix emphasize that the calls precisely refers to this object.</p>
+    <p>The <code>toString()</code> method calls the class method <code>getName()</code>, which belongs to the object in question. The <code>this</code> prefix emphasizes that the call refers precisely to this object.</p>
 
-    <p>Non-static methods can also call static methods, that is the class-specific ones. On the other hand, static methods can not call non-static methods without a reference to the object itself, which is essential to retrive the object information.</p>
+    <p>Non-static methods can also call static methods, that is the class-specific ones. On the other hand, static methods can not call non-static methods without a reference to the object itself, which is essential to retrieve the object information.</p>
 
 
     <h4>A Variable within a Method</h4>
@@ -1582,7 +1587,7 @@ public class ... {
 
   <ul>
     <li>A construsctor, which is given the thing's name and weight as parameter</li>
-    <li><code>public String getName()</code>, which return's the thing's name</li>
+    <li><code>public String getName()</code>, which returns the thing's name</li>
     <li><code>public int getWeight()</code>, which returns the thing's weight</li>
     <li><code>public String toString()</code>, which returns a string in the form "name (weight kg)"</li>
   </ul>
@@ -1604,7 +1609,7 @@ public class Main {
 }
 </pre>
 
-<p>The program printout should look like the following:</p>
+<p>The program output should look like the following:</p>
 
 <pre>
 Book name: Happiness in Three Steps
@@ -1615,23 +1620,23 @@ Mobile: Nokia 3210 (1 kg)
 
 <h4 class="req">Class Suitcase</h4>
 
-  <p>Create the class <code>Suitcase</code>. Suitcase has got things and a maximum weight limit, which defines the greates total weight of the things contained.</p>
+  <p>Create the class <code>Suitcase</code>. <code>Suitcase</code> has <code>things</code> and a maximum weight limit, which defines the greatest total allowed weight of the things contained within the <code>Suitcase</code> object.</p>
 
   <p>Add the following methods to your class:</p>
 
   <ul>
-    <li> A constructor, which is given a maximum weight limitat</li>
-    <li><code>public void addThing(Thing thing)</code>, which adds the thing in parameter to your suitcase. The method do not return any value.</li>
+    <li> A constructor, which is given a maximum weight limit</li>
+    <li><code>public void addThing(Thing thing)</code>, which adds the <code>thing</code> in the parameter to your suitcase. The method does not return any value.</li>
     <li><code>public String toString()</code>, which returns a string in the form "x things (y kg)"</li>
   </ul>
 
-  <p>The things are saved into an <code>ArrayList</code> object:</p>
+  <p>The <code>things<code> are saved into an <code>ArrayList</code> object:</p>
 
 <pre class="sh_java">
 ArrayList&lt;Thing&gt; things = new ArrayList&lt;Thing&gt;();
 </pre>
 
-  <p>The class<code>Suitcase</code> has to make sure the thing's total weight does not overcome the maximum weight limitation. The method <code>addThing</code> should not add a new thing if the total weight happened to overcome the maximum weight limitation.</p>
+  <p>The class <code>Suitcase</code> has to make sure the thing's weight does not cause the total weight to exceed the maximum weight limit. The method <code>addThing</code> should not add a new thing if the total weight happens to exceed the maximum weight limit.</p>
 
   <p>Below, you find an example of how the class can be used:</p>
 
@@ -1657,7 +1662,7 @@ public class Main {
 }
 </pre>
 
-  <p>The program printout should look like the following:</p>
+  <p>The program output should look like the following:</p>
 
 <pre>
 0 things (0 kg)
@@ -1668,9 +1673,9 @@ public class Main {
 
   <h4>Language Check</h4>
 
-  <p>"0 things" and "1 things" are not the best example of English &ndash; it would be better to say "empty" and "1 thing". Implement thing change in the class <code>Suitcase</code>.</p>
+  <p>"0 things" or "1 things" is not really proper English &ndash; it would be better to say "empty" or "1 thing". Implement this change in the class <code>Suitcase</code>.</p>
 
-  <p>Now, the printout of the previous program should look like the following:</p>
+  <p>Now, the output of the previous program should look like the following:</p>
 
 <pre>
 empty (0 kg)
@@ -1684,8 +1689,8 @@ empty (0 kg)
 <p>Add the following methods to <code>Suitcase</code>:</p>
 
 <ul>
-  <li> <code>printThings</code>, which prints out all the things inside the suitcase</li>
-  <li> <code>totalWeight</code>, which returns the total weight of the things in your suitcase</li>
+  <li> <code>printThings</code>, which prints out all the <code>things</code> inside the suitcase</li>
+  <li> <code>totalWeight</code>, which returns the total weight of the <code>things</code> in your suitcase</li>
 </ul>
 
 <p>Below, there is an example of how the class can be used:</p>
@@ -1709,7 +1714,7 @@ public class Main {
 }
 </pre>
 
-  <p>Below, there is an example of how the class can be used:</p>
+  <p>The program output should now look like the following:</p>
 
 <pre>Your suitcase contains the following things:
 Happiness in Three Steps (2 kg)
@@ -1723,7 +1728,7 @@ Total weight: 7 kg
 
 <h4 class="req">The heaviest Thing</h4>
 
-  <p>Add now the method <code>heaviestThing</code> to your class <code>Suitcase</code>, returning the thing which weighs the most. If there are more than one thing with the same weight, the method can return whatever of them. The method has to return and object reference. If the suitcase is empty, the method returns <em>null</em>.</p>
+  <p>Now, add the method <code>heaviestThing</code> to your class <code>Suitcase</code>, which returns the thing which weighs the most. If there are more than one <code>thing</code> with the same weight, the method can return either one. The method has to return an object reference. If the suitcase is empty, the method returns <em>null</em>.</p>
 
   <p>Here is an usage example of the class:</p>
 
@@ -1745,7 +1750,7 @@ public class Main {
 }
 </pre>
 
-  <p>The program printout should look like the following:</p>
+  <p>The program output should look like the following:</p>
 
 <pre>
 The heaviest thing: Brick (4 kg)
@@ -1757,13 +1762,13 @@ The heaviest thing: Brick (4 kg)
 
   <ul>
     <li> a constructor which is given the maximum weight limit</li>
-    <li> <code>public void addSuitcase(Suitcase suitcase)</code>, which adds the suitcase in parameter to the container</li>
+    <li> <code>public void addSuitcase(Suitcase suitcase)</code>, which adds the suitcase as a parameter to the container</li>
     <li> <code>public String toString()</code> which returns a string in the form "x suitcases (y kg)"</li>
   </ul>
 
   <p>Store the suitcase with a suitable <code>ArrayList</code> construction.</p>
 
-  <p>The class <code>Container</code> has to make sure the thing's total weight does not overcome the maximum weight limitation. The method <code>addSuitcase</code> should not add a new suitcase if the total weight happened to overcome the maximum weight limitation.</p>
+  <p>The class <code>Container</code> has to make sure the <code>thing</code>'s total weight does not overcome the maximum weight limitation. The method <code>addSuitcase</code> should not add a new suitcase if the total weight happens to exceed the maximum weight limit.</p>
 
 <p>Below, there is an example of how the class can be used:</p>
 
@@ -1790,7 +1795,7 @@ public class Main {
 }
 </pre>
 
-  <p>The program printout should look like the following:</p>
+  <p>The program output should look like the following:</p>
 
 <pre>
 2 suitcases (7 kg)
@@ -1798,9 +1803,9 @@ public class Main {
 
 <h4 class="req">The Container Contents</h4>
 
-  <p>Add the method <code>public void printThings()</code> to your <code>Container</code>; the method prints out all the things inside the container suitcases.</p>
+  <p>Add the method <code>public void printThings()</code> to your <code>Container</code>; the method prints out all the things inside the container's suitcases.</p>
 
-<p>Below, there is an example of how the class can be used:</p>
+<p>Below is an example of how the class can be used:</p>
 
 <pre class="sh_java">
 public class Main {
@@ -1826,7 +1831,7 @@ public class Main {
 }
 </pre>
 
-<p>The program printout should look like the following:</p>
+<p>The program output should look like the following:</p>
 
 <pre>
 There are the following things in the container suitcases:
@@ -1837,7 +1842,7 @@ Brick (4 kg)
 
 <h4>A Lot of Bricks</h4>
 
-  <p>Let's check out still that our container works fine and the maximum weight limitation can not be overcome. In the Main class, create the method <code>public static void addSuitcasesFullOfBricks(Container container)</code>, which adds 100 suitcases into the container it receives as parameter; there is one brick in each suitcase. The brick weights increase by one each time till 100 kg.</p>
+  <p>Let's check that our container works fine and we can still not exceed the maximum weight limit. In the <code>Main</code> class, create the method <code>public static void addSuitcasesFullOfBricks(Container container)</code>, which adds 100 suitcases into the container it receives as parameter; there is one brick in each suitcase. The bricks weight will then increase by one each time until the weight becomes 100 kg.</p>
 
   <p>The program body is the following:</p>
 
@@ -1855,7 +1860,7 @@ public class Main {
 }
 </pre>
 
-  <p>The program printout should look like the following:</p>
+  <p>The program output should look like the following:</p>
 
 <pre>
 44 suitcases (990 kg)
@@ -1866,14 +1871,14 @@ public class Main {
 
     <h2 id="hashmap">HashMap</h2>
 
-    <p><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html">HashMap</a> is one of Java's most useful data structures. The idea behind HashMap is we define an index for an object key - a unique value, as for instance a social number, a student number, or a phone number. We call <em>hashing</em> the process of changing a key into an index, or simply to define an index. The hashing happens thanks to a particular function which makes sure that we get always the same index with a known key.</p>
+    <p><a href="http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html">HashMap</a> is one of Java's most useful data structures. The idea behind HashMap is we define an index for an object key - a unique value, for instance a social security number, a student number, or a phone number. We call <em>hashing</em> the process of changing a key into an index, or simply to define an index. The hashing happens thanks to a particular function which makes sure that we get always the same index with a known key.</p>
 
-    <p>Adding and retriving items based on the keys, allows for a particularly quick search process. Instead of parsing the table items one by one (in the worst case we would have to go through all the items), and instead of looking for a value with a binar search (in which case we would have to go through a number of items which would depend on the logarithm of the table size), we can look at only one table index and check whether a value is mapped to that index.</p>
+    <p>Adding and retrieving items based on the keys allows for a particularly quick search process. Instead of parsing the table items one by one (in the worst case we would have to go through all the items), and instead of looking for a value with a binary search (in which case we would have to go through a number of items which would depend on the logarithm of the table size), we can look at only one table index and check whether a value is mapped to that index.</p>
 
-    <p>HashMap uses the <code>Object</code> class <code>hashCode()</code> method to find a key value. Every HashMap subclass will <em>inherit</em> the <code>hashCode()</code> method. However, we will not go deep into HasMap workings in this course. We will return to heritage in week 4.</p>
+    <p>HashMap uses the <code>Object</code> class <code>hashCode()</code> method to find a key value. Every HashMap subclass will <em>inherit</em> the <code>hashCode()</code> method. However, we will not go deep into HashMap workings in this course. We will return to inheritance in week 4.</p>
 
 
-    <p>Java's <code>HashMap</code> class capsulates - or hides - the way it works, and it returns made-up methods ready to use.</p>
+    <p>Java's <code>HashMap</code> class encapsulates - or hides - the way it works, and it returns made-up methods ready to use.</p>
 
     <p>When we create a HashMap we need two <em>type parameters</em>, a type for the key variable, and a type for the stored object. The following example uses a <code>String</code>-type object as key, and a <code>String</code>-type object as the stored object.</p>
 
@@ -1946,7 +1951,7 @@ null
 </div>
         <h3 id="kirjastotietokanta">Book Search through HashMap</h3>
 
-        <p>Let us go deeper into HashMap workings with the help of the following example. Books can be retrived based on their name, which acts as book key. If we find a book for the given name, we obtain the respective reference, as well as the book details. Let us create the example class <code>Book</code>, which has a name and the book contents as object variables.</p>
+        <p>Let us go deeper into HashMap workings with the help of the following example. Books can be retrieved based on their name, which acts as book key. If we find a book for the given name, we obtain the respective reference, as well as the book details. Let us create the example class <code>Book</code>, which has a name and the book contents as object variables.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -2008,7 +2013,7 @@ bookCollection.put(senseAndSensibility.getName(), senseAndSensibility);
 librabookCollectionry.put(prideAndPrejudice.getName(), prideAndPrejudice);
 </pre>
 
-        <p>Books can be retrived from the book collection based on their name. A search for the book <code>"Persuasion"</code> does not return a corresponding entry, in which case the HashMap returns a <code>null</code> reference. However, the book "Pride and Prejudice" was found.</p>
+        <p>Books can be retrieved from the book collection based on their name. A search for the book <code>"Persuasion"</code> does not return a corresponding entry, in which case the HashMap returns a <code>null</code> reference. However, the book "Pride and Prejudice" was found.</p>
 
 <pre class="sh_java">
 Book book = bookCollection.get("Persuasion");
@@ -2025,7 +2030,7 @@ Name: Pride and Prejudice (1813)
 Contents: ...
 </pre>
 
-    <p>HashMaps are useful when we know the key to use for our search. Keys are always unique, and it is not possible to store more than one object together with one key alone. The object which we store can still be a list or another HashMap, of course!</p>
+    <p>HashMaps are useful when we know the key to use for our search. Keys are always unique, and it is not possible to store more than one object together with one key alone. The object which we store can still be a <em>list</em> or another HashMap, of course!</p>
 
     <h3 id="kapseloitu_kirjasto">Library</h3>
 
@@ -2037,7 +2042,7 @@ text = text.toLowerCase(); // the text is now "pride and prejudice "
 text = text.trim() // the text is now "pride and prejudice"
 </pre>
 
-    <p>Let us create the the class <code>Library</code>, which capsulates a HashMap containing books, and allows for book search regardless of its spelling. Let us add the methods <code>addBook(Book book)</code> and <code>removeBook(String bookName)</code> to our <code>Library</code> class. It's already clear that we would need various different methods to clean a string. Therefore, we can create a separate method called <code>private String stringCleaner(String string)</code>.</p>
+    <p>Let us create the the class <code>Library</code>, which encapsulates a HashMap containing books, and allows for book search regardless of its spelling. Let us add the methods <code>addBook(Book book)</code> and <code>removeBook(String bookName)</code> to our <code>Library</code> class. It's already clear that we would need various different methods to clean a string. Therefore, we can create a separate method called <code>private String stringCleaner(String string)</code>.</p>
 
 <pre class="sh_java">
 public class Library {
@@ -2086,7 +2091,7 @@ public class Library {
     }
 </pre>
 
-    <p>The method above returns the wanted book when this is found, otherwise it returns a <code>null</code> value. We can also also go through all the collection keys one by one, and say look for the beginning characters of the book's name. In this way, we would anyway fail to capitalise on HashMap performance speed, because we would need to go through all the book names, in the worst case. Search based on the beginning characters of a string is possible through the <code>keySet()</code> method. The <code>keySet()</code> method returns a set of keys, which can be parsed with the <code>for each</code> loop.</p>
+    <p>The method above returns the wanted book when this is found, otherwise it returns a <code>null</code> value. We can also also go through all the collection keys one by one, and look for the beginning characters of the book's name. In this way, we would actually fail to capitalise on HashMap performance speed because, in the worst case, we would need to go through all the book names. Search based on the beginning characters of a string is possible through the <code>keySet()</code> method. The <code>keySet()</code> method returns a set of keys, which can be parsed with the <code>for each</code> loop.</p>
 
 <pre class="sh_java">
     public Book getBookUsingItsBeginningCharacters(String beginning) {
@@ -2102,7 +2107,7 @@ public class Library {
     }
 </pre>
 
-    <p>Let us leave the method above out of our library, anyway. Our library is still lacking an essential feature concerning book addition. Let us create the method <code>public ArrayList&lt;Book&gt; bookList()</code>, which returns a list of the books in our library. The method <code>bookList()</code> makes use of the <code>values()</code> method, which is provided by HashList. The <code>values()</code> method returns a set of our library books, which can be given as parameter to the constructor of an <code>ArrayList</code> class.</p>
+    <p>Let's leave the method above out of our library for now. Our library is still lacking an essential feature concerning book addition. Let us create the method <code>public ArrayList&lt;Book&gt; bookList()</code>, which returns a list of the books in our library. The method <code>bookList()</code> makes use of the <code>values()</code> method, which is provided by HashList. The <code>values()</code> method returns a set of our library books, which can be given as parameter to the constructor of an <code>ArrayList</code> class.</p>
 
 <pre class="sh_java">
 public class Library {
@@ -2152,12 +2157,12 @@ public class Library {
 }
 </pre>
 
-    <p>Among the programming principles, there is the so called <em>DRY</em> principle (Don't Repeat Yourself), according to which we try to avoid repeting the same code in different places. Turning a string to lower case, and its <em>trimming</em> - that is to say removing white spaces from the beginning and the end of a string - would have recourred various different times without the <code>stringCleaner()</code> method. We hardly notice we are repeating the same code before we have written it, in which case it eventually ends up there. This is not bad, however. The most important thing is that we clean our code as soon as we notice the need.</p>
+    <p>Among the programming principles, there is the so called <em>DRY</em> principle (Don't Repeat Yourself), according to which we try to avoid having code repeat in different places. Turning a string to lower case, and its <em>trimming</em> - removing white spaces from the beginning and the end of a string - would have ocurred several different places without the <code>stringCleaner()</code> method. We might hardly notice we are repeating the same code as we are writing. It is only afterwards we may see the repeated code has snuck in there. That the repetition happens is not in itself bad, however. The most important thing is that we clean our code as soon as we notice the need.</p>
 
 
     <h3>Original-Type Variables in a HashMap</h3>
 
-    <p>Both HashMap keys and stored objects are referece-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.</p>
+    <p>Both HashMap keys and stored objects are reference-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.</p>
 
     <p>
       <table>
@@ -2168,7 +2173,7 @@ public class Library {
       </table>
     </p>
 
-        <p>In fact, Java automatically capsulates original-type values and translates them into reference-type values when that is needed. Even though the number <code>1</code> is an original-type variable, it can be used as an <code>Integer</code> key directly in the following way.</p>
+        <p>In fact, Java automatically encapsulates original-type values and translates them into reference-type values when needed. Even though the number <code>1</code> is an original-type variable, it can be used as an <code>Integer</code> key directly in the following way.</p>
 
 <pre class="sh_java">
 HashMap&lt;Integer, String&gt; table = new HashMap&lt;Integer, String&gt;();
@@ -2219,7 +2224,7 @@ public class TwitchRegister {
   <ul>
     <li> the constructor <code>public PromissoryNote()</code> creates a new promissory note</li>
     <li> the method <code>public void setLoan(String toWhom, double value)</code> which stores the information about loans to specific people.</li>
-    <li> the method <code>public double howMuchIsTheDebt(String whose)</code> which returns the entity of the debt held by the parameter persone</li>
+    <li> the method <code>public double howMuchIsTheDebt(String whose)</code> which returns the entity of the debt held by the parameter <code>person</code></li>
   </ul>
 
 <p>The class can be used in the following way:</p>
@@ -2364,7 +2369,7 @@ The user input must be read using the reader object received as constructor para
 </strong>
 </p>
 
-<p><strong>Attention:</strong> again the previous remark. <strong>The text user interface must not create a scanner itself</strong> but it must use the scanner received as parameter to read the user input!</p>
+<p><strong>Attention:</strong> This means <strong>The text user interface must not create a scanner itself</strong> but it must use the scanner received as parameter to read the user input!</p>
 
   <p>At the beginning, in the text user interface must only have the command <code>quit</code>, to quit the text user interface. If the user inputs something else, we print "Unknown statement".</p>
 
@@ -2456,9 +2461,9 @@ Command: Give word: Translation: juusto
 Command: Cheers!
 </pre>
 
-<p>Giving a string to a Scanner class is a way to replace the String inputs given with the keyboard. The contents of the String variable <code>input</code> "simulates" the user input. <code>\n</code> denotes a line break. Each single part of the <code>input</code> variable which ends with a line break corresponds to one nextLine() input.</p>
+<p>Giving a string to a Scanner class is a way to replace the String inputs given through the keyboard. The contents of the String variable <code>input</code> "simulates" the user input. <code>\n</code> denotes a line break. Each single part of the <code>input</code> variable which ends with a line break corresponds to one nextLine() input.</p>
 
-<p>It is easy to change the text input, and we can add new words to our dictionary, in the following way:</p>
+<p>It is easy to change the text input, and we can add new words to our dictionary in the following way:</p>
 
 <pre class="sh_java">
     String input = "add\n"  + "cheese\n" + "juusto\n" +
@@ -2471,9 +2476,9 @@ Command: Cheers!
 
 <p>If you want to test again your program manually, change the Scanner object constructor parameter into <code>System.in</code>, i.e system input stream.</p>
 
-<p>The program functionality must be checked from the output pane, still. The result can still be confusing at the beginning, because the athomatic input does not appear in the output pane at all.</p>
+<p>The program functionality must be checked from the output pane, still. The result can still be confusing at the beginning, because the automatic input does not appear in the output pane at all.</p>
 
-<p>The final goal will be to automate also the program functionality inspection, so that both testing the program and analising its output text would happen successfully in a click.</p>
+<p>The final goal will be to also automate the testing the program's functionality, so that both testing the program and analising its output text would happen successfully in one click.</p>
 
 
 
@@ -2588,7 +2593,7 @@ Choose operation:
 > <font color="red">x</font>
 </pre>
 
-<p><strong>Attention:</strong> for the tests, it is essencial that the <em>user interface</em> works <b>exactly</b> as displayed above. In fact, it is good that you copy-paste the menus printed by the program from above into your code. The tests do not require that your program should be prepared to deal with invalid inputs. This exercise is worth of three single excercise points.</p>
+<p><strong>Attention:</strong> for the tests, it is essential that the <em>user interface</em> works <b>exactly</b> as displayed above. In fact, it is a good idea to copy-paste the menus printed by the above program into your code <em>exactly</em>. The tests do not require that your program should be prepared to deal with invalid inputs. This exercise is worth three single excercise points.</p>
 
 <p><em><strong>The program must start by executing the main method in the exercise layout.</strong></em></p>
 
@@ -2636,7 +2641,7 @@ System.out.println(objectBook);
 
         <p>if we take an object of <code>Book</code> class and use it as the parameter of the method <code>System.out.println()</code>, our program does not print an error message. Our program does not crash, and instead of reading an error message, we notice an interesting print output. The print output contains the name of the lass, <code>Book</code>, plus an indefinite String which follows a @ character. Notice that when we call <code>System.out.println(objectBook)</code> Java calls <code>System.out.println(objectBook.toString())</code>, in fact, but this does not cause an error.</p>
 
-        <p>The explenation is related to the way Java classes are built. Each Java class automatically <em>inherits</em> the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code> class, which contains a set of methods that are useful to each Java class. Heritage means that our class has access to the features and functions defined in the inherited class. Among the others, the class <code>Object</code> contains the method <code>toString</code>, which is inherited by the classes we create.</p>
+        <p>The explanation is related to the way Java classes are built. Each Java class automatically <em>inherits</em> the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html" target="_blank">Object</a></code> class, which contains a set of methods that are useful to each Java class. Heritage means that our class has access to the features and functions defined in the inherited class. Among the others, the class <code>Object</code> contains the method <code>toString</code>, which is inherited by the classes we create.</p>
 
         <p>The <code>toString</code> method inherited from the object class is not usually the one we'd want. That's why we will want to <em>replace</em> it with one we make personally. Let us add the method <code>public String toString()</code> to our <code>Book</code> class. This method will replace the <code>toString</code> method inherited from the <code>Object</code> class.</p>
 
@@ -2885,9 +2890,9 @@ The books are the same
         <p>Various different Java made-up methods make use of the <code>equals</code> method to implement their search functionality. For instance, the <code>contains</code> mehod of class <code>ArrayList</code> compares objects through the <code>equals</code> method. Let us continue to use the <code>Book</code> class we defied for our examples. If our objects do not implement the <code>equals</code> method, we can't use the <code>contains</code> method, for instance. Try out the code below in two different <code>book</code> classes. The first class implements the <code>equals</code> method, the other does not.</p>
 
 <pre class="sh_java">
-ArrayList&lt;Book&gt; kirjat = new ArrayList&lt;Book&gt;();
+ArrayList&lt;Book&gt; books = new ArrayList&lt;Book&gt;();
 Book objectBook = new Book("Objectbook", 2000);
-books.add(olioBook);
+books.add(objectBook);
 
 if (books.contains(objectBook)) {
     System.out.println("The object book was found.");
@@ -3115,7 +3120,7 @@ public class RegistrationPlate {
     }
 </pre>
 
-<p>If equals hashCode have been implemented well, the printout should look like this:</p>
+<p>If equals hashCode have been implemented well, the output should look like this:</p>
 
 <pre>
 Finnish: [FI ABC-123, FI UXE-465]
@@ -3130,9 +3135,9 @@ Jürgen
 <p>Implement the class <code>VehicleRegister</code> which has got the following methods:</p>
 
 <ul>
-<li><code>public boolean lisaa(RegistrationPlate truck, String owner)</code>, which adds the parameter owner of the car which corresponds to the parameter registration plate. The method returns true if the car had no owner; if the car had an owner already, the method returns false and it doesn't do anything</li>
-<li><code>public String get(RegistrationPlate truck)</code>, which returns the car owner which corresponds to the parameter register number. If the car was not registered, it returns <code>null</code></li>
-<li><code>public boolean delete(RegistrationPlate truck)</code>, which delete the information connected to the parameter registration plate. The method returns true if the information was deleted, and false if there was no information connetted to the parameter in the register.</li>
+<li><code>public boolean add(RegistrationPlate plate, String owner)</code>, which adds the parameter owner of the car which corresponds to the parameter registration plate. The method returns true if the car had no owner; if the car had an owner already, the method returns false and it doesn't do anything</li>
+<li><code>public String get(RegistrationPlate plate)</code>, which returns the car owner which corresponds to the parameter register number. If the car was not registered, it returns <code>null</code></li>
+<li><code>public boolean delete(RegistrationPlate plate)</code>, which delete the information connected to the parameter registration plate. The method returns true if the information was deleted, and false if there was no information connetted to the parameter in the register.</li>
 </ul>
 
 <p><strong>Attention:</strong> the vehicle register has to store the owner information into a <code>HashMap&lt;RegistrationPlate, String&gt; owners</code> object variable!</p>
@@ -3158,16 +3163,16 @@ public interface Readable {
 }
 </pre>
 
-        <p>The interface <code>Readable</code> defines the method <code>lue()</code>, which returns a string object. The classes which implement an interface decide <em>in which way</em> the methods defined in the interface have to be implemented, in the end. A class implements an interface by adding the keyword <em>implements</em> between the class and the interface name. Below, we create the class <code>SMS</code> which implements <code>Readable</code> interface.</p>
+        <p>The interface <code>Readable</code> defines the method <code>read()</code>, which returns a string object. The classes which implement an interface decide <em>in which way</em> the methods defined in the interface have to be implemented, in the end. A class implements an interface by adding the keyword <em>implements</em> between the class and the interface name. Below, we create the class <code>SMS</code> which implements <code>Readable</code> interface.</p>
 
 <pre class="sh_java">
 public class SMS implements Readable {
     private String sender;
     private String content;
 
-    public Tekstiviesti(String sender, String content) {
+    public SMS(String sender, String content) {
         this.sender = sender;
-        this.sisalto = content;
+        this.content = content;
     }
 
     public String getSender() {
@@ -3192,7 +3197,7 @@ public class EBook implements Readable {
     private ArrayList&lt;String&gt; pages;
     private int pageNumber;
 
-    public Sahkokirja(String name, ArrayList&lt;String&gt; pages) {
+    public EBook(String name, ArrayList&lt;String&gt; pages) {
         this.name = name;
         this.pages = pages;
         this.pageNumber = 0;
@@ -3227,7 +3232,7 @@ public class EBook implements Readable {
     SMS message = new SMS("ope", "Awesome stuff!");
     System.out.println(message.read());
 
-    ArrayList&lt;Tekstiviesti&gt; messages = new ArrayList&lt;Tekstiviesti&gt;();
+    ArrayList&lt;SMS&gt; messages = new ArrayList&lt;SMS&gt;();
     messages.add(new SMS("unknown number", "I hid the body.");
 </pre>
 
@@ -3235,10 +3240,10 @@ public class EBook implements Readable {
 
 <pre class="sh_java">
     ArrayList&lt;String&gt; pages = new ArrayList&lt;String&gt;();
-    sivut.add("Split your method into short clear chunks.");
-    sivut.add("Devide the user interface logic from the application logic.");
-    sivut.add("At first, always code only a small program which solves only a part of the problem.");
-    sivut.add("Practice makes perfect. Make up your own fun project.");
+    pages.add("Split your method into short clear chunks.");
+    pages.add("Devide the user interface logic from the application logic.");
+    pages.add("At first, always code only a small program which solves only a part of the problem.");
+    pages.add("Practice makes perfect. Make up your own fun project.");
 
     EBook book = new EBook("Programming Hints.", pages);
     for(int page = 0; page &lt; book.howManyPages(); page++) {
@@ -3348,7 +3353,7 @@ public class Printer {
 }
 </pre>
 
-        <p>The real value of the <code>print</code> method of class <code>Printer</code> is that it's parameter can be <em>whatever</em> class instance which implements our <code>Readable</code> interface. When we call the method of an object, the method will work regardless of the class of this object, as long as the object implements Readable.</p>
+        <p>The real value of the <code>print</code> method of class <code>Printer</code> is that its parameter can be <em>whatever</em> class instance which implements our <code>Readable</code> interface. When we call the method of an object, the method will work regardless of the class of this object, as long as the object implements Readable.</p>
 
 <pre class="sh_java">
     SMS message = new SMS("teacher", "Huhhuh, this printer is able to print them, actually!");
@@ -3419,8 +3424,8 @@ public class NumberList implements Readable {
 
 <pre class="sh_java">
     NumberList myList = new NumberList();
-    joelList.lisaa(new SMS("matti", "have you already written the tests?"));
-    joelList.lisaa(new SMS("matti", "did you have a look at the submissions?"));
+    joelList.add(new SMS("matti", "have you already written the tests?"));
+    joelList.add(new SMS("matti", "did you have a look at the submissions?"));
 
     System.out.println("Joel has got " + joelList.howManyReadables() + " messages to read");
 </pre>
@@ -3434,7 +3439,7 @@ Joel has got got 2 messages to read
 <pre class="sh_java">
     NumberList joelList = new NumberList();
     for (int i = 0; i &lt; 1000; i++) {
-        joelList.lisaa(new SMS("matti", "have you already written the tests?"));
+        joelList.add(new SMS("matti", "have you already written the tests?"));
     }
 
     System.out.println("Joel has got " + joelList.howManyReadables() + " messages to read");
@@ -3450,7 +3455,7 @@ Joel has got got 2 messages to read
 
 <pre>
 Joel has got 1000 messages to read
-Delegoidaan lukeminen Mikaelille
+Let's delegate some reading to Mikael
 
 Joel has got 0 messages to read
 </pre>
@@ -3476,30 +3481,30 @@ public interface ToBeStored {
 
   <p>Add the interface to your program. New interfaces are added almost in the same way as classes: you choose <i>new Java interface</i> instead of <i>new Java class</i>.</p>
 
-  <p>Create two classes which implement the interface <code>Book</code> and <code>CD</code>. Book receives its writer (String), name (String), and edition (double), all as parameter. CD's parameter contains its artist (String), title (String), and publishing year (int). All CDs weigh 0.1 kg.</p>
+  <p>Create two classes which implement the interface <code>Book</code> and <code>CD</code>. Book receives its writer (String), name (String), and weight (double), all as parameter. CD's parameter contains its artist (String), title (String), and publishing year (int). All CDs weigh 0.1 kg.</p>
 
   <p>Remember that the classes also have to implement the interface <code>ToBeStored</code>. The classes have to work in the following way:</p>
 
 <pre class="sh_java">
     public static void main(String[] args) {
-        Book kirja1 = new Book("Fedor Dostojevski", "Crime and Punishment", 2);
-        Book kirja2 = new Book("Robert Martin", "Clean Code", 1);
-        Book kirja3 = new Book("Kent Beck", "Test Driven Development", 0.5);
+        Book book1 = new Book("Fedor Dostojevski", "Crime and Punishment", 2);
+        Book book2 = new Book("Robert Martin", "Clean Code", 1);
+        Book book3 = new Book("Kent Beck", "Test Driven Development", 0.5);
 
         CD cd1 = new CD("Pink Floyd", "Dark Side of the Moon", 1973);
         CD cd2 = new CD("Wigwam", "Nuclear Nightclub", 1975);
         CD cd3 = new CD("Rendezvous Park", "Closer to Being Here", 2012);
 
-        System.out.println(kirja1);
-        System.out.println(kirja2);
-        System.out.println(kirja3);
+        System.out.println(book1);
+        System.out.println(book2);
+        System.out.println(book3);
         System.out.println(cd1);
         System.out.println(cd2);
         System.out.println(cd3);
     }
 </pre>
 
-  <p>Tulostus:</p>
+  <p>Print output:</p>
 
 <pre>
 Fedor Dostojevski: Crime and Punishment
@@ -3510,7 +3515,7 @@ Wigwam: Nuclear Nightclub (1975)
 Rendezvous Park: Closer to Being Here (2012)
 </pre>
 
-  <p>Attention! The edition is not reported here.</p>
+  <p>Attention! The weight is not reported here.</p>
 
 <h4 class="req">Box</h4>
 
@@ -3522,13 +3527,13 @@ Rendezvous Park: Closer to Being Here (2012)
     public static void main(String[] args) {
         Box box = new Box(10);
 
-        box.lisaa( new Book("Fedor Dostojevski", "Crime and Punishment", 2) ) ;
-        box.lisaa( new Book("Robert Martin", "Clean Code", 1) );
-        box.lisaa( new Book("Kent Beck", "Test Driven Development", 0.7) );
+        box.add( new Book("Fedor Dostojevski", "Crime and Punishment", 2) ) ;
+        box.add( new Book("Robert Martin", "Clean Code", 1) );
+        box.add( new Book("Kent Beck", "Test Driven Development", 0.7) );
 
-        box.lisaa( new cd("Pink Floyd", "Dark Side of the Moon", 1973) );
-        box.lisaa( new cd("Wigwam", "Nuclear Nightclub", 1975) );
-        box.lisaa( new cd("Rendezvous Park", "Closer to Being Here", 2012) );
+        box.add( new CD("Pink Floyd", "Dark Side of the Moon", 1973) );
+        box.add( new CD("Wigwam", "Nuclear Nightclub", 1975) );
+        box.add( new CD("Rendezvous Park", "Closer to Being Here", 2012) );
 
         System.out.println( box );
     }
@@ -3564,7 +3569,7 @@ public class Box {
 
   <h4 class="req">Boxes are Stored too!</h4>
 
-  <p>Implementing the interface <code>ToBeStored</code> requires that the class has got the method <code>double paino()</code>. In fact, we just added this method to Box. Boxes can be stored!</p>
+  <p>Implementing the interface <code>ToBeStored</code> requires that the class has got the method <code>double weight()</code>. In fact, we just added this method to Box. Boxes can be stored!</p>
 
   <p>Boxes are objects where we can store object which implement the interface <code>ToBeStored</code>. Boxes also implement this interface. This means that <b>you can also put boxes inside your boxes!</b></p>
 
@@ -3599,21 +3604,21 @@ public class Box {
    }
 </pre>
 
-<p>It is possible to use our Fabric without knowing precisely what kind of classes are present in it, as long as they all implement Item. Below you find the class <code>Packer</code> which can be used to get a boxful of items. The Packer knows the fabric which produces its Items:</p>
+<p>It is possible to use our Factory without knowing precisely what kind of classes are present in it, as long as they all implement Item. Below you find the class <code>Packer</code> which can be used to get a boxful of items. The Packer knows the factory which produces its Items:</p>
 
 <pre class="sh_java">
    public class Packer {
-       private Fabric fabric;
+       private Factory factory;
 
        public Packer(){
-            fabric = new Fabric();
+            factory = new Factory();
        }
 
        public Box giveABoxful() {
             Box box = new Box(100);
 
             for ( int i=0; i &lt; 10; i++ ) {
-                Iteam newItem = fabric.produceNew();
+                Item newItem = factory.produceNew();
                 box.add(newItem);
             }
 
@@ -3622,7 +3627,7 @@ public class Box {
    }
 </pre>
 
-<p>Because the packer doesn't know the classes which implement the Item interface, it is possble to add new classes which implement the interface without having to modify the packer. Below, we create a new class which implements our Item interface - <code>ChocolateBar</code>. Our Fabric was modified to produce chocolate bars in addition to books and CDs. The class <code>Packer</code> works fine with the extended fabric version, without having to change it.</p>
+<p>Because the packer doesn't know the classes which implement the Item interface, it is possble to add new classes which implement the interface without having to modify the packer. Below, we create a new class which implements our Item interface - <code>ChocolateBar</code>. Our Factory was modified to produce chocolate bars in addition to books and CDs. The class <code>Packer</code> works fine with the extended factory version, without having to change it.</p>
 
 <pre class="sh_java">
    public class ChocolateBar implements Item {
@@ -3633,7 +3638,7 @@ public class Box {
       }
    }
 
-   public class Fabric {
+   public class Factory {
       // we don't need a constructor because Java is able to generate a default one!
 
        public Item produceNew(){
@@ -3857,8 +3862,8 @@ strings.add("A string object within a LinkedList object!");
 
 <pre class="sh_java">
 Map&lt;String, String&gt; translations = new HashMap&lt;String, String&gt;();
-kaannokset.put("gambatte", "tsemppiä");
-kaannokset.put("hai", "kyllä");
+translations.put("gambatte", "tsemppiä");
+translations.put("hai", "kyllä");
 </pre>
 
     <p>You get HashMap keys thourgh the method <code>keySet</code>.</p>
@@ -3972,7 +3977,7 @@ for(String value: translations.values()) {
   <p>Create the class Storehouse with the following methods:</p>
 
   <ul>
-    <li><code>public void addProduct(String product, int price, int stocks)</code>, adding to the storehouse a product whose price and number of stocks are the parameter values</li>
+    <li><code>public void addProduct(String product, int price, int stock)</code>, adding to the storehouse a product whose price and number of stocks are the parameter values</li>
     <li><code>public int price(String product)</code> returns the price of the parameter product; if the product is not available in the storehouse, the method returns -99</li>
   </ul>
 
@@ -4006,28 +4011,28 @@ sugar: -99
   <p>Store product stocks in a similar <code>Map&lt;String, Integer&gt;</code> variable as the one you used for their prices. Fill the Storehouse with the following methods:</p>
 
   <ul>
-    <li><code>public int stock(String product)</code> returns the number of stocks of the parameter product.</li>
-    <li><code>public boolean take(String product)</code> decreases the number of stocks of the parameter product by one, and it returns <em>true</em> if the object was available in the storehouse. If the product was not in the storehouse, the method returns <em>false</em>, the product stocks cannot go below zero.</li>
+    <li><code>public int stock(String product)</code> returns the stock of the parameter product.</li>
+    <li><code>public boolean take(String product)</code> decreases the stock of the parameter product by one, and it returns <em>true</em> if the object was available in the storehouse. If the product was not in the storehouse, the method returns <em>false</em>, the product stock cannot go below zero.</li>
   </ul>
 
 
-  <p>An example of how to use the storehose now:</p>
+  <p>An example of how to use the storehouse now:</p>
 
 <pre class="sh_java">
         Storehouse store = new Storehouse();
         store.addProduct("coffee", 5, 1);
 
         System.out.println("stocks:");
-        System.out.println("coffee:  " + store.stocks("kahvi"));
-        System.out.println("sokeri: " + store.stocks("sokeri"));
+        System.out.println("coffee:  " + store.stock("coffee"));
+        System.out.println("sugar: " + store.stock("sugar"));
 
         System.out.println("we take a coffee " + store.take("coffee"));
         System.out.println("we take a coffee " + store.take("coffee"));
         System.out.println("we take sugar " + store.take("sugar"));
 
         System.out.println("stocks:");
-        System.out.println("coffee:  " + store.saldo("coffee"));
-        System.out.println("sugar: " + store.saldo("sugar"));
+        System.out.println("coffee:  " + store.stock("coffee"));
+        System.out.println("sugar: " + store.stock("sugar"));
 </pre>
 
 <p>Prints:</p>
@@ -4102,7 +4107,7 @@ milk
         System.out.println( purchase );
 </pre>
 
-<p>Tulostuu:</p>
+<p>Prints:</p>
 
 <pre>
 the total price of a purchase containing four milks is 8
@@ -4116,18 +4121,18 @@ milk: 5
 
   <p>Finally, we can implement our shopping basket class!</p>
 
-  <p>The shopping basket stores its products as <em>Purchase objects</em>. The shopping basket has to have an object variable whose type is either <code>Map&lt;String, Ostos&gt;</code> or <code>List&lt;Ostos&gt;</code>. Do not create any other object variable for your shopping basket in addition to the Map or List needed to store purchases.</p>
+  <p>The shopping basket stores its products as <em>Purchase objects</em>. The shopping basket has to have an object variable whose type is either <code>Map&lt;String, Purchase&gt;</code> or <code>List&lt;Purchase&gt;</code>. Do not create any other object variable for your shopping basket in addition to the Map or List needed to store purchases.</p>
 
-  <p>Attention: if you store a Purchase object in a Map helping variable, it will be useful to use the Map method values() i this and in the following exercise; with it, it's easy to go through all the stored Purchase objects.</p>
+  <p>Attention: if you store a Purchase object in a Map helping variable, it will be useful to use the Map method values() in this and in the following exercise; with it, it's easy to go through all the stored Purchase objects.</p>
 
-  <p>Let's create a contructor without parameter for our shopping basket, as well as the following methods:</p>
+  <p>Let's create a constructor without parameter for our shopping basket, as well as the following methods:</p>
 
   <ul>
     <li><code>public void add(String product, int price)</code> adds a purchase to the shopping basket; the purchase is defined by the parameter product, and its price is the second parameter.</li>
     <li><code>public int price()</code> returns the shopping basket total price</li>
 </ul>
 
-<p>Esimerkki ostoksen käytöstä</p>
+<p>Example code of using basket</p>
 
 <pre class="sh_java">
         ShoppingBasket basket = new ShoppingBasket();
@@ -4135,7 +4140,7 @@ milk: 5
         basket.add("buttermilk", 2);
         basket.add("cheese", 5);
         System.out.println("basket price: " + basket.price());
-        kori.add("computer", 899);
+        basket.add("computer", 899);
         System.out.println("basket price: " + basket.price());
 </pre>
 
@@ -4148,7 +4153,7 @@ basket price: 909
 
 <h4>Printing out the Shopping Basket</h4>
 
-  <p>Let's create the method <code>public void print()</code> for our shopping basket. This prints out the <em>Purchase</em> objects which are contained by the basket. The printing order is not important. The printout of the shopping basket in the previous example would be:</p>
+  <p>Let's create the method <code>public void print()</code> for our shopping basket. This prints out the <em>Purchase</em> objects which are contained by the basket. The printing order is not important. The output of the shopping basket in the previous example would be:</p>
 
 <pre>
 butter: 1
@@ -4161,25 +4166,25 @@ milk: 1
 
 <h4>Only One Purchase Object for One Product</h4>
 
-  <p>Let's update our Shopping Basket; if the basket already contains the product which we add, we don't create a new Purchase object, but we update the Purchase object corresponding to the existing product by calling its method <em>updateAmount()</em>.</p>
+  <p>Let's update our Shopping Basket; if the basket already contains the product which we add, we don't create a new Purchase object, but we update the Purchase object corresponding to the existing product by calling its method <em>increaseAmount()</em>.</p>
 
-<p>Esimerkki:</p>
+<p>Example:</p>
 
 <pre class="sh_java">
         ShoppingBasket basket = new ShoppingBasket();
-        basket.add("maito", 3);
+        basket.add("milk", 3);
         basket.print();
         System.out.println("basket price: " + basket.price() +"\n");
 
-        basket.add("piimä", 2);
+        basket.add("buttermilk", 2);
         basket.print();
         System.out.println("basket price: " + basket.price() +"\n");
 
-        basket.add("maito", 3);
+        basket.add("milk", 3);
         basket.print();
         System.out.println("basket price: " + basket.price() +"\n");
 
-        basket.add("maito", 3);
+        basket.add("milk", 3);
         basket.print();
         System.out.println("basket price: " + basket.price() +"\n");
 </pre>
@@ -4207,7 +4212,7 @@ basket price: 11
 
 <h4>Shop</h4>
 
-  <p>Now, all the parts of our online shop are ready. Our online shop has got a storage house, which contains all products. We have got a shopping basket to manage all our costumers. Whenever a costumer chooses a purchase, we add it to the shopping basket it the product is available in our storage house. Meanwhile, the storage stocks are reduced by one.</p>
+  <p>Now, all the parts of our online shop are ready. Our online shop has got a storage house, which contains all products. We have got a shopping basket to manage all our customers. Whenever a customer chooses a purchase, we add it to the shopping basket if the product is available in our storage house. Meanwhile, the storage stocks are reduced by one.</p>
 
   <p>Below, you find a ready-made code body for your online shop. Create the class <code>Shop</code> to your project, and copy the code below into it.</p>
 
@@ -4224,10 +4229,10 @@ public class Shop {
         this.reader = reader;
     }
 
-    // the method to deal with a costumer in the shop
-    public void manage(String costumer) {
+    // the method to deal with a customer in the shop
+    public void manage(String customer) {
         ShoppingBasket basket = new ShoppingBasket();
-        System.out.println("Welcome to our shop " + costumer);
+        System.out.println("Welcome to our shop " + customer);
         System.out.println("below is our sale offer:");
 
         for (String product : store.products()) {
@@ -4254,7 +4259,7 @@ public class Shop {
 }
 </pre>
 
-<p>The following main program fills the shop storehouse and manages the costumer Pekka:</p>
+<p>The following main program fills the shop storehouse and manages the customer Pekka:</p>
 
 <pre class="sh_java">
     Storehouse store = new Storehouse();
@@ -4267,7 +4272,7 @@ public class Shop {
     shop.manage("Pekka");
 </pre>
 
-  <p>The shop is almost ready. There are comments in the method <code>public void manage(String costumer)</code>, showing the part that you should implement. In that point, implement the code to check whether the object the customer wants is available in the storehouse. If so, reduce the storehouse stocks by one unit, and add the product to the shopping basket.</p>
+  <p>The shop is almost ready. There are comments in the method <code>public void manage(String customer)</code>, showing the part that you should implement. In that point, implement the code to check whether the object the customer wants is available in the storehouse. If so, reduce the storehouse stocks by one unit, and add the product to the shopping basket.</p>
 
   <p><em>Now you have done something! verkkokauppa.com!</em></p>
 </div>
@@ -4329,7 +4334,7 @@ public class Slot&lt;T&gt; {
 
     <h3>The Interface which Makes Use of Generics: Comparable</h3>
 
-    <p>In addition to normal interfaces, Java has got interfaces which make use of generics. The internal value types of generic interfaces are defined in the same way as for generic classes. Let us have a look at Java made-up <code><a href="http://java.sun.com/javase/6/docs/api/java/lang/Comparable.html">Comparable</a></code> interface. The <code>Comparable</code> interface defines the <code>compareTo</code> method, which returns the place of <code>this</code> object, in relation to the parameter obect (a negative number, 0, or a positive number). If <code>this</code> object is placed before the parameter object in the comparison order, the method returns a negative value, whereas it returns a positive value if it is placed after the parameter object. If the objects are placed at the same place in the comparison order, the method returns 0. With comparison order we mean the object order of magnitude defined by the programmer, i.e. the object order, when they are sorted with the sort method.</p>
+    <p>In addition to normal interfaces, Java has got interfaces which make use of generics. The internal value types of generic interfaces are defined in the same way as for generic classes. Let us have a look at Java made-up <code><a href="http://java.sun.com/javase/6/docs/api/java/lang/Comparable.html">Comparable</a></code> interface. The <code>Comparable</code> interface defines the <code>compareTo</code> method, which returns the place of <code>this</code> object, in relation to the parameter object (a negative number, 0, or a positive number). If <code>this</code> object is placed before the parameter object in the comparison order, the method returns a negative value, whereas it returns a positive value if it is placed after the parameter object. If the objects are placed at the same place in the comparison order, the method returns 0. With comparison order we mean the object order of magnitude defined by the programmer, i.e. the object order, when they are sorted with the sort method.</p>
 
     <p>One of the advantages of the <code>Comparable</code> interface is that it allows us to sort a list of Comparable type keys by using the standard library method <code>Collections.sort</code>, for instance. <code>Collections.sort</code> uses the <code>compareTo</code> method of a key list to define in which order these keys should be. We call <em>Natural Ordering</em> this ordering technique which makes use of the <code>compareTo</code> method.
 
@@ -4340,7 +4345,7 @@ public class ClubMember implements Comparable&lt;ClubMember&gt; {
     private String name;
     private int height;
 
-    public Kerholainen(String name, int height) {
+    public ClubMember(String name, int height) {
         this.name = name;
         this.height = height;
     }
@@ -4383,7 +4388,7 @@ public class ClubMember implements Comparable&lt;ClubMember&gt; {
     <p>Sorting club members is easy, now.</p>
 
 <pre class="sh_java">
-    List&lt;Kerholainen&gt; clubMembers = new ArrayList&lt;ClubMember&gt;();
+    List&lt;ClubMember&gt; clubMembers = new ArrayList&lt;ClubMember&gt;();
     clubMembers.add(new ClubMember("mikael", 182));
     clubMembers.add(new ClubMember("matti", 187));
     clubMembers.add(new ClubMember("joel", 184));
@@ -4494,7 +4499,7 @@ Q of Hearts
 2 of Clubs
 </pre>
 
-<p>Store the hand cards into an ArrayListi.</p>
+<p>Store the hand cards into an ArrayList.</p>
 
 <h4>Sorting the Hand</h4>
 
@@ -4508,7 +4513,7 @@ Q of Hearts
   hand.add( new Card(12, Card.HEARTS) );
   hand.add( new Card(2, Card.CLUBS) );
 
-  hand.order();
+  hand.sort();
 
   hand.print();
 </pre>
@@ -4518,7 +4523,7 @@ Q of Hearts
 <pre>
 2 of Spades
 2 of Clubs
-Q of Harts
+Q of Hearts
 A of Clubs
 </pre>
 
@@ -4555,13 +4560,13 @@ A of Clubs
   }
 </pre>
 
-<p>Tulostuu</p>
+<p>Prints:</p>
 
 <pre>
 the most valuable hand contains the cards
-Ruutu J
-Pata J
-Hertta J
+J of Diamonds
+J of Spades
+J of Hearts
 </pre>
 
 <h4>Sorting the Cards against Different Criteria</h4>
@@ -4603,14 +4608,14 @@ public class SortAgainstSuit implements Comparator&lt;Card&gt; {
   }
 </pre>
 
-<p>Tulostuu:</p>
+<p>Prints:</p>
 
 <pre>
-Diamonds 2
-Hearts Q
-Clubs 3
-Clubs A
-Clubs 2
+2 of Diamonds
+Q of Hearts
+3 of Clubs
+A of Clubs
+2 of Clubs
 </pre>
 
 <p>The sorting object can also be created directly together with the sort call:</p>
@@ -4620,24 +4625,24 @@ Clubs 2
 </pre>
 <p>
 
-  <p>Further information about comparator classes at <a href="http://leepoint.net/notes-java/data/collections/comparators.html"></a></p>
+  <p>Further information about comparator classes in <a href="http://leepoint.net/notes-java/data/collections/comparators.html">here.</a></p>
 
 <p>Create now the class <code>SortAgainstSuitAndValue</code> which iplements the Comparator interface and sorts cards as it is done in the example above, plus same suit cards are also sorted according to their value.
 </p>
 
 <h4>Sort Against Suit</h4>
 
-<p>Add the method <code>public void sortAgainstSuit()</code> to the class <code>Hand</code>; when the method is called the hand cards are sorted according to the comparator of the last exercise. After sorting them, the cards are printed in order:</p>
+<p>Add the method <code>public void sortAgainstSuit()</code> to the class <code>Hand</code>; when the method is called the hand's cards are sorted according to the comparator <code>SortAgainstSuitAndValue</code>. After sorting them, the cards are printed in order:</p>
 
 <pre class="sh_java">
   Hand hand = new Hand();
 
-  hand.add( new Hand(12, Hand.HEARTS) );
-  hand.add( new Hand(4, Hand.CLUBS) );
-  hand.add( new Hand(2, Hand.DIAMONDS) );
-  hand.add( new Hand(14, Hand.CLUBS) );
-  hand.add( new Hand(7, Hand.HEARTS) );
-  hand.add( new Hand(2, Hand.CLUBS) );
+  hand.add( new Hand(12, Card.HEARTS) );
+  hand.add( new Hand(4, Card.CLUBS) );
+  hand.add( new Hand(2, Card.DIAMONDS) );
+  hand.add( new Hand(14, Card.CLUBS) );
+  hand.add( new Hand(7, Card.HEARTS) );
+  hand.add( new Hand(2, Card.CLUBS) );
 
   hand.sortAgainstSuit();
 
@@ -4647,12 +4652,12 @@ Clubs 2
 <p>Prints:</p>
 
 <pre>
-Diamond 2
-Hearts 7
-Hearts Q
-Clubs 2
-Clubs 4
-Clubs A
+2 of Diamonds
+7 of Hearts
+Q of Hearts
+2 of Clubs
+4 of Clubs
+A of Clubs
 </pre>
 
 </div>
@@ -4678,14 +4683,14 @@ Clubs A
 
     ClubMember wanted = new ClubMember("Name", 180);
     int index = Collections.binarySearch(clubMembers, wanted);
-    if(index &gt;= 0) {
+    if (index &gt;= 0) {
         System.out.println("A person who is 180 centimiters tall was found at index " + index);
         System.out.println("name: " + clubMembers.get(index).getName());
     }
 
     wanted = new ClubMember("Name", 187);
     int index = Collections.binarySearch(clubMembers, wanted);
-    if(indeksi &gt;= 0) {
+    if (index &gt;= 0) {
         System.out.println("A person who is 187 centimiters tall was found at index " + index);
         System.out.println("name: " + clubMembers.get(index).getName());
     }
@@ -4824,7 +4829,7 @@ Position    Name
 
 <h2>Single Responsibility Principle</h2>
 
-    <p>When we design bigger programs, we often reason about what class has do deal with what task. If we delegate the implementation of the whole program to one class, the result is inevitably chaos. A sector of software design, <em>object-oriented design</em>, includes the <em>Single Responsibility Principle</em>, which we should follow.</p>
+    <p>When we design bigger programs, we often reason about what class has to deal with what task. If we delegate the implementation of the whole program to one class, the result is inevitably chaos. A sector of software design, <em>object-oriented design</em>, includes the <em>Single Responsibility Principle</em>, which we should follow.</p>
 
     <p>The Single Responsibility Principle states that each class should have only one clear role. If the class has got one clear role, modifying that role is easy, and only one class will have to be modified. <em>Each class should have only one reason to be modified.</em>.</p>
 
@@ -4846,10 +4851,10 @@ public class Worker {
 }
 </pre>
 
-    <p>Even if the examples above do not show the concrete implementations, an alarm should go off. Our <code>Worker</code> class has got at least three different responsibilities. It represents a worker, it performes the role of a salary calculator, and the role of a working hour bookkeping system by reporting working hours. The class above should be split into three: one should represent the worker, another should represent the salary calculator, and the third should deal with time bookkeeping.</p>
+    <p>Even if the examples above do not show the concrete implementations, an alarm should go off. Our <code>Worker</code> class has got at least three different responsibilities. It represents a worker, it performes the role of a salary calculator, and the role of a working hour bookkeeping system by reporting working hours. The class above should be split into three: one should represent the worker, another should represent the salary calculator, and the third should deal with time bookkeeping.</p>
 
 <pre class="sh_java">
-public class Woker {
+public class Worker {
     // object variables
 
     // worker's constructor and methods
@@ -4890,7 +4895,7 @@ public class TimeBookkeeping {
 
     <p>Programming environments provide made-up tools for package management. So far, we have been creating classes and interfaces only in the <code>default package</code> of the <code>Source Packages</code> partition. In NetBeans, we can create a new package by clicking on <code>Source Packages</code>, and choosing <code>New -&gt; Java Package...</code>. In the created package, we can create classes in the same way as we do in the <code>default package</code>.</p>
 
-  <p>You can read the name of the package that contains a certain class is visible at the beginning of the source code files in the sentence <code>package <em>packageName</em></code> before the other statements. For instance, the below class <code>Implementation</code> is contained in the package <code>library</code>.</p>
+  <p>You can read the name of the package that contains a certain class at the beginning of the source code files in the sentence <code>package <em>packageName</em></code> before the other statements. For instance, the below class <code>Implementation</code> is contained in the package <code>library</code>.</p>
 
 <pre class="sh_java">
 package library;
@@ -4921,11 +4926,11 @@ public class Book {
 }
 </pre>
 
-  <p>We can uses the classes stored in our packages through the <code>import</code> statement. For instance, the class <code>Implementation</code>, which is contained in the package <code>library</code> could make use of a class stored in <code>library.domain</code> through the assignment <code>import kirjasto.domain.Book</code>.</p>
+  <p>We can uses the classes stored in our packages through the <code>import</code> statement. For instance, the class <code>Implementation</code>, which is contained in the package <code>library</code> could make use of a class stored in <code>library.domain</code> through the assignment <code>import library.domain.Book</code>.</p>
 
 
 <pre class="sh_java">
-package librart;
+package library;
 
 import library.domain.Book;
 
@@ -4959,7 +4964,7 @@ Hello packageworld: The ABC of Packages!
 
  <h4>Text User Interface</h4>
 
-<p>Create the class <code>TextUserInterface</code> in the same package; make it implement the interface <code>UserInterface</code>. Implement the method <code>public void update()</code> which is required by the interface <code>UserInterface</code> which <code>TextUserInterface</code> implements: it's only duty should be printing the string "<code>Updating the user interface</code>" with a <code>System.out.println</code> method call.</p>
+<p>Create the class <code>TextUserInterface</code> in the same package; make it implement the interface <code>UserInterface</code>. Implement the method <code>public void update()</code> which is required by the interface <code>UserInterface</code> which <code>TextUserInterface</code> implements: its only duty should be printing the string "<code>Updating the user interface</code>" with a <code>System.out.println</code> method call.</p>
 
   <h4>Application Logic</h4>
 
@@ -4967,7 +4972,7 @@ Hello packageworld: The ABC of Packages!
 
 <p>
   <ul>
-    <li>the constructor <code>public ApplicationLogic(UserInterface ui)</code></li>. It receives as parameter a class which implements the interface UserInterface. Note: your application logic has to see the interface and therefore to import it; in other words, the line <code>import mooc.ui.Kayttoliittyma</code> must appear at the beginning of he file<br/>
+    <li>the constructor <code>public ApplicationLogic(UserInterface ui)</code></li>. It receives as parameter a class which implements the interface UserInterface. Note: your application logic has to see the interface and therefore to import it; in other words, the line <code>import mooc.ui.UserInterface</code> must appear at the beginning of he file<br/>
     <li>the method <code>public void execute(int howManyTimes)</code></li> prints the string "The application logic works" as many times as it is defined by its parameter variable. After each "The application logic works" printout, the code has to call the <code>update()</code> method of the object which implements the interface <code>UserInterface</code> and which was assigned to the constructor as its parameter.<br/>
   </ul>
 </p>
@@ -4988,7 +4993,7 @@ public class Main {
 }
 </pre>
 
-  <p>The program printout should be the following:</p>
+  <p>The program output should be the following:</p>
 
 <pre>
 The application logic works
@@ -5020,7 +5025,7 @@ package library.ui;
 public class UserInterface {
     private Scanner reader;
 
-    public Kayttoliittyma(Scanner reader) {
+    public UserInterface(Scanner reader) {
         this.reader = reader;
     }
 
@@ -5048,7 +5053,7 @@ package library.ui;
 public class UserInterface {
     private Scanner reader;
 
-    public Kayttoliittyma(Scanner reader) {
+    public UserInterface(Scanner reader) {
         this.reader = reader;
     }
 
@@ -5222,15 +5227,15 @@ public class Person implements Identifiable, Comparable&lt;Person&gt; {
 
     @Override
     public int compareTo(Person another) {
-        return this.getID().compareTo(toinen.getID());
+        return this.getID().compareTo(another.getID());
     }
 }
 </pre>
 
-    <p>Now, we can ad to the registerd the method sortAndGetEverything:</p>
+    <p>Now, we can add to the register method sortAndGetEverything:</p>
 
 <pre class="sh_java">
-    public List&lt;Identifiable&gt; sortAndGetAll() {
+    public List&lt;Identifiable&gt; sortAndGetEverything() {
         ArrayList&lt;Identifiable&gt; all = new ArrayList&lt;Identifiable&gt;(registered.values());;
         Collections.sort(all);
         return all;
@@ -5245,7 +5250,7 @@ public class Person implements Identifiable, Comparable&lt;Identifiable&gt; {
 
     @Override
     public int compareTo(Identifiable another) {
-        return this.getID().compareTo(toinen.getID());
+        return this.getID().compareTo(another.getID());
     }
 }
 </pre>
@@ -5261,7 +5266,7 @@ public class Sale implements Identifiable {
     private int stockBalance;
     private int price;
 
-    public Tuote(String name, String barcode) {
+    public Sale(String name, String barcode) {
         this.name = name;
         this.barcode = barcode;
     }
@@ -5285,7 +5290,7 @@ product.increaseStock(100);
 product.changePrice(23);
 </pre>
 
-<p>The class <code>Register</code> is quite universal now that it is not dependent on concrete classes. Whatever class which implements <code>Identifiable</code> is compatible with Register. However, the metodi <code>sortAndGetEverything</code> can only work if we implement the interface Comparable&lt;Identifiable&gt;.</p>
+<p>The class <code>Register</code> is quite universal now that it is not dependent on concrete classes. Whatever class which implements <code>Identifiable</code> is compatible with Register. However, the method <code>sortAndGetEverything</code> can only work if we implement the interface Comparable&lt;Identifiable&gt;.</p>
 
 
 <!--
@@ -5445,7 +5450,7 @@ public class Cashout {
 }
 </pre>
 
-    <p>At this point we notice that it is extremely unconvenient to read products if they are printed in succession according to when they were added. We modify the printout so that it will list the products in aplphabetic order. We add the interface <code>Comparable</code> to <code>Product</code> to sort our products in alphabetic order.</p>
+    <p>At this point we notice that it is extremely unconvenient to read products if they are printed in succession according to when they were added. We modify the output so that it will list the products in aplphabetic order. We add the interface <code>Comparable</code> to <code>Product</code> to sort our products in alphabetic order.</p>
 
 <pre class="sh_java">
 package application.domain;
@@ -5532,7 +5537,7 @@ Let us suppose that your program contains the interface <code>Interface</code>, 
 <p>However it is possible to ask NetBeans to fill in the method bodies automatically. When you have defined the interface a class should implement, i.e. when you have written</p>
 
 <pre class="sh_java">
-public class Luokka implements Rajapinta {
+public class Class implements Interface {
 }
 </pre>
 
@@ -5648,9 +5653,7 @@ number of boxes: 2
   things in the box: 8 dm^3
 </pre>
 
-<p>The packer has packed the things into two boxes, the first box has got the firts three things, whose total volume was 7, and the last thing in the list -- the circular saw, whose volume was 8 -- has gone to the third box. The tests do not set a limit to the number of boxes used by the packer; each thing could have been packed into a different box, and the printout would have been:</p>
-
-<p>Tulostuu:</p>
+<p>The packer has packed the things into two boxes, the first box has got the firts three things, whose total volume was 7, and the last thing in the list -- the circular saw, whose volume was 8 -- has gone to the third box. The tests do not set a limit to the number of boxes used by the packer; each thing could have been packed into a different box, and the output would have been:</p>
 
 <pre>
 number of boxes: 4
@@ -5750,7 +5753,7 @@ lisaaPienia(List esineet, Muuttolaatikko laatikko):
 
     <p>Exceptions are such situations where the program executions is different from our expectations. For instance, the program may have called a method of a <em>null</em> reference, in which case the user is <em>thrown</em> a <code>NullPointerException</code>. If we try to retrieve a index outside a table, the user is thrown a <code>IndexOutOfBoundsException</code>. All of them are a type of <code>Exception</code>.</p>
 
-    <p>We deal with exception using the block <code>try { } catch (Exception e) { }</code>. The code contained within the brackets which follow the keyword <code>try</code> can <em>possibly</em> through an exception. The keyword the code within the brackets which follow the keyword <code>catch</code> defines what should happen when the try-code throws an exception. We also define the type of the exception we want to catch (<code>catch (Exception e)</code>).</p>
+    <p>We deal with exception using the block <code>try { } catch (Exception e) { }</code>. The code contained within the brackets which follows the keyword <code>try</code> can <em>possibly</em> go through an exception. The keyword the code within the brackets which follow the keyword <code>catch</code> defines what should happen when the try-code throws an exception. We also define the type of the exception we want to catch (<code>catch (Exception e)</code>).</p>
 
 <pre class="sh_java">
     try {
@@ -5774,7 +5777,7 @@ Write a number: <font color="red">tatti</font>
 <font color="red">Exception in thread "..." java.lang.NumberFormatException: For input string: "tatti"</font>
 </pre>
 
-    <p>The program above throws an exception because the user digits an erroneous number. The program execution ends up with a malfuntion, and it cannot continue. We add an exception management statement to our program. The call, which may throw an exception is written into the <code>try</code> block, and the action which takes place in case of exception is written into the <code>catch</code> block.</p>
+    <p>The program above throws an exception because the user digits an erroneous number. The program execution ends up with a malfunction, and it cannot continue. We add an exception management statement to our program. The call, which may throw an exception is written into the <code>try</code> block, and the action which takes place in case of exception is written into the <code>catch</code> block.</p>
 
 <pre class="sh_java">
     Scanner reader = new Scanner(System.in);
@@ -5794,7 +5797,7 @@ Write number: <font color="red">5</font>
 
 <pre>
 Write number: <font color="red">oh no!</font>
-You haven't written a proper number
+You haven't written a proper number.
 </pre>
 
     <p>In case of exception, we move from the chunk of code defined by the <code>try</code> keyword to the <code>catch</code> chunk. Let's see this by adding a print statement after the <code>Integer.parseInt</code> line in the <code>try</code> chunk.</p>
@@ -5823,12 +5826,12 @@ Write a number: <font color="red">I won't!</font>
 you haven't written a proper number.
 </pre>
 
-    <p>String <code>I won't!</code> I given as parameter to the method <code>Integer.parseInt</code>, which throws an exception if the String parameter can't be changed into a number. Note that the code in the <code>catch</code> chunk is executed <em>only</em> in case of exception -- otherwise the program do not arrive till there.</p>
+    <p>String <code>I won't!</code> is given as parameter to the method <code>Integer.parseInt</code>, which throws an exception if the String parameter can't be changed into a number. Note that the code in the <code>catch</code> chunk is executed <em>only</em> in case of exception -- otherwise the program do not arrive till there.</p>
 
     <p>Let's make something more useful out of our number translator: let's do a method which keeps on asking to type a number till the user does it. The user can return <em>only</em> if they have typed the right number.</p>
 
 <pre class="sh_java">
-public int lueLuku(Scanner reader) {
+public int readNumber(Scanner reader) {
     while (true) {
         System.out.print("Write a number: ");
 
@@ -5890,7 +5893,7 @@ public class MainProgram {
 
     <p>There are some exceptions which the programmer does not always have to address, such as the <code>NumberFormatException</code> which is thrown by <code>Integer.parseInt</code>. Also the <code>RuntimeException</code>s do not always require to be addressed; next week we will go back to <em>why</em> variables can have more than one type.</p>
 
-    <p>We can throw an exception ourself from the source code using the <code>throw</code> statement. For instance, if we want to throw an examption which was created in the class <code>NumberFormatException</code>, we could use the statement <code>throw new NumberFormatException()</code>.</p>
+    <p>We can throw an exception ourself from the source code using the <code>throw</code> statement. For instance, if we want to throw an exception which was created in the class <code>NumberFormatException</code>, we could use the statement <code>throw new NumberFormatException()</code>.</p>
 
     <p>Another exception which hasn't got to be addressed is <code>IllegalArgumentException</code>. With <code>IllegalArgumentException</code> we know that a method or a constructor has received an <em>illegal</em> value as parameter. For instance, we use the IllegalArgumentException when we want to make sure that a parameter has received particular values. We create the class <code>Grade</code> whose constructor has got a integer parameter: the grade.</p>
 
@@ -5908,7 +5911,7 @@ public class Grade {
 }
 </pre>
 
-    <p>Next, we want to validate the value of the constructor parameter of our Grade class. The grades in Finland are from 0 to 5. If the grate is something else, we want to <em>throw an exception</em>. We can add an if statement to our <code>Grade</code> class constructor, which checks whether the grade is outside range 0-5. If so, we throw an <code>IllegalArgumentException</code> telling <code>throw new IllegalArgumentException("The grade has to be between 0-5");</code>.</p>
+    <p>Next, we want to validate the value of the constructor parameter of our Grade class. The grades in Finland are from 0 to 5. If the grade is something else, we want to <em>throw an exception</em>. We can add an if statement to our <code>Grade</code> class constructor, which checks whether the grade is outside range 0-5. If so, we throw an <code>IllegalArgumentException</code> telling <code>throw new IllegalArgumentException("The grade has to be between 0-5");</code>.</p>
 
 <pre class="sh_java">
 public class Grade {
@@ -5918,7 +5921,7 @@ public class Grade {
         if (grade &lt; 0 || grade &gt; 5) {
             throw new IllegalArgumentException("The grade has to be between 0-5");
         }
-        this.arvosana = arvosana;
+        this.grade = grade;
     }
 
     public int getGrade() {
@@ -5965,7 +5968,7 @@ Exception in thread "..." java.lang.IllegalArgumentException: The grade has to b
 
 <pre class="sh_java">
 public interface Sensor {
-    boolean itsOn();  // returns true if the sensor is on
+    boolean isOn();  // returns true if the sensor is on
     void on();       // switches the sensor on
     void off();      // switches the sensor off
     int measure();   // returns the sensor reading if the sensor is on
@@ -5989,9 +5992,9 @@ public static void main(String[] args) {
   System.out.println( ten.measure() );
   System.out.println( minusFive.measure() );
 
-  System.out.println( ten.itsOn() );
+  System.out.println( ten.isOn() );
   ten.off();
-  System.out.println( ten.itsOn() );
+  System.out.println( ten.isOn() );
 }
 </pre>
 
@@ -6008,7 +6011,7 @@ true
 
 <p>Create the class <code>Thermometer</code> which implements the interface <code>Sensor</code>.</p>
 
-<p>At furst, the thermometer is off. When the <code>measure</code> method is called, if the thermometer is on it returns a random number between -30 and 30. If the thermometer is off, it throws an </code>IllegalStateException</code>.
+<p>At first, the thermometer is off. When the <code>measure</code> method is called, if the thermometer is on it returns a random number between -30 and 30. If the thermometer is off, it throws an </code>IllegalStateException</code>.
 </p>
 
 <h4>AverageSensor</h4>
@@ -6017,9 +6020,9 @@ true
 
 <p>An average sensor contains many sensors. In addition to the methods defined by the interface <code>Sensor</code>, the class has got the method <code>public void addSensor(Sensor additional)</code> which adds a new sensor to the AverageSensor.</p>
 
-<p>The average sensor is on when <em>all</em> its sensors are on. When the average sensor is switched on, all its sensors have to be switched on if they were not on already. When the average sensor is closed, at least one of its sensors as to be switched off. It's also possible that all its sensors are switched off.</p>
+<p>The average sensor is on when <em>all</em> its sensors are on. When the average sensor is switched on, all its sensors have to be switched on if they were not on already. When the average sensor is closed, at least one of its sensors has to be switched off. It's also possible that all its sensors are switched off.</p>
 
-<p>The <code>measure</code> method of our AverageSensor returns the average of the readings of all its sensors (because the return value is <code>int</code>, the readings are rounded down as it is for integer division). If the <code>measure</code> method is called when the average sensor is off, of if the average sensor was not added any sensor, the method throws an <code>IllegalStateException</code>.
+<p>The <code>measure</code> method of our AverageSensor returns the average of the readings of all its sensors (because the return value is <code>int</code>, the readings are rounded down as it is for integer division). If the <code>measure</code> method is called when the average sensor is off, or if the average sensor was not added any sensor, the method throws an <code>IllegalStateException</code>.
 </p>
 
 <p>Below, you find an example of a sensor program (note that both the Thermometer and the AverageSensor constructors are without parameter):</p>
@@ -6038,7 +6041,7 @@ public static void main(String[] args) {
     helsinkiArea.addSensor(kaisaniemi);
     helsinkiArea.addSensor(helsinkiVantaa);
 
-    paakaupunki.on();
+    helsinkiArea.on();
     System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
 }
 </pre>
@@ -6054,7 +6057,7 @@ the temperature in Helsinki area is -10 degrees
 
 <h4>All Readings</h4>
 
-<p>Add the method <code>public List&lt;Integer&gt; readings()</code> to your AverageSensor; it return a list of the reading results of all the measurements executed through your AverageSensor. Below is an example of how the method works: </p>
+<p>Add the method <code>public List&lt;Integer&gt; readings()</code> to your AverageSensor; it returns a list of the reading results of all the measurements executed through your AverageSensor. Below is an example of how the method works: </p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
@@ -6094,7 +6097,7 @@ readings: [-10, -4, 5]
 
 <h3>Exceptions and Interfaces</h3>
 
-    <p>Interfaces do not have a method body, but the method definition can be freely chosen when the developer implements the interface. Interfaces can also define the exceptions throw. For instance, the classes which implement the following <code>FileServer</code> can <em>possibly</em> throw an examption in their methods <code>download</code> and <code>save</code>.</p>
+    <p>Interfaces do not have a method body, but the method definition can be freely chosen when the developer implements the interface. Interfaces can also define the exceptions throw. For instance, the classes which implement the following <code>FileServer</code> can <em>possibly</em> throw an exception in their methods <code>download</code> and <code>save</code>.</p>
 
 <pre class="sh_java">
 public interface FileServer {
@@ -6256,7 +6259,7 @@ Exception in thread "main" java.lang.NullPointerException
         }
 </pre>
 
-    <p>Below, you find the text contained in the file, followed by the program printout.</p>
+    <p>Below, you find the text contained in the file, followed by the program output.</p>
 
 <pre>
 Exception handling is the process of responding to the occurrence, during computation, of exceptions – anomalous or exceptional events requiring special processing – often changing the normal flow of program execution. ...
@@ -6273,7 +6276,7 @@ program
 
 <h3>Character Set Issues</h3>
 
-    <p>We we read a file text (or when we save something into a file), Java has to find out the character set used by the operating system. Knowledge of the character set is required both to save text on the computer harddisk in binary format, and to translate binary data into text.</p>
+    <p>When we read a text file (or when we save something into a file), Java has to find out the character set used by the operating system. Knowledge of the character set is required both to save text on the computer harddisk in binary format, and to translate binary data into text.</p>
 
     <p>There have been developed standard character sets, and "UTF-8" is the most common nowadays. UTF-8 character set contains both the alphabet letters of everyday use and more particular characters such as the Japanese kanji characters or the information need to read and save the chess pawns. From a simplified programming angle, we could think a character set both as a character-number hashmap and a number-character hashmap. The character-number hashmap shows what binary number is used to save each character into a file. The number-character hashmap shows how we can translate into characters the values we obtain reading a file.</p>
 
@@ -6294,9 +6297,9 @@ program
 
 <p>Create the class <code>Printer</code>, its constructor <code>public Printer(String fileName)</code> which receives a String standing for the file name, and the method <code>public void printLinesWhichContain(String word)</code> which prints the file lines which contain the parameter word (<em>lower and upper case make difference in this excercise; for instance, "test" and "Test" are not the considered the same</em>); the lines are printed in the same order as they are inside the file.</p>
 
-<p>If the argument is an empty String, aa the file is printed.</p>
+<p>If the argument is an empty String, all of the file is printed.</p>
 
-<p>If the file is not found, the constructor delagates the exemption with no need for a try-catch statement; the constructor simply has to be defined in the following way:</p>
+<p>If the file is not found, the constructor delegates the exception with no need for a try-catch statement; the constructor simply has to be defined in the following way:</p>
 
 <pre class="sh_java">
 public Printer {
@@ -6378,11 +6381,11 @@ Sanoi vanha Väinämöinen
 
 <pre>
 there are 3 lines, and characters
-because also line breaks are
+because line breaks are also
 characters
 </pre>
 
-<p>Ohjelman toiminta testaustiedostolla:</p>
+<p>The following example shows what the program should do:</p>
 
 <pre class="sh_java">
     File file = new File("test/testfile.txt");
@@ -6410,12 +6413,12 @@ Characters: 74
 
   <p>Create the constructor <code>public WordInspection(File file)</code> to your WordInspection class. The constructor creates a new WordInspection object which inspects the given file.</p>
 
-  <p>Create the method <code>public int wordCount()</code>, which counts the file words and prints their number. In this part, you don't have to do anything with the words, you should only count how many there are. For this exercise, you can expect there is only one word in each raw.</p>
+  <p>Create the method <code>public int wordCount()</code>, which counts the file words and prints their number. In this part, you don't have to do anything with the words, you should only count how many there are. For this exercise, you can expect there is only one word in each row.</p>
 
 
   <h4 class="req">z</h4>
 
-  <p>Create the method <code>public List&lt;String&gt; wordsContainingZ()</code>, which returns all the file words which contain a z; for instance, jazz and zombi.</p>
+  <p>Create the method <code>public List&lt;String&gt; wordsContainingZ()</code>, which returns all the file words which contain a z; for instance, jazz and zombie.</p>
 
   <h4 class="req">Ending l</h4>
 
@@ -6429,7 +6432,7 @@ Characters: 74
 
   <h4 class="req">All Vowels</h4>
 
-  <p>Create the method <code>public List&lt;String&gt; wordsWhichContainAllVowels()</code>, which returns all the file words which contain all Finnish vowels (aeiouyäö). Such words are, for instance, myöhäiselokuva and ympäristönsuojelija.</p>
+  <p>Create the method <code>public List&lt;String&gt; wordsWhichContainAllVowels()</code>, which returns all the words of the file which contain all Finnish vowels (aeiouyäö). Such words are, for instance, myöhäiselokuva and ympäristönsuojelija.</p>
 </div>
 </div>
 
@@ -6455,7 +6458,7 @@ Characters: 74
   System.out.println( "Pekka's number: "+ phoneNumbers.get("Pekka") );
 </pre>
 
-<p>as expected, the printout tells us:</p>
+<p>as expected, the output tells us:</p>
 
 <pre>
 Pekka's number: 040-12348765
@@ -6553,7 +6556,7 @@ public class ExerciseAccounting {
 3
 </pre>
 
-    <p>The solution above is useful if we don't need information about the exercises done by each different user. We cam change the saving logic of the exercises in a way to have them save in relation to each user, using a HashMap. The users are recognised throw a unique string (for instance, their student number), and each user has got their own set of finished exercises.</p>
+    <p>The solution above is useful if we don't need information about the exercises done by each different user. We can change the saving logic of the exercises in a way to have them save in relation to each user, using a HashMap. The users are recognized through a unique string (for instance, their student number), and each user has got their own set of finished exercises.</p>
 
 <pre class="sh_java">
 public class ExerciseAccounting {
@@ -6563,15 +6566,15 @@ public class ExerciseAccounting {
         this.doneExercises = new HashMap&lt;String, Set&lt;Integer&gt;&gt;();
     }
 
-    public void lisaa(String user, int exercise) {
+    public void add(String user, int exercise) {
         // note that when we create a new user we have first to map an empty exercise set to it
         if (!this.doneExercises.containsKey(user)) {
             this.doneExercises.put(user, new HashSet&lt;Integer&gt;());
         }
 
-        // first, we retrieve the set containing the user exercises and then we add an exercise to it
+        // first, we retrieve the set containing the user's exercises and then we add an exercise to it
         Set&lt;Integer&gt; finished = this.doneExercises.get(user);
-        finished.add(user);
+        finished.add(exercise);
 
         // the previous would have worked out without helping variable in the following way:
         //  this.doneExercises.get(user).add(exercise);
@@ -6587,16 +6590,16 @@ public class ExerciseAccounting {
 
 <pre class="sh_java">
         ExerciseAccounting accounting = new ExerciseAccounting();
-        accounting.lisaa("Mikael", 3);
-        accounting.lisaa("Mikael", 4);
-        accounting.lisaa("Mikael", 3);
-        accounting.lisaa("Mikael", 3);
+        accounting.add("Mikael", 3);
+        accounting.add("Mikael", 4);
+        accounting.add("Mikael", 3);
+        accounting.add("Mikael", 3);
 
-        accounting.lisaa("Pekka", 4);
-        accounting.lisaa("Pekka", 4);
+        accounting.add("Pekka", 4);
+        accounting.add("Pekka", 4);
 
-        accounting.lisaa("Matti", 1);
-        accounting.lisaa("Matti", 2);
+        accounting.add("Matti", 1);
+        accounting.add("Matti", 2);
 
         accounting.print();
 </pre>
@@ -6614,7 +6617,7 @@ Mikael: [3, 4]
     <div class="tehtava">
 <h3>Multiple Entry Dictionary</h3>
 
-<p>Let's make an extended version of the dictionary of week 1. Your work is implementing the class the class <code>PersonalMultipleEntryDictionary</code>, which can save one or more entry for each word translated. The class has to implement the interface in the exercise source, <code>MultipleEntryDictionary</code>, with the following methods:</p>
+<p>Let's make an extended version of the dictionary of week 1. Your task is to implement the class <code>PersonalMultipleEntryDictionary</code>, which can save one or more entry for each word translated. The class has to implement the interface in the exercise source, <code>MultipleEntryDictionary</code>, with the following methods:</p>
 
 <p>
   <ul>
@@ -6792,7 +6795,7 @@ public class Booksto {
 
 <ul>
   <li>1 adding a phone number to the relative person</li>
-  <li>2 person search by phone number</li>
+  <li>2 phone number search by person</li>
 </ul>
 
 <p>to receive two points we also require</p>
@@ -6804,7 +6807,7 @@ public class Booksto {
 <p>to receive three points also</p>
 
 <ul>
-  <li>4 adding a phone number to the relative person</li>
+  <li>4 adding an address to the relative person</li>
   <li>5 personal information search (search for a person's address and phone number)</li>
 </ul>
 
@@ -6889,7 +6892,7 @@ city: <font color="red">vantaa</font>
 
 command: <font color="red">5</font>
 whose information: <font color="red">jukka</font>
-  osoite: korsontie vantaa
+  address: korsontie vantaa
   phone number not found
 
 command: <font color="red">7</font>
@@ -6984,7 +6987,7 @@ public class Bird {
 
 <p>Some birds have more than one English name (for instance, the Rose Starling is also known as Rose-Coloured Starling or Rose-Coloured Pastor); however, the Latin name is always unique. Create the methods <code>equals</code> and <code>hashCode-</code> in the class <code>Bird</code>; two Bird objects have to be understood as the same bird if their Latin bane and observation year are the same.</p>
 
-<p>Esimerkki:</code>
+<p>Example:</code>
 
 <pre>
     Bird bird1 = new Bird("Rose Starling", "Sturnus roseus", 2012);
@@ -7317,7 +7320,7 @@ public class Motor extends Component {
 
         <p>The class definition <code>public class Motor extends Component</code> tells us that the class <code>Motor</code> inherits the functionality of <code>Component</code>. In the class <code>Motor</code>, we define the objet variable <code>motorType</code>.</p>
 
-        <p>The Motor class contructor is interesting. In the first line of the contructor we notice the keyword <code>super</code>, which is used to call the superclass constructor. The call <code>super(id,producer,description)</code> class the constructor <code>public Component(String id, String producer, String description)</code> which is defined in the class <code>Component</code>; in this way the superclass object variables are assigned a value. After doing this, we assign a value to the object variable <code>motorType</code>.</p>
+        <p>The Motor class constructor is interesting. In the first line of the constructor we notice the keyword <code>super</code>, which is used to call the superclass constructor. The call <code>super(id,producer,description)</code> class the constructor <code>public Component(String id, String producer, String description)</code> which is defined in the class <code>Component</code>; in this way the superclass object variables are assigned a value. After doing this, we assign a value to the object variable <code>motorType</code>.</p>
 
         <p>When the class <code>Motor</code> inherits the class <code>Component</code>, in receives all the methods provides by <code>Component</code>. It is possible to create an instance of the class <code>Motor</code> as it is for any other class.</p>
 
@@ -7340,7 +7343,7 @@ volkswagen
 
         <h3>Superclass</h3>
 
-        <p>The superclass constructor is defined by the <code>super</code> keyword. In fact, the call <code>super</code> is similar to the <code>this</code> contructor call. The call is given the values of the type required by the super class constructor parameter.</p>
+        <p>The superclass constructor is defined by the <code>super</code> keyword. In fact, the call <code>super</code> is similar to the <code>this</code> constructor call. The call is given the values of the type required by the super class constructor parameter.</p>
 
         <p>When we call the constructor, the variables defined in the super class are initialized. In fact, with constructor call happens the same thing as in normal constructor calls. Unless the superclass has got a constructor without parameter, in the subclass constructor call there must always be a call for its superclass constructor.</p>
 
@@ -7666,7 +7669,7 @@ public class Main {
 }
 </pre>
 
-<p>The printout meets our expectations</p>
+<p>The output meets our expectations</p>
 
 <pre>
 (4, 8) distance 12
@@ -7929,7 +7932,7 @@ Juice: volume = 989.7, free space 10.299999999999955
 
         <p>Let's start by designing a useful tool.</p>
 
-        <p>We could directly implement an <code>ArrayList&lt;Double&gt;</code> object to track our container history in the class <i>ProductConteiner</i>; however, now we create a <i>specific tool</i> for this purpose. The tool has to capsulate an <code>ArrayList&lt;Double&gt;</code> object.</p>
+        <p>We could directly implement an <code>ArrayList&lt;Double&gt;</code> object to track our container history in the class <i>ProductConteiner</i>; however, now we create a <i>specific tool</i> for this purpose. The tool has to encapsulate an <code>ArrayList&lt;Double&gt;</code> object.</p>
 
         <p><code>ContainerHistory</code> public constructor and methods:</p>
 
@@ -9913,7 +9916,7 @@ public class DrawingBoard extends JPanel {
 }
 </pre>
 
-<p>The drawing board above does not contain concrete drawing functionality. In the contructor, we can define the colour of our drawing board to be white by calling its superclass' method <code>setBackground</code>. The method <code>setBackGround</code> receives an instance of the class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Color.html" target="_blank">Color</a></code> as parameter. The class <code>Color</code> contains the most common colours as class variables; for instance, you get the white colour using the class variable <code>Color.WHITE</code>.</p>
+<p>The drawing board above does not contain concrete drawing functionality. In the constructor, we can define the colour of our drawing board to be white by calling its superclass' method <code>setBackground</code>. The method <code>setBackGround</code> receives an instance of the class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Color.html" target="_blank">Color</a></code> as parameter. The class <code>Color</code> contains the most common colours as class variables; for instance, you get the white colour using the class variable <code>Color.WHITE</code>.</p>
 
 <p>The overridden <code>paintComponent</code> method calls the superclass' <code>paintComponent</code> method, and it does not do anything else. Let's add the drawing board to the <code>createComponents</code> method of class <code>UserInterface</code>. We use the user interface which was defined at the beginning of the section <a href="#58">58. User Interfaces</a>.</p>
 
@@ -10044,7 +10047,7 @@ public class UserInterface implements Runnable {
     private JFrame frame;
     private Avatar avatar;
 
-    public Kayttoliittyma(Avatar avatar) {
+    public UserInterface(Avatar avatar) {
         this.avatar = avatar;
     }
 
@@ -10128,7 +10131,7 @@ public class KeyboardListener implements KeyListener {
         // ...
 </pre>
 
-<p>If we start our program and press some keys we will notice the following printout.</p>
+<p>If we start our program and press some keys we will notice the following output.</p>
 
 <pre>
 Keystroke 39 pressed.
@@ -10438,7 +10441,7 @@ public class Main {
 </pre>
 <p>
 
-The printout should look like the following:
+The output should look like the following:
 
 <pre>
 Press enter to continue, otherwise quit: &lt;enter&gt;
@@ -10590,7 +10593,7 @@ if (num.matches("01[0-9]{7}")) {
 The string was matched by some of the alternatives
 </pre>
 
-<p>The regular expression <code>00|111|0000</code> requires the exactly same form of the string: it's functionality is not like <em>"contains"</em>.</p>
+<p>The regular expression <code>00|111|0000</code> requires the exactly same form of the string: its functionality is not like <em>"contains"</em>.</p>
 
 <pre class="sh_java">
     String string = "1111";
@@ -11126,7 +11129,7 @@ Public class MainProgram {
 }
 </pre>
 
-<p>Tulostuu:</p>
+<p>Prints:</p>
 
 <pre>
 Matti, D
@@ -11202,7 +11205,7 @@ Pekka
 
 <h4>Enumerated Type Constructor Parameters</h4>
 
-<p>Enumerated types can contain object variables. Object variable values have to be set up in the contructor of the class defined by enumerated type. Enum-type classes cannot have <code>public</code> constructors.</p>
+<p>Enumerated types can contain object variables. Object variable values have to be set up in the constructor of the class defined by enumerated type. Enum-type classes cannot have <code>public</code> constructors.</p>
 
 <pre class="sh_java">
 public enum Colour {
@@ -11933,13 +11936,13 @@ public static void main(String[] args) {
 }
 </pre>
 
-<p>The curly brakets are on their own lines. There are up to four values in each line of the table, and the first value requires an initial space. Before each number, and after the comma there must be exaactly one space.</p>
+<p>The curly brackets are on their own lines. There are up to four values in each line of the table, and the first value requires an initial space. Before each number, and after the comma there must be exaactly one space.</p>
 
 </div>
 
 <h2>Ending Zenit</h2>
 
-<p>The course starts to be over, and it's time for the ending zenit!</p>
+<p>The course is nearing the end, and it's time for the ending zenit!</p>
 
 <div class="tehtavat">
     <div class="tehtava">
@@ -12620,7 +12623,7 @@ String maalitMerkkeina = String.format("%2d", maalit);
 </pre>
 
 <p>
-Tulostuu:
+Prints:
 </p>
 
 <pre>

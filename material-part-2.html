@@ -7136,7 +7136,7 @@ public class Printer {
   <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html" title="interface in java.io">Serializable</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/CharSequence.html" title="interface in java.lang">CharSequence</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html" title="interface in java.lang">Comparable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="class in java.lang">String</A>&gt;
 </pre>
 
-    <p>The <code>String</code> class implements the interfaces <code>Serializable</code>, <code>CharSequence</code>, and <code>Comparable&lt;String&gt;</code>. An interface is a type, too. According to the description of th String API, we should be able to set the following interfaces as the type of a String object.</p>
+    <p>The <code>String</code> class implements the interfaces <code>Serializable</code>, <code>CharSequence</code>, and <code>Comparable&lt;String&gt;</code>. An interface is a type, too. According to the description of the String API, we should be able to set the following interfaces as the type of a String object.</p>
 
 <pre class="sh_java">
     Serializable serializableString = "string";
@@ -9082,7 +9082,7 @@ second
 <div class="tehtava">
     <h3>Two-Direction Dictionary</h3>
 
-    <p>With this exercise, we develop the dictionary we implemented earlier, so that words can be both read and written into the file. Also, the dictionary has to translate in both directions, from Finnish into English and from Engish into Finnish (in this exercise, we suppose unofficially that Finnish and English do not have words which are spellt the same). Your task is creating th dictionary in the class <code>MindfulDictionary</code>. The class has to be implemented in the package <code>dictionary</code>.</p>
+    <p>With this exercise, we develop the dictionary we implemented earlier, so that words can be both read and written into the file. Also, the dictionary has to translate in both directions, from Finnish into English and from Engish into Finnish (in this exercise, we suppose unofficially that Finnish and English do not have words which are spellt the same). Your task is creating the dictionary in the class <code>MindfulDictionary</code>. The class has to be implemented in the package <code>dictionary</code>.</p>
 
 <h4>Forgetful Basic Functionality</h4>
 
@@ -9243,7 +9243,7 @@ dict.save();
 <p>So far, our programs have only been composed of application logic and text user interface which made use of application logic. In a couple of exercises we have also got a grafic user interface, but they had usally been created for us. Next, we see how we can create grafic user interfaces in Java.</p>
 
 <p>User interfaces are windows which contain different types of buttons, text boxes, and menus. When we program user interfaces we use Java's
-Käyttöliittymät ovat ikkunoita, jotka sisältävät erilaisia osia kuten nappeja, tekstikenttiä ja valikkoja. Käyttöliittymien ohjelmoinnissa käytetään Javan <a href="http://docs.oracle.com/javase/tutorial/ui/features/components.html" target="_blank">Swing</a> component library, which provides us with classes to create and handle user interfaces.</p>
+<a href="http://docs.oracle.com/javase/tutorial/ui/features/components.html" target="_blank">Swing</a> component library, which provides us with classes to create and handle user interfaces.</p>
 
 <p>The basic element of a user interface is the class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JFrame.html" target="_blank">JFrame</a></code>, and we create the user interface components in its compenent section. Orthodox user interfaces implement the interface <code>Runnable</code>, and they are started in the main program. In this course, we use the following user interface body:</p>
 
@@ -9371,7 +9371,7 @@ public class Main {
     <div class="tehtava">
 <h3>Greeter</h3>
 
-<p>Implement a user interface which displays the text "Hi!". The length of the user interface (i.e. of the JFrame object) has to be at least 400, its height 100, and its title should be "Swing on". The JFrame object should be created and become visible inside the method <code>run()</code>, and the text components are added to the user interface with the method <code>createComponents(Container container)</code>.</p>
+<p>Implement a user interface which displays the text "Hi!". The width of the user interface (i.e. of the JFrame object) has to be at least 400, its height 100, and its title should be "Swing on". The JFrame object should be created and become visible inside the method <code>run()</code>, and the text components are added to the user interface with the method <code>createComponents(Container container)</code>.</p>
 
 <p><strong>ATTENTION: The ui object variables have to be initiated in the methods or in the constructor! Do not initiate an object variable directly in its definition.</strong></p>
 </div>
@@ -9508,7 +9508,7 @@ public class Main {
 
 <p>Use the class <code>ButtonGroup</code> to make sure the options "Siksi" and "Koska se on kivaa" cannot be chosen at the same time.</p>
 
-<p>Make sure that the user interface is big enough so that the user can click the buttons without resizing the interface. For instance, you can use 200 pixels for the length and 300 pixels for the height.</p>
+<p>Make sure that the user interface is big enough so that the user can click the buttons without resizing the interface. For instance, you can use 200 pixels for the width and 300 pixels for the height.</p>
 </div>
 </div>
 
@@ -9942,7 +9942,7 @@ public class DrawingBoard extends JPanel {
     }
 </pre>
 
-<p>The method <code>fillRect</code> receives as parameter the <code>x</code> and <code>y</code> coordinates of a rectangle, plus the rectangle length and height. In fact, above we first draw a rectangle which starts with pixel whose coordinates are <code>(50, 80)</code>, whose 100 pixels long, and 50 pixels heigh. Afterwards, we draw a 50-pixel long, 100-pixel heigh rectangle which begins at <code>(200, 20)</code>.</p>
+<p>The method <code>fillRect</code> receives as parameter the <code>x</code> and <code>y</code> coordinates of a rectangle, plus the rectangle width and height. In fact, above we first draw a rectangle which starts with pixel whose coordinates are <code>(50, 80)</code>, whose 100 pixels long, and 50 pixels heigh. Afterwards, we draw a 50-pixel long, 100-pixel heigh rectangle which begins at <code>(200, 20)</code>.</p>
 
 <p>As you notice from the picture, the coordinate system does not work as we are accustomed to.</p>
 

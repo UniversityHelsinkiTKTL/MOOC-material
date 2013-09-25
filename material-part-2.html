@@ -8340,13 +8340,13 @@ Milking...
 Bulk tank: 14.0/2000.0
 </pre>
 
-<h4>Cowhouse</h4>
+<h4>CowHouse</h4>
 
-<p>Cows are kept (and in this case milked) in cowhouses. The original cowhouses have room for one milking robot. Note that when milking robots are installed, they are connected to a specific cowhouse bulk tank. If a cowhouse does not have a milking robot, it can't be used to handle the cow, either. Implement the class <code>Cowhouse</code> with the following constructor and methods:
+<p>Cows are kept (and in this case milked) in cowhouses. The original cowhouses have room for one milking robot. Note that when milking robots are installed, they are connected to a specific cowhouse bulk tank. If a cowhouse does not have a milking robot, it can't be used to handle the cow, either. Implement the class <code>CowHouse</code> with the following constructor and methods:
 </p>
 
   <ul>
-    <li><strong>public Cowhouse(BulkTank tank)</strong></li>
+    <li><strong>public CowHouse(BulkTank tank)</strong></li>
     <li><strong>public BulkTank getBulkTank()</strong> returns the cowhouse bulk tank</li>
     <li><strong>public void installMilkingRobot(MilkingRobot milkingRobot)</strong> installs a milking robot and connects it to the cowhouse bulk tank</li>
     <li><strong>public void takeCareOf(Cow cow)</strong> milks the parameter cow with the help of the milking robot, the method throws an <code>IllegalStateException</code> if the milking robot hasn't been installed</li>
@@ -8360,8 +8360,8 @@ Bulk tank: 14.0/2000.0
 </p>
 
 <pre class="sh_java">
-        Cowhouse cowhouse = new CowHouse(new BulkTank());
-        System.out.println("Cowhouse: " + cowhouse);
+        CowHouse cowhouse = new CowHouse(new BulkTank());
+        System.out.println("CowHouse: " + cowhouse);
 
         MilkingRobot robot = new MilkingRobot();
         cowhouse.installMilkingRobot(robot);
@@ -8370,10 +8370,10 @@ Bulk tank: 14.0/2000.0
         ammu.liveHour();
         ammu.liveHour();
 
-        navetta.takeCareOf(ammu);
-        System.out.println("Cowhouse: " + cowhouse);
+        cowhouse.takeCareOf(ammu);
+        System.out.println("CowHouse: " + cowhouse);
 
-        LinkedList&lt;Lehma&gt; cowList = new LinkedList();
+        LinkedList&lt;Cow&gt; cowList = new LinkedList&lt;Cow&gt;();
         cowList.add(ammu);
         cowList.add(new Cow());
 
@@ -8382,8 +8382,8 @@ Bulk tank: 14.0/2000.0
             cow.liveHour();
         }
 
-        navetta.takeCareOf(cowList);
-        System.out.println("Cowhouse: " + cowhouse);
+        cowhouse.takeCareOf(cowList);
+        System.out.println("CowHouse: " + cowhouse);
 </pre>
 
 <p>
@@ -8391,9 +8391,9 @@ The print output should look like the following:
 </p>
 
 <pre>
-Cowhouse: 0.0/2000.0
-Cowhouse: 2.8/2000.0
-Cowhouse: 9.6/2000.0
+CowHouse: 0.0/2000.0
+CowHouse: 2.8/2000.0
+CowHouse: 9.6/2000.0
 </pre>
 
 <h4>Farm</h4>
@@ -8402,7 +8402,7 @@ Cowhouse: 9.6/2000.0
 </p>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new Cowhouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
         System.out.println(farm);
 
         System.out.println(farm.getOwner() + " is a tough guy!");
@@ -8414,14 +8414,14 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-Cowhouse bulk tank: 0.0/2000.0
+CowHouse bulk tank: 0.0/2000.0
 No cows.
 Esko is a tough guy!
 </pre>
 
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new Cowhouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
         farm.addCow(new Cow());
         farm.addCow(new Cow());
         farm.addCow(new Cow());
@@ -8435,7 +8435,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-Cowhouse bulk tank: 0.0/2000.0
+CowHouse bulk tank: 0.0/2000.0
 Animals:
         Naatti 0.0/19.0
         Hilke 0.0/30.0
@@ -8443,7 +8443,7 @@ Animals:
 </pre>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new Cowhouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
 
         farm.addCow(new Cow());
         farm.addCow(new Cow());
@@ -8459,7 +8459,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-Cowhouse bulk tank: 0.0/2000.0
+CowHouse bulk tank: 0.0/2000.0
 Animals:
         Heluna 2.0/17.0
         Rima 3.0/32.0
@@ -8467,7 +8467,7 @@ Animals:
 </pre>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new Cowhouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
         MilkingRobot robot = new MilkingRobot();
         farm.installMilkingRobot(robot);
 
@@ -8490,7 +8490,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-Cowhouse bulk tank: 18.0/2000.0
+CowHouse bulk tank: 18.0/2000.0
 Animals:
         Hilke 0.0/30.0
         Sylkki 0.0/35.0
@@ -8504,14 +8504,14 @@ Animals:
 
         <p>Abstract classes combine interfaces and inheritance. They do not produce instances, but you can create instances of their sublcasses. An abstract class can contain both normal and abstract methods, the first containing the method body, the second having only the method definition. The implementation of the abstract methods is left to the inheriting class. In general, we use abstract classes when the object they represent is not a clear, self-defined concept. In such cases, it is not possible to create instances of it.</p>
 
-        <p>Both when we define abstract classes and abstract methods, we use the keyword <code>abstract</code>. An abstract class is define by the statement <code>public abstract class <em>ClassName</em></code>, whereas an abstract method is defined by <code>public abstract <em>returnType</em> <em>methodName</em></code>. Let's consider the following abstract class <code>Operation</code>, which provides a framework for operations, and their excecutions.</p>
+        <p>Both when we define abstract classes and abstract methods, we use the keyword <code>abstract</code>. An abstract class is defined by the statement <code>public abstract class <em>ClassName</em></code>, whereas an abstract method is defined by <code>public abstract <em>returnType</em> <em>methodName</em></code>. Let's consider the following abstract class <code>Operation</code>, which provides a framework for operations, and their excecutions.</p>
 
 <pre class="sh_java">
 public abstract class Operation {
 
     private String name;
 
-    public Toiminto(String name) {
+    public Operation(String name) {
         this.name = name;
     }
 
@@ -8544,7 +8544,7 @@ public class Addition extends Operation {
 }
 </pre>
 
-        <p>Because all classes which descend from <code>Operation</code> are also Operation-type, we can create a user interface based on <code>Operation</code>-type variables. The following class <code>UserInterface</code> contains a list of operations and a reader. The operations can be added dinamically in the user interface.</p>
+        <p>Because all classes which descend from <code>Operation</code> are also Operation-type, we can create a user interface based on <code>Operation</code>-type variables. The following class <code>UserInterface</code> contains a list of operations and a reader. The operations can be added dynamically in the user interface.</p>
 
 <pre class="sh_java">
 public class UserInterface {
@@ -8617,7 +8617,7 @@ Operations:
 Choice: <font color="red">0</font>
 </pre>
 
-        <p>The different between interfaces and abstract classes is that abstract classes provide the program with more structure. Because it is possible to define the functionality of abstract classes, we can use them to define the default implementation, for instance. The user interface above made use of a definition of the abstract class to store the operation name.</p>
+        <p>The difference between interfaces and abstract classes is that abstract classes provide the program with more structure. Because it is possible to define the functionality of abstract classes, we can use them to define the default implementation, for instance. The user interface above made use of a definition of the abstract class to store the operation name.</p>
 
 
 <div class="tehtavat">
@@ -8692,7 +8692,7 @@ false
 </pre>
 
 
-        <p>Next, implement the class <code>BlackHoleBox</code> in the package <code>boxes</code>; the class inherits <code>Box</code>. BlackHoleBox has the constructor <code>public BlackHoleBox()</code>; any thing can be added to a black-hole box, but none will be found when you'll look for them. In other words, adding things must always woek, but the method <code>isInTheBox</code> has to return always false.</p>
+        <p>Next, implement the class <code>BlackHoleBox</code> in the package <code>boxes</code>; the class inherits <code>Box</code>. BlackHoleBox has the constructor <code>public BlackHoleBox()</code>; any thing can be added to a black-hole box, but none will be found when you'll look for them. In other words, adding things must always work, but the method <code>isInTheBox</code> has to return always false.</p>
 
 <pre class="sh_java">
         BlackHoleBox box = new BlackHoleBox();
@@ -8737,7 +8737,7 @@ false
 
    for ( Object object : list ) {
       if ( hasToBeRemoved(object) ) {
-         toBeRemoved.add(olio);
+         toBeRemoved.add(object);
       }
    }
 

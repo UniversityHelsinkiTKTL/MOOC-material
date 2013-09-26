@@ -8397,7 +8397,8 @@ Cowhouse: 9.6/2000.0
 
 <h4>Farm</h4>
 
-<p>Farms have got an owner, a cowhouse and a breed of cows. Farm also implements our old interface <code>Alive</code>: calling the method <code>liveHour</code> makes all the cows of the farm live for an hour. Implement your class Farm, and make it work according to the following example.
+<p>Farms have got an owner, a cowhouse and a breed of cows. Farm also implements our old interface <code>Alive</code>: calling the method <code>liveHour</code> makes all the cows of the farm live for an hour.
+   You also have to create method <code>manageCows</code> which calls Cowhouse's method <code>takeCareOf</code> so that all cows are milked. Implement your class Farm, and make it work according to the following example.
 </p>
 
 <pre class="sh_java">
@@ -8759,7 +8760,7 @@ false
 
 <p>With this exercise, you manage to implement a dungeon game. In the game, the player is in a dungeon full of vampires. The player has to stub the vampires before his lamp runs out of battery and the vampires can suck his blood in the darkness. The player can see the vampires with a blinking of their lamp, after which they have to move blind before the following blinking. With one move, the player can walk as many steps as they want.</p>
 
-<p>The game situation, i.e. the dungeon, the player and the vampires are shown in text form. The first line in the print output tells how many moves the player has got left (that is to say, how much battery the lamp has got). After that, the print output shows player and vampire positions, which in turn are followed by the game map. In the example below, you see the player (<code>@</code>) and three vampires (<code>h</code>); in this case, the player has got enough light for fourteen moves.</p>
+<p>The game situation, i.e. the dungeon, the player and the vampires are shown in text form. The first line in the print output tells how many moves the player has got left (that is to say, how much battery the lamp has got). After that, the print output shows player and vampire positions, which in turn are followed by the game map. In the example below, you see the player (<code>@</code>) and three vampires (<code>v</code>); in this case, the player has got enough light for fourteen moves.</p>
 
 <pre>
 14
@@ -8775,7 +8776,7 @@ v 12 2
 .......v.........
 </pre>
 
-<p>The example above shows the lamp has got enough battery for 14 blinkings. THe player <code>@</code> is located at <code>1 2</code>. Note that the coordinates are calculated starting from the high left corner of the game board. In the map above, the character <code>X</code> is located at <code>0 0</code>, <code>Y</code> is at <code>2 0</code> and <code>Z</code> is at <code>0 2</code>.</p>
+<p>The example above shows the lamp has got enough battery for 14 blinkings. The player <code>@</code> is located at <code>1 2</code>. Note that the coordinates are calculated starting from the high left corner of the game board. In the map below, the character <code>X</code> is located at <code>0 0</code>, <code>Y</code> is at <code>2 0</code> and <code>Z</code> is at <code>0 2</code>.</p>
 
 <pre>
 X.Y..............
@@ -8799,7 +8800,7 @@ Z................
 
 <p>The vampires move randomly in the game, and they take one step for each step the player takes. If the player and a vampire run into each other (even momentarily) the vampire is destroyed. If a vampire tries to step outside the board, or into a place already occupied by another vampire, the move is not executed. When all the vampires are destroyed, the game ends and it prints <code>YOU WIN</code>.</p>
 
-<p>In order to help the tests, crate the class <code>Dungeon</code> in your game, with  :</p>
+<p>In order to help the tests, create the class <code>Dungeon</code> in your game, with:</p>
 
 <p>
   <ul>

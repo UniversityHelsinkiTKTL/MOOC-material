@@ -9343,7 +9343,7 @@ public class Main {
 
 <p>When we execute the main method above, the user interface we have defined in the class <code>UserInterface</code> appears in our screen.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/eka-kali.png"/></p>
+    <p><img src="img/ui/first-ui.png"/></p>
 
 
 <h3>UI Components</h3>
@@ -9366,7 +9366,7 @@ public class Main {
 
 <p>As you see from the code above, JLabel shall display the text <code>"Text field!"</code>. When we execute the user interface, we see the following window.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-tekstikentta.png"/></p>
+    <p><img src="img/ui/text-field.png"/></p>
 
 
 <div class="tehtavat">
@@ -9390,7 +9390,7 @@ public class Main {
     }
 </pre>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-nappi.png"/></p>
+    <p><img src="img/ui/click.png"/></p>
 
 <p>Next, we try to add both text and a button to our user interface.</p>
 
@@ -9405,7 +9405,7 @@ public class Main {
 
 <p>When we exectute the program we see the following user interface.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-tarve-asettelulle.png"/></p>
+    <p><img src="img/ui/text.png"/></p>
 
 <p>Only the last component we have added is visible, and our program does not work as we would expect. What is the problem, in fact?</p>
 
@@ -9432,9 +9432,9 @@ public class Main {
     }
 </pre>
 
-<p>Notice that the button <code>"Center"</code> is not visible in our user interface because the button <code>"Default (Center)"</code> is assigned to its place by default. A container with the code above will look like the following.</p>
+<p>Notice that the button <code>"Center"</code> is not visible in our user interface because the button <code>"Default (Center)"</code> is assigned to its place by default. A container with the code above will look like the following after increasing its size manually.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/layout-borderlayout.png"/></p>
+    <p><img src="img/ui/layout-override.png"/></p>
 
 <p>As for UI components, there are also many UI layout managers. Oracle has got a visual guide to learn more about UI layout managers at <a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html" target="_blank">http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html</a>. Below, we introduce the layout manager <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/BoxLayout.html" target="_blank">BoxLayout</a></code>.</a>
 
@@ -9455,7 +9455,7 @@ public class Main {
     }
 </pre>
 
-<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/boxlayout-x_axis.png"/></p>
+    <p><img src="img/ui/layout-xaxis.png"/></p>
 
 <p>Setting up the components vertically does not require major changes. We modify the direction parameter of the <code>BoxLayout</code> constructor: <code>BoxLayout.Y_AXIS</code>.</p>
 
@@ -9470,7 +9470,7 @@ public class Main {
     }
 </pre>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/boxlayout-y_axis.png"/></p>
+    <p><img src="img/ui/layout-yaxis.png"/></p>
 
 <p>Using the different layout managers, we can create user interfaces where the components are set up appropriately. Below, there is an example of user interface where the components are placed vertically. First there is some text, and then an optional selection. You can create a multiple-exclusion scope for a set of buttons -- meaning that turning "on" one of those buttons turns off all the others in the group -- using <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/ButtonGroup.html" target="_blank">ButtonGroup</a></code> and <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JRadioButton.html" target="_blank">JRadioButton</a></code>.</p>
 
@@ -9479,7 +9479,7 @@ public class Main {
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
 
-        container.add(new JLabel("Valitse ruokavalio:"));
+        container.add(new JLabel("Choose meat or fish:"));
 
         JRadioButton meat = new JRadioButton("Meat");
         JRadioButton fish = new JRadioButton("Fish");
@@ -9494,7 +9494,10 @@ public class Main {
 </pre>
 
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/buttongroup-ruokavalio.png"/></p>
+    <p>Once the UI is launched, and Meat is selected, the UI looks as follows.</p>
+
+    <p><img src="img/ui/buttongroup.png"/></p>
+
 
 <div class="tehtavat">
     <div class="tehtava">
@@ -9549,7 +9552,7 @@ public class MessageListener implements ActionListener {
     }
 </pre>
 
-<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-actionlistener-viestita.png"/></p>
+    <p><img src="img/ui/send.png"/></p>
 
 <p>When we press the button in our user interface we see the following message.</p>
 
@@ -9578,7 +9581,9 @@ Message received!
     }
 </pre>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kopioija-alku.png"/></p>
+    <p>After a manual resize, the UI looks like the following.</p>
+
+    <p><img src="img/ui/copier.png"/></p>
 
 <p>We want to implement our user interface so that the text in the left area would be copied into the right area when we press the <code>JButton</code>. This is possible by implementing an action event listener. Let's create the class <code>AreaCopier</code> which implements <code>ActionListener</code> and copies the text from one to the other JTextArea.</p>
 
@@ -9628,9 +9633,7 @@ public class AreaCopier implements ActionListener {
 
 <p>When we press the button, the text in the left area is copied into the right one.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kopioija-valmis.png"/></p>
-
-
+    <p><img src="img/ui/copier2.png"/></p>
 
 <div class="tehtavat">
     <div class="tehtava">
@@ -9682,7 +9685,7 @@ public interface PersonRecord {
         JLabel textID = new JLabel("ID: ");
         JTextField idField = new JTextField();
 
-        JButton addButton = new JButton("Add them!");
+        JButton addButton = new JButton("Add!");
         // tapahtumankuuntelija
 
         container.add(textName);
@@ -9696,7 +9699,7 @@ public interface PersonRecord {
 
 <p>After adding the information, our user interface looks like the following.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/kali-henkilon-lisays.png"/></p>
+    <p><img src="img/ui/persondetails.png"/></p>
 
 <p>The action event listener has to know about the recording functionality (<code>PersonRecord</code> interface), as well as the fields it uses. Let's create the class <code>PersonRecordListener</code> which implements <code>ActionListener</code>. As constructor parameter, the class is assigned an object which implements the interface <code>PersonRecord</code>, as well as two <code>JTextField</code> objects which stand for the name and ID fields. In the method <code>actionPerformed</code> we create a new <code>Person</code> object and we record it using the <code>record</code> method of our <code>PersonRecord</code> object.</p>
 
@@ -9749,7 +9752,7 @@ public class UserInteface implements Runnable {
         JLabel idText = new JLabel("ID: ");
         JTextField idField = new JTextField();
 
-        JButton addButton = new JButton("Add them!");
+        JButton addButton = new JButton("Add!");
         PersonRecordListener listener = new PersonRecordListener(personRecord, nameField, idField);
         addButton.addActionListener(listener);
 
@@ -9801,7 +9804,7 @@ Value: 2
 
 <p>Modify the class <code>UserInterface</code>; now the user interface has to receive a <code>Calculator</code> object as constructor parameter: you need a new constructor. Add the necessary ui components to your UserInterface. Also, set the action event listener you implemented in the previous section to the button.</p>
 
-<p>Use the functionality provided by the class <code>BorderLayout</code> to manage the layout of the ui components. Also, change the <code>Main</cde> class so that the user interface is assigned a <code>PersonalCalculator</code> object. When the <code>"Click!"</code> button in the user interface has been pressed twice, the application looks like below, more or less.</p>
+<p>Use the functionality provided by the class <code>BorderLayout</code> to manage the layout of the ui components. Also, change the <code>Main</code> class so that the user interface is assigned a <code>PersonalCalculator</code> object. When the <code>"Click!"</code> button in the user interface has been pressed twice, the application looks like below, more or less.</p>
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/159-clickeffect-klikattu.png"/></p>
 
@@ -9813,7 +9816,7 @@ Value: 2
 
 <p>Sometimes we end up in a situation, where the <code>Container</code> object provided by <code>JFrame</code> is not suitable enough for our UI layout. We may want our user interface to look different or to group up UI components according to their use. For instance, building a user interface like the one below would not be so easy, using only the <code>Container</code> object provided by the class <code>JFrame</code>.</p>
 
-   <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/jpanel-container.png"/></p>
+    <p><img src="img/ui/nestedobjects.png"/></p>
 
 <p>We can place Container objects inside each other. The class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JPanel.html" target="_blank">JPanel</a></code> (see also <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/panel.html" target="_blank">How to Use Panels</a>) allows for nested <code>Container</code> objects. It is possible to add UI components to a <code>JPanel</code> instance in the same way we add components to the <code>Container</code> instance of <code>JFrame</code> class. Moreover, it is possible to add an instance of <code>JPanel</code> to a <code>Container</code> object. This makes possible to use many <code>Container</code> objects to develop one user inteface.</p>
 
@@ -9930,7 +9933,7 @@ public class DrawingBoard extends JPanel {
 
 <p>When we start our user interface we see an empty screen, whose background colour is white. The size of the user interface below is set to 300x300 through the method <code>setPreferredSize</code>, and its title is <code>"Drawing Board"</code>.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta.png"/></p>
+    <p><img src="img/ui/drawingboard.png"/></p>
 
 <p>Drawing on the board is possible using the methods provides by the <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html" target="_blank">Graphics</a></code> object. Let's modify the method <code>paintComponent</code> of <code>DrawingBoard</code> and let's draw two rectangles using the method <code>fillRect</code> of the <code>Graphics</code> object.</p>
 
@@ -9948,7 +9951,7 @@ public class DrawingBoard extends JPanel {
 
 <p>As you notice from the picture, the coordinate system does not work as we are accustomed to.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta-suorakulmiot.png"/></p>
+    <p><img src="img/ui/drawingboard-blocks.png"/></p>
 
 <p>Java's <code>Graphics</code> object (and most of other programming language libraries) expects the value of the y axis to grow downwards. The coordinate system origin, i.e. the point <code>(0,0)</code> is in the upper left corner: the Graphics object always knows the UI component where we draw, and it is able to define the location of the point to draw based on it. The location of the UI origin can become clear with the help of the following program. First we drow a green 10-pixel long, 200-pixel heigh rectangle which starts from the point (0,0). Then we draw a black 200-pixel long, 10-pixel heigh rextangle which starts from the point (0,0). The drawing colour is defined by the method <code>setColor</code> of our <code>Graphics</code> object.</p>
 
@@ -9965,7 +9968,8 @@ public class DrawingBoard extends JPanel {
     }
 </pre>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta-koordinaatisto.png"/></p>
+
+    <p><img src="img/ui/drawingboard-coordinates.png"/></p>
 
 <p>Such coordinate system reversibility depends on the way user interface size is modified. When we modify the size of a user interface, this is reduced or increased by "dragging the bottom right corner"; in this way, the drawing on the screan would move while we change the UI size. Because the gird starts from the upper left corner, the drawing position is always the same, but the visible part changes.</p>
 
@@ -10028,7 +10032,7 @@ public class DrawingBoard extends JPanel {
 
     private Avatar avatar;
 
-    public Piirtoalusta(Avatar avatar) {
+    public DrawingBoard(Avatar avatar) {
         super.setBackground(Color.WHITE);
         this.avatar = avatar;
     }
@@ -10069,7 +10073,7 @@ public class UserInterface implements Runnable {
         SwingUtilities.invokeLater(ui);
 </pre>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta-hahmon-piirtaminen.png"/></p>
+    <p><img src="img/ui/drawingboard-avatar.png"/></p>
 
 <p>In the user interface above, we see a ball-like Avatar.</p>
 
@@ -10201,7 +10205,7 @@ public class KeyboardListener implements KeyListener {
 
 <p>Now, our avatar's moves are visible also in the user interface. Whenever the user presses the keyboard, the user interface keyboard listener handles the call. At the end of each call, the <code>repaint</code> method of our drawing board is called, and the drawing board gets repainted.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/piirtoalusta-hahmo-liikkuu.png"/></p>
+    <p><img src="img/ui/drawingboard-avatar-movement.png"/></p>
 
 <div class="tehtavat">
     <div class="tehtava">
@@ -11954,7 +11958,7 @@ public static void main(String[] args) {
 
 <p>In this exercise, we create the structure and functionality for the following worm game.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/170-matopeli.png"/></p>
+    <p><img src="img/ui/snakegame.png"/></p>
 
 <h4>Piece and Apple</h4>
 

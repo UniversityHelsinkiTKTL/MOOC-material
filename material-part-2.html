@@ -9507,7 +9507,7 @@ public class Main {
 
 <p>Implement a user interface in the exercise body; the interface has to look like the following:</p>
 
-<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/157-kysely.png"/></p>
+    <p><img src="img/ui/survey.png"/></p>
 
 <p>Use <code>BoxLayout</code> as layout manager for your user interface; the components are the classes <code>JLabel</code>, <code>JRadioButton</code>, <code>JCheckBox</code> and <code>JButton</code>.</p>
 
@@ -9642,7 +9642,7 @@ public class AreaCopier implements ActionListener {
 
 <p>Implement a user interface in the exercise body; the interface has to look like the following:</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/158-ilmoitin.png"/></p>
+    <p><img src="img/ui/noticeboard.png"/></p>
 
 <p>The program has to be composed of the following classes, which are contained in the package <code>noticeboard</code>. The class <code>NoticeBoard</code> is the user interface class, and it is started from the <code>Main</code> class. The notice board has got various different components: <code>JTextField</code>, <code>JButton</code>, and <code>JLabel</code>. You can manage the layout of the ui components with <code>GridLayout</code>: the call <code>new GridLayout(3, 1)</code> creates a new layout manager, which sets up three ui elements vertically.</p>
 
@@ -9771,7 +9771,7 @@ public class UserInteface implements Runnable {
 
 <p>In this exercise we implement a calculator to count the number of clicks. In the exercise, the application logic (counting) and the ui logic are divided from each other. The final application should look like the following, so far. </p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/159-clickeffect.png"/></p>
+    <p><img src="img/ui/clickeffect.png"/></p>
 
 <h4>PersonalCalculator</h4>
 
@@ -9806,7 +9806,7 @@ Value: 2
 
 <p>Use the functionality provided by the class <code>BorderLayout</code> to manage the layout of the ui components. Also, change the <code>Main</code> class so that the user interface is assigned a <code>PersonalCalculator</code> object. When the <code>"Click!"</code> button in the user interface has been pressed twice, the application looks like below, more or less.</p>
 
-    <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/159-clickeffect-klikattu.png"/></p>
+    <p><img src="img/ui/clickeffect2.png"/></p>
 
 </div>
 </div>
@@ -10244,8 +10244,7 @@ public class KeyboardListener implements KeyListener {
         SwingUtilities.invokeLater(ui);
 </pre>
 
-<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/liikkuvakuvio-ympyra.png"/></p>
-
+    <p><img src="img/ui/moving-circle.png"/></p>
 
 
         <h4 class="req">KeyboardDirections</h4>
@@ -10273,15 +10272,14 @@ public class KeyboardListener implements KeyListener {
         SwingUtilities.invokeLater(ui);
 </pre>
 
-<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/liikkuvakuvio-nelio.png"/></p>
-
+    <p><img src="img/ui/moving-box.png"/></p>
 
 <pre class="sh_java">
         UserInterface ui = new UserInterface(new Box(50, 50, 100, 300));
         SwingUtilities.invokeLater(ui);
 </pre>
 
-<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/liikkuvakuvio-laatikko.png"/></p>
+    <p><img src="img/ui/moving-box2.png"/></p>
 
         <h4 class="req">CompoundFigure</h4>
 
@@ -10301,8 +10299,8 @@ public class KeyboardListener implements KeyListener {
         SwingUtilities.invokeLater(ui);
 </pre>
 
-<p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/kali/liikkuvakuvio-rekka.png"/></p>
 
+    <p><img src="img/ui/moving-car.png"/></p>
 
 
         <p>Note how the <b>object responsibilities are shared here</b>. Each Figure is in charge of drawing and moving itself. Simple figures all move in the same way. Each simple figure has to manage their own drawing themselves. Compound figures move by asking their parts to move, and the same thing happens when it comes to be drawn. The drawing board knows a Figure object which, in fact, can be whatever simple figure or a compound figure: they are all drawn and moved in the same way. In fact, the drawing board works correctly regardless of the real type of the figure; the drawing board does not have to know the details of the figure. When the drawing board calls the method <code>draw</code> or <code>move</code> of the figure, the method of the real type of the figure is called, thanks to <b>polymorphism</b>.</p>

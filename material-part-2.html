@@ -9464,9 +9464,9 @@ public class Main {
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
 
-        container.add(new JLabel("Eka!"));
-        container.add(new JLabel("Toka!"));
-        container.add(new JLabel("Kolmas!"));
+        container.add(new JLabel("First!"));
+        container.add(new JLabel("Second!"));
+        container.add(new JLabel("Third!"));
     }
 </pre>
 
@@ -9511,7 +9511,7 @@ public class Main {
 
 <p>Use <code>BoxLayout</code> as layout manager for your user interface; the components are the classes <code>JLabel</code>, <code>JRadioButton</code>, <code>JCheckBox</code> and <code>JButton</code>.</p>
 
-<p>Use the class <code>ButtonGroup</code> to make sure the options "Siksi" and "Koska se on kivaa" cannot be chosen at the same time.</p>
+<p>Use the class <code>ButtonGroup</code> to make sure the options <code>"No reason."</code> and <code>"Because it is fun!"</code> cannot be chosen at the same time.</p>
 
 <p>Make sure that the user interface is big enough so that the user can click the buttons without resizing the interface. For instance, you can use 200 pixels for the width and 300 pixels for the height.</p>
 </div>
@@ -9520,7 +9520,7 @@ public class Main {
 <h3>Managing Action Events</h3>
 
 <p>So far, even though our user interfaces are beautiful, they are quite boring: they do not react in any way according to the actions done on the interfaces.
-Tähänastiset graafiset käyttöliittymämme ovatvaikkakin hienoja hieman tylsiä: ne eivät reagoi millään tavalla käyttöliittymässä tehtyihin tapahtumiin. Such unresponsiveness does not depend on our user interface components, but on the fact we haven't provided them with any way to listen to action events.</p>
+Such unresponsiveness does not depend on our user interface components, but on the fact we haven't provided them with any way to listen to action events.</p>
 
 <p>Action event listeners <em>listen</em> the UI components they are assigned to. Always when we perform an action on our UI components -- pressing a button, for instance -- the UI component calls a particular method of all the action event listeners assigned to it. Action event listeners are classes which implement a particular interface, and whose instances can be assigned to UI components. When an action event happens, the UI component goes through all its action event listeners, and calls the method defined by the interface.</p>
 
@@ -9686,7 +9686,7 @@ public interface PersonRecord {
         JTextField idField = new JTextField();
 
         JButton addButton = new JButton("Add!");
-        // tapahtumankuuntelija
+        // event listener
 
         container.add(textName);
         container.add(nameField);
@@ -9710,7 +9710,7 @@ public class PersonRecordListener implements ActionListener {
     private JTextField nameField;
     private JTextField idField;
 
-    public PersonnLisaysKuuntelija(PersonRecord personRecord, JTextField nameField, JTextField idField) {
+    public PersonRecordListener(PersonRecord personRecord, JTextField nameField, JTextField idField) {
         this.personRecord = personRecord;
         this.nameField = nameField;
         this.idField = idField;
@@ -9866,7 +9866,7 @@ public class MenuPanel extends JPanel {
 <pre class="sh_java">
     private void createComponents(Container container) {
         container.add(new JTextArea());
-        container.add(new ValikkoPanel(), BorderLayout.SOUTH);
+        container.add(new MenuPanel(), BorderLayout.SOUTH);
     }
 </pre>
 

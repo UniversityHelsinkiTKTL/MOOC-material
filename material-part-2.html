@@ -10249,15 +10249,15 @@ public class KeyboardListener implements KeyListener {
 
         <h4 class="req">KeyboardDirections</h4>
 
-<p>Let's extend our drawing board, so that we could move the figures using our keyboard arrows. Create the class <code>KeyboardLsitener</code> which implements the interface <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyListener.html" target="_blank">KeyListener</a></code>. The class <code>KeyboardListener</code> has got two constructor parameters: an instance of the class <code>Component</code> and one of the class <code>Figure</code>.</p>
+<p>Let's extend our drawing board, so that we could move the figures using our keyboard arrows. Create the class <code>KeyboardListener</code> which implements the interface <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyListener.html" target="_blank">KeyListener</a></code>. The class <code>KeyboardListener</code> has got two constructor parameters: an instance of the class <code>Component</code> and one of the class <code>Figure</code>.</p>
 
 <p>The instance of Component is given to the keyboard listener so that the component would be updated each time the keyboard is pressed. The component is updated with the method call <code>repaint</code>, which is inherited fromt he class <code>Component</code>. The type of the class DrawingBoard is <code>Component</code>, because <code>Component</code> is the parten class of <code>JPanel</code>.</p>
 
 <p>Implement the method <code>keyPressed(KeyEvent e)</code> of the interface <code>KeyListener</code>; when the user presses the left arrow, the figure moves one point left. Pressing right, the figure moves one point right. Pressing up it moves one point up, and pressing down the figure moves one point down. Note that the y axe grows from the upper side of the window downwards. The arrow key codes are <code>KeyEvent.VK_LEFT</code>, <code>KeyEvent.VK_RIGHT</code>, <code>KeyEvent.VK_UP</code>, and <code>KeyEvent.VK_DOWN</code>. Leave empty the other methods required by the interface <code>KeyListener</code>.</p>
 
-<p>Kutsu aina Component-luokan <code>repaint</code>-metodia näppäimistönkuuntelutapahtuman lopussa.</p>
+<p>Always call class Component's method <code>repaint</code> in the end of keylistener event.</p>
 
-<p>Lisää näppäimistönkuuntelija Kayttoliittyma-luokan <code>lisaaKuuntelijat</code>-metodissa. Näppäimistönkuuntelija tulee liittää <code>JFrame</code>-olioon.</p>
+<p>Add keylistener in the UserInterface's method <code>addListeners</code>. KeyListener must be connected to <code>JFrame</code>-object.</p>
 
 
         <h4 class="req">Square and Box</h4>

@@ -7189,7 +7189,7 @@ s
 
 <h3>Groups</h3>
 
-<p>In this exercise, we make organisms and groups of organisms which move around each other. The position of the organisms is reported by using a <em>bidimentional coordinate system</em>. Each position is defined by two numbers, the <code>x</code> and <code>y</code> coordinates. The <code>x</code> coordinate tells us how far from the "point zero" the position is horizontally, whereas the <code>y</code> coordinate tells u how far the position is vertically. If you have got doubts of what a coordinate system is, you can read more information in <a href="http://en.wikipedia.org/wiki/Coordinate_system">Wikipedia</a>, for instance.</p>
+<p>In this exercise, we make organisms and groups of organisms which move around each other. The position of the organisms is reported by using a <em>bidimensional coordinate system</em>. Each position is defined by two numbers, the <code>x</code> and <code>y</code> coordinates. The <code>x</code> coordinate tells us how far from the "point zero" the position is horizontally, whereas the <code>y</code> coordinate tells u how far the position is vertically. If you have got doubts of what a coordinate system is, you can read more information in <a href="http://en.wikipedia.org/wiki/Coordinate_system">Wikipedia</a>, for instance.</p>
 
 <p>Together with the exercise, you find the interface <code>Movable</code>, which represents things that can be moved from one place to another. The interface contains the method <code>void move(int dx, int dy)</code>. The parameter <code>dx</code> tells us how much the object moves on the x axis and <code>dy</code> tells us about the movement on the y axis.</p>
 
@@ -7540,7 +7540,7 @@ Liisa
 
 <h3>Another Example: Points</h3>
 
-<p>A point laying in a bidimentional coordinate system can be represented with the help of the following class:</p>
+<p>A point laying in a bidimensional coordinate system can be represented with the help of the following class:</p>
 
 <pre class="sh_java">
 public class Point {
@@ -7679,7 +7679,7 @@ public class Main {
 (0, 0) distance 0
 </pre>
 
-<p>We notice that the tridimentional point <code>toString</code> method is exactly the same as the point's toString. Could we leave the toString method untouched? Of course! A tridimensional point can be reduced to the following:</p>
+<p>We notice that the tridimensional point <code>toString</code> method is exactly the same as the point's toString. Could we leave the toString method untouched? Of course! A tridimensional point can be reduced to the following:</p>
 
 <pre class="sh_java">
 public class 3DPoint extends Point {
@@ -8806,7 +8806,7 @@ Z................
 <p>
   <ul>
     <li>the constructor <strong><code>public Dungeon(int length, int height, int vampires, int moves, boolean vampiresMove)</code></strong>
-      <p>the values <code>length</code> and <code>height</code> represent the dimention of the dungeon (always a square); <code>vampires</code> stands for the initial number of vampires (the positions of the vampires can be decided randomly); <code>moves</code> determines the initial number of moves; and if <code>vampiresMove</code> is <code>false</code>, the vampires do not move.</p></li>
+      <p>the values <code>length</code> and <code>height</code> represent the dimension of the dungeon (always a square); <code>vampires</code> stands for the initial number of vampires (the positions of the vampires can be decided randomly); <code>moves</code> determines the initial number of moves; and if <code>vampiresMove</code> is <code>false</code>, the vampires do not move.</p></li>
     <li>the method <strong><code>public void run()</code></strong>, which starts the game</li>
   </ul>
 </p>
@@ -10334,13 +10334,13 @@ public class KeyboardListener implements KeyListener {
 <li>Every dead cell is turned back to life if they have exactly three living neighbours.</li>
 </ul>
 
-<p>The abstract class <code>GameOfLifeBoard</code> provides the following funcionality</p>
+<p>The abstract class <code>GameOfLifeBoard</code> provides the following functionality</p>
 <ul>
-  <li><b>public GameOfLifeBoard(int length, int height)</b> creates a game board of the defined dimentions</li>
-  <li><b>public boolean[][] getBoard()</b> provides access to the game board, which is a bidimentional table containing boolean values &ndash; as you may guess from the method return value! We come back to bidimensional boards later on when needed.</li>
-  <li><b>public int getLength()</b> returns the board length</li>
+  <li><b>public GameOfLifeBoard(int length, int height)</b> creates a game board of the defined dimensions</li>
+  <li><b>public boolean[][] getBoard()</b> provides access to the game board, which is a bidimensional table containing boolean values &ndash; as you may guess from the method return value! We come back to bidimensional boards later on when needed.</li>
+  <li><b>public int getWidth()</b> returns the board width</li>
   <li><b>public int getHeight()</b> returns the board height</li>
-  <li><b>public void playTheTurn()</b> simulates a turn of the game</li>
+  <li><b>public void playTurn()</b> simulates a turn of the game</li>
 </ul>
 
 <p>The class <code>GameOfLifeBoard</code> has also got the following abstract method, <b>which you will have to implement</b>.<p>
@@ -10350,22 +10350,22 @@ public class KeyboardListener implements KeyListener {
   <li><b>public abstract void turnToDead(int x, int y)</b> kills the cell whose coordinates are (x, y), that is to say it assigns the value <i>false</i> to it. If the coordinates are outside the board, nothing happens.</li>
   <li><b>public abstract boolean isAlive(int x, int y)</b> tells whether the cell at (x, y) is alive. If the coordinates are outside the board, the method returns <i>false.</i></li>
   <li><b>public abstract void initiateRandomCells(double probabilityForEachCell)</b> initiates all the cells of the board: every cell is alive with a probability of <i>probabilityForEachCell.</i> The probability is a double value between [0, 1]. If a method is called with value 1, all the cells have to be alive. Accordingly, if the probability is 0, all the cells have to be dead.</li>
-  <li><b>public abstract int howManyLivingNeibours(int x, int y)</b> tells the number of living neighbours for the cell at (x, y).</li>
+  <li><b>public abstract int getNumberOfLivingNeighbours(int x, int y)</b> tells the number of living neighbours for the cell at (x, y).</li>
   <li><b>public abstract void manageCell(int x, int y, int livingNeighbours)</b> managese the cell (x, y) according to the rules of the Game of Life.</li>
 </ul>
 
 
 <h4>GameOfLife implementation, Part 1</h4>
 
-<p>Create the class <code>PersonalBoard</code> into the package <code>game</code>; PersonalBoard inherits the class <code>GameOfLifeBoard</code> which is in the package <code>gameoflife</code>. Note that the package <code>gameoflife</code> is not visible in your project, but it comes together with the class library. In the class <code>PersonalBoard</code>, implement the constructor <code>public PersonalBoard(int length, int height)</code>, which calls the superclass constructor with the given parameters:</p>
+<p>Create the class <code>PersonalBoard</code> into the package <code>game</code>; PersonalBoard inherits the class <code>GameOfLifeBoard</code> which is in the package <code>gameoflife</code>. Note that the package <code>gameoflife</code> is not visible in your project, but it comes together with the class library. In the class <code>PersonalBoard</code>, implement the constructor <code>public PersonalBoard(int width, int height)</code>, which calls the superclass constructor with the given parameters:</p>
 
 <pre class="sh_java">
 import gameoflife.GameOfLifeBoard;
 
 public class PersonalBoard extends GameOfLifeBoard {
 
-    public PersonalBoard(int length, int height) {
-        super(length, height);
+    public PersonalBoard(int width, int height) {
+        super(width, height);
     }
 
     // ..
@@ -10380,7 +10380,7 @@ public class PersonalBoard extends GameOfLifeBoard {
   <li><b>public abstract boolean isAlive(int x, int y)</b> tells whether the cell at (x, y) is alive. If the coordinates are outside the board, the method returns <i>false.</i></li>
 </ul>
 
-<p><b>Hint:</b> You have access to the bidimentional table of the superclass throw the superclass method <code>getBoard()</code>. Bidimentional tables are used as normal tables, but they are assigned two indexes. The first index tells
+<p><b>Hint:</b> You have access to the bidimensional table of the superclass throw the superclass method <code>getBoard()</code>. Bidimensional tables are used as normal tables, but they are assigned two indexes. The first index tells
 
 the row
 
@@ -10487,7 +10487,7 @@ Thanks!
 
 <h4>GameOfLife Implementation, part 3</h4>
 
-<p>Implement the method <b>howManyLivingNeibours(int x, int y),</b> which calculates the number of neighbour cells which are alive. Central cells have eight neighbours, the ones on the side have five, and the ones in the corner have only three. </p>
+<p>Implement the method <b>getNumberOfLivingNeighbours(int x, int y),</b> which calculates the number of neighbour cells which are alive. Central cells have eight neighbours, the ones on the side have five, and the ones in the corner have only three. </p>
 
 <p>Test the method with the following sentences (of course, you can create your own test instances!):</p>
 
@@ -10500,8 +10500,8 @@ board.turnToLiving(1, 2);
 board.turnToLiving(2, 2);
 board.turnToLiving(2, 1);
 
-System.out.println("Neighbours alive (0,0): " + board.howManyLivingNeibours(0, 0));
-System.out.println("Neighbours alive (1,1): " + board.howManyLivingNeibours(1, 1));
+System.out.println("Neighbours alive (0,0): " + board.getNumberOfLivingNeighbours(0, 0));
+System.out.println("Neighbours alive (1,1): " + board.getNumberOfLivingNeighbours(1, 1));
 </pre>
 <p>
 
@@ -12069,7 +12069,7 @@ true
 
 <h4>DrawingBoard</h4>
 
-<p>Create the class <code>DrawingBoard</code> in <code>wormgame.gui</code>. The <code>DrawingBoard</code> inherits the class <code>JPanel</code>, and its constructor receives an instance of the class <code>WormGame</code> and the int variable <code>pieceLength</code> as parameters. The variable <code>pieceLength</code> tells the dimention of the pieces; length and height of the pieces are equal.</p>
+<p>Create the class <code>DrawingBoard</code> in <code>wormgame.gui</code>. The <code>DrawingBoard</code> inherits the class <code>JPanel</code>, and its constructor receives an instance of the class <code>WormGame</code> and the int variable <code>pieceLength</code> as parameters. The variable <code>pieceLength</code> tells the dimension of the pieces; length and height of the pieces are equal.</p>
 
 <p>Replace the <code>paintComponent</code> method which was inherited from the class <code>JPanel</code> so that the method draws the worm and the apple. Use the Graphics object's <code>fill3DRect</code> method to draw the worm. The worm colour has to be white (<code>Color.WHITE</code>). The apple has to be drawn with the Graphics object's <code>fillOval</code> method, and its colour has to be red.</p>
 

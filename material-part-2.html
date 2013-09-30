@@ -10215,7 +10215,7 @@ public class KeyboardListener implements KeyListener {
 
 <p>At first, we create a couple of classes to manage the figures. Later on we will be able to draw the figures to our board. Create all the classes of the program in the package <code>movingfigure</code>.</p>
 
-<p>In this exercise we make use of both inheritance and abstract classe: go back to sections 18.1, 18.2, and 18.5, if you need.</p>
+<p>In this exercise we make use of both inheritance and abstract classes: go back to sections 18.1, 18.2, and 18.5, if you need.</p>
 
 <h4 class="req">Figure: an Abstract Class</h4>
 
@@ -10225,7 +10225,7 @@ public class KeyboardListener implements KeyListener {
 
 <h4 class="req">Circle</h4>
 
-<p>Create the class <code>Circle</code> which inherits Figure. Circle has a <code>trigger</code>, whose value is defined by the constructor <code>public Circle(int x, int y, int trigger)</code>. The Circle position is stored into the object variables defined in its parent class.
+<p>Create the class <code>Circle</code> which inherits Figure. Circle has a <code>diameter</code>, whose value is defined by the constructor <code>public Circle(int x, int y, int diameter)</code>. The Circle position is stored into the object variables defined in its parent class.
 </p>
 
 <p>The circle defines the method <code>draw</code> so that it would draw a circle of the right size, in the place defined by the coordinates, and using the method <code>fillOval</code> of the <code>Graphics</code> object; the first two parameters of the method are taken for the position of the circle. Take example from the relative method in the Avatar example. For more information about the methods of Graphics objects, you can have a look at <a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html">Java's API.</a>
@@ -10247,7 +10247,7 @@ public class KeyboardListener implements KeyListener {
     <p><img src="img/ui/moving-circle.png"/></p>
 
 
-        <h4 class="req">KeyboardDirections</h4>
+        <h4 class="req">Keyboard Listener</h4>
 
 <p>Let's extend our drawing board, so that we could move the figures using our keyboard arrows. Create the class <code>KeyboardListener</code> which implements the interface <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyListener.html" target="_blank">KeyListener</a></code>. The class <code>KeyboardListener</code> has got two constructor parameters: an instance of the class <code>Component</code> and one of the class <code>Figure</code>.</p>
 
@@ -10260,10 +10260,10 @@ public class KeyboardListener implements KeyListener {
 <p>Add keylistener in the UserInterface's method <code>addListeners</code>. KeyListener must be connected to <code>JFrame</code>-object.</p>
 
 
-        <h4 class="req">Square and Box</h4>
+        <h4 class="req">Square and Rectangle</h4>
 
 
-<p>Let <code>Square</code> and <code>Box</code> inherit the class <code>Figure</code>. Square has got the constructor <code>public Square(int x, int y, int sideLength)</code>; the constructor of box is <code>public boc(int x, int y, int length, int height)</code>. Use the method <code>fillRect</code> of a graphic object to draw the figures.</p>
+<p>Let <code>Square</code> and <code>Box</code> inherit the class <code>Figure</code>. Square has got the constructor <code>public Square(int x, int y, int sideLength)</code>; the constructor of box is <code>public Box(int x, int y, int width, int height)</code>. Use the method <code>fillRect</code> of a graphic object to draw the figures.</p>
 
 <p>Make sure that squares and boxes are drawn and move right on the DrawingBoard.</p>
 
@@ -10281,7 +10281,7 @@ public class KeyboardListener implements KeyListener {
 
     <p><img src="img/ui/moving-box2.png"/></p>
 
-        <h4 class="req">CompoundFigure</h4>
+        <h4 class="req">Compound Figure</h4>
 
         <p>Let <code>CompoundFigure</code> inherit <code>Figure</code>. Compound figure contains other figures which are stored in an ArrayList. CompoundFigure has got the method <code>public void add(Figure f)</code>, which adds a new Figure object to the compound figure. Compound figures do not have their own position, and it is not important what values are assigned to x and y coordinates. Compound figures draw themselves by asking their parts to draw themselves; the same thing happens when a compound figure moves. This means that the inherited method <code>move</code> has to be overwritten!</p>
 

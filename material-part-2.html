@@ -9084,7 +9084,7 @@ second
 <div class="tehtava">
     <h3>Two-Direction Dictionary</h3>
 
-    <p>With this exercise, we develop the dictionary we implemented earlier, so that words can be both read and written into the file. Also, the dictionary has to translate in both directions, from Finnish into English and from Engish into Finnish (in this exercise, we suppose unofficially that Finnish and English do not have words which are spellt the same). Your task is creating the dictionary in the class <code>MindfulDictionary</code>. The class has to be implemented in the package <code>dictionary</code>.</p>
+    <p>With this exercise, we develop the dictionary we implemented earlier, so that words can be both read and written into the file. Also, the dictionary has to translate in both directions, from Finnish into English and from English into Finnish (in this exercise, we suppose unofficially that Finnish and English do not have words which are spellt the same). Your task is creating the dictionary in the class <code>MindfulDictionary</code>. The class has to be implemented in the package <code>dictionary</code>.</p>
 
 <h4>Forgetful Basic Functionality</h4>
 
@@ -9109,13 +9109,13 @@ System.out.println( dict.translate("programming") );
 System.out.println( dict.translate("banana") );
 </pre>
 
-<p>Prints</p>
+<p>Prints:</p>
 
 <pre>
 monkey
 apina
 null
-banana
+banaani
 </pre>
 
 <p>As you notice from the example, after adding a pair the dictionary can translate in both directions.</p>
@@ -9296,7 +9296,7 @@ public class UserInterface implements Runnable {
     private JFrame frame;
 </pre>
 
-<p>The user interface contains a <code>JFrame</code> object as variable, which is the basic element of a visible user interface. All user interface components are added to the <code>JFrame</code> object component container. Note that that <strong>object variables cannot be initiated outside the methods</strong>. For instance, an initialisation of the object variable <coded>JFrame</code> with the class definition <code>"private JFrame frame = new JFrame()"</code> would evade user interface thread execution order, and it can lead to a breakdown.</p>
+<p>The user interface contains a <code>JFrame</code> object as variable, which is the basic element of a visible user interface. All user interface components are added to the <code>JFrame</code> object component container. Note that <strong>object variables cannot be initiated outside the methods</strong>. For instance, an initialisation of the object variable <coded>JFrame</code> with the class definition <code>"private JFrame frame = new JFrame()"</code> would evade user interface thread execution order, and it can lead to a breakdown.</p>
 
 <pre class="sh_java">
     @Override
@@ -9306,7 +9306,7 @@ public class UserInterface implements Runnable {
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        luoKomponentit(frame.getContentPane());
+        createComponents(frame.getContentPane());
 
         frame.pack();
         frame.setVisible(true);
@@ -9326,7 +9326,7 @@ public class UserInterface implements Runnable {
 
 <p>In the method <code>createComponents</code> we add user interface components to the <code>JFrame</code>'s container. In our example there is no UI component in addition to our JFrame window. The class <code>UserInterface</code> has also the method <code>getFrame</code> which we can use to retrieve the JFrame object which is encapsulated in the class.</p>
 
-<p>Swing user interfaces are started throw the method <code>invokeLater</code>, which is provided by the class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/SwingUtilities.html" target="_blank">SwingUtilities</a></code>. <code>invokeLater</code> receives as parameter an object which implements the interface <code>Runnable</code>. The method adds the <code>Runnable</code> object to the execution queue and calls it as soon as possible. With the class<code>SwingUtilities</code>, we can start new threads when we need them.</p>
+<p>Swing user interfaces are started through the method <code>invokeLater</code>, which is provided by the class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/SwingUtilities.html" target="_blank">SwingUtilities</a></code>. <code>invokeLater</code> receives as parameter an object which implements the interface <code>Runnable</code>. The method adds the <code>Runnable</code> object to the execution queue and calls it as soon as possible. With the class<code>SwingUtilities</code>, we can start new threads when we need them.</p>
 
 <pre class="sh_java">
 import javax.swing.SwingUtilities;
@@ -9349,7 +9349,7 @@ public class Main {
 <h3>UI Components</h3>
 
 
-<p>User Interfaces are composed of a backgroud window (JFrame) and a component Container, as well as the UI components which are set into the container. UI components are different kinds of buttons, texts, and other items. Every component has got its own class. It's useful to get accostumed to Oracle viasual sequence of componets at the address <a href="http://docs.oracle.com/javase/tutorial/ui/features/components.html" target="_blank">http://docs.oracle.com/javase/tutorial/ui/features/components.html</a>.</p>
+<p>User Interfaces are composed of a backgroud window (JFrame) and a component Container, as well as the UI components which are set into the container. UI components are different kinds of buttons, texts, and other items. Every component has got its own class. It's useful to get accustomed to Oracle visual sequence of componets at the address <a href="http://docs.oracle.com/javase/tutorial/ui/features/components.html" target="_blank">http://docs.oracle.com/javase/tutorial/ui/features/components.html</a>.</p>
 
 <h4>Text</h4>
 
@@ -9373,7 +9373,7 @@ public class Main {
     <div class="tehtava">
 <h3>Greeter</h3>
 
-<p>Implement a user interface which displays the text "Hi!". The width of the user interface (i.e. of the JFrame object) has to be at least 400, its height 100, and its title should be "Swing on". The JFrame object should be created and become visible inside the method <code>run()</code>, and the text components are added to the user interface with the method <code>createComponents(Container container)</code>.</p>
+<p>Implement a user interface which displays the text "Hi!". The width of the user interface (i.e. of the JFrame object) has to be at least 400px, its height 200px, and its title should be "Swing on". The JFrame object should be created and become visible inside the method <code>run()</code>, and the text components are added to the user interface with the method <code>createComponents(Container container)</code>.</p>
 
 <p><strong>ATTENTION: The ui object variables have to be initiated in the methods or in the constructor! Do not initiate an object variable directly in its definition.</strong></p>
 </div>
@@ -9671,9 +9671,9 @@ public interface PersonRecord {
 
 <h4>UI Implementation</h4>
 
-<p>When we implement our user interface, a good start is adding the components to it. If we want to record people, we need fields for their name and their ID number, as well as a button to add the person. We use Java's <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JTextField.html" target="_blank">JTextField</a></code> to input text, and the class <code>JButton</code> to implment our button. In addition, we also create <code>JLabel</code> textual descriptions which tell the user what to do.</p>
+<p>When we implement our user interface, a good start is adding the components to it. If we want to record people, we need fields for their name and their ID number, as well as a button to add the person. We use Java's <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JTextField.html" target="_blank">JTextField</a></code> to input text, and the class <code>JButton</code> to implement our button. In addition, we also create <code>JLabel</code> textual descriptions which tell the user what to do.</p>
 
-<p>For our UI layout, we ue <code>GridLayout</code>. The are three line and two columns in our user interface. We add the action event listener later. The UI method <code>createComponents</code> looks like the following.</p>
+<p>For our UI layout, we use <code>GridLayout</code>. There are three lines and two columns in our user interface. We add the action event listener later. The UI method <code>createComponents</code> looks like the following.</p>
 
 <pre class="sh_java">
     private void createComponents(Container container) {
@@ -9719,7 +9719,7 @@ public class PersonRecordListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         Person person = new Person(nameField.getText(), idField.getText());
-        this.personRecord.record(henkilo);
+        this.personRecord.record(person);
     }
 }
 </pre>
@@ -9780,7 +9780,7 @@ public class UserInteface implements Runnable {
 <p>If you want, you can test the class using the following program.</p>
 
 <pre class="sh_java">
-        Calculator calc = new OwnCalculator();
+        Calculator calc = new PersonalCalculator();
         System.out.println("Value: " + calc.giveValue());
         calc.increase();
         System.out.println("Value: " + calc.giveValue());

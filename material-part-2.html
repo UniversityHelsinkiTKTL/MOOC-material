@@ -3777,7 +3777,7 @@ public class NewsService {
 public class NewsService {
 
     public Readable getLatestNews() {
-        return new GraphicPieceOfNews("THe Latest Hot News!", "Photo's address");
+        return new GraphicPieceOfNews("The Latest Hot News!", "Photo's address");
     }
 }
 </pre>
@@ -6745,7 +6745,7 @@ Unique characterStrings: []
 
 <h3>One Object in Many Lists, a Map Construction or a Set</h3>
 
-<p>As we remember, object varaible are reference-type, which means that the variable does not memorize the object itself, but the reference to the object. Respectively, if we put an object into an ArrayList, for instance, the List does not memorize the object itself but the <code>reference</code> to the object. There is no reason why we should not be able to save an object in various different lists or HashMaps, for instance.</p>
+<p>As we remember, object variable are reference-type, which means that the variable does not memorize the object itself, but the reference to the object. Respectively, if we put an object into an ArrayList, for instance, the List does not memorize the object itself but the <code>reference</code> to the object. There is no reason why we should not be able to save an object in various different lists or HashMaps, for instance.</p>
 
 <p>Let's have a look at our library example, which saves books into HashMaps, both based on their writer and ISB number. In addition to this, the library. Moreover, the library has got two lists for the books on loan and for the ones that are on the shelves.</p>
 
@@ -6758,11 +6758,11 @@ public class Book {
     // ...
 }
 
-public class Booksto {
-    private Map&lt String, Book&gt ISBNBooks;
-    private Map&lt String, List&ltString&gt&gt writerBooks;
-    private List&ltBook&gt loanBooks;
-    private List&ltBook&gt shelfBooks;
+public class Library {
+    private Map&lt;String, Book&gt; ISBNBooks;
+    private Map&lt;String, List&lt;String&gt;&gt; writerBooks;
+    private List&lt;Book&gt; loanBooks;
+    private List&lt;Book&gt; shelfBooks;
 
     public void addBook(Book newBook){
         ISBNBooks.put(newBook.getIsbn(), newBook);
@@ -8982,7 +8982,7 @@ YOU WIN
 
 <h2 id="tiedostostoon_kirjoitus">Writing to a File</h3>
 
-<p>In section 15, we learnt that reading from a file happened with the help of the classes <code>Scanner</code> and <code>File</code>. Thee class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/FileWriter.html">FileWriter</a></code> provides the functionality to write to a file. The <code>FileWriter</code> constructor is given as parameter a String illustrating the file location.</p>
+<p>In section 15, we learnt that reading from a file happened with the help of the classes <code>Scanner</code> and <code>File</code>. The class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/FileWriter.html">FileWriter</a></code> provides the functionality to write to a file. The <code>FileWriter</code> constructor is given as parameter a String illustrating the file location.</p>
 
 <pre class="sh_java">
         FileWriter writer = new FileWriter("file.txt");
@@ -9017,7 +9017,7 @@ public class FileHandler {
     }
 </pre>
 
-    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. THe method <code>append()</code> allow us to add text at the end of the already existing file, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>FileHandler</code>; the method appends the text received as parameter to the end of the file.</p>
+    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. The method <code>append()</code> allows us to add text at the end of the already existing file, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>FileHandler</code>; the method appends the text received as parameter to the end of the file.</p>
 
 <pre class="sh_java">
 public class FileHandler {
@@ -9048,7 +9048,7 @@ public class FileHandler {
 <p>Implement the method <code>public ArrayList&lt;String&gt; read(String file)</code> to return the lines of the parameter file in ArrayList form, each file line being a String contained by the ArrayList.
 </p>
 
-<p>There are two text files to help testing the project: <code>src/testinput1.txt</code> ja <code>src/testinput2.txt</code>. The methods are supposed to be used in the following way:
+<p>There are two text files to help testing the project: <code>src/testinput1.txt</code> and <code>src/testinput2.txt</code>. The methods are supposed to be used in the following way:
 </p>
 
 <pre class="sh_java">
@@ -11292,11 +11292,11 @@ Mikke's recommendation: Gone with the Wind
     Person p = new Person("Pekka");
     Film f = new Film("Eraserhead");
 
-    System.out.println(p.getName() + " ja " + f.getName());
+    System.out.println(p.getName() + " and " + f.getName());
 </pre>
 
 <pre>
-Pekka ja Eraserhead
+Pekka and Eraserhead
 </pre>
 
 <p>Also add the method <code>public String toString()</code> which returns the name received with the argument, as well as the method <code>equals</code> and <code>hashCode</code>.</p>
@@ -11346,7 +11346,7 @@ Vote NEUTRAL, value 1
 <p>Create the class <code>VoteRegister</code> in the package <code>reference</code>; the class has the constructor <code>public VoteRegister()</code>, as well as the following methods:</p>
 
 <ul>
-  <li><code>public void addVote(Film film, Vote vote)</code> adds a new vote to the parameter film. THe same film can have various same votes.</li>
+  <li><code>public void addVote(Film film, Vote vote)</code> adds a new vote to the parameter film. The same film can have various same votes.</li>
   <li><code>public List&lt;Vote&gt; getVotes(Film film)</code> returns a list of the votes which were added in connection to a film.</li>
   <li><code>public Map&lt;Film, List&lt;Vote&gt;&gt; filmVotes()</code> returns a map whose keys are the evaluated films. Each film is associated to a list containing the votes for that film.</li>
 </ul>

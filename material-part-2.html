@@ -925,7 +925,7 @@ import java.util.*;            // imports all tools from java.util, including Ar
   <p>In this assignment, we make a simple calculator, similar to the one made in the material of programming basics' week 1. This time however, we pay attention to the structure of the program. Especially we will make the <em>main</em>-method (the main program) very light. The main program method doesn't actually do anything else than just start the program:</p>
 
 <pre class="sh_java">
-public class MainProgram {
+public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         calculator.start();
@@ -5882,7 +5882,7 @@ Write a number: <font color="red">43</font>
 
     <p>The <code>sleep</code> method is called in another method. Now, this other method can either handle the exception in a <code>try-catch</code> block or delegate the responsibility forward. Sometimes, we delegate the responsibility of handling an exception, till the very end, and even the <code>main</code> method delegates it:</p>
 <pre class="sh_java">
-public class MainProgram {
+public class Main {
    public static void main(String[] args) throws Exception {
        // ...
    }
@@ -10757,16 +10757,16 @@ The form is right.
     <div class="tehtava">
 <h3>Regular Expressions</h3>
 
-<p>Let's train to use regural expressions. The exercises are done in the <code>MainProgram</code> class of the default package .</h3>
+<p>Let's train to use regural expressions. The exercises are done in the <code>Main</code> class of the default package .</h3>
 
 <h4 class="req">Week Days</h4>
 
-<p>Create the method <code>public static boolean isAWeekDay(String string)</code> in the class <code>MainProgram</code>, using regular expressions. The method returns <code>true</code> if its parameter string is the abbreviation of a week day (mon, tue, wed, thu, fri, sat or sun).</p>
+<p>Create the method <code>public static boolean isAWeekDay(String string)</code> in the class <code>Main</code>, using regular expressions. The method returns <code>true</code> if its parameter string is the abbreviation of a week day (mon, tue, wed, thu, fri, sat or sun).</p>
 
 <p>The following is a sample print output of the method:</p>
 
 <pre>
-Give a string: <font color="red">ti</font>
+Give a string: <font color="red">tue</font>
 The form is fine.
 </pre>
 
@@ -10777,7 +10777,7 @@ The form is wrong.
 
 <h4 class="req">Vowel Inspection</h4>
 
-<p>Create the method <code>public static boolean allVowels(String string)</code> in the class <code>MainProgram</code>, which makes use of regular expressions and checks whether the String argument contains only vowel characters. </p>
+<p>Create the method <code>public static boolean allVowels(String string)</code> in the class <code>Main</code>, which makes use of regular expressions and checks whether the String argument contains only vowel characters. </p>
 
 <p>The following is a sample print output of the method:</p>
 
@@ -10795,7 +10795,7 @@ The form is wrong.
 
 <p>Regual expressions suit in particular situations. In some cases, the expressions become too complicate and it may be useful to check the "regularity" of a string in a different way, or it may be appropriate to use regular expressions to manage only a part of the inspection.</p>
 
-<p>Create the method <code>public static boolean clockTime(String string)</code> in the class <code>MainProgram</code>, which makes use of regular expressions and checks whether the String argument conforms with the clock time <code>hh:mm:ss</code> (two-digit hours, minutes, and seconds). In this exercise you can use whatever tecnique, in addition to regular expressions.</p>
+<p>Create the method <code>public static boolean clockTime(String string)</code> in the class <code>Main</code>, which makes use of regular expressions and checks whether the String argument conforms with the clock time <code>hh:mm:ss</code> (two-digit hours, minutes, and seconds). In this exercise you can use whatever tecnique, in addition to regular expressions.</p>
 
 <p>The following is a sample print output of the method:</p>
 
@@ -10938,7 +10938,7 @@ public class Card {
 <p>The new version of the card is used in the following way:</p>
 
 <pre class="sh_java">
-public class MainProgram {
+public class Main {
 
     public static void main(String[] args) {
         Card first = new Card(10, Suit.Hearts);
@@ -11042,7 +11042,7 @@ Exception in thread "main" java.util.ConcurrentModificationException
         at java.util.AbstractList$Itr.checkForComodification(AbstractList.java:372)
         at java.util.AbstractList$Itr.next(AbstractList.java:343)
         at Hand.deleteWorst(Hand.java:26)
-        at MainProgram.main(MainProgram.java:20)
+        at Main.main(Main.java:20)
 Java Result: 1
 </pre>
 
@@ -11115,7 +11115,7 @@ Arto, D
 <p>Below, you find an example of the class usage:</p>
 
 <pre class="sh_java">
-Public class MainProgram {
+Public class Main {
 
     public static void main(String[] args) {
         Employees university = new Employees();

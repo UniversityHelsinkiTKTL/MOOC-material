@@ -3055,7 +3055,7 @@ Pekka
 Arto
 </pre>
 
-        <p><em>NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
+        <p><em>NetBeans allows for the automatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
 
         <NEXTWEEK></NEXTWEEK>
         <div class="tehtavat" id="viikko8">
@@ -8991,7 +8991,7 @@ YOU WIN
         writer.write("And more");
         writer.close(); // the call closes the file and makes sure the written text goes to the file</pre>
 
-    <p>In the example we write the string "Hei tiedosto!" to the file "file.txt"; that is followed by a line break, and by more text. Note that when you use the <code>write</code> method, it does not produce line breaks, but they have to be added later manually.</p>
+    <p>In the example we write the string "Hi file!" to the file "file.txt"; that is followed by a line break, and by more text. Note that when you use the <code>write</code> method, it does not produce line breaks, but they have to be added later manually.</p>
 
     <p>Both the <code>FileWriter</code> constructor and the <code>write</code> method may throw an exception, which has to be either handled or the responsibility has to be delegated to the calling method. The method which is given as parameter the file name and the text to write into it can look like the following.</p>
 
@@ -11174,7 +11174,7 @@ Pekka
     List&lt;Integer&gt; values = Arrays.asList(1, 3, 11, 6, 120);
 
     for(int num: values) {
-        if (luku > 4 && luku % 100 != 0 && num % 40 != 0) {
+        if (num > 4 && num % 100 != 0 && num % 40 != 0) {
             System.out.println(num);
         }
     }
@@ -11219,7 +11219,7 @@ public enum Colour {
 
     private String name; // object variable
 
-    private Vari(String name) { // constructor
+    private Colour(String name) { // constructor
         this.name = name;
     }
 
@@ -11305,7 +11305,7 @@ Pekka ja Eraserhead
 
 <p>
 <em>
-NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em>
+NetBeans allows for the automatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em>
 </p>
 
 <p><strong>Attention:</strong> to help finding mistakes, you may want to implement toString methods to Person and Film, but the tests do not require them.</p>
@@ -11346,7 +11346,7 @@ Vote NEUTRAL, value 1
 <p>Create the class <code>VoteRegister</code> in the package <code>reference</code>; the class has the constructor <code>public VoteRegister()</code>, as well as the following methods:</p>
 
 <ul>
-  <li><code>public void addVote(Elokuva film, Vote vote)</code> adds a new vote to the parameter film. THe same film can have various same votes.</li>
+  <li><code>public void addVote(Film film, Vote vote)</code> adds a new vote to the parameter film. THe same film can have various same votes.</li>
   <li><code>public List&lt;Vote&gt; getVotes(Film film)</code> returns a list of the votes which were added in connection to a film.</li>
   <li><code>public Map&lt;Film, List&lt;Vote&gt;&gt; filmVotes()</code> returns a map whose keys are the evaluated films. Each film is associated to a list containing the votes for that film.</li>
 </ul>

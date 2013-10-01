@@ -925,7 +925,7 @@ import java.util.*;            // imports all tools from java.util, including Ar
   <p>In this assignment, we make a simple calculator, similar to the one made in the material of programming basics' week 1. This time however, we pay attention to the structure of the program. Especially we will make the <em>main</em>-method (the main program) very light. The main program method doesn't actually do anything else than just start the program:</p>
 
 <pre class="sh_java">
-public class MainProgram {
+public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         calculator.start();
@@ -3055,7 +3055,7 @@ Pekka
 Arto
 </pre>
 
-        <p><em>NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
+        <p><em>NetBeans allows for the automatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em></p>
 
         <NEXTWEEK></NEXTWEEK>
         <div class="tehtavat" id="viikko8">
@@ -3777,7 +3777,7 @@ public class NewsService {
 public class NewsService {
 
     public Readable getLatestNews() {
-        return new GraphicPieceOfNews("THe Latest Hot News!", "Photo's address");
+        return new GraphicPieceOfNews("The Latest Hot News!", "Photo's address");
     }
 }
 </pre>
@@ -5882,7 +5882,7 @@ Write a number: <font color="red">43</font>
 
     <p>The <code>sleep</code> method is called in another method. Now, this other method can either handle the exception in a <code>try-catch</code> block or delegate the responsibility forward. Sometimes, we delegate the responsibility of handling an exception, till the very end, and even the <code>main</code> method delegates it:</p>
 <pre class="sh_java">
-public class MainProgram {
+public class Main {
    public static void main(String[] args) throws Exception {
        // ...
    }
@@ -6745,7 +6745,7 @@ Unique characterStrings: []
 
 <h3>One Object in Many Lists, a Map Construction or a Set</h3>
 
-<p>As we remember, object varaible are reference-type, which means that the variable does not memorize the object itself, but the reference to the object. Respectively, if we put an object into an ArrayList, for instance, the List does not memorize the object itself but the <code>reference</code> to the object. There is no reason why we should not be able to save an object in various different lists or HashMaps, for instance.</p>
+<p>As we remember, object variable are reference-type, which means that the variable does not memorize the object itself, but the reference to the object. Respectively, if we put an object into an ArrayList, for instance, the List does not memorize the object itself but the <code>reference</code> to the object. There is no reason why we should not be able to save an object in various different lists or HashMaps, for instance.</p>
 
 <p>Let's have a look at our library example, which saves books into HashMaps, both based on their writer and ISB number. In addition to this, the library. Moreover, the library has got two lists for the books on loan and for the ones that are on the shelves.</p>
 
@@ -6758,11 +6758,11 @@ public class Book {
     // ...
 }
 
-public class Booksto {
-    private Map&lt String, Book&gt ISBNBooks;
-    private Map&lt String, List&ltString&gt&gt writerBooks;
-    private List&ltBook&gt loanBooks;
-    private List&ltBook&gt shelfBooks;
+public class Library {
+    private Map&lt;String, Book&gt; ISBNBooks;
+    private Map&lt;String, List&lt;String&gt;&gt; writerBooks;
+    private List&lt;Book&gt; loanBooks;
+    private List&lt;Book&gt; shelfBooks;
 
     public void addBook(Book newBook){
         ISBNBooks.put(newBook.getIsbn(), newBook);
@@ -8982,7 +8982,7 @@ YOU WIN
 
 <h2 id="tiedostostoon_kirjoitus">Writing to a File</h3>
 
-<p>In section 15, we learnt that reading from a file happened with the help of the classes <code>Scanner</code> and <code>File</code>. Thee class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/FileWriter.html">FileWriter</a></code> provides the functionality to write to a file. The <code>FileWriter</code> constructor is given as parameter a String illustrating the file location.</p>
+<p>In section 15, we learnt that reading from a file happened with the help of the classes <code>Scanner</code> and <code>File</code>. The class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/FileWriter.html">FileWriter</a></code> provides the functionality to write to a file. The <code>FileWriter</code> constructor is given as parameter a String illustrating the file location.</p>
 
 <pre class="sh_java">
         FileWriter writer = new FileWriter("file.txt");
@@ -8991,7 +8991,7 @@ YOU WIN
         writer.write("And more");
         writer.close(); // the call closes the file and makes sure the written text goes to the file</pre>
 
-    <p>In the example we write the string "Hei tiedosto!" to the file "file.txt"; that is followed by a line break, and by more text. Note that when you use the <code>write</code> method, it does not produce line breaks, but they have to be added later manually.</p>
+    <p>In the example we write the string "Hi file!" to the file "file.txt"; that is followed by a line break, and by more text. Note that when you use the <code>write</code> method, it does not produce line breaks, but they have to be added later manually.</p>
 
     <p>Both the <code>FileWriter</code> constructor and the <code>write</code> method may throw an exception, which has to be either handled or the responsibility has to be delegated to the calling method. The method which is given as parameter the file name and the text to write into it can look like the following.</p>
 
@@ -9017,7 +9017,7 @@ public class FileHandler {
     }
 </pre>
 
-    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. THe method <code>append()</code> allow us to add text at the end of the already existing file, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>FileHandler</code>; the method appends the text received as parameter to the end of the file.</p>
+    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. The method <code>append()</code> allows us to add text at the end of the already existing file, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>FileHandler</code>; the method appends the text received as parameter to the end of the file.</p>
 
 <pre class="sh_java">
 public class FileHandler {
@@ -9048,7 +9048,7 @@ public class FileHandler {
 <p>Implement the method <code>public ArrayList&lt;String&gt; read(String file)</code> to return the lines of the parameter file in ArrayList form, each file line being a String contained by the ArrayList.
 </p>
 
-<p>There are two text files to help testing the project: <code>src/testinput1.txt</code> ja <code>src/testinput2.txt</code>. The methods are supposed to be used in the following way:
+<p>There are two text files to help testing the project: <code>src/testinput1.txt</code> and <code>src/testinput2.txt</code>. The methods are supposed to be used in the following way:
 </p>
 
 <pre class="sh_java">
@@ -10757,16 +10757,16 @@ The form is right.
     <div class="tehtava">
 <h3>Regular Expressions</h3>
 
-<p>Let's train to use regural expressions. The exercises are done in the <code>MainProgram</code> class of the default package .</h3>
+<p>Let's train to use regural expressions. The exercises are done in the <code>Main</code> class of the default package .</h3>
 
 <h4 class="req">Week Days</h4>
 
-<p>Create the method <code>public static boolean isAWeekDay(String string)</code> in the class <code>MainProgram</code>, using regular expressions. The method returns <code>true</code> if its parameter string is the abbreviation of a week day (mon, tue, wed, thu, fri, sat or sun).</p>
+<p>Create the method <code>public static boolean isAWeekDay(String string)</code> in the class <code>Main</code>, using regular expressions. The method returns <code>true</code> if its parameter string is the abbreviation of a week day (mon, tue, wed, thu, fri, sat or sun).</p>
 
 <p>The following is a sample print output of the method:</p>
 
 <pre>
-Give a string: <font color="red">ti</font>
+Give a string: <font color="red">tue</font>
 The form is fine.
 </pre>
 
@@ -10777,7 +10777,7 @@ The form is wrong.
 
 <h4 class="req">Vowel Inspection</h4>
 
-<p>Create the method <code>public static boolean allVowels(String string)</code> in the class <code>MainProgram</code>, which makes use of regular expressions and checks whether the String argument contains only vowel characters. </p>
+<p>Create the method <code>public static boolean allVowels(String string)</code> in the class <code>Main</code>, which makes use of regular expressions and checks whether the String argument contains only vowel characters. </p>
 
 <p>The following is a sample print output of the method:</p>
 
@@ -10795,7 +10795,7 @@ The form is wrong.
 
 <p>Regual expressions suit in particular situations. In some cases, the expressions become too complicate and it may be useful to check the "regularity" of a string in a different way, or it may be appropriate to use regular expressions to manage only a part of the inspection.</p>
 
-<p>Create the method <code>public static boolean clockTime(String string)</code> in the class <code>MainProgram</code>, which makes use of regular expressions and checks whether the String argument conforms with the clock time <code>hh:mm:ss</code> (two-digit hours, minutes, and seconds). In this exercise you can use whatever tecnique, in addition to regular expressions.</p>
+<p>Create the method <code>public static boolean clockTime(String string)</code> in the class <code>Main</code>, which makes use of regular expressions and checks whether the String argument conforms with the clock time <code>hh:mm:ss</code> (two-digit hours, minutes, and seconds). In this exercise you can use whatever tecnique, in addition to regular expressions.</p>
 
 <p>The following is a sample print output of the method:</p>
 
@@ -10938,7 +10938,7 @@ public class Card {
 <p>The new version of the card is used in the following way:</p>
 
 <pre class="sh_java">
-public class MainProgram {
+public class Main {
 
     public static void main(String[] args) {
         Card first = new Card(10, Suit.Hearts);
@@ -11042,7 +11042,7 @@ Exception in thread "main" java.util.ConcurrentModificationException
         at java.util.AbstractList$Itr.checkForComodification(AbstractList.java:372)
         at java.util.AbstractList$Itr.next(AbstractList.java:343)
         at Hand.deleteWorst(Hand.java:26)
-        at MainProgram.main(MainProgram.java:20)
+        at Main.main(Main.java:20)
 Java Result: 1
 </pre>
 
@@ -11115,7 +11115,7 @@ Arto, D
 <p>Below, you find an example of the class usage:</p>
 
 <pre class="sh_java">
-Public class MainProgram {
+Public class Main {
 
     public static void main(String[] args) {
         Employees university = new Employees();
@@ -11174,7 +11174,7 @@ Pekka
     List&lt;Integer&gt; values = Arrays.asList(1, 3, 11, 6, 120);
 
     for(int num: values) {
-        if (luku > 4 && luku % 100 != 0 && num % 40 != 0) {
+        if (num > 4 && num % 100 != 0 && num % 40 != 0) {
             System.out.println(num);
         }
     }
@@ -11219,7 +11219,7 @@ public enum Colour {
 
     private String name; // object variable
 
-    private Vari(String name) { // constructor
+    private Colour(String name) { // constructor
         this.name = name;
     }
 
@@ -11292,11 +11292,11 @@ Mikke's recommendation: Gone with the Wind
     Person p = new Person("Pekka");
     Film f = new Film("Eraserhead");
 
-    System.out.println(p.getName() + " ja " + f.getName());
+    System.out.println(p.getName() + " and " + f.getName());
 </pre>
 
 <pre>
-Pekka ja Eraserhead
+Pekka and Eraserhead
 </pre>
 
 <p>Also add the method <code>public String toString()</code> which returns the name received with the argument, as well as the method <code>equals</code> and <code>hashCode</code>.</p>
@@ -11305,7 +11305,7 @@ Pekka ja Eraserhead
 
 <p>
 <em>
-NetBeans allows for the authomatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em>
+NetBeans allows for the automatic creation of the <code>equals</code> and <code>hashCode</code> methods. From the menu Source -> Insert Code, you can choose <em>equals() and hashCode()</em>. After this, NetBeans asks which object variables the methods shall use.</em>
 </p>
 
 <p><strong>Attention:</strong> to help finding mistakes, you may want to implement toString methods to Person and Film, but the tests do not require them.</p>
@@ -11346,7 +11346,7 @@ Vote NEUTRAL, value 1
 <p>Create the class <code>VoteRegister</code> in the package <code>reference</code>; the class has the constructor <code>public VoteRegister()</code>, as well as the following methods:</p>
 
 <ul>
-  <li><code>public void addVote(Elokuva film, Vote vote)</code> adds a new vote to the parameter film. THe same film can have various same votes.</li>
+  <li><code>public void addVote(Film film, Vote vote)</code> adds a new vote to the parameter film. The same film can have various same votes.</li>
   <li><code>public List&lt;Vote&gt; getVotes(Film film)</code> returns a list of the votes which were added in connection to a film.</li>
   <li><code>public Map&lt;Film, List&lt;Vote&gt;&gt; filmVotes()</code> returns a map whose keys are the evaluated films. Each film is associated to a list containing the votes for that film.</li>
 </ul>

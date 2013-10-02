@@ -8796,7 +8796,7 @@ Z................
   <li><code>d</code> go right</li>
 </ul>
 
-<p>When the user commands are executed (the user can give many commands at once), a new game situation is drown. If the lamp charge reaches 0, the game ends and the text <code>YOU LOSE</code> is printed on the board.
+<p>When the user commands are executed (the user can give many commands at once), a new game situation is drawn. If the lamp charge reaches 0, the game ends and the text <code>YOU LOSE</code> is printed on the board.
 </p>
 
 <p>The vampires move randomly in the game, and they take one step for each step the player takes. If the player and a vampire run into each other (even momentarily) the vampire is destroyed. If a vampire tries to step outside the board, or into a place already occupied by another vampire, the move is not executed. When all the vampires are destroyed, the game ends and it prints <code>YOU WIN</code>.</p>
@@ -9953,7 +9953,7 @@ public class DrawingBoard extends JPanel {
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/drawingboard-blocks.png"/></p>
 
-<p>Java's <code>Graphics</code> object (and most of other programming language libraries) expects the value of the y axis to grow downwards. The coordinate system origin, i.e. the point <code>(0,0)</code> is in the upper left corner: the Graphics object always knows the UI component where we draw, and it is able to define the location of the point to draw based on it. The location of the UI origin can become clear with the help of the following program. First we drow a green 10-pixel long, 200-pixel heigh rectangle which starts from the point (0,0). Then we draw a black 200-pixel long, 10-pixel heigh rextangle which starts from the point (0,0). The drawing colour is defined by the method <code>setColor</code> of our <code>Graphics</code> object.</p>
+<p>Java's <code>Graphics</code> object (and most of other programming language libraries) expects the value of the y axis to grow downwards. The coordinate system origin, i.e. the point <code>(0,0)</code> is in the upper left corner: the Graphics object always knows the UI component where we draw, and it is able to define the location of the point to draw based on it. The location of the UI origin can become clear with the help of the following program. First we draw a green 10-pixel long, 200-pixel heigh rectangle which starts from the point (0,0). Then we draw a black 200-pixel long, 10-pixel heigh rextangle which starts from the point (0,0). The drawing colour is defined by the method <code>setColor</code> of our <code>Graphics</code> object.</p>
 
 
 <pre class="sh_java">
@@ -9971,7 +9971,7 @@ public class DrawingBoard extends JPanel {
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/drawingboard-coordinates.png"/></p>
 
-<p>Such coordinate system reversibility depends on the way user interface size is modified. When we modify the size of a user interface, this is reduced or increased by "dragging the bottom right corner"; in this way, the drawing on the screan would move while we change the UI size. Because the gird starts from the upper left corner, the drawing position is always the same, but the visible part changes.</p>
+<p>Such coordinate system reversibility depends on the way user interface size is modified. When we modify the size of a user interface, this is reduced or increased by "dragging the bottom right corner"; in this way, the drawing on the screan would move while we change the UI size. Because the grid starts from the upper left corner, the drawing position is always the same, but the visible part changes.</p>
 
 <div class="tehtavat">
     <div class="tehtava">
@@ -9987,7 +9987,7 @@ public class DrawingBoard extends JPanel {
 </div>
 </div>
 
-<p>Let's extend our previous example and draw an independent avatar-object in our user inteface. Let's create the class <code>Avatar</code>; it has the coordinates of the point where it appears, and it is a circle with a 10-pixel diamiter. The location of the avatar can be changed by calling its <code>move</code> method.</p>
+<p>Let's extend our previous example and draw an independent avatar-object in our user inteface. Let's create the class <code>Avatar</code>; it has the coordinates of the point where it appears, and it is a circle with a 10-pixel diameter. The location of the avatar can be changed by calling its <code>move</code> method.</p>
 
 <pre class="sh_java">
 import java.awt.Graphics;

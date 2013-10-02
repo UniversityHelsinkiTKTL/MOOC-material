@@ -10418,8 +10418,6 @@ getBoard()[x][y] = true;
 <pre class="sh_java">
 package game;
 
-import gameoflife.commandline.CommandLineGameOfLife;
-
 public class Main {
     public static void main(String[] args) {
         PersonalBoard board = new PersonalBoard(7, 5);
@@ -10438,8 +10436,8 @@ public class Main {
         board.turnToLiving(5, 3);
         board.turnToLiving(6, 2);
 
-        CoomandLineGameOfLife gom = new CoomandLineGameOfLife(board);
-        gom.play();
+        GameOfLifeTester tester = new GameOfLifeTester(board);
+        tester.play();
     }
 }
 </pre>
@@ -10470,7 +10468,7 @@ Thanks!
         PersonalBoard board = new PersonalBoard(3, 3);
         board.initiateRandomCells(1.0);
 
-        CoomandLineGameOfLife gom = new CoomandLineGameOfLife(board);
+        GameOfLifeTester gom = new GameOfLifeTester(board);
         gom.play();
 </pre>
 

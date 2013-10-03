@@ -11383,7 +11383,7 @@ Ratings for Eraserhead: [BAD, BAD, GOOD]
   <li><code>public void addRating(Person person, Film film, Rating rating)</code> adds the rating of a specific film to the paramter person. The same person can recommend a specific film only once. The person rating has also to be added to the ratings connected to all the films.</li>
   <li><code>public Rating getRating(Person person, Film film)</code> returns the rating the paramater person has assigned to the parameter film. If the person hasn't evaluated such film, the method returns <code>Rating.NOT_WATCHED</code>.</li>
  <li><code>public Map&lt;Film, Rating&gt; getPersonalRatings(Person person)</code> returns a HashMap which contains the person's ratings. The HashMap keys are the evaluated films, and their values are the ratings of these films.</li>
- <li><code>public List&lt;Person&gt; references()</code> returns a list of the people who have evaluate the films.</li></ul>
+ <li><code>public List&lt;Person&gt; reviewers()</code> returns a list of the people who have evaluate the films.</li></ul>
 
 <p>People's ratings should be stored into a HashMap, and the people should act as keys. The values of the HashMap is another HashMap, whose keys are films and whose values are ratings.</p>
 
@@ -11406,13 +11406,13 @@ Ratings for Eraserhead: [BAD, BAD, GOOD]
 
     System.out.println("Ratings for Eraserhead: " + ratings.getRatings(eraserhead));
     System.out.println("Matti's ratings: " + ratings.getPersonalRatings(matti));
-    System.out.println("References: " + ratings.references());
+    System.out.println("Reviwers: " + ratings.reviewers());
 </pre>
 
 <pre>
 Ratings for Eraserhead: [NICE, NICE]
 Matti's ratings: {Gone with the Wind=BAD, Eraserhead=OK}
-References: [Pekka, Matti]
+Reviewers: [Pekka, Matti]
 </pre>
 
 <p>Next, we create a couple of helping classes to help evaluation.</p>

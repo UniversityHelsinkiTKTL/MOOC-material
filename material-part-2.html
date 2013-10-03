@@ -11075,11 +11075,11 @@ public class Hand {
 
 <h4>Education</h4>
 
-<p>Create the enumerated type, or enum, <code>Education</code> in the package <code>staffpersonnel</code>. The enum has got the titles <code>D</code> (doctor), <code>M</code> (master), <code>B</code> (bachelor), <code>GRAD</code> (graduate).</p>
+<p>Create the enumerated type, or enum, <code>Education</code> in the package <code>personnel</code>. The enum has got the titles <code>D</code> (doctor), <code>M</code> (master), <code>B</code> (bachelor), <code>GRAD</code> (graduate).</p>
 
 <h4>Person</h4>
 
-<p>Create the class <code>Person</code> in <code>staffpersonnel</code>. Person is assigned a name and an education title as constructor parameters. Person has also a method to communicate their education, <code>public Education getEducation()</code>, as well as a <code>toString</code> method which returns the person information following the example below.</p>
+<p>Create the class <code>Person</code> in <code>personnel</code>. Person is assigned a name and an education title as constructor parameters. Person has also a method to communicate their education, <code>public Education getEducation()</code>, as well as a <code>toString</code> method which returns the person information following the example below.</p>
 
 <pre class="sh_java">
     Person arto = new Person("Arto", EDUCATION.D);
@@ -11093,20 +11093,20 @@ Arto, D
 
 <h4>Employees</h4>
 
-<p>Create the class <code>Employees</code> in <code>staffpersonnel</code>. An Employees object contains a list of Person objects. The class has a parameterless constructor plus the following methods:</p>
+<p>Create the class <code>Employees</code> in <code>personnel</code>. An Employees object contains a list of Person objects. The class has a parameterless constructor plus the following methods:</p>
 
 <ul>
-  <li><code>public void add(Person new)</code> adds the parameter person to the employees</li>
-  <li><code>public void add(List&lt;Person&gt; news)</code> adds the parameter list of people to the employees</li>
+  <li><code>public void add(Person person)</code> adds the parameter person to the employees</li>
+  <li><code>public void add(List&lt;Person&gt; persons)</code> adds the parameter list of people to the employees</li>
   <li><code>public void print()</code> prints all the employees</li>
-  <li><code>public void print(Education edu)</code> prints all the employees, who have the same education as the one specified as parameter</li>
+  <li><code>public void print(Education education)</code> prints all the employees, who have the same education as the one specified as parameter</li>
 </ul>
 
 <p><strong>ATTENTION:</strong> The <code>Print</code> method of the class <code>Employees</code> have to be implemented using an iterator!</p>
 
 <h4>Firing</h4>
 
-<p>Create the method <code>public void fire(Education edu)</code> in the class <code>Employees</code>. The method deletes all the employees whose education is the same as the method argument.</p>
+<p>Create the method <code>public void fire(Education education)</code> in the class <code>Employees</code>. The method deletes all the employees whose education is the same as the method argument.</p>
 
 <p><strong>ATTENTION:</strong> implement the method using an iterator!</p>
 

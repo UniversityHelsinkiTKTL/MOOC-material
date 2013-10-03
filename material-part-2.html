@@ -4803,7 +4803,7 @@ Position    Name
 
 
 
-  <p><strong>Note1:</strong> it is essencial that the <em>user interface</em> works exactly as displayed above; for instance, the number of spaces at the beginning of the lines must be right. <stong>The space at the beginning of the lines must be made of spaces</strong>, the tests do not work if you use tabulatation. Also, it is good that you copy the text which has to be printed by your program and you paste it into your code; you can copy it either from the exercise layout or from the test error messages. <em>The exercise is worth of four separate exercise points.</em></p>
+  <p><strong>Note1:</strong> it is essential that the <em>user interface</em> works exactly as displayed above; for instance, the number of spaces at the beginning of the lines must be right. <stong>The space at the beginning of the lines must be made of spaces</strong>, the tests do not work if you use tabulatation. Also, it is good that you copy the text which has to be printed by your program and you paste it into your code; you can copy it either from the exercise layout or from the test error messages. <em>The exercise is worth of four separate exercise points.</em></p>
 
   <p><strong>The program has to start when we execute the main method in the example layout. Also, remember again that you can create only one Scanner object in your exercise.</strong></p>
 
@@ -11241,15 +11241,15 @@ Green
 <div class="tehtava">
 <h3>Film Reference</h3>
 
-<p>Recently, in October 2006 after arriving to Finland, <a href="https://signup.netflix.com/" target="_blank">Netflix</a> promised one million dollars to the person or group of people who developed a program, which would be 10% better than their own program. The challange was met September 2009 (<a href="http://www.netflixprize.com/" target="_blank">http://www.netflixprize.com/</a>).</p>
+<p>Recently, in October 2006 after arriving to Finland, <a href="https://signup.netflix.com/" target="_blank">Netflix</a> promised one million dollars to the person or group of people who developed a program, which would be 10% better than their own program. The challenge was met September 2009 (<a href="http://www.netflixprize.com/" target="_blank">http://www.netflixprize.com/</a>).</p>
 
 <p>With this exercise, we create a program to recommend films. Below, you see how it should work:</p>
 
 <pre class="sh_java">
-    EvaluationRegister votes = new EvaluationRegister();
+    EvaluationRegister ratings = new EvaluationRegister();
 
     Film goneWithTheWind = new Elokuva("Gone with the Wind");
-    Film bridgesOfMadisonCounty = new Elokuva("The Bridges of Madison County");
+    Film theBridgesOfMadisonCounty = new Elokuva("The Bridges of Madison County");
     Film eraserhead = new Elokuva("Eraserhead");
 
     Film matti = new Person("Matti");
@@ -11257,15 +11257,15 @@ Green
     Film mikke = new Person("Mikke");
     Film thomas = new Person("Thomas");
 
-    votes.addVote(matti, goneWithTheWind, Arvio.BAD);
-    votes.addVote(matti, bridgesOfMadisonCounty, Arvio.GOOD);
-    votes.addVote(matti, eraserhead, Arvio.FINE);
+    ratings.addRating(matti, goneWithTheWind, Rating.BAD);
+    ratings.addRating(matti, theBridgesOfMadisonCounty, Rating.GOOD);
+    ratings.addRating(matti, eraserhead, Rating.FINE);
 
-    votes.addVote(pekka, goneWithTheWind, Arvio.FINE);
-    votes.addVote(pekka, bridgesOfMadisonCounty, Arvio.BAD);
-    votes.addVote(pekka, eraserhead, Arvio.MEDIOCRE);
+    ratings.addRating(pekka, goneWithTheWind, Rating.FINE);
+    ratings.addRating(pekka, theBridgesOfMadisonCounty, Rating.BAD);
+    ratings.addRating(pekka, eraserhead, Rating.MEDIOCRE);
 
-    votes.addVote(mikke, eraserhead, Arvio.GOOD);
+    ratings.addRating(mikke, eraserhead, Rating.GOOD);
 
 
     Reference reference = new Reference(votes);
@@ -11280,7 +11280,7 @@ Thomas's recommendation: The Bridges of Madison County
 Mikke's recommendation: Gone with the Wind
 </pre>
 
-<p>The program is able to recommend films both according to their common appraisal and according to the votes given by a specific person. Let's start to build our program.</p>
+<p>The program is able to recommend films both according to their common appraisal and according to the ratings given by a specific person. Let's start to build our program.</p>
 
 <h4>Person and Film</h4>
 
@@ -11308,13 +11308,13 @@ NetBeans allows for the automatic creation of the <code>equals</code> and <code>
 
 <p><strong>Attention:</strong> to help finding mistakes, you may want to implement toString methods to Person and Film, but the tests do not require them.</p>
 
-<h4>Vote</h4>
+<h4>Rating</h4>
 
-<p>Create the enumerated type <code>Vote</code> in <code>reference.domain</code>. The enum class <code>Vote</code> has a public method <code>public int getValue()</code>, which returns the value of the vote. The value names and their grades have to be the following:</p>
+<p>Create the enumerated type <code>Rating</code> in <code>reference.domain</code>. The enum class <code>Rating</code> has a public method <code>public int getValue()</code>, which returns the value of the rating. The value names and their grades have to be the following:</p>
 
 <p>
 <table style="padding-left:2em">
-  <tr><th>Vote</th><th>Value</th></tr>
+  <tr><th>Rating</th><th>Value</th></tr>
   <tr><td>BAD</td><td>-5</td></tr>
   <tr><td>MEDIOCRE</td><td>-3</td></tr>
   <tr><td>NOT_WATCHED</td><td>0</td></tr>
@@ -11326,71 +11326,71 @@ NetBeans allows for the automatic creation of the <code>equals</code> and <code>
 
 <p>The class could be used in the following way:</p>
 <pre class="sh_java">
-    Vote given = Vote.GOOD;
-    System.out.println("Vote " + given + ", value " + given.getValue());
+    Rating given = Rating.GOOD;
+    System.out.println("Rating " + given + ", value " + given.getValue());
     given = Value.NEUTRAL;
-    System.out.println("Vote " + given + ", value " + given.getValue());
+    System.out.println("Rating " + given + ", value " + given.getValue());
 </pre>
 
 <pre>
-Vote GOOD, value 5
-Vote NEUTRAL, value 1
+Rating GOOD, value 5
+Rating NEUTRAL, value 1
 </pre>
 
-<h4>VoteRegister, Part 1</h4>
+<h4>RatingRegister, Part 1</h4>
 
-<p>Let's get started with the implementation necessary t store the votes.</p>
+<p>Let's get started with the implementation necessary t store the ratings.</p>
 
-<p>Create the class <code>VoteRegister</code> in the package <code>reference</code>; the class has the constructor <code>public VoteRegister()</code>, as well as the following methods:</p>
+<p>Create the class <code>RatingRegister</code> in the package <code>reference</code>; the class has the constructor <code>public RatingRegister()</code>, as well as the following methods:</p>
 
 <ul>
-  <li><code>public void addVote(Film film, Vote vote)</code> adds a new vote to the parameter film. The same film can have various same votes.</li>
-  <li><code>public List&lt;Vote&gt; getVotes(Film film)</code> returns a list of the votes which were added in connection to a film.</li>
-  <li><code>public Map&lt;Film, List&lt;Vote&gt;&gt; filmVotes()</code> returns a map whose keys are the evaluated films. Each film is associated to a list containing the votes for that film.</li>
+  <li><code>public void addRating(Film film, Rating rating)</code> adds a new rating to the parameter film. The same film can have various same ratings.</li>
+  <li><code>public List&lt;Rating&gt; getRatings(Film film)</code> returns a list of the ratings which were added in connection to a film.</li>
+  <li><code>public Map&lt;Film, List&lt;Rating&gt;&gt; filmRatings()</code> returns a map whose keys are the evaluated films. Each film is associated to a list containing the ratings for that film.</li>
 </ul>
 
 <p>Test the methods with the following source code:</p>
 
 <pre class="sh_java">
-    Film bridgesOfMadisonCounty = new Film("The Bridges of Madison County");
+    Film theBridgesOfMadisonCounty = new Film("The Bridges of Madison County");
     Film eraserhead = new Film("Eraserhead");
 
-    VoteRegister reg = new VoteRegister();
-    reg.addVote(eraserhead, Vote.BAD);
-    reg.addVote(eraserhead, Vote.BAD);
-    reg.addVote(eraserhead, Vote.GOOD);
+    RatingRegister reg = new RatingRegister();
+    reg.addRating(eraserhead, Rating.BAD);
+    reg.addRating(eraserhead, Rating.BAD);
+    reg.addRating(eraserhead, Rating.GOOD);
 
-    reg.addVote(bridgesOfMadisonCounty, Vote.GOOD);
-    reg.addVote(bridgesOfMadisonCounty, Vote.FINE);
+    reg.addRating(theBridgesOfMadisonCounty, Rating.GOOD);
+    reg.addRating(theBridgesOfMadisonCounty, Rating.FINE);
 
-    System.out.println("All votes: " + reg.filmVotes());
-    System.out.println("Votes for Eraserhead: " + reg.getVotes(eraserhead));
+    System.out.println("All ratings: " + reg.filmRatings());
+    System.out.println("Ratings for Eraserhead: " + reg.getRatings(eraserhead));
 </pre>
 
 <pre>
-All votes: {The Bridges of Madison County=[GOOD, FINE], Eraserhead=[BAD, BAD, GOOD]}
-Votes for Eraserhead: [BAD, BAD, GOOD]
+All ratings: {The Bridges of Madison County=[GOOD, FINE], Eraserhead=[BAD, BAD, GOOD]}
+Ratings for Eraserhead: [BAD, BAD, GOOD]
 </pre>
 
 
-<h4>VoteRegister, Part 2</h4>
+<h4>RatingRegister, Part 2</h4>
 
-<p>Let's make possible to add personal votes.</p>
+<p>Let's make possible to add personal ratings.</p>
 
-<p>Add the following methods to the class <code>VoteRegister</code>:</p>
+<p>Add the following methods to the class <code>RatingRegister</code>:</p>
 
 <ul>
-  <li><code>public void addVote(Person person, Film film, Vote vote)</code> adds the vote of a specific film to the paramter person. The same person can recommend a specific film only once. The person vote has also to be added to the votes connected to all the films.</li>
-  <li><code>public Vote getVote(Person person, Film film)</code> returns the vote the paramater person has assigned to the parameter film. If the person hasn't evaluated such film, the method returns <code>Vote.NOT_WATCHED</code>.</li>
- <li><code>public Map&lt;Film, Vote&gt; getPersonalVotes(Person person)</code> returns a HashMap which contains the person's votes. The HashMap keys are the evaluated films, and their values are the votes of these films.</li>
+  <li><code>public void addRating(Person person, Film film, Rating rating)</code> adds the rating of a specific film to the paramter person. The same person can recommend a specific film only once. The person rating has also to be added to the ratings connected to all the films.</li>
+  <li><code>public Rating getRating(Person person, Film film)</code> returns the rating the paramater person has assigned to the parameter film. If the person hasn't evaluated such film, the method returns <code>Rating.NOT_WATCHED</code>.</li>
+ <li><code>public Map&lt;Film, Rating&gt; getPersonalRatings(Person person)</code> returns a HashMap which contains the person's ratings. The HashMap keys are the evaluated films, and their values are the ratings of these films.</li>
  <li><code>public List&lt;Person&gt; references()</code> returns a list of the people who have evaluate the films.</li></ul>
 
-<p>People's votes should be stored into a HashMap, and the people should act as keys. The values of the HashMap is another HashMap, whose keys are films and whose values are votes.</p>
+<p>People's ratings should be stored into a HashMap, and the people should act as keys. The values of the HashMap is another HashMap, whose keys are films and whose values are ratings.</p>
 
-<p>Test your improved <code>VoteRegister</code> with the following source code:</p>
+<p>Test your improved <code>RatingRegister</code> with the following source code:</p>
 
 <pre class="sh_java">
-    VoteRegister votes = new VoteRegister();
+    RatingRegister ratings = new RatingRegister();
 
     Film goneWithTheWind = new Film("Gone with the Wind");
     Film eraserhead = new Film("Eraserhead");
@@ -11398,20 +11398,20 @@ Votes for Eraserhead: [BAD, BAD, GOOD]
     Person matti = new Person("Matti");
     Person pekka = new Person("Pekka");
 
-    votes.addVote(matti, goneWithTheWind, Vote.BAD);
-    votes.addVote(matti, eraserhead, Vote.NICE);
+    ratings.addRating(matti, goneWithTheWind, Rating.BAD);
+    ratings.addRating(matti, eraserhead, Rating.NICE);
 
-    votes.addVote(pekka, goneWithTheWind, Vote.NICE);
-    votes.addVote(pekka, eraserhead, Vote.NICE);
+    ratings.addRating(pekka, goneWithTheWind, Rating.NICE);
+    ratings.addRating(pekka, eraserhead, Rating.NICE);
 
-    System.out.println("Votes for Eraserhead: " + votes.getVotes(eraserhead));
-    System.out.println("Matti's votes: " + votes.getPersonalVotes(matti));
-    System.out.println("References: " + votes.references());
+    System.out.println("Ratings for Eraserhead: " + ratings.getRatings(eraserhead));
+    System.out.println("Matti's ratings: " + ratings.getPersonalRatings(matti));
+    System.out.println("References: " + ratings.references());
 </pre>
 
 <pre>
-Votes for Eraserhead: [NICE, NICE]
-Matti's votes: {Gone with the Wind=BAD, Eraserhead=OK}
+Ratings for Eraserhead: [NICE, NICE]
+Matti's ratings: {Gone with the Wind=BAD, Eraserhead=OK}
 References: [Pekka, Matti]
 </pre>
 
@@ -11419,7 +11419,7 @@ References: [Pekka, Matti]
 
 <h4>PersonComparator</h4>
 
-<p>Create the class <code>PersonComparator</code> in the package <code>reference.comparator</code>. The class <code>PersonComparator</code> has to implement the interface <code>Comparator&lt;Person&gt;</code>, and it has to have the constructor <code>public PersonComparator(Map&lt;Person, Integer&gt; peoplesIdentities)</code>. The class <code>PersonComparator</code> is used later on to sort people according to their number.</p>
+<p>Create the class <code>PersonComparator</code> in the package <code>reference.comparator</code>. The class <code>PersonComparator</code> has to implement the interface <code>Comparator&lt;Person&gt;</code>, and it has to have the constructor <code>public PersonComparator(Map&lt;Person, Integer&gt; peopleIdentities)</code>. The class <code>PersonComparator</code> is used later on to sort people according to their number.</p>
 
 <p>Test the class with the following source code:</p>
 
@@ -11429,16 +11429,16 @@ References: [Pekka, Matti]
     Person mikke = new Person("Mikke");
     Person thomas = new Person("Thomas");
 
-    Map&lt;Person, Integer&gt; peoplesIdentities = new HashMap&lt;Person, Integer&gt;();
-    peoplesIdentities.put(matti, 42);
-    peoplesIdentities.put(pekka, 134);
-    peoplesIdentities.put(mikke, 8);
-    peoplesIdentities.put(thomas, 82);
+    Map&lt;Person, Integer&gt; peopleIdentities = new HashMap&lt;Person, Integer&gt;();
+    peopleIdentities.put(matti, 42);
+    peopleIdentities.put(pekka, 134);
+    peopleIdentities.put(mikke, 8);
+    peopleIdentities.put(thomas, 82);
 
     List&lt;Person&gt; ppl = Arrays.asList(matti, pekka, mikke, thomas);
     System.out.println("People before sorting: " + ppl);
 
-    Collections.sort(ppl, new PersonComparator(peoplesIdentities));
+    Collections.sort(ppl, new PersonComparator(peopleIdentities));
     System.out.println("People after sorting: " + ppl);
 </pre>
 
@@ -11450,39 +11450,39 @@ People after sorting: [Pekka, Thomas, Matti, Mikke]
 <h4>FilmComparator</h4>
 
 
-<p>Create the class <code>FilmComparator</code> in the package <code>reference.comparator</code>. The class <code>FilmComparator</code> has to implement the interface <code>Comparator&lt;Film&gt;</code>, and it has to have the constructor <code>public FilmComparator(Map&lt;Film, List&lt;Vote&gt;&gt; votes)</code>. The class <code>FilmComparator</code> will be used later on to sort films according to their votes.</p>
+<p>Create the class <code>FilmComparator</code> in the package <code>reference.comparator</code>. The class <code>FilmComparator</code> has to implement the interface <code>Comparator&lt;Film&gt;</code>, and it has to have the constructor <code>public FilmComparator(Map&lt;Film, List&lt;Rating&gt;&gt; ratings)</code>. The class <code>FilmComparator</code> will be used later on to sort films according to their ratings.</p>
 
-<p>The class FilmComparator has to allow for film sorting according to the average of the vote values they have received. The films with the greatest average should be placed first, and the ones with the smallest average should be the last.</p>
+<p>The class FilmComparator has to allow for film sorting according to the average of the rating values they have received. The films with the greatest average should be placed first, and the ones with the smallest average should be the last.</p>
 
 <p>Test the class with the following source code:</p>
 
 <pre class="sh_java">
-    VoteRegister votes = new VoteRegister();
+    RatingRegister ratings = new RatingRegister();
 
     Film goneWithTheWind = new Film("Gone with the Wind");
-    Film bridgesOfMadisonCounty = new Film("The Bridges of Madison County");
+    Film theBridgesOfMadisonCounty = new Film("The Bridges of Madison County");
     Film eraserhead = new Film("Eraserhead");
 
     Person matti = new Person("Matti");
     Person pekka = new Person("Pekka");
     Person mikke = new Person("Mikke");
 
-    votes.addVote(matti, goneWithTheWind, Vote.BAD);
-    votes.addVote(matti, bridgesOfMadisonCounty, Vote.GOOD);
-    votes.addVote(matti, eraserhead, Vote.FINE);
+    ratings.addRating(matti, goneWithTheWind, Rating.BAD);
+    ratings.addRating(matti, theBridgesOfMadisonCounty, Rating.GOOD);
+    ratings.addRating(matti, eraserhead, Rating.FINE);
 
-    votes.addVote(pekka, goneWithTheWind, Vote.FINE);
-    votes.addVote(pekka, bridgesOfMadisonCounty, Vote.BAD);
-    votes.addVote(pekka, eraserhead, Vote.MEDIOCRE);
+    ratings.addRating(pekka, goneWithTheWind, Rating.FINE);
+    ratings.addRating(pekka, theBridgesOfMadisonCounty, Rating.BAD);
+    ratings.addRating(pekka, eraserhead, Rating.MEDIOCRE);
 
-    votes.addVote(mikke, eraserhead, Vote.BAD);
+    ratings.addRating(mikke, eraserhead, Rating.BAD);
 
-    Map&lt;Film, List&lt;Vote&gt;&gt; filmVotes = votes.filmVotes();
+    Map&lt;Film, List&lt;Rating&gt;&gt; filmRatings = ratings.filmRatings();
 
-    List&lt;Film&gt; films = Arrays.asList(goneWithTheWind, bridgesOfMadisonCounty, eraserhead);
+    List&lt;Film&gt; films = Arrays.asList(goneWithTheWind, theBridgesOfMadisonCounty, eraserhead);
     System.out.println("The films before sorting: " + films);
 
-    Collections.sort(films, new FilmComparator(filmVotes));
+    Collections.sort(films, new FilmComparator(filmRatings));
     System.out.println("The films after sorting: " + films);
 </pre>
 
@@ -11494,30 +11494,30 @@ The films after sorting: [The Bridges of Madison County, Gone with the Wind, Era
 
 <h4>Reference, Part 1</h4>
 
-<p>Implement the class <code>Reference</code> in the package <code>reference</code>. The class <code>Refference</code> receives a <code>VoteRegister</code> object as constructor parameter. Reference uses the votes in the vote register to elaborate a recommendation.</p>
+<p>Implement the class <code>Reference</code> in the package <code>reference</code>. The class <code>Refference</code> receives a <code>RatingRegister</code> object as constructor parameter. Reference uses the ratings in the rating register to elaborate a recommendation.</p>
 
-<p>Implement the method <code>public Film recommendFilm(Person person)</code>, which implements films to people. Hint: you need three things to find out the most suitable film. These are at least the class <code>FilmComparator</code> which you created earlier on; the method <code>public Map&lt;Film, List&lt;Vote&gt;&gt; filmVotes()</code> of the class <code>VoteRegister</code>; and a list of the existing films.</p>
+<p>Implement the method <code>public Film recommendFilm(Person person)</code>, which implements films to people. Hint: you need three things to find out the most suitable film. These are at least the class <code>FilmComparator</code> which you created earlier on; the method <code>public Map&lt;Film, List&lt;Rating&gt;&gt; filmRatings()</code> of the class <code>RatingRegister</code>; and a list of the existing films.</p>
 
 <p>Test your program with the following source code:</p>
 
 <pre class="sh_java">
-    VoteRegister votes = new VoteRegister();
+    RatingRegister ratings = new RatingRegister();
 
     Film goneWithTheWind = new Film("Gone with the Wind");
-    Film bridgesOfMadisonCounty = new Film("The Bridges of Madison County");
+    Film theBridgesOfMadisonCounty = new Film("The Bridges of Madison County");
     Film eraserhead = new Film("Eraserhead");
 
     Person matti = new Person("Matti");
     Person pekka = new Person("Pekka");
     Person mikke = new Person("Mikke");
 
-    votes.addVote(matti, goneWithTheWind, Vote.BAD);
-    votes.addVote(matti, bridgesOfMadisonCounty, Vote.GOOD);
-    votes.addVote(matti, eraserhead, Vote.FINE);
+    ratings.addRating(matti, goneWithTheWind, Rating.BAD);
+    ratings.addRating(matti, theBridgesOfMadisonCounty, Rating.GOOD);
+    ratings.addRating(matti, eraserhead, Rating.FINE);
 
-    votes.addVote(pekka, goneWithTheWind, Vote.FINE);
-    votes.addVote(pekka, bridgesOfMadisonCounty, Vote.BAD);
-    votes.addVote(pekka, eraserhead, Vote.MEDIOCRE);
+    ratings.addRating(pekka, goneWithTheWind, Rating.FINE);
+    ratings.addRating(pekka, theBridgesOfMadisonCounty, Rating.BAD);
+    ratings.addRating(pekka, eraserhead, Rating.MEDIOCRE);
 
     Reference ref = new Reference(votes);
     Film recommended = ref.recommendFilm(mikke);
@@ -11528,7 +11528,7 @@ The films after sorting: [The Bridges of Madison County, Gone with the Wind, Era
 The film recommended to Michael is: The Bridges of Madison County
 </pre>
 
-<p>Now, our first part works fine exclusively for people who have never evaluated any movie. In such cases, we can't say anything about their film tastes, and the best choice is recommending them the film which has received the hightest average among the votes.</p>
+<p>Now, our first part works fine exclusively for people who have never evaluated any movie. In such cases, we can't say anything about their film tastes, and the best choice is recommending them the film which has received the hightest average among the ratings.</p>
 
 <h4>Reference, Part 2</h4>
 
@@ -11536,9 +11536,9 @@ The film recommended to Michael is: The Bridges of Madison County
 
 <p>Unfortunately, the error diagnostics of this part is not similar to the previous parts.</p>
 
-<p>If people have added their own preferences to the reference service, we know something about their film tastes. Let's extend the functionality of our reference to create a personal recommendation if the person has evaluated films. The functionality implemented in the previous part has to be preserved: if a person hasn't evaluated any film, we recommend them a film according to film votes.</p>
+<p>If people have added their own preferences to the reference service, we know something about their film tastes. Let's extend the functionality of our reference to create a personal recommendation if the person has evaluated films. The functionality implemented in the previous part has to be preserved: if a person hasn't evaluated any film, we recommend them a film according to film ratings.</p>
 
-<p>Personal recommendations are based on the similarity between the person votes and other people's votes. Let's reason about it with the help of the following table; in the first line on the top there are films, and the people who voted are on the left. The brackets describe the votes given.</p>
+<p>Personal recommendations are based on the similarity between the person ratings and other people's ratings. Let's reason about it with the help of the following table; in the first line on the top there are films, and the people who ratingd are on the left. The brackets describe the ratings given.</p>
 
 <p>
     <table style="padding-left:2em">
@@ -11550,7 +11550,7 @@ The film recommended to Michael is: The Bridges of Madison County
     </table>
 </p>
 
-<p>If we want to find the suitable film for Mikael, we can explore the similarity between Mikael's and other people's preferences. The similarity is calculated based on the votes: as the sum of the products of the votes for the films watched by both. For instance, Mikael and Thomas's similarity is 0, because they haven't watched the same films.</p>
+<p>If we want to find the suitable film for Mikael, we can explore the similarity between Mikael's and other people's preferences. The similarity is calculated based on the ratings: as the sum of the products of the ratings for the films watched by both. For instance, Mikael and Thomas's similarity is 0, because they haven't watched the same films.</p>
 
 <p>If we caluculate Mikael and Pekka's similarity, we find out that the sum of the products of the films they have in common is 25. Mikael and Pekka have both watched only one film, and they have both given it the grade bad (-5).</p>
 
@@ -11583,17 +11583,17 @@ The film recommended to Michael is: The Bridges of Madison County
 
 <p>Matti has to be recommended a film according to Thomas' taste: the recommendation will be the Blues Brothers.</p>
 
-<p>Implement the recommendation mechanism described above. The method should <code>recommendFilm</code> should return <code>null</code> in two cases: if you cannot find any film to recommend; if you find a, say, person1 whose film taste is appropriate to recommend films to, say, person2, but person1 has judge bad, mediocre, or neutral, all the films person2 hasn't watched, yet. The approach described above has to work also if the person hasn't added any vote.</p>
+<p>Implement the recommendation mechanism described above. The method should <code>recommendFilm</code> should return <code>null</code> in two cases: if you cannot find any film to recommend; if you find a, say, person1 whose film taste is appropriate to recommend films to, say, person2, but person1 has judge bad, mediocre, or neutral, all the films person2 hasn't watched, yet. The approach described above has to work also if the person hasn't added any rating.</p>
 
 <p>Do not suggest films which have already been watched.</p>
 
 <p>You can test your program with the following source code:</p>
 
 <pre class="sh_java">
-    VoteRegister votes = new VoteRegister();
+    RatingRegister ratings = new RatingRegister();
 
     Film goneWithTheWind = new Film("Gone with the Wind");
-    Film bridgesOfMadisonCounty = new Film("The Bridges of Madison County");
+    Film theBridgesOfMadisonCounty = new Film("The Bridges of Madison County");
     Film eraserhead = new Film("Eraserhead");
     Film bluesBrothers = new Film("Blues Brothers");
 
@@ -11603,18 +11603,18 @@ The film recommended to Michael is: The Bridges of Madison County
     Person thomas = new Person("Thomas");
     Person arto = new Person("Arto");
 
-    votes.addVote(matti, goneWithTheWind, Vote.BAD);
-    votes.addVote(matti, bridgesOfMadisonCounty, Vote.GOOD);
-    votes.addVote(matti, eraserhead, Vote.FINE);
+    ratings.addRating(matti, goneWithTheWind, Rating.BAD);
+    ratings.addRating(matti, theBridgesOfMadisonCounty, Rating.GOOD);
+    ratings.addRating(matti, eraserhead, Rating.FINE);
 
-    votes.addVote(pekka, goneWithTheWind, Vote.FINE);
-    votes.addVote(pekka, eraserhead, Vote.BAD);
-    votes.addVote(pekka, bluesBrothers, Vote.MEDIOCRE);
+    ratings.addRating(pekka, goneWithTheWind, Rating.FINE);
+    ratings.addRating(pekka, eraserhead, Rating.BAD);
+    ratings.addRating(pekka, bluesBrothers, Rating.MEDIOCRE);
 
-    votes.addVote(mikke, eraserhead, Vote.BAD);
+    ratings.addRating(mikke, eraserhead, Rating.BAD);
 
-    votes.addVote(thomas, bluesBrothers, Vote.GOOD);
-    votes.addVote(thomas, bridgesOfMadisonCounty, Vote.GOOD);
+    ratings.addRating(thomas, bluesBrothers, Rating.GOOD);
+    ratings.addRating(thomas, theBridgesOfMadisonCounty, Rating.GOOD);
 
     Reference ref = new Reference(votes);
     System.out.println(thomas + " recommendation: " + ref.recommendFilm(thomas));

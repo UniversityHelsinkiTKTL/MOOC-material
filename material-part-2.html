@@ -11679,55 +11679,55 @@ Arto recommendation: The Bridges of Madison County
 
 <p>With this exercise, we create a program to filter the lines of the books found on the <a href="">Project Guttenberg</a> pages. In the following example we analyse Dostojevski's Crime and Punishment. We want to have various different filtering criteria, and that it would be possible to filter according to different criteria combinations. The program structure should also allow for adding new criteria later on.</p>
 
-<p>A suitable solution to the problem, is defining the filtering criteria as objects of their own which implement the interface <code>Criterium</code>. The interface definition is below:</p>
+<p>A suitable solution to the problem, is defining the filtering criteria as objects of their own which implement the interface <code>Criterion</code>. The interface definition is below:</p>
 
 <pre class="sh_java">
-public interface Criterium {
-    boolean implement(String line);
+public interface Criterion {
+    boolean complies(String line);
 }
 </pre>
 
 <p>A filtering class which implements the interface:</p>
 
 <pre class="sh_java">
-public class ContainsPassword implements Criterium {
+public class ContainsWord implements Criterion {
 
     String word;
 
-    public ContainsPassword(String word) {
+    public ContainsWord(String word) {
         this.word = word;
     }
 
     @Override
-    public boolean implements(String line) {
+    public boolean complies(String line) {
         return line.contains(word);
     }
 }
 </pre>
 
-<p>The class objects are quite simple, in fact, and they only remember the word given as constructor parameter. The only method of the object can be asked whether the criterium complies to the parameter String; if so, this means that the object contains the word stored into the String object.</p>
+<p>The class objects are quite simple, in fact, and they only remember the word given as constructor parameter. The only method of the object can be asked whether the criterion complies to the parameter String; if so, this means that the object contains the word stored into the String object.</p>
 
 <p>Together with the excercise body, you find the pre-made class <code>GutenbergReader</code>, which helps you to analyse book lines according to the filtering criteria geven as parameter:</p>
 
 <pre class="sh_java">
 public class GutenbergReader {
 
-    private List&lg;String&gt; words;
+    private List&lt;String&gt; lines;
 
     public GutenbergReader(String address) throws IllegalArgumentException {
         // the code which retrieves the book from the Internet
     }
 
-    public List&lg;String&gt; linesWhichComplyWith(Ctriterium c){
-        List&lg;String&gt; complayers = new ArrayList&lg;String&gt;();
+    public List&lg;String&gt; linesWhichComplyWith(Criterion c){
+        List&lg;String&gt; complyingLines = new ArrayList&lg;String&gt;();
 
-        for (String line : words) {
-            if ( c.implements(line)) {
-                complayers.add(line);
+        for (String line : lines) {
+            if (c.complies(line)) {
+                complyingLines.add(line);
             }
         }
 
-        return complayers;
+        return complyingLines;
     }
 }
 </pre>
@@ -11739,26 +11739,26 @@ public static void main(String[] args) {
     String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
     GutenbergReader book = new GutenbergReader(address);
 
-    Criterium criterium = new ContainsWord("beer");
+    Criterion criterion = new ContainsWord("beer");
 
-    for (String line : book.linesWhichComplyWith(criterium)) {
+    for (String line : book.linesWhichComplyWith(criterion)) {
         System.out.println(line);
     }
 }
 </pre>
 
-<h4>All Words</h4>
+<h4>All Lines</h4>
 
-<p>Create the class <code>AllLines</code> which implements <code>Criterium</code>, which accepts all the lines. This and the other classes of the exercise have to be implemented in the package <code>reader.criteria</code>.</p>
+<p>Create the class <code>AllLines</code> which implements <code>Criterion</code>, which accepts all the lines. This and the other classes of the exercise have to be implemented in the package <code>reader.criteria</code>.</p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
     String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
     GutenbergReader book = new GutenbergReader(address);
 
-    Criterium criterium = new AllLines();
+    Criterion criterion = new AllLines();
 
-    for (String line : book.linesWhichComplyWith(criterium)) {
+    for (String line : book.linesWhichComplyWith(criterion)) {
         System.out.println(line);
     }
 }
@@ -11766,16 +11766,16 @@ public static void main(String[] args) {
 
 <h4>Ends with Question or Exclamation Mark</h4>
 
-<p>Implement class <code>EndsWithQuestionOrExclamationMark</code>, which implements the interface <code>Criterium</code> and accepts the lines whose last character is a question or an exclamation mark.</p>
+<p>Implement class <code>EndsWithQuestionOrExclamationMark</code>, which implements the interface <code>Criterion</code> and accepts the lines whose last character is a question or an exclamation mark.</p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
     String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
     GutenbergReader book = new GutenbergReader(address);
 
-     Criterium criterium = new EndsWithQuestionOrExclamationMark();
+     Criterion criterion = new EndsWithQuestionOrExclamationMark();
 
-    for (String line : book.linesWhichComplyWith(criterium)) {
+    for (String line : book.linesWhichComplyWith(criterion)) {
         System.out.println(line);
     }
 }
@@ -11794,18 +11794,18 @@ if ( name.charAt(0) == 'p' ) {
 }
 </pre>
 
-<h4>Longer Than</h4>
+<h4>Length At Least</h4>
 
-<p>Implement the class <code>LongerThan</code>, which implements the interface <code>Criterium</code> and accepts the lines whose length is greater than the number received as constructor parameter.</p>
+<p>Implement the class <code>LengthAtLeast</code>, which implements the interface <code>Criterion</code> and accepts the lines whose length is equal or greater than the number received as constructor parameter.</p>
 
 <pre class="sh_java">
 public static void main(String[] args) {
     String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
     GutenbergReader book = new GutenbergReader(address);
 
-     Criterium criterium = new LongerThan(40);
+     Criterion criterion = new LengthAtLeast(40);
 
-    for (String line : book.linesWhichComplyWith(criterium)) {
+    for (String line : book.linesWhichComplyWith(criterion)) {
         System.out.println(line);
     }
 }
@@ -11813,7 +11813,7 @@ public static void main(String[] args) {
 
 <h4>Both</h4>
 
-<p>Create the class <code>Both</code> which implements the interface <code>Criterium</code>. The objects of this class receive two objects as constructor parameter, both implementing the interface <code>Criterium</code>. <code>Both</code> objects accept the lines which comply with both the criteria received as constructor parameters. We print below all the lines which end with a question or an exclamation mark and that contain the word "beer".
+<p>Create the class <code>Both</code> which implements the interface <code>Criterion</code>. The objects of this class receive two objects as constructor parameter, both implementing the interface <code>Criterion</code>. <code>Both</code> objects accept the lines which comply with both the criteria received as constructor parameters. We print below all the lines which end with a question or an exclamation mark and that contain the word "beer".
 </p>
 
 <pre class="sh_java">
@@ -11821,12 +11821,12 @@ public static void main(String[] args) {
     String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
     GutenbergReader book = new GutenbergReader(address);
 
-    Criterium criterium = new Both(
+    Criterion criterion = new Both(
                     new EndsWithQuestionOrExclamationMark(),
                     new ContainsWord("beer")
                 );
 
-    for (String line : book.linesWhichComplyWith(criterium)) {
+    for (String line : book.linesWhichComplyWith(criterion)) {
         System.out.println(line);
     }
 }
@@ -11834,7 +11834,7 @@ public static void main(String[] args) {
 
 <h4>Negation</h4>
 
-<p>Create the class <code>Not</code> which implement the interface <code>Criterium</code> and accepts the lines, which don't comply with the criterium received as parameter. We print below the lines whose length is less than 10.
+<p>Create the class <code>Not</code> which implement the interface <code>Criterion</code> and accepts the lines, which don't comply with the criterion received as parameter. We print below the lines whose length is less than 10.
 </p>
 
 <pre class="sh_java">
@@ -11842,9 +11842,9 @@ public static void main(String[] args) {
     String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
     GutenbergReader book = new GutenbergReader(address);
 
-    Criterium criterium = new Not( new LongerThan(10) );
+    Criterion criterion = new Not( new LengthAtLeast(10) );
 
-    for (String line : book.linesWhichComplyWith(criterium)) {
+    for (String line : book.linesWhichComplyWith(criterion)) {
         System.out.println(line);
     }
 }
@@ -11852,7 +11852,7 @@ public static void main(String[] args) {
 
 <h4>At Least One</h4>
 
-<p>Create the class <code>AtLeastOne</code> which implements the interface <code>Criterium</code>. The objects of this class receive as parameter an optional amount of objects which implement the interface <code>Criterium</code>; this means that the constructor receives a list of variable length as parameter. <code>AtLeastOne</code> objects accept the lines which comply with at least one of the criteria received as constructor parameter. We print below the lines which contain one ot the words "beer", "milk" or "oil".
+<p>Create the class <code>AtLeastOne</code> which implements the interface <code>Criterion</code>. The objects of this class receive as parameter an optional amount of objects which implement the interface <code>Criterion</code>; this means that the constructor receives a list of variable length as parameter. <code>AtLeastOne</code> objects accept the lines which comply with at least one of the criteria received as constructor parameter. We print below the lines which contain one ot the words "beer", "milk" or "oil".
 </p>
 
 <pre class="sh_java">
@@ -11860,33 +11860,33 @@ public static void main(String[] args) {
     String address = "http://www.gutenberg.myebook.bg/2/5/5/2554/2554-8.txt";
     GutenbergReader book = new GutenbergReader(address);
 
-    Criterium criterium =new AtLeastOne(
+    Criterion criterion =new AtLeastOne(
                     new ContainsTheWord("beer"),
                     new ContainsTheWord("milk"),
                     new ContainsTheWord("oil")
                 );
 
-    for (String line : book.linesWhichComplyWith(criterium)) {
+    for (String line : book.linesWhichComplyWith(criterion)) {
         System.out.println(line);
     }
 }
 </pre>
 
-<p>Note that the criteria can be combined as prefered. You find below a criterium which accepts the lines which have at least one of the words "beer", "milk" and "oil" and whose length is between 20-30 characters.</p>
+<p>Note that the criteria can be combined as prefered. You find below a criterion which accepts the lines which have at least one of the words "beer", "milk" and "oil" and whose length is between 20-30 characters.</p>
 
 <pre class="sh_java">
-    Criterium words = new AtLeastOne(
+    Criterion words = new AtLeastOne(
                     new ContainsWord("beer"),
                     new ContainsWord("milk"),
                     new ContainsWord("oil")
                 );
 
-    Criterium rightLength = new Both(
-                         new LongerThan(20),
-                         new Not( new LongerThan(31)),
+    Criterion rightLength = new Both(
+                         new LengthAtLeast(20),
+                         new Not( new LengthAtLeast(31)),
                        );
 
-    Criterium wanted = new Both(words, reightLength);
+    Criterion wanted = new Both(words, reightLength);
 </pre>
 
 </div>

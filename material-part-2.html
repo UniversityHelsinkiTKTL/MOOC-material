@@ -11942,9 +11942,9 @@ public static void main(String[] args) {
 
 </div>
 
-<h2>Ending Zenit</h2>
+<h2>Grande Finale</h2>
 
-<p>The course is nearing the end, and it's time for the ending zenit!</p>
+<p>The course is nearing the end, and it's time for the grande finale!</p>
 
 <div class="tehtavat">
     <div class="tehtava">
@@ -12033,15 +12033,15 @@ true
 
 <p>Let's modify the class <code>WormGame</code> which is contained in <code>wormgame.game</code>, and encapsulates the functionality of the game. The class WormGame inherits the class <code>Timer</code>, which provites the time functionality to update the game. In order to work, the class <code>Timer</code> requires a class which implements the interface <code>ActionListener</code>, and we have implemented it in <code>WormGame</code>.</p>
 
-<p>Modify the functionality of Matopeli's constructor so that the game's <code>Worm</code> is created in the constructor. Create the worm so that the position of the worm depends on the parameters received in the constructor of the class WormGame. The worm's x coordinate has to be <code>length / 2</code>, the y coordinate <code>height / 2 </code>, and the direction <code>Direction.DOWN</code>.</p>
+<p>Modify the functionality of WormGame's constructor so that the game's <code>Worm</code> is created in the constructor. Create the worm so that the position of the worm depends on the parameters received in the constructor of the class WormGame. The worm's x coordinate has to be <code>length / 2</code>, the y coordinate <code>height / 2 </code>, and the direction <code>Direction.DOWN</code>.</p>
 
 <p>Also create an apple inside the constructor. The apple coordinates have to be random, but the apple x coordinate has to be contained between <code>[0, length[</code>, and the y coordinate between <code>[0, height[</code>.</p>
 
 <p>Also add the following methods to the worm:</p>
 <ul>
-  <li><code>public Mato getWorm()</code> returns the WormGame worm.</li>
+  <li><code>public Worm getWorm()</code> returns the WormGame worm.</li>
   <li><code>public void setWorm(Worm worm)</code> sets on the game the method parameter worm. If the method <code>getWorm</code> is called after the worm has been set up, it has to return a referece to the <em>same</em> worm.</li>
-  <li><code>public Omena getApple</code> returns the apple of the WormGame.</li>
+  <li><code>public Apple getApple</code> returns the apple of the WormGame.</li>
   <li><code>public void setApple(Apple apple)</code> sets the method parameter apple on the worm game. If the method <code>getApple</code> is called after the apple has been set up, it has to return a reference to the <em>same</em> apple.</li>
 </ul>
 

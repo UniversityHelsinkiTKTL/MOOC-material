@@ -2764,7 +2764,7 @@ The books were not the same
     }
 </pre>
 
-        <p>The <code>equals</code>method finds out the class difference of two objects, but it is not able to distinguish two similar objects from each other. In order to compare our object with the object we received as parameter, and whose reference is <code>Object</code> type, we have to change the type of the Object reference. The reference type can be changed if and only if the object type is really such as we are converting it into. Type casting happens by specifying the desired class within brakets on the right side of the assignment sentence:</p>
+        <p>The <code>equals</code>method finds out the class difference of two objects, but it is not able to distinguish two similar objects from each other. In order to compare our object with the object we received as parameter, and whose reference is <code>Object</code> type, we have to change the type of the Object reference. The reference type can be changed if and only if the object type is really such as we are converting it into. Type casting happens by specifying the desired class within brackets on the right side of the assignment sentence:</p>
 
 <pre class="sh_java">
     WantedType variable = (WantedType) oldVariable;
@@ -10613,7 +10613,7 @@ The string not was matched by any of the alternatives
 
 <h4>Round Brackets: a Delimited Part of the String</h4>
 
-<p>With the help of round brakets it is possible to define what part of the regular expression is affected by the symbols. If we want to allow for the alternatives <code>00000</code> and <code>00001</code>, we can define it with the help of a vertical bar: <code>00000|00001</code>. Thanks to round brakers we can delimit the choice to only a part of the string. The expression <code>0000(0|1)</code> defines the strings <code>00000</code> and <code>00001</code>.</p>
+<p>With the help of round brackets it is possible to define what part of the regular expression is affected by the symbols. If we want to allow for the alternatives <code>00000</code> and <code>00001</code>, we can define it with the help of a vertical bar: <code>00000|00001</code>. Thanks to round brakers we can delimit the choice to only a part of the string. The expression <code>0000(0|1)</code> defines the strings <code>00000</code> and <code>00001</code>.</p>
 
 <p>Accordingly, the regular expression <code>look(|s|ed)</code> defines the basic form of the verb to look (look), the third person (looks), and the past (looked).</p>
 
@@ -10745,17 +10745,17 @@ The form is right.
 </li>
 </ul>
 
-<p>You can also use various different repetition symbols within one regular expression. For instance, the regualr expression <code>5{3}(1|0)*5{3}</code> defines strings which start and end with three fives. In between there can be an indefinite number of 1 and 0.</p>
+<p>You can also use various different repetition symbols within one regular expression. For instance, the regular expression <code>5{3}(1|0)*5{3}</code> defines strings which start and end with three fives. In between there can be an indefinite number of 1 and 0.</p>
 
 <h4>Square Brakets: Character Groups</h4>
 
-<p>With the help of squre brakets we can quickly define groups of charaters. The characters are written inside the brakets, and we can define an interval the help of a hyphen (-). For instance, <code>[145]</code> means the same as <code>(1|4|5)</code>, whereas <code>[2-36-9]</code> means the same as <code>(2|3|6|7|8|9)</code>. Accordingly, <code>[a-c]*</code> defines a regular expression with a string made only of characters <code>a</code>, <code>b</code> and <code>c</code>.</p>
+<p>With the help of square brackets we can quickly define groups of characters. The characters are written inside the brackets, and we can define an interval the help of a hyphen (-). For instance, <code>[145]</code> means the same as <code>(1|4|5)</code>, whereas <code>[2-36-9]</code> means the same as <code>(2|3|6|7|8|9)</code>. Accordingly, <code>[a-c]*</code> defines a regular expression with a string made only of characters <code>a</code>, <code>b</code> and <code>c</code>.</p>
 
 <div class="tehtavat">
     <div class="tehtava">
 <h3>Regular Expressions</h3>
 
-<p>Let's train to use regural expressions. The exercises are done in the <code>Main</code> class of the default package .</h3>
+<p>Let's train to use regular expressions. The exercises are done in the <code>Main</code> class of the default package .</h3>
 
 <h4 class="req">Week Days</h4>
 

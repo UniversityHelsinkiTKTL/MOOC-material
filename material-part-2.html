@@ -4637,12 +4637,12 @@ A of Clubs
 <pre class="sh_java">
   Hand hand = new Hand();
 
-  hand.add( new Hand(12, Card.HEARTS) );
-  hand.add( new Hand(4, Card.CLUBS) );
-  hand.add( new Hand(2, Card.DIAMONDS) );
-  hand.add( new Hand(14, Card.CLUBS) );
-  hand.add( new Hand(7, Card.HEARTS) );
-  hand.add( new Hand(2, Card.CLUBS) );
+  hand.add( new Card(12, Card.HEARTS) );
+  hand.add( new Card(4, Card.CLUBS) );
+  hand.add( new Card(2, Card.DIAMONDS) );
+  hand.add( new Card(14, Card.CLUBS) );
+  hand.add( new Card(7, Card.HEARTS) );
+  hand.add( new Card(2, Card.CLUBS) );
 
   hand.sortAgainstSuit();
 

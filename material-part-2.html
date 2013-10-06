@@ -10913,7 +10913,7 @@ public class Card {
     private int value;
     private Suit suit;
 
-    public Kortti(int value, Suit suit) {
+    public Card(int value, Suit suit) {
         this.value = value;
         this.suit = suit;
     }
@@ -10923,8 +10923,8 @@ public class Card {
         return suit + " "+value;
     }
 
-    public Maa getSuit() {
-        return maa;
+    public Suit getSuit() {
+        return suit;
     }
 
     public int getValue() {
@@ -10939,7 +10939,7 @@ public class Card {
 public class Main {
 
     public static void main(String[] args) {
-        Card first = new Card(10, Suit.Hearts);
+        Card first = new Card(10, Suit.HEARTS);
 
         System.out.println(first);
 
@@ -10988,7 +10988,7 @@ public class Hand {
 
 <p>The <code>print</code> method prints each card in the hand by using a "for each" statement. ArrayList and other "object containers" which implement the <em>Collection</em> interface indirectly implement the interface <em>Iterable</em>. Objects which implement <em>Iterable</em> can be parses, or better "iterated", with statements such as for <em>each</em>.</p>
 
-<p>Object containers can also be interated using a so called <em>iterator</em>, that is an object, which was thought to parse a particula object collection. Below, there is a version of an iterator used to print cards:</p>
+<p>Object containers can also be iterated using a so called <em>iterator</em>, that is an object, which was thought to parse a particular object collection. Below, there is a version of an iterator used to print cards:</p>
 
 <pre class="sh_java">
 public void print() {

@@ -10552,13 +10552,13 @@ public class Main {
   <div class="viikkoraja">Week6</div>
   <div class="viikkoraja-mooc" id="Week 12" deadline="unlocks when 85% of week 11 done " data-first-chapter-index="53" data-first-exercise-index="151" data-first-week-index="12"  data-first-chapter-index-mooc="53" data-first-exercise-index-mooc="151" data-first-week-index-mooc="12" tekija="Arto Vihavainen, Matti Luukkainen">
 
-<h2>Some Useful Tecniques</h2>
+<h2>Some Useful Techniques</h2>
 
 <p>Before the course comes to its end, we can still have a look at some useful particular features of Java.</p>
 
 <h3>Regular Expressions</h3>
 
-<p>A regual expression is a compact form to define a string. Regular expressions are often used to check the validity of strings. Let's have a look at an exercise where we have to check whether the student number given by the user is written in the valid form or not. Finnish student numbers start with the string "01" which is followed by seven numerical digits from 0 to 9.</p>
+<p>A regular expression is a compact form to define a string. Regular expressions are often used to check the validity of strings. Let's have a look at an exercise where we have to check whether the student number given by the user is written in the valid form or not. Finnish student numbers start with the string "01" which is followed by seven numerical digits from 0 to 9.</p>
 
 <p>We can check the validity of a student number parsing its each character with the help of the method <code>charAt</code>. Another way would be checking whether the first character is "0", and using the method <code>Integer.parseInt</code> to translate the string into a number. Then, we could check whther that number is smaller than 20000000.</p>
 
@@ -10575,7 +10575,7 @@ if (num.matches("01[0-9]{7}")) {
 }
 </pre>
 
-<p>Next, we can go throw the most commonly used regular expressions.</p>
+<p>Next, we can go through the most commonly used regular expressions.</p>
 
 <h4>Vertical Bar: Logical <em>or</em></h4>
 
@@ -10587,7 +10587,7 @@ if (num.matches("01[0-9]{7}")) {
     if(string.matches("00|111|0000")) {
         System.out.println("The string was matched by some of the alternatives");
     } else {
-        System.out.println(""The string not was matched by any of the alternatives");
+        System.out.println("The string not was matched by any of the alternatives");
     }
 </pre>
 
@@ -10724,7 +10724,7 @@ The form is right.
 </pre>
 
 <pre>
-The form is right.
+The form is wrong.
 </pre>
 </li>
 
@@ -10745,7 +10745,7 @@ The form is right.
 </li>
 </ul>
 
-<p>You can also use various different repetition symbols within one regular expression. For instance, the regualr expression <code>5{3}(1|0)*5{3}</code> defines strings which start and end with three. In between there can be an indefinite number of 1 and 0.</p>
+<p>You can also use various different repetition symbols within one regular expression. For instance, the regualr expression <code>5{3}(1|0)*5{3}</code> defines strings which start and end with three fives. In between there can be an indefinite number of 1 and 0.</p>
 
 <h4>Square Brakets: Character Groups</h4>
 

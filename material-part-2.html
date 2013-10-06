@@ -3664,7 +3664,7 @@ public class Box {
 
 
 <!--
-<p>We can imlement now the classes <code>PieceOfNews</code> and <code>NewsService</code>; the first reports a singular piece of news, and the second produces the news to be read. The code which makes use of our news service does not have to know the actual news implementation, and that is not even sensible. The only essencial thing is that the program is able to read the news. In fact, the news service can submit its news through the <code>Readable</code> interface.</p>
+<p>We can imlement now the classes <code>PieceOfNews</code> and <code>NewsService</code>; the first reports a singular piece of news, and the second produces the news to be read. The code which makes use of our news service does not have to know the actual news implementation, and that is not even sensible. The only essential thing is that the program is able to read the news. In fact, the news service can submit its news through the <code>Readable</code> interface.</p>
 
 <pre class="sh_java">
 public class PieceOfNews implements Readable {
@@ -6547,7 +6547,7 @@ public class ExerciseAccounting {
         account.add(2);
         account.add(3);
 
-        kirjanpito.print();
+        account.print();
 </pre>
 
 <pre>
@@ -6931,7 +6931,7 @@ command: <font color="red">x</font>
 
 <p>Some remarks:</p>
 <ul>
-  <li>Because of the tests, it is essencial that the <em>user interface</em> works exactly as in the example above. The application can optionally decide in which way invalid inputs are handled. The tests contain only valid inputs.</li>
+  <li>Because of the tests, it is essential that the <em>user interface</em> works exactly as in the example above. The application can optionally decide in which way invalid inputs are handled. The tests contain only valid inputs.</li>
   <li><em><strong>The program has to start when the main method is executed; you can only create one Scanner object.</strong></em></li>
 <li>Do not use static variables, the tests execute your program many different times, and the static variable values left from the previous execution would possibly disturb them!</li>
   <li>In order to make things easier, we assume the name is a single string; if we want to print our lists sorted by surname in alphabetic order, the name has to be given in the form <em>surname name</em>.</li>
@@ -10045,7 +10045,7 @@ public class DrawingBoard extends JPanel {
 }
 </pre>
 
-<p>Let's also give our avatar as parameter to our user interface. Avatar is an indipendent object in the user interface, and we only want to draw it in the user interface. It is essencial to change our UI consrtuctor so that it received a <code>Avatar</code> object. Moreover, in the method <code>createComponents</code> we give an instance of the class <code>Avatar</code> as parameter to our <code>DrawingBoard</code> object.</p>
+<p>Let's also give our avatar as parameter to our user interface. Avatar is an independent object in the user interface, and we only want to draw it in the user interface. It is essential to change our UI consrtuctor so that it received a <code>Avatar</code> object. Moreover, in the method <code>createComponents</code> we give an instance of the class <code>Avatar</code> as parameter to our <code>DrawingBoard</code> object.</p>
 
 <pre class="sh_java">
 public class UserInterface implements Runnable {
@@ -11000,11 +11000,11 @@ public void print() {
 }
 </pre>
 
-<p>The iterator is taken from the ArrayList <code>cards</code>. The iterator is like a finger, which always ponts out a specific object of the list, from the first to the second, to the third, and so on, till the finger has gone through each object.</p>
+<p>The iterator is taken from the ArrayList <code>cards</code>. The iterator is like a finger, which always points out a specific object of the list, from the first to the second, to the third, and so on, till the finger has gone through each object.</p>
 
-<p>The iterator provides a couple of methods. The method <code>hasNext()</code> asks whether there are still object left uniterated. If there are, we can we can retrieve the following object using the method <code>next()</code>. The method returns the following object in the collection, and makes the iterator -- the "finger" -- point out the following object.</p>
+<p>The iterator provides a couple of methods. The method <code>hasNext()</code> asks whether there are still objects to be iterated. If there are, we can retrieve the following object using the method <code>next()</code>. The method returns the following object in the collection, and makes the iterator -- the "finger" -- point out the following object.</p>
 
-<p>The object reference returned by the Iterator's next() method can be stored into a  variable, of course; in fact, we could modify the method <code>print</code> in the following way:</p>
+<p>The object reference returned by the Iterator's next() method can be stored into a variable, of course; in fact, we could modify the method <code>print</code> in the following way:</p>
 
 <pre class="sh_java">
 public void print(){
@@ -11052,7 +11052,7 @@ Java Result: 1
 public class Hand {
     // ...
 
-    public void deleteWost(int value) {
+    public void deleteWorst(int value) {
         Iterator&lt;Card&gt; iterator = cards.iterator();
 
         while (iterator.hasNext()) {
@@ -11082,7 +11082,7 @@ public class Hand {
 <p>Create the class <code>Person</code> in <code>personnel</code>. Person is assigned a name and an education title as constructor parameters. Person has also a method to communicate their education, <code>public Education getEducation()</code>, as well as a <code>toString</code> method which returns the person information following the example below.</p>
 
 <pre class="sh_java">
-    Person arto = new Person("Arto", EDUCATION.D);
+    Person arto = new Person("Arto", Education.D);
     System.out.println(arto);
 </pre>
 
@@ -11166,7 +11166,7 @@ Matti
 Pekka
 </pre>
 
-<p>The <code>continue</code> statement is used expecially when we know the iterable variables have got values with which we do not want to handle at all. The classic manner of approach would be using an if statement, but the <code>continue</code> statement allows for another approach to handle with the values, which avoids intricracies and possibly helps legibility. Below, you find two examples, where we go through the numbers of a list. If the number is smaller than 5 and contains 100, or if it contains 40, it is not printed; otherwise it is.</p>
+<p>The <code>continue</code> statement is used especially when we know the iterable variables have got values with which we do not want to handle at all. The classic manner of approach would be using an if statement, but the <code>continue</code> statement allows for another approach to handle with the values, which avoids indentations and possibly helps readability. Below, you find two examples, where we go through the numbers of a list. If the number is smaller than 5 and contains 100, or if it contains 40, it is not printed; otherwise it is.</p>
 
 <pre class="sh_java">
     List&lt;Integer&gt; values = Arrays.asList(1, 3, 11, 6, 120);
@@ -11494,7 +11494,7 @@ The films after sorting: [The Bridges of Madison County, Gone with the Wind, Era
 
 <h4>Reference, Part 1</h4>
 
-<p>Implement the class <code>Reference</code> in the package <code>reference</code>. The class <code>Refference</code> receives a <code>RatingRegister</code> object as constructor parameter. Reference uses the ratings in the rating register to elaborate a recommendation.</p>
+<p>Implement the class <code>Reference</code> in the package <code>reference</code>. The class <code>Reference</code> receives a <code>RatingRegister</code> object as constructor parameter. Reference uses the ratings in the rating register to elaborate a recommendation.</p>
 
 <p>Implement the method <code>public Film recommendFilm(Person person)</code>, which implements films to people. Hint: you need three things to find out the most suitable film. These are at least the class <code>FilmComparator</code> which you created earlier on; the method <code>public Map&lt;Film, List&lt;Rating&gt;&gt; filmRatings()</code> of the class <code>RatingRegister</code>; and a list of the existing films.</p>
 
@@ -11552,7 +11552,7 @@ The film recommended to Michael is: The Bridges of Madison County
 
 <p>If we want to find the suitable film for Mikael, we can explore the similarity between Mikael's and other people's preferences. The similarity is calculated based on the ratings: as the sum of the products of the ratings for the films watched by both. For instance, Mikael and Thomas's similarity is 0, because they haven't watched the same films.</p>
 
-<p>If we caluculate Mikael and Pekka's similarity, we find out that the sum of the products of the films they have in common is 25. Mikael and Pekka have both watched only one film, and they have both given it the grade bad (-5).</p>
+<p>If we calculate Mikael and Pekka's similarity, we find out that the sum of the products of the films they have in common is 25. Mikael and Pekka have both watched only one film, and they have both given it the grade bad (-5).</p>
 
 <pre>
 -5 * -5 = 25
@@ -11564,16 +11564,16 @@ The film recommended to Michael is: The Bridges of Madison County
 -5 * 3 = -15
 </pre>
 
-<p>Based on that Mikael can be recommanded films according to Pekka's taste: the recommendation is Gone with the Wind.</p>
+<p>Based on that Mikael can be recommended films according to Pekka's taste: the recommendation is Gone with the Wind.</p>
 
 
-<p>On the other hand, if we want to find a suitable film for Matti, we have to find the similarity between Matti and everyone else. Matti and Pekka have watched two same films. Matti gave Tuulen viemälle the grade bad (-5), Pekka the grade fine (3). Matti gave fine (3) to Eraserhead, and Pekka gave bad (-5). Matti and Pekka's similarity is -30.</p>
+<p>On the other hand, if we want to find a suitable film for Matti, we have to find the similarity between Matti and everyone else. Matti and Pekka have watched two same films. Matti gave Gone with the Wind the grade bad (-5), Pekka the grade fine (3). Matti gave fine (3) to Eraserhead, and Pekka gave bad (-5). Matti and Pekka's similarity is -30.</p>
 
 <pre>
 -5 * 3 + 3 * -5 = -30
 </pre>
 
-<p>Matti and Mikael's similarity is -15, which we know according to out previous calculations. Similarities are simmetrical.</p>
+<p>Matti and Mikael's similarity is -15, which we know according to out previous calculations. Similarities are symmetrical.</p>
 
 <p>Matti and Thomas have watched Gone with the Wind, and they both gave it the grade good (5). Matti and Thomas's similarity is 25, then.</p>
 
@@ -11630,14 +11630,14 @@ Matti recommendation: Blues Brothers
 Arto recommendation: The Bridges of Madison County
 </pre>
 
-<p>Have we made one million bucks? Not yet, maybe. In the course Introduction to Artificial Intelligence and Machine Learning we learn more tecniques to build learning programs.</p>
+<p>Have we made one million bucks? Not yet, maybe. In the course Introduction to Artificial Intelligence and Machine Learning we learn more techniques to build learning programs.</p>
 
 </div>
 </div>
 
 <h3>Variable Number of Method Parameters</h3>
 
-<p>So far, we have been creating methods which had a clearly defined number of parameters. Java makes it possible to give an indefinite number of a specific type of parameters by placing an ellipsis after the parameter type. For instance the method <code>public int sum(int... values)</code> can be given as parameter as many intergers (<code>int</code>) as the user wants. The parameter values can be handled as a table.</p>
+<p>So far, we have been creating methods which had a clearly defined number of parameters. Java makes it possible to give an indefinite number of a specific type of parameters by placing an ellipsis after the parameter type. For instance the method <code>public int sum(int... values)</code> can be given as parameter as many integers (<code>int</code>) as the user wants. The parameter values can be handled as a table.</p>
 
 <pre class="sh_java">
     public int sum(int... values) {
@@ -11659,12 +11659,12 @@ Arto recommendation: The Bridges of Madison County
 3
 </pre>
 
-<p>Note that the parameter definition above <code>int... values</code> dipends on the fact that the method has got a table-like variable called <code>values</code>.</p>
+<p>Note that the parameter definition above <code>int... values</code> depends on the fact that the method has got a table-like variable called <code>values</code>.</p>
 
-<p>A method can be assigned only one parameter which receives an indefinite number of values, and this must be the first partameter in the method definition. For instance:</p>
+<p>A method can be assigned only one parameter which receives an indefinite number of values, and this must be the first parameter in the method definition. For instance:</p>
 
 <pre class="sh_java">
-    public void print(String... characterStringt, int times) // right!
+    public void print(String... characterStrings, int times) // right!
     public void print(int times, String... strings) // wrong!
 </pre>
 
@@ -11677,7 +11677,7 @@ Arto recommendation: The Bridges of Madison County
 
 <p>In some exercises (see Library in Introduction to Programming, and Word Inspection in Advanced Programming), we have run into such situations where we had to filter out list objects according to particular criteria; for instance, in Word Inspection the methods <code>wordsContainingZ, wordsEndingInL, palindromes, wordsWhichContainAllVowels</code> all to the same same thing: they go through the file content one word after the other, and they make sure that the specific filtering criteria are satisfied, in which case they store the word. Because the method criteria are different, we haven't been able to get rid of this repetition, and the code of all those methods made wide use of copypaste.</p>
 
-<p>With this exercise, we create a program to filter the lines of the books found on the <a href="">Project Guttenberg</a> pages. In the following example we analyse Dostojevski's Crime and Punishment. We want to have various different filtering criteria, and that it would be possible to filter according to different criteria combinations. The program structure should also allow for adding new criteria later on.</p>
+<p>With this exercise, we create a program to filter the lines of the books found on the <a href="">Project Guttenberg</a> pages. In the following example we analyze Dostojevski's Crime and Punishment. We want to have various different filtering criteria, and that it would be possible to filter according to different criteria combinations. The program structure should also allow for adding new criteria later on.</p>
 
 <p>A suitable solution to the problem, is defining the filtering criteria as objects of their own which implement the interface <code>Criterion</code>. The interface definition is below:</p>
 
@@ -11707,7 +11707,7 @@ public class ContainsWord implements Criterion {
 
 <p>The class objects are quite simple, in fact, and they only remember the word given as constructor parameter. The only method of the object can be asked whether the criterion complies to the parameter String; if so, this means that the object contains the word stored into the String object.</p>
 
-<p>Together with the excercise body, you find the pre-made class <code>GutenbergReader</code>, which helps you to analyse book lines according to the filtering criteria geven as parameter:</p>
+<p>Together with the excercise body, you find the pre-made class <code>GutenbergReader</code>, which helps you to analyze book lines according to the filtering criteria geven as parameter:</p>
 
 <pre class="sh_java">
 public class GutenbergReader {
@@ -11872,7 +11872,7 @@ public static void main(String[] args) {
 }
 </pre>
 
-<p>Note that the criteria can be combined as prefered. You find below a criterion which accepts the lines which have at least one of the words "beer", "milk" and "oil" and whose length is between 20-30 characters.</p>
+<p>Note that the criteria can be combined as preferred. You find below a criterion which accepts the lines which have at least one of the words "beer", "milk" and "oil" and whose length is between 20-30 characters.</p>
 
 <pre class="sh_java">
     Criterion words = new AtLeastOne(
@@ -11886,7 +11886,7 @@ public static void main(String[] args) {
                          new Not( new LengthAtLeast(31)),
                        );
 
-    Criterion wanted = new Both(words, reightLength);
+    Criterion wanted = new Both(words, rightLength);
 </pre>
 
 </div>
@@ -11972,9 +11972,9 @@ public static void main(String[] args) {
 
 <h4>Worm </h4>
 
-<p>Implement the class <code>Worm</code> in the package <code>wormgame.domain</code>. The class <code>Worm</code> has the constructor <code>public Worm(int originalX, int originalY, Suunta originalDirection)</code>, which creates a new worm whose direction is the parameter <code>originalDirection</code>. Worm is composed of a list of instances of the class <code>Piece</code>. Attention: the pre-made enum <code>Direction</code> can be found in the package <code>wormgame</code>.</p>
+<p>Implement the class <code>Worm</code> in the package <code>wormgame.domain</code>. The class <code>Worm</code> has the constructor <code>public Worm(int originalX, int originalY, Direction originalDirection)</code>, which creates a new worm whose direction is the parameter <code>originalDirection</code>. Worm is composed of a list of instances of the class <code>Piece</code>. Attention: the pre-made enum <code>Direction</code> can be found in the package <code>wormgame</code>.</p>
 
-<p>When it's created, Worm's length is one, but its "mature" lenght is three. Worm has to grow by one piece while it moves. When its length is three, Worm grows only by eating.</p>
+<p>When it's created, Worm's length is one, but its "mature" length is three. Worm has to grow by one piece while it moves. When its length is three, Worm grows only by eating.</p>
 
 <p>Implement the following methods</p>
 
@@ -12110,7 +12110,7 @@ true
 
 <p>We have received a lot of valuable feedback through TMC. Therefore, as your last task in the course we would like to have feedback on the course in general. Give feedback by filling <a href="https://ilmo.cs.helsinki.fi/kurssit/servlet/Valinta">this</a> form. The feedback is anonymous.</p>
 
-<p>In order to receive the points of this excercise, run the TMC tests and send the exercise to our server. </p>
+<p>In order to receive the points of this exercise, run the TMC tests and send the exercise to our server. </p>
 
 </div>
 </div>

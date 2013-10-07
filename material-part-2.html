@@ -11248,9 +11248,9 @@ green
 <pre class="sh_java">
     EvaluationRegister ratings = new EvaluationRegister();
 
-    Film goneWithTheWind = new Elokuva("Gone with the Wind");
-    Film theBridgesOfMadisonCounty = new Elokuva("The Bridges of Madison County");
-    Film eraserhead = new Elokuva("Eraserhead");
+    Film goneWithTheWind = new Film("Gone with the Wind");
+    Film theBridgesOfMadisonCounty = new Film("The Bridges of Madison County");
+    Film eraserhead = new Film("Eraserhead");
 
     Film matti = new Person("Matti");
     Film pekka = new Person("Pekka");
@@ -11328,7 +11328,7 @@ NetBeans allows for the automatic creation of the <code>equals</code> and <code>
 <pre class="sh_java">
     Rating given = Rating.GOOD;
     System.out.println("Rating " + given + ", value " + given.getValue());
-    given = Value.NEUTRAL;
+    given = Rating.NEUTRAL;
     System.out.println("Rating " + given + ", value " + given.getValue());
 </pre>
 
@@ -11339,7 +11339,7 @@ Rating NEUTRAL, value 1
 
 <h4>RatingRegister, Part 1</h4>
 
-<p>Let's get started with the implementation necessary t store the ratings.</p>
+<p>Let's get started with the implementation necessary to store the ratings.</p>
 
 <p>Create the class <code>RatingRegister</code> in the package <code>reference</code>; the class has the constructor <code>public RatingRegister()</code>, as well as the following methods:</p>
 
@@ -11380,7 +11380,7 @@ Ratings for Eraserhead: [BAD, BAD, GOOD]
 <p>Add the following methods to the class <code>RatingRegister</code>:</p>
 
 <ul>
-  <li><code>public void addRating(Person person, Film film, Rating rating)</code> adds the rating of a specific film to the paramter person. The same person can recommend a specific film only once. The person rating has also to be added to the ratings connected to all the films.</li>
+  <li><code>public void addRating(Person person, Film film, Rating rating)</code> adds the rating of a specific film to the parameter person. The same person can recommend a specific film only once. The person rating has also to be added to the ratings connected to all the films.</li>
   <li><code>public Rating getRating(Person person, Film film)</code> returns the rating the paramater person has assigned to the parameter film. If the person hasn't evaluated such film, the method returns <code>Rating.NOT_WATCHED</code>.</li>
  <li><code>public Map&lt;Film, Rating&gt; getPersonalRatings(Person person)</code> returns a HashMap which contains the person's ratings. The HashMap keys are the evaluated films, and their values are the ratings of these films.</li>
  <li><code>public List&lt;Person&gt; reviewers()</code> returns a list of the people who have evaluate the films.</li></ul>
@@ -11399,18 +11399,18 @@ Ratings for Eraserhead: [BAD, BAD, GOOD]
     Person pekka = new Person("Pekka");
 
     ratings.addRating(matti, goneWithTheWind, Rating.BAD);
-    ratings.addRating(matti, eraserhead, Rating.NICE);
+    ratings.addRating(matti, eraserhead, Rating.OK);
 
-    ratings.addRating(pekka, goneWithTheWind, Rating.NICE);
-    ratings.addRating(pekka, eraserhead, Rating.NICE);
+    ratings.addRating(pekka, goneWithTheWind, Rating.GOOD);
+    ratings.addRating(pekka, eraserhead, Rating.GOOD);
 
     System.out.println("Ratings for Eraserhead: " + ratings.getRatings(eraserhead));
     System.out.println("Matti's ratings: " + ratings.getPersonalRatings(matti));
-    System.out.println("Reviwers: " + ratings.reviewers());
+    System.out.println("Reviewers: " + ratings.reviewers());
 </pre>
 
 <pre>
-Ratings for Eraserhead: [NICE, NICE]
+Ratings for Eraserhead: [OK, GOOD]
 Matti's ratings: {Gone with the Wind=BAD, Eraserhead=OK}
 Reviewers: [Pekka, Matti]
 </pre>
@@ -11519,7 +11519,7 @@ The films after sorting: [The Bridges of Madison County, Gone with the Wind, Era
     ratings.addRating(pekka, theBridgesOfMadisonCounty, Rating.BAD);
     ratings.addRating(pekka, eraserhead, Rating.MEDIOCRE);
 
-    Reference ref = new Reference(votes);
+    Reference ref = new Reference(ratings);
     Film recommended = ref.recommendFilm(mikke);
     System.out.println("The film recommended to Michael is: " + recommended);
 </pre>
@@ -11583,7 +11583,7 @@ The film recommended to Michael is: The Bridges of Madison County
 
 <p>Matti has to be recommended a film according to Thomas' taste: the recommendation will be the Blues Brothers.</p>
 
-<p>Implement the recommendation mechanism described above. The method should <code>recommendFilm</code> should return <code>null</code> in two cases: if you cannot find any film to recommend; if you find a, say, person1 whose film taste is appropriate to recommend films to, say, person2, but person1 has judge bad, mediocre, or neutral, all the films person2 hasn't watched, yet. The approach described above has to work also if the person hasn't added any rating.</p>
+<p>Implement the recommendation mechanism described above. The method <code>recommendFilm</code> should return <code>null</code> in two cases: if you cannot find any film to recommend; if you find a, say, person1 whose film taste is appropriate to recommend films to, say, person2, but person1 has judge bad, mediocre, or neutral, all the films person2 hasn't watched, yet. The approach described above has to work also if the person hasn't added any rating.</p>
 
 <p>Do not suggest films which have already been watched.</p>
 
@@ -11707,7 +11707,7 @@ public class ContainsWord implements Criterion {
 
 <p>The class objects are quite simple, in fact, and they only remember the word given as constructor parameter. The only method of the object can be asked whether the criterion complies to the parameter String; if so, this means that the object contains the word stored into the String object.</p>
 
-<p>Together with the excercise body, you find the pre-made class <code>GutenbergReader</code>, which helps you to analyze book lines according to the filtering criteria geven as parameter:</p>
+<p>Together with the excercise body, you find the pre-made class <code>GutenbergReader</code>, which helps you to analyze book lines according to the filtering criteria given as parameter:</p>
 
 <pre class="sh_java">
 public class GutenbergReader {
@@ -11718,8 +11718,8 @@ public class GutenbergReader {
         // the code which retrieves the book from the Internet
     }
 
-    public List&lg;String&gt; linesWhichComplyWith(Criterion c){
-        List&lg;String&gt; complyingLines = new ArrayList&lg;String&gt;();
+    public List&lt;String&gt; linesWhichComplyWith(Criterion c){
+        List&lt;String&gt; complyingLines = new ArrayList&lt;String&gt;();
 
         for (String line : lines) {
             if (c.complies(line)) {
@@ -11861,9 +11861,9 @@ public static void main(String[] args) {
     GutenbergReader book = new GutenbergReader(address);
 
     Criterion criterion =new AtLeastOne(
-                    new ContainsTheWord("beer"),
-                    new ContainsTheWord("milk"),
-                    new ContainsTheWord("oil")
+                    new ContainsWord("beer"),
+                    new ContainsWord("milk"),
+                    new ContainsWord("oil")
                 );
 
     for (String line : book.linesWhichComplyWith(criterion)) {
@@ -11938,7 +11938,7 @@ public static void main(String[] args) {
 }
 </pre>
 
-<p>The curly brackets are on their own lines. There are up to four values in each line of the table, and the first value requires an initial space. Before each number, and after the comma there must be exaactly one space.</p>
+<p>The curly brackets are on their own lines. There are up to four values in each line of the table, and the first value requires an initial space. Before each number, and after the comma there must be exactly one space.</p>
 
 </div>
 
@@ -12108,7 +12108,7 @@ true
 
 <h3>Course Feedback</h3>
 
-<p>We have received a lot of valuable feedback through TMC. Therefore, as your last task in the course we would like to have feedback on the course in general. Give feedback by filling <a href="https://ilmo.cs.helsinki.fi/kurssit/servlet/Valinta">this</a> form. The feedback is anonymous.</p>
+<p>We have received a lot of valuable feedback through TMC. Therefore, as your last task in the course we would like to have feedback on the course in general. Give feedback by writing your comments in the downloaded exercise and then submit it.</p>
 
 <p>In order to receive the points of this exercise, run the TMC tests and send the exercise to our server. </p>
 

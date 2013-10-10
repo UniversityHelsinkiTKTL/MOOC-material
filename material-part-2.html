@@ -11952,7 +11952,8 @@ public static void main(String[] args) {
 <h3>Worm Game</h3>
 
 
-<p>In this exercise, we create the structure and functionality for the following worm game.</p>
+<p>In this exercise, we create the structure and functionality for the following worm game. Unlike in the picture
+   below, our worm game will be coloured differently: worm is black, apple is red and background is gray.</p>
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/snakegame.png"/></p>
 
@@ -11979,7 +11980,7 @@ public static void main(String[] args) {
 <p>Implement the following methods</p>
 
 <ul>
-  <li><code>public Suunta getDirection()</code> return's Worm's direction.</li>
+  <li><code>public Direction getDirection()</code> return's Worm's direction.</li>
   <li><code>public void setDirection(Direction dir)</code> sets a new direction for the worm. The worm starts to move in the new direction when the method <code>move</code> is called again.</li>
   <li><code>public int getLength()</code> returns the Worm's length. The Worm's length has to be equal to the length of the list returned by the method <code>getPieces()</code>.</li>
   <li><code>public List&lt;Piece&gt; getPieces()</code> returns a list of Piece objects which the worm is composed of. The pieces in the list are in order, with the worm head at the end of the list.</li>
@@ -12069,7 +12070,7 @@ true
 
 <p>Create the class <code>DrawingBoard</code> in <code>wormgame.gui</code>. The <code>DrawingBoard</code> inherits the class <code>JPanel</code>, and its constructor receives an instance of the class <code>WormGame</code> and the int variable <code>pieceLength</code> as parameters. The variable <code>pieceLength</code> tells the dimension of the pieces; length and height of the pieces are equal.</p>
 
-<p>Replace the <code>paintComponent</code> method which was inherited from the class <code>JPanel</code> so that the method draws the worm and the apple. Use the Graphics object's <code>fill3DRect</code> method to draw the worm. The worm colour has to be white (<code>Color.WHITE</code>). The apple has to be drawn with the Graphics object's <code>fillOval</code> method, and its colour has to be red.</p>
+<p>Replace the <code>paintComponent</code> method which was inherited from the class <code>JPanel</code> so that the method draws the worm and the apple. Use the Graphics object's <code>fill3DRect</code> method to draw the worm. The worm colour has to be black (<code>Color.BLACK</code>). The apple has to be drawn with the Graphics object's <code>fillOval</code> method, and its colour has to be red.</p>
 
 <p>Also implement the interface <code>Updatable</code> in <code>DrawingBoard</code>. The method <code>update</code> of Updatable has to call the <code>repaint</code> method of the class JPanel.</p>
 

@@ -1316,7 +1316,7 @@ lennon = new Calculator(3);
 
         <h4>A Reference-Type Variables and Method Parameters</h4>
 
-        <p>When a reference-type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original-type variables, we copy the reference and not their value. In fact, we can we can modify the object behind the reference even from within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
+        <p>When a reference-type variable is given to a method as its parameter, we create a method parameter which is the copy of the reference of a variable. In other words, we copy the reference to the parameter's own slot. Differently from what happens with original-type variables, we copy the reference and not their value. In fact, we can modify the object behind the reference even from within the method. Let us take the method <code>public void addToCalculator(Calculator calculator, int amount)</code>.</p>
 
 <pre class="sh_java">
 public void addToCalculator(Calculator calculator, int amount) {
@@ -1875,7 +1875,7 @@ public class Main {
 
     <p>Adding and retrieving items based on the keys allows for a particularly quick search process. Instead of parsing the table items one by one (in the worst case we would have to go through all the items), and instead of looking for a value with a binary search (in which case we would have to go through a number of items which would depend on the logarithm of the table size), we can look at only one table index and check whether a value is mapped to that index.</p>
 
-    <p>HashMap uses the <code>Object</code> class <code>hashCode()</code> method to find a key value. Every HashMap subclass will <em>inherit</em> the <code>hashCode()</code> method. However, we will not go deep into HashMap workings in this course. We will return to inheritance in week 4.</p>
+    <p>HashMap uses the <code>Object</code> class <code>hashCode()</code> method to find a key value. Every HashMap subclass will <em>inherit</em> the <code>hashCode()</code> method. However, we will not go deep into HashMap workings in this course. We will return to inheritance in week 10.</p>
 
 
     <p>Java's <code>HashMap</code> class encapsulates - or hides - the way it works, and it returns made-up methods ready to use.</p>
@@ -1922,7 +1922,7 @@ System.out.println(numbers.get("Three"));
 System.out.println(numbers.get("Yksi"));
 </pre>
 
-    <p>Because the key "<code>Yksi</code>" is assigned a new value, the print output of the example is like the following.</p>
+    <p>Because the key "<code>One</code>" is assigned a new value, the print output of the example is like the following.</p>
 
 <pre>
 Uno

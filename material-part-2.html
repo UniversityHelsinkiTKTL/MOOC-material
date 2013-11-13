@@ -5148,7 +5148,7 @@ public class Person implements Identifiable {
     }
 
     @Override
-    pulic toString(){
+    public toString(){
         return this.name + " ID: " +this.id;
     }
 }
@@ -5236,7 +5236,7 @@ public class Person implements Identifiable, Comparable&lt;Person&gt; {
 
 <pre class="sh_java">
     public List&lt;Identifiable&gt; sortAndGetEverything() {
-        ArrayList&lt;Identifiable&gt; all = new ArrayList&lt;Identifiable&gt;(registered.values());;
+        ArrayList&lt;Identifiable&gt; all = new ArrayList&lt;Identifiable&gt;(registered.values());
         Collections.sort(all);
         return all;
     }

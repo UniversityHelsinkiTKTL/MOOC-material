@@ -3309,7 +3309,7 @@ public interface NationalService {
     pages.add("A method can call itself.");
 
     Readable book = new EBook("Recursion Principles", pages);
-    for(int page = 0; page &lt; book.howManyPages(); page++) {
+    for(int page = 0; page &lt; ((EBook)book).howManyPages(); page++) {
         System.out.println(book.read());
     }
             </pre>

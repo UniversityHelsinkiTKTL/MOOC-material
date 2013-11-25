@@ -8719,7 +8719,7 @@ false
 
 <pre class="sh_java">
    // somewhere, with a definition like:
-   // ArrayList&ltObject&gt list = new ...
+   // ArrayList&lt;Object&gt; list = new ...
 
    for ( Object object : list ) {
       if ( hasToBeRemoved(object) ) {
@@ -8732,9 +8732,9 @@ false
 
 <pre class="sh_java">
    // somewhere, with a definition like:
-   // ArrayList&ltObject&gt list = new ...
+   // ArrayList&lt;Object&gt; list = new ...
 
-   ArrayList&ltObject&gt toBeRemoved = new ArrayList&ltObject&gt();
+   ArrayList&lt;Object&gt; toBeRemoved = new ArrayList&lt;Object&gt;();
 
    for ( Object object : list ) {
       if ( hasToBeRemoved(object) ) {

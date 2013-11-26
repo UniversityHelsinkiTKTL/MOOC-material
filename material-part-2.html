@@ -9218,7 +9218,7 @@ computer:tietokone
 
 <p>but not both!</p>
 
-    <p>It may be useful to wirte the new translation list over the old file; in fact, the <code>append</code> command which came out in the material should not be used.</p>
+    <p>It may be useful to write the new translation list over the old file; in fact, the <code>append</code> command which came out in the material should not be used.</p>
 
 <p>The final version of your dictionary should be used in the following way:</p>
 
@@ -9242,12 +9242,12 @@ dict.save();
 <p><big><strong><strong>Attention!</strong> A part of the user interface tests opens a user interface and uses your mouse to click on the user interface components. When you are executing user interface tests, do not use your mouse!</strong></big></p>
 <p><hr/></p>
 
-<p>So far, our programs have only been composed of application logic and text user interface which made use of application logic. In a couple of exercises we have also got a grafic user interface, but they had usally been created for us. Next, we see how we can create grafic user interfaces in Java.</p>
+<p>So far, our programs have only been composed of application logic and text user interface which made use of application logic. In a couple of exercises we have also got a graphical user interface, but they had usually been created for us. Next, we see how we can create graphical user interfaces in Java.</p>
 
 <p>User interfaces are windows which contain different types of buttons, text boxes, and menus. When we program user interfaces we use Java's
 <a href="http://docs.oracle.com/javase/tutorial/ui/features/components.html" target="_blank">Swing</a> component library, which provides us with classes to create and handle user interfaces.</p>
 
-<p>The basic element of a user interface is the class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JFrame.html" target="_blank">JFrame</a></code>, and we create the user interface components in its compenent section. Orthodox user interfaces implement the interface <code>Runnable</code>, and they are started in the main program. In this course, we use the following user interface body:</p>
+<p>The basic element of a user interface is the class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JFrame.html" target="_blank">JFrame</a></code>, and we create the user interface components in its component section. Orthodox user interfaces implement the interface <code>Runnable</code>, and they are started in the main program. In this course, we use the following user interface body:</p>
 
 <pre class="sh_java">
 import java.awt.Container;
@@ -9313,9 +9313,9 @@ public class UserInterface implements Runnable {
     }
 </pre>
 
-<p>The interface <code>Runnable</code> defines the method <code>public void run()</code>, which has to be implemented by all classes which implement the interface. With the method <code>public void run()</code>, we first create a new JFrame whose title is <code>"Title"</code>. After this, we define the frame size whose breath is 200 pixels and height is 100 pixels. The statement <code>frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</code> tells to the JFrame object that the user interface has to close when the user presses the cross icon.</p>
+<p>The interface <code>Runnable</code> defines the method <code>public void run()</code>, which has to be implemented by all classes which implement the interface. With the method <code>public void run()</code>, we first create a new JFrame whose title is <code>"Title"</code>. After this, we define the frame size whose width is 200 pixels and height is 100 pixels. The statement <code>frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</code> tells to the JFrame object that the user interface has to close when the user presses the cross icon.</p>
 
-<p>Afterwards, we call the method <code>createComponents</code> which is defined lower down in the class.. The method is given <code>JFrame</code>'s <em><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Container.html" target="_blank">Container</a></em> object as parameter, where we can add user interface components.</p>
+<p>Afterwards, we call the method <code>createComponents</code> which is defined lower down in the class. The method is given <code>JFrame</code>'s <em><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Container.html" target="_blank">Container</a></em> object as parameter, where we can add user interface components.</p>
 
 <p>Finally, we call the method <code>frame.pack()</code> which packs the JFrame object as defined before and sorts the user interface components of the Container object contained by JFrame. At the end, we call the method <code>frame.setVisible(true)</code>, to show the user interface to the user.</p>
 
@@ -9349,7 +9349,7 @@ public class Main {
 <h3>UI Components</h3>
 
 
-<p>User Interfaces are composed of a backgroud window (JFrame) and a component Container, as well as the UI components which are set into the container. UI components are different kinds of buttons, texts, and other items. Every component has got its own class. It's useful to get accustomed to Oracle visual sequence of componets at the address <a href="http://docs.oracle.com/javase/tutorial/ui/features/components.html" target="_blank">http://docs.oracle.com/javase/tutorial/ui/features/components.html</a>.</p>
+<p>User Interfaces are composed of a background window (JFrame) and a component Container, as well as the UI components which are set into the container. UI components are different kinds of buttons, texts, and other items. Every component has got its own class. It's useful to get accustomed to Oracle visual sequence of componets at the address <a href="http://docs.oracle.com/javase/tutorial/ui/features/components.html" target="_blank">http://docs.oracle.com/javase/tutorial/ui/features/components.html</a>.</p>
 
 <h4>Text</h4>
 
@@ -9403,7 +9403,7 @@ public class Main {
     }
 </pre>
 
-<p>When we exectute the program we see the following user interface.</p>
+<p>When we execute the program we see the following user interface.</p>
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/text.png"/></p>
 
@@ -9411,7 +9411,7 @@ public class Main {
 
 <h3>Setting up UI Components</h3>
 
-<p>All UI components have got their own location in the user inteface. The component location is defined by the UI <em>Layout Manager</em>. Before, when we tried to add many different components to our <code>Container</code> object, only one component became visible. Every <code>Container</code> object has got a default UI layout manager: <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/BorderLayout.html" target="_blank">BorderLayout</a></code>.</p>
+<p>All UI components have got their own location in the user interface. The component location is defined by the UI <em>Layout Manager</em>. Before, when we tried to add many different components to our <code>Container</code> object, only one component became visible. Every <code>Container</code> object has got a default UI layout manager: <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/BorderLayout.html" target="_blank">BorderLayout</a></code>.</p>
 
 <p>BorderLayout places the UI components to five areas: the user interface centre and the four compass points.  When we use the Container's <code>add</code> method, we can give it another parameter, clarifying where we would like to place the component. the BorderLayout class has got five class variables available for use: <code>BorderLayout.NORTH</code>, <code>BorderLayout.EAST</code>, <code>BorderLayout.SOUTH</code>, <code>BorderLayout.WEST</code>, ja <code>BorderLayout.CENTER</code>.</p>
 
@@ -9818,9 +9818,9 @@ Value: 2
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/nestedobjects.png"/></p>
 
-<p>We can place Container objects inside each other. The class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JPanel.html" target="_blank">JPanel</a></code> (see also <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/panel.html" target="_blank">How to Use Panels</a>) allows for nested <code>Container</code> objects. It is possible to add UI components to a <code>JPanel</code> instance in the same way we add components to the <code>Container</code> instance of <code>JFrame</code> class. Moreover, it is possible to add an instance of <code>JPanel</code> to a <code>Container</code> object. This makes possible to use many <code>Container</code> objects to develop one user inteface.</p>
+<p>We can place Container objects inside each other. The class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JPanel.html" target="_blank">JPanel</a></code> (see also <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/panel.html" target="_blank">How to Use Panels</a>) allows for nested <code>Container</code> objects. It is possible to add UI components to a <code>JPanel</code> instance in the same way we add components to the <code>Container</code> instance of <code>JFrame</code> class. Moreover, it is possible to add an instance of <code>JPanel</code> to a <code>Container</code> object. This makes possible to use many <code>Container</code> objects to develop one user interface.</p>
 
-<p>Creating a user interface like the one above is easier with <code>JPanel</code>. Let's create a user inteface with three buttons -- Execute, Test, and Send -- plus a text field. The buttons are a group on its own, and we assign them to a <code>JPanel</code> object which is placed in the lower part of the <code>Container</code> object which we have got from <code>JFrame</code> class.</p>
+<p>Creating a user interface like the one above is easier with <code>JPanel</code>. Let's create a user interface with three buttons -- Execute, Test, and Send -- plus a text field. The buttons are a group on its own, and we assign them to a <code>JPanel</code> object which is placed in the lower part of the <code>Container</code> object which we have got from <code>JFrame</code> class.</p>
 
 <pre class="sh_java">
     private void createComponents(Container container) {
@@ -9987,7 +9987,7 @@ public class DrawingBoard extends JPanel {
 </div>
 </div>
 
-<p>Let's extend our previous example and draw an independent avatar-object in our user inteface. Let's create the class <code>Avatar</code>; it has the coordinates of the point where it appears, and it is a circle with a 10-pixel diameter. The location of the avatar can be changed by calling its <code>move</code> method.</p>
+<p>Let's extend our previous example and draw an independent avatar-object in our user interface. Let's create the class <code>Avatar</code>; it has the coordinates of the point where it appears, and it is a circle with a 10-pixel diameter. The location of the avatar can be changed by calling its <code>move</code> method.</p>
 
 <pre class="sh_java">
 import java.awt.Graphics;

@@ -1467,7 +1467,7 @@ public class Peson {
 
     <h3>Non-Static</h3>
 
-    <p>Non-static methods and variables are related to objects. The object variables, or attributes, are defined at the beginning of the class. When an object is created with the <code>new</code> operator, we allocate storage space for all its object variables. The variable values are personal of the object, which means that every object receives personal variable values. Let us focus again on the class <code>Person</code>, which has got the object variable <code>name</code> and <code>money</code>.</p>
+    <p>Non-static methods and variables are related to objects. The object variables, or attributes, are defined at the beginning of the class. When an object is created with the <code>new</code> operator, we allocate storage space for all its object variables. The variable values are personal of the object, which means that every object receives personal variable values. Let us focus again on the class <code>Person</code>, which has the object variable <code>name</code> and <code>money</code>.</p>
 
     <pre class="sh_java">
 public class Person {
@@ -2247,7 +2247,7 @@ public class TwitchRegister {
 
                 <p>Be careful in a situation where you ask for the debt of a person who hasn't got debts. Go back to the final example of section 4.3, if you need!</p>
 
-                <p>Attention! The promissory note does not need to take into account old loans. When you set a new debt to a person who has got an old one, the old one is canceled.</p>
+                <p>Attention! The promissory note does not need to take into account old loans. When you set a new debt to a person who has an old one, the old one is canceled.</p>
 
                 <pre class="sh_java">
   PromissoryNote mattisNote = new PromissoryNote();
@@ -2268,7 +2268,7 @@ public class TwitchRegister {
 
                 <h4 class="req">Class Dictionary</h4>
 
-                <p>Create a class called <code>Dictionary</code>. The class has got the following methods:</p>
+                <p>Create a class called <code>Dictionary</code>. The class has the following methods:</p>
 
                 <ul>
                   <li> <code>public String translate(String word)</code>, returning the translation of its parameter. If the word is unknown, it returns <em>null</em>.</li>
@@ -2504,7 +2504,7 @@ Command: Cheers!
 
                 <p>There can be various different flights and planes. The same plane can also go on various different flights (various different routes). The application must offers two different panels. First, the airport worker inputs the flight and plane information to the system.</p>
 
-                <p>When the user exits the panel, the user can use the flight service. The flight service has got three actions: printing planes, printing flights, and printing user airplane information. In addition to this, the user can exit the application by choosing <code>x</code>. If the user inputs an invalid command, the command is asked again.</p>
+                <p>When the user exits the panel, the user can use the flight service. The flight service has three actions: printing planes, printing flights, and printing user airplane information. In addition to this, the user can exit the application by choosing <code>x</code>. If the user inputs an invalid command, the command is asked again.</p>
 
 
                 <pre>
@@ -2933,7 +2933,7 @@ null
 
             <p>To be sure the HashMap worked in the way we want - i.e. it returned the loaner when the key is an object with the right <em>content</em> (not necessarily the same object as the original value) - the class which works as key must overwrite both the <code>equals</code> method and the <code>hashCode</code> method. The method must be overwritten in such a way, so that it would assign the same numeric value to all objects which have the same content. Some objects with different content may eventually be assigned the same hashCode; however, different content objects should be assigned the same hashCode as rarely as possible, if we want our HashMap to be efficient.</p>
 
-            <p>Previously, we have successfully used <code>String</code> objects as HashMap keys, and we can therefore say that the <code>String</code> class has got a <code>hashCode</code> implementation which works as expected. Let us <em>delegate</em> the calculation to the <code>String</code> object.</p>
+            <p>Previously, we have successfully used <code>String</code> objects as HashMap keys, and we can therefore say that the <code>String</code> class has a <code>hashCode</code> implementation which works as expected. Let us <em>delegate</em> the calculation to the <code>String</code> object.</p>
 
             <pre class="sh_java">
     public int hashCode() {
@@ -3132,7 +3132,7 @@ Jürgen
 
                 <h4>The Owner, Based of the Registration Plate</h4>
 
-                <p>Implement the class <code>VehicleRegister</code> which has got the following methods:</p>
+                <p>Implement the class <code>VehicleRegister</code> which has the following methods:</p>
 
                 <ul>
                   <li><code>public boolean add(RegistrationPlate plate, String owner)</code>, which adds the parameter owner of the car which corresponds to the parameter registration plate. The method returns true if the car had no owner; if the car had an owner already, the method returns false and it doesn't do anything</li>
@@ -3280,11 +3280,11 @@ public interface NationalService {
 
                 <h4>CivilService</h4>
 
-                <p>Create the class <code>CivilService</code> which implements your <code>NationalService</code> interface. The class constructor is without parameter. The class has got the object variable daysLeft which is initialised in the constructor receiving the value 362.</p>
+                <p>Create the class <code>CivilService</code> which implements your <code>NationalService</code> interface. The class constructor is without parameter. The class has the object variable daysLeft which is initialised in the constructor receiving the value 362.</p>
 
                 <h4>MilitaryService</h4>
 
-                <p>Create the class <code>MilitaryService</code> which implements your <code>NationalService</code> interface. The class constructor has got one parameter, defining the days of service (<code>int daysLeft</code>).</p>
+                <p>Create the class <code>MilitaryService</code> which implements your <code>NationalService</code> interface. The class constructor has one parameter, defining the days of service (<code>int daysLeft</code>).</p>
               </div>
             </div>
 
@@ -3297,7 +3297,7 @@ public interface NationalService {
     SMS message = new SMS("teacher", "Something crazy is going to happen");
             </pre>
 
-            <p>The type of an object can be different from its class. For instance, if a class implements the interface <code>Readable</code>, its type is <code>Readable</code>, too. For instance, since the class <code>SMS</code> implements the interface <code>Readable</code>, it has got two types: <code>SMS</code> and <code>Readable</code>.</p>
+            <p>The type of an object can be different from its class. For instance, if a class implements the interface <code>Readable</code>, its type is <code>Readable</code>, too. For instance, since the class <code>SMS</code> implements the interface <code>Readable</code>, it has two types: <code>SMS</code> and <code>Readable</code>.</p>
 
             <pre class="sh_java">
     SMS message = new SMS("teacher", "Awesome stuff!");
@@ -3372,7 +3372,7 @@ Wow, this printer is able to print them, actually!
 {3, 5} are the numbers in common between {1, 3, 5} and {2, 3, 4, 5}.
           </pre>
 
-          <p>Let us implement another <code>numberList</code> class, where we can add interesting readable stuff. The class has got an <code>ArrayList</code> instance as object variable where we save things to read. We add items to our number list through the <code>add</code> method which receives a <code>Readable</code> variable as parameter.</p>
+          <p>Let us implement another <code>numberList</code> class, where we can add interesting readable stuff. The class has an <code>ArrayList</code> instance as object variable where we save things to read. We add items to our number list through the <code>add</code> method which receives a <code>Readable</code> variable as parameter.</p>
 
           <pre class="sh_java">
 public class NumberList {
@@ -3427,14 +3427,14 @@ public class NumberList implements Readable {
     joelList.add(new SMS("matti", "have you already written the tests?"));
     joelList.add(new SMS("matti", "did you have a look at the submissions?"));
 
-    System.out.println("Joel has got " + joelList.howManyReadables() + " messages to read");
+    System.out.println("Joel has " + joelList.howManyReadables() + " messages to read");
           </pre>
 
           <pre>
-Joel has got got 2 messages to read
+Joel has got 2 messages to read
           </pre>
 
-          <p>Because the type of <code>NumerList</code> is <code>Readable</code>, we can add <code>NumerList</code> objects to our number list, too. In the example below, Joel has got a lot of messages to read, luckily Mikael deals with it and reads the messages on behalf of Joel.</p>
+          <p>Because the type of <code>NumerList</code> is <code>Readable</code>, we can add <code>NumerList</code> objects to our number list, too. In the example below, Joel has a lot of messages to read, luckily Mikael deals with it and reads the messages on behalf of Joel.</p>
 
           <pre class="sh_java">
     NumberList joelList = new NumberList();
@@ -3442,7 +3442,7 @@ Joel has got got 2 messages to read
         joelList.add(new SMS("matti", "have you already written the tests?"));
     }
 
-    System.out.println("Joel has got " + joelList.howManyReadables() + " messages to read");
+    System.out.println("Joel has " + joelList.howManyReadables() + " messages to read");
     System.out.println("Let's delegate some reading to Mikael");
 
     NumberList mikaelList = new NumberList();
@@ -3450,14 +3450,14 @@ Joel has got got 2 messages to read
     mikaelList.read();
 
     System.out.println();
-    System.out.println("Joel has got " + joelList.howManyReadables() + " messages to read");
+    System.out.println("Joel has " + joelList.howManyReadables() + " messages to read");
           </pre>
 
           <pre>
-Joel has got 1000 messages to read
+Joel has 1000 messages to read
 Let's delegate some reading to Mikael
 
-Joel has got 0 messages to read
+Joel has 0 messages to read
           </pre>
 
           <p>The <cide>read</code> method which is called in connection to Mikael's list parses all the <code>Readable</code> objects contained in the list, and calls their <code>read</code> method. At the end of each <code>read</code> method call the list is cleared. In other words, Joel's number list is cleared as soon as Mikael reads it.</p>
@@ -3569,7 +3569,7 @@ public class Box {
 
             <h4 class="req">Boxes are Stored too!</h4>
 
-            <p>Implementing the interface <code>ToBeStored</code> requires that the class has got the method <code>double weight()</code>. In fact, we just added this method to Box. Boxes can be stored!</p>
+            <p>Implementing the interface <code>ToBeStored</code> requires that the class has the method <code>double weight()</code>. In fact, we just added this method to Box. Boxes can be stored!</p>
 
             <p>Boxes are objects where we can store object which implement the interface <code>ToBeStored</code>. Boxes also implement this interface. This means that <b>you can also put boxes inside your boxes!</b></p>
 
@@ -3850,7 +3850,7 @@ List&lt;String&gt; strings = new LinkedList&lt;String&gt;();
 strings.add("A string object within a LinkedList object!");
         </pre>
 
-        <p>Both implementations of the <code>List</code> interface work in the same way, in the user point of view. In fact, the interface <em>abstracts</em> their internal functionality. ArrayList and linkedList internal construction is evidently different, anyway. ArrayList saves the objects into a table, and the search is quick with a specific index. Differently, LinkedList builds up a list where each item has got a reference to the following item. When we search for an item in a linked list, we have to go through all the list items till we reach the index.</p>
+        <p>Both implementations of the <code>List</code> interface work in the same way, in the user point of view. In fact, the interface <em>abstracts</em> their internal functionality. ArrayList and linkedList internal construction is evidently different, anyway. ArrayList saves the objects into a table, and the search is quick with a specific index. Differently, LinkedList builds up a list where each item has a reference to the following item. When we search for an item in a linked list, we have to go through all the list items till we reach the index.</p>
 
         <p>When it comes to bigger lists, we can point out more than evident performance differences. LinkedList's strength is that adding new items is always fast. Differently, behind ArrayList there is a table which grows as it fills up. Increasing the size of the table means creating a new one and copying there the information of the old. However, searching against an index is extremely fast with an ArrayList, whereas we have to go thourgh all the list elements one by one before reaching the one we want, with a LinkedList. More information about data structures such as ArrayList and LinkedList internal implementation comes with the course <em>Data structures and algorithms</em>.</p>
 
@@ -4212,7 +4212,7 @@ basket price: 11
 
             <h4>Shop</h4>
 
-            <p>Now, all the parts of our online shop are ready. Our online shop has got a storage house, which contains all products. We have got a shopping basket to manage all our customers. Whenever a customer chooses a purchase, we add it to the shopping basket if the product is available in our storage house. Meanwhile, the storage stocks are reduced by one.</p>
+            <p>Now, all the parts of our online shop are ready. Our online shop has a storage house, which contains all products. We have got a shopping basket to manage all our customers. Whenever a customer chooses a purchase, we add it to the shopping basket if the product is available in our storage house. Meanwhile, the storage stocks are reduced by one.</p>
 
             <p>Below, you find a ready-made code body for your online shop. Create the class <code>Shop</code> to your project, and copy the code below into it.</p>
 
@@ -4334,7 +4334,7 @@ public class Slot&lt;T&gt; {
 
         <h3>The Interface which Makes Use of Generics: Comparable</h3>
 
-        <p>In addition to normal interfaces, Java has got interfaces which make use of generics. The internal value types of generic interfaces are defined in the same way as for generic classes. Let us have a look at Java made-up <code><a href="http://java.sun.com/javase/6/docs/api/java/lang/Comparable.html">Comparable</a></code> interface. The <code>Comparable</code> interface defines the <code>compareTo</code> method, which returns the place of <code>this</code> object, in relation to the parameter object (a negative number, 0, or a positive number). If <code>this</code> object is placed before the parameter object in the comparison order, the method returns a negative value, whereas it returns a positive value if it is placed after the parameter object. If the objects are placed at the same place in the comparison order, the method returns 0. With comparison order we mean the object order of magnitude defined by the programmer, i.e. the object order, when they are sorted with the sort method.</p>
+        <p>In addition to normal interfaces, Java has interfaces which make use of generics. The internal value types of generic interfaces are defined in the same way as for generic classes. Let us have a look at Java made-up <code><a href="http://java.sun.com/javase/6/docs/api/java/lang/Comparable.html">Comparable</a></code> interface. The <code>Comparable</code> interface defines the <code>compareTo</code> method, which returns the place of <code>this</code> object, in relation to the parameter object (a negative number, 0, or a positive number). If <code>this</code> object is placed before the parameter object in the comparison order, the method returns a negative value, whereas it returns a positive value if it is placed after the parameter object. If the objects are placed at the same place in the comparison order, the method returns 0. With comparison order we mean the object order of magnitude defined by the programmer, i.e. the object order, when they are sorted with the sort method.</p>
 
         <p>One of the advantages of the <code>Comparable</code> interface is that it allows us to sort a list of Comparable type keys by using the standard library method <code>Collections.sort</code>, for instance. <code>Collections.sort</code> uses the <code>compareTo</code> method of a key list to define in which order these keys should be. We call <em>Natural Ordering</em> this ordering technique which makes use of the <code>compareTo</code> method.
 
@@ -4831,9 +4831,9 @@ Position    Name
 
     <p>When we design bigger programs, we often reason about what class has to deal with what task. If we delegate the implementation of the whole program to one class, the result is inevitably chaos. A sector of software design, <em>object-oriented design</em>, includes the <em>Single Responsibility Principle</em>, which we should follow.</p>
 
-    <p>The Single Responsibility Principle states that each class should have only one clear role. If the class has got one clear role, modifying that role is easy, and only one class will have to be modified. <em>Each class should have only one reason to be modified.</em>.</p>
+    <p>The Single Responsibility Principle states that each class should have only one clear role. If the class has one clear role, modifying that role is easy, and only one class will have to be modified. <em>Each class should have only one reason to be modified.</em>.</p>
 
-    <p>Let us focus on the following class <code>Worker</code>, which has got methods to calculate his salary and to report his working hours.</p>
+    <p>Let us focus on the following class <code>Worker</code>, which has methods to calculate his salary and to report his working hours.</p>
 
     <pre class="sh_java">
 public class Worker {
@@ -4851,7 +4851,7 @@ public class Worker {
 }
     </pre>
 
-    <p>Even if the examples above do not show the concrete implementations, an alarm should go off. Our <code>Worker</code> class has got at least three different responsibilities. It represents a worker, it performes the role of a salary calculator, and the role of a working hour bookkeeping system by reporting working hours. The class above should be split into three: one should represent the worker, another should represent the salary calculator, and the third should deal with time bookkeeping.</p>
+    <p>Even if the examples above do not show the concrete implementations, an alarm should go off. Our <code>Worker</code> class has at least three different responsibilities. It represents a worker, it performes the role of a salary calculator, and the role of a working hour bookkeeping system by reporting working hours. The class above should be split into three: one should represent the worker, another should represent the salary calculator, and the third should deal with time bookkeeping.</p>
 
     <pre class="sh_java">
 public class Worker {
@@ -5009,7 +5009,7 @@ Updating the user interface
 
     <h3>A Concrete Directory Construction</h3>
 
-    <p>All the projects which can be seen are stored in your computer <em><a href="http://en.wikipedia.org/wiki/File_system" target="_blank">file system</a></em>. Each project has got its own directory (folder) which contains the project directories and files.</p>
+    <p>All the projects which can be seen are stored in your computer <em><a href="http://en.wikipedia.org/wiki/File_system" target="_blank">file system</a></em>. Each project has its own directory (folder) which contains the project directories and files.</p>
 
     <p>The project directory <code>src</code> contains the program source code. If a class package is a library, it is located in the directory <code>library</code> of the project source code directory <code>src</code>. If you are interested in it, it is possible to have a look at the concrete project structure in NetBeans, by going to the <em>Files</em> tab which is next to the <em>Projects</em> tab. If you can't see the <em>Files</em> tab, you can display it by choosing <em>Files</em> from the <em>Window</em> menu.</p>
 
@@ -5419,7 +5419,7 @@ public class BarcodeReader {
 }
 </pre>
 
-    <p>A BarcodeReader object returns a <code>Product</code> object if the barcode is found in the BarcodeReader HashMap. In the following example, we create a check-out which uses the barcode reader to add products to the purchase list. The class has got the method <code>public void buy</code> which is given an instance of <code>Identifiable</code> as parameter. The purchase adds to the purchase list the objects which are recognised by the barcode reader. If an object is not recognised, nothing happens. The method <code>printPurchases</code> prints the name of the purchased products.</p>
+    <p>A BarcodeReader object returns a <code>Product</code> object if the barcode is found in the BarcodeReader HashMap. In the following example, we create a check-out which uses the barcode reader to add products to the purchase list. The class has the method <code>public void buy</code> which is given an instance of <code>Identifiable</code> as parameter. The purchase adds to the purchase list the objects which are recognised by the barcode reader. If an object is not recognised, nothing happens. The method <code>printPurchases</code> prints the name of the purchased products.</p>
 
 <pre class="sh_java">
 package application.domain;
@@ -5560,7 +5560,7 @@ public class Class implements Interface {
 
         <h3>Moving</h3>
 
-        <p>Before moving, you pack your things and put them into boxes trying to keep the number of boxes needed as small as possible. In this exercise we simulate packing things into boxes. Each thing has got a volume, and boxes have got a maximum capacity.</p>
+        <p>Before moving, you pack your things and put them into boxes trying to keep the number of boxes needed as small as possible. In this exercise we simulate packing things into boxes. Each thing has a volume, and boxes have got a maximum capacity.</p>
 
 
         <h4>Things and Items</h4>
@@ -5653,7 +5653,7 @@ number of boxes: 2
   things in the box: 8 dm^3
         </pre>
 
-        <p>The packer has packed the things into two boxes, the first box has got the firts three things, whose total volume was 7, and the last thing in the list -- the circular saw, whose volume was 8 -- has gone to the third box. The tests do not set a limit to the number of boxes used by the packer; each thing could have been packed into a different box, and the output would have been:</p>
+        <p>The packer has packed the things into two boxes, the first box has the firts three things, whose total volume was 7, and the last thing in the list -- the circular saw, whose volume was 8 -- has gone to the third box. The tests do not set a limit to the number of boxes used by the packer; each thing could have been packed into a different box, and the output would have been:</p>
 
         <pre>
 number of boxes: 4
@@ -5850,7 +5850,7 @@ public int readNumber(Scanner reader) {
     <pre>
 Write a number: <font color="red">I won't!</font>
 You haven't written a proper number.
-Write a number: <font color="red">Matti has got a mushroom on his door.</font>
+Write a number: <font color="red">Matti has a mushroom on his door.</font>
 You haven't written a proper number.
 Write a number: <font color="red">43</font>
 
@@ -5895,7 +5895,7 @@ public class Main {
 
   <p>We can throw an exception ourself from the source code using the <code>throw</code> statement. For instance, if we want to throw an exception which was created in the class <code>NumberFormatException</code>, we could use the statement <code>throw new NumberFormatException()</code>.</p>
 
-  <p>Another exception which hasn't got to be addressed is <code>IllegalArgumentException</code>. With <code>IllegalArgumentException</code> we know that a method or a constructor has received an <em>illegal</em> value as parameter. For instance, we use the IllegalArgumentException when we want to make sure that a parameter has received particular values. We create the class <code>Grade</code> whose constructor has got a integer parameter: the grade.</p>
+  <p>Another exception which hasn't got to be addressed is <code>IllegalArgumentException</code>. With <code>IllegalArgumentException</code> we know that a method or a constructor has received an <em>illegal</em> value as parameter. For instance, we use the IllegalArgumentException when we want to make sure that a parameter has received particular values. We create the class <code>Grade</code> whose constructor has a integer parameter: the grade.</p>
 
   <pre class="sh_java">
 public class Grade {
@@ -5980,7 +5980,7 @@ public interface Sensor {
 
       <p>Create the class <code>Constant Sensor</code> which implements the interface <code>Sensor</code>.</p>
 
-      <p>The constant sensor is online all the time. The methods on() and off() do not do anything. The constant sensor has got a constructor with an int parameter. The <code>measure</code> method call returns the number received as constructor parameter.</p>
+      <p>The constant sensor is online all the time. The methods on() and off() do not do anything. The constant sensor has a constructor with an int parameter. The <code>measure</code> method call returns the number received as constructor parameter.</p>
 
       <p>For instance:</p>
 
@@ -6018,7 +6018,7 @@ true
 
   <p>Create the class <code>AverageSensor</code> which implements the interface </code>Sensor</code>.</p>
 
-<p>An average sensor contains many sensors. In addition to the methods defined by the interface <code>Sensor</code>, the class has got the method <code>public void addSensor(Sensor additional)</code> which adds a new sensor to the AverageSensor.</p>
+<p>An average sensor contains many sensors. In addition to the methods defined by the interface <code>Sensor</code>, the class has the method <code>public void addSensor(Sensor additional)</code> which adds a new sensor to the AverageSensor.</p>
 
 <p>The average sensor is on when <em>all</em> its sensors are on. When the average sensor is switched on, all its sensors have to be switched on if they were not on already. When the average sensor is closed, at least one of its sensors has to be switched off. It's also possible that all its sensors are switched off.</p>
 
@@ -6156,7 +6156,7 @@ Exception in thread "main" java.lang.NullPointerException
 
     <p>A relevant part of programming is related to stored files, in one way or in another. Let's take the first steps in Java file handling. Java's API provides the class <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">File</a>, whose contents can be read using the already known <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Scanner.html" target="_blank">Scanner</a> class.</p>
 
-    <p>If we read the desciption of the <code>File</code> <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">API</a> we notice the <code>File</code> class has got the constructor <code>File(String pathname)</code>, which <em>creates a new File instance by converting the given pathname string into an abstract pathname</em>. This means the <code>File</code> class constructor can be given the pathname of the file we want to open.</p>
+    <p>If we read the desciption of the <code>File</code> <a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html" target="_blank">API</a> we notice the <code>File</code> class has the constructor <code>File(String pathname)</code>, which <em>creates a new File instance by converting the given pathname string into an abstract pathname</em>. This means the <code>File</code> class constructor can be given the pathname of the file we want to open.</p>
 
     <p><em>In the NetBeans programming environment, files have got their own tab called <em>Files</em>, which contains all our project files. If we add a file to a project <em>root</em> -- that is to say outside all folders -- we can refer to it by writing only the its name. We create a file object by fiving the file pathname to it as parameter:</em></p>
 
@@ -6202,7 +6202,7 @@ Exception in thread "main" java.lang.NullPointerException
     }
 </pre>
 
-    <p>Another option is to delegate the exception handling responsibility to the method caller. We delegate the exception handling responsibility by adding the definition <code>throws <em>ExceptionType</em></code> to the method. For instance, we can add <code>throws Exception</code> because the type of all exceptions is <code>Exception</code>. When a method has got the attribute <code>throws Exception</code>, whatever chunk of code which calls that method knows that it may throw an exception, and it should be prepared for it.</p>
+    <p>Another option is to delegate the exception handling responsibility to the method caller. We delegate the exception handling responsibility by adding the definition <code>throws <em>ExceptionType</em></code> to the method. For instance, we can add <code>throws Exception</code> because the type of all exceptions is <code>Exception</code>. When a method has the attribute <code>throws Exception</code>, whatever chunk of code which calls that method knows that it may throw an exception, and it should be prepared for it.</p>
 
 <pre class="sh_java">
     public void readFile(File f) throws Exception {
@@ -6556,7 +6556,7 @@ public class ExerciseAccounting {
 3
 </pre>
 
-    <p>The solution above is useful if we don't need information about the exercises done by each different user. We can change the saving logic of the exercises in a way to have them save in relation to each user, using a HashMap. The users are recognized through a unique string (for instance, their student number), and each user has got their own set of finished exercises.</p>
+    <p>The solution above is useful if we don't need information about the exercises done by each different user. We can change the saving logic of the exercises in a way to have them save in relation to each user, using a HashMap. The users are recognized through a unique string (for instance, their student number), and each user has their own set of finished exercises.</p>
 
 <pre class="sh_java">
 public class ExerciseAccounting {
@@ -6747,7 +6747,7 @@ Unique characterStrings: []
 
 <p>As we remember, object variable are reference-type, which means that the variable does not memorize the object itself, but the reference to the object. Respectively, if we put an object into an ArrayList, for instance, the List does not memorize the object itself but the <code>reference</code> to the object. There is no reason why we should not be able to save an object in various different lists or HashMaps, for instance.</p>
 
-<p>Let's have a look at our library example, which saves books into HashMaps, both based on their writer and ISB number. In addition to this, the library. Moreover, the library has got two lists for the books on loan and for the ones that are on the shelves.</p>
+<p>Let's have a look at our library example, which saves books into HashMaps, both based on their writer and ISB number. In addition to this, the library. Moreover, the library has two lists for the books on loan and for the ones that are on the shelves.</p>
 
 <pre class="sh_java">
 public class Book {
@@ -7012,7 +7012,7 @@ true
 
 <h4>Ringing Centre</h4>
 
-<p>The Ringing Centre has got two methods: <code>public void observe(Bird bird, String place)</code>, which records the observation and its place among the bird information; and <code>public void observations(Bird bird)</code>, which prints all the observations of the parameter bird following the example below. The observation printing order is not important, as far as the tests are concerned.</p>
+<p>The Ringing Centre has two methods: <code>public void observe(Bird bird, String place)</code>, which records the observation and its place among the bird information; and <code>public void observations(Bird bird)</code>, which prints all the observations of the parameter bird following the example below. The observation printing order is not important, as far as the tests are concerned.</p>
 
 <p>The Ringing Centre stores the observation places in a <code>Map&lt;Bird, List&lt;String&gt;&gt;</code> object variable. If you need, you can use the exercise from Section 16 as example.</p>
 
@@ -7104,7 +7104,7 @@ public class Printer {
 }
 </pre>
 
-    <p>You can give whaterver object parameter to the method <code>printManyTimes</code>. Within the method <code>printManyTimes</code>, the object has got only the method which are defined in the <code>Object</code> class at its disposal, because the method is <em>presented</em> as <code>Object</code>-type inside the mehod.</p>
+    <p>You can give whaterver object parameter to the method <code>printManyTimes</code>. Within the method <code>printManyTimes</code>, the object has only the method which are defined in the <code>Object</code> class at its disposal, because the method is <em>presented</em> as <code>Object</code>-type inside the mehod.</p>
 
 <pre class="sh_java">
     Printer printer = new Printer();
@@ -7256,9 +7256,9 @@ x: 19; y: 107
 
 <h2>Inheritance of Class Features</h2>
 
-    <p>Classes are for the programmer a way to clarify problematic concepts. With each class we create, we add new functionality to the programming language. The functionality is needed to solve the problems we meet, and the solutions are born from the interaction among the objects we create. In object programming, an object is an independent unity which can change through its methods. Objects are used together with each other; each object has got its own area of responsibility. For instance, our user interface classes have been making use of <code>Scanner</code> objects, so far.</p>
+    <p>Classes are for the programmer a way to clarify problematic concepts. With each class we create, we add new functionality to the programming language. The functionality is needed to solve the problems we meet, and the solutions are born from the interaction among the objects we create. In object programming, an object is an independent unity which can change through its methods. Objects are used together with each other; each object has its own area of responsibility. For instance, our user interface classes have been making use of <code>Scanner</code> objects, so far.</p>
 
-    <p>Each Java's class descends from the class <code>Object</code>, which means that each class we create has got all methods which are defined in <code>Object</code>. If we want to change the functionality of the methods defined in <code>Object</code>, we have to <code>Override</code> them and define a new functionality in the created class.</p>
+    <p>Each Java's class descends from the class <code>Object</code>, which means that each class we create has all methods which are defined in <code>Object</code>. If we want to change the functionality of the methods defined in <code>Object</code>, we have to <code>Override</code> them and define a new functionality in the created class.</p>
 
 <p>In addition to be possible to inherit the <code>Object</code> class, it is also possible to inherit other classes. If we check Java's <code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/ArrayList.html" target="_blank">ArrayList</a></code> class API we notice that <code>ArrayList</code> inherits the class <code>AbstractList</code>. The class <code>AbstractList</code> inherits the class <code>AbstractCollection</code>, which descended from the class <code>Object</code>.</p>
 
@@ -7269,7 +7269,7 @@ x: 19; y: 107
           <img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/perinta/perinta.gif" /><strong>java.util.ArrayList&lt;E&gt;</strong>
 </pre>
 
-        <p>Each class can inherit one class, directly, Indirectly, a class can still inherit all the feauters its parent class. The class <code>ArrayList</code> inherits directly the class <code>AbstractList</code>, and indirectly the classes <code>AbstractCollection</code> and <code>Object</code>. In fact, the class <code>ArrayList</code> has got the methods <em>and</em> interfaces of <code>AbstractList</code>, <code>AbstractCollection</code> and <code>Object</code> at its disposal.</p>
+        <p>Each class can inherit one class, directly, Indirectly, a class can still inherit all the feauters its parent class. The class <code>ArrayList</code> inherits directly the class <code>AbstractList</code>, and indirectly the classes <code>AbstractCollection</code> and <code>Object</code>. In fact, the class <code>ArrayList</code> has the methods <em>and</em> interfaces of <code>AbstractList</code>, <code>AbstractCollection</code> and <code>Object</code> at its disposal.</p>
 
         <p>The class features are inherited using the keyword <code>extends</code>. The class which inherits is called <em>subclass</em>; the class which is inherited is called <em>superclass</em>. Let's get aquainted with a carmaker system, which handles car components. The basic component of component handling is the class <code>Component</code> which defines the identification number, the producer, and the description.</p>
 
@@ -7335,7 +7335,7 @@ combustion engine
 volkswagen
 </pre>
 
-        <p>As you notice, the class <code>Motor</code> has got the methods defined in <code>Component</code> at its disposal.</p>
+        <p>As you notice, the class <code>Motor</code> has the methods defined in <code>Component</code> at its disposal.</p>
 
         <h3>Private, Protected and Public</h3>
 
@@ -7345,7 +7345,7 @@ volkswagen
 
         <p>The superclass constructor is defined by the <code>super</code> keyword. In fact, the call <code>super</code> is similar to the <code>this</code> constructor call. The call is given the values of the type required by the super class constructor parameter.</p>
 
-        <p>When we call the constructor, the variables defined in the super class are initialized. In fact, with constructor call happens the same thing as in normal constructor calls. Unless the superclass has got a constructor without parameter, in the subclass constructor call there must always be a call for its superclass constructor.</p>
+        <p>When we call the constructor, the variables defined in the super class are initialized. In fact, with constructor call happens the same thing as in normal constructor calls. Unless the superclass has a constructor without parameter, in the subclass constructor call there must always be a call for its superclass constructor.</p>
 
         <p>Attention! The <code>super</code> call must always be in the first line!</p>
 
@@ -7718,11 +7718,11 @@ public class 3DPoint extends Point {
 </ul>
 </ol>
 
-<p>The operating sequence produced by the method call has got many steps. The idea is clear, anyway: when we want to execute a method, we first look for its definition in the object real type, and if it is not found, we move to the super class. If the method is not found in the parent class either, we move to the parent parent class, and so on...</p>
+<p>The operating sequence produced by the method call has many steps. The idea is clear, anyway: when we want to execute a method, we first look for its definition in the object real type, and if it is not found, we move to the super class. If the method is not found in the parent class either, we move to the parent parent class, and so on...</p>
 
           <h3>When Do We Have to Use Inheritance?</h3>
 
-          <p>Inheritance is a tool to build and qualify object hierarchy; a subclass is always a special instance of the superclass. If the class we want to create is a special instance of an already existent class, we can create it by inheriting the class which already exists. For instance in our auto components example, motor <em>is</em> a component, but the motor has got additional functionality which not all the classe
+          <p>Inheritance is a tool to build and qualify object hierarchy; a subclass is always a special instance of the superclass. If the class we want to create is a special instance of an already existent class, we can create it by inheriting the class which already exists. For instance in our auto components example, motor <em>is</em> a component, but the motor has additional functionality which not all the classe
           s have.</p>
 
           <p>Through inheritance, a subclass receives the superclass functionality. If a subclass does not need or use the inherited functionality, inheritance is not motivated. The inherited classes inherit the upperclass methods and interfaces, and therefore we can use a subclass for any purpose the superclass was used. It is good to stick to low inheritance hierarchy, because the more complex the inheritance hierarchy is, the more complex maintainance and further development will be. In general, if the hierarchy is higher than two or three, the program structure is usually to improve.</p>
@@ -8761,7 +8761,7 @@ false
 
 <p>With this exercise, you manage to implement a dungeon game. In the game, the player is in a dungeon full of vampires. The player has to stub the vampires before his lamp runs out of battery and the vampires can suck his blood in the darkness. The player can see the vampires with a blinking of their lamp, after which they have to move blind before the following blinking. With one move, the player can walk as many steps as they want.</p>
 
-<p>The game situation, i.e. the dungeon, the player and the vampires are shown in text form. The first line in the print output tells how many moves the player has got left (that is to say, how much battery the lamp has got). After that, the print output shows player and vampire positions, which in turn are followed by the game map. In the example below, you see the player (<code>@</code>) and three vampires (<code>v</code>); in this case, the player has got enough light for fourteen moves.</p>
+<p>The game situation, i.e. the dungeon, the player and the vampires are shown in text form. The first line in the print output tells how many moves the player has left (that is to say, how much battery the lamp has). After that, the print output shows player and vampire positions, which in turn are followed by the game map. In the example below, you see the player (<code>@</code>) and three vampires (<code>v</code>); in this case, the player has enough light for fourteen moves.</p>
 
 <pre>
 14
@@ -8777,7 +8777,7 @@ v 12 2
 .......v.........
 </pre>
 
-<p>The example above shows the lamp has got enough battery for 14 blinkings. The player <code>@</code> is located at <code>1 2</code>. Note that the coordinates are calculated starting from the high left corner of the game board. In the map below, the character <code>X</code> is located at <code>0 0</code>, <code>Y</code> is at <code>2 0</code> and <code>Z</code> is at <code>0 2</code>.</p>
+<p>The example above shows the lamp has enough battery for 14 blinkings. The player <code>@</code> is located at <code>1 2</code>. Note that the coordinates are calculated starting from the high left corner of the game board. In the map below, the character <code>X</code> is located at <code>0 0</code>, <code>Y</code> is at <code>2 0</code> and <code>Z</code> is at <code>0 2</code>.</p>
 
 <pre>
 X.Y..............
@@ -8788,7 +8788,7 @@ Z................
 
 
 
-<p>The user can move by giving a sequence of commands and pressing space. The commands are:</p>
+<p>The user can move by giving a sequence of commands and pressing Enter. The commands are:</p>
 <ul>
   <li><code>w</code> go up</li>
   <li><code>s</code> go down</li>
@@ -9091,7 +9091,7 @@ second
 <p>Create a parameterless constructor, as well as the methods:</p>
 
  <ul>
-        <li><code>public void add(String word, String translation)</code></li> adds a word to the dictionary. Each word has got only one translation; if the same word is added twice, nothing happens.<br/>
+        <li><code>public void add(String word, String translation)</code></li> adds a word to the dictionary. Each word has only one translation; if the same word is added twice, nothing happens.<br/>
         <li><code>public String translate(String word)</code></li> returns the word translation; if the word isn't recognised, it returns null<br/>
  </ul>
 
@@ -9218,7 +9218,7 @@ computer:tietokone
 
 <p>but not both!</p>
 
-    <p>It may be useful to wirte the new translation list over the old file; in fact, the <code>append</code> command which came out in the material should not be used.</p>
+    <p>It may be useful to write the new translation list over the old file; in fact, the <code>append</code> command which came out in the material should not be used.</p>
 
 <p>The final version of your dictionary should be used in the following way:</p>
 
@@ -9242,12 +9242,12 @@ dict.save();
 <p><big><strong><strong>Attention!</strong> A part of the user interface tests opens a user interface and uses your mouse to click on the user interface components. When you are executing user interface tests, do not use your mouse!</strong></big></p>
 <p><hr/></p>
 
-<p>So far, our programs have only been composed of application logic and text user interface which made use of application logic. In a couple of exercises we have also got a grafic user interface, but they had usally been created for us. Next, we see how we can create grafic user interfaces in Java.</p>
+<p>So far, our programs have only been composed of application logic and text user interface which made use of application logic. In a couple of exercises we have also got a graphical user interface, but they had usually been created for us. Next, we see how we can create graphical user interfaces in Java.</p>
 
 <p>User interfaces are windows which contain different types of buttons, text boxes, and menus. When we program user interfaces we use Java's
-<a href="http://docs.oracle.com/javase/tutorial/ui/features/components.html" target="_blank">Swing</a> component library, which provides us with classes to create and handle user interfaces.</p>
+<a href="http://docs.oracle.com/javase/tutorial/uiswing/components/index.html" target="_blank">Swing</a> component library, which provides us with classes to create and handle user interfaces.</p>
 
-<p>The basic element of a user interface is the class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JFrame.html" target="_blank">JFrame</a></code>, and we create the user interface components in its compenent section. Orthodox user interfaces implement the interface <code>Runnable</code>, and they are started in the main program. In this course, we use the following user interface body:</p>
+<p>The basic element of a user interface is the class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JFrame.html" target="_blank">JFrame</a></code>, and we create the user interface components in its component section. Orthodox user interfaces implement the interface <code>Runnable</code>, and they are started in the main program. In this course, we use the following user interface body:</p>
 
 <pre class="sh_java">
 import java.awt.Container;
@@ -9313,9 +9313,9 @@ public class UserInterface implements Runnable {
     }
 </pre>
 
-<p>The interface <code>Runnable</code> defines the method <code>public void run()</code>, which has to be implemented by all classes which implement the interface. With the method <code>public void run()</code>, we first create a new JFrame whose title is <code>"Title"</code>. After this, we define the frame size whose breath is 200 pixels and height is 100 pixels. The statement <code>frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</code> tells to the JFrame object that the user interface has to close when the user presses the cross icon.</p>
+<p>The interface <code>Runnable</code> defines the method <code>public void run()</code>, which has to be implemented by all classes which implement the interface. With the method <code>public void run()</code>, we first create a new JFrame whose title is <code>"Title"</code>. After this, we define the frame size whose width is 200 pixels and height is 100 pixels. The statement <code>frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</code> tells to the JFrame object that the user interface has to close when the user presses the cross icon.</p>
 
-<p>Afterwards, we call the method <code>createComponents</code> which is defined lower down in the class.. The method is given <code>JFrame</code>'s <em><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Container.html" target="_blank">Container</a></em> object as parameter, where we can add user interface components.</p>
+<p>Afterwards, we call the method <code>createComponents</code> which is defined lower down in the class. The method is given <code>JFrame</code>'s <em><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Container.html" target="_blank">Container</a></em> object as parameter, where we can add user interface components.</p>
 
 <p>Finally, we call the method <code>frame.pack()</code> which packs the JFrame object as defined before and sorts the user interface components of the Container object contained by JFrame. At the end, we call the method <code>frame.setVisible(true)</code>, to show the user interface to the user.</p>
 
@@ -9349,7 +9349,7 @@ public class Main {
 <h3>UI Components</h3>
 
 
-<p>User Interfaces are composed of a backgroud window (JFrame) and a component Container, as well as the UI components which are set into the container. UI components are different kinds of buttons, texts, and other items. Every component has got its own class. It's useful to get accustomed to Oracle visual sequence of componets at the address <a href="http://docs.oracle.com/javase/tutorial/ui/features/components.html" target="_blank">http://docs.oracle.com/javase/tutorial/ui/features/components.html</a>.</p>
+<p>User Interfaces are composed of a background window (JFrame) and a component Container, as well as the UI components which are set into the container. UI components are different kinds of buttons, texts, and other items. Every component has its own class. It's useful to get accustomed to Oracle visual sequence of components at the address <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/index.html" target="_blank">http://docs.oracle.com/javase/tutorial/uiswing/components/index.html</a>.</p>
 
 <h4>Text</h4>
 
@@ -9403,7 +9403,7 @@ public class Main {
     }
 </pre>
 
-<p>When we exectute the program we see the following user interface.</p>
+<p>When we execute the program we see the following user interface.</p>
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/text.png"/></p>
 
@@ -9411,9 +9411,9 @@ public class Main {
 
 <h3>Setting up UI Components</h3>
 
-<p>All UI components have got their own location in the user inteface. The component location is defined by the UI <em>Layout Manager</em>. Before, when we tried to add many different components to our <code>Container</code> object, only one component became visible. Every <code>Container</code> object has got a default UI layout manager: <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/BorderLayout.html" target="_blank">BorderLayout</a></code>.</p>
+<p>All UI components have got their own location in the user interface. The component location is defined by the UI <em>Layout Manager</em>. Before, when we tried to add many different components to our <code>Container</code> object, only one component became visible. Every <code>Container</code> object has a default UI layout manager: <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/BorderLayout.html" target="_blank">BorderLayout</a></code>.</p>
 
-<p>BorderLayout places the UI components to five areas: the user interface centre and the four compass points.  When we use the Container's <code>add</code> method, we can give it another parameter, clarifying where we would like to place the component. the BorderLayout class has got five class variables available for use: <code>BorderLayout.NORTH</code>, <code>BorderLayout.EAST</code>, <code>BorderLayout.SOUTH</code>, <code>BorderLayout.WEST</code>, ja <code>BorderLayout.CENTER</code>.</p>
+<p>BorderLayout places the UI components to five areas: the user interface centre and the four compass points.  When we use the Container's <code>add</code> method, we can give it another parameter, clarifying where we would like to place the component. the BorderLayout class has five class variables available for use: <code>BorderLayout.NORTH</code>, <code>BorderLayout.EAST</code>, <code>BorderLayout.SOUTH</code>, <code>BorderLayout.WEST</code>, ja <code>BorderLayout.CENTER</code>.</p>
 
 <p>The UI layout manager we want to use is assigned to the <code>Container</code> object in the parameter of the method <code>setLauout</code>. In addition to the UI component, the method <code>add</code> can also be assigned the location wehere the component should be placed. In the example below, we assign a component to every BorderLayout location.</p>
 
@@ -9436,7 +9436,7 @@ public class Main {
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/layout-override.png"/></p>
 
-<p>As for UI components, there are also many UI layout managers. Oracle has got a visual guide to learn more about UI layout managers at <a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html" target="_blank">http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html</a>. Below, we introduce the layout manager <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/BoxLayout.html" target="_blank">BoxLayout</a></code>.</a>
+<p>As for UI components, there are also many UI layout managers. Oracle has a visual guide to learn more about UI layout managers at <a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html" target="_blank">http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html</a>. Below, we introduce the layout manager <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/BoxLayout.html" target="_blank">BoxLayout</a></code>.</a>
 
 <h4>BoxLayout</h4>
 
@@ -9644,7 +9644,7 @@ public class AreaCopier implements ActionListener {
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/noticeboard.png"/></p>
 
-<p>The program has to be composed of the following classes, which are contained in the package <code>noticeboard</code>. The class <code>NoticeBoard</code> is the user interface class, and it is started from the <code>Main</code> class. The notice board has got various different components: <code>JTextField</code>, <code>JButton</code>, and <code>JLabel</code>. You can manage the layout of the ui components with <code>GridLayout</code>: the call <code>new GridLayout(3, 1)</code> creates a new layout manager, which sets up three ui elements vertically.</p>
+<p>The program has to be composed of the following classes, which are contained in the package <code>noticeboard</code>. The class <code>NoticeBoard</code> is the user interface class, and it is started from the <code>Main</code> class. The notice board has various different components: <code>JTextField</code>, <code>JButton</code>, and <code>JLabel</code>. You can manage the layout of the ui components with <code>GridLayout</code>: the call <code>new GridLayout(3, 1)</code> creates a new layout manager, which sets up three ui elements vertically.</p>
 
 <p>The application also has to contain the class <code>ActionEventListener</code>, which implements the interface <code>ActionListener</code>. The action event listener is connected to the button, and when pressed, it has to copy the contents of the JTextField into JLabel. At the same time, it wipes the JTextField by setting its contents as "".</p>
 
@@ -9818,9 +9818,9 @@ Value: 2
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/nestedobjects.png"/></p>
 
-<p>We can place Container objects inside each other. The class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JPanel.html" target="_blank">JPanel</a></code> (see also <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/panel.html" target="_blank">How to Use Panels</a>) allows for nested <code>Container</code> objects. It is possible to add UI components to a <code>JPanel</code> instance in the same way we add components to the <code>Container</code> instance of <code>JFrame</code> class. Moreover, it is possible to add an instance of <code>JPanel</code> to a <code>Container</code> object. This makes possible to use many <code>Container</code> objects to develop one user inteface.</p>
+<p>We can place Container objects inside each other. The class <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/JPanel.html" target="_blank">JPanel</a></code> (see also <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/panel.html" target="_blank">How to Use Panels</a>) allows for nested <code>Container</code> objects. It is possible to add UI components to a <code>JPanel</code> instance in the same way we add components to the <code>Container</code> instance of <code>JFrame</code> class. Moreover, it is possible to add an instance of <code>JPanel</code> to a <code>Container</code> object. This makes possible to use many <code>Container</code> objects to develop one user interface.</p>
 
-<p>Creating a user interface like the one above is easier with <code>JPanel</code>. Let's create a user inteface with three buttons -- Execute, Test, and Send -- plus a text field. The buttons are a group on its own, and we assign them to a <code>JPanel</code> object which is placed in the lower part of the <code>Container</code> object which we have got from <code>JFrame</code> class.</p>
+<p>Creating a user interface like the one above is easier with <code>JPanel</code>. Let's create a user interface with three buttons -- Execute, Test, and Send -- plus a text field. The buttons are a group on its own, and we assign them to a <code>JPanel</code> object which is placed in the lower part of the <code>Container</code> object which we have got from <code>JFrame</code> class.</p>
 
 <pre class="sh_java">
     private void createComponents(Container container) {
@@ -9839,7 +9839,7 @@ Value: 2
 
 <p>The JPanel class is given as constructor parameter the layout style to use. If in its constructor the layout style requires a reference to the <code>Container</code> object used, the <code>JPanel</code> class also has the method <code>setLayout</code>.</p>
 
-<p>If our user interface has got clear, separate, groups of components we can also inherit the <code>JPanel</code> class. For instance, the panel above could be implemented in the following way, too.</p>
+<p>If our user interface has clear, separate, groups of components we can also inherit the <code>JPanel</code> class. For instance, the panel above could be implemented in the following way, too.</p>
 
 <pre class="sh_java">
 import java.awt.GridLayout;
@@ -9886,7 +9886,7 @@ public class MenuPanel extends JPanel {
 
 <p>You find a <code>JFrame</code> with the exercise body; you manage its layout using <code>GridLayout</code> with three lines and one column. <code>JTextField</code> has to be placed in the upper block and has to be used for the text output; it must be set off with the method call <code>setEnabled(false)</code>. The second block has to contain <code>JTextField</code> for the text input. Originally, the input field contains the text "0", and the input field is empty.</p>
 
-<p>The lowest block has to contain <code>JPanel</code>, and this has to have the layout manager <code>GridLayout</code>, with one line and three columns. The panel has got three <code>JButton</code>s, with the texts "+", "+" and "Z".</p>
+<p>The lowest block has to contain <code>JPanel</code>, and this has to have the layout manager <code>GridLayout</code>, with one line and three columns. The panel has three <code>JButton</code>s, with texts "+", "-" and "Z".</p>
 
 <h4>Basic Functionality</h4>
 
@@ -9947,13 +9947,13 @@ public class DrawingBoard extends JPanel {
     }
 </pre>
 
-<p>The method <code>fillRect</code> receives as parameter the <code>x</code> and <code>y</code> coordinates of a rectangle, plus the rectangle width and height. In fact, above we first draw a rectangle which starts with pixel whose coordinates are <code>(50, 80)</code>, whose 100 pixels long, and 50 pixels heigh. Afterwards, we draw a 50-pixel long, 100-pixel heigh rectangle which begins at <code>(200, 20)</code>.</p>
+<p>The method <code>fillRect</code> receives as parameter the <code>x</code> and <code>y</code> coordinates of a rectangle, plus the rectangle width and height. In fact, above we first draw a rectangle which starts with pixel whose coordinates are <code>(50, 80)</code>, which is 100 pixels long, and 50 pixels high. Afterwards, we draw a 50-pixel long, 100-pixel high rectangle which begins at <code>(200, 20)</code>.</p>
 
 <p>As you notice from the picture, the coordinate system does not work as we are accustomed to.</p>
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/drawingboard-blocks.png"/></p>
 
-<p>Java's <code>Graphics</code> object (and most of other programming language libraries) expects the value of the y axis to grow downwards. The coordinate system origin, i.e. the point <code>(0,0)</code> is in the upper left corner: the Graphics object always knows the UI component where we draw, and it is able to define the location of the point to draw based on it. The location of the UI origin can become clear with the help of the following program. First we draw a green 10-pixel long, 200-pixel heigh rectangle which starts from the point (0,0). Then we draw a black 200-pixel long, 10-pixel heigh rextangle which starts from the point (0,0). The drawing colour is defined by the method <code>setColor</code> of our <code>Graphics</code> object.</p>
+<p>Java's <code>Graphics</code> object (and most of other programming language libraries) expects the value of the y axis to grow downwards. The coordinate system origin, i.e. the point <code>(0,0)</code> is in the upper left corner: the Graphics object always knows the UI component where we draw, and it is able to define the location of the point to draw based on it. The location of the UI origin can become clear with the help of the following program. First we draw a green 10-pixel long, 200-pixel high rectangle which starts from the point (0,0). Then we draw a black 200-pixel long, 10-pixel high rectangle which starts from the point (0,0). The drawing colour is defined by the method <code>setColor</code> of our <code>Graphics</code> object.</p>
 
 
 <pre class="sh_java">
@@ -9987,7 +9987,7 @@ public class DrawingBoard extends JPanel {
 </div>
 </div>
 
-<p>Let's extend our previous example and draw an independent avatar-object in our user inteface. Let's create the class <code>Avatar</code>; it has the coordinates of the point where it appears, and it is a circle with a 10-pixel diameter. The location of the avatar can be changed by calling its <code>move</code> method.</p>
+<p>Let's extend our previous example and draw an independent avatar-object in our user interface. Let's create the class <code>Avatar</code>; it has the coordinates of the point where it appears, and it is a circle with a 10-pixel diameter. The location of the avatar can be changed by calling its <code>move</code> method.</p>
 
 <pre class="sh_java">
 import java.awt.Graphics;
@@ -10045,7 +10045,7 @@ public class DrawingBoard extends JPanel {
 }
 </pre>
 
-<p>Let's also give our avatar as parameter to our user interface. Avatar is an independent object in the user interface, and we only want to draw it in the user interface. It is essential to change our UI consrtuctor so that it received a <code>Avatar</code> object. Moreover, in the method <code>createComponents</code> we give an instance of the class <code>Avatar</code> as parameter to our <code>DrawingBoard</code> object.</p>
+<p>Let's also give our avatar as parameter to our user interface. Avatar is an independent object in the user interface, and we only want to draw it in the user interface. It is essential to change our UI constructor so that it received a <code>Avatar</code> object. Moreover, in the method <code>createComponents</code> we give an instance of the class <code>Avatar</code> as parameter to our <code>DrawingBoard</code> object.</p>
 
 <pre class="sh_java">
 public class UserInterface implements Runnable {
@@ -10152,7 +10152,7 @@ Keystroke 38 pressed.
 
 <p>User interface components usually have the functionality to repaint the component outer face, when needed. For instance, when we press the button, the instance of the class <code>JButton</code> is able to paint the button as if it was pressed, and to paint it normal again afterwards. The drawing board we have implemented does not have a pre-made update functionality; instead, we have to ask our drawing board to paint itself again when needed.</p>
 
-<p>Each subclass of <code>Compenent</code> has got the method <code>public void repaint()</code>, which repaints the component after it is called. We want that our <code>DrawingBoard</code> object would get repainted while the avatar moves. The avatar moves in the class <code>KeyboardListener</code>, and it is logic the repainting would happen there, too.</p>
+<p>Each subclass of <code>Component</code> has the method <code>public void repaint()</code>, which repaints the component after it is called. We want that our <code>DrawingBoard</code> object would get repainted while the avatar moves. The avatar moves in the class <code>KeyboardListener</code>, and it is logic the repainting would happen there, too.</p>
 
 <p>In order to be repainted, our keyboard listener needs a drawing board reference. Let's modify our class <code>KeyboardListener</code>, so that it would receive as parameter both an <code>Avatar</code> object and the <code>Component</code> object to repaint. We call the <code>repaint</code> method of the <code>Component</code> object after each <code>keyPressed</code> action event.</p>
 
@@ -10233,9 +10233,9 @@ public class KeyboardListener implements KeyListener {
 
 <h4 class="req">Drawing Board</h4>
 
-<p>Create the class <code>DrawingBoard</code> which inherits <code>JPanel</code>; you can take example from the drawing board in the previous exercise, for instance. DrawingBoard receives a <code>Figure</code> object as parameter. Override <code>JPanel</code>'s method <code>protected void paintComponent(Graphics g)</code> so that it calls firt the superclass' <code>paintComponent</code> method, and then the <code>draw</code> method of the figure which was assigned to the drawing board.</p>
+<p>Create the class <code>DrawingBoard</code> which inherits <code>JPanel</code>; you can take example from the drawing board in the previous exercise, for instance. DrawingBoard receives a <code>Figure</code> object as parameter. Override <code>JPanel</code>'s method <code>protected void paintComponent(Graphics g)</code> so that it first calls the superclass' <code>paintComponent</code> method, and then the <code>draw</code> method of the figure which was assigned to the drawing board.</p>
 
-<p>Modify the class <code>UserInterface</code> so that it would receive a <code>Figure</code> object as constructor parameter. Assign your DrawingBoard to the user interface together with the <code>createCompoenents(Container container)</code> method, and assign to the drawing board the figure which was given to the user interface as constructor parameter.</p>
+<p>Modify the class <code>UserInterface</code> so that it would receive a <code>Figure</code> object as constructor parameter. Assign your DrawingBoard to the user interface together with the <code>createComponents(Container container)</code> method, and assign to the drawing board the figure which was given to the user interface as constructor parameter.</p>
 
 <p>Finally, test that the following sample code draws a circle on the screen.</p>
 
@@ -10249,9 +10249,9 @@ public class KeyboardListener implements KeyListener {
 
         <h4 class="req">Keyboard Listener</h4>
 
-<p>Let's extend our drawing board, so that we could move the figures using our keyboard arrows. Create the class <code>KeyboardListener</code> which implements the interface <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyListener.html" target="_blank">KeyListener</a></code>. The class <code>KeyboardListener</code> has got two constructor parameters: an instance of the class <code>Component</code> and one of the class <code>Figure</code>.</p>
+<p>Let's extend our drawing board, so that we could move the figures using our keyboard arrows. Create the class <code>KeyboardListener</code> which implements the interface <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyListener.html" target="_blank">KeyListener</a></code>. The class <code>KeyboardListener</code> has two constructor parameters: an instance of the class <code>Component</code> and one of the class <code>Figure</code>.</p>
 
-<p>The instance of Component is given to the keyboard listener so that the component would be updated each time the keyboard is pressed. The component is updated with the method call <code>repaint</code>, which is inherited fromt he class <code>Component</code>. The type of the class DrawingBoard is <code>Component</code>, because <code>Component</code> is the parten class of <code>JPanel</code>.</p>
+<p>The instance of Component is given to the keyboard listener so that the component would be updated each time the keyboard is pressed. The component is updated with the method call <code>repaint</code>, which is inherited from he class <code>Component</code>. The type of the class DrawingBoard is <code>Component</code>, because <code>Component</code> is the upper class of the class which inherits <code>JPanel</code>.</p>
 
 <p>Implement the method <code>keyPressed(KeyEvent e)</code> of the interface <code>KeyListener</code>; when the user presses the left arrow, the figure moves one point left. Pressing right, the figure moves one point right. Pressing up it moves one point up, and pressing down the figure moves one point down. Note that the y axe grows from the upper side of the window downwards. The arrow key codes are <code>KeyEvent.VK_LEFT</code>, <code>KeyEvent.VK_RIGHT</code>, <code>KeyEvent.VK_UP</code>, and <code>KeyEvent.VK_DOWN</code>. Leave empty the other methods required by the interface <code>KeyListener</code>.</p>
 
@@ -10263,7 +10263,7 @@ public class KeyboardListener implements KeyListener {
         <h4 class="req">Square and Box</h4>
 
 
-<p>Let <code>Square</code> and <code>Box</code> inherit the class <code>Figure</code>. Square has got the constructor <code>public Square(int x, int y, int sideLength)</code>; the constructor of box is <code>public Box(int x, int y, int width, int height)</code>. Use the method <code>fillRect</code> of a graphic object to draw the figures.</p>
+<p>Let <code>Square</code> and <code>Box</code> inherit the class <code>Figure</code>. Square has the constructor <code>public Square(int x, int y, int sideLength)</code>; the constructor of box is <code>public Box(int x, int y, int width, int height)</code>. Use the method <code>fillRect</code> of a graphic object to draw the figures.</p>
 
 <p>Make sure that squares and boxes are drawn and move right on the DrawingBoard.</p>
 
@@ -10283,7 +10283,7 @@ public class KeyboardListener implements KeyListener {
 
         <h4 class="req">Compound Figure</h4>
 
-        <p>Let <code>CompoundFigure</code> inherit <code>Figure</code>. Compound figure contains other figures which are stored in an ArrayList. CompoundFigure has got the method <code>public void add(Figure f)</code>, which adds a new Figure object to the compound figure. Compound figures do not have their own position, and it is not important what values are assigned to x and y coordinates. Compound figures draw themselves by asking their parts to draw themselves; the same thing happens when a compound figure moves. This means that the inherited method <code>move</code> has to be overwritten!</p>
+        <p>Let <code>CompoundFigure</code> inherit <code>Figure</code>. Compound figure contains other figures which are stored in an ArrayList. CompoundFigure has the method <code>public void add(Figure f)</code>, which adds a new Figure object to the compound figure. Compound figures do not have their own position, and it is not important what values are assigned to x and y coordinates. Compound figures draw themselves by asking their parts to draw themselves; the same thing happens when a compound figure moves. This means that the inherited method <code>move</code> has to be overwritten!</p>
 
         <p>You can test whether your compound figure moves and is drawn well using the following code:</p>
 
@@ -10380,7 +10380,7 @@ public class PersonalBoard extends GameOfLifeBoard {
   <li><b>public abstract boolean isAlive(int x, int y)</b> tells whether the cell at (x, y) is alive. If the coordinates are outside the board, the method returns <i>false.</i></li>
 </ul>
 
-<p><b>Hint:</b> You have access to the bidimensional table of the superclass throw the superclass method <code>getBoard()</code>. Bidimensional tables are used as normal tables, but they are assigned two indexes. The first index tells
+<p><b>Hint:</b> You have access to the bidimensional table of the superclass through the superclass method <code>getBoard()</code>. Bidimensional tables are used as normal tables, but they are assigned two indexes. The first index tells
 
 the row
 
@@ -10960,11 +10960,11 @@ HEARTS 10
 It's not clubs
 </pre>
 
-<p>We notice that enum names are printed smoothly! Because card suits' type is <code>Suit</code>, absurd practices like the one above -- raising a suit to the power of two -- do not work. Oracle has got a tutorial for <code>enum</code> type at <a href="http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html" target="_blank">http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html</a>.</p>
+<p>We notice that enum names are printed smoothly! Because card suits' type is <code>Suit</code>, absurd practices like the one above -- raising a suit to the power of two -- do not work. Oracle has a tutorial for <code>enum</code> type at <a href="http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html" target="_blank">http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html</a>.</p>
 
 <h3>Iterator</h3>
 
-<p>Let's have a look at the following class <code>Hand</code> which represents the cards a player has got in his hand in a card game:</p>
+<p>Let's have a look at the following class <code>Hand</code> which represents the cards a player has in his hand in a card game:</p>
 
 <pre class="sh_java">
 public class Hand {
@@ -11075,7 +11075,7 @@ public class Hand {
 
 <h4>Education</h4>
 
-<p>Create the enumerated type, or enum, <code>Education</code> in the package <code>personnel</code>. The enum has got the titles <code>D</code> (doctor), <code>M</code> (master), <code>B</code> (bachelor), <code>GRAD</code> (graduate).</p>
+<p>Create the enumerated type, or enum, <code>Education</code> in the package <code>personnel</code>. The enum has the titles <code>D</code> (doctor), <code>M</code> (master), <code>B</code> (bachelor), <code>GRAD</code> (graduate).</p>
 
 <h4>Person</h4>
 
@@ -11659,7 +11659,7 @@ Arto recommendation: The Bridges of Madison County
 3
 </pre>
 
-<p>Note that the parameter definition above <code>int... values</code> depends on the fact that the method has got a table-like variable called <code>values</code>.</p>
+<p>Note that the parameter definition above <code>int... values</code> depends on the fact that the method has a table-like variable called <code>values</code>.</p>
 
 <p>A method can be assigned only one parameter which receives an indefinite number of values, and this must be the first parameter in the method definition. For instance:</p>
 

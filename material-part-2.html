@@ -11925,23 +11925,24 @@ public static void main(String[] args) {
 
 <p>This works, but it could be more effective. As we remember, strings are <em>immutable</em> objects. The result of a String operation is always a new String object. This means that in the interphases of previous example 10 String objects were created. If the dimension of the input was bigger, creating new objects in the various interphases would start to have an unpleasant impact on the program execution time.</p>
 
-<div class="tehtavat">
-<h3>String builder</h3>
+<div class="tehtava">
+  <div class="tehtavat">
+  <h3>String builder</h3>
 
-<p>In situations like the previous one, it is better to use <code>StringBuilder</code> objects when it comes to building strings. Differently from Strings, StringBuilders are not immutable, meaning StringBuilder-objects can be modified. Get acquainted with the description of the StringBuilder API (you'll find it by googling "stringbuilder java api 6") and modify the method in the exercise body, <code>public static String build(int[] t)</code>, so that it would use StringBuilder and work in the following way:</p>
+  <p>In situations like the previous one, it is better to use <code>StringBuilder</code> objects when it comes to building strings. Differently from Strings, StringBuilders are not immutable, meaning StringBuilder-objects can be modified. Get acquainted with the description of the StringBuilder API (you'll find it by googling "stringbuilder java api 6") and modify the method in the exercise body, <code>public static String build(int[] t)</code>, so that it would use StringBuilder and work in the following way:</p>
 
-<pre>
+  <pre>
 {
- 1, 2, 3, 4,
- 5, 6, 7, 8,
- 9, 10
+1, 2, 3, 4,
+5, 6, 7, 8,
+9, 10
 }
-</pre>
+  </pre>
 
-<p>The curly brackets are on their own lines. There are up to four values in each line of the table, and the first value requires an initial space. Before each number, and after the comma there must be exactly one space.</p>
+  <p>The curly brackets are on their own lines. There are up to four values in each line of the table, and the first value requires an initial space. Before each number, and after the comma there must be exactly one space.</p>
 
+  </div>
 </div>
-
 <h2>Grande Finale</h2>
 
 <p>The course is nearing the end, and it's time for the grande finale!</p>

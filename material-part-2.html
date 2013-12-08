@@ -10560,7 +10560,7 @@ public class Main {
 
 <p>A regular expression is a compact form to define a string. Regular expressions are often used to check the validity of strings. Let's have a look at an exercise where we have to check whether the student number given by the user is written in the valid form or not. Finnish student numbers start with the string "01" which is followed by seven numerical digits from 0 to 9.</p>
 
-<p>We can check the validity of a student number parsing its each character with the help of the method <code>charAt</code>. Another way would be checking whether the first character is "0", and using the method <code>Integer.parseInt</code> to translate the string into a number. Then, we could check whther that number is smaller than 20000000.</p>
+<p>We can check the validity of a student number parsing its each character with the help of the method <code>charAt</code>. Another way would be checking whether the first character is "0", and using the method <code>Integer.parseInt</code> to translate the string into a number. Then, we could check whether that number is smaller than 20000000.</p>
 
 <p>Validity check with the help of regular expressions requires we define a suitable regular expression. Then we can use the <code>matches</code> method of the class <code>String</code>, which checks whether the string matches with the regular expression in parameter. In the case of a student number, a suitable regular expression is <code>"01[0-9]{7}"</code>, and you can check the validity of what the user has input in the following way:</p>
 
@@ -10749,7 +10749,7 @@ The form is right.
 
 <h4>Square Brackets: Character Groups</h4>
 
-<p>With the help of square brackets we can quickly define groups of characters. The characters are written inside the brackets, and we can define an interval the help of a hyphen (-). For instance, <code>[145]</code> means the same as <code>(1|4|5)</code>, whereas <code>[2-36-9]</code> means the same as <code>(2|3|6|7|8|9)</code>. Accordingly, <code>[a-c]*</code> defines a regular expression with a string made only of characters <code>a</code>, <code>b</code> and <code>c</code>.</p>
+<p>With the help of square brackets we can quickly define groups of characters. The characters are written inside the brackets, and we can define an interval with the help of a hyphen (-). For instance, <code>[145]</code> means the same as <code>(1|4|5)</code>, whereas <code>[2-36-9]</code> means the same as <code>(2|3|6|7|8|9)</code>. Accordingly, <code>[a-c]*</code> defines a regular expression with a string made only of characters <code>a</code>, <code>b</code> and <code>c</code>.</p>
 
 <div class="tehtavat">
     <div class="tehtava">
@@ -11399,7 +11399,7 @@ Ratings for Eraserhead: [BAD, BAD, GOOD]
     Person pekka = new Person("Pekka");
 
     ratings.addRating(matti, goneWithTheWind, Rating.BAD);
-    ratings.addRating(matti, eraserhead, Rating.OK);
+    ratings.addRating(matti, eraserhead, Rating.FINE);
 
     ratings.addRating(pekka, goneWithTheWind, Rating.GOOD);
     ratings.addRating(pekka, eraserhead, Rating.GOOD);
@@ -11410,8 +11410,8 @@ Ratings for Eraserhead: [BAD, BAD, GOOD]
 </pre>
 
 <pre>
-Ratings for Eraserhead: [OK, GOOD]
-Matti's ratings: {Gone with the Wind=BAD, Eraserhead=OK}
+Ratings for Eraserhead: [FINE, GOOD]
+Matti's ratings: {Gone with the Wind=BAD, Eraserhead=FINE}
 Reviewers: [Pekka, Matti]
 </pre>
 
@@ -11538,7 +11538,7 @@ The film recommended to Michael is: The Bridges of Madison County
 
 <p>If people have added their own preferences to the reference service, we know something about their film tastes. Let's extend the functionality of our reference to create a personal recommendation if the person has evaluated films. The functionality implemented in the previous part has to be preserved: if a person hasn't evaluated any film, we recommend them a film according to film ratings.</p>
 
-<p>Personal recommendations are based on the similarity between the person ratings and other people's ratings. Let's reason about it with the help of the following table; in the first line on the top there are films, and the people who ratingd are on the left. The brackets describe the ratings given.</p>
+<p>Personal recommendations are based on the similarity between the person ratings and other people's ratings. Let's reason about it with the help of the following table; in the first line on the top there are films, and the people who have rated are on the left. The brackets describe the ratings given.</p>
 
 <p>
     <table style="padding-left:2em">
@@ -11583,7 +11583,7 @@ The film recommended to Michael is: The Bridges of Madison County
 
 <p>Matti has to be recommended a film according to Thomas' taste: the recommendation will be the Blues Brothers.</p>
 
-<p>Implement the recommendation mechanism described above. The method <code>recommendFilm</code> should return <code>null</code> in two cases: if you cannot find any film to recommend; if you find a, say, person1 whose film taste is appropriate to recommend films to, say, person2, but person1 has judge bad, mediocre, or neutral, all the films person2 hasn't watched, yet. The approach described above has to work also if the person hasn't added any rating.</p>
+<p>Implement the recommendation mechanism described above. The method <code>recommendFilm</code> should return <code>null</code> in two cases: if you cannot find any film to recommend; if you find a, say, person1 whose film taste is appropriate to recommend films to, say, person2, but person1 has rated bad, mediocre, or neutral, all the films person2 hasn't watched, yet. The approach described above has to work also if the person hasn't added any rating.</p>
 
 <p>Do not suggest films which have already been watched.</p>
 
@@ -11616,7 +11616,7 @@ The film recommended to Michael is: The Bridges of Madison County
     ratings.addRating(thomas, bluesBrothers, Rating.GOOD);
     ratings.addRating(thomas, theBridgesOfMadisonCounty, Rating.GOOD);
 
-    Reference ref = new Reference(votes);
+    Reference ref = new Reference(ratings);
     System.out.println(thomas + " recommendation: " + ref.recommendFilm(thomas));
     System.out.println(mikke + " recommendation: " + ref.recommendFilm(mikke));
     System.out.println(matti + " recommendation: " + ref.recommendFilm(matti));
@@ -11645,7 +11645,7 @@ Arto recommendation: The Bridges of Madison County
         for (int i = 0; i &lt; values.length; i++) {
             sum += values[i];
         }
-        return summa;
+        return sum;
     }
 </pre>
 
@@ -11883,7 +11883,7 @@ public static void main(String[] args) {
 
     Criterion rightLength = new Both(
                          new LengthAtLeast(20),
-                         new Not( new LengthAtLeast(31)),
+                         new Not( new LengthAtLeast(31))
                        );
 
     Criterion wanted = new Both(words, rightLength);

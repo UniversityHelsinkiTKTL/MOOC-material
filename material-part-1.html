@@ -119,7 +119,7 @@ System.out.println("Hello world!");
     <h4>Semicolon</h4>
 
     <p>A semicolon <code>;</code> is used to separate different commands. The compiler and the interpreter both
-    ignore line breaks in the source code so we could write the entire program on a single line.</p>
+    ignore line breaks in the source code, so we could write the entire program on a single line.</p>
 
     <p>In the example below we will use the <code>System.out.print</code> command, which is similar to the
     <code>System.out.println</code> command except that it will not print a line break after printing the
@@ -150,7 +150,7 @@ Hello world!
     <h4>Comments</h4>
 
     <p><em>Comments</em> are a useful way to make notes in the source code for yourself and others. Everything
-    on a line after two forward slashes <code>//</code> are treated as a comment.</p>
+    on a line after two forward slashes <code>//</code> is treated as a comment.</p>
 
     <h4>Example of using comments</h4>
 
@@ -310,8 +310,8 @@ Hello world!
 int months = 12;
     </pre>
 
-    <p>In the statement above, we assign the value 12 to the variable named <em>months</em> whose data type is
-    integer (<em>int</em>). The statement is read as "the variable <em>months</em> is assigned the
+    <p>In the statement above, we assign the value 12 to the variable named <code>months</code> whose data type is
+    integer (<code>int</code>). The statement is read as "the variable <code>months</code> is assigned the
     <em>value</em> 12".</p>
 
     <p>The value of the variable can be appended to a string with the plus <code>+</code> sign as shown in the
@@ -417,10 +417,10 @@ Zetor
     <h3>Allowed and descriptive variable names</h3>
 
     <p>There are certain limitations on the naming of our variables. Even though umlauts, for example, can
-    can be used, it is better to avoid them, because problems might arise with <a href=
+     be used, it is better to avoid them, because problems might arise with <a href=
       "http://en.wikipedia.org/wiki/Character_encoding" title=
       "Character encoding - Wikipedia, the free encyclopedia">character encoding</a>. For example, it is
-    reccomended to use A instead of Ä.</p>
+    recomended to use A instead of Ä.</p>
 
     <p>Variable names must not contain certain special characters like exclamation marks (!). Space characters
     cannot be used, either, as it is used to separate commands into multiple parts. It is a good idea to
@@ -471,7 +471,7 @@ int camelCase = 5; // Not allowed, the variable camelCase is already defined!
     <p>The calculation operations are pretty straightforward: <code>+</code>, <code>-</code>, <code>*</code>
     and <code>/</code>. A more peculiar operation is the modulo operation <code>%</code>, which calculates the
     remainder of a division. The order of operations is also pretty straightforward: the operations are
-    calculated from left to right taking the brackets into account.</p>
+    calculated from left to right taking the parentheses into account.</p>
 
     <pre class="sh_java">
 int first = 2;   // variable of whole number type is assigned the value 2
@@ -483,19 +483,19 @@ System.out.println(sum); // the value of the sum of variables is printed
     </pre>
 
     <pre class="sh_java">
-int calcWithBrackets = (1 + 1) + 3 * (2 + 5);  // 23
-int calcWithoutBrackets = 1 + 1 + 3 * 2 + 5;   // 13
+int calcWithParens = (1 + 1) + 3 * (2 + 5);  // 23
+int calcWithoutParens = 1 + 1 + 3 * 2 + 5;   // 13
     </pre>
 
-    <p>The bracket example above can also be done step by step.</p>
+    <p>The parentheses example above can also be done step by step.</p>
 
     <pre class="sh_java">
-int calcWithBrackets = (1 + 1);
-calcWithBrackets = calcWithBrackets + 3 * (2 + 5);  // 32
+int calcWithParens = (1 + 1);
+calcWithParens = calcWithParens + 3 * (2 + 5);  // 32
 
-int calcWithoutBrackets = 1 + 1;
-calcWithoutBrackets = calcWithoutBrackets + 3 * 2;
-calcWithoutBrackets = calcWithoutBrackets + 5;      // 13
+int calcWithoutParens = 1 + 1;
+calcWithoutParens = calcWithoutParens + 3 * 2;
+calcWithoutParens = calcWithoutParens + 5;      // 13
     </pre>
 
     <p>Calculation operations can be used almost anywhere in the program code.</p>
@@ -531,12 +531,12 @@ double result = first / second;  // the result is again 1 because first and seco
 int remainder = 7 % 2;  // remainder is 1 (integer)
     </pre>
 
-    <p>If either the dividend or the divider (or both!) is a floating point number (decimal number) the end
+    <p>If either the dividend or the divisor (or both!) is a floating point number (decimal number) the end
     result will also be a floating point number.</p>
 
     <pre class="sh_java">
 double whenDividendIsFloat = 3.0 / 2;  // result is: 1.5
-double whenDividerIsFloat = 3 / 2.0;   // result is: 1.5
+double whenDivisorIsFloat = 3 / 2.0;   // result is: 1.5
     </pre>
 
     <p>If needed, integers can be converted to floating point using the type cast operation
@@ -566,9 +566,9 @@ int integerResultBecauseTypeIsInteger = 3.0 / 2;  // quotient is automatically i
 
     <pre class="sh_java">
 int dividend = 3;
-int divider = 2;
+int divisor = 2;
 
-double quotient = 1.0 * dividend / divider;
+double quotient = 1.0 * dividend / divisor;
 System.out.println(quotient);
     </pre>
 
@@ -576,9 +576,9 @@ System.out.println(quotient);
 
     <pre class="sh_java">
 int dividend = 3;
-int divider = 2;
+int divisor = 2;
 
-double quotient = dividend / divider * 1.0;
+double quotient = dividend / divisor * 1.0;
 System.out.println(quotient);
     </pre>
 
@@ -1061,15 +1061,15 @@ if (number &gt; 10) {
 }
     </pre>
 
-    <p>The condition <code>(number &gt; 10)</code> evaluates into a truth value; either <em>true</em> or
-    <em>false</em>. The <code>if</code> command only handles truth values. The conditional
+    <p>The condition <code>(number &gt; 10)</code> evaluates into a truth value; either <code>true</code> or
+    <code>false</code>. The <code>if</code> command only handles truth values. The conditional
     statement above is read as "if the number is greater than 10".</p>
 
     <p>Note that the <code>if</code> statement is not followed by semicolon as the condition path continues
     after the statement.</p>
 
-    <p>After the condition, the opening brace <code>{</code> starts a new <em>block</em>, which is executed
-    if the condition is true. The <em>block</em> ends with a closing brace <code>}</code>. Blocks can be as
+    <p>After the condition, the opening curly brace <code>{</code> starts a new <em>block</em>, which is executed
+    if the condition is true. The <em>block</em> ends with a closing curly brace <code>}</code>. Blocks can be as
     long as desired.</p>
 
     <p>The comparison operators are:</p>
@@ -1144,10 +1144,11 @@ if (isLesser) {
     <h3>Code indentation</h3>
 
     <p>Note that the commands in the block following the <code>if</code> statement (i.e. the lines after the
-    <code>{</code> brace) are not written at the same level as the <code>if</code> statement itself. They
-    should be <b>indented</b> slightly to the right. Indentation happens when you press the tab key, which is
-    located to the left of q key. When the block ends with the closing brace, indentation ends as well. The
-    closing brace <code>}</code> should be on the same level as the original <code>if</code> statement.</p>
+    curly brace, <code>{</code> ) are not written at the same level as the <code>if</code> statement itself. 
+    They should be <b>indented</b> slightly to the right. Indentation happens when you press the tab key, 
+    which is located to the left of q key. When the block ends with the closing curly brace, indentation 
+    ends as well. The closing curly brace <code>}</code> should be on the same level as the original 
+    <code>if</code> statement.</p>
 
     <p>The use of indentation is crucial for the readability of program code. During this course and generally
     everywhere, you are expected to indent the code properly. NetBeans helps with the correct indentation.
@@ -1449,7 +1450,7 @@ Is the text equal to 'milk'?
 No!
     </pre>
 
-    <p>For complicated conditions, we often need brackets:</p>
+    <p>For complicated conditions, we often need parentheses:</p>
 
     <pre class="sh_java">
 int number = 99;
@@ -1500,8 +1501,8 @@ Impossible!
 
         <table border style="margin-left:50px">
           <tr>
-            <th>Username</th>
-            <th>Password</th>
+            <td>Username</td>
+            <td>Password</td>
           </tr>
           <tr>
             <td>alex</td>
@@ -1584,7 +1585,7 @@ while (true) {
     </pre>
 
     <p>In the example above, the <code>while (true)</code> command causes the associated block (i.e. the code
-    between the braces <code>{}</code>) to be <em>looped</em> (or repeated) infinitely.</p>
+    between the curly braces <code>{}</code>) to be <em>looped</em> (or repeated) infinitely.</p>
 
     <p>We generally do not want an infinite loop. The loop can be interrupted using e.g. the <code>break</code>
     command.</p>
@@ -5262,8 +5263,8 @@ public static int addThreeAndReturn(int incremented) {
 
       <pre class="sh_java">
 
-    ArrayList&lt;Integer&gt; list1= new ArrayList&lt;Integer&gt;();
-    ArrayList&lt;Integer&gt; list2= new ArrayList&lt;Integer&gt;();
+    ArrayList&lt;Integer&gt; list1 = new ArrayList&lt;Integer&gt;();
+    ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;Integer&gt;();
 
     list1.add(4);
     list1.add(3);
@@ -6087,7 +6088,7 @@ Pekka and Andrew total of 3 years old
 Multiplier threeMultiplier = new Multiplier(3);
 System.out.println("threeMultiplier.multiply(2): " + threeMultiplier.multiply(2));
 
-Kertoja fourMultiplier = new Multiplier(4);
+Multiplier fourMultiplier = new Multiplier(4);
 System.out.println("fourMultiplier.multiply(2): " + fourMultiplier.multiply(2));
 
 System.out.println("threeMultiplier.multiply(1): " + threeMultiplier.multiply(1));
@@ -6249,7 +6250,7 @@ public class Main {
         counter.decrease();
         counter.printValue();
 
-        counter.zero();
+        counter.reset();
         counter.printValue();
 
         counter.setInitial();
@@ -7352,7 +7353,7 @@ method:</p>
     to remember how many added numbers there are, i.e. how many times the method
     <code>addNumber</code> has been called.</p>
 
-    <p>The class skeleton</p>
+    <p>The class skeleton:</p>
 
     <pre class="sh_java">
 public class NumberStatistics {

@@ -11995,7 +11995,7 @@ public static void main(String[] args) {
 
 <p>Motion should be implemented in a way that the worm is always given a new piece. The position of the new piece depends on the moving direction: if moving left, the new piece location should on the left of the head piece, i.e. the x coordinate of the head should be smaller by one. If the location of the new piece is under the old head -- if the worm's direction is down, the y coordinate of the new piece should be by one bigger than the y coordinate of the head (when we draw, we will have to get accustometd to a coordinate system where the y axe is reverse).</p>
 
-<p>When the worm moves, a new piece is added to the list, and the last piece is deleted from the end of the list. In this way, you don't need to update the coordinates of each single piece. Implement the growth so that the last piece is deleted if the <code>grow</code> method has just been called.</p>
+<p>When the worm moves, a new piece is added to the list, and the first piece is deleted from the beginning of the list. In this way, you don't need to update the coordinates of each single piece. Implement the growth so that the first piece is deleted if the <code>grow</code> method has just been called.</p>
 
 <p>Attention! The worm has to grow constantly if its length is less than 3.</p>
 

@@ -1144,10 +1144,10 @@ if (isLesser) {
     <h3>Code indentation</h3>
 
     <p>Note that the commands in the block following the <code>if</code> statement (i.e. the lines after the
-    curly brace, <code>{</code> ) are not written at the same level as the <code>if</code> statement itself. 
-    They should be <b>indented</b> slightly to the right. Indentation happens when you press the tab key, 
-    which is located to the left of q key. When the block ends with the closing curly brace, indentation 
-    ends as well. The closing curly brace <code>}</code> should be on the same level as the original 
+    curly brace, <code>{</code> ) are not written at the same level as the <code>if</code> statement itself.
+    They should be <b>indented</b> slightly to the right. Indentation happens when you press the tab key,
+    which is located to the left of q key. When the block ends with the closing curly brace, indentation
+    ends as well. The closing curly brace <code>}</code> should be on the same level as the original
     <code>if</code> statement.</p>
 
     <p>The use of indentation is crucial for the readability of program code. During this course and generally
@@ -9129,12 +9129,12 @@ public class MyDate {
   <pre class="sh_java">
 public class Apartment {
   private int rooms;
-  private int sqareMeters;
+  private int squareMeters;
   private int pricePerSquareMeter;
 
-  public Apartment(int rooms, int sqareMeters, int pricePerSquareMeter){
+  public Apartment(int rooms, int squareMeters, int pricePerSquareMeter){
     this.rooms = rooms;
-    this.sqareMeters = sqareMeters;
+    this.squareMeters = squareMeters;
     this.pricePerSquareMeter = pricePerSquareMeter;
   }
 }
@@ -9191,8 +9191,8 @@ public class Apartment {
   Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
   Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
 
-  System.out.println( studioManhattan.moreExpensiveThan(twoRoomsBrooklyn) );       // true
-  System.out.println( fourAndKitchenBronx.moreExpensiveThan(twoRoomsBrooklyn) );   // false
+  System.out.println( studioManhattan.moreExpensiveThan(twoRoomsBrooklyn) );       // false
+  System.out.println( fourAndKitchenBronx.moreExpensiveThan(twoRoomsBrooklyn) );   // true
   </pre>
 </div>
             </div>

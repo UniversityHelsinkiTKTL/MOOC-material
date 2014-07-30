@@ -420,7 +420,7 @@ Zetor
      be used, it is better to avoid them, because problems might arise with <a href=
       "http://en.wikipedia.org/wiki/Character_encoding" title=
       "Character encoding - Wikipedia, the free encyclopedia">character encoding</a>. For example, it is
-    recomended to use A instead of Ä.</p>
+    recommended to use A instead of Ä.</p>
 
     <p>Variable names must not contain certain special characters like exclamation marks (!). Space characters
     cannot be used, either, as it is used to separate commands into multiple parts. It is a good idea to
@@ -1793,7 +1793,7 @@ public static void main(String[] args) throws Exception {
             // print the top ten players sorted by penalties
         } else if (command.equals("player")) {
             // ask the user for the player name and print the statistics for that player
-        } else if (scommand.equals("club")) {
+        } else if (command.equals("club")) {
             // ask the user for the club abbreviation and print the statistics for the club
             // note: the statistics should be sorted by points
             //     (players with the most points are first)
@@ -4467,9 +4467,9 @@ list.</p>
     <pre class="sh_java">
 
 ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
-lista.add("Hallo");
-lista.add("Ciao");
-lista.add("Hello");
+list.add("Hallo");
+list.add("Ciao");
+list.add("Hello");
 System.out.println("There are this many items in the list:");
 System.out.println(countItems(list));
     </pre>
@@ -4791,7 +4791,7 @@ The greatest number is: 7
       "http://en.wikipedia.org/wiki/Variance#Population_variance_and_sample_variance">Wikipedia</a>, under
     "Population variance and sample variance".</p>
 
-    <p><b>Note:</b> the metod should use the method <code>average</code> of exercise 64 to calculate the
+    <p><b>Note:</b> the method should use the method <code>average</code> of exercise 64 to calculate the
     average of the parameters. The method should be called only once!</p>
 
     <pre class="sh_java">
@@ -5308,7 +5308,7 @@ public static int addThreeAndReturn(int incremented) {
   </ul>
 
   <p>[Update: previously both quotes were credited to Kent Beck. Our thanks go to Esko Luontola <a href="http://sourceforge.net/p/mooc-issues/tickets/451/">for pointing out this mistake</a>]:</a>
-<p>We are now taking the first steps towards becomming good programmers.</p>
+<p>We are now taking the first steps towards becoming good programmers.</p>
 
 <h3>Well indented and "breathing" code</h3>
 
@@ -11302,7 +11302,7 @@ Number of stars: 22
   character you should use a <code>Random</code> object to decide if it prints out as a white space
   or a star. The method <code>nextDouble</code> will probably be of use now.</p>
 
-  <p>In the following an exampe:</p>
+  <p>In the following example:</p>
 
   <pre class="sh_java">
     NightSky NightSky = new NightSky(0.1, 40, 10);
@@ -11331,7 +11331,7 @@ Number of stars: 22
     *
   </pre>
 
-  <h4>Counting the number of the stars</h4>
+  <h4>Counting the number of stars</h4>
 
   <p>Add the class <code>NightSky</code> an instance variable starsInLastPrint (<code>int</code>) and
   the method <code>starsInLastPrint()</code>, that returns the number of stars printed in the
@@ -11362,7 +11362,7 @@ Number of stars: 3
 </div>
             </div>
 
-            <h2>to static or not to static?</h2>
+            <h2>To static or not to static?</h2>
 
             <p>When we started using objects, the material advised to leave out the keyword 'static' when
             defining their methods. However, up until week 3 all of the methods included that keyword. So what is it
@@ -11588,7 +11588,7 @@ public class Main {
   year.</p>
 
   <p>The main building blocks of the system are the classes <code>Book</code> and
-  <code>Library</code>. Objects of the class <code>Book</code> represent the information of a sigle
+  <code>Library</code>. Objects of the class <code>Book</code> represent the information of a single
   book. Object of the class <code>Library</code> holds a set of books and provides various ways to
   search for the books within the library.</p>
 
@@ -11871,7 +11871,7 @@ Acceptance percentage: 87.5
 
   <p><b>This assignment corresponds to three assignment points.</b></p>
 
-  <p>In this assignment you are supposet to design and implement an observation database for a bird
+  <p>In this assignment you are supposed to design and implement an observation database for a bird
   watcher. The database contains birds, each of which have a name and a Latin name, both Strings.
   Database also tracks how many times each bird has been observed.</p>
 
@@ -12234,8 +12234,8 @@ sort(values);
             looking for.</p>
 
             <p>The area where we are searching for the value we want to find can now be limited to values that are on
-            the right side of the index 5, or in other words, in the indexes [6, 10] (6, 7, 8, 9, 10). In the following
-            the part of the array is greyed where the searched value cannot be:</p>
+            the right side of the index 5, or in other words, in the indexes [6, 10] (6, 7, 8, 9, 10). In the following,
+            the searched value cannot be in the part of the array which is grey:</p>
 
 <pre>
 // indexes   <font color="lightgrey"> 0   1   2   3   4    5</font>    6     7   8   9  10
@@ -12255,7 +12255,7 @@ sort(values);
             <p>In index 8, we have the value 24, which was not the value we were looking for. Because the values in the
             array are ordered by size, the value we are searching for can not, in any case, be on the right side of the
             value 24. We can deduce that all indexes that are larger or equal to 8 can not contain the value we are
-            looking for. The search area gets narrowed down again, the greyed areas have been dealt with:</p>
+            looking for. The search area gets narrowed down again, the grey areas have been dealt with:</p>
 
 <pre>
 // indexes   <font color="lightgrey"> 0   1   2   3   4    5</font>    6   7  <font color="lightgrey"> 8   9  10</font>
@@ -12306,7 +12306,7 @@ sort(values);
 
             <p><em>The efficiency of binary search can be inspected with logarithms. A base two logarithm
 (<code>log<sub>2</sub></code>) of the number 16777216 is 24 -- with the base two logarithm we can calculate
-how many times a number can be halved. Respectively the base two logarithm of the nubmer 4294967296
+how many times a number can be halved. Respectively the base two logarithm of the number 4294967296
 (<code>log<sub>2</sub> 4294967296</code>) is 32. This means that searching from a sorted array of
 4294967296 different values would only take up to 32 cell inspections. Efficiency is an essential part of
 computer science.</em></p>
@@ -12598,7 +12598,7 @@ Value 99 is not in the array
     }
 </pre>
 
-            <p>In most situations it's better to use ArrayList intead of an array. However there can be cases where
+            <p>In most situations it's better to use ArrayList instead of an array. However there can be cases where
             an array is adequate and is simpler to use.</p>
 
             <p>A week always consists of seven days. It would be meaningful to form it out of exactly 7 Day objects. Since

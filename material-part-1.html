@@ -10422,7 +10422,7 @@ number not known
 
   <p>In a previous assignment we stored the balance of a LyyraCard using a double variable. In reality
   money should not be represented as a double since the double arithmetics is not accurate. A better
-  idea would be to implement a class that represents money. We'll start with the folowing
+  idea would be to implement a class that represents money. We'll start with the following
   class skeleton:</p>
 
   <pre class="sh_java">
@@ -10432,6 +10432,12 @@ public class Money {
     private final int cents;
 
     public Money(int euros, int cents) {
+
+        if (cents > 99) {
+            euros += cents / 100;
+            cents %= 100;
+        }
+
         this.euros = euros;
         this.cents = cents;
     }
@@ -10509,7 +10515,7 @@ public class Money {
   <h4>Minus</h4>
 
   <p>And finally create the method <code>public Money minus(Money decremented)</code>, that returns a
-  <em>new Money ohject</em> that has a value equal to the object for which the method was called
+  <em>new Money object</em> that has a value equal to the object for which the method was called
   minus the object given as parameter. If the value would be negative, the resulting Money object
   should have the value 0.</p>
 
@@ -10569,7 +10575,7 @@ Despite the ease of use of ArrayList the programs you write sometimes have a nee
 
             <p>During the course, we've used ArrayLists numerous times to store different kinds of objects.
             ArrayList is easy to use because it offers a lot of ready-made tools that make the programmer's life a
-            little easier: automatic growing of a list, thanks to which the list doesn't run out of space (unless
+            little easier: automatic growing of a list, thanks to the list which doesn't run out of space (unless
             of course the list grows so large that it makes the program take up all the memory that is reserved for
             it), for example.</p>
 

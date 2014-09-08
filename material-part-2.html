@@ -2500,11 +2500,11 @@ Command: Cheers!
 
                 <p><b>Attention: you can create only one Scanner object so that your tests would work well. Also, do not use static variables, the tests execute your program many different times, and the static variable values left from the previous execution would possibly disturb them!</b></p>
 
-                <p>In the airport exercises we create an application to manage an airport, with its airplanes and flights. As far as the planes are concerned, we always know their ID and capacity. As for the flights, we know the flight plane, the know the departure airport code (for instance <a href="http://en.wikipedia.org/wiki/Helsinki_Airport" target="_blank">HEL</a>) and the destination airport code (for instance <a href="http://en.wikipedia.org/wiki/Batman_Airport" target="_blank">BAL</a>).</p>
+                <p>In the airport exercises we create an application to manage an airport, with its airplanes and flights. As far as the planes are concerned, we always know their ID and capacity. As for the flights, we know the plane used for the flight, the departure airport code (for instance <a href="http://en.wikipedia.org/wiki/Helsinki_Airport" target="_blank">HEL</a>) and the destination airport code (for instance <a href="http://en.wikipedia.org/wiki/Batman_Airport" target="_blank">BAL</a>).</p>
 
-                <p>There can be various different flights and planes. The same plane can also go on various different flights (various different routes). The application must offers two different panels. First, the airport worker inputs the flight and plane information to the system.</p>
+                <p>There can be various different flights and planes. The same plane can also go on various different flights (various different routes). The application must offer two different panels. First, the airport worker inputs the flight and plane information to the system in the airport panel.</p>
 
-                <p>When the user exits the panel, the user can use the flight service. The flight service has three actions: printing planes, printing flights, and printing user airplane information. In addition to this, the user can exit the application by choosing <code>x</code>. If the user inputs an invalid command, the command is asked again.</p>
+                <p>When the user exits the airport panel, the user then proceeds to use the flight service. The flight service has three actions: printing planes, printing flights, and printing airplane information. In addition to this, the user can exit the application by choosing <code>x</code>. If the user inputs an invalid command, the command is asked again.</p>
 
 
                 <pre>
@@ -2561,7 +2561,7 @@ Flight service
 Choose operation:
 [1] Print planes
 [2] Print flights
-[3] Print flight info
+[3] Print plane info
 [x] Quit
 > <font color="red">1</font>
 G-OWAC (101 ppl)
@@ -2569,7 +2569,7 @@ HA-LOL (42 ppl)
 Choose action:
 [1] Print planes
 [2] Print flights
-[3] Print flight info
+[3] Print plane info
 [x] Quit
 > <font color="red">2</font>
 HA-LOL (42 ppl) (HEL-BAL)
@@ -2579,7 +2579,7 @@ G-OWAC (101 ppl) (JFK-BAL)
 Choose operation:
 [1] Print planes
 [2] Print flights
-[3] Print flight info
+[3] Print plane info
 [x] Quit
 > <font color="red">3</font>
 Give plane ID: <font color="red">G-OWAC</font>
@@ -2588,7 +2588,7 @@ G-OWAC (101 ppl)
 Choose operation:
 [1] Print planes
 [2] Print flights
-[3] Print flight info
+[3] Print plane info
 [x] Quit
 > <font color="red">x</font>
                 </pre>
@@ -8754,12 +8754,12 @@ false
 <h3>Dungeon</h3>
 
 
-  <p><em>This exercise is worth four points.</em> Attention! Implement the all functionality in the package <code>dungeon</code>.</p>
+  <p><em>This exercise is worth four points.</em> Attention! Implement all the functionality in the package <code>dungeon</code>.</p>
 
 <p><b>Attention: you can create only one Scanner object to make your tests work. Do not use Scandinavian letters in the class names. Also, do not use static variables, the tests execute your program many different times, and the static variable values left from the previous execution would possibly disturb them!</b></p>
 
 
-<p>With this exercise, you manage to implement a dungeon game. In the game, the player is in a dungeon full of vampires. The player has to stub the vampires before his lamp runs out of battery and the vampires can suck his blood in the darkness. The player can see the vampires with a blinking of their lamp, after which they have to move blind before the following blinking. With one move, the player can walk as many steps as they want.</p>
+<p>In this exercise, you implement a dungeon game. In the game, the player is in a dungeon full of vampires. The player has to stub the vampires before his lamp runs out of battery and the vampires can suck his blood in the darkness. The player can see the vampires with a blinking of their lamp, after which they have to move blind before the following blinking. With one move, the player can walk as many steps as they want.</p>
 
 <p>The game situation, i.e. the dungeon, the player and the vampires are shown in text form. The first line in the print output tells how many moves the player has left (that is to say, how much battery the lamp has). After that, the print output shows player and vampire positions, which in turn are followed by the game map. In the example below, you see the player (<code>@</code>) and three vampires (<code>v</code>); in this case, the player has enough light for fourteen moves.</p>
 

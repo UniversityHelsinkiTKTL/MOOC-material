@@ -753,15 +753,15 @@ Hi, John
 import java.util.Scanner;
 
 public class Greeting {
-  public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
 
-    System.out.print("Who is greeted: ");
-    String name = reader.nextLine(); // Reads a line of input from the user and assigns it
-                                     //     to the variable called name
+        System.out.print("Who is greeted: ");
+        String name = reader.nextLine(); // Reads a line of input from the user and assigns it
+                                         //     to the variable called name
 
-    System.out.print("Hi " + name);
-  }
+        System.out.print("Hi " + name);
+    }
 }
     </pre>
 
@@ -1981,8 +1981,8 @@ Sum in the end: 7
 int number = 1;
 
 while (number &lt; 11) {
-  System.out.println(number);
-  number++;  // number++ means the same as number = number + 1
+    System.out.println(number);
+    number++;  // number++ means the same as number = number + 1
 }
     </pre>
 
@@ -1997,8 +1997,8 @@ while (number &lt; 11) {
 int number = 1024;
 
 while (number &gt;= 1) {
-  System.out.println(number);
-  number = number / 2;
+    System.out.println(number);
+    number = number / 2;
 }
     </pre><!-- screencast -->
 
@@ -2314,7 +2314,7 @@ we try to print "Never again shall I program an eternal loop!" 10 times:</p>
 int i = 0;
 
 while (i &lt; 10) {
-  System.out.println("Never again shall I program an eternal loop!");
+    System.out.println("Never again shall I program an eternal loop!");
 }
 </pre>
 
@@ -2328,8 +2328,8 @@ looped as long as the condition <code>i &lt; 10</code> is true. But something fu
 <pre class="sh_java">
 int i = 1;
 while (i &lt; 10) {
-  // Some code.
-  i++;
+    // Some code.
+    i++;
 }
 </pre>
 
@@ -2571,21 +2571,21 @@ the outermost braces, for example like this: :</p>
 import java.util.Scanner;
 
 public class ProgramBody {
-  public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
-    // program code
-  }
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+        // program code
+    }
 
-  // self-written methods
+    // self-written methods
 }
 </pre>
 
 <p>Let us create a method <code>greet</code>.</p>
 
 <pre class="sh_java">
-  public static void greet() {
+public static void greet() {
     System.out.println("Greetings from the world of methods!");
-  }
+}
 </pre>
 
 <p>And let us place it in the right spot.</p>
@@ -2594,15 +2594,15 @@ public class ProgramBody {
 import java.util.Scanner;
 
 public class ProgramBody {
-  public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
-    // program code
-  }
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+        // program code
+    }
 
-  // self-written methods
-  public static void greet() {
-    System.out.println("Greetings from the world of methods!");
-  }
+    // self-written methods
+    public static void greet() {
+        System.out.println("Greetings from the world of methods!");
+    }
 }
 </pre>
 
@@ -2620,23 +2620,23 @@ times.</p>
 import java.util.Scanner;
 
 public class ProgramBody {
-  public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
 
-    // program code
-    System.out.println("Let us try if we can get to the method world:");
-    greet();
+        // program code
+        System.out.println("Let us try if we can get to the method world:");
+        greet();
 
-    System.out.println("It seems like we can, let us try again:");
-    greet();
-    greet();
-    greet();
-  }
+        System.out.println("It seems like we can, let us try again:");
+        greet();
+        greet();
+        greet();
+    }
 
-  // self-written methods
-  public static void greet() {
-    System.out.println("Greetings from the world of methods!");
-  }
+    // self-written methods
+    public static void greet() {
+        System.out.println("Greetings from the world of methods!");
+    }
 }
 </pre>
 
@@ -2736,7 +2736,7 @@ parameter will be a variable of the type String called <code>name</code>.</p>
 
 <pre class="sh_java">
 public static void greet(String name) {
-  System.out.println("Hi " + name + ", greetings from the world of methods!");
+    System.out.println("Hi " + name + ", greetings from the world of methods!");
 }
 </pre>
 
@@ -2745,8 +2745,8 @@ public static void greet(String name) {
 
 <pre class="sh_java">
 public static void main(String[] args) {
-  greet("Matt");
-  greet("Arthur");
+    greet("Matt");
+    greet("Arthur");
 }
 </pre>
 
@@ -2760,12 +2760,12 @@ we used them together with the ready-made <code>System.out.println()</code> meth
 
 <pre class="sh_java">
 public static void main(String[] args) {
-  String name1 = "Anne";
-  String name2 = "Green";
-  greet( name1 + " " + name2 );
+    String name1 = "Anne";
+    String name2 = "Green";
+    greet( name1 + " " + name2 );
 
-  int age = 24;
-  greet("John " + age + " years");
+    int age = 24;
+    greet("John " + age + " years");
 }
 </pre>
 
@@ -2787,7 +2787,7 @@ same order.</p>
 
 <pre class="sh_java">
 public static void greet(String name, String greetingsFrom) {
-  System.out.println("Hi " + name + ", greetings from " + greetingsFrom);
+    System.out.println("Hi " + name + ", greetings from " + greetingsFrom);
 }
 </pre>
 
@@ -2816,22 +2816,22 @@ method <code>greetManyTimes</code> that greets the user many times getting assis
 
 <pre class="sh_java">
 public static void greet(String name) {
-  System.out.println("Hi " + name + ", greetings from the world of methods!");
+    System.out.println("Hi " + name + ", greetings from the world of methods!");
 }
 
 public static void greetManyTimes(String name, int times) {
-  int i = 0;
-  while ( i &lt; times ) {
-    greet(name);
-    i++;
-  }
+    int i = 0;
+    while ( i &lt; times ) {
+        greet(name);
+        i++;
+    }
 
 }
 
 public static void main(String[] args) {
-  greetManyTimes("Anthony", 3);
-  System.out.println("and");
-  greetManyTimes("Martin", 2);
+    greetManyTimes("Anthony", 3);
+    System.out.println("and");
+    greetManyTimes("Martin", 2);
 }
 </pre>
 
@@ -3141,8 +3141,8 @@ Congratulations, your guess is correct!
 
     <pre class="sh_java">
 while (hangman.gameOn()) {
-  String command = reader.nextLine();
-  // ...
+    String command = reader.nextLine();
+    // ...
 }
     </pre>
 
@@ -3207,7 +3207,7 @@ Thank you for playing!
 String command = reader.nextLine();
 
 if(command.length() == 1) {  // command has only one letter, so it must be a guess
-  hangman.guess(command);
+    hangman.guess(command);
 }
     </pre>
 
@@ -3302,13 +3302,13 @@ data-first-exercise-index-mooc="43" data-first-week-index-mooc="43" tekija="Arto
 <pre class="sh_java">
 // main program
 public static void main(String[] args) {
-  int number = 1;
-  addThree();
+    int number = 1;
+    addThree();
 }
 
 // method
 public static void addThree() {
-  number = number + 3;
+    number = number + 3;
 }
 </pre>
 
@@ -3321,17 +3321,17 @@ way to give information to a method from the outside is to use parameters.</p>
 <pre class="sh_java">
 // main program
 public static void main(String[] args) {
-  int number = 1;
-  System.out.println("Main program variable number holds the value: " + number);
-  addThree(number);
-  System.out.println("Main program variable number holds the value: " + number);
+    int number = 1;
+    System.out.println("Main program variable number holds the value: " + number);
+    addThree(number);
+    System.out.println("Main program variable number holds the value: " + number);
 }
 
 // method
 public static void addThree(int number) {
-  System.out.println("Method parameter number holds the value: " + number);
-  number = number + 3;
-  System.out.println("Method parameter number holds the value: " + number);
+    System.out.println("Method parameter number holds the value: " + number);
+    number = number + 3;
+    System.out.println("Method parameter number holds the value: " + number);
 }
 </pre>
 
@@ -3364,7 +3364,7 @@ returns the number 10 (type <code>int</code>). Returning a value is accomplished
 
 <pre class="sh_java">
 public static int alwaysReturnTen() {
-  return 10;
+    return 10;
 }
 </pre>
 
@@ -3372,9 +3372,9 @@ public static int alwaysReturnTen() {
 
 <pre class="sh_java">
 public static void main(String[] args) {
-  int number = alwaysReturnTen();
+    int number = alwaysReturnTen();
 
-  System.out.println( "method returned the number " + number );
+    System.out.println( "method returned the number " + number );
 }
 </pre>
 
@@ -3412,7 +3412,7 @@ incorrect:</p>
 
 <pre class="sh_java">
 public static String wrongMethod() {
-  System.out.println("I tell you that I will return a String but I do not!");
+    System.out.println("I tell you that I will return a String but I do not!");
 }
 </pre>
 
@@ -3422,7 +3422,7 @@ calculate 2 + 7. The return value (returned after the method call) is assigned t
 
 <pre class="sh_java">
 public static int sum(int first, int second) {
-  return first + second;
+    return first + second;
 }
 </pre>
 
@@ -3437,19 +3437,19 @@ int sumNumbers = sum(2, 7);
 
 <pre class="sh_java">
 public static void main(String[] args) {
-  Scanner reader = new Scanner(System.in);
+    Scanner reader = new Scanner(System.in);
 
-  System.out.print("Type the first number: ");
-  int first = Integer.parseInt( reader.nextLine() );
+    System.out.print("Type the first number: ");
+    int first = Integer.parseInt( reader.nextLine() );
 
-  System.out.print("Type the second number: ");
-  int second = Integer.parseInt( reader.nextLine() );
+    System.out.print("Type the second number: ");
+    int second = Integer.parseInt( reader.nextLine() );
 
-  System.out.print("Total: " + sum(first,second) );
+    System.out.print("Total: " + sum(first,second) );
 }
 
 public static int sum(int first, int second) {
-  return first + second;
+    return first + second;
 }
 </pre>
 
@@ -3479,10 +3479,10 @@ introduced just like any other variables.</p>
 <pre class="sh_java">
 public static double average(int number1, int number2, int number3) {
 
-  int sum = number1 + number2 + number3;
-  double average = sum / 3.0;
+    int sum = number1 + number2 + number3;
+    double average = sum / 3.0;
 
-  return average;
+    return average;
 }
 </pre>
 
@@ -3937,12 +3937,11 @@ public static void main(String[] args) {
     are added to the string one by one.</p>
 
     <pre>
-  String help = "";
+String help = "";
 
-  // ...
-  // adding a character to the help variable
-  help = help + character;
-
+// ...
+// adding a character to the help variable
+help = help + character;
     </pre>
 
     <p>Program output:</p>
@@ -4009,7 +4008,7 @@ object <code>word2</code>.</p>
 <p>Our old friend <code>reader</code> is also an object:</p>
 
 <pre class="sh_java">
-  Scanner reader = new Scanner(System.in);
+Scanner reader = new Scanner(System.in);
 </pre>Even though readers and strings are both objects, they are not very similar. For example, readers (Scanners) have the <code>
   nextLine()</code> method, but Strings do not. In the Java programming language, objects must be
 "born", in other words created with the <code>new</code> command. Strings are objects that make
@@ -7945,15 +7944,15 @@ public class HangmanLogic {
     <p>An example of how the method <code>guessLetter</code> should work:</p>
 
     <pre class="sh_java">
-  HangmanLogic l = new HangmanLogic("kissa");
-  System.out.println("guessing: A, D, S, F, D");
-  l.guessLetter("A");   // correct
-  l.guessLetter("D");   // wrong
-  l.guessLetter("S");   // correct
-  l.guessLetter("F");   // wrong
-  l.guessLetter("D");   // This should not have any effect on the number of faults since D was already guessed
-  System.out.println("guessed letters: "+l.guessedLetters());
-  System.out.println("number of faults: "+l.numberOfFaults());
+HangmanLogic l = new HangmanLogic("kissa");
+System.out.println("guessing: A, D, S, F, D");
+l.guessLetter("A");   // correct
+l.guessLetter("D");   // wrong
+l.guessLetter("S");   // correct
+l.guessLetter("F");   // wrong
+l.guessLetter("D");   // This should not have any effect on the number of faults since D was already guessed
+System.out.println("guessed letters: "+l.guessedLetters());
+System.out.println("number of faults: "+l.numberOfFaults());
     </pre>
 
     <pre>
@@ -10653,7 +10652,7 @@ while (i &lt; numbers.length ) {
 int[] numbers = {1,8,10,3,5};
 
 for (int number : numbers) {
-  System.out.println(number);
+    System.out.println(number);
 }
 </pre>
 
@@ -10661,7 +10660,7 @@ for (int number : numbers) {
 String[] names = {"Juhana L.", "Matti P.", "Matti L.", "Pekka M."};
 
 for (String name : names) {
-  System.out.println(name);
+    System.out.println(name);
 }
 </pre>
 
@@ -12478,22 +12477,22 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-  public static void main(String[] args) {
-    // Here you can test binary search
-    int[] array = { -3, 2, 3, 4, 7, 8, 12 };
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) {
+        // Here you can test binary search
+        int[] array = { -3, 2, 3, 4, 7, 8, 12 };
+        Scanner reader = new Scanner(System.in);
 
-    System.out.print("Values of the array: " + Arrays.toString(array));
-    System.out.println();
+        System.out.print("Values of the array: " + Arrays.toString(array));
+        System.out.println();
 
-    System.out.print("Enter searched number: ");
-    String searchedValue = reader.nextLine();
-    System.out.println();
+        System.out.print("Enter searched number: ");
+        String searchedValue = reader.nextLine();
+        System.out.println();
 
-    boolean result = BinarySearch.search(array, Integer.parseInt(searchedValue));
+        boolean result = BinarySearch.search(array, Integer.parseInt(searchedValue));
 
-    // Print the binary search result here
-  }
+        // Print the binary search result here
+    }
 }
   </pre>
 

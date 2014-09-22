@@ -199,9 +199,9 @@ Third
 
     <pre class="sh_java">
 public class Example {
-  public static void main(String[] args) {
-    // program code
-  }
+    public static void main(String[] args) {
+        // program code
+    }
 }
     </pre>
 
@@ -215,9 +215,9 @@ public class Example {
 
     <pre class="sh_java">
 public class Example {
-  public static void main(String[] args) {
-    System.out.print("Text to be printed");
-  }
+    public static void main(String[] args) {
+        System.out.print("Text to be printed");
+    }
 }
     </pre>
 
@@ -719,11 +719,11 @@ y has the value 5 and z has the value 6
 import java.util.Scanner;
 
 public class ProgramBody {
-  public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
 
-    // program code
-  }
+        // program code
+    }
 }
     </pre>
 
@@ -816,17 +816,17 @@ System.out.println("You typed " + number);
 import java.util.Scanner;
 
 public class NameAndAgeGreeting {
-  public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
 
-    System.out.print("Your name: ");
-    String name = reader.nextLine();   // Reads a line from the users keyboard
+        System.out.print("Your name: ");
+        String name = reader.nextLine();   // Reads a line from the users keyboard
 
-    System.out.print("How old are you: ");
-    int age = Integer.parseInt(reader.nextLine()); // Reads a string variable from the keyboard and transfers it to an integer
+        System.out.print("How old are you: ");
+        int age = Integer.parseInt(reader.nextLine()); // Reads a string variable from the keyboard and transfers it to an integer
 
-    System.out.println("Your name is: " + name + ", and you are " + age + " years old, nice to meet you!");
-  }
+        System.out.println("Your name is: " + name + ", and you are " + age + " years old, nice to meet you!");
+    }
 }
     </pre>
 
@@ -837,11 +837,11 @@ public class NameAndAgeGreeting {
     <pre class="sh_java">
 import java.util.Scanner;
 public class ProgramName {
-  public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
 
-    // code here
-  }
+        // code here
+    }
 }
     </pre>
 
@@ -2600,7 +2600,7 @@ public class ProgramBody {
   }
 
   // self-written methods
-public static void greet() {
+  public static void greet() {
     System.out.println("Greetings from the world of methods!");
   }
 }
@@ -4083,29 +4083,29 @@ end of the ArrayList.</p>
 <p>ArrayList provides us with many useful methods:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
 
-        teachers.add("Anthony");
-        teachers.add("Barto");
-        teachers.add("Paul");
-        teachers.add("John");
-        teachers.add("Martin");
-        teachers.add("Matt");
+    teachers.add("Anthony");
+    teachers.add("Barto");
+    teachers.add("Paul");
+    teachers.add("John");
+    teachers.add("Martin");
+    teachers.add("Matt");
 
-        System.out.println("the number of teachers " + teachers.size() );
+    System.out.println("the number of teachers " + teachers.size() );
 
-        System.out.println("first teacher on the list " + teachers.get(0));
-        System.out.println("third teacher on the list " + teachers.get(2));
+    System.out.println("first teacher on the list " + teachers.get(0));
+    System.out.println("third teacher on the list " + teachers.get(2));
 
-        teachers.remove("Barto");
+    teachers.remove("Barto");
 
-        if ( teachers.contains("Barto") ) {
-            System.out.println("Barto is on the teachers list");
-        } else {
-            System.out.println("Barto is not on the teachers list");
-        }
+    if (teachers.contains("Barto")) {
+        System.out.println("Barto is on the teachers list");
+    } else {
+        System.out.println("Barto is not on the teachers list");
     }
+}
 </pre>
 
 <p>First a list of strings is created and then 6 names added to it. <code>size</code> tells us the amount of
@@ -4143,18 +4143,18 @@ course.</p>
 <p>In the following example 4 names are added to the list. Then the whole list is printed:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
 
-        teachers.add("Anthony");
-        teachers.add("Paul");
-        teachers.add("John");
-        teachers.add("Martin");
+    teachers.add("Anthony");
+    teachers.add("Paul");
+    teachers.add("John");
+    teachers.add("Martin");
 
-        System.out.println( teachers.get(0) );
-        System.out.println( teachers.get(1) );
-        System.out.println( teachers.get(2) );
-        System.out.println( teachers.get(3) );
+    System.out.println( teachers.get(0) );
+    System.out.println( teachers.get(1) );
+    System.out.println( teachers.get(2) );
+    System.out.println( teachers.get(3) );
 }
 </pre>
 
@@ -4164,23 +4164,23 @@ we would not know how many items there are?</p>
 <p>First, we create a temporary version:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
 
-        teachers.add("Anthony");
-        teachers.add("Paul");
-        teachers.add("John");
-        teachers.add("Martin");
-        teachers.add("Matt");
+    teachers.add("Anthony");
+    teachers.add("Paul");
+    teachers.add("John");
+    teachers.add("Martin");
+    teachers.add("Matt");
 
-        int place = 0;
-        System.out.println( teachers.get(place) );
-        place++;
-        System.out.println( teachers.get(place) );  // place = 1
-        place++;
-        System.out.println( teachers.get(place) );  // place = 2
-        place++;
-        System.out.println( teachers.get(place) );  // place = 3
+    int place = 0;
+    System.out.println( teachers.get(place) );
+    place++;
+    System.out.println( teachers.get(place) );  // place = 1
+    place++;
+    System.out.println( teachers.get(place) );  // place = 2
+    place++;
+    System.out.println( teachers.get(place) );  // place = 3
 }
 </pre>
 
@@ -4188,20 +4188,20 @@ we would not know how many items there are?</p>
 one until it gets too big:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
 
-        teachers.add("Anthony");
-        teachers.add("Paul");
-        teachers.add("John");
-        teachers.add("Martin");
-        teachers.add("Matt");
+    teachers.add("Anthony");
+    teachers.add("Paul");
+    teachers.add("John");
+    teachers.add("Martin");
+    teachers.add("Matt");
 
-        int place = 0;
-        while ( place &lt; teachers.size() )  // remember why place &lt;= teachers.size() doesn't work?
-            System.out.println( teachers.get(place) );
-            place++;
-        }
+    int place = 0;
+    while ( place &lt; teachers.size() )  // remember why place &lt;= teachers.size() doesn't work?
+        System.out.println( teachers.get(place) );
+        place++;
+    }
 }
 </pre>
 
@@ -4220,18 +4220,18 @@ used now.</p>
 <p>Going through items in an ArrayList with for-each is easy:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
 
-        teachers.add("Anthony");
-        teachers.add("Paul");
-        teachers.add("John");
-        teachers.add("Martin");
-        teachers.add("Matt");
+    teachers.add("Anthony");
+    teachers.add("Paul");
+    teachers.add("John");
+    teachers.add("Martin");
+    teachers.add("Matt");
 
-        for (String teacher : teachers) {
-            System.out.println( teacher );
-        }
+    for (String teacher : teachers) {
+        System.out.println( teacher );
+    }
 }
 </pre>
 
@@ -4314,17 +4314,17 @@ You gave the word celery twice
 list items are of type String. Ordering is done as follows:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
 
-        // ...
+    // ...
 
-        Collections.sort(teachers);
+    Collections.sort(teachers);
 
-        for (String teacher : teachers) {
-            System.out.println( teacher );
-        }
+    for (String teacher : teachers) {
+        System.out.println( teacher );
     }
+}
 </pre>
 
 <p>Output:</p>
@@ -4402,21 +4402,21 @@ Sibelius
 <p>ArrayList can be given to a method as a parameter:</p>
 
 <pre class="sh_java">
-    public static void print(ArrayList&lt;String&gt; list) {
-        for (String word : list) {
-            System.out.println( word );
-        }
+public static void print(ArrayList&lt;String&gt; list) {
+    for (String word : list) {
+        System.out.println( word );
     }
+}
 
-    public static void main(String[] args) {
-        ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
-        list.add("Java");
-        list.add("Python");
-        list.add("Ruby");
-        list.add("C++");
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
+    list.add("Java");
+    list.add("Python");
+    list.add("Ruby");
+    list.add("C++");
 
-        print(list);
-    }
+    print(list);
+}
 </pre>
 
 <p>The type of the parameter is defined as an ArrayList of String variables the same way a String
@@ -4425,29 +4425,29 @@ ArrayList is defined:</p>
 <p>Note that the name of the parameter can be anything:</p>
 
 <pre class="sh_java">
-    public static void print(ArrayList&lt;String&gt; printed) {
-        for (String word : printed) {
-            System.out.println( word );
-        }
+public static void print(ArrayList&lt;String&gt; printed) {
+    for (String word : printed) {
+        System.out.println( word );
     }
+}
 
-    public static void main(String[] args) {
-        ArrayList&lt;String&gt; programmingLanguages = new ArrayList&lt;String&gt;();
-        programmingLanguages.add("Java");
-        programmingLanguages.add("Python");
-        programmingLanguages.add("Ruby");
-        programmingLanguages.add("C++");
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; programmingLanguages = new ArrayList&lt;String&gt;();
+    programmingLanguages.add("Java");
+    programmingLanguages.add("Python");
+    programmingLanguages.add("Ruby");
+    programmingLanguages.add("C++");
 
-        ArrayList&lt;String&gt; countries = new ArrayList&lt;String&gt;();
-        countries.add("Finland");
-        countries.add("Sweden");
-        countries.add("Norway");
+    ArrayList&lt;String&gt; countries = new ArrayList&lt;String&gt;();
+    countries.add("Finland");
+    countries.add("Sweden");
+    countries.add("Norway");
 
-        print(programmingLanguages);    // method is given the list programmingLanguages
- as a parameter
+    print(programmingLanguages);    // method is given the list programmingLanguages
+as a parameter
 
-       print(countries);                 //  method is given the list countries as a parameter
-    }
+   print(countries);                 //  method is given the list countries as a parameter
+}
 </pre>
 
 <p>The program now includes two lists, <em>programmingLanguages</em> and <em>countries</em>. First the
@@ -4465,7 +4465,6 @@ list.</p>
     <code>return</code> statement to return the number as shown in the following example:</p>
 
     <pre class="sh_java">
-
 ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
 list.add("Hallo");
 list.add("Ciao");
@@ -4485,32 +4484,32 @@ There are this many items in the list:
     the list. What would happen if the list was empty?</p>
 
     <pre class="sh_java">
-    public static void print(ArrayList&lt;String&gt; printed) {
-        for (String word : printed) {
-            System.out.println( word );
-        }
+public static void print(ArrayList&lt;String&gt; printed) {
+    for (String word : printed) {
+        System.out.println( word );
     }
+}
 
-    public static void removeFirst(ArrayList&lt;String&gt; list) {
-        list.remove(0);  // removes the first item (indexed 0)
-    }
+public static void removeFirst(ArrayList&lt;String&gt; list) {
+    list.remove(0);  // removes the first item (indexed 0)
+}
 
-   public static void main(String[] args) {
-        ArrayList&lt;String&gt; programmingLanguages = new ArrayList&lt;String&gt;();
-        programmingLanguages.add("Pascal");
-        programmingLanguages.add("Java");
-        programmingLanguages.add("Python");
-        programmingLanguages.add("Ruby");
-        programmingLanguages.add("C++");
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; programmingLanguages = new ArrayList&lt;String&gt;();
+    programmingLanguages.add("Pascal");
+    programmingLanguages.add("Java");
+    programmingLanguages.add("Python");
+    programmingLanguages.add("Ruby");
+    programmingLanguages.add("C++");
 
-        print(programmingLanguages);
+    print(programmingLanguages);
 
-        removeFirst(programmingLanguages);
+    removeFirst(programmingLanguages);
 
-        System.out.println();  // prints an empty line
+    System.out.println();  // prints an empty line
 
-       print(programmingLanguages);
-    }
+   print(programmingLanguages);
+}
     </pre>
 
     <p>Output:</p>
@@ -4581,18 +4580,18 @@ are a couple of details to remember. An integer ArrayList is defined like this:
 numbers::</p>
 
 <pre class="sh_java">
+public static void main(String[] args) {
+    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
 
-    public static void main(String[] args) {
-        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+    numbers.add(4);
+    numbers.add(8);
 
-        numbers.add(4);
-        numbers.add(8);
+    // tries to remove the number from the index 4, does not work as expected!
+    numbers.remove(4);
 
-        // tries to remove the number from the index 4, does not work as expected!
-        numbers.remove(4);
-
-        // this removes the number 4 from the list
-        numbers.remove( Integer.valueOf(4) );
+    // this removes the number 4 from the list
+    numbers.remove(Integer.valueOf(4));
+}
 </pre>
 
 <p><code>numbers.remove(4)</code> tries to remove the item in the index 4 from the list. There are only 2
@@ -4618,7 +4617,6 @@ the number 4 needs to be removed: <code>numbers.remove( Integer.valueOf(4) );</c
     <p>Create the method using the following program body:</p>
 
     <pre class="sh_java">
-
 public static int sum(ArrayList&lt;Integer&gt; list) {
     // write your code here
 }
@@ -4660,7 +4658,6 @@ The sum: 24
     <p>Create the method using the following program body:</p>
 
     <pre class="sh_java">
-
 public static double average(ArrayList&lt;Integer&gt; list) {
     // write your code here
 }
@@ -4693,7 +4690,6 @@ assigns the list returned by the method as a value into a variable that has the 
 value:</p>
 
 <pre class="sh_java">
-
 public class Main {
 
     public static ArrayList&lt;Integer&gt; addNumbersToList(int num1, int num2, int num3){
@@ -4726,7 +4722,6 @@ public class Main {
     list.</p>
 
     <pre class="sh_java">
-
 public static ArrayList&lt;Integer&gt; lengths(ArrayList&lt;String&gt; list) {
     // write your code here
 }
@@ -4759,7 +4754,6 @@ The lengths of the Strings: [5, 3, 10, 27]
     as a return value.</p>
 
     <pre class="sh_java">
-
 public static int greatest(ArrayList&lt;Integer&gt; list) {
     // write your code here
 }
@@ -4795,7 +4789,6 @@ The greatest number is: 7
     average of the parameters. The method should be called only once!</p>
 
     <pre class="sh_java">
-
 public static double variance(ArrayList&lt;Integer&gt; list) {
     // write your code here
 }
@@ -4833,21 +4826,20 @@ The variance is: 5.666667
 <em>false</em>). Here is an example on how to use boolean variables:</p>
 
 <pre class="sh_java">
+int num1 = 1;
+int num2 = 5;
 
-        int num1 = 1;
-        int num2 = 5;
+boolean firstGreater = true;
 
-        boolean firstGreater = true;
+if (num1 &lt;= num2) {
+    firstGreater = false;
+}
 
-        if (num1 &lt;= num2) {
-            firstGreater = false;
-        }
-
-        if (firstGreater==true) {
-            System.out.println("num1 is greater");
-        } else {
-            System.out.println("num1 was not greater");
-        }
+if (firstGreater==true) {
+    System.out.println("num1 is greater");
+} else {
+    System.out.println("num1 was not greater");
+}
 </pre>
 
 <p>First, we assign the truth value variable <code>firstGreater</code> the value <em>true</em>. The first if
@@ -4859,12 +4851,11 @@ value.</p>
 example. We can write the second if sentence as follows:</p>
 
 <pre class="sh_java">
-
-        if (firstGreater) {  // means the same as firstGreater==true
-            System.out.println("num1 was greater");
-        } else {
-            System.out.println("num1 was not greater");
-        }
+if (firstGreater) {  // means the same as firstGreater==true
+    System.out.println("num1 was greater");
+} else {
+    System.out.println("num1 was not greater");
+}
 </pre>
 
 <p>If we want to check if the boolean variable holds the value true, we do not need to write
@@ -4874,12 +4865,11 @@ example. We can write the second if sentence as follows:</p>
 operation ! (exclamation mark):</p>
 
 <pre class="sh_java">
-
-        if (!firstGreater) {  // means the same as firstGreater==false
-            System.out.println("num1 was not greater");
-        } else {
-            System.out.println("num1 was greater");
-        }
+if (!firstGreater) {  // means the same as firstGreater==false
+    System.out.println("num1 was not greater");
+} else {
+    System.out.println("num1 was greater");
+}
 </pre>
 
 
@@ -4890,20 +4880,19 @@ method that checks if the list it gets as a parameter includes only positive num
 positive). The method returns the information as a boolean (i.e. truth value).</p>
 
 <pre class="sh_java">
+public static boolean allPositive(ArrayList&lt;Integer&gt; numbers) {
+    boolean noNegative = true;
 
-    public static boolean allPositive(ArrayList&lt;Integer&gt; numbers) {
-        boolean noNegative = true;
-
-        for (int number : numbers) {
-            if (number &lt; 0) {
-                noNegative = false;
-            }
+    for (int number : numbers) {
+        if (number &lt; 0) {
+            noNegative = false;
         }
-
-        // if one of the numbers on the list had a value that is below zero, noNegatives becomes false.
-
-        return noNegative;
     }
+
+    // if one of the numbers on the list had a value that is below zero, noNegatives becomes false.
+
+    return noNegative;
+}
 </pre>
 
 <p>The method has a boolean helper variable called <code>noNegative</code>. First we assign the helper variable
@@ -4914,41 +4903,38 @@ no negative numbers were found, it has the value true, otherwise it has the valu
 <p>The method is used as follows:</p>
 
 <pre class="sh_java">
+public static void main(String[] args) {
 
-    public static void main(String[] args) {
+    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+    numbers.add(3);
+    numbers.add(1);
+    numbers.add(-1);
 
-        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
-        numbers.add(3);
-        numbers.add(1);
-        numbers.add(-1);
+    boolean result = allPositive(numbers);
 
-        boolean result = allPositive(numbers);
-
-        if (result) {  // means the same as result == true
-            System.out.println("all numbers are positive");
-        } else {
-            System.out.println("there is at least one negative number");
-        }
+    if (result) {  // means the same as result == true
+        System.out.println("all numbers are positive");
+    } else {
+        System.out.println("there is at least one negative number");
     }
+}
 </pre>
 
 <p>Usually it is not necessary to store the answer into a variable. We can write the method call directly as
 the condition:</p>
 
 <pre class="sh_java">
+ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+numbers.add(4);
+numbers.add(7);
+numbers.add(12);
+numbers.add(9);
 
-        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
-        numbers.add(4);
-        numbers.add(7);
-        numbers.add(12);
-        numbers.add(9);
-
-        if (allPositive(numbers)) {
-            System.out.println("all numbers are positive");
-        } else {
-            System.out.println("there is at least one negative number");
-        }
-    }
+if (allPositive(numbers)) {
+    System.out.println("all numbers are positive");
+} else {
+    System.out.println("there is at least one negative number");
+}
 </pre>
 
 <h3>The return command and ending a method</h3>
@@ -4957,18 +4943,16 @@ the condition:</p>
 Using this information to our advantage, we write the <code>allPositive</code> method easier to understand.</p>
 
 <pre class="sh_java">
-
-    public static boolean allPositive(ArrayList&lt;Integer&gt; numbers) {
-        for (int number : numbers) {
-            if (number &lt; 0) {
-                return false;
-            }
+public static boolean allPositive(ArrayList&lt;Integer&gt; numbers) {
+    for (int number : numbers) {
+        if (number &lt; 0) {
+            return false;
         }
-
-        // if the execution reached this far, no negative numbers were found
-        // so we return true
-        return true;
     }
+
+    // if the execution reached this far, no negative numbers were found
+    // so we return true
+    return true;
 }
 </pre>
 
@@ -4987,7 +4971,6 @@ We now got rid of the helper variable inside the method!</p>
     <p>The program body is the following:</p>
 
     <pre class="sh_java">
-
 public static boolean moreThanOnce(ArrayList&lt;Integer&gt; list, int number) {
     // write your code here
 }
@@ -5034,7 +5017,6 @@ Type a number: <font color="red">3</font>
     palindrome).</p>
 
     <pre class="sh_java">
-
 public static boolean palindrome(String text) {
     // write your code here
 }
@@ -5087,15 +5069,14 @@ data-first-exercise-index-mooc="70" data-first-week-index-mooc="4" tekija="Arto 
   inside a method.</p>
 
   <pre class="sh_java">
-
 public static void main(String[] args) {
-  int number = 1;
-  addThree();
-  System.out.println("Main program variable number holds the value: " + number);
+    int number = 1;
+    addThree();
+    System.out.println("Main program variable number holds the value: " + number);
 }
 
 public static void addThree() {
-  number = number + 3;
+    number = number + 3;
 }
   </pre>
 
@@ -5111,15 +5092,14 @@ public static void addThree() {
   method as a parameter.</p>
 
   <pre class="sh_java">
-
 public static void main(String[] args) {
-  int number = 1;
-  addThree(number);
-  System.out.println(number);  // prints 1, the value did not change
+    int number = 1;
+    addThree(number);
+    System.out.println(number);  // prints 1, the value did not change
 }
 
 public static addThree(int number) {
-  number = number + 3;
+    number = number + 3;
 }
   </pre>
 
@@ -5153,18 +5133,17 @@ public static addThree(int number) {
   example to work by changing the code a little bit:</p>
 
   <pre class="sh_java">
-
 public static void main(String[] args) {
-  int number = 1;
-  number = addThreeAndReturn(number);
+    int number = 1;
+    number = addThreeAndReturn(number);
 
-  System.out.println(number);  // prints 4, because number has the method return value as its value
+    System.out.println(number);  // prints 4, because number has the method return value as its value
 }
 
 public static int addThreeAndReturn(int number) {
-  number = number + 3;
+    number = number + 3;
 
-  return number;
+    return number;
 }
   </pre>
 
@@ -5174,18 +5153,17 @@ public static int addThreeAndReturn(int number) {
   here. The code works exactly the same regardless of the variable names. Here follows an example:</p>
 
   <pre class="sh_java">
-
 public static void main(String[] args) {
-  int number = 1;
-  number = addThreeAndReturn(number);
+    int number = 1;
+    number = addThreeAndReturn(number);
 
-  System.out.println(number);
+    System.out.println(number);
 }
 
 public static int addThreeAndReturn(int incremented) {
-  incremented = incremented + 3;
+    incremented = incremented + 3;
 
-  return incremented;
+    return incremented;
 }
   </pre>
 
@@ -5196,27 +5174,25 @@ public static int addThreeAndReturn(int incremented) {
   method sees the original list and all the changes the method makes will take effect everywhere.</p>
 
   <pre class="sh_java">
-
-    public static void removeFirst(ArrayList&lt;Integer&gt; list) {
-        list.remove(0); // removes the number from index 0
-    }
+public static void removeFirst(ArrayList&lt;Integer&gt; list) {
+    list.remove(0); // removes the number from index 0
+}
   </pre>
 
   <pre class="sh_java">
+public static void main(String[] args) {
+    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+    numbers.add(4);
+    numbers.add(3);
+    numbers.add(7);
+    numbers.add(3);
 
-    public static void main(String[] args) {
-        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
-        numbers.add(4);
-        numbers.add(3);
-        numbers.add(7);
-        numbers.add(3);
+    System.out.println(numbers); // prints [4,3,7,3]
 
-        System.out.println(numbers); // prints [4,3,7,3]
+    removeFirst(numbers);
 
-        removeFirst(numbers);
-
-        System.out.println(numbers); // prints [3,7,3]
-    }
+    System.out.println(numbers); // prints [3,7,3]
+}
   </pre>
 
   <p>Unlike a parameter of <code>int</code> type, a list will not be copied and therefore the method
@@ -5262,22 +5238,21 @@ public static int addThreeAndReturn(int incremented) {
       method:</p>
 
       <pre class="sh_java">
+ArrayList&lt;Integer&gt; list1 = new ArrayList&lt;Integer&gt;();
+ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;Integer&gt;();
 
-    ArrayList&lt;Integer&gt; list1 = new ArrayList&lt;Integer&gt;();
-    ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;Integer&gt;();
+list1.add(4);
+list1.add(3);
 
-    list1.add(4);
-    list1.add(3);
+list2.add(5);
+list2.add(10);
+list2.add(7);
 
-    list2.add(5);
-    list2.add(10);
-    list2.add(7);
+combine(list1, list2);
 
-    combine(list1, list2);
+System.out.println(list1); // prints [4, 3, 5, 10, 7]
 
-    System.out.println(list1); // prints [4, 3, 5, 10, 7]
-
-    System.out.println(list2); // prints [5, 10, 7]
+System.out.println(list2); // prints [5, 10, 7]
       </pre>
 
       <p>We can use the method <code>addAll</code> provided by the ArrayList class to add one list in
@@ -5342,33 +5317,33 @@ NetBeans to auto-indent your code by pressing Alt+Shift+F) and separate logical 
 breaks:</p>
 
 <pre class="sh_java">
+public static void main(String[] args) {
+    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+    numbers.add(4);
+    numbers.add(3);
+    numbers.add(7);
+    numbers.add(3);
 
-    public static void main(String[] args) {
-        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
-        numbers.add(4);
-        numbers.add(3);
-        numbers.add(7);
-        numbers.add(3);
+    System.out.println("The numbers in the beginning:");
 
-        System.out.println("The numbers in the beginning:");
+    // here we print numbers
+    for (int number : numbers) {
+        System.out.println(number);
+    }
 
-        // here we print numbers
-        for (int number : numbers) {
-            System.out.println(number);
-        }
+    // checks if the list contains the number 3
+    while (numbers.contains(Integer.valueOf(3))) {
+        numbers.remove(Integer.valueOf(3));  // if yes, it is removed
+    }
+    // we use a while structure to get all the threes removed!
 
-        // checks if the list contains the number 3
-        while (numbers.contains(Integer.valueOf(3))) {
-            numbers.remove(Integer.valueOf(3));  // if yes, it is removed
-        }
-        // we use a while structure to get all the threes removed!
+    System.out.println("The numbers after removal:");
 
-        System.out.println("The numbers after removal:");
-
-         // here we print numbers
-        for (int number : numbers) {
-            System.out.println(number);
-        }
+     // here we print numbers
+    for (int number : numbers) {
+        System.out.println(number);
+    }
+}
 </pre>
 
 <p>Now, the code starts to make sense. For example, the printing and the number removal are two logical
@@ -5385,33 +5360,33 @@ code that handles the printing part should be separated as its own method. Then 
 the main program:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
-        numbers.add(4);
-        numbers.add(3);
-        numbers.add(7);
-        numbers.add(3);
+public static void main(String[] args) {
+    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+    numbers.add(4);
+    numbers.add(3);
+    numbers.add(7);
+    numbers.add(3);
 
-        System.out.println("The numbers in the beginning:");
+    System.out.println("The numbers in the beginning:");
 
-        // here we print numbers
-        print(numbers);
+    // here we print numbers
+    print(numbers);
 
-        while (numbers.contains(Integer.valueOf(3))) {
-            numbers.remove(Integer.valueOf(3));
-        }
-
-        System.out.println("The numbers after removal:");
-
-        // here we print numbers
-        print(numbers);
+    while (numbers.contains(Integer.valueOf(3))) {
+        numbers.remove(Integer.valueOf(3));
     }
 
-    public static void print(ArrayList&lt;Integer&gt; numbers) {
-        for (int number : numbers) {
-            System.out.println( number );
-        }
+    System.out.println("The numbers after removal:");
+
+    // here we print numbers
+    print(numbers);
+}
+
+public static void print(ArrayList&lt;Integer&gt; numbers) {
+    for (int number : numbers) {
+        System.out.println( number );
     }
+}
 </pre>
 
 <h3>Slicing separate tasks into methods with descriptive names</h3>
@@ -5427,33 +5402,33 @@ there is an "unaesthetic" code line that directly manipulates the list, in betwe
 method calls. Let us turn that unaesthetic piece of code into a method:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
-        numbers.add(4);
-        numbers.add(3);
-        numbers.add(7);
-        numbers.add(3);
+public static void main(String[] args) {
+    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+    numbers.add(4);
+    numbers.add(3);
+    numbers.add(7);
+    numbers.add(3);
 
-        System.out.println("The numbers in the beginning:");
-        print(numbers);
+    System.out.println("The numbers in the beginning:");
+    print(numbers);
 
-        remove(numbers, 3);
+    remove(numbers, 3);
 
-        System.out.println("The numbers after removal:");
-        print(numbers);
+    System.out.println("The numbers after removal:");
+    print(numbers);
+}
+
+public static void print(ArrayList&lt;Integer&gt; numbers) {
+    for (int number : numbers) {
+        System.out.println( number );
     }
+}
 
-    public static void print(ArrayList&lt;Integer&gt; numbers) {
-        for (int number : numbers) {
-            System.out.println( number );
-        }
+public static void remove(ArrayList&lt;Integer&gt; numbers, int removed) {
+    while (numbers.contains(Integer.valueOf(removed))) {
+        numbers.remove(Integer.valueOf(removed));
     }
-
-    public static void remove(ArrayList&lt;Integer&gt; numbers, int removed) {
-        while (numbers.contains(Integer.valueOf(removed))) {
-            numbers.remove(Integer.valueOf(removed));
-        }
-    }
+}
 </pre>
 
 <p>In the example above, we created a new descriptively named method out of a separate logical entity,
@@ -5565,22 +5540,22 @@ object can be altered. As an example, there are two ArrayList objects in the fol
 <code>cities</code> and <code>countries</code> :</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;String&gt; cities = new ArrayList&lt;String&gt;();
-        ArrayList&lt;String&gt; countries = new ArrayList&lt;String&gt;();
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; cities = new ArrayList&lt;String&gt;();
+    ArrayList&lt;String&gt; countries = new ArrayList&lt;String&gt;();
 
-        countries.add("Finland");
-        countries.add("Germany");
-        countries.add("Netherlands");
+    countries.add("Finland");
+    countries.add("Germany");
+    countries.add("Netherlands");
 
-        cities.add("Berliini");
-        cities.add("Nijmegen");
-        cities.add("Turku");
-        cities.add("Helsinki");
+    cities.add("Berliini");
+    cities.add("Nijmegen");
+    cities.add("Turku");
+    cities.add("Helsinki");
 
-        System.out.println("number of countries " + countries.size() );
-        System.out.println("number of cities " + cities.size() );
-    }
+    System.out.println("number of countries " + countries.size() );
+    System.out.println("number of cities " + cities.size() );
+}
 </pre>
 
 <p>Both the <code>countries</code> object and the <code>cities</code> object live a life of their own.
@@ -5607,8 +5582,8 @@ Strings. The familiar way to create a String is actually an abbreviated way of u
 A String can also be created with new just like any other object:</p>
 
 <pre class="sh_java">
-        String text = "some text";       // abbreviated way of creating a String
-        String anotherText = new String("more text");
+String text = "some text";       // abbreviated way of creating a String
+String anotherText = new String("more text");
 </pre>
 
 <p>Cases in which ready-made parts of Java call <code>new</code> out of sight of the programmer also
@@ -5662,7 +5637,7 @@ creates the object with the command <code>new</code>. For example, a new instanc
 class Scanner by calling <code>new Scanner(..)</code>:</p>
 
 <pre class="sh_java">
-    Scanner reader = new Scanner(System.in);
+Scanner reader = new Scanner(System.in);
 </pre>
 
 <p>Constructors take parameters the way any other method does.</p>
@@ -5956,7 +5931,7 @@ Martin, age 0 years
       form:
 
       <pre>
-    Banana, price 1.1, amount 13
+Banana, price 1.1, amount 13
       </pre>
       </li>
     </ul>
@@ -6694,13 +6669,13 @@ The card has 50.0 euros
     <p>Implement the following methods to <code>LyyraCard</code>:</p>
 
     <pre class="sh_java">
-    public void payEconomical() {
-        // write code here
-    }
+public void payEconomical() {
+    // write code here
+}
 
-    public void payGourmet() {
-        // write code here
-    }
+public void payGourmet() {
+    // write code here
+}
     </pre>
 
     <p>Method <code>payEconomical</code> should decrease the balance by 2.50 euros and method
@@ -6770,9 +6745,9 @@ The card has 1.0 euros
     <p>Add the <code>LyyraCard</code> the following method:</p>
 
     <pre class="sh_java">
-    public void loadMoney(double amount) {
-        // write code here
-    }
+public void loadMoney(double amount) {
+    // write code here
+}
     </pre>
 
     <p>The method should increase the balance of the card by the given amount. However, the maximum
@@ -6904,7 +6879,7 @@ add a method that calculates the body mass index.</p>
 parts affected by the change are shown):</p>
 
 <pre class="sh_java">
-   public class Person {
+public class Person {
     private String name;
     private int age;
     private int weight;
@@ -6943,18 +6918,19 @@ variable <code>setVariableName</code>. This type of methods are usually called <
 <p>The new methods in use:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person matti = new Person("Matti");
-        Person john = new Person("John");
+public static void main(String[] args) {
+    Person matti = new Person("Matti");
+    Person john = new Person("John");
 
-        matti.setHeight(180);
-        matti.setWeight(86);
+    matti.setHeight(180);
+    matti.setWeight(86);
 
-        john.setHeight(175);
-        john.setWeight(64);
+    john.setHeight(175);
+    john.setWeight(64);
 
-        System.out.println( matti.getName() + ", body mass index: " + matti.bodyMassIndex() );
-        System.out.println( john.getName() + ", body mass index: " + john.bodyMassIndex() );
+    System.out.println(matti.getName() + ", body mass index: " + matti.bodyMassIndex());
+    System.out.println(john.getName() + ", body mass index: " + john.bodyMassIndex());
+}
 </pre>
 
 <p>The output:</p>
@@ -6970,17 +6946,17 @@ John, body mass index: on 20.897959183673468
 the parameter <code>newHeight</code>:</p>
 
 <pre class="sh_java">
-    public void setHeight(int newHeight) {
-        this.height = newHeight;
-    }
+public void setHeight(int newHeight) {
+    this.height = newHeight;
+}
 </pre>
 
 <p>The parameter could also be named identically with the object variable:</p>
 
 <pre class="sh_java">
-    public void setHeight(int height) {
-        this.height = height;
-    }
+public void setHeight(int height) {
+    this.height = height;
+}
 </pre>
 
 <p>Now, the name <code>height</code> means the parameter <em>height</em> and the identically named
@@ -6988,12 +6964,11 @@ object variable is referred to as <code>this.height</code>. The following would 
 object variable <em>height</em> is not at all referred to in the code:</p>
 
 <pre class="sh_java">
-    public void setHeight(int height) {
-        // DOES NOT WORK!
-        height = height;
-        // this just assigns the value of the parameter to the parameter itself
-    }
-
+public void setHeight(int height) {
+    // DOES NOT WORK!
+    height = height;
+    // this just assigns the value of the parameter to the parameter itself
+}
 </pre>
 
 <h3>Contolling the number of decimals when printing a float</h3>
@@ -7009,8 +6984,8 @@ the amount of decimals shown.</p>
 <p>After changing the code, we have the following:</p>
 
 <pre class="sh_java">
-    System.out.println( matti.getName() + ", body mass index: " + String.format( "%.2f", matti.bodyMassIndex() ) );
-    System.out.println( john.getName() + ", body mass index: " + String.format( "%.2f", john.bodyMassIndex() ) );
+System.out.println(matti.getName() + ", body mass index: " + String.format( "%.2f", matti.bodyMassIndex()));
+System.out.println(john.getName() + ", body mass index: " + String.format( "%.2f", john.bodyMassIndex()));
 </pre>
 
 <p>The output is:</p>
@@ -7163,9 +7138,9 @@ value: 01
     <p>First you should implement the method <code>getValue</code> for the counters in the class:</p>
 
     <pre class="sh_java">
-    public int getValue() {
-        // write here code that returns the value
-    }
+public int getValue() {
+    // write here code that returns the value
+}
     </pre>
 
     <p>Then implement the clock in your main method in the following style:</p>
@@ -7318,18 +7293,18 @@ method, a better idea is to call the method <code>bodyMassIndex</code> from the 
 method:</p>
 
 <pre class="sh_java">
-    public String toString() {
-        return this.name + ", age " + this.age + " years, my body mass index is " + this.bodyMassIndex();
-    }
+public String toString() {
+    return this.name + ", age " + this.age + " years, my body mass index is " + this.bodyMassIndex();
+}
 </pre>
 
 <p>As can be seen, an object can call its own method by prefixing the method name with
 <code>this</code> and dot. The this is not necessary, so also the following works:</p>
 
 <pre class="sh_java">
-    public String toString() {
-        return this.name + ", age " + this.age + " years, my body mass index is " + bodyMassIndex();
-    }
+public String toString() {
+    return this.name + ", age " + this.age + " years, my body mass index is " + bodyMassIndex();
+}
 </pre><!-- screencast -->
 
 <p>Now it is time to continue practising programming.</p>
@@ -7602,9 +7577,9 @@ method in the previous examples. Interestingly, this method of the class Random 
 that's okay!).</p>
 
 <pre class="sh_java">
-    public int forecastTemperature() {
-        return (int) ( 4 * this.random.nextGaussian() - 3 );
-    }
+public int forecastTemperature() {
+    return (int) ( 4 * this.random.nextGaussian() - 3 );
+}
 </pre>
 
 <p>In the expression above, interesting is the section <code>(int)</code>. This part of the
@@ -7681,7 +7656,6 @@ public class Dice {
           // we'll get a random number in the range 1-numberOfSides&lt;
     }
 }
-
     </pre>
 
     <p>Expand the class <code>Dice</code> so that with each roll the dice returns a random number
@@ -7867,7 +7841,6 @@ public class Program {
         System.out.println("");
     }
 }
-
     </pre>
 
     <p>The program can print lines like these:</p>
@@ -8034,9 +8007,9 @@ word now: __SSA
     by changing the constructor parameter of the game logic:</p>
 
     <pre class="sh_java">
-        HangmanLogic logic = new HangmanLogic("parameter");
-        HangmanUI game = new HangmanUI(logic);
-        game.start();
+HangmanLogic logic = new HangmanLogic("parameter");
+HangmanUI game = new HangmanUI(logic);
+game.start();
     </pre>
 
     <p>The game is played with the keyboard. You can end the game by pressing x in the upper left
@@ -8128,12 +8101,12 @@ public class Person {
             <p>All person objects are 0 years old at creation, since the constructor sets it to 0:</p>
 
 <pre class="sh_java">
-    public Person(String name) {
-        this.name = name;
-        this.age = 0;
-        this.weight = 0;
-        this.height = 0;
-    }
+public Person(String name) {
+    this.name = name;
+    this.age = 0;
+    this.weight = 0;
+    this.height = 0;
+}
 </pre>
 
             <p>We also want to create a person so that in addition to name, can be given an age as a parameter. This can
@@ -8141,31 +8114,31 @@ public class Person {
             do not need to remove the old one.</p>
 
 <pre class="sh_java">
-    public Person(String name) {
-        this.name = name;
-        this.age = 0;
-        this.weight = 0;
-        this.height = 0;
-    }
+public Person(String name) {
+    this.name = name;
+    this.age = 0;
+    this.weight = 0;
+    this.height = 0;
+}
 
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-        this.weight = 0;
-        this.height = 0;
-    }
+public Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+    this.weight = 0;
+    this.height = 0;
+}
 </pre>
 
             <p>Now, creating objects can be done in two different ways:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 24);
-        Person esko = new Person("Esko");
+public static void main(String[] args) {
+    Person pekka = new Person("Pekka", 24);
+    Person esko = new Person("Esko");
 
-        System.out.println( pekka );
-        System.out.println( esko );
-    }
+    System.out.println( pekka );
+    System.out.println( esko );
+}
 </pre>
 
 <pre>
@@ -8194,16 +8167,16 @@ Esko, age 0 years
             it and asks it to set the age to 0:</p>
 
 <pre class="sh_java">
-    public Person(String name) {
-        this(name, 0);  // run here the other constructor's code and set the age parameter to 0
-    }
+public Person(String name) {
+    this(name, 0);  // run here the other constructor's code and set the age parameter to 0
+}
 
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-        this.weight = 0;
-        this.height = 0;
-    }
+public Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+    this.weight = 0;
+    this.height = 0;
+}
 </pre>
 
             <p>Calling the own constructor of a class <code>this(name, 0);</code> might seem a little peculiar. But we
@@ -8218,26 +8191,27 @@ Esko, age 0 years
             parameter:</p>
 
 <pre class="sh_java">
-    public void becomeOlder() {
-        this.age = this.age + 1;
-    }
+public void becomeOlder() {
+    this.age = this.age + 1;
+}
 
-    public void becomeOlder(int years) {
-        this.age = this.age + years;
-    }
+public void becomeOlder(int years) {
+    this.age = this.age + years;
+}
 </pre>
 
             <p>In the following, "Pekka" is born as a 24-year old, ages one year, and then 10:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 24);
+public static void main(String[] args) {
+    Person pekka = new Person("Pekka", 24);
 
-        System.out.println( pekka );
-        pekka.becomeOlder();
-        System.out.println( pekka );
-        pekka.becomeOlder(10);
-        System.out.println( pekka );
+    System.out.println(pekka);
+    pekka.becomeOlder();
+    System.out.println(pekka);
+    pekka.becomeOlder(10);
+    System.out.println(pekka);
+}
 </pre>
 
             <p>Prints:</p>
@@ -8253,13 +8227,13 @@ Pekka, age 35 years
             through the method <code>becomeOlder(int years)</code>:</p>
 
 <pre class="sh_java">
-    public void becomeOlder() {
-        this.becomeOlder(1);
-    }
+public void becomeOlder() {
+    this.becomeOlder(1);
+}
 
-    public void becomeOlder(int years) {
-        this.age = this.age + years;
-    }
+public void becomeOlder(int years) {
+    this.age = this.age + years;
+}
 </pre><!-- CAST1-->
             <!-- screencast -->
 
@@ -8321,11 +8295,11 @@ Pekka, age 35 years
             end of a wire'. What does this mean? Let us inspect the following example:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 24);
+public static void main(String[] args) {
+    Person pekka = new Person("Pekka", 24);
 
-        System.out.println( pekka );
-    }
+    System.out.println( pekka );
+}
 </pre>
 
             <p>When we run the sentence <code>Person pekka = new Person("Pekka", 24);</code> an object is
@@ -8340,16 +8314,16 @@ Pekka, age 35 years
             starting value to <code>pekka</code>. What happens now?</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 24);
+public static void main(String[] args) {
+    Person pekka = new Person("Pekka", 24);
 
-        System.out.println( pekka );
+    System.out.println( pekka );
 
-        Person person = pekka;
-        person.becomeOlder(25);
+    Person person = pekka;
+    person.becomeOlder(25);
 
-        System.out.println( pekka );
-    }
+    System.out.println( pekka );
+}
 </pre>
 
             <p>Prints:</p>
@@ -8377,19 +8351,19 @@ of the wire</em> is born. The same thing as a picture (Note: in the picture p re
             new object:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 24);
+public static void main(String[] args) {
+    Person pekka = new Person("Pekka", 24);
 
-        System.out.println( pekka );
+    System.out.println( pekka );
 
-        Person person = pekka;
-        person.becomeOlder(25);
+    Person person = pekka;
+    person.becomeOlder(25);
 
-        System.out.println( pekka );
+    System.out.println( pekka );
 
-        pekka = new Person("Pekka Mikkola", 24);
-        System.out.println( pekka );
-    }
+    pekka = new Person("Pekka Mikkola", 24);
+    System.out.println( pekka );
+}
 </pre>
 
             <p>Prints:</p>
@@ -8409,22 +8383,22 @@ Pekka Mikkola, age 24 years
             <code>null</code>:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 24);
+public static void main(String[] args) {
+    Person pekka = new Person("Pekka", 24);
 
-        System.out.println( pekka );
+    System.out.println( pekka );
 
-        Person person = pekka;
-        person.becomeOlder(25);
+    Person person = pekka;
+    person.becomeOlder(25);
 
-        System.out.println( pekka );
+    System.out.println( pekka );
 
-        pekka = new Person("Pekka Mikkola", 24);
-        System.out.println( pekka );
+    pekka = new Person("Pekka Mikkola", 24);
+    System.out.println( pekka );
 
-        person = null;
-        System.out.println( person );
-    }
+    person = null;
+    System.out.println( person );
+}
 </pre>
 
             <p>After running that, the situation looks like this:</p>
@@ -8449,14 +8423,14 @@ null
             <code>weightIndex</code>:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 24);
+public static void main(String[] args) {
+    Person pekka = new Person("Pekka", 24);
 
-        System.out.println( pekka );
+    System.out.println( pekka );
 
-        Person person = null;
-        System.out.println( person.weightIndex() );
-    }
+    Person person = null;
+    System.out.println( person.weightIndex() );
+}
 </pre>
 
             <p>Result:</p>
@@ -8520,29 +8494,29 @@ public class WeightWatchersAssociation {
             object <code>juhana</code> is passed to the weight watchers association's method:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person matti = new Person("Matti");
-        matti.setWeight(86);
-        matti.setHeight(180);
+public static void main(String[] args) {
+    Person matti = new Person("Matti");
+    matti.setWeight(86);
+    matti.setHeight(180);
 
-        Person juhana = new Person("Juhana");
-        juhana.setWeight(64);
-        juhana.setHeight(172);
+    Person juhana = new Person("Juhana");
+    juhana.setWeight(64);
+    juhana.setHeight(172);
 
-        WeightWatchersAssociation kumpulasWeight = new WeightWatchersAssociation(25);
+    WeightWatchersAssociation kumpulasWeight = new WeightWatchersAssociation(25);
 
-        if ( kumpulasWeight.isAcceptedAsMember(matti) ) {
-            System.out.println( matti.getName() + " is accepted as a member");
-        } else {
-            System.out.println( matti.getName() + " is not accepted as a member");
-        }
-
-        if ( kumpulasWeight.isAcceptedAsMember(juhana) ) {
-            System.out.println( juhana.getName() + " is accepted as a memberksi");
-        } else {
-            System.out.println( juhana.getName() + " is not accepted as a member");
-        }
+    if ( kumpulasWeight.isAcceptedAsMember(matti) ) {
+        System.out.println( matti.getName() + " is accepted as a member");
+    } else {
+        System.out.println( matti.getName() + " is not accepted as a member");
     }
+
+    if ( kumpulasWeight.isAcceptedAsMember(juhana) ) {
+        System.out.println( juhana.getName() + " is accepted as a memberksi");
+    } else {
+        System.out.println( juhana.getName() + " is not accepted as a member");
+    }
+}
 </pre>
 
             <p>The program prints:</p>
@@ -8603,15 +8577,15 @@ public class Reformatory {
   <p>In the following a reformatory weight's two persons:</p>
 
   <pre class="sh_java">
-    public static void main(String[] args) {
-        Reformatory eastHelsinkiReformatory = new Reformatory();
+public static void main(String[] args) {
+    Reformatory eastHelsinkiReformatory = new Reformatory();
 
-        Person brian = new Person("Brian", 1, 110, 7);
-        Person pekka = new Person("Pekka", 33, 176, 85);
+    Person brian = new Person("Brian", 1, 110, 7);
+    Person pekka = new Person("Pekka", 33, 176, 85);
 
-        System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
-        System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
-    }
+    System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
+    System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
+}
   </pre>
 
   <p>The output should be:</p>
@@ -8632,24 +8606,24 @@ Pekka weight: 85 kilos
   Reformatory feeds Brian three times and after that the weights are measured and printed again.</p>
 
   <pre class="sh_java">
-    public static void main(String[] args) {
-        Reformatory eastHelsinkiReformatory = new Reformatory();
+public static void main(String[] args) {
+    Reformatory eastHelsinkiReformatory = new Reformatory();
 
-        Person brian = new Person("Brian", 1, 110, 7);
-        Person pekka = new Person("Pekka", 33, 176, 85);
+    Person brian = new Person("Brian", 1, 110, 7);
+    Person pekka = new Person("Pekka", 33, 176, 85);
 
-        System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
-        System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
+    System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
+    System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
 
-        haaganNeuvola.feed(brian);
-        haaganNeuvola.feed(brian);
-        haaganNeuvola.feed(brian);
+    haaganNeuvola.feed(brian);
+    haaganNeuvola.feed(brian);
+    haaganNeuvola.feed(brian);
 
-        System.out.println("");
+    System.out.println("");
 
-        System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
-        System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
-    }
+    System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
+    System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
+}
   </pre>
 
   <p>The output should reveal that Brian has gained 3 kilos:</p>
@@ -8670,26 +8644,26 @@ Pekka weight: 85 kilos
   <p>With the following main program:</p>
 
   <pre class="sh_java">
-    public static void main(String[] args) {
-        Reformatory eastHelsinkiReformatory = new Reformatory();
+public static void main(String[] args) {
+    Reformatory eastHelsinkiReformatory = new Reformatory();
 
-        Person brian = new Person("Brian", 1, 110, 7);
-        Person pekka = new Person("Pekka", 33, 176, 85);
+    Person brian = new Person("Brian", 1, 110, 7);
+    Person pekka = new Person("Pekka", 33, 176, 85);
 
-        System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
+    System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
 
-        haaganNeuvola.weight(brian);
-        haaganNeuvola.weight(pekka);
+    haaganNeuvola.weight(brian);
+    haaganNeuvola.weight(pekka);
 
-        System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
+    System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
 
-        eastHelsinkiReformatory.weight(brian);
-        eastHelsinkiReformatory.weight(brian);
-        eastHelsinkiReformatory.weight(brian);
-        eastHelsinkiReformatory.weight(brian);
+    eastHelsinkiReformatory.weight(brian);
+    eastHelsinkiReformatory.weight(brian);
+    eastHelsinkiReformatory.weight(brian);
+    eastHelsinkiReformatory.weight(brian);
 
-        System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
-    }
+    System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
+}
   </pre>
 
   <p>the output should be:</p>
@@ -8836,7 +8810,7 @@ public class Main {
         System.out.println("the change was "  + theChange );
 
         System.out.println( unicafeExactum );
-   }
+    }
 }
   </pre>
 
@@ -8920,9 +8894,9 @@ money in register 1002.5 economical lunches sold: 2 gourmet lunches sold: 1
   skeleton:</p>
 
   <pre class="sh_java">
-    public void loadMoneyToCard(LyyraCard card, double sum) {
-       // ...
-    }
+public void loadMoneyToCard(LyyraCard card, double sum) {
+   // ...
+}
   </pre>
 
   <p>Example main and its output:</p>
@@ -8985,12 +8959,12 @@ public class Person {
             like this:</p>
 
 <pre class="sh_java">
-   Person pekka = new Person("Pekka");
-   Person juhana = new Person("Juhana")
+Person pekka = new Person("Pekka");
+Person juhana = new Person("Juhana")
 
-   if ( pekka.getAge() &gt; juhana.getAge() ) {
-       System.out.println( pekka.getName() + " is older than " + juhana.getName() );
-   }
+if ( pekka.getAge() &gt; juhana.getAge() ) {
+    System.out.println(pekka.getName() + " is older than " + juhana.getName());
+}
 </pre>
 
             <p>We will learn a slightly more object-oriented way to compare the ages of two people.</p>
@@ -9001,15 +8975,16 @@ public class Person {
             <p>The method is meant to be used in the following way:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 24);
-        Person antti = new Person("Antti", 22);
+public static void main(String[] args) {
+    Person pekka = new Person("Pekka", 24);
+    Person antti = new Person("Antti", 22);
 
-        if ( pekka.olderThan(antti) ) {  //  same as pekka.olderThan(antti)==true
-            System.out.println( pekka.getName() + " is older than " + antti.getName() );
-        } else {
-            System.out.println( pekka.getName() + " isn't older than " + antti.getName() );
-        }
+    if (pekka.olderThan(antti)) {  //  same as pekka.olderThan(antti)==true
+        System.out.println(pekka.getName() + " is older than " + antti.getName());
+    } else {
+        System.out.println(pekka.getName() + " isn't older than " + antti.getName());
+    }
+}
 </pre>
 
             <p>Here, we ask Pekka if he is older than Antti, Pekka replies true if he is, and false if he is not. In
@@ -9094,20 +9069,20 @@ public class MyDate {
             <p>Example of usage:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        MyDate p1 = new MyDate(14, 2, 2011);
-        MyDate p2 = new MyDate(21, 2, 2011);
-        MyDate p3 = new MyDate(1, 3, 2011);
-        MyDate p4 = new MyDate(31, 12, 2010);
+public static void main(String[] args) {
+    MyDate p1 = new MyDate(14, 2, 2011);
+    MyDate p2 = new MyDate(21, 2, 2011);
+    MyDate p3 = new MyDate(1, 3, 2011);
+    MyDate p4 = new MyDate(31, 12, 2010);
 
-        System.out.println( p1 + " earlier than " + p2 + ": " + p1.earlier(p2));
-        System.out.println( p2 + " earlier than " + p1 + ": " + p2.earlier(p1));
+    System.out.println( p1 + " earlier than " + p2 + ": " + p1.earlier(p2));
+    System.out.println( p2 + " earlier than " + p1 + ": " + p2.earlier(p1));
 
-        System.out.println( p2 + " earlier than " + p3 + ": " + p2.earlier(p3));
-        System.out.println( p3 + " earlier than " + p2 + ": " + p3.earlier(p2));
+    System.out.println( p2 + " earlier than " + p3 + ": " + p2.earlier(p3));
+    System.out.println( p3 + " earlier than " + p2 + ": " + p3.earlier(p2));
 
-        System.out.println( p4 + " earlier than " + p1 + ": " + p4.earlier(p1));
-        System.out.println( p1 + " earlier than " + p4 + ": " + p1.earlier(p4));
+    System.out.println( p4 + " earlier than " + p1 + ": " + p4.earlier(p1));
+    System.out.println( p1 + " earlier than " + p4 + ": " + p1.earlier(p4));
 }
 </pre>
 
@@ -9130,15 +9105,15 @@ public class MyDate {
 
   <pre class="sh_java">
 public class Apartment {
-  private int rooms;
-  private int squareMeters;
-  private int pricePerSquareMeter;
+    private int rooms;
+    private int squareMeters;
+    private int pricePerSquareMeter;
 
-  public Apartment(int rooms, int squareMeters, int pricePerSquareMeter){
-    this.rooms = rooms;
-    this.squareMeters = squareMeters;
-    this.pricePerSquareMeter = pricePerSquareMeter;
-  }
+    public Apartment(int rooms, int squareMeters, int pricePerSquareMeter){
+        this.rooms = rooms;
+        this.squareMeters = squareMeters;
+        this.pricePerSquareMeter = pricePerSquareMeter;
+    }
 }
   </pre>
 
@@ -9153,12 +9128,12 @@ public class Apartment {
   <p>Example of the usage:</p>
 
   <pre class="sh_java">
-  Apartment studioManhattan = new Apartment(1, 16, 5500);
-  Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
-  Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
+Apartment studioManhattan = new Apartment(1, 16, 5500);
+Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
+Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
 
-  System.out.println( studioManhattan.larger(twoRoomsBrooklyn) );       // false
-  System.out.println( fourAndKitchenBronx.larger(twoRoomsBrooklyn) );   // true
+System.out.println( studioManhattan.larger(twoRoomsBrooklyn) );       // false
+System.out.println( fourAndKitchenBronx.larger(twoRoomsBrooklyn) );   // true
   </pre>
 
   <h4>Price difference</h4>
@@ -9172,12 +9147,12 @@ public class Apartment {
   <p>Example of the usage:</p>
 
   <pre class="sh_java">
-  Apartment studioManhattan = new Apartment(1, 16, 5500);
-  Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
-  Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
+Apartment studioManhattan = new Apartment(1, 16, 5500);
+Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
+Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
 
-  System.out.println( studioManhattan.priceDifference(twoRoomsBrooklyn) );        // 71600
-  System.out.println( fourAndKitchenBronx.priceDifference(twoRoomsBrooklyn) );    // 35400
+System.out.println( studioManhattan.priceDifference(twoRoomsBrooklyn) );        // 71600
+System.out.println( fourAndKitchenBronx.priceDifference(twoRoomsBrooklyn) );    // 35400
   </pre>
 
   <h4>more expensive than</h4>
@@ -9189,12 +9164,12 @@ public class Apartment {
   <p>Example of the usage:</p>
 
   <pre class="sh_java">
-  Apartment studioManhattan = new Apartment(1, 16, 5500);
-  Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
-  Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
+Apartment studioManhattan = new Apartment(1, 16, 5500);
+Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
+Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
 
-  System.out.println( studioManhattan.moreExpensiveThan(twoRoomsBrooklyn) );       // false
-  System.out.println( fourAndKitchenBronx.moreExpensiveThan(twoRoomsBrooklyn) );   // true
+System.out.println( studioManhattan.moreExpensiveThan(twoRoomsBrooklyn) );       // false
+System.out.println( fourAndKitchenBronx.moreExpensiveThan(twoRoomsBrooklyn) );   // true
   </pre>
 </div>
             </div>
@@ -9209,31 +9184,32 @@ public class Apartment {
             <code>ArrayList&lt;Person&gt;</code> and put a few person objects in it:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;Person&gt; teachers = new ArrayList&lt;Person&gt;();
+public static void main(String[] args) {
+    ArrayList&lt;Person&gt; teachers = new ArrayList&lt;Person&gt;();
 
-        // first we can take a person into a variable
-        Person teacher = new Person("Juhana");
-        // and then add it to the list
-        teachers.add(teacher);
+    // first we can take a person into a variable
+    Person teacher = new Person("Juhana");
+    // and then add it to the list
+    teachers.add(teacher);
 
-        // or we can create the object as we add it:
-        teachers.add( new Person("Matti") );
-        teachers.add( new Person("Martin") );
+    // or we can create the object as we add it:
+    teachers.add( new Person("Matti") );
+    teachers.add( new Person("Martin") );
 
-        System.out.println("teachers as newborns: ");
-        for ( Person prs : teachers ) {
-            System.out.println( prs );
-        }
+    System.out.println("teachers as newborns: ");
+    for ( Person prs : teachers ) {
+        System.out.println( prs );
+    }
 
-        for ( Person prs : teachers ) {
-            prs.becomeOlder( 30 );
-        }
+    for ( Person prs : teachers ) {
+        prs.becomeOlder( 30 );
+    }
 
-        System.out.println("in 30 years: ");
-        for ( Person prs : teachers ) {
-            System.out.println( prs );
-        }
+    System.out.println("in 30 years: ");
+    for ( Person prs : teachers ) {
+        System.out.println( prs );
+    }
+}
 </pre>
 
             <p>The program prints:</p>
@@ -9390,22 +9366,22 @@ public class Person {
             <p>Let's edit <code>toString</code> so that instead of age, it displays the birthdate:</p>
 
 <pre class="sh_java">
-    public String toString() {
-        return this.name + ", born " + this.birthMyDate;
-    }
+public String toString() {
+    return this.name + ", born " + this.birthMyDate;
+}
 </pre>
 
             <p>And then let's test how the renewed Person class works:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person martin = new Person("Martin", 24, 4, 1983);
+public static void main(String[] args) {
+    Person martin = new Person("Martin", 24, 4, 1983);
 
-        Person juhana = new Person("Juhana", 17, 9, 1985);
+    Person juhana = new Person("Juhana", 17, 9, 1985);
 
-        System.out.println( martin );
-        System.out.println( juhana );
-   }
+    System.out.println( martin );
+    System.out.println( juhana );
+}
 </pre>
 
             <p>Prints:</p>
@@ -9435,10 +9411,10 @@ Juhana, born 17.9.1985
             like this:</p>
 
 <pre class="sh_java">
-        int day = Calendar.getInstance().get(Calendar.DATE);
-        int month = Calendar.getInstance().get(Calendar.MONTH) + 1; // January is 0 so we add 1
-        int year = Calendar.getInstance().get(Calendar.YEAR);
-        System.out.println("Today is " + day + "." + month + "." + year );
+int day = Calendar.getInstance().get(Calendar.DATE);
+int month = Calendar.getInstance().get(Calendar.MONTH) + 1; // January is 0 so we add 1
+int year = Calendar.getInstance().get(Calendar.YEAR);
+System.out.println("Today is " + day + "." + month + "." + year );
 </pre>
 
             <p>When age is removed, the <code>olderThan</code> method has to be changed so that it compares birthdates.
@@ -9453,7 +9429,6 @@ Juhana, born 17.9.1985
   class clock looks like the following:</p>
 
   <pre class="sh_java">
-
 public class Clock {
     private BoundedCounter hours;
     private BoundedCounter minutes;
@@ -9580,30 +9555,30 @@ public class WeightWatchersAssociation {
             <p>Let's try out the expanded weightwatchers association:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        WeightWatchersAssociation weightWatcher = new WeightWatchersAssociation("Kumpulan paino", 25);
+public static void main(String[] args) {
+    WeightWatchersAssociation weightWatcher = new WeightWatchersAssociation("Kumpulan paino", 25);
 
-        Person matti = new Person("Matti");
-        matti.setWeight(86);
-        matti.setHeight(180);
-        weightWatcher.addAsMember(matti);
+    Person matti = new Person("Matti");
+    matti.setWeight(86);
+    matti.setHeight(180);
+    weightWatcher.addAsMember(matti);
 
-        Person juhana = new Person("Juhana");
-        juhana.setWeight(64);
-        juhana.setHeight(172);
-        weightWatcher.addAsMember(juhana);
+    Person juhana = new Person("Juhana");
+    juhana.setWeight(64);
+    juhana.setHeight(172);
+    weightWatcher.addAsMember(juhana);
 
-        Person harri = new Person("Harri");
-        harri.setWeight(104);
-        harri.setHeight(182);
-        weightWatcher.addAsMember(harri);
+    Person harri = new Person("Harri");
+    harri.setWeight(104);
+    harri.setHeight(182);
+    weightWatcher.addAsMember(harri);
 
-        Person petri = new Person("Petri");
-        petri.setWeight(112);
-        petri.setHeight(173);
-        weightWatcher.addAsMember(petri);
+    Person petri = new Person("Petri");
+    petri.setWeight(112);
+    petri.setHeight(173);
+    weightWatcher.addAsMember(petri);
 
-        System.out.println( weightWatcher );
+    System.out.println( weightWatcher );
 }
 </pre>
 
@@ -9785,13 +9760,13 @@ Number of players: 1
   <pre class="sh_java">
 public class Main {
     public static void main(String[] args) {
-    Team barcelona = new Team("FC Barcelona");
+        Team barcelona = new Team("FC Barcelona");
 
         Player brian = new Player("Brian");
         Player pekka = new Player("Pekka", 39);
         barcelona.addPlayer(brian);
         barcelona.addPlayer(pekka);
-    barcelona.addPlayer(new Player("Mikael", 1)); // works similarly as the above
+        barcelona.addPlayer(new Player("Mikael", 1)); // works similarly as the above
 
         System.out.println("Total goals: " + barcelona.goals());
     }
@@ -9832,6 +9807,7 @@ public class WeightWatchersAssociation {
 
         return heaviestSoFar;
     }
+}
 </pre>
 
             <p>The logic in this method works in the same way as when finding the largest number in a list. We use a
@@ -9845,14 +9821,13 @@ public class WeightWatchersAssociation {
 
 <pre class="sh_java">
 public static void main(String[] args) {
-        WeightWatchersAssociation weightWatcher = new
-WeightWatchersAssociation("Kumpluan paino", 25);
+    WeightWatchersAssociation weightWatcher = new WeightWatchersAssociation("Kumpluan paino", 25);
 
-        // ..
+    // ..
 
-        Person heaviest = weightWatcher.personWithHighestWeightIndex();
-        System.out.print("member with the greatest weight index: " + heaviest.getName() );
-        System.out.println(" weight index " + String.format( "%.2f", heaviest.weightIndex() ) );
+    Person heaviest = weightWatcher.personWithHighestWeightIndex();
+    System.out.print("member with the greatest weight index: " + heaviest.getName() );
+    System.out.println(" weight index " + String.format( "%.2f", heaviest.weightIndex() ) );
 }
 </pre>
 
@@ -9872,61 +9847,61 @@ weight index 37,42
 
 <pre class="sh_java">
 public Counter {
-  private int value;
+    private int value;
 
-  public Counter(){
-     this(0);
-  }
+    public Counter(){
+        this(0);
+    }
 
-  public Counter(int initialValue){
-     this.value = initialValue;
-  }
+    public Counter(int initialValue){
+        this.value = initialValue;
+    }
 
-  public void grow(){
-     this.value++;
-  }
+    public void grow(){
+        this.value++;
+    }
 
-  public String toString(){
-     return "value: "+value;
-  }
+    public String toString(){
+        return "value: "+value;
+    }
 
-  public Counter clone(){
-     // lets create a new counter object, that gets as its initial value
-     // the value of the counter that is being cloned
-     Counter clone = new Counter(this.value);
+    public Counter clone(){
+        // lets create a new counter object, that gets as its initial value
+        // the value of the counter that is being cloned
+        Counter clone = new Counter(this.value);
 
-     // return the clone to the caller
-     return clone;
-  }
+        // return the clone to the caller
+        return clone;
+    }
 }
 </pre>
 
             <p>Here's a usage example:</p>
 
 <pre class="sh_java">
-  Counter counter = new Counter();
-  counter.grow();
-  counter.grow();
+Counter counter = new Counter();
+counter.grow();
+counter.grow();
 
-  System.out.println(counter);         // prints 2
+System.out.println(counter);         // prints 2
 
-  Counter clone = counter.clone();
+Counter clone = counter.clone();
 
-  System.out.println(counter);         // prints 2
-  System.out.println(clone);           // prints 2
+System.out.println(counter);         // prints 2
+System.out.println(clone);           // prints 2
 
-  counter.grow();
-  counter.grow();
-  counter.grow();
-  counter.grow();
+counter.grow();
+counter.grow();
+counter.grow();
+counter.grow();
 
-  System.out.println(counter);         // prints 6
-  System.out.println(clone);           // prints 2
+System.out.println(counter);         // prints 6
+System.out.println(clone);           // prints 2
 
-  clone.grow();
+clone.grow();
 
-  System.out.println(counter);         // prints 6
-  System.out.println(clone);           // prints 3
+System.out.println(counter);         // prints 6
+System.out.println(clone);           // prints 3
 </pre>
 
             <p>The value of the object being cloned and the value of the clone - after the cloning has happened - are
@@ -10003,29 +9978,28 @@ public class MyDate {
   <p>Since the method creates a <b>new object</b>, the skeleton is of the form:</p>
 
   <pre class="sh_java">
-    public MyDate afterNumberOfDays(int days){
-        MyDate newMyDate = new MyDate( ... );
+public MyDate afterNumberOfDays(int days){
+    MyDate newMyDate = new MyDate( ... );
 
-        // some code here
+    // some code here
 
-        return newMyDate;
-    }
-
+    return newMyDate;
+}
   </pre>
 
   <p>The following code</p>
 
   <pre class="sh_java">
-    public static void main(String[] args) {
-        MyDate day = new MyDate(25, 2, 2011);
-        MyDate newDate = day.afterNumberOfDays(7);
-        for (int i = 1; i &lt;= 7; ++i) {
-            System.out.println("Friday after  " + i + " weeks is " + newDate);
-            newDate = newDate.afterNumberOfDays(7);
-        }
-        System.out.println("This week's Friday is " + day);
-        System.out.println("The date 790 days from this week's Friday is  " + day.afterNumberOfDays(790));
-  }
+public static void main(String[] args) {
+    MyDate day = new MyDate(25, 2, 2011);
+    MyDate newDate = day.afterNumberOfDays(7);
+    for (int i = 1; i &lt;= 7; ++i) {
+        System.out.println("Friday after  " + i + " weeks is " + newDate);
+        newDate = newDate.afterNumberOfDays(7);
+    }
+    System.out.println("This week's Friday is " + day);
+    System.out.println("The date 790 days from this week's Friday is  " + day.afterNumberOfDays(790));
+}
   </pre>
 
   <p>should print:</p>
@@ -10377,6 +10351,7 @@ public static void main(String[] args) {
     phonebook.add("Donald Knuth", "050-222333");
 
     phonebook.printAll();
+}
   </pre>
 
   <p>the output should be:</p>
@@ -10407,6 +10382,7 @@ public static void main(String[] args) {
 
     number = phonebook.searchNumber("Martti Tienari");
     System.out.println( number );
+}
   </pre>
 
   <p>output:</p>
@@ -10478,23 +10454,23 @@ public class Money {
   <p>Examples of the method usage:</p>
 
   <pre class="sh_java">
-  Money a = new Money(10,0);
-  Money b = new Money(5,0);
+Money a = new Money(10,0);
+Money b = new Money(5,0);
 
-  Money c = a.plus(b);
+Money c = a.plus(b);
 
-  System.out.println(a);  // 10.00e
-  System.out.println(b);  // 5.00e
-  System.out.println(c);  // 15.00e
+System.out.println(a);  // 10.00e
+System.out.println(b);  // 5.00e
+System.out.println(c);  // 15.00e
 
-  a = a.plus(c);          // NOTE: new Money-object is created and reference to that
-                          //           is assigned to variable a.
-                          //       The Money object 10.00e that variable a used to hold
-                          //           is not referenced anymore
+a = a.plus(c);          // NOTE: new Money-object is created and reference to that
+                        //           is assigned to variable a.
+                        //       The Money object 10.00e that variable a used to hold
+                        //           is not referenced anymore
 
-  System.out.println(a);  // 25.00e
-  System.out.println(b);  // 5.00e
-  System.out.println(c);  // 15.00e
+System.out.println(a);  // 25.00e
+System.out.println(b);  // 5.00e
+System.out.println(c);  // 15.00e
   </pre>
 
   <h4>less</h4>
@@ -10503,12 +10479,12 @@ public class Money {
   object for which the method was called is less valuable than the object given as parameter.</p>
 
   <pre class="sh_java">
-  Money a = new Money(10,0);
-  Money b = new Money(3,0);
-  Money c = new Money(5,0);
+Money a = new Money(10,0);
+Money b = new Money(3,0);
+Money c = new Money(5,0);
 
-  System.out.println(a.less(b));  // false
-  System.out.println(b.less(c));  // true
+System.out.println(a.less(b));  // false
+System.out.println(b.less(c));  // true
 
   </pre>
 
@@ -10522,21 +10498,21 @@ public class Money {
   <p>Examples of the method usage:</p>
 
   <pre class="sh_java">
-  Money a = new Money(10,0);
-  Money b = new Money(3,5);
+Money a = new Money(10,0);
+Money b = new Money(3,5);
 
-  Money c = a.minus(b);
+Money c = a.minus(b);
 
-  System.out.println(a);  // 10.00e
-  System.out.println(b);  // 3.50e
-  System.out.println(c);  // 6.50e
+System.out.println(a);  // 10.00e
+System.out.println(b);  // 3.50e
+System.out.println(c);  // 6.50e
 
-  c = c.minus(a);        // NOTE: new Money-object is created and reference to that is assigned to variable c
-                          //       the Money object 6.50e that variable c used to hold, is not referenced anymore
+c = c.minus(a);         // NOTE: new Money-object is created and reference to that is assigned to variable c
+                        //       the Money object 6.50e that variable c used to hold, is not referenced anymore
 
-  System.out.println(a);  // 10.00e
-  System.out.println(b);  // 3.50e
-  System.out.println(c);  // 0.00e
+System.out.println(a);  // 10.00e
+System.out.println(b);  // 3.50e
+System.out.println(c);  // 0.00e
   </pre>
 </div>
             </div>
@@ -10780,17 +10756,17 @@ for (int i = 0; i &lt; numbers.length; i++ ) {
 <pre class="sh_java">
 public static void listCells(int[] integerArray) {
 
-  System.out.println("the cells of the array are: ");
-  for( int number : integerArray) {
-    System.out.print(number + " ");
-  }
+    System.out.println("the cells of the array are: ");
+    for( int number : integerArray) {
+        System.out.print(number + " ");
+    }
 
-  System.out.println("");
+    System.out.println("");
 }
 
 public static void  main(String[] args) {
-  int[] numbers = { 1, 2, 3, 4, 5 };
-  listCells(numbers);
+    int[] numbers = { 1, 2, 3, 4, 5 };
+    listCells(numbers);
 }
 </pre>
 
@@ -10812,15 +10788,15 @@ public static void  main(String[] args) {
 
   <pre class="sh_java">
 public class Main {
-  public static void main(String[] args) {
-    int[] array = {5, 1, 3, 4, 2};
-    System.out.println(sum(array));
-  }
+    public static void main(String[] args) {
+        int[] array = {5, 1, 3, 4, 2};
+        System.out.println(sum(array));
+    }
 
-  public static int sum(int[] array) {
-    // write code here
-    return 0;
-  }
+    public static int sum(int[] array) {
+        // write code here
+        return 0;
+    }
 }
   </pre>
 
@@ -10849,14 +10825,14 @@ public class Main {
 
   <pre class="sh_java">
 public class Main {
-  public static void main(String[] args) {
-    int[] array = {5, 1, 3, 4, 2};
-    printElegantly(array);
-  }
+    public static void main(String[] args) {
+        int[] array = {5, 1, 3, 4, 2};
+        printElegantly(array);
+    }
 
-  public static void printElegantly(int[] array) {
-    // write code here
-  }
+    public static void printElegantly(int[] array) {
+        // write code here
+    }
 }
   </pre>
 
@@ -10938,20 +10914,20 @@ Values again:
 
 <pre class="sh_java">
 public static String[] giveStringTable() {
-  String[] tchrs = new String[3];
+    String[] tchrs = new String[3];
 
-  tchrs[0] = "Bonus";
-  tchrs[1] = "Ihq";
-  tchrs[2] = "Lennon";
+    tchrs[0] = "Bonus";
+    tchrs[1] = "Ihq";
+    tchrs[2] = "Lennon";
 
-  return tchrs;
+    return tchrs;
 }
 
 public static void main(String[] args){
-  String[] teachers = giveStringTable();
+    String[] teachers = giveStringTable();
 
-  for ( String teacher : teachers)
-    System.out.println( teacher );
+    for ( String teacher : teachers)
+        System.out.println( teacher );
 }
 </pre>
 
@@ -10969,17 +10945,17 @@ public static void main(String[] args){
   arrays):</p>
 
   <pre class="sh_java">
-    public static void main(String[] args) {
-        int[] original = {1, 2, 3, 4};
-        int[] copied = copy(original);
+public static void main(String[] args) {
+    int[] original = {1, 2, 3, 4};
+    int[] copied = copy(original);
 
-        // change the copied
-        copied[0] = 99;
+    // change the copied
+    copied[0] = 99;
 
-        // print both
-        System.out.println( "original: " + Arrays.toString(original));
-        System.out.println( "copied: " + Arrays.toString(copied));
-    }
+    // print both
+    System.out.println( "original: " + Arrays.toString(original));
+    System.out.println( "copied: " + Arrays.toString(copied));
+}
   </pre>
 
   <p>As seen in the output, the change made to the copy does not affect the original:</p>
@@ -11001,14 +10977,14 @@ copied: [99, 2, 3, 4]
   <p>In the following an example of the usage:</p>
 
   <pre class="sh_java">
-    public static void main(String[] args) {
-        int[] original = {1, 2, 3, 4};
-        int[] reverse = reverseCopy(original);
+public static void main(String[] args) {
+    int[] original = {1, 2, 3, 4};
+    int[] reverse = reverseCopy(original);
 
-        // print both
-        System.out.println( "original: " +Arrays.toString(original));
-        System.out.println( "reversed: " +Arrays.toString(reverse));
-    }
+    // print both
+    System.out.println( "original: " +Arrays.toString(original));
+    System.out.println( "reversed: " +Arrays.toString(reverse));
+}
   </pre>
 
   <p>The output should reveal that the parameter remains intact:</p>
@@ -11035,7 +11011,7 @@ variables defined within it only exist within it.</em>.</p>
 int number = 5;
 
 if( number == 5 ){
-  String stringDefinedWithinBlock = "Yeah!";
+    String stringDefinedWithinBlock = "Yeah!";
 }
 
 System.out.println(stringDefinedWithinBlock); // does not work!
@@ -11047,7 +11023,7 @@ System.out.println(stringDefinedWithinBlock); // does not work!
 int number = 5;
 
 if( number == 5 ) {
-  number = 6;
+    number = 6;
 }
 
 System.out.println(number); // prints 6
@@ -11108,13 +11084,13 @@ for(int i = 0; i &lt; 3; i++) {
 
 <pre class="sh_java">
 for(int i = 0; i &lt; 3; i++) {
-   System.out.print(i + ": ");
+    System.out.print(i + ": ");
 
-   for(int j = 0; j &lt;= i; j++) {
-      System.out.print(j + " ");
-   }
+    for(int j = 0; j &lt;= i; j++) {
+        System.out.print(j + " ");
+    }
 
-   System.out.println();
+    System.out.println();
 }
 </pre>
 
@@ -11169,19 +11145,19 @@ j=10</code> next <code>i=2, j=1</code>, and so forth.</p>
 <pre class="sh_java">
 public class MultiplicationTable {
 
-  public void print(int upTo) {
-    for(int i = 1; i &lt;= upTo; i++) {
-      printMultiplicationTableRow(i, upTo);
+    public void print(int upTo) {
+        for(int i = 1; i &lt;= upTo; i++) {
+            printMultiplicationTableRow(i, upTo);
 
-      System.out.println();
+            System.out.println();
+        }
     }
-  }
 
-  public void printMultiplicationTableRow(int multiplier, int howManyTimes) {
-    for(int i = 1; j &lt;= howManyTimes; i++) {
-        System.out.print(i * multiplier + " ");
+    public void printMultiplicationTableRow(int multiplier, int howManyTimes) {
+        for(int i = 1; j &lt;= howManyTimes; i++) {
+            System.out.print(i * multiplier + " ");
+        }
     }
-  }
 }
 </pre>
 
@@ -11206,14 +11182,14 @@ public class MultiplicationTable {
 
   <pre class="sh_java">
 public class Main {
-  public static void main(String[] args) {
-    int[] array = {5, 1, 3, 4, 2};
-    printArrayAsStars(array);
-  }
+    public static void main(String[] args) {
+        int[] array = {5, 1, 3, 4, 2};
+        printArrayAsStars(array);
+    }
 
-  public static void printArrayAsStars(int[] array) {
-    // code here
-  }
+    public static void printArrayAsStars(int[] array) {
+        // code here
+    }
 }
   </pre>
 
@@ -11241,14 +11217,14 @@ public class Main {
   <code>NightSky</code> could be used when all the steps of the assignment are done.</p>
 
   <pre class="sh_java">
-    NightSky NightSky = new NightSky(0.1, 40, 10);
-    NightSky.print();
-    System.out.println("Number of stars: " + NightSky.starsInLastPrint());
-    System.out.println("");
+NightSky NightSky = new NightSky(0.1, 40, 10);
+NightSky.print();
+System.out.println("Number of stars: " + NightSky.starsInLastPrint());
+System.out.println("");
 
-    NightSky = new NightSky(0.2, 15, 6);
-    NightSky.print();
-    System.out.println("Number of stars: " + NightSky.starsInLastPrint());
+NightSky = new NightSky(0.2, 15, 6);
+NightSky.print();
+System.out.println("Number of stars: " + NightSky.starsInLastPrint());
   </pre>
 
   <pre>
@@ -11305,8 +11281,8 @@ Number of stars: 22
   <p>In the following example:</p>
 
   <pre class="sh_java">
-    NightSky NightSky = new NightSky(0.1, 40, 10);
-    NightSky.printLine();
+NightSky NightSky = new NightSky(0.1, 40, 10);
+NightSky.printLine();
   </pre>
 
   <pre>
@@ -11320,8 +11296,8 @@ Number of stars: 22
   An example in the following:</p>
 
   <pre class="sh_java">
-    NightSky NightSky = new NightSky(8, 4);
-    NightSky.print();
+NightSky NightSky = new NightSky(8, 4);
+NightSky.print();
   </pre>
 
   <pre>
@@ -11338,13 +11314,13 @@ Number of stars: 22
   previous night sky. Example in the below:</p>
 
   <pre class="sh_java">
-    NightSky NightSky = new NightSky(8, 4);
-    NightSky.print();
-    System.out.println("Number of stars: " + NightSky.starsInLastPrint());
-    System.out.println("");
+NightSky NightSky = new NightSky(8, 4);
+NightSky.print();
+System.out.println("Number of stars: " + NightSky.starsInLastPrint());
+System.out.println("");
 
-    NightSky.print();
-    System.out.println("Number of stars: " + NightSky.starsInLastPrint());
+NightSky.print();
+System.out.println("Number of stars: " + NightSky.starsInLastPrint());
   </pre>
 
   <pre>
@@ -11374,26 +11350,26 @@ Number of stars: 3
 <pre class="sh_java">
 public class Program {
 
-  public static void resetArray(int[] table) {
-    for ( int i=0; i &lt; table.length; i++ )
-      table[i] = 0;
-  }
-
-  public static void main(String[] args) {
-    int[] values = { 1, 2, 3, 4, 5 };
-
-    for ( int number : values ) {
-      System.out.print( number + " " );  // prints 1, 2, 3, 4, 5
+    public static void resetArray(int[] table) {
+        for ( int i=0; i &lt; table.length; i++ )
+            table[i] = 0;
     }
 
-    System.out.println();
+    public static void main(String[] args) {
+        int[] values = { 1, 2, 3, 4, 5 };
 
-    resetArray(t);
+        for ( int number : values ) {
+            System.out.print( number + " " );  // prints 1, 2, 3, 4, 5
+        }
 
-    for ( int number : values ) {
-      System.out.print( number + " " );  // prints 0, 0, 0, 0, 0
+        System.out.println();
+
+        resetArray(t);
+
+        for ( int number : values ) {
+            System.out.print( number + " " );  // prints 0, 0, 0, 0, 0
+        }
     }
-  }
 }
 </pre>
 
@@ -11413,31 +11389,31 @@ public class Program {
 
 <pre class="sh_java">
 public class Program {
-  public static void main(String[] args) {
-    int[] values = { 1, 2, 3, 4, 5 };
+    public static void main(String[] args) {
+        int[] values = { 1, 2, 3, 4, 5 };
 
-    for ( int value : values ) {
-      System.out.print( value + " " );  // prints: 1, 2, 3, 4, 5
+        for ( int value : values ) {
+            System.out.print( value + " " );  // prints: 1, 2, 3, 4, 5
+        }
+
+        System.out.println();
+
+        ArrayHandling.resetArray(values);
+
+        for ( int value : values ) {
+            System.out.print( number + " " );  // prints: 0, 0, 0, 0, 0
+        }
     }
-
-    System.out.println();
-
-    ArrayHandling.resetArray(values);
-
-    for ( int value : values ) {
-      System.out.print( number + " " );  // prints: 0, 0, 0, 0, 0
-    }
-  }
 }
 </pre>
 
 <pre class="sh_java">
 public class ArrayHandling {
-  public static void resetArray(int[] array) {
-    for ( int i=0; i &lt; array.length; i++ ) {
-      array[i] = 0;
+    public static void resetArray(int[] array) {
+        for ( int i=0; i &lt; array.length; i++ ) {
+            array[i] = 0;
+        }
     }
-  }
 }
 </pre>
 
@@ -11745,7 +11721,7 @@ Battle Axes, Tom A. Hawk, 1851
 
   <pre class="sh_java">
 if(StringUtils.included(Book.title(), searchedTitle)) {
-   // Book found!
+    // Book found!
 }
   </pre>
 
@@ -11793,18 +11769,18 @@ The Stinky Cheese Man and Other Fairly Stupid Tales, Penguin Group, 1992
   parameter:</p>
 
   <pre class="sh_java">
-  public static void main(String[] args) {
-     Scanner scanner = new Scanner(System.in);
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
 
-     // ...
+    // ...
 
-     doSomething(scanner);
-  }
+    doSomething(scanner);
+}
 
-  public static void doSomething(Scanner scanner) {
-     String riw = scanner.nextLine();
-     // ...
-  }
+public static void doSomething(Scanner scanner) {
+    String riw = scanner.nextLine();
+    // ...
+}
   </pre>
 
   <p>If another object needs a scanner, you can pass it as constructor parameter and save in
@@ -11947,11 +11923,11 @@ red.</em></p>
             -command.</p>
 
 <pre class="sh_java">
-    int[] values = {-3, -111, 7, 42};
-    Arrays.sort(values);
-    for(int value: values) {
-        System.out.println(value);
-    }
+int[] values = {-3, -111, 7, 42};
+Arrays.sort(values);
+for(int value: values) {
+    System.out.println(value);
+}
 </pre>
 
 <pre>
@@ -12182,7 +12158,7 @@ sort(values);
             the case of arrays, values and strings can be searched for in the following way:</p>
 
 <pre class="sh_java">
-  public static boolean isInArray(int[] array, int searchingFor) {
+public static boolean isInArray(int[] array, int searchingFor) {
     for ( int value : array ) {
        if ( value == searchingFor )  {
            return true;
@@ -12190,17 +12166,17 @@ sort(values);
     }
 
     return false;
-  }
+}
 
-  public static boolean isWordInArray(String[] array, String searchingFor) {
+public static boolean isWordInArray(String[] array, String searchingFor) {
     for ( String word: array ) {
-       if ( word.equals(searchingFor) )  {
-           return true;
-       }
+        if ( word.equals(searchingFor) )  {
+            return true;
+        }
     }
 
     return false;
-  }
+}
 </pre>
 
             <p>An implementation like this is the best we've been able to do so far. The downside of the method is
@@ -12401,11 +12377,11 @@ public class GuessingGame {
   <p>The game is started the in following manner:</p>
 
   <pre class="sh_java">
-    GuessingGame game = new GuessingGame();
+GuessingGame game = new GuessingGame();
 
-    // we play two rounds
-    game.play(1,10);  // value to be guessed now within range 1-10
-    game.play(10,99);  // value to be guessed now within range 10-99
+// we play two rounds
+game.play(1,10);  // value to be guessed now within range 1-10
+game.play(10,99);  // value to be guessed now within range 10-99
   </pre>
 
   <p>We'll implement this assignment in steps.</p>
@@ -12425,9 +12401,9 @@ public class GuessingGame {
   <p>Test your method</p>
 
   <pre class="sh_java">
-    GuessingGame game = new GuessingGame();
+GuessingGame game = new GuessingGame();
 
-    System.out.println(game.isGreaterThan(32));
+System.out.println(game.isGreaterThan(32));
   </pre>
 
   <pre>
@@ -12443,8 +12419,8 @@ true
   in our case this is perfectly fine.</p>
 
   <pre class="sh_java">
-    GuessingGame game = new GuessingGame();
-    System.out.println(game.average(3, 4));
+GuessingGame game = new GuessingGame();
+System.out.println(game.average(3, 4));
   </pre>
 
   <pre>
@@ -12452,8 +12428,8 @@ true
   </pre>
 
   <pre class="sh_java">
-   GuessingGame game = new GuessingGame();
-   System.out.println(game.average(6, 12));
+GuessingGame game = new GuessingGame();
+System.out.println(game.average(6, 12));
   </pre>
 
   <pre>
@@ -12498,7 +12474,6 @@ The number you're thinking of is 4.
   frame like this:</p>
 
   <pre class="sh_java">
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12515,8 +12490,7 @@ public class Main {
     String searchedValue = reader.nextLine();
     System.out.println();
 
-    boolean result = BinarySearch.search(array,
-Integer.parseInt(searchedValue));
+    boolean result = BinarySearch.search(array, Integer.parseInt(searchedValue));
 
     // Print the binary search result here
   }
@@ -12549,23 +12523,23 @@ Value 99 is not in the array
             which will be put <em>Person</em> objects:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        Person[] persons = new Person[3];
+public static void main(String[] args) {
+    Person[] persons = new Person[3];
 
-        persons[0] = new Person("Pekka");
-        persons[1] = new Person("Antti");
-        persons[2] = new Person("Juhana");
+    persons[0] = new Person("Pekka");
+    persons[1] = new Person("Antti");
+    persons[2] = new Person("Juhana");
 
-        for ( int i=0; i &lt; 30; i++ ) {
-            persons[0].becomeOlder();
-            persons[1].becomeOlder();
-            persons[2].becomeOlder();
-        }
-
-        for ( Person person : persons ) {
-            reportMaturity(person);
-        }
+    for ( int i=0; i &lt; 30; i++ ) {
+        persons[0].becomeOlder();
+        persons[1].becomeOlder();
+        persons[2].becomeOlder();
     }
+
+    for ( Person person : persons ) {
+        reportMaturity(person);
+    }
+}
 </pre>
 
             <p>First we create an array that can hold 3 Person objects. We put Pekka in slot 0, Antti in 1 and Juhana
@@ -12575,27 +12549,27 @@ Value 99 is not in the array
             <p>The same example with ArrayLists:</p>
 
 <pre class="sh_java">
-    public static void main(String[] args) {
-        ArrayList&lt;Person&gt; persons = new ArrayList&lt;Person&gt;();
+public static void main(String[] args) {
+    ArrayList&lt;Person&gt; persons = new ArrayList&lt;Person&gt;();
 
-        persons.add( new Person("Pekka") );
-        persons.add( new Person("Antti") );
-        persons.add( new Person("Juhana") );
+    persons.add( new Person("Pekka") );
+    persons.add( new Person("Antti") );
+    persons.add( new Person("Juhana") );
 
-        for ( int i=0; i &lt; 30; i++ ) {
-            for ( Person person : persons ) {
-                person.becomeOlder();
-            }
-
-            //  or persons.get(0).becomeOlder();
-            //     persons.get(1).becomeOlder();
-            //     ...
-        }
-
+    for ( int i=0; i &lt; 30; i++ ) {
         for ( Person person : persons ) {
-            reportMaturity(person);
+            person.becomeOlder();
         }
+
+        //  or persons.get(0).becomeOlder();
+        //     persons.get(1).becomeOlder();
+        //     ...
     }
+
+    for ( Person person : persons ) {
+        reportMaturity(person);
+    }
+}
 </pre>
 
             <p>In most situations it's better to use ArrayList instead of an array. However there can be cases where

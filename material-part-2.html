@@ -9017,7 +9017,7 @@ public class FileHandler {
     }
 </pre>
 
-    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. The method <code>append()</code> allows us to add text at the end of the already existing file, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>FileHandler</code>; the method appends the text received as parameter to the end of the file.</p>
+    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. FileWriter allows us to add text at the end of the already existing file by providing additional parameter <code>boolean append</code>, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>FileHandler</code>; the method appends the text received as parameter to the end of the file.</p>
 
 <pre class="sh_java">
 public class FileHandler {
@@ -9028,8 +9028,8 @@ public class FileHandler {
     }
 
     public void appendToFile(String fileName, String text) throws Exception {
-        FileWriter writer = new FileWriter(fileName);
-        writer.append(text);
+        FileWriter writer = new FileWriter(fileName, true);
+        writer.write(text);
         writer.close();
     }
 }

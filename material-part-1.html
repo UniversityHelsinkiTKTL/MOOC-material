@@ -6793,9 +6793,9 @@ The card has 150.0 euros
 public class Main {
     public static void main(String[] args) {
         LyyraCard card = new LyyraCard(10);
-        System.out.println(card);
+        System.out.println("Pekka: " + card);
         card.loadMoney(-15);
-        System.out.println(card);
+        System.out.println("Pekka: " + card);
     }
 }
     </pre>
@@ -6803,8 +6803,8 @@ public class Main {
     <p>The output should be:</p>
 
     <pre>
-The card has 10.0 euros
-The card has 10.0 euros
+Pekka: The card has 10.0 euros
+Pekka: The card has 10.0 euros
     </pre>
 
     <h4 class="req">Multiple cards</h4>

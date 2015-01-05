@@ -6530,7 +6530,7 @@ bob is an adult
 
 <h3>toString</h3>
 
-<p>We have been guilty of bad programming style; we have created a method to that prints an object,
+<p>We have been guilty of bad programming style; we have created a method that prints an object,
 <code>printPerson</code>. The recommended way of doing this is by
 defining a method that returns a "character string representation" of the object. In Java, a
 method returning a String representation is called <code>toString</code>. Let us define this
@@ -6941,7 +6941,7 @@ John, body mass index: on 20.897959183673468
 
 <h3>Object variable and parameter with identical name</h3>
 
-<p>Above, the method <code>setHeight</code> assigns the objec variable <code>height</code> the value of
+<p>Above, the method <code>setHeight</code> assigns the object variable <code>height</code> the value of
 the parameter <code>newHeight</code>:</p>
 
 <pre class="sh_java">
@@ -7319,7 +7319,7 @@ public String toString() {
     <ul>
       <li><code>addNumber</code> adds a new number to the statistics</li>
 
-      <li><code>amountOfnumbers</code> tells us how many numbers have been added to the
+      <li><code>amountOfNumbers</code> tells us how many numbers have been added to the
       statistics</li>
     </ul>
 
@@ -7341,7 +7341,7 @@ public class NumberStatistics {
         // code here
     }
 
-    public int amountOfnumbers() {
+    public int amountOfNumbers() {
         // code here
     }
 }
@@ -7353,10 +7353,10 @@ public class NumberStatistics {
 public class Main {
    public static void main(String[] args) {
       NumberStatistics stats = new NumberStatistics();
-      stats.addnumber(3);
-      stats.addnumber(5);
-      stats.addnumber(1);
-      stats.addnumber(2);
+      stats.addNumber(3);
+      stats.addNumber(5);
+      stats.addNumber(1);
+      stats.addNumber(2);
       System.out.println("Amount: " + stats.amountOfNumbers());
     }
 }
@@ -7391,7 +7391,7 @@ public class NumberStatistics {
         // initialize here the object variable amountOfNumbers
     }
 
-    public void addnumber(int number) {
+    public void addNumber(int number) {
         // code here
     }
 
@@ -7415,10 +7415,10 @@ public class NumberStatistics {
 public class Main {
     public static void main(String[] args) {
         NumberStatistics stats = new NumberStatistics();
-        stats.addnumber(3);
-        stats.addnumber(5);
-        stats.addnumber(1);
-        stats.addnumber(2);
+        stats.addNumber(3);
+        stats.addNumber(5);
+        stats.addNumber(1);
+        stats.addNumber(2);
         System.out.println("Amount: " + stats.amountOfNumbers());
         System.out.println("sum: " + stats.sum());
         System.out.println("average: " + stats.average());
@@ -11363,7 +11363,7 @@ public class Program {
 
         System.out.println();
 
-        resetArray(t);
+        resetArray(values);
 
         for ( int number : values ) {
             System.out.print( number + " " );  // prints 0, 0, 0, 0, 0
@@ -11400,7 +11400,7 @@ public class Program {
         ArrayHandling.resetArray(values);
 
         for ( int value : values ) {
-            System.out.print( number + " " );  // prints: 0, 0, 0, 0, 0
+            System.out.print( value + " " );  // prints: 0, 0, 0, 0, 0
         }
     }
 }

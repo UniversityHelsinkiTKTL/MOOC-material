@@ -11667,18 +11667,18 @@ Library.addBook(new Book("NHL Hockey", "Stanley Kupp", 1952));
 Library.addBook(new Book("Battle Axes", "Tom A. Hawk", 1851));
 
 ArrayList&lt;Book&gt; result = Library.searchByTitle("Cheese");
-for (Book Book: result) {
-    System.out.println(Book);
+for (Book book: result) {
+    System.out.println(book);
 }
 
 System.out.println("---");
-for (Book Book: Library.searchByPublisher("Penguin Group  ")) {
-    System.out.println(Book);
+for (Book book: Library.searchByPublisher("Penguin Group  ")) {
+    System.out.println(book);
 }
 
 System.out.println("---");
-for (Book Book: Library.searchByYear(1851)) {
-    System.out.println(Book);
+for (Book book: Library.searchByYear(1851)) {
+    System.out.println(book);
 }
   </pre>
 
@@ -11719,7 +11719,7 @@ Battle Axes, Tom A. Hawk, 1851
   <p>Use the method as follows:</p>
 
   <pre class="sh_java">
-if(StringUtils.included(Book.title(), searchedTitle)) {
+if(StringUtils.included(book.title(), searchedTitle)) {
     // Book found!
 }
   </pre>
@@ -11734,13 +11734,13 @@ Library.addBook(new Book("The Stinky Cheese Man and Other Fairly Stupid Tales", 
 Library.addBook(new Book("NHL Hockey", "Stanley Kupp", 1952));
 Library.addBook(new Book("Battle Axes", "Tom A. Hawk", 1851));
 
-for (Book Book: Library.searchByTitle("CHEESE")) {
-    System.out.println(Book);
+for (Book book: Library.searchByTitle("CHEESE")) {
+    System.out.println(book);
 }
 
 System.out.println("---");
-for (Book Book: Library.searchByPublisher("PENGUIN  ")) {
-    System.out.println(Book);
+for (Book book: Library.searchByPublisher("PENGUIN  ")) {
+    System.out.println(book);
 }
   </pre>
 

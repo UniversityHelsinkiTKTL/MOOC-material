@@ -11644,7 +11644,7 @@ public class Library {
    // ...
 
    public ArrayList&lt;Book&gt; searchByTitle(String title) {
-     ArrayList&lt;Book&gt; found = new ArrayList&lt;Book&gt;
+     ArrayList&lt;Book&gt; found = new ArrayList&lt;Book&gt;();
 
      // iterate the list of books and add all the matching books to the list found
 
@@ -11739,7 +11739,7 @@ for (Book book: Library.searchByTitle("CHEESE")) {
 }
 
 System.out.println("---");
-for (Book book: Library.searchByPublisher("PENGUIN  ")) {
+for (Book book: Library.searchByPublisher("PENGUIN")) {
     System.out.println(book);
 }
   </pre>

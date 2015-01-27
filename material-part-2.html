@@ -3423,7 +3423,7 @@ public class NumberList implements Readable {
           </pre>
 
           <pre class="sh_java">
-    NumberList myList = new NumberList();
+    NumberList joelList = new NumberList();
     joelList.add(new SMS("matti", "have you already written the tests?"));
     joelList.add(new SMS("matti", "did you have a look at the submissions?"));
 
@@ -3434,7 +3434,7 @@ public class NumberList implements Readable {
 Joel has got 2 messages to read
           </pre>
 
-          <p>Because the type of <code>NumerList</code> is <code>Readable</code>, we can add <code>NumerList</code> objects to our number list, too. In the example below, Joel has a lot of messages to read, luckily Mikael deals with it and reads the messages on behalf of Joel.</p>
+          <p>Because the type of <code>NumberList</code> is <code>Readable</code>, we can add <code>NumberList</code> objects to our number list, too. In the example below, Joel has a lot of messages to read, luckily Mikael deals with it and reads the messages on behalf of Joel.</p>
 
           <pre class="sh_java">
     NumberList joelList = new NumberList();
@@ -4354,13 +4354,13 @@ public class ClubMember implements Comparable&lt;ClubMember&gt; {
         return this.name;
     }
 
-    public int getHeigth() {
+    public int getHeight() {
         return this.height;
     }
 
     @Override
     public String toString() {
-        return this.getName() + " (" + this.getHeigth() + ")";
+        return this.getName() + " (" + this.getHeight() + ")";
     }
 
     @Override
@@ -4565,7 +4565,7 @@ A of Clubs
             <pre>
 the most valuable hand contains the cards
 J of Diamonds
-J of Spades
+J of Clubs
 J of Hearts
             </pre>
 
@@ -4684,14 +4684,14 @@ A of Clubs
     ClubMember wanted = new ClubMember("Name", 180);
     int index = Collections.binarySearch(clubMembers, wanted);
     if (index &gt;= 0) {
-        System.out.println("A person who is 180 centimiters tall was found at index " + index);
+        System.out.println("A person who is 180 centimeters tall was found at index " + index);
         System.out.println("name: " + clubMembers.get(index).getName());
     }
 
     wanted = new ClubMember("Name", 187);
-    int index = Collections.binarySearch(clubMembers, wanted);
+    index = Collections.binarySearch(clubMembers, wanted);
     if (index &gt;= 0) {
-        System.out.println("A person who is 187 centimiters tall was found at index " + index);
+        System.out.println("A person who is 187 centimeters tall was found at index " + index);
         System.out.println("name: " + clubMembers.get(index).getName());
     }
       </pre>
@@ -4699,7 +4699,7 @@ A of Clubs
       <p>The print output is the following:</p>
 
       <pre>
-A person who is 187 centimiters tall was found at index 2
+A person who is 187 centimeters tall was found at index 2
 name: matti
       </pre>
 
@@ -5525,7 +5525,7 @@ public class Checkout {
 
       <ul>
         <!-- TODO -->
-        <li>All NetBeans tips can be found <a href="../ohpe/netbeans.html">here</a> </li>
+        <li>All NetBeans tips can be found <a href="../instructions#netbeans">here</a> </li>
         <p></p>
 
         <li> <b>Implement all abstract methods</b>
@@ -5956,7 +5956,7 @@ Exception in thread "..." java.lang.IllegalArgumentException: The grade has to b
 
       <h4>Calculator Validation</h4>
 
-      <p>The <code>Calculator</code> methods have to be changed in the following way: the method <code>multiplication</code> has to work only if its parameter is not negative (greater than 0). The method <code>binomialCoefficient</code> has to work only if the parameters are not negative and the size of a subset is smaller than the set's size. If one of the methods receives invalid arguments when they are called, they have to throw a <code>IllegalArgumentException</code>.</p>
+      <p>The <code>Calculator</code> methods have to be changed in the following way: the method <code>multiplication</code> has to work only if its parameter is not negative (greater than or equal to 0). The method <code>binomialCoefficient</code> has to work only if the parameters are not negative and the size of a subset is smaller than the set's size. If one of the methods receives invalid arguments when they are called, they have to throw a <code>IllegalArgumentException</code>.</p>
     </div>
     <div class="tehtava">
 
@@ -9017,7 +9017,7 @@ public class FileHandler {
     }
 </pre>
 
-    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. The method <code>append()</code> allows us to add text at the end of the already existing file, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>FileHandler</code>; the method appends the text received as parameter to the end of the file.</p>
+    <p>When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. FileWriter allows us to add text at the end of the already existing file by providing additional parameter <code>boolean append</code>, without erasing the existing text. Let's add the method <code>appendToFile()</code> to the class <code>FileHandler</code>; the method appends the text received as parameter to the end of the file.</p>
 
 <pre class="sh_java">
 public class FileHandler {
@@ -9028,8 +9028,8 @@ public class FileHandler {
     }
 
     public void appendToFile(String fileName, String text) throws Exception {
-        FileWriter writer = new FileWriter(fileName);
-        writer.append(text);
+        FileWriter writer = new FileWriter(fileName, true);
+        writer.write(text);
         writer.close();
     }
 }

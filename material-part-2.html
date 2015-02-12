@@ -8340,38 +8340,38 @@ Milking...
 Bulk tank: 14.0/2000.0
 </pre>
 
-<h4>CowHouse</h4>
+<h4>Barn</h4>
 
-<p>Cows are kept (and in this case milked) in cowhouses. The original cowhouses have room for one milking robot. Note that when milking robots are installed, they are connected to a specific cowhouse bulk tank. If a cowhouse does not have a milking robot, it can't be used to handle the cow, either. Implement the class <code>CowHouse</code> with the following constructor and methods:
+<p>Cows are kept (and in this case milked) in barns. The original barns have room for one milking robot. Note that when milking robots are installed, they are connected to a specific barn's bulk tank. If a barn does not have a milking robot, it can't be used to handle the cow, either. Implement the class <code>Barn</code> with the following constructor and methods:
 </p>
 
   <ul>
-    <li><strong>public CowHouse(BulkTank tank)</strong></li>
-    <li><strong>public BulkTank getBulkTank()</strong> returns the cowhouse bulk tank</li>
-    <li><strong>public void installMilkingRobot(MilkingRobot milkingRobot)</strong> installs a milking robot and connects it to the cowhouse bulk tank</li>
+    <li><strong>public Barn(BulkTank tank)</strong></li>
+    <li><strong>public BulkTank getBulkTank()</strong> returns the barn's bulk tank</li>
+    <li><strong>public void installMilkingRobot(MilkingRobot milkingRobot)</strong> installs a milking robot and connects it to the barn bulk tank</li>
     <li><strong>public void takeCareOf(Cow cow)</strong> milks the parameter cow with the help of the milking robot, the method throws an <code>IllegalStateException</code> if the milking robot hasn't been installed</li>
     <li><strong>public void takeCareOf(Collection&lt;Cow&gt; cows)</strong> milks the parameter cows with the help of the milking robot, the method throws an <code>IllegalStateException</code> if the milking robot hasn't been installed</li>
-    <li><strong>public String toString()</strong> returns the state of the bulk tank contained by the cowhouse</li>
+    <li><strong>public String toString()</strong> returns the state of the bulk tank contained by the barn</li>
   </ul>
 
 <p><code>Collection</code> is Java's own interface, and it represents collections' behaviour. For instance, the classes <code>ArrayList</code> and <code>LinkedList</code> implement the interface <code>Collection</code>. All instances of classes which implement <code>Collection</code> can be iterated with a for-each construction.</p>
 
-<p>Test your class <code>CowHouse</code> with the help of the following program body. Do not pay to much attention to the class <code>LinkedList</code>; apparently, it works as <code>ArrayList</code>, but the implemantation in encapsulates is slightly different. More information about this in the data structures course!
+<p>Test your class <code>Barn</code> with the help of the following program body. Do not pay to much attention to the class <code>LinkedList</code>; apparently, it works as <code>ArrayList</code>, but the implemantation in encapsulates is slightly different. More information about this in the data structures course!
 </p>
 
 <pre class="sh_java">
-        CowHouse cowhouse = new CowHouse(new BulkTank());
-        System.out.println("CowHouse: " + cowhouse);
+        Barn barn = new Barn(new BulkTank());
+        System.out.println("Barn: " + barn);
 
         MilkingRobot robot = new MilkingRobot();
-        cowhouse.installMilkingRobot(robot);
+        barn.installMilkingRobot(robot);
 
         Cow ammu = new Cow();
         ammu.liveHour();
         ammu.liveHour();
 
-        cowhouse.takeCareOf(ammu);
-        System.out.println("CowHouse: " + cowhouse);
+        barn.takeCareOf(ammu);
+        System.out.println("Barn: " + barn);
 
         LinkedList&lt;Cow&gt; cowList = new LinkedList&lt;Cow&gt;();
         cowList.add(ammu);
@@ -8382,8 +8382,8 @@ Bulk tank: 14.0/2000.0
             cow.liveHour();
         }
 
-        cowhouse.takeCareOf(cowList);
-        System.out.println("CowHouse: " + cowhouse);
+        barn.takeCareOf(cowList);
+        System.out.println("Barn: " + barn);
 </pre>
 
 <p>
@@ -8391,19 +8391,19 @@ The print output should look like the following:
 </p>
 
 <pre>
-CowHouse: 0.0/2000.0
-CowHouse: 2.8/2000.0
-CowHouse: 9.6/2000.0
+Barn: 0.0/2000.0
+Barn: 2.8/2000.0
+Barn: 9.6/2000.0
 </pre>
 
 <h4>Farm</h4>
 
-<p>Farms have got an owner, a cowhouse and a breed of cows. Farm also implements our old interface <code>Alive</code>: calling the method <code>liveHour</code> makes all the cows of the farm live for an hour.
-   You also have to create method <code>manageCows</code> which calls Cowhouse's method <code>takeCareOf</code> so that all cows are milked. Implement your class Farm, and make it work according to the following example.
+<p>Farms have got an owner, a barn and a herd of cows. Farm also implements our old interface <code>Alive</code>: calling the method <code>liveHour</code> makes all the cows of the farm live for an hour.
+   You also have to create method <code>manageCows</code> which calls Barn's method <code>takeCareOf</code> so that all cows are milked. Implement your class Farm, and make it work according to the following example.
 </p>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
         System.out.println(farm);
 
         System.out.println(farm.getOwner() + " is a tough guy!");
@@ -8415,14 +8415,14 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-CowHouse bulk tank: 0.0/2000.0
+Barn bulk tank: 0.0/2000.0
 No cows.
 Esko is a tough guy!
 </pre>
 
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
         farm.addCow(new Cow());
         farm.addCow(new Cow());
         farm.addCow(new Cow());
@@ -8436,7 +8436,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-CowHouse bulk tank: 0.0/2000.0
+Barn bulk tank: 0.0/2000.0
 Animals:
         Naatti 0.0/19.0
         Hilke 0.0/30.0
@@ -8444,7 +8444,7 @@ Animals:
 </pre>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
 
         farm.addCow(new Cow());
         farm.addCow(new Cow());
@@ -8460,7 +8460,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-CowHouse bulk tank: 0.0/2000.0
+Barn bulk tank: 0.0/2000.0
 Animals:
         Heluna 2.0/17.0
         Rima 3.0/32.0
@@ -8468,7 +8468,7 @@ Animals:
 </pre>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
         MilkingRobot robot = new MilkingRobot();
         farm.installMilkingRobot(robot);
 
@@ -8491,7 +8491,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-CowHouse bulk tank: 18.0/2000.0
+Barn bulk tank: 18.0/2000.0
 Animals:
         Hilke 0.0/30.0
         Sylkki 0.0/35.0

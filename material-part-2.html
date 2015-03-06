@@ -32,7 +32,7 @@
 <section class="viikkoraja" id="0">
   <div div class="viikkoraja-mooc" id="Note for the reader" tekija="Arto Vihavainen, Matti Luukkainen">
 
-    <p>This is direct continuation to the programming basics course Object-Oriented Programming with Java, part 1<a href="http://mooc.fi/programming-part1">material</a>.</p>
+    <p>This is direct continuation to the programming basics course Object-Oriented Programming with Java, part 1<a href="http://mooc.fi/courses/2013/programming-part-1/">material</a>.</p>
 
     <p>This material is meant for the University of Helsinki Department of Computer Science advanced programming course, and released here as an Massive Open Online Course. The material is based on courses in 2012, 2011, and 2010, of which content has been affected by Matti Paksula, Antti Laaksonen, Pekka Mikkola, Juhana Laurinharju, Martin Pärtel, Joel Kaasinen  and Mikael Nousiainen.</p>
 
@@ -56,7 +56,7 @@
 
     <h2>Recapping programming basics</h2>
 
-    <p>In this chapter we briefly recap a few concepts we became familiar with in Part 1. You can familiarize yourself with the programming basics course material <a href="http://mooc.fi/programming-part1">here</a>.</p>
+    <p>In this chapter we briefly recap a few concepts we became familiar with in Part 1. You can familiarize yourself with the programming basics course material <a href="http://mooc.fi/courses/2013/programming-part-1/">here</a>.</p>
 
 
     <h3>Program, commands and variables</h3>
@@ -2167,9 +2167,9 @@ public class Library {
         <p>
         <table>
           <tr><th>Original-type</th><th>Reference-type equivalent</th><tr>
-              <tr><td>int</td><td><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html" target="_blank">Integer</a></td></tr>
-              <tr><td>double</td><td><a href="docs.oracle.com/javase/6/docs/api/java/lang/Double.html" target="_blank">Double</a></td></tr>
-              <tr><td>char</td><td><a href="docs.oracle.com/javase/6/docs/api/java/lang/Character.html" target="_blank">Character</a></td></tr>
+              <tr><td>int</td><td><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html" target="_blank">Integer</a></td></tr>
+              <tr><td>double</td><td><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html" target="_blank">Double</a></td></tr>
+              <tr><td>char</td><td><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Character.html" target="_blank">Character</a></td></tr>
             </table>
             </p>
 
@@ -4365,7 +4365,7 @@ public class ClubMember implements Comparable&lt;ClubMember&gt; {
 
     @Override
     public int compareTo(ClubMember clubMember) {
-        if(this.heigth == clubMember.getHeight()) {
+        if(this.height == clubMember.getHeight()) {
             return 0;
         } else if (this.height &gt; clubMember.getHeight()) {
             return 1;
@@ -4627,7 +4627,7 @@ A of Clubs
 
           <p>Further information about comparator classes in <a href="http://leepoint.net/notes-java/data/collections/comparators.html">here.</a></p>
 
-          <p>Create now the class <code>SortAgainstSuitAndValue</code> which iplements the Comparator interface and sorts cards as it is done in the example above, plus same suit cards are also sorted according to their value.
+          <p>Create now the class <code>SortAgainstSuitAndValue</code> which implements the Comparator interface and sorts cards as it is done in the example above, plus same suit cards are also sorted according to their value.
           </p>
 
           <h4>Sort Against Suit</h4>
@@ -5525,7 +5525,7 @@ public class Checkout {
 
       <ul>
         <!-- TODO -->
-        <li>All NetBeans tips can be found <a href="../instructions#netbeans">here</a> </li>
+        <li>All NetBeans tips can be found <a href="http://mooc.fi/courses/general/programming/#netbeans-tips">here</a> </li>
         <p></p>
 
         <li> <b>Implement all abstract methods</b>
@@ -8340,38 +8340,38 @@ Milking...
 Bulk tank: 14.0/2000.0
 </pre>
 
-<h4>CowHouse</h4>
+<h4>Barn</h4>
 
-<p>Cows are kept (and in this case milked) in cowhouses. The original cowhouses have room for one milking robot. Note that when milking robots are installed, they are connected to a specific cowhouse bulk tank. If a cowhouse does not have a milking robot, it can't be used to handle the cow, either. Implement the class <code>CowHouse</code> with the following constructor and methods:
+<p>Cows are kept (and in this case milked) in barns. The original barns have room for one milking robot. Note that when milking robots are installed, they are connected to a specific barn's bulk tank. If a barn does not have a milking robot, it can't be used to handle the cow, either. Implement the class <code>Barn</code> with the following constructor and methods:
 </p>
 
   <ul>
-    <li><strong>public CowHouse(BulkTank tank)</strong></li>
-    <li><strong>public BulkTank getBulkTank()</strong> returns the cowhouse bulk tank</li>
-    <li><strong>public void installMilkingRobot(MilkingRobot milkingRobot)</strong> installs a milking robot and connects it to the cowhouse bulk tank</li>
+    <li><strong>public Barn(BulkTank tank)</strong></li>
+    <li><strong>public BulkTank getBulkTank()</strong> returns the barn's bulk tank</li>
+    <li><strong>public void installMilkingRobot(MilkingRobot milkingRobot)</strong> installs a milking robot and connects it to the barn bulk tank</li>
     <li><strong>public void takeCareOf(Cow cow)</strong> milks the parameter cow with the help of the milking robot, the method throws an <code>IllegalStateException</code> if the milking robot hasn't been installed</li>
     <li><strong>public void takeCareOf(Collection&lt;Cow&gt; cows)</strong> milks the parameter cows with the help of the milking robot, the method throws an <code>IllegalStateException</code> if the milking robot hasn't been installed</li>
-    <li><strong>public String toString()</strong> returns the state of the bulk tank contained by the cowhouse</li>
+    <li><strong>public String toString()</strong> returns the state of the bulk tank contained by the barn</li>
   </ul>
 
 <p><code>Collection</code> is Java's own interface, and it represents collections' behaviour. For instance, the classes <code>ArrayList</code> and <code>LinkedList</code> implement the interface <code>Collection</code>. All instances of classes which implement <code>Collection</code> can be iterated with a for-each construction.</p>
 
-<p>Test your class <code>CowHouse</code> with the help of the following program body. Do not pay to much attention to the class <code>LinkedList</code>; apparently, it works as <code>ArrayList</code>, but the implemantation in encapsulates is slightly different. More information about this in the data structures course!
+<p>Test your class <code>Barn</code> with the help of the following program body. Do not pay to much attention to the class <code>LinkedList</code>; apparently, it works as <code>ArrayList</code>, but the implemantation in encapsulates is slightly different. More information about this in the data structures course!
 </p>
 
 <pre class="sh_java">
-        CowHouse cowhouse = new CowHouse(new BulkTank());
-        System.out.println("CowHouse: " + cowhouse);
+        Barn barn = new Barn(new BulkTank());
+        System.out.println("Barn: " + barn);
 
         MilkingRobot robot = new MilkingRobot();
-        cowhouse.installMilkingRobot(robot);
+        barn.installMilkingRobot(robot);
 
         Cow ammu = new Cow();
         ammu.liveHour();
         ammu.liveHour();
 
-        cowhouse.takeCareOf(ammu);
-        System.out.println("CowHouse: " + cowhouse);
+        barn.takeCareOf(ammu);
+        System.out.println("Barn: " + barn);
 
         LinkedList&lt;Cow&gt; cowList = new LinkedList&lt;Cow&gt;();
         cowList.add(ammu);
@@ -8382,8 +8382,8 @@ Bulk tank: 14.0/2000.0
             cow.liveHour();
         }
 
-        cowhouse.takeCareOf(cowList);
-        System.out.println("CowHouse: " + cowhouse);
+        barn.takeCareOf(cowList);
+        System.out.println("Barn: " + barn);
 </pre>
 
 <p>
@@ -8391,19 +8391,19 @@ The print output should look like the following:
 </p>
 
 <pre>
-CowHouse: 0.0/2000.0
-CowHouse: 2.8/2000.0
-CowHouse: 9.6/2000.0
+Barn: 0.0/2000.0
+Barn: 2.8/2000.0
+Barn: 9.6/2000.0
 </pre>
 
 <h4>Farm</h4>
 
-<p>Farms have got an owner, a cowhouse and a breed of cows. Farm also implements our old interface <code>Alive</code>: calling the method <code>liveHour</code> makes all the cows of the farm live for an hour.
-   You also have to create method <code>manageCows</code> which calls Cowhouse's method <code>takeCareOf</code> so that all cows are milked. Implement your class Farm, and make it work according to the following example.
+<p>Farms have got an owner, a barn and a herd of cows. Farm also implements our old interface <code>Alive</code>: calling the method <code>liveHour</code> makes all the cows of the farm live for an hour.
+   You also have to create method <code>manageCows</code> which calls Barn's method <code>takeCareOf</code> so that all cows are milked. Implement your class Farm, and make it work according to the following example.
 </p>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
         System.out.println(farm);
 
         System.out.println(farm.getOwner() + " is a tough guy!");
@@ -8415,14 +8415,14 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-CowHouse bulk tank: 0.0/2000.0
+Barn bulk tank: 0.0/2000.0
 No cows.
 Esko is a tough guy!
 </pre>
 
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
         farm.addCow(new Cow());
         farm.addCow(new Cow());
         farm.addCow(new Cow());
@@ -8436,7 +8436,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-CowHouse bulk tank: 0.0/2000.0
+Barn bulk tank: 0.0/2000.0
 Animals:
         Naatti 0.0/19.0
         Hilke 0.0/30.0
@@ -8444,7 +8444,7 @@ Animals:
 </pre>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
 
         farm.addCow(new Cow());
         farm.addCow(new Cow());
@@ -8460,7 +8460,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-CowHouse bulk tank: 0.0/2000.0
+Barn bulk tank: 0.0/2000.0
 Animals:
         Heluna 2.0/17.0
         Rima 3.0/32.0
@@ -8468,7 +8468,7 @@ Animals:
 </pre>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new CowHouse(new BulkTank()));
+        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
         MilkingRobot robot = new MilkingRobot();
         farm.installMilkingRobot(robot);
 
@@ -8491,7 +8491,7 @@ Expected print output:
 
 <pre>
 Farm owner: Esko
-CowHouse bulk tank: 18.0/2000.0
+Barn bulk tank: 18.0/2000.0
 Animals:
         Hilke 0.0/30.0
         Sylkki 0.0/35.0
@@ -8759,7 +8759,7 @@ false
 <p><b>Attention: you can create only one Scanner object to make your tests work. Do not use Scandinavian letters in the class names. Also, do not use static variables, the tests execute your program many different times, and the static variable values left from the previous execution would possibly disturb them!</b></p>
 
 
-<p>In this exercise, you implement a dungeon game. In the game, the player is in a dungeon full of vampires. The player has to stub the vampires before his lamp runs out of battery and the vampires can suck his blood in the darkness. The player can see the vampires with a blinking of their lamp, after which they have to move blind before the following blinking. With one move, the player can walk as many steps as they want.</p>
+<p>In this exercise, you implement a dungeon game. In the game, the player is in a dungeon full of vampires. The player has to destroy the vampires before his lamp runs out of battery and the vampires can suck his blood in the darkness. The player can see the vampires with a blinking of their lamp, after which they have to move blind before the following blinking. With one move, the player can walk as many steps as they want.</p>
 
 <p>The game situation, i.e. the dungeon, the player and the vampires are shown in text form. The first line in the print output tells how many moves the player has left (that is to say, how much battery the lamp has). After that, the print output shows player and vampire positions, which in turn are followed by the game map. In the example below, you see the player (<code>@</code>) and three vampires (<code>v</code>); in this case, the player has enough light for fourteen moves.</p>
 
@@ -8806,7 +8806,7 @@ Z................
 <p>
   <ul>
     <li>the constructor <strong><code>public Dungeon(int length, int height, int vampires, int moves, boolean vampiresMove)</code></strong>
-      <p>the values <code>length</code> and <code>height</code> represent the dimension of the dungeon (always a square); <code>vampires</code> stands for the initial number of vampires (the positions of the vampires can be decided randomly); <code>moves</code> determines the initial number of moves; and if <code>vampiresMove</code> is <code>false</code>, the vampires do not move.</p></li>
+      <p>the values <code>length</code> and <code>height</code> represent the dimension of the dungeon (always a rectangle); <code>vampires</code> stands for the initial number of vampires (the positions of the vampires can be decided randomly); <code>moves</code> determines the initial number of moves; and if <code>vampiresMove</code> is <code>false</code>, the vampires do not move.</p></li>
     <li>the method <strong><code>public void run()</code></strong>, which starts the game</li>
   </ul>
 </p>

@@ -7193,11 +7193,11 @@ public class Main {
         BoundedCounter hours = new BoundedCounter(23);
 
         System.out.print("seconds: ");
-        int s = // ask the initial value of seconds from the user
+        int s = // read the initial value of seconds from the user
         System.out.print("minutes: ");
-        int m = // ask the initial value of minutes from the user
+        int m = // read the initial value of minutes from the user
         System.out.print("hours: ");
-        int h = // ask the initial value of hours from the user
+        int h = // read the initial value of hours from the user
 
         seconds.setValue(s);
         minutes.setValue(m);
@@ -7205,15 +7205,28 @@ public class Main {
 
         int i = 0;
         while ( i &lt; 121 ) {
-          // like in previous but seconds taken into account
-         i++;
+            // like in previous but seconds taken into account
+
+            i++;
         }
 
     }
 }
     </pre>
 
-    <p>Ensure that all works as expected when starting e.g. with time<i>23:59:50</i>.</p>
+    <p>Ensure that all works as expected when starting e.g. with time <i>23:59:50</i>.</p>
+
+    <p>The output should be:</p>
+
+    <pre>
+seconds: <font color="red">50</font>
+minutes: <font color="red">59</font>
+hours: <font color="red">23</font>
+23:59:50
+23:59:51
+23:59:52
+...
+    </pre>
 
     <p><strong>Bonus: eternal clock (exercise not assessed with TMC!)</strong></p>
 

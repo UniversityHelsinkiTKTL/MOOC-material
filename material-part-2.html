@@ -3336,7 +3336,7 @@ public interface NationalService {
     Readable readable = new SMS("teacher", "The SMS is Readable!"); // works
     SMS message = readable; // not possible
 
-    SMS transformedMessage = (Message) Readable; // works
+    SMS transformedMessage = (SMS) readable; // works
             </pre>
 
             <p>Type casting works if and only if the variable's type is really what we try to change it into. Type casting is not usually a best practice; one of the only cases where that is legitimate is in connection with the <code>equals</code> method.</p>

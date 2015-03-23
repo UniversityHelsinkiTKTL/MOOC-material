@@ -3333,7 +3333,7 @@ public interface NationalService {
             <p>The <code>EBook</code> class implements the interface <code>Readable</code>. However, notice that even though the type of the class <code>EBook</code> is an interface, <code>EBook</code> is not the type of all the classes which implement the <code>Readable</code> interface. It is possible to assign an <code>EBook</code> object to a <code>Readable</code> variable, but the assignment does not work in the opposite way without a particular type change.</p>
 
             <pre class="sh_java">
-    Readable readable = new Readable("teacher", "The SMS is Readable!"); // works
+    Readable readable = new SMS("teacher", "The SMS is Readable!"); // works
     SMS message = readable; // not possible
 
     SMS transformedMessage = (Message) Readable; // works

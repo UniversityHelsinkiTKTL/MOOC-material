@@ -4975,6 +4975,8 @@ public static boolean moreThanOnce(ArrayList&lt;Integer&gt; list, int number) {
 }
 
 public static void main(String[] args) {
+    Scanner reader = new Scanner(System.in);
+
     ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
     list.add(3);
     list.add(2);
@@ -4983,7 +4985,7 @@ public static void main(String[] args) {
 
     System.out.println("Type a number: ");
     int number = Integer.parseInt(reader.nextLine());
-    if (moreThanOnce(numbers, number)) {
+    if (moreThanOnce(list, number)) {
         System.out.println(number + " appears more than once.");
     } else {
         System.out.println(number + " does not appear more than once.");

@@ -1630,7 +1630,7 @@ Mobile: Nokia 3210 (1 kg)
           <li><code>public String toString()</code>, which returns a string in the form "x things (y kg)"</li>
         </ul>
 
-        <p>The <code>things<code> are saved into an <code>ArrayList</code> object:</p>
+        <p>The <code>things</code> are saved into an <code>ArrayList</code> object:</p>
 
             <pre class="sh_java">
 ArrayList&lt;Thing&gt; things = new ArrayList&lt;Thing&gt;();
@@ -2165,13 +2165,25 @@ public class Library {
         <p>Both HashMap keys and stored objects are reference-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.</p>
 
         <p>
-        <table>
-          <tr><th>Original-type</th><th>Reference-type equivalent</th><tr>
-              <tr><td>int</td><td><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html" target="_blank">Integer</a></td></tr>
-              <tr><td>double</td><td><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html" target="_blank">Double</a></td></tr>
-              <tr><td>char</td><td><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Character.html" target="_blank">Character</a></td></tr>
-            </table>
-            </p>
+			<table>
+				<tr>
+					<th>Original-type</th>
+					<th>Reference-type equivalent</th>
+				</tr>
+				<tr>
+					<td>int</td>
+					<td><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html" target="_blank">Integer</a></td>
+				</tr>
+				<tr>
+					<td>double</td>
+					<td><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html" target="_blank">Double</a></td>
+				</tr>
+				<tr>
+					<td>char</td>
+					<td><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Character.html" target="_blank">Character</a></td>
+				</tr>
+			</table>
+    	</p>
 
             <p>In fact, Java automatically encapsulates original-type values and translates them into reference-type values when needed. Even though the number <code>1</code> is an original-type variable, it can be used as an <code>Integer</code> key directly in the following way.</p>
 
@@ -3343,7 +3355,7 @@ public interface NationalService {
 
             <h3>An Interface as Method Parameter</h3>
 
-            <p>The real use of interfaces becomes clear when we use them for the type of a method parameter. Because interfaces can be used as variable type, they can be used in method calls as parameter type. For instance, the below method <code>print</code> of class <ode>Printer</code> receives a <code>Readable</code> variable.</p>
+            <p>The real use of interfaces becomes clear when we use them for the type of a method parameter. Because interfaces can be used as variable type, they can be used in method calls as parameter type. For instance, the below method <code>print</code> of class <code>Printer</code> receives a <code>Readable</code> variable.</p>
 
           <pre class="sh_java">
 public class Printer {
@@ -3460,7 +3472,7 @@ Let's delegate some reading to Mikael
 Joel has 0 messages to read
           </pre>
 
-          <p>The <cide>read</code> method which is called in connection to Mikael's list parses all the <code>Readable</code> objects contained in the list, and calls their <code>read</code> method. At the end of each <code>read</code> method call the list is cleared. In other words, Joel's number list is cleared as soon as Mikael reads it.</p>
+          <p>The <code>read</code> method which is called in connection to Mikael's list parses all the <code>Readable</code> objects contained in the list, and calls their <code>read</code> method. At the end of each <code>read</code> method call the list is cleared. In other words, Joel's number list is cleared as soon as Mikael reads it.</p>
 
         <p><em>At this point, there are a lot of references; it would be good to draw down the objects and try to grasp how the <code>read</code> method call connected to <code>mikaelList</code> works!</em></p>
 
@@ -4587,7 +4599,7 @@ public class SortAgainstSuit implements Comparator&lt;Card&gt; {
 }
             </pre>
 
-            <p>Sorting against suit works in the same way as the card method <code>compareTo</code> thought for suits, that is <em>spades first, diamonds second, hearts third, clubs last.</em></p></em></p>
+            <p>Sorting against suit works in the same way as the card method <code>compareTo</code> thought for suits, that is <em>spades first, diamonds second, hearts third, clubs last.</em></p>
 
           <p>Sorting is still possible through the Collections' sort method. The method now receives as second parameter an object of the class that determines the sorting order:</p>
 
@@ -4803,7 +4815,7 @@ Position    Name
 
 
 
-          <p><strong>Note1:</strong> it is essential that the <em>user interface</em> works exactly as displayed above; for instance, the number of spaces at the beginning of the lines must be right. <stong>The space at the beginning of the lines must be made of spaces</strong>, the tests do not work if you use tabulatation. Also, it is good that you copy the text which has to be printed by your program and you paste it into your code; you can copy it either from the exercise layout or from the test error messages. <em>The exercise is worth of four separate exercise points.</em></p>
+          <p><strong>Note1:</strong> it is essential that the <em>user interface</em> works exactly as displayed above; for instance, the number of spaces at the beginning of the lines must be right. <strong>The space at the beginning of the lines must be made of spaces</strong>, the tests do not work if you use tabulatation. Also, it is good that you copy the text which has to be printed by your program and you paste it into your code; you can copy it either from the exercise layout or from the test error messages. <em>The exercise is worth of four separate exercise points.</em></p>
 
         <p><strong>The program has to start when we execute the main method in the example layout. Also, remember again that you can create only one Scanner object in your exercise.</strong></p>
 
@@ -5859,7 +5871,7 @@ Write a number: <font color="red">43</font>
 
     <h3>Throwing Exceptions</h3>
 
-    <p>Methods and constructors can <em>throw</em> exceptions. So far, there are two kinds of exceptions which can be thrown. There are the ones which have to be handled, and the ones which don't have to be dealt with. When we have to handle the exceptions, we do it either in a <code>try-catch</code> chunk, or <em>throwing them from a method</code></em>. </p>
+    <p>Methods and constructors can <em>throw</em> exceptions. So far, there are two kinds of exceptions which can be thrown. There are the ones which have to be handled, and the ones which don't have to be dealt with. When we have to handle the exceptions, we do it either in a <code>try-catch</code> chunk, or <em>throwing them from a <code>method</code></em>. </p>
 
   <p>In the clock exercise of Introduction to Programming, we explained that we can stop our program of one second, by calling the method <code>Thread.sleep(1000)</code>. The method may throw an exception, which we <em>must</em> deal with. In fact, we handle the exception using the <code>try-catch</code> sentence; in the following example we skip the exception, and we leave empty the <code>catch</code> chunk.</p>
 
@@ -6011,12 +6023,12 @@ true
 
       <p>Create the class <code>Thermometer</code> which implements the interface <code>Sensor</code>.</p>
 
-      <p>At first, the thermometer is off. When the <code>measure</code> method is called, if the thermometer is on it returns a random number between -30 and 30. If the thermometer is off, it throws an </code>IllegalStateException</code>.
+      <p>At first, the thermometer is off. When the <code>measure</code> method is called, if the thermometer is on it returns a random number between -30 and 30. If the thermometer is off, it throws an <code>IllegalStateException</code>.
   </p>
 
   <h4>AverageSensor</h4>
 
-  <p>Create the class <code>AverageSensor</code> which implements the interface </code>Sensor</code>.</p>
+  <p>Create the class <code>AverageSensor</code> which implements the interface <code>Sensor</code>.</p>
 
 <p>An average sensor contains many sensors. In addition to the methods defined by the interface <code>Sensor</code>, the class has the method <code>public void addSensor(Sensor additional)</code> which adds a new sensor to the AverageSensor.</p>
 
@@ -6987,7 +6999,7 @@ public class Bird {
 
 <p>Some birds have more than one English name (for instance, the Rose Starling is also known as Rose-Coloured Starling or Rose-Coloured Pastor); however, the Latin name is always unique. Create the methods <code>equals</code> and <code>hashCode-</code> in the class <code>Bird</code>; two Bird objects have to be understood as the same bird if their Latin name and observation year are the same.</p>
 
-<p>Example:</code>
+<p>Example:</p>
 
 <pre>
     Bird bird1 = new Bird("Rose Starling", "Sturnus roseus", 2012);
@@ -7339,7 +7351,7 @@ volkswagen
 
         <h3>Private, Protected and Public</h3>
 
-<p>If a method or a variable have got the <code>private</code> field accessibility, it can not be seen by its subclasses, and its subclasses do not have any straight way to access it. In the previous example Motor can't access directly the attributes defined in its superclass Component (id, producer, description). The subclass see naturally everything which has been defined <code>public</code> in its super class. If we want to define superclass variables or methods whose accessibility should be restricted to only its subclasses, we can use the <code>protected</code> field accessability</code>.</p>
+<p>If a method or a variable have got the <code>private</code> field accessibility, it can not be seen by its subclasses, and its subclasses do not have any straight way to access it. In the previous example Motor can't access directly the attributes defined in its superclass Component (id, producer, description). The subclass see naturally everything which has been defined <code>public</code> in its super class. If we want to define superclass variables or methods whose accessibility should be restricted to only its subclasses, we can use the <code>protected</code> field accessability.</p>
 
         <h3>Superclass</h3>
 
@@ -8165,15 +8177,15 @@ Fill the analysis so that it prints the greatest fluctuation and the history var
 <p>Test your bulk tank with the following program chunk:</p>
 
 <pre class="sh_java">
-        BulkTank tank = new BulkTank();
-        tank.getFromTank(100);
-        tank.addToTank(25);
-        tank.getFromTank(5);
-        System.out.println(tank);
+BulkTank tank = new BulkTank();
+tank.getFromTank(100);
+tank.addToTank(25);
+tank.getFromTank(5);
+System.out.println(tank);
 
-        tank = new BulkTank(50);
-        tank.addToTank(100);
-        System.out.println(tank);
+tank = new BulkTank(50);
+tank.addToTank(100);
+System.out.println(tank);
 </pre>
 
 
@@ -8231,32 +8243,31 @@ public interface Alive {
 <p>Implement the class Cow, and test whether it works with the following program body.</p>
 
 <pre class="sh_java">
-        Cow cow = new Cow();
-        System.out.println(cow);
+Cow cow = new Cow();
+System.out.println(cow);
 
 
-        Alive livingCow = cow;
-        livingCow.liveHour();
-        livingCow.liveHour();
-        livingCow.liveHour();
-        livingCow.liveHour();
+Alive livingCow = cow;
+livingCow.liveHour();
+livingCow.liveHour();
+livingCow.liveHour();
+livingCow.liveHour();
 
-        System.out.println(cow);
+System.out.println(cow);
 
-        Milkable milkingCow = cow;
-        milkingCow.milk();
+Milkable milkingCow = cow;
+milkingCow.milk();
 
-        System.out.println(cow);
-        System.out.println("");
+System.out.println(cow);
+System.out.println("");
 
-        cow = new Cow("Ammu");
-        System.out.println(cow);
-        cow.liveHour();
-        cow.liveHour();
-        System.out.println(cow);
-        cow.milk();
-        System.out.println(cow);
-
+cow = new Cow("Ammu");
+System.out.println(cow);
+cow.liveHour();
+cow.liveHour();
+System.out.println(cow);
+cow.milk();
+System.out.println(cow);
 </pre>
 
 <p>The program print output can be like the following.</p>
@@ -8300,27 +8311,27 @@ Java Result: 1
 </pre>
 
 <pre class="sh_java">
-        MilkingRobot milkingRobot = new MilkingRobot();
-        Cow cow = new Cow();
-        System.out.println("");
+MilkingRobot milkingRobot = new MilkingRobot();
+Cow cow = new Cow();
+System.out.println("");
 
-        BulkTank tank = new BulkTank();
-        milkingRobot.setBulkTank(tank);
-        System.out.println("Bulk tank: " + tank);
+BulkTank tank = new BulkTank();
+milkingRobot.setBulkTank(tank);
+System.out.println("Bulk tank: " + tank);
 
-        for(int i = 0; i &lt; 2; i++) {
-            System.out.println(cow);
-            System.out.println("Living..");
-            for(int j = 0; j &lt; 5; j++) {
-                cow.liveHour();
-            }
-            System.out.println(cow);
+for(int i = 0; i &lt; 2; i++) {
+    System.out.println(cow);
+    System.out.println("Living..");
+    for(int j = 0; j &lt; 5; j++) {
+        cow.liveHour();
+    }
+    System.out.println(cow);
 
-            System.out.println("Milking...");
-            milkingRobot.milk(cow);
-            System.out.println("Bulk tank: " + tank);
-            System.out.println("");
-        }
+    System.out.println("Milking...");
+    milkingRobot.milk(cow);
+    System.out.println("Bulk tank: " + tank);
+    System.out.println("");
+}
 </pre>
 
 <p>The print output of the program can look like the following:</p>
@@ -8360,30 +8371,30 @@ Bulk tank: 14.0/2000.0
 </p>
 
 <pre class="sh_java">
-        Barn barn = new Barn(new BulkTank());
-        System.out.println("Barn: " + barn);
+Barn barn = new Barn(new BulkTank());
+System.out.println("Barn: " + barn);
 
-        MilkingRobot robot = new MilkingRobot();
-        barn.installMilkingRobot(robot);
+MilkingRobot robot = new MilkingRobot();
+barn.installMilkingRobot(robot);
 
-        Cow ammu = new Cow();
-        ammu.liveHour();
-        ammu.liveHour();
+Cow ammu = new Cow();
+ammu.liveHour();
+ammu.liveHour();
 
-        barn.takeCareOf(ammu);
-        System.out.println("Barn: " + barn);
+barn.takeCareOf(ammu);
+System.out.println("Barn: " + barn);
 
-        LinkedList&lt;Cow&gt; cowList = new LinkedList&lt;Cow&gt;();
-        cowList.add(ammu);
-        cowList.add(new Cow());
+LinkedList&lt;Cow&gt; cowList = new LinkedList&lt;Cow&gt;();
+cowList.add(ammu);
+cowList.add(new Cow());
 
-        for(Cow cow: cowList) {
-            cow.liveHour();
-            cow.liveHour();
-        }
+for(Cow cow: cowList) {
+    cow.liveHour();
+    cow.liveHour();
+}
 
-        barn.takeCareOf(cowList);
-        System.out.println("Barn: " + barn);
+barn.takeCareOf(cowList);
+System.out.println("Barn: " + barn);
 </pre>
 
 <p>
@@ -8403,10 +8414,10 @@ Barn: 9.6/2000.0
 </p>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
-        System.out.println(farm);
+Farm farm = new Farm("Esko", new Barn(new BulkTank()));
+System.out.println(farm);
 
-        System.out.println(farm.getOwner() + " is a tough guy!");
+System.out.println(farm.getOwner() + " is a tough guy!");
 </pre>
 
 <p>
@@ -8422,11 +8433,11 @@ Esko is a tough guy!
 
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
-        farm.addCow(new Cow());
-        farm.addCow(new Cow());
-        farm.addCow(new Cow());
-        System.out.println(farm);
+Farm farm = new Farm("Esko", new Barn(new BulkTank()));
+farm.addCow(new Cow());
+farm.addCow(new Cow());
+farm.addCow(new Cow());
+System.out.println(farm);
 </pre>
 
 
@@ -8444,14 +8455,15 @@ Animals:
 </pre>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
+Farm farm = new Farm("Esko", new Barn(new BulkTank()));
 
-        farm.addCow(new Cow());
-        farm.addCow(new Cow());
-        farm.addCow(new Cow());
+farm.addCow(new Cow());
+farm.addCow(new Cow());
+farm.addCow(new Cow());
 
-        farm.liveHour();
-        farm.liveHour();
+farm.liveHour();
+farm.liveHour();
+System.out.println(farm);
 </pre>
 
 <p>
@@ -8468,21 +8480,21 @@ Animals:
 </pre>
 
 <pre class="sh_java">
-        Farm farm = new Farm("Esko", new Barn(new BulkTank()));
-        MilkingRobot robot = new MilkingRobot();
-        farm.installMilkingRobot(robot);
+Farm farm = new Farm("Esko", new Barn(new BulkTank()));
+MilkingRobot robot = new MilkingRobot();
+farm.installMilkingRobot(robot);
 
-        farm.addCow(new Cow());
-        farm.addCow(new Cow());
-        farm.addCow(new Cow());
+farm.addCow(new Cow());
+farm.addCow(new Cow());
+farm.addCow(new Cow());
 
 
-        farm.liveHour();
-        farm.liveHour();
+farm.liveHour();
+farm.liveHour();
 
-        farm.manageCows();
+farm.manageCows();
 
-        System.out.println(farm);
+System.out.println(farm);
 </pre>
 
 <p>
@@ -8813,9 +8825,8 @@ Z................
 
 <p><em>Attention!</em> The player starts the game in the position 0,0!</p>
 <p><em>Attention!</em> Player and vampires can not move out of the dungeon and two vampires cannot step into the same place!</p>
-</ul>
 
-  <p>Below, you find a couple of examples to help you to understand the situation better:</p>
+<p>Below, you find a couple of examples to help you to understand the situation better:</p>
 
 <pre>
 14
@@ -8980,16 +8991,17 @@ YOU WIN
   <div class="viikkoraja">Week5</div>
   <div class="viikkoraja-mooc" id="Week 11" deadline="unlocks when 85% of week 10 done " data-first-chapter-index="50" data-first-exercise-index="141" data-first-week-index="11"  data-first-chapter-index-mooc="51" data-first-exercise-index-mooc="34" data-first-week-index-mooc="11" tekija="Arto Vihavainen, Matti Luukkainen">
 
-<h2 id="tiedostostoon_kirjoitus">Writing to a File</h3>
+<h2 id="tiedostostoon_kirjoitus">Writing to a File</h2>
 
 <p>In section 15, we learnt that reading from a file happened with the help of the classes <code>Scanner</code> and <code>File</code>. The class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/FileWriter.html">FileWriter</a></code> provides the functionality to write to a file. The <code>FileWriter</code> constructor is given as parameter a String illustrating the file location.</p>
 
 <pre class="sh_java">
-        FileWriter writer = new FileWriter("file.txt");
-        writer.write("Hi file!\n"); // the line break has to be written, too!
-        writer.write("Adding text\n");
-        writer.write("And more");
-        writer.close(); // the call closes the file and makes sure the written text goes to the file</pre>
+FileWriter writer = new FileWriter("file.txt");
+writer.write("Hi file!\n"); // the line break has to be written, too!
+writer.write("Adding text\n");
+writer.write("And more");
+writer.close(); // the call closes the file and makes sure the written text goes to the file
+</pre>
 
     <p>In the example we write the string "Hi file!" to the file "file.txt"; that is followed by a line break, and by more text. Note that when you use the <code>write</code> method, it does not produce line breaks, but they have to be added later manually.</p>
 
@@ -9296,7 +9308,7 @@ public class UserInterface implements Runnable {
     private JFrame frame;
 </pre>
 
-<p>The user interface contains a <code>JFrame</code> object as variable, which is the basic element of a visible user interface. All user interface components are added to the <code>JFrame</code> object component container. Note that <strong>object variables cannot be initiated outside the methods</strong>. For instance, an initialisation of the object variable <coded>JFrame</code> with the class definition <code>"private JFrame frame = new JFrame()"</code> would evade user interface thread execution order, and it can lead to a breakdown.</p>
+<p>The user interface contains a <code>JFrame</code> object as variable, which is the basic element of a visible user interface. All user interface components are added to the <code>JFrame</code> object component container. Note that <strong>object variables cannot be initiated outside the methods</strong>. For instance, an initialisation of the object variable <code>JFrame</code> with the class definition <code>"private JFrame frame = new JFrame()"</code> would evade user interface thread execution order, and it can lead to a breakdown.</p>
 
 <pre class="sh_java">
     @Override
@@ -9436,7 +9448,7 @@ public class Main {
 
     <p><img src="https://www.cs.helsinki.fi/group/java/k13/ohja/img-ohja/week5/layout-override.png"/></p>
 
-<p>As for UI components, there are also many UI layout managers. Oracle has a visual guide to learn more about UI layout managers at <a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html" target="_blank">http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html</a>. Below, we introduce the layout manager <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/BoxLayout.html" target="_blank">BoxLayout</a></code>.</a>
+<p>As for UI components, there are also many UI layout managers. Oracle has a visual guide to learn more about UI layout managers at <a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html" target="_blank">http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html</a>. Below, we introduce the layout manager <code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/BoxLayout.html" target="_blank">BoxLayout</a></code>.</p>
 
 <h4>BoxLayout</h4>
 
@@ -9905,7 +9917,7 @@ public class MenuPanel extends JPanel {
 
 <h2>Drawing</h2>
 
-<p>Its <code>Container</code> functionality is not the only reason why we use the class <code>JPanel</code>: it is also used as drawing board, and the user inherits the <code>JPanel</code> class and overrides the method <code>protected void paintComponent(Graphics graphics)</code>. The user interface calls the method <code>paintComponent</code> whenever we want to draw again the UI component contents. The parameter of the method <code>paintComponent</code> receives from the user interface an object which implements the abstract class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html" target="_blank">Graphics</a></code>. Let's create the class <code>DrawingBoard</code> <code>JPanel</code> which inherits from <codeZ>JPanel</code> and which overrides the <code>paintComponent</code> method.</p>
+<p>Its <code>Container</code> functionality is not the only reason why we use the class <code>JPanel</code>: it is also used as drawing board, and the user inherits the <code>JPanel</code> class and overrides the method <code>protected void paintComponent(Graphics graphics)</code>. The user interface calls the method <code>paintComponent</code> whenever we want to draw again the UI component contents. The parameter of the method <code>paintComponent</code> receives from the user interface an object which implements the abstract class <code><a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html" target="_blank">Graphics</a></code>. Let's create the class <code>DrawingBoard</code> <code>JPanel</code> which inherits from <code>JPanel</code> and which overrides the <code>paintComponent</code> method.</p>
 
 <pre class="sh_java">
 public class DrawingBoard extends JPanel {
@@ -10755,7 +10767,7 @@ The form is right.
     <div class="tehtava">
 <h3>Regular Expressions</h3>
 
-<p>Let's train to use regular expressions. The exercises are done in the <code>Main</code> class of the default package .</h3>
+<p>Let's train to use regular expressions. The exercises are done in the <code>Main</code> class of the default package .</p>
 
 <h4 class="req">Week Days</h4>
 

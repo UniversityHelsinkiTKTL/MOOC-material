@@ -1427,16 +1427,16 @@ if (matti.enoughMoneyForSingleTicket()) {
 
     <pre class="sh_java">
 public class HslPrices {
-    public static final double SINGLETICKET_ADULT = 2.50;
-    public static final double TRAMTICKET_ADULT = 2.50;
+    private static final double SINGLETICKET_ADULT = 2.50;
+    private static final double TRAMTICKET_ADULT = 2.50;
 
-  public static double getSingleTicketPrice() {   // Accessor
-    return SINGLETICKET_ADULT;
-  }
+    public static double getSingleTicketPrice() {   // Accessor
+        return SINGLETICKET_ADULT;
+    }
 
-  public static double getTramTicketPrice() {   // Accessor
-    return TRAMTICKET_ADULT;
-  }
+    public static double getTramTicketPrice() {   // Accessor
+        return TRAMTICKET_ADULT;
+    }
 }
     </pre>
 
@@ -1451,7 +1451,7 @@ public class Peson {
     // constructor
 
     public boolean enoughMoneyForSingleTicket() {
-        if(this.money >= HslPrices.giveSingleTicketPrice()) {
+        if(this.money >= HslPrices.getSingleTicketPrice()) {
             return true;
         }
 

@@ -5160,7 +5160,7 @@ public class Person implements Identifiable {
     }
 
     @Override
-    public toString(){
+    public String toString(){
         return this.name + " ID: " +this.id;
     }
 }
@@ -5202,7 +5202,7 @@ personnel.add( new Person("Jukka", "110956-326B") );
 
 System.out.println( personnel.get("280283-111A") );
 
-Person found = (Person) register.get("110956-326B");
+Person found = (Person) personnel.get("110956-326B");
 System.out.println( found.getName() );
     </pre>
 

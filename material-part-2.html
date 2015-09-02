@@ -2919,7 +2919,7 @@ if (!books.contains(objectBook)) {
 
             <h3>HashCode Method</h3>
 
-            <p>The <code>hashCode</code> method takes an object and returns a numeric value, i.e. a hash value. We need numeric values for instance when we use and object as HashMap keys. So far, we have been using only String and Integer objects as HashMap keys, and their <code>hashCode</code> method is implemented by default. Let us make an example where it is not so: let us continue with our book examples and let us start to take note of our books on loan. We want to implement our bookkeeping through Hashmap. The key is the book, and the book's value is a string, which tells the loaner's name:</p>
+            <p>The <code>hashCode</code> method takes an object and returns a numeric value, i.e. a hash value. We need numeric values for instance when we use object as HashMap keys. So far, we have been using only String and Integer objects as HashMap keys, and their <code>hashCode</code> method is implemented by default. Let us make an example where it is not so: let us continue with our book examples and let us start to take note of our books on loan. We want to implement our bookkeeping through Hashmap. The key is the book, and the book's value is a string, which tells the loaner's name:</p>
 
             <pre class="sh_java">
         HashMap&lt;Book, String&gt; loaners = new HashMap&lt;Book, String&gt;();
@@ -3055,8 +3055,8 @@ public class Book {
         loaners.put( new Book("Test Driven Development",1999), "Arto" );
 
         System.out.println( loaners.get( objectbook ) );
-        System.out.println( loaners.get( new Book("Objectbook", 2000) );
-        System.out.println( loaners.get( new Book("Test Driven Development", 1999) );
+        System.out.println( loaners.get( new Book("Objectbook", 2000) ) );
+        System.out.println( loaners.get( new Book("Test Driven Development", 1999) ) );
             </pre>
 
             <p>Print output:</p>
